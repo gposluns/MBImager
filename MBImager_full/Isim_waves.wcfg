@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/MBImager/Documents/MBImager_ams/ISE_projects/MotherBoard/MBImager_full/tb_MB_top_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="attributes" />
+            <top_module name="family_support" />
+            <top_module name="glbl" />
+            <top_module name="ipif_pkg" />
+            <top_module name="lmb_bram_if_funcs" />
+            <top_module name="numeric_std" />
+            <top_module name="proc_common_pkg" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_misc" />
+            <top_module name="std_logic_signed" />
+            <top_module name="std_logic_unsigned" />
+            <top_module name="tb_MB_top" />
+            <top_module name="textio" />
+            <top_module name="vcomponents" />
+            <top_module name="vital_primitives" />
+            <top_module name="vital_timing" />
+            <top_module name="vpkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="40" />
+   <wvobject fp_name="/tb_MB_top/SPI_FLASH_MOSI" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">SPI_FLASH_MOSI</obj_property>
+      <obj_property name="ObjectShortName">SPI_FLASH_MOSI</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/SPI_FLASH_SS" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">SPI_FLASH_SS[9:0]</obj_property>
+      <obj_property name="ObjectShortName">SPI_FLASH_SS[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/SPI_FLASH_SCLK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">SPI_FLASH_SCLK</obj_property>
+      <obj_property name="ObjectShortName">SPI_FLASH_SCLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/ADC_READ_ACLK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ADC_READ_ACLK</obj_property>
+      <obj_property name="ObjectShortName">ADC_READ_ACLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/SPI_5V_EN" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">SPI_5V_EN</obj_property>
+      <obj_property name="ObjectShortName">SPI_5V_EN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/RS_POT" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">RS_POT</obj_property>
+      <obj_property name="ObjectShortName">RS_POT</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/ADC_INCLK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ADC_INCLK</obj_property>
+      <obj_property name="ObjectShortName">ADC_INCLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/MBI_CLK_CDS" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MBI_CLK_CDS</obj_property>
+      <obj_property name="ObjectShortName">MBI_CLK_CDS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/MBI_ROW_ADD" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">MBI_ROW_ADD[7:0]</obj_property>
+      <obj_property name="ObjectShortName">MBI_ROW_ADD[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/MBI_PIXRES" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MBI_PIXRES</obj_property>
+      <obj_property name="ObjectShortName">MBI_PIXRES</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/MBI_PRECHN_AMP" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MBI_PRECHN_AMP</obj_property>
+      <obj_property name="ObjectShortName">MBI_PRECHN_AMP</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/MBI_MUX_ADD" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">MBI_MUX_ADD[5:0]</obj_property>
+      <obj_property name="ObjectShortName">MBI_MUX_ADD[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/MBI_PIXRES_GLOB" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MBI_PIXRES_GLOB</obj_property>
+      <obj_property name="ObjectShortName">MBI_PIXRES_GLOB</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/MBI_CLKN_MOD" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MBI_CLKN_MOD</obj_property>
+      <obj_property name="ObjectShortName">MBI_CLKN_MOD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/MBI_CLK_MOD" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MBI_CLK_MOD</obj_property>
+      <obj_property name="ObjectShortName">MBI_CLK_MOD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/MBI_PRECH_COL" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MBI_PRECH_COL</obj_property>
+      <obj_property name="ObjectShortName">MBI_PRECH_COL</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/MBI_RESETN_GLOB" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MBI_RESETN_GLOB</obj_property>
+      <obj_property name="ObjectShortName">MBI_RESETN_GLOB</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/MBI_CLKMPRE" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MBI_CLKMPRE</obj_property>
+      <obj_property name="ObjectShortName">MBI_CLKMPRE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/MBI_CLKM" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MBI_CLKM</obj_property>
+      <obj_property name="ObjectShortName">MBI_CLKM</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/MBI_STREAM" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MBI_STREAM</obj_property>
+      <obj_property name="ObjectShortName">MBI_STREAM</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/MBI_DRAIN_B" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MBI_DRAIN_B</obj_property>
+      <obj_property name="ObjectShortName">MBI_DRAIN_B</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/MBI_MSTREAM" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">MBI_MSTREAM[9:0]</obj_property>
+      <obj_property name="ObjectShortName">MBI_MSTREAM[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/ISPI_DATA" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ISPI_DATA</obj_property>
+      <obj_property name="ObjectShortName">ISPI_DATA</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/ISPI_REGCLK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ISPI_REGCLK</obj_property>
+      <obj_property name="ObjectShortName">ISPI_REGCLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/ISPI_UPLOAD" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ISPI_UPLOAD</obj_property>
+      <obj_property name="ObjectShortName">ISPI_UPLOAD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/dout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dout[5:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/fifo_dout_valid" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">fifo_dout_valid</obj_property>
+      <obj_property name="ObjectShortName">fifo_dout_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/fifo_clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">fifo_clk</obj_property>
+      <obj_property name="ObjectShortName">fifo_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/TESTSIG0" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">TESTSIG0</obj_property>
+      <obj_property name="ObjectShortName">TESTSIG0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/TESTSIG1" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">TESTSIG1</obj_property>
+      <obj_property name="ObjectShortName">TESTSIG1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/TESTSIG2" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">TESTSIG2</obj_property>
+      <obj_property name="ObjectShortName">TESTSIG2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/TESTSIG3" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">TESTSIG3</obj_property>
+      <obj_property name="ObjectShortName">TESTSIG3</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/EXT_RESET_N" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">EXT_RESET_N</obj_property>
+      <obj_property name="ObjectShortName">EXT_RESET_N</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/USER_CLOCK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">USER_CLOCK</obj_property>
+      <obj_property name="ObjectShortName">USER_CLOCK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/SPI_FLASH_MISO" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">SPI_FLASH_MISO</obj_property>
+      <obj_property name="ObjectShortName">SPI_FLASH_MISO</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/ADC_DATA3" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ADC_DATA3[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ADC_DATA3[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/ADC_DATA2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ADC_DATA2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ADC_DATA2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/ADC_DATA1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ADC_DATA1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ADC_DATA1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/clkcnt" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">clkcnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">clkcnt[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MB_top/uut/MBI_regs/count" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">count[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

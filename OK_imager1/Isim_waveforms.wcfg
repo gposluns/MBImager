@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/MBImager/Documents/MBImager_ams/ISE_projects/OKelly/OK_imager1/TB_OKimager_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="TB_OKimager" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="40" />
+   <wvobject fp_name="/TB_OKimager/led" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">led[7:0]</obj_property>
+      <obj_property name="ObjectShortName">led[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/FSMIND0" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">FSMIND0</obj_property>
+      <obj_property name="ObjectShortName">FSMIND0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/FSMIND1" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">FSMIND1</obj_property>
+      <obj_property name="ObjectShortName">FSMIND1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/FSMIND0ACK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">FSMIND0ACK</obj_property>
+      <obj_property name="ObjectShortName">FSMIND0ACK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/FSMIND1ACK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">FSMIND1ACK</obj_property>
+      <obj_property name="ObjectShortName">FSMIND1ACK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/FPGA_rst_n" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">FPGA_rst_n</obj_property>
+      <obj_property name="ObjectShortName">FPGA_rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/CLKM" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLKM</obj_property>
+      <obj_property name="ObjectShortName">CLKM</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/CLKMPRE" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLKMPRE</obj_property>
+      <obj_property name="ObjectShortName">CLKMPRE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/STREAM" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">STREAM</obj_property>
+      <obj_property name="ObjectShortName">STREAM</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/MSTREAM" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">MSTREAM[10:1]</obj_property>
+      <obj_property name="ObjectShortName">MSTREAM[10:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/OK_DRAIN_B" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">OK_DRAIN_B</obj_property>
+      <obj_property name="ObjectShortName">OK_DRAIN_B</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/OK_PIXRES_GLOB" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">OK_PIXRES_GLOB</obj_property>
+      <obj_property name="ObjectShortName">OK_PIXRES_GLOB</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/PHI1" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">PHI1</obj_property>
+      <obj_property name="ObjectShortName">PHI1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/ROW_ADD" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ROW_ADD</obj_property>
+      <obj_property name="ObjectShortName">ROW_ADD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/PIXRES" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">PIXRES</obj_property>
+      <obj_property name="ObjectShortName">PIXRES</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/PRECHN_AMP" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">PRECHN_AMP</obj_property>
+      <obj_property name="ObjectShortName">PRECHN_AMP</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/MUX_ADD" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MUX_ADD</obj_property>
+      <obj_property name="ObjectShortName">MUX_ADD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/CLK_MOD" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLK_MOD</obj_property>
+      <obj_property name="ObjectShortName">CLK_MOD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/CLKN_MOD" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLKN_MOD</obj_property>
+      <obj_property name="ObjectShortName">CLKN_MOD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/PRECH_COL" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">PRECH_COL</obj_property>
+      <obj_property name="ObjectShortName">PRECH_COL</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/ADC_DATA_VALID" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ADC_DATA_VALID</obj_property>
+      <obj_property name="ObjectShortName">ADC_DATA_VALID</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/DDR_DATA_VALID" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">DDR_DATA_VALID</obj_property>
+      <obj_property name="ObjectShortName">DDR_DATA_VALID</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/sys_clkn" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sys_clkn</obj_property>
+      <obj_property name="ObjectShortName">sys_clkn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/sys_clkp" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sys_clkp</obj_property>
+      <obj_property name="ObjectShortName">sys_clkp</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/im_data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">im_data[5:0]</obj_property>
+      <obj_property name="ObjectShortName">im_data[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/im_data_val" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">im_data_val</obj_property>
+      <obj_property name="ObjectShortName">im_data_val</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/im_data_clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">im_data_clk</obj_property>
+      <obj_property name="ObjectShortName">im_data_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/clkcnt" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">clkcnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">clkcnt[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/ADC_PIXCLK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ADC_PIXCLK</obj_property>
+      <obj_property name="ObjectShortName">ADC_PIXCLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/uut/CLKMPRE_int" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLKMPRE_int</obj_property>
+      <obj_property name="ObjectShortName">CLKMPRE_int</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/uut/CLKMPRE_int180" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLKMPRE_int180</obj_property>
+      <obj_property name="ObjectShortName">CLKMPRE_int180</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/uut/CLK_HS" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLK_HS</obj_property>
+      <obj_property name="ObjectShortName">CLK_HS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/uut/ROImager_inst/count_subsc" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">count_subsc[31:0]</obj_property>
+      <obj_property name="ObjectShortName">count_subsc[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/uut/RstPat" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">RstPat</obj_property>
+      <obj_property name="ObjectShortName">RstPat</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/uut/Pat_to_FIFO" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">Pat_to_FIFO[10:1]</obj_property>
+      <obj_property name="ObjectShortName">Pat_to_FIFO[10:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/uut/PatFIFO_wr" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">PatFIFO_wr</obj_property>
+      <obj_property name="ObjectShortName">PatFIFO_wr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/uut/pat_gen/state" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">state[4:0]</obj_property>
+      <obj_property name="ObjectShortName">state[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/uut/PatFIFO_empty" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">PatFIFO_empty</obj_property>
+      <obj_property name="ObjectShortName">PatFIFO_empty</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/uut/pat_gen/cntPat" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">cntPat[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cntPat[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_OKimager/uut/valid_pat" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">valid_pat</obj_property>
+      <obj_property name="ObjectShortName">valid_pat</obj_property>
+   </wvobject>
+</wave_config>
