@@ -20,6 +20,8 @@ module ROImager
   ADC_CLK,						  // ADC CLK of the TI_ADCs, 3x the ADC_PIXCLK
   CLK_MOD,						  // Modulation clk for the ToF pixel
   CLKN_MOD,						  // Modulation clk for the ToF pixel
+//  CLKL_MOD,						  // Modulation clk for light source
+  DRAIN_B,						  // Activation signal for ToF pixel clk
   PRECH_COL,					  // Column precharge signal (used during readout)
   ADC_DATA_VALID,				  // It determines when the ADC data is valid
   DDR_DATA_VALID,				  // Determining the validity of the DDR output
@@ -48,6 +50,8 @@ input									  ADC_PIXCLK;
 input									  ADC_CLK;
 output									  CLK_MOD;
 output									  CLKN_MOD;
+//output										CLKL_MOD;
+input 									DRAIN_B;
 output									  PRECH_COL;
 output									  ADC_DATA_VALID;
 output									  DDR_DATA_VALID;
@@ -217,14 +221,74 @@ genvar byte_index;
 	  
 	assign	ADC_DATA_Vint = shiftreg[tlat3-1];
 	
+//SYNC CLOCK IMPLEMENTATION
+  wire			W_CLK_MOD;
+  wire			W_FREQ_CHNG;
+  wire [3:0]	W_PHASE;
+  wire [1:0]	W_PHASE_SEL;
+  wire			W_TPNO_IN;
+	
 
+//  assign CLK_MOD = DRAIN_B & W_CLK_MOD;
+//  DCM_CLKGEN #(
+//		.CLKFXDV_DIVIDE(2),
+//		.CLKFX_DIVIDE(1),
+//		.CLKFX_MD_MAX(5.0),
+//		.CLKFX_MULTIPLY(1),
+//		.CLK_IN_PERIOD("10.0"),
+//		.STARTUP_WAIT("FALSE")
+//  )
+//  DCM_freqchng (
+//		.CLKFX(W_FREQ_CHNG),
+//		.CLKIN(ADC_CLK)
+//  );
+//  
+//  DCM_SP #(
+//		.CLKDV_DIVIDE(2.0),
+//		.CLKFX_DIVIDE(1),
+//		.CLKFX_MULTIPLY(4),
+//		.CLK_IN_DIVIDE_BY_2("FALSE"),
+//		.CLKIN_PERIOD(0.0),
+//		.CLKOUT_PHASE_SHIFT("NONE"),
+//		.CLK_FEEDBACK("1X"),
+//		.DESKEW_ADJUST("SYSTEM_SYNCHRONOUS"),
+//		.DLL_FREQUENCY_MODE("LOW"),
+//		.DUTY_CYCLE_CORRECTION("TRUE"),
+//		.PHASE_SHIFT(0),
+//		.STARTUP_WAIT("FALSE")
+//	)
+//	DCM_phaseselect (
+//		.CLK0(W_PHASE[0]),
+//		.CLK90(W_PHASE[1],
+//		.CLK180(W_PHASE[2]),
+//		.CLK270(W_PHASE[3]),
+//		.CLKIN(W_FREQ_CHNG)
+//	);
+//	
+// assign CLKL_MOD = W_PHASE[0];
+//	assign W_TPNO_IN = W_PHASE[W_PHASESEL);
+//	
+//	twophase_nonoverlap tpno (
+//		.CLK_IN(W_PHASE_SEL),
+//		.CLK_OUT(CLK_MOD),
+//		.CLK_OUT_N(CLKN_MOD)
+//	);
+	
+	twophase_nonoverlap tpno (
+		.CLK_IN(ADC_PIXCLK),
+		.CLK_OUT(CLK_MOD),
+		.CLK_OUT_N(CLKN_MOD)
+	);
+	
+// END SYNC IMPLEMENTATION
+  
   assign		PHI1 = PHI1_i;
   assign		ROW_ADD = rowadd;
   assign		PIXRES = PIXRES_i;
   assign		PRECHN_AMP = PRECHN_AMP_i;
   assign		MUX_ADD = MUX_ADD_i;
-  assign		CLK_MOD = 1;
-  assign		CLKN_MOD = 0;
+//  assign		CLK_MOD = 1;
+//  assign		CLKN_MOD = 0;
   assign		PRECH_COL = PRECH_COL_i;
   assign		ADC_DATA_VALID = ADC_DATA_Vint;
   assign		DDR_DATA_VALID = DDR_DATA_VALID_int;

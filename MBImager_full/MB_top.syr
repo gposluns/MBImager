@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 1.20 secs
+Total REAL time to Xst completion: 2.00 secs
+Total CPU time to Xst completion: 1.77 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 1.21 secs
+Total REAL time to Xst completion: 2.00 secs
+Total CPU time to Xst completion: 1.79 secs
  
 --> Reading design: MB_top.prj
 
@@ -108,7 +108,7 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:/Users/shich/OneDrive/Documents/2017 Summer/MBImager/MBImager_full/MB_SPI/hdl/MB_SPI.v" into library work
+Analyzing Verilog file "C:/Users/shich/OneDrive/Documents/2017_Summer/MBImager/MBImager_full/MB_SPI/hdl/MB_SPI.v" into library work
 Parsing module <MB_SPI>.
 Parsing module <MB_SPI_proc_sys_reset_0_wrapper>.
 Parsing module <MB_SPI_microblaze_0_ilmb_wrapper>.
@@ -121,17 +121,20 @@ Parsing module <MB_SPI_debug_module_wrapper>.
 Parsing module <MB_SPI_clock_generator_0_wrapper>.
 Parsing module <MB_SPI_axi4lite_0_wrapper>.
 Parsing module <MB_SPI_generic_spi_wrapper>.
-Analyzing Verilog file "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\TI_ADC_RO.v" into library work
+Analyzing Verilog file "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\twophase_nonoverlap.v" into library work
+Parsing module <twophase_nonoverlap>.
+Parsing module <nor1>.
+Analyzing Verilog file "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\TI_ADC_RO.v" into library work
 Parsing module <TI_ADC_RO>.
-Analyzing Verilog file "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\ROImager.v" into library work
+Analyzing Verilog file "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\ROImager.v" into library work
 Parsing module <ROImager>.
-Analyzing Verilog file "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_SPI\MB_SPI_top.v" into library work
+Analyzing Verilog file "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_SPI\MB_SPI_top.v" into library work
 Parsing module <MB_SPI_top>.
-Analyzing Verilog file "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\ipcore_dir\fifo_4kB.v" into library work
+Analyzing Verilog file "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\ipcore_dir\fifo_4kB.v" into library work
 Parsing module <fifo_4kB>.
-Analyzing Verilog file "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\Imager_SPI.v" into library work
+Analyzing Verilog file "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\Imager_SPI.v" into library work
 Parsing module <Imager_SPI>.
-Analyzing Verilog file "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" into library work
+Analyzing Verilog file "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" into library work
 Parsing module <MB_top>.
 Parsing module <ACLK_GENERATOR>.
 
@@ -144,17 +147,21 @@ Elaborating module <MB_top>.
 Elaborating module <MB_SPI_top>.
 
 Elaborating module <MB_SPI>.
-WARNING:HDLCompiler:1499 - "C:/Users/shich/OneDrive/Documents/2017 Summer/MBImager/MBImager_full/MB_SPI/hdl/MB_SPI.v" Line 5: Empty module <MB_SPI> remains a black box.
+WARNING:HDLCompiler:1499 - "C:/Users/shich/OneDrive/Documents/2017_Summer/MBImager/MBImager_full/MB_SPI/hdl/MB_SPI.v" Line 5: Empty module <MB_SPI> remains a black box.
 
 Elaborating module <ROImager>.
-WARNING:HDLCompiler:413 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\ROImager.v" Line 222: Result of 32-bit expression is truncated to fit in 8-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\ROImager.v" Line 225: Result of 32-bit expression is truncated to fit in 6-bit target.
+
+Elaborating module <twophase_nonoverlap>.
+
+Elaborating module <nor1>.
+WARNING:HDLCompiler:413 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\ROImager.v" Line 286: Result of 32-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\ROImager.v" Line 289: Result of 32-bit expression is truncated to fit in 6-bit target.
 
 Elaborating module <ACLK_GENERATOR>.
-WARNING:HDLCompiler:413 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 436: Result of 17-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 479: Result of 17-bit expression is truncated to fit in 16-bit target.
 
 Elaborating module <BUFG>.
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 158: Assignment to ADC_CLK90_n ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 161: Assignment to ADC_CLK90_n ignored, since the identifier is never used
 
 Elaborating module <TI_ADC_RO>.
 
@@ -163,54 +170,54 @@ Elaborating module <IBUF(IOSTANDARD="LVCMOS33")>.
 Elaborating module <IDDR2(DDR_ALIGNMENT="C0",INIT_Q0=1'b0,INIT_Q1=1'b0,SRTYPE="ASYNC")>.
 
 Elaborating module <fifo_4kB>.
-WARNING:HDLCompiler:1499 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\ipcore_dir\fifo_4kB.v" Line 39: Empty module <fifo_4kB> remains a black box.
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 198: Assignment to full ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 199: Assignment to empty ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 200: Assignment to almost_empty ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 202: Assignment to flag_138cols ignored, since the identifier is never used
+WARNING:HDLCompiler:1499 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\ipcore_dir\fifo_4kB.v" Line 39: Empty module <fifo_4kB> remains a black box.
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 201: Assignment to full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 202: Assignment to empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 203: Assignment to almost_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 205: Assignment to flag_138cols ignored, since the identifier is never used
 
 Elaborating module <DCM_SP(CLKDV_DIVIDE=4,CLKFX_DIVIDE=10,CLKFX_MULTIPLY=5,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=10.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",DFS_FREQUENCY_MODE="LOW",DLL_FREQUENCY_MODE="LOW",DSS_MODE="NONE",DUTY_CYCLE_CORRECTION="TRUE",FACTORY_JF=16'b1100000010000000,PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 232: Assignment to CLK180_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 233: Assignment to CLK270_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 234: Assignment to CLK2X_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 235: Assignment to CLK2X180_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 236: Assignment to CLK90_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 238: Assignment to CLK_HS ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 239: Assignment to CLK_HS180 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 240: Assignment to LOCKED_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 241: Assignment to PSDONE_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 242: Assignment to STATUS_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 235: Assignment to CLK180_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 236: Assignment to CLK270_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 237: Assignment to CLK2X_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 238: Assignment to CLK2X180_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 239: Assignment to CLK90_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 241: Assignment to CLK_HS ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 242: Assignment to CLK_HS180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 243: Assignment to LOCKED_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 244: Assignment to PSDONE_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 245: Assignment to STATUS_2 ignored, since the identifier is never used
 
 Elaborating module <DCM_CLKGEN(CLKFXDV_DIVIDE=2.0,CLKFX_DIVIDE=48.0,CLKFX_MD_MAX=1.0,CLKFX_MULTIPLY=4.0,CLKIN_PERIOD=10.0,SPREAD_SPECTRUM="NONE",STARTUP_WAIT="FALSE")>.
 WARNING:HDLCompiler:413 - "N:/P.20131013/rtf/devlib/verilog/src/iSE/unisim_comp.v" Line 1246: Result of 64-bit expression is truncated to fit in 32-bit target.
-WARNING:HDLCompiler:1843 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 258: Possible conversion of parameter value of CLKFXDV_DIVIDE to fit the type of formal
+WARNING:HDLCompiler:1843 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 261: Possible conversion of parameter value of CLKFXDV_DIVIDE to fit the type of formal
 WARNING:HDLCompiler:413 - "N:/P.20131013/rtf/devlib/verilog/src/iSE/unisim_comp.v" Line 1247: Result of 64-bit expression is truncated to fit in 32-bit target.
-WARNING:HDLCompiler:1843 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 259: Possible conversion of parameter value of CLKFX_DIVIDE to fit the type of formal
+WARNING:HDLCompiler:1843 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 262: Possible conversion of parameter value of CLKFX_DIVIDE to fit the type of formal
 WARNING:HDLCompiler:413 - "N:/P.20131013/rtf/devlib/verilog/src/iSE/unisim_comp.v" Line 1248: Result of 64-bit expression is truncated to fit in 32-bit target.
-WARNING:HDLCompiler:1843 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 261: Possible conversion of parameter value of CLKFX_MULTIPLY to fit the type of formal
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 269: Assignment to ADC_CLK180 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 270: Assignment to CLKFXDV_1 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 271: Assignment to LOCKED_1 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 272: Assignment to PROGDONE_1 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 273: Assignment to STATUS_1 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 283: Assignment to ADC_CLK_n ignored, since the identifier is never used
+WARNING:HDLCompiler:1843 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 264: Possible conversion of parameter value of CLKFX_MULTIPLY to fit the type of formal
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 272: Assignment to ADC_CLK180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 273: Assignment to CLKFXDV_1 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 274: Assignment to LOCKED_1 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 275: Assignment to PROGDONE_1 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 276: Assignment to STATUS_1 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 286: Assignment to ADC_CLK_n ignored, since the identifier is never used
 
 Elaborating module <DCM_SP(CLKDV_DIVIDE=3,CLKFX_DIVIDE=4,CLKFX_MULTIPLY=2,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=10.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",DFS_FREQUENCY_MODE="LOW",DLL_FREQUENCY_MODE="LOW",DSS_MODE="NONE",DUTY_CYCLE_CORRECTION="TRUE",FACTORY_JF=16'b1100000010000000,PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 309: Assignment to CLK180 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 310: Assignment to ADC_CLK270 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 311: Assignment to CLK2X ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 312: Assignment to CLK2X180 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 315: Assignment to CLKFX ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 316: Assignment to CLKFX180 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 317: Assignment to LOCKED ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 318: Assignment to PSDONE ignored, since the identifier is never used
-WARNING:HDLCompiler:189 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 319: Size mismatch in connection of port <STATUS>. Formal port size is 8-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 319: Assignment to STATUS ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 312: Assignment to CLK180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 313: Assignment to ADC_CLK270 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 314: Assignment to CLK2X ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 315: Assignment to CLK2X180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 318: Assignment to CLKFX ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 319: Assignment to CLKFX180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 320: Assignment to LOCKED ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 321: Assignment to PSDONE ignored, since the identifier is never used
+WARNING:HDLCompiler:189 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 322: Size mismatch in connection of port <STATUS>. Formal port size is 8-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" Line 322: Assignment to STATUS ignored, since the identifier is never used
 
 Elaborating module <ODDR2(DDR_ALIGNMENT="NONE",INIT=1'b0,SRTYPE="SYNC")>.
 
 Elaborating module <Imager_SPI>.
-WARNING:HDLCompiler:872 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\Imager_SPI.v" Line 35: Using initial value of regs since it is never assigned
+WARNING:HDLCompiler:872 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\Imager_SPI.v" Line 35: Using initial value of regs since it is never assigned
 
 Elaborating module <BUFGCE>.
 
@@ -219,34 +226,35 @@ Elaborating module <BUFGCE>.
 =========================================================================
 
 Synthesizing Unit <MB_top>.
-    Related source file is "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v".
+    Related source file is "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v".
         C_ADCCLK_R = 12
         C_CLKHS_D = 10
         C_CLKHS_M = 5
         C_FIFOREAD_R = 4
-INFO:Xst:3210 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" line 190: Output port <full> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" line 190: Output port <empty> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" line 190: Output port <almost_empty> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" line 190: Output port <prog_full> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" line 193: Output port <full> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" line 193: Output port <empty> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" line 193: Output port <almost_empty> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v" line 193: Output port <prog_full> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <MB_top> synthesized.
 
 Synthesizing Unit <MB_SPI_top>.
-    Related source file is "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_SPI\MB_SPI_top.v".
+    Related source file is "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_SPI\MB_SPI_top.v".
     Set property "BOX_TYPE = user_black_box" for instance <MB_SPI_i>.
     Summary:
 	no macro.
 Unit <MB_SPI_top> synthesized.
 
 Synthesizing Unit <ROImager>.
-    Related source file is "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\ROImager.v".
+    Related source file is "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\ROImager.v".
         phi1_cnt = 9
         phi2_cnt = 9
         C_NUM_MUX = 46
         C_PRECH_cnt = 1
         C_NUM_ROWS = 160
         tlat3 = 24
+WARNING:Xst:647 - Input <DRAIN_B> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit register for signal <DDR_DATA_VALID_int>.
     Found 1-bit register for signal <FSMIND1ACK_i>.
     Found 1-bit register for signal <FSMIND0_i>.
@@ -273,13 +281,13 @@ Synthesizing Unit <ROImager>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 32-bit adder for signal <rowadd[31]_GND_4_o_add_9_OUT> created at line 134.
-    Found 32-bit adder for signal <countpix[31]_GND_4_o_add_15_OUT> created at line 147.
-    Found 32-bit comparator greater for signal <n0008> created at line 138
-    Found 32-bit comparator greater for signal <GND_4_o_countpix[31]_LessThan_13_o> created at line 138
-    Found 32-bit comparator greater for signal <GND_4_o_countpix[31]_LessThan_35_o> created at line 168
-    Found 32-bit comparator greater for signal <n0039> created at line 168
-    Found 32-bit comparator greater for signal <GND_4_o_rowadd[31]_LessThan_38_o> created at line 171
+    Found 32-bit adder for signal <rowadd[31]_GND_4_o_add_9_OUT> created at line 138.
+    Found 32-bit adder for signal <countpix[31]_GND_4_o_add_15_OUT> created at line 151.
+    Found 32-bit comparator greater for signal <n0008> created at line 142
+    Found 32-bit comparator greater for signal <GND_4_o_countpix[31]_LessThan_13_o> created at line 142
+    Found 32-bit comparator greater for signal <GND_4_o_countpix[31]_LessThan_35_o> created at line 172
+    Found 32-bit comparator greater for signal <n0039> created at line 172
+    Found 32-bit comparator greater for signal <GND_4_o_rowadd[31]_LessThan_38_o> created at line 175
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred 127 D-type flip-flop(s).
@@ -288,12 +296,24 @@ Synthesizing Unit <ROImager>.
 	inferred   1 Finite State Machine(s).
 Unit <ROImager> synthesized.
 
+Synthesizing Unit <twophase_nonoverlap>.
+    Related source file is "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\twophase_nonoverlap.v".
+    Summary:
+	no macro.
+Unit <twophase_nonoverlap> synthesized.
+
+Synthesizing Unit <nor1>.
+    Related source file is "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\twophase_nonoverlap.v".
+    Summary:
+	no macro.
+Unit <nor1> synthesized.
+
 Synthesizing Unit <ACLK_GENERATOR>.
-    Related source file is "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v".
+    Related source file is "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_top.v".
     Found 1-bit register for signal <CLOCK_OUT>.
     Found 16-bit register for signal <counter>.
-    Found 16-bit adder for signal <counter[15]_GND_5_o_add_2_OUT> created at line 436.
-    Found 16-bit comparator greater for signal <GND_5_o_counter[15]_LessThan_2_o> created at line 429
+    Found 16-bit adder for signal <counter[15]_GND_7_o_add_2_OUT> created at line 479.
+    Found 16-bit comparator greater for signal <GND_7_o_counter[15]_LessThan_2_o> created at line 472
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  17 D-type flip-flop(s).
@@ -301,22 +321,22 @@ Synthesizing Unit <ACLK_GENERATOR>.
 Unit <ACLK_GENERATOR> synthesized.
 
 Synthesizing Unit <TI_ADC_RO>.
-    Related source file is "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\TI_ADC_RO.v".
+    Related source file is "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\TI_ADC_RO.v".
     Summary:
 	no macro.
 Unit <TI_ADC_RO> synthesized.
 
 Synthesizing Unit <Imager_SPI>.
-    Related source file is "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\Imager_SPI.v".
+    Related source file is "C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\Imager_SPI.v".
     Found 1-bit register for signal <clk_en>.
     Found 1-bit register for signal <upload_i>.
     Found 40-bit register for signal <regdata>.
     Found 32-bit register for signal <count>.
-    Found 32-bit adder for signal <count[31]_GND_15_o_add_8_OUT> created at line 69.
-    Found 32-bit comparator greater for signal <GND_15_o_count[31]_LessThan_2_o> created at line 54
-    Found 32-bit comparator greater for signal <GND_15_o_count[31]_LessThan_4_o> created at line 56
-    Found 32-bit comparator greater for signal <GND_15_o_count[31]_LessThan_6_o> created at line 61
-    Found 32-bit comparator greater for signal <GND_15_o_count[31]_LessThan_8_o> created at line 67
+    Found 32-bit adder for signal <count[31]_GND_17_o_add_8_OUT> created at line 69.
+    Found 32-bit comparator greater for signal <GND_17_o_count[31]_LessThan_2_o> created at line 54
+    Found 32-bit comparator greater for signal <GND_17_o_count[31]_LessThan_4_o> created at line 56
+    Found 32-bit comparator greater for signal <GND_17_o_count[31]_LessThan_6_o> created at line 61
+    Found 32-bit comparator greater for signal <GND_17_o_count[31]_LessThan_8_o> created at line 67
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  74 D-type flip-flop(s).
@@ -490,6 +510,10 @@ Optimizing unit <Imager_SPI> ...
 Optimizing unit <ACLK_GENERATOR> ...
 
 Optimizing unit <ROImager> ...
+
+Optimizing unit <twophase_nonoverlap> ...
+
+Optimizing unit <nor1> ...
 WARNING:Xst:1293 - FF/Latch <count_31> has a constant value of 0 in block <MBI_regs>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <count_30> has a constant value of 0 in block <MBI_regs>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <count_29> has a constant value of 0 in block <MBI_regs>. This FF/Latch will be trimmed during the optimization process.
@@ -644,11 +668,11 @@ Top Level Output File Name         : MB_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 3360
+# BELS                             : 3367
 #      GND                         : 19
-#      INV                         : 60
+#      INV                         : 65
 #      LUT1                        : 124
-#      LUT2                        : 254
+#      LUT2                        : 256
 #      LUT3                        : 456
 #      LUT4                        : 432
 #      LUT5                        : 364
@@ -660,7 +684,7 @@ Primitive and Black Box Usage:
 #      MUXF7                       : 122
 #      VCC                         : 12
 #      XORCY                       : 220
-# FlipFlops/Latches                : 2507
+# FlipFlops/Latches                : 2509
 #      FD                          : 337
 #      FD_1                        : 1
 #      FDC                         : 178
@@ -675,7 +699,7 @@ Primitive and Black Box Usage:
 #      FDS                         : 20
 #      FDSE                        : 45
 #      IDDR2                       : 24
-#      ODDR2                       : 4
+#      ODDR2                       : 6
 # RAMS                             : 44
 #      RAM32M                      : 16
 #      RAMB16BWER                  : 28
@@ -707,18 +731,18 @@ Selected Device : 6slx25tfgg484-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            2499  out of  30064     8%  
- Number of Slice LUTs:                 2796  out of  15032    18%  
-    Number used as Logic:              2599  out of  15032    17%  
+ Number of Slice Registers:            2501  out of  30064     8%  
+ Number of Slice LUTs:                 2803  out of  15032    18%  
+    Number used as Logic:              2606  out of  15032    17%  
     Number used as Memory:              197  out of   3664     5%  
        Number used as RAM:               64
        Number used as SRL:              133
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   4097
-   Number with an unused Flip Flop:    1598  out of   4097    39%  
-   Number with an unused LUT:          1301  out of   4097    31%  
-   Number of fully used LUT-FF pairs:  1198  out of   4097    29%  
+ Number of LUT Flip Flop pairs used:   4106
+   Number with an unused Flip Flop:    1605  out of   4106    39%  
+   Number with an unused LUT:          1303  out of   4106    31%  
+   Number of fully used LUT-FF pairs:  1198  out of   4106    29%  
    Number of unique control sets:       133
 
 IO Utilization: 
@@ -754,9 +778,11 @@ Clock Information:
 -------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+-------+
 Clock Signal                                                 | Clock buffer(FF name)                                                                                                                 | Load  |
 -------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+-------+
-MBI_regs/SPI_CLK_INV_17_o(MBI_regs/SPI_CLK_INV_17_o1_INV_0:O)| BUFGMUX(*)(ODDR2_ISPI_REGCLK_buf)                                                                                                     | 2     |
+MBI_regs/SPI_CLK_INV_23_o(MBI_regs/SPI_CLK_INV_23_o1_INV_0:O)| BUFGMUX(*)(ODDR2_ISPI_REGCLK_buf)                                                                                                     | 2     |
 clk_gen/CLOCK_OUT                                            | NONE(ODDR2_ADC_READ_ACLK_buf)                                                                                                         | 56    |
 USER_CLOCK                                                   | DCM_SP:CLKDV                                                                                                                          | 131   |
+imager_time/tpno/nor1/O(imager_time/tpno/nor1/O1:O)          | NONE(*)(ODDR2_CLK_MOD_buf)                                                                                                            | 2     |
+imager_time/tpno/nor2/O(imager_time/tpno/nor2/O1:O)          | NONE(*)(ODDR2_CLKN_MOD_buf)                                                                                                           | 2     |
 ADC_CLK                                                      | DCM_SP:CLKDV                                                                                                                          | 58    |
 ADC_CLK                                                      | DCM_SP:CLK90                                                                                                                          | 48    |
 USER_CLOCK                                                   | PLL_ADV:CLKOUT0                                                                                                                       | 2027  |
@@ -764,7 +790,7 @@ uBlaze_SPI/MB_SPI_i/debug_module/debug_module/drck_i         | BUFG             
 uBlaze_SPI/MB_SPI_i/debug_module/Ext_JTAG_UPDATE             | NONE(uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.Use_Debug_Logic.Master_Core.Debug_Perf/command_reg_0)| 43    |
 ADC_CLK                                                      | BUFG                                                                                                                                  | 153   |
 -------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+-------+
-(*) This 1 clock signal(s) are generated by combinatorial logic,
+(*) These 3 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -920,13 +946,13 @@ Delay:               4.640ns (Levels of Logic = 8)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDRE:C->Q             9   0.447   1.174  count_7 (count_7)
-     LUT5:I0->O            1   0.203   0.000  Mcompar_GND_15_o_count[31]_LessThan_6_o_lut<1> (Mcompar_GND_15_o_count[31]_LessThan_6_o_lut<1>)
-     MUXCY:S->O            1   0.172   0.000  Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<1> (Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<1>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<2> (Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<2>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<3> (Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<3>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<4> (Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<4>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<5> (Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<5>)
-     MUXCY:CI->O           3   0.213   0.898  Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<6> (Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<6>)
+     LUT5:I0->O            1   0.203   0.000  Mcompar_GND_17_o_count[31]_LessThan_6_o_lut<1> (Mcompar_GND_17_o_count[31]_LessThan_6_o_lut<1>)
+     MUXCY:S->O            1   0.172   0.000  Mcompar_GND_17_o_count[31]_LessThan_6_o_cy<1> (Mcompar_GND_17_o_count[31]_LessThan_6_o_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_17_o_count[31]_LessThan_6_o_cy<2> (Mcompar_GND_17_o_count[31]_LessThan_6_o_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_17_o_count[31]_LessThan_6_o_cy<3> (Mcompar_GND_17_o_count[31]_LessThan_6_o_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_17_o_count[31]_LessThan_6_o_cy<4> (Mcompar_GND_17_o_count[31]_LessThan_6_o_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_17_o_count[31]_LessThan_6_o_cy<5> (Mcompar_GND_17_o_count[31]_LessThan_6_o_cy<5>)
+     MUXCY:CI->O           3   0.213   0.898  Mcompar_GND_17_o_count[31]_LessThan_6_o_cy<6> (Mcompar_GND_17_o_count[31]_LessThan_6_o_cy<6>)
      LUT4:I0->O           13   0.203   0.932  _n0075_inv1 (_n0075_inv)
      FDRE:CE                   0.322          count_0
     ----------------------------------------
@@ -1253,14 +1279,14 @@ uBlaze_SPI/MB_SPI_i/debug_module/debug_module/drck_i|    2.427|    3.477|    3.2
 =========================================================================
 
 
-Total REAL time to Xst completion: 318.00 secs
-Total CPU time to Xst completion: 317.79 secs
+Total REAL time to Xst completion: 325.00 secs
+Total CPU time to Xst completion: 325.34 secs
  
 --> 
 
-Total memory usage is 456148 kilobytes
+Total memory usage is 440492 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  144 (   0 filtered)
+Number of warnings :  145 (   0 filtered)
 Number of infos    :   67 (   0 filtered)
 
