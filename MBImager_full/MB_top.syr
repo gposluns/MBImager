@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 1.20 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 1.21 secs
  
 --> Reading design: MB_top.prj
 
@@ -108,7 +108,7 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:/Users/MBImager/Documents/MBImager_ams/ISE_projects/MotherBoard/MBImager_full/MB_SPI/hdl/MB_SPI.v" into library work
+Analyzing Verilog file "C:/Users/shich/OneDrive/Documents/2017 Summer/MBImager/MBImager_full/MB_SPI/hdl/MB_SPI.v" into library work
 Parsing module <MB_SPI>.
 Parsing module <MB_SPI_proc_sys_reset_0_wrapper>.
 Parsing module <MB_SPI_microblaze_0_ilmb_wrapper>.
@@ -121,17 +121,17 @@ Parsing module <MB_SPI_debug_module_wrapper>.
 Parsing module <MB_SPI_clock_generator_0_wrapper>.
 Parsing module <MB_SPI_axi4lite_0_wrapper>.
 Parsing module <MB_SPI_generic_spi_wrapper>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\TI_ADC_RO.v" into library work
+Analyzing Verilog file "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\TI_ADC_RO.v" into library work
 Parsing module <TI_ADC_RO>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\ROImager.v" into library work
+Analyzing Verilog file "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\ROImager.v" into library work
 Parsing module <ROImager>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_SPI\MB_SPI_top.v" into library work
+Analyzing Verilog file "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_SPI\MB_SPI_top.v" into library work
 Parsing module <MB_SPI_top>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\ipcore_dir\fifo_4kB.v" into library work
+Analyzing Verilog file "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\ipcore_dir\fifo_4kB.v" into library work
 Parsing module <fifo_4kB>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\Imager_SPI.v" into library work
+Analyzing Verilog file "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\Imager_SPI.v" into library work
 Parsing module <Imager_SPI>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" into library work
+Analyzing Verilog file "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" into library work
 Parsing module <MB_top>.
 Parsing module <ACLK_GENERATOR>.
 
@@ -144,17 +144,17 @@ Elaborating module <MB_top>.
 Elaborating module <MB_SPI_top>.
 
 Elaborating module <MB_SPI>.
-WARNING:HDLCompiler:1499 - "C:/Users/MBImager/Documents/MBImager_ams/ISE_projects/MotherBoard/MBImager_full/MB_SPI/hdl/MB_SPI.v" Line 5: Empty module <MB_SPI> remains a black box.
+WARNING:HDLCompiler:1499 - "C:/Users/shich/OneDrive/Documents/2017 Summer/MBImager/MBImager_full/MB_SPI/hdl/MB_SPI.v" Line 5: Empty module <MB_SPI> remains a black box.
 
 Elaborating module <ROImager>.
-WARNING:HDLCompiler:413 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\ROImager.v" Line 222: Result of 32-bit expression is truncated to fit in 8-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\ROImager.v" Line 225: Result of 32-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\ROImager.v" Line 222: Result of 32-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\ROImager.v" Line 225: Result of 32-bit expression is truncated to fit in 6-bit target.
 
 Elaborating module <ACLK_GENERATOR>.
-WARNING:HDLCompiler:413 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 436: Result of 17-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 436: Result of 17-bit expression is truncated to fit in 16-bit target.
 
 Elaborating module <BUFG>.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 158: Assignment to ADC_CLK90_n ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 158: Assignment to ADC_CLK90_n ignored, since the identifier is never used
 
 Elaborating module <TI_ADC_RO>.
 
@@ -163,54 +163,54 @@ Elaborating module <IBUF(IOSTANDARD="LVCMOS33")>.
 Elaborating module <IDDR2(DDR_ALIGNMENT="C0",INIT_Q0=1'b0,INIT_Q1=1'b0,SRTYPE="ASYNC")>.
 
 Elaborating module <fifo_4kB>.
-WARNING:HDLCompiler:1499 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\ipcore_dir\fifo_4kB.v" Line 39: Empty module <fifo_4kB> remains a black box.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 198: Assignment to full ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 199: Assignment to empty ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 200: Assignment to almost_empty ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 202: Assignment to flag_138cols ignored, since the identifier is never used
+WARNING:HDLCompiler:1499 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\ipcore_dir\fifo_4kB.v" Line 39: Empty module <fifo_4kB> remains a black box.
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 198: Assignment to full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 199: Assignment to empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 200: Assignment to almost_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 202: Assignment to flag_138cols ignored, since the identifier is never used
 
 Elaborating module <DCM_SP(CLKDV_DIVIDE=4,CLKFX_DIVIDE=10,CLKFX_MULTIPLY=5,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=10.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",DFS_FREQUENCY_MODE="LOW",DLL_FREQUENCY_MODE="LOW",DSS_MODE="NONE",DUTY_CYCLE_CORRECTION="TRUE",FACTORY_JF=16'b1100000010000000,PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 232: Assignment to CLK180_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 233: Assignment to CLK270_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 234: Assignment to CLK2X_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 235: Assignment to CLK2X180_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 236: Assignment to CLK90_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 238: Assignment to CLK_HS ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 239: Assignment to CLK_HS180 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 240: Assignment to LOCKED_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 241: Assignment to PSDONE_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 242: Assignment to STATUS_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 232: Assignment to CLK180_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 233: Assignment to CLK270_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 234: Assignment to CLK2X_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 235: Assignment to CLK2X180_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 236: Assignment to CLK90_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 238: Assignment to CLK_HS ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 239: Assignment to CLK_HS180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 240: Assignment to LOCKED_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 241: Assignment to PSDONE_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 242: Assignment to STATUS_2 ignored, since the identifier is never used
 
 Elaborating module <DCM_CLKGEN(CLKFXDV_DIVIDE=2.0,CLKFX_DIVIDE=48.0,CLKFX_MD_MAX=1.0,CLKFX_MULTIPLY=4.0,CLKIN_PERIOD=10.0,SPREAD_SPECTRUM="NONE",STARTUP_WAIT="FALSE")>.
 WARNING:HDLCompiler:413 - "N:/P.20131013/rtf/devlib/verilog/src/iSE/unisim_comp.v" Line 1246: Result of 64-bit expression is truncated to fit in 32-bit target.
-WARNING:HDLCompiler:1843 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 258: Possible conversion of parameter value of CLKFXDV_DIVIDE to fit the type of formal
+WARNING:HDLCompiler:1843 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 258: Possible conversion of parameter value of CLKFXDV_DIVIDE to fit the type of formal
 WARNING:HDLCompiler:413 - "N:/P.20131013/rtf/devlib/verilog/src/iSE/unisim_comp.v" Line 1247: Result of 64-bit expression is truncated to fit in 32-bit target.
-WARNING:HDLCompiler:1843 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 259: Possible conversion of parameter value of CLKFX_DIVIDE to fit the type of formal
+WARNING:HDLCompiler:1843 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 259: Possible conversion of parameter value of CLKFX_DIVIDE to fit the type of formal
 WARNING:HDLCompiler:413 - "N:/P.20131013/rtf/devlib/verilog/src/iSE/unisim_comp.v" Line 1248: Result of 64-bit expression is truncated to fit in 32-bit target.
-WARNING:HDLCompiler:1843 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 261: Possible conversion of parameter value of CLKFX_MULTIPLY to fit the type of formal
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 269: Assignment to ADC_CLK180 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 270: Assignment to CLKFXDV_1 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 271: Assignment to LOCKED_1 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 272: Assignment to PROGDONE_1 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 273: Assignment to STATUS_1 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 283: Assignment to ADC_CLK_n ignored, since the identifier is never used
+WARNING:HDLCompiler:1843 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 261: Possible conversion of parameter value of CLKFX_MULTIPLY to fit the type of formal
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 269: Assignment to ADC_CLK180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 270: Assignment to CLKFXDV_1 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 271: Assignment to LOCKED_1 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 272: Assignment to PROGDONE_1 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 273: Assignment to STATUS_1 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 283: Assignment to ADC_CLK_n ignored, since the identifier is never used
 
 Elaborating module <DCM_SP(CLKDV_DIVIDE=3,CLKFX_DIVIDE=4,CLKFX_MULTIPLY=2,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=10.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",DFS_FREQUENCY_MODE="LOW",DLL_FREQUENCY_MODE="LOW",DSS_MODE="NONE",DUTY_CYCLE_CORRECTION="TRUE",FACTORY_JF=16'b1100000010000000,PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 309: Assignment to CLK180 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 310: Assignment to ADC_CLK270 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 311: Assignment to CLK2X ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 312: Assignment to CLK2X180 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 315: Assignment to CLKFX ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 316: Assignment to CLKFX180 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 317: Assignment to LOCKED ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 318: Assignment to PSDONE ignored, since the identifier is never used
-WARNING:HDLCompiler:189 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 319: Size mismatch in connection of port <STATUS>. Formal port size is 8-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 319: Assignment to STATUS ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 309: Assignment to CLK180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 310: Assignment to ADC_CLK270 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 311: Assignment to CLK2X ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 312: Assignment to CLK2X180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 315: Assignment to CLKFX ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 316: Assignment to CLKFX180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 317: Assignment to LOCKED ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 318: Assignment to PSDONE ignored, since the identifier is never used
+WARNING:HDLCompiler:189 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 319: Size mismatch in connection of port <STATUS>. Formal port size is 8-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:1127 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" Line 319: Assignment to STATUS ignored, since the identifier is never used
 
 Elaborating module <ODDR2(DDR_ALIGNMENT="NONE",INIT=1'b0,SRTYPE="SYNC")>.
 
 Elaborating module <Imager_SPI>.
-WARNING:HDLCompiler:872 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\Imager_SPI.v" Line 35: Using initial value of regs since it is never assigned
+WARNING:HDLCompiler:872 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\Imager_SPI.v" Line 35: Using initial value of regs since it is never assigned
 
 Elaborating module <BUFGCE>.
 
@@ -219,28 +219,28 @@ Elaborating module <BUFGCE>.
 =========================================================================
 
 Synthesizing Unit <MB_top>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v".
+    Related source file is "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v".
         C_ADCCLK_R = 12
         C_CLKHS_D = 10
         C_CLKHS_M = 5
         C_FIFOREAD_R = 4
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" line 190: Output port <full> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" line 190: Output port <empty> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" line 190: Output port <almost_empty> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" line 190: Output port <prog_full> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" line 190: Output port <full> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" line 190: Output port <empty> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" line 190: Output port <almost_empty> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v" line 190: Output port <prog_full> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <MB_top> synthesized.
 
 Synthesizing Unit <MB_SPI_top>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_SPI\MB_SPI_top.v".
+    Related source file is "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_SPI\MB_SPI_top.v".
     Set property "BOX_TYPE = user_black_box" for instance <MB_SPI_i>.
     Summary:
 	no macro.
 Unit <MB_SPI_top> synthesized.
 
 Synthesizing Unit <ROImager>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\ROImager.v".
+    Related source file is "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\ROImager.v".
         phi1_cnt = 9
         phi2_cnt = 9
         C_NUM_MUX = 46
@@ -289,7 +289,7 @@ Synthesizing Unit <ROImager>.
 Unit <ROImager> synthesized.
 
 Synthesizing Unit <ACLK_GENERATOR>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v".
+    Related source file is "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\MB_top.v".
     Found 1-bit register for signal <CLOCK_OUT>.
     Found 16-bit register for signal <counter>.
     Found 16-bit adder for signal <counter[15]_GND_5_o_add_2_OUT> created at line 436.
@@ -301,13 +301,13 @@ Synthesizing Unit <ACLK_GENERATOR>.
 Unit <ACLK_GENERATOR> synthesized.
 
 Synthesizing Unit <TI_ADC_RO>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\TI_ADC_RO.v".
+    Related source file is "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\TI_ADC_RO.v".
     Summary:
 	no macro.
 Unit <TI_ADC_RO> synthesized.
 
 Synthesizing Unit <Imager_SPI>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\Imager_SPI.v".
+    Related source file is "C:\Users\shich\OneDrive\Documents\2017 Summer\MBImager\MBImager_full\Imager_SPI.v".
     Found 1-bit register for signal <clk_en>.
     Found 1-bit register for signal <upload_i>.
     Found 40-bit register for signal <regdata>.
@@ -1253,12 +1253,12 @@ uBlaze_SPI/MB_SPI_i/debug_module/debug_module/drck_i|    2.427|    3.477|    3.2
 =========================================================================
 
 
-Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 13.31 secs
+Total REAL time to Xst completion: 318.00 secs
+Total CPU time to Xst completion: 317.79 secs
  
 --> 
 
-Total memory usage is 313456 kilobytes
+Total memory usage is 456148 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  144 (   0 filtered)
