@@ -86,6 +86,7 @@ wire ADC_CLK_n;
 // reg [7:0] ADC_TESTDATA3;
 wire W_CLK_MOD;
 wire W_CLKN_MOD;
+wire W_RO_ADC_CLK;
 
 /* Do not reset the Imager SPI regs */
 //	assign ISPI_RESETB = 1'b1;
@@ -139,6 +140,8 @@ ROImager imager_time (
     .CLK_MOD(W_CLK_MOD), 
     .CLKN_MOD(W_CLKN_MOD),
 	 .DRAIN_B(OK_DRAIN_B),
+	 .CLK_MOD_PHASE_SEL1(1'b0),
+	 .CLK_MOD_PHASE_SEL2(1'b0),
     .PRECH_COL(MBI_PRECH_COL), 
     .ADC_DATA_VALID(MBI_ADC_DATA_VALID),
 	.DDR_DATA_VALID(MBI_DDR_DATA_VALID),

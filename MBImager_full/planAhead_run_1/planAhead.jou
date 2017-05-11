@@ -1,10 +1,20 @@
 #-----------------------------------------------------------
 # PlanAhead v14.7 (64-bit)
 # Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
-# Start of session at: Mon May 08 15:46:00 2017
-# Process ID: 2428
+# Start of session at: Thu May 11 15:47:10 2017
+# Process ID: 6628
 # Log file: C:/Users/shich/OneDrive/Documents/2017_Summer/MBImager/MBImager_full/planAhead_run_1/planAhead.log
 # Journal file: C:/Users/shich/OneDrive/Documents/2017_Summer/MBImager/MBImager_full/planAhead_run_1/planAhead.jou
 #-----------------------------------------------------------
 start_gui
 source C:/Users/shich/OneDrive/Documents/2017_Summer/MBImager/MBImager_full/pa.fromNetlist.tcl
+refresh_design
+refresh_design
+refresh_design
+refresh_design
+select site bufg*
+select site BUFG*
+select site *BUFG
+select site x0y3
+select_objects -help
+select_objects [get_sites SLICE_X56Y214]

@@ -22,6 +22,8 @@ module ROImager
   CLKN_MOD,						  // Modulation clk for the ToF pixel
 //  CLKL_MOD,						  // Modulation clk for light source
   DRAIN_B,						  // Activation signal for ToF pixel clk
+  CLK_MOD_PHASE_SEL1,			  // Sets phase offset between CLK_MOD and CLKL_MOD
+  CLK_MOD_PHASE_SEL2,
   PRECH_COL,					  // Column precharge signal (used during readout)
   ADC_DATA_VALID,				  // It determines when the ADC data is valid
   DDR_DATA_VALID,				  // Determining the validity of the DDR output
@@ -52,6 +54,8 @@ output									  CLK_MOD;
 output									  CLKN_MOD;
 //output										CLKL_MOD;
 input 									DRAIN_B;
+input										CLK_MOD_PHASE_SEL1;
+input										CLK_MOD_PHASE_SEL2;
 output									  PRECH_COL;
 output									  ADC_DATA_VALID;
 output									  DDR_DATA_VALID;
@@ -223,62 +227,91 @@ genvar byte_index;
 	
 //SYNC CLOCK IMPLEMENTATION
   wire			W_CLK_MOD;
+  wire			W_CLKN_MOD;
   wire			W_FREQ_CHNG;
-  wire [3:0]	W_PHASE;
-  wire [1:0]	W_PHASE_SEL;
+  wire 			W_PHASE0;
+  wire			W_PHASE90;
+  wire			W_PHASE180;
+  wire			W_PHASE270;
   wire			W_TPNO_IN;
+  wire			W_MUX1;
+  wire			W_MUX2;
 	
-
-//  assign CLK_MOD = DRAIN_B & W_CLK_MOD;
-//  DCM_CLKGEN #(
-//		.CLKFXDV_DIVIDE(2),
-//		.CLKFX_DIVIDE(1),
-//		.CLKFX_MD_MAX(5.0),
-//		.CLKFX_MULTIPLY(1),
-//		.CLK_IN_PERIOD("10.0"),
-//		.STARTUP_WAIT("FALSE")
-//  )
-//  DCM_freqchng (
-//		.CLKFX(W_FREQ_CHNG),
-//		.CLKIN(ADC_CLK)
-//  );
-//  
-//  DCM_SP #(
-//		.CLKDV_DIVIDE(2.0),
-//		.CLKFX_DIVIDE(1),
-//		.CLKFX_MULTIPLY(4),
-//		.CLK_IN_DIVIDE_BY_2("FALSE"),
-//		.CLKIN_PERIOD(0.0),
-//		.CLKOUT_PHASE_SHIFT("NONE"),
-//		.CLK_FEEDBACK("1X"),
-//		.DESKEW_ADJUST("SYSTEM_SYNCHRONOUS"),
-//		.DLL_FREQUENCY_MODE("LOW"),
-//		.DUTY_CYCLE_CORRECTION("TRUE"),
-//		.PHASE_SHIFT(0),
-//		.STARTUP_WAIT("FALSE")
-//	)
-//	DCM_phaseselect (
-//		.CLK0(W_PHASE[0]),
-//		.CLK90(W_PHASE[1],
-//		.CLK180(W_PHASE[2]),
-//		.CLK270(W_PHASE[3]),
-//		.CLKIN(W_FREQ_CHNG)
+  assign CLK_MOD = DRAIN_B & W_CLK_MOD;
+  assign CLKN_MOD = DRAIN_B & W_CLKN_MOD;
+  
+//  ODDR2 #(
+//	.DDR_ALIGNMENT("NONE"), // Sets output alignment to "NONE", "C0" or "C1"
+//	.INIT(1'b0), // Sets initial state of the Q output to 1'b0 or 1'b1
+//	.SRTYPE("SYNC") // Specifies "SYNC" or "ASYNC" set/reset
+//	) ODDR2_adc_clk_in (
+//	.Q(W_FREQ_CHNG), // 1-bit DDR output data
+//	.C0(ADC_CLK), // 1-bit clock input
+//	.C1(~ADC_CLK), // 1-bit clock input
+//	.CE(1'b1), // 1-bit clock enable input
+//	.D0(1'b1), // 1-bit data input (associated with C0)
+//	.D1(1'b0), // 1-bit data input (associated with C1)
+//	.R(1'b0), // 1-bit reset input
+//	.S(1'b0) // 1-bit set input
 //	);
-//	
-// assign CLKL_MOD = W_PHASE[0];
-//	assign W_TPNO_IN = W_PHASE[W_PHASESEL);
-//	
+  
+  DCM_SP #(
+		.CLKDV_DIVIDE(2.0),
+		.CLKFX_DIVIDE(1),
+		.CLKFX_MULTIPLY(4),
+		.CLKIN_DIVIDE_BY_2("FALSE"),
+		.CLKIN_PERIOD(10.0),
+		.CLKOUT_PHASE_SHIFT("NONE"),
+		.CLK_FEEDBACK("1X"),
+		.DESKEW_ADJUST("SYSTEM_SYNCHRONOUS"),
+		.DLL_FREQUENCY_MODE("LOW"),
+		.DUTY_CYCLE_CORRECTION("TRUE"),
+		.PHASE_SHIFT(0),
+		.STARTUP_WAIT("FALSE")
+	)
+	DCM_phaseselect (
+		.CLK0(W_PHASE0),
+		.CLK90(W_PHASE90),
+		.CLK180(W_PHASE180),
+		.CLK270(W_PHASE270),
+		.CLKIN(ADC_CLK),
+		.CLKFB(W_PHASE0)
+	);
+	
+	assign CLKL_MOD = W_PHASE0;
+		
+	BUFGMUX BUFGMUX_inst_1 (
+		.O(W_MUX1), // Clock MUX output
+		.I0(W_PHASE0), // Clock0 input
+		.I1(W_PHASE90), // Clock1 input
+		.S(CLK_MOD_PHASE_SEL1) // Clock select input
+	);
+	
+	BUFGMUX BUFGMUX_inst_2(
+		.O(W_MUX2), // Clock MUX output
+		.I0(W_PHASE180), // Clock0 input
+		.I1(W_PHASE270), // Clock1 input
+		.S(CLK_MOD_PHASE_SEL1) // Clock select input
+	);
+	
+	BUFGMUX BUFGMUX_inst_3(
+		.O(W_TPNO_IN), // Clock MUX output
+		.I0(W_MUX1), // Clock0 input
+		.I1(W_MUX2), // Clock1 input
+		.S(CLK_MOD_PHASE_SEL2) // Clock select input
+	);
+	
+	twophase_nonoverlap tpno (
+		.CLK_IN(W_TPNO_IN),
+		.CLK_OUT(W_CLK_MOD),
+		.CLK_OUT_N(W_CLKN_MOD)
+	);
+	
 //	twophase_nonoverlap tpno (
-//		.CLK_IN(W_PHASE_SEL),
+//		.CLK_IN(ADC_PIXCLK),
 //		.CLK_OUT(CLK_MOD),
 //		.CLK_OUT_N(CLKN_MOD)
 //	);
-	
-	twophase_nonoverlap tpno (
-		.CLK_IN(ADC_PIXCLK),
-		.CLK_OUT(CLK_MOD),
-		.CLK_OUT_N(CLKN_MOD)
-	);
 	
 // END SYNC IMPLEMENTATION
   

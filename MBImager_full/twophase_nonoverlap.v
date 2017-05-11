@@ -26,8 +26,8 @@ module twophase_nonoverlap(
 
 	wire PHI1, PHI2, ORR1, ORR2;
 	
-	nor1 nor1(CLK_IN, PHI2, ORR1);
-	nor1 nor2(!CLK_IN, PHI1, ORR2);
+	norr norr1(CLK_IN, PHI2, ORR1);
+	norr norr2(!CLK_IN, PHI1, ORR2);
 	
 	assign #1 PHI1 = !ORR1;
 	assign #1 PHI2 = !ORR2;
@@ -37,7 +37,7 @@ module twophase_nonoverlap(
 	
 endmodule
 
-module nor1(
+module norr(
 	input I1, 
 	input I2,
 	output O

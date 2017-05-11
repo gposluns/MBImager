@@ -1,0 +1,135 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Thu May 11 17:31:40 2017
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "OK_PIXRES_GLOB" LOCATE = SITE "T12" LEVEL 1;
+COMP "MBI_ROW_ADD<0>" LOCATE = SITE "F17" LEVEL 1;
+COMP "MBI_ROW_ADD<1>" LOCATE = SITE "D19" LEVEL 1;
+COMP "MBI_ROW_ADD<2>" LOCATE = SITE "G16" LEVEL 1;
+COMP "MBI_ROW_ADD<3>" LOCATE = SITE "D18" LEVEL 1;
+COMP "MBI_ROW_ADD<4>" LOCATE = SITE "B18" LEVEL 1;
+COMP "MBI_ROW_ADD<5>" LOCATE = SITE "C17" LEVEL 1;
+COMP "MBI_ROW_ADD<6>" LOCATE = SITE "A18" LEVEL 1;
+COMP "MBI_ROW_ADD<7>" LOCATE = SITE "A17" LEVEL 1;
+COMP "OK_DRAIN_B" LOCATE = SITE "U12" LEVEL 1;
+COMP "ADC_READ_ACLK" LOCATE = SITE "Y13" LEVEL 1;
+COMP "SPI_5V_EN" LOCATE = SITE "L1" LEVEL 1;
+COMP "MBI_CLK_CDS" LOCATE = SITE "G13" LEVEL 1;
+COMP "MBI_DRAIN_B" LOCATE = SITE "AB11" LEVEL 1;
+COMP "MBI_CLK_MOD" LOCATE = SITE "K19" LEVEL 1;
+COMP "dout<0>" LOCATE = SITE "V11" LEVEL 1;
+COMP "dout<1>" LOCATE = SITE "Y12" LEVEL 1;
+COMP "dout<2>" LOCATE = SITE "W12" LEVEL 1;
+COMP "dout<3>" LOCATE = SITE "Y11" LEVEL 1;
+COMP "dout<4>" LOCATE = SITE "AB12" LEVEL 1;
+COMP "dout<5>" LOCATE = SITE "AA12" LEVEL 1;
+COMP "MBI_PRECH_COL" LOCATE = SITE "W9" LEVEL 1;
+COMP "MBI_RESETN_GLOB" LOCATE = SITE "AB6" LEVEL 1;
+COMP "USER_CLOCK" LOCATE = SITE "AB13" LEVEL 1;
+COMP "SPI_FLASH_SS<0>" LOCATE = SITE "F15" LEVEL 1;
+COMP "SPI_FLASH_SS<1>" LOCATE = SITE "C19" LEVEL 1;
+COMP "SPI_FLASH_SS<2>" LOCATE = SITE "B20" LEVEL 1;
+COMP "SPI_FLASH_SS<3>" LOCATE = SITE "A20" LEVEL 1;
+COMP "SPI_FLASH_SS<4>" LOCATE = SITE "D17" LEVEL 1;
+COMP "SPI_FLASH_SS<5>" LOCATE = SITE "C18" LEVEL 1;
+COMP "SPI_FLASH_SS<6>" LOCATE = SITE "AA3" LEVEL 1;
+COMP "SPI_FLASH_SS<7>" LOCATE = SITE "N1" LEVEL 1;
+COMP "SPI_FLASH_SS<8>" LOCATE = SITE "M2" LEVEL 1;
+COMP "SPI_FLASH_SS<9>" LOCATE = SITE "M1" LEVEL 1;
+COMP "ADC_INCLK" LOCATE = SITE "N3" LEVEL 1;
+COMP "MBI_CLKN_MOD" LOCATE = SITE "V22" LEVEL 1;
+COMP "RS_POT" LOCATE = SITE "A19" LEVEL 1;
+COMP "FSMIND0ACK" LOCATE = SITE "AA18" LEVEL 1;
+COMP "FSMIND1ACK" LOCATE = SITE "T14" LEVEL 1;
+COMP "MBI_PIXRES_GLOB" LOCATE = SITE "H11" LEVEL 1;
+COMP "fifo_clk" LOCATE = SITE "AB14" LEVEL 1;
+COMP "MBI_PIXRES" LOCATE = SITE "AB19" LEVEL 1;
+COMP "MBI_PRECHN_AMP" LOCATE = SITE "W10" LEVEL 1;
+COMP "SPI_FLASH_MISO" LOCATE = SITE "AB20" LEVEL 1;
+COMP "SPI_FLASH_SCLK" LOCATE = SITE "V17" LEVEL 1;
+COMP "EXT_RESET_N_Glob" LOCATE = SITE "W14" LEVEL 1;
+COMP "SPI_FLASH_MOSI" LOCATE = SITE "W18" LEVEL 1;
+COMP "ISPI_REGCLK" LOCATE = SITE "M4" LEVEL 1;
+COMP "ISPI_UPLOAD" LOCATE = SITE "M3" LEVEL 1;
+COMP "ADC_DATA1<0>" LOCATE = SITE "M8" LEVEL 1;
+COMP "ADC_DATA1<1>" LOCATE = SITE "M7" LEVEL 1;
+COMP "ADC_DATA1<2>" LOCATE = SITE "P1" LEVEL 1;
+COMP "ADC_DATA1<3>" LOCATE = SITE "P2" LEVEL 1;
+COMP "ADC_DATA1<4>" LOCATE = SITE "P8" LEVEL 1;
+COMP "ADC_DATA2<0>" LOCATE = SITE "R1" LEVEL 1;
+COMP "ADC_DATA1<5>" LOCATE = SITE "R7" LEVEL 1;
+COMP "ADC_DATA2<1>" LOCATE = SITE "R3" LEVEL 1;
+COMP "ADC_DATA1<6>" LOCATE = SITE "P4" LEVEL 1;
+COMP "ADC_DATA2<2>" LOCATE = SITE "T1" LEVEL 1;
+COMP "ADC_DATA1<7>" LOCATE = SITE "P5" LEVEL 1;
+COMP "ADC_DATA2<3>" LOCATE = SITE "T2" LEVEL 1;
+COMP "ADC_DATA2<4>" LOCATE = SITE "U1" LEVEL 1;
+COMP "ADC_DATA3<0>" LOCATE = SITE "W1" LEVEL 1;
+COMP "ADC_DATA2<5>" LOCATE = SITE "U3" LEVEL 1;
+COMP "ADC_DATA3<1>" LOCATE = SITE "W3" LEVEL 1;
+COMP "ADC_DATA2<6>" LOCATE = SITE "V1" LEVEL 1;
+COMP "ADC_DATA3<2>" LOCATE = SITE "Y1" LEVEL 1;
+COMP "ADC_DATA2<7>" LOCATE = SITE "V2" LEVEL 1;
+COMP "ADC_DATA3<3>" LOCATE = SITE "Y2" LEVEL 1;
+COMP "ADC_DATA3<4>" LOCATE = SITE "AA1" LEVEL 1;
+COMP "ADC_DATA3<5>" LOCATE = SITE "AA2" LEVEL 1;
+COMP "ADC_DATA3<6>" LOCATE = SITE "Y3" LEVEL 1;
+COMP "ADC_DATA3<7>" LOCATE = SITE "W4" LEVEL 1;
+COMP "EXT_RESET_N_spi" LOCATE = SITE "W15" LEVEL 1;
+COMP "EXT_RESET_N" LOCATE = SITE "Y18" LEVEL 1;
+COMP "ISPI_DATA" LOCATE = SITE "U9" LEVEL 1;
+COMP "FSMIND0" LOCATE = SITE "AB17" LEVEL 1;
+COMP "FSMIND1" LOCATE = SITE "Y17" LEVEL 1;
+COMP "MBI_MUX_ADD<0>" LOCATE = SITE "G15" LEVEL 1;
+COMP "MBI_MUX_ADD<1>" LOCATE = SITE "Y15" LEVEL 1;
+COMP "MBI_MUX_ADD<2>" LOCATE = SITE "H13" LEVEL 1;
+COMP "MBI_MUX_ADD<3>" LOCATE = SITE "H14" LEVEL 1;
+COMP "MBI_MUX_ADD<4>" LOCATE = SITE "E16" LEVEL 1;
+COMP "MBI_MUX_ADD<5>" LOCATE = SITE "F16" LEVEL 1;
+COMP "fifo_dout_valid" LOCATE = SITE "AB15" LEVEL 1;
+PIN imager_time/BUFGMUX_inst_3_pin<2> = BEL "imager_time/BUFGMUX_inst_3"
+        PINNAME O;
+PIN "imager_time/BUFGMUX_inst_3_pin<2>" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN MBI_regs/BUFGCE_inst_pin<2> = BEL "MBI_regs/BUFGCE_inst" PINNAME O;
+PIN "MBI_regs/BUFGCE_inst_pin<2>" CLOCK_DEDICATED_ROUTE = FALSE;
+TIMEGRP microblaze_0_ilmb_POR_FF_I_dst = BEL
+        "uBlaze_SPI/MB_SPI_i/microblaze_0_ilmb/microblaze_0_ilmb/POR_FF_I";
+TIMEGRP microblaze_0_dlmb_POR_FF_I_dst = BEL
+        "uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb/microblaze_0_dlmb/POR_FF_I";
+TIMEGRP axi4lite_0_reset_resync = BEL
+        "uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0"
+        BEL
+        "uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1"
+        BEL
+        "uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_2"
+        BEL
+        "uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync_0"
+        BEL
+        "uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync_1"
+        BEL
+        "uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync_2"
+        BEL
+        "uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0"
+        BEL
+        "uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1"
+        BEL
+        "uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_2";
+TIMEGRP microblaze_0_Reset_dst = BEL
+        "uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp";
+TIMEGRP axi4lite_0_reset_source = FFS(*) PADS(*);
+TIMEGRP "FFS" = FFS(*);
+PATH TS_TIG_microblaze_0_Reset_path = FROM TIMEGRP "FFS" TO TIMEGRP
+        "microblaze_0_Reset_dst";
+PATH "TS_TIG_microblaze_0_Reset_path" TIG;
+PATH TS_axi4lite_0_reset_resync_path = FROM TIMEGRP "axi4lite_0_reset_source"
+        TO TIMEGRP "axi4lite_0_reset_resync";
+PATH "TS_axi4lite_0_reset_resync_path" TIG;
+PATH TS_TIG_microblaze_0_dlmb_POR_FF_I_path = FROM TIMEGRP "FFS" TO TIMEGRP
+        "microblaze_0_dlmb_POR_FF_I_dst";
+PATH "TS_TIG_microblaze_0_dlmb_POR_FF_I_path" TIG;
+PATH TS_TIG_microblaze_0_ilmb_POR_FF_I_path = FROM TIMEGRP "FFS" TO TIMEGRP
+        "microblaze_0_ilmb_POR_FF_I_dst";
+PATH "TS_TIG_microblaze_0_ilmb_POR_FF_I_path" TIG;
+SCHEMATIC END;
+
