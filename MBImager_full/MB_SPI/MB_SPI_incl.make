@@ -17,7 +17,7 @@ MHSFILE = MB_SPI.mhs
 
 FPGA_ARCH = spartan6
 
-DEVICE = xc6slx25tfgg484-3
+DEVICE = xc6slx45fgg484-3
 
 INTSTYLE = ise
 

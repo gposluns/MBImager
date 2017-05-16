@@ -4,7 +4,7 @@ run
 -ifn MB_top.prj
 -ofn MB_top
 -ofmt NGC
--p xc6slx25t-3-fgg484
+-p xc6slx45-3-fgg484
 -top MB_top
 -opt_mode Speed
 -opt_level 1

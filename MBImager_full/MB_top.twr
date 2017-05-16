@@ -8,7 +8,7 @@ Microblaze_System_top.ucf
 
 Design file:              MB_top.ncd
 Physical constraint file: MB_top.pcf
-Device,package,speed:     xc6slx25t,fgg484,C,-3 (PRODUCTION 1.23 2013-10-13)
+Device,package,speed:     xc6slx45,fgg484,C,-3 (PRODUCTION 1.23 2013-10-13)
 Report level:             verbose report
 
 Environment Variable      Effect 
@@ -32,13 +32,13 @@ Timing constraint: PATH "TS_TIG_microblaze_0_Reset_path" TIG;
  0 timing errors detected. (0 setup errors, 0 hold errors)
 --------------------------------------------------------------------------------
 
-Paths for end point uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp (SLICE_X38Y53.AX), 3 paths
+Paths for end point uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp (SLICE_X33Y66.AX), 3 paths
 --------------------------------------------------------------------------------
-Delay (setup path):     3.363ns (data path - clock path skew + uncertainty)
+Delay (setup path):     8.254ns (data path - clock path skew + uncertainty)
   Source:               uBlaze_SPI/MB_SPI_i/proc_sys_reset_0/proc_sys_reset_0/MB_Reset (FF)
   Destination:          uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp (FF)
-  Data Path Delay:      3.247ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.021ns (0.447 - 0.468)
+  Data Path Delay:      8.108ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.051ns (0.579 - 0.630)
   Source Clock:         uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
   Destination Clock:    uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
   Clock Uncertainty:    0.095ns
@@ -52,23 +52,54 @@ Delay (setup path):     3.363ns (data path - clock path skew + uncertainty)
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X36Y30.AQ      Tcko                  0.408   uBlaze_SPI/MB_SPI_i/proc_sys_reset_0_MB_Reset
+    SLICE_X26Y49.AMUX    Tshcko                0.488   uBlaze_SPI/MB_SPI_i/proc_sys_reset_0/proc_sys_reset_0/Peripheral_aresetn_0
                                                        uBlaze_SPI/MB_SPI_i/proc_sys_reset_0/proc_sys_reset_0/MB_Reset
-    SLICE_X37Y50.C5      net (fanout=79)       1.654   uBlaze_SPI/MB_SPI_i/proc_sys_reset_0_MB_Reset
-    SLICE_X37Y50.CMUX    Tilo                  0.313   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.ex_reverse_mem_access
+    SLICE_X43Y80.C2      net (fanout=100)      5.663   uBlaze_SPI/MB_SPI_i/proc_sys_reset_0_MB_Reset
+    SLICE_X43Y80.CMUX    Tilo                  0.313   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.ex_reverse_mem_access
                                                        uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_Debug_Rst_OR_2_o1
-    SLICE_X38Y53.AX      net (fanout=1)        0.786   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_Debug_Rst_OR_2_o
-    SLICE_X38Y53.CLK     Tdick                 0.086   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp
+    SLICE_X33Y66.AX      net (fanout=1)        1.581   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_Debug_Rst_OR_2_o
+    SLICE_X33Y66.CLK     Tdick                 0.063   uBlaze_SPI/MB_SPI_i/Generic_SPI/Generic_SPI/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_11
                                                        uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp
     -------------------------------------------------  ---------------------------
-    Total                                      3.247ns (0.807ns logic, 2.440ns route)
-                                                       (24.9% logic, 75.1% route)
+    Total                                      8.108ns (0.864ns logic, 7.244ns route)
+                                                       (10.7% logic, 89.3% route)
 
 --------------------------------------------------------------------------------
-Delay (setup path):     2.833ns (data path - clock path skew + uncertainty)
+Delay (setup path):     4.370ns (data path - clock path skew + uncertainty)
+  Source:               uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb/microblaze_0_dlmb/POR_FF_I (FF)
+  Destination:          uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp (FF)
+  Data Path Delay:      4.274ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.001ns (0.245 - 0.246)
+  Source Clock:         uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
+  Destination Clock:    uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
+  Clock Uncertainty:    0.095ns
+
+  Clock Uncertainty:          0.095ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.177ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb/microblaze_0_dlmb/POR_FF_I to uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y70.AQ      Tcko                  0.447   uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb_LMB_Rst
+                                                       uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb/microblaze_0_dlmb/POR_FF_I
+    SLICE_X43Y80.C1      net (fanout=3)        1.870   uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb_LMB_Rst
+    SLICE_X43Y80.CMUX    Tilo                  0.313   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.ex_reverse_mem_access
+                                                       uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_Debug_Rst_OR_2_o1
+    SLICE_X33Y66.AX      net (fanout=1)        1.581   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_Debug_Rst_OR_2_o
+    SLICE_X33Y66.CLK     Tdick                 0.063   uBlaze_SPI/MB_SPI_i/Generic_SPI/Generic_SPI/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_11
+                                                       uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp
+    -------------------------------------------------  ---------------------------
+    Total                                      4.274ns (0.823ns logic, 3.451ns route)
+                                                       (19.3% logic, 80.7% route)
+
+--------------------------------------------------------------------------------
+Delay (setup path):     3.382ns (data path - clock path skew + uncertainty)
   Source:               uBlaze_SPI/MB_SPI_i/debug_module/debug_module/MDM_Core_I1/JTAG_CONTROL_I/Debug_Rst_i (FF)
   Destination:          uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp (FF)
-  Data Path Delay:      2.798ns (Levels of Logic = 1)
+  Data Path Delay:      3.347ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         uBlaze_SPI/MB_SPI_i/microblaze_0_debug_Dbg_Update rising
   Destination Clock:    uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
@@ -84,86 +115,29 @@ Delay (setup path):     2.833ns (data path - clock path skew + uncertainty)
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X38Y58.DQ      Tcko                  0.447   uBlaze_SPI/MB_SPI_i/microblaze_0_debug_Debug_Rst
+    SLICE_X43Y93.AQ      Tcko                  0.391   uBlaze_SPI/MB_SPI_i/proc_sys_reset_0_MB_Debug_Sys_Rst
                                                        uBlaze_SPI/MB_SPI_i/debug_module/debug_module/MDM_Core_I1/JTAG_CONTROL_I/Debug_Rst_i
-    SLICE_X37Y50.C3      net (fanout=1)        1.166   uBlaze_SPI/MB_SPI_i/microblaze_0_debug_Debug_Rst
-    SLICE_X37Y50.CMUX    Tilo                  0.313   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.ex_reverse_mem_access
+    SLICE_X43Y80.C5      net (fanout=1)        0.999   uBlaze_SPI/MB_SPI_i/microblaze_0_debug_Debug_Rst
+    SLICE_X43Y80.CMUX    Tilo                  0.313   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.ex_reverse_mem_access
                                                        uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_Debug_Rst_OR_2_o1
-    SLICE_X38Y53.AX      net (fanout=1)        0.786   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_Debug_Rst_OR_2_o
-    SLICE_X38Y53.CLK     Tdick                 0.086   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp
+    SLICE_X33Y66.AX      net (fanout=1)        1.581   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_Debug_Rst_OR_2_o
+    SLICE_X33Y66.CLK     Tdick                 0.063   uBlaze_SPI/MB_SPI_i/Generic_SPI/Generic_SPI/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_11
                                                        uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp
     -------------------------------------------------  ---------------------------
-    Total                                      2.798ns (0.846ns logic, 1.952ns route)
-                                                       (30.2% logic, 69.8% route)
-
---------------------------------------------------------------------------------
-Delay (setup path):     2.385ns (data path - clock path skew + uncertainty)
-  Source:               uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb/microblaze_0_dlmb/POR_FF_I (FF)
-  Destination:          uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp (FF)
-  Data Path Delay:      2.275ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.015ns (0.148 - 0.163)
-  Source Clock:         uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
-  Destination Clock:    uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
-  Clock Uncertainty:    0.095ns
-
-  Clock Uncertainty:          0.095ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.177ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb/microblaze_0_dlmb/POR_FF_I to uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X38Y51.AQ      Tcko                  0.447   uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb_LMB_Rst
-                                                       uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb/microblaze_0_dlmb/POR_FF_I
-    SLICE_X37Y50.C2      net (fanout=3)        0.643   uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb_LMB_Rst
-    SLICE_X37Y50.CMUX    Tilo                  0.313   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.ex_reverse_mem_access
-                                                       uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_Debug_Rst_OR_2_o1
-    SLICE_X38Y53.AX      net (fanout=1)        0.786   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_Debug_Rst_OR_2_o
-    SLICE_X38Y53.CLK     Tdick                 0.086   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp
-                                                       uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp
-    -------------------------------------------------  ---------------------------
-    Total                                      2.275ns (0.846ns logic, 1.429ns route)
-                                                       (37.2% logic, 62.8% route)
+    Total                                      3.347ns (0.767ns logic, 2.580ns route)
+                                                       (22.9% logic, 77.1% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: PATH "TS_TIG_microblaze_0_Reset_path" TIG;
 --------------------------------------------------------------------------------
 
-Paths for end point uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp (SLICE_X38Y53.AX), 3 paths
+Paths for end point uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp (SLICE_X33Y66.AX), 3 paths
 --------------------------------------------------------------------------------
-Delay (hold path):      1.319ns (datapath - clock path skew - uncertainty)
-  Source:               uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb/microblaze_0_dlmb/POR_FF_I (FF)
-  Destination:          uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp (FF)
-  Data Path Delay:      1.315ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.004ns (0.037 - 0.041)
-  Source Clock:         uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
-  Destination Clock:    uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
-  Clock Uncertainty:    0.000ns
-
-  Minimum Data Path at Fast Process Corner: uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb/microblaze_0_dlmb/POR_FF_I to uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X38Y51.AQ      Tcko                  0.234   uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb_LMB_Rst
-                                                       uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb/microblaze_0_dlmb/POR_FF_I
-    SLICE_X37Y50.C2      net (fanout=3)        0.394   uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb_LMB_Rst
-    SLICE_X37Y50.CMUX    Tilo                  0.203   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.ex_reverse_mem_access
-                                                       uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_Debug_Rst_OR_2_o1
-    SLICE_X38Y53.AX      net (fanout=1)        0.443   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_Debug_Rst_OR_2_o
-    SLICE_X38Y53.CLK     Tckdi       (-Th)    -0.041   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp
-                                                       uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp
-    -------------------------------------------------  ---------------------------
-    Total                                      1.315ns (0.478ns logic, 0.837ns route)
-                                                       (36.3% logic, 63.7% route)
-
---------------------------------------------------------------------------------
-Delay (hold path):      1.598ns (datapath - clock path skew - uncertainty)
+Delay (hold path):      1.938ns (datapath - clock path skew - uncertainty)
   Source:               uBlaze_SPI/MB_SPI_i/debug_module/debug_module/MDM_Core_I1/JTAG_CONTROL_I/Debug_Rst_i (FF)
   Destination:          uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp (FF)
-  Data Path Delay:      1.598ns (Levels of Logic = 1)
+  Data Path Delay:      1.938ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         uBlaze_SPI/MB_SPI_i/microblaze_0_debug_Dbg_Update rising
   Destination Clock:    uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
@@ -173,24 +147,50 @@ Delay (hold path):      1.598ns (datapath - clock path skew - uncertainty)
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X38Y58.DQ      Tcko                  0.234   uBlaze_SPI/MB_SPI_i/microblaze_0_debug_Debug_Rst
+    SLICE_X43Y93.AQ      Tcko                  0.198   uBlaze_SPI/MB_SPI_i/proc_sys_reset_0_MB_Debug_Sys_Rst
                                                        uBlaze_SPI/MB_SPI_i/debug_module/debug_module/MDM_Core_I1/JTAG_CONTROL_I/Debug_Rst_i
-    SLICE_X37Y50.C3      net (fanout=1)        0.677   uBlaze_SPI/MB_SPI_i/microblaze_0_debug_Debug_Rst
-    SLICE_X37Y50.CMUX    Tilo                  0.203   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.ex_reverse_mem_access
+    SLICE_X43Y80.C5      net (fanout=1)        0.541   uBlaze_SPI/MB_SPI_i/microblaze_0_debug_Debug_Rst
+    SLICE_X43Y80.CMUX    Tilo                  0.203   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.ex_reverse_mem_access
                                                        uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_Debug_Rst_OR_2_o1
-    SLICE_X38Y53.AX      net (fanout=1)        0.443   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_Debug_Rst_OR_2_o
-    SLICE_X38Y53.CLK     Tckdi       (-Th)    -0.041   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp
+    SLICE_X33Y66.AX      net (fanout=1)        0.937   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_Debug_Rst_OR_2_o
+    SLICE_X33Y66.CLK     Tckdi       (-Th)    -0.059   uBlaze_SPI/MB_SPI_i/Generic_SPI/Generic_SPI/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_11
                                                        uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp
     -------------------------------------------------  ---------------------------
-    Total                                      1.598ns (0.478ns logic, 1.120ns route)
-                                                       (29.9% logic, 70.1% route)
+    Total                                      1.938ns (0.460ns logic, 1.478ns route)
+                                                       (23.7% logic, 76.3% route)
 
 --------------------------------------------------------------------------------
-Delay (hold path):      1.830ns (datapath - clock path skew - uncertainty)
+Delay (hold path):      2.543ns (datapath - clock path skew - uncertainty)
+  Source:               uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb/microblaze_0_dlmb/POR_FF_I (FF)
+  Destination:          uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp (FF)
+  Data Path Delay:      2.560ns (Levels of Logic = 1)
+  Clock Path Skew:      0.017ns (0.079 - 0.062)
+  Source Clock:         uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
+  Destination Clock:    uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb/microblaze_0_dlmb/POR_FF_I to uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y70.AQ      Tcko                  0.234   uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb_LMB_Rst
+                                                       uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb/microblaze_0_dlmb/POR_FF_I
+    SLICE_X43Y80.C1      net (fanout=3)        1.127   uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb_LMB_Rst
+    SLICE_X43Y80.CMUX    Tilo                  0.203   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.ex_reverse_mem_access
+                                                       uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_Debug_Rst_OR_2_o1
+    SLICE_X33Y66.AX      net (fanout=1)        0.937   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_Debug_Rst_OR_2_o
+    SLICE_X33Y66.CLK     Tckdi       (-Th)    -0.059   uBlaze_SPI/MB_SPI_i/Generic_SPI/Generic_SPI/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_11
+                                                       uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp
+    -------------------------------------------------  ---------------------------
+    Total                                      2.560ns (0.496ns logic, 2.064ns route)
+                                                       (19.4% logic, 80.6% route)
+
+--------------------------------------------------------------------------------
+Delay (hold path):      5.111ns (datapath - clock path skew - uncertainty)
   Source:               uBlaze_SPI/MB_SPI_i/proc_sys_reset_0/proc_sys_reset_0/MB_Reset (FF)
   Destination:          uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp (FF)
-  Data Path Delay:      1.841ns (Levels of Logic = 1)
-  Clock Path Skew:      0.011ns (0.171 - 0.160)
+  Data Path Delay:      5.101ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.010ns (0.256 - 0.266)
   Source Clock:         uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
   Destination Clock:    uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
   Clock Uncertainty:    0.000ns
@@ -199,17 +199,17 @@ Delay (hold path):      1.830ns (datapath - clock path skew - uncertainty)
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X36Y30.AQ      Tcko                  0.200   uBlaze_SPI/MB_SPI_i/proc_sys_reset_0_MB_Reset
+    SLICE_X26Y49.AMUX    Tshcko                0.266   uBlaze_SPI/MB_SPI_i/proc_sys_reset_0/proc_sys_reset_0/Peripheral_aresetn_0
                                                        uBlaze_SPI/MB_SPI_i/proc_sys_reset_0/proc_sys_reset_0/MB_Reset
-    SLICE_X37Y50.C5      net (fanout=79)       0.954   uBlaze_SPI/MB_SPI_i/proc_sys_reset_0_MB_Reset
-    SLICE_X37Y50.CMUX    Tilo                  0.203   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.ex_reverse_mem_access
+    SLICE_X43Y80.C2      net (fanout=100)      3.636   uBlaze_SPI/MB_SPI_i/proc_sys_reset_0_MB_Reset
+    SLICE_X43Y80.CMUX    Tilo                  0.203   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.ex_reverse_mem_access
                                                        uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_Debug_Rst_OR_2_o1
-    SLICE_X38Y53.AX      net (fanout=1)        0.443   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_Debug_Rst_OR_2_o
-    SLICE_X38Y53.CLK     Tckdi       (-Th)    -0.041   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp
+    SLICE_X33Y66.AX      net (fanout=1)        0.937   uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_Debug_Rst_OR_2_o
+    SLICE_X33Y66.CLK     Tckdi       (-Th)    -0.059   uBlaze_SPI/MB_SPI_i/Generic_SPI/Generic_SPI/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_11
                                                        uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Reset_DFF.reset_temp
     -------------------------------------------------  ---------------------------
-    Total                                      1.841ns (0.444ns logic, 1.397ns route)
-                                                       (24.1% logic, 75.9% route)
+    Total                                      5.101ns (0.528ns logic, 4.573ns route)
+                                                       (10.4% logic, 89.6% route)
 
 --------------------------------------------------------------------------------
 
@@ -220,14 +220,14 @@ Timing constraint: PATH "TS_axi4lite_0_reset_resync_path" TIG;
  0 timing errors detected. (0 setup errors, 0 hold errors)
 --------------------------------------------------------------------------------
 
-Paths for end point uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync_0 (SLICE_X50Y35.CLK), 1 path
+Paths for end point uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0 (SLICE_X35Y70.CLK), 1 path
 --------------------------------------------------------------------------------
-Delay (setup path):     4.851ns (data path)
+Delay (setup path):     4.987ns (data path)
   Source:               USER_CLOCK (PAD)
-  Destination:          uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync_0 (FF)
-  Data Path Delay:      4.851ns (Levels of Logic = 4)
+  Destination:          uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0 (FF)
+  Data Path Delay:      4.987ns (Levels of Logic = 4)
 
-  Maximum Data Path at Slow Process Corner: USER_CLOCK to uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync_0
+  Maximum Data Path at Slow Process Corner: USER_CLOCK to uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
@@ -235,30 +235,30 @@ Delay (setup path):     4.851ns (data path)
                                                        USER_CLOCK
                                                        USER_CLOCK_IBUFG
                                                        ProtoComp460.IMUX.2
-    BUFIO2_X1Y7.I        net (fanout=8)        0.460   USER_CLOCK_IBUFG
+    BUFIO2_X1Y7.I        net (fanout=8)        0.467   USER_CLOCK_IBUFG
     BUFIO2_X1Y7.DIVCLK   Tbufcko_DIVCLK        0.111   SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_2
                                                        SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_2
-    PLL_ADV_X0Y0.CLKIN2  net (fanout=1)        0.488   uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst_ML_NEW_DIVCLK
-    PLL_ADV_X0Y0.CLKOUT0 Tpllcko_CLK           0.690   uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst
+    PLL_ADV_X0Y1.CLKIN2  net (fanout=1)        0.518   uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst_ML_NEW_DIVCLK
+    PLL_ADV_X0Y1.CLKOUT0 Tpllcko_CLK           0.690   uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst
                                                        uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst
-    BUFGMUX_X2Y9.I0      net (fanout=1)        0.422   uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/SIG_PLL0_CLKOUT0
+    BUFGMUX_X2Y9.I0      net (fanout=1)        0.440   uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/SIG_PLL0_CLKOUT0
     BUFGMUX_X2Y9.O       Tgi0o                 0.209   uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/PLL0_CLKOUT0_BUFG_INST
                                                        uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/PLL0_CLKOUT0_BUFG_INST
-    SLICE_X50Y35.CLK     net (fanout=682)      1.161   uBlaze_SPI/MB_SPI_i/clk_100_0000MHz
+    SLICE_X35Y70.CLK     net (fanout=832)      1.242   uBlaze_SPI/MB_SPI_i/clk_100_0000MHz
     -------------------------------------------------  ---------------------------
-    Total                                      4.851ns (2.320ns logic, 2.531ns route)
-                                                       (47.8% logic, 52.2% route)
+    Total                                      4.987ns (2.320ns logic, 2.667ns route)
+                                                       (46.5% logic, 53.5% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0 (SLICE_X50Y35.CLK), 1 path
+Paths for end point uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1 (SLICE_X35Y70.CLK), 1 path
 --------------------------------------------------------------------------------
-Delay (setup path):     4.851ns (data path)
+Delay (setup path):     4.987ns (data path)
   Source:               USER_CLOCK (PAD)
-  Destination:          uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0 (FF)
-  Data Path Delay:      4.851ns (Levels of Logic = 4)
+  Destination:          uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1 (FF)
+  Data Path Delay:      4.987ns (Levels of Logic = 4)
 
-  Maximum Data Path at Slow Process Corner: USER_CLOCK to uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0
+  Maximum Data Path at Slow Process Corner: USER_CLOCK to uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
@@ -266,30 +266,30 @@ Delay (setup path):     4.851ns (data path)
                                                        USER_CLOCK
                                                        USER_CLOCK_IBUFG
                                                        ProtoComp460.IMUX.2
-    BUFIO2_X1Y7.I        net (fanout=8)        0.460   USER_CLOCK_IBUFG
+    BUFIO2_X1Y7.I        net (fanout=8)        0.467   USER_CLOCK_IBUFG
     BUFIO2_X1Y7.DIVCLK   Tbufcko_DIVCLK        0.111   SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_2
                                                        SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_2
-    PLL_ADV_X0Y0.CLKIN2  net (fanout=1)        0.488   uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst_ML_NEW_DIVCLK
-    PLL_ADV_X0Y0.CLKOUT0 Tpllcko_CLK           0.690   uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst
+    PLL_ADV_X0Y1.CLKIN2  net (fanout=1)        0.518   uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst_ML_NEW_DIVCLK
+    PLL_ADV_X0Y1.CLKOUT0 Tpllcko_CLK           0.690   uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst
                                                        uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst
-    BUFGMUX_X2Y9.I0      net (fanout=1)        0.422   uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/SIG_PLL0_CLKOUT0
+    BUFGMUX_X2Y9.I0      net (fanout=1)        0.440   uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/SIG_PLL0_CLKOUT0
     BUFGMUX_X2Y9.O       Tgi0o                 0.209   uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/PLL0_CLKOUT0_BUFG_INST
                                                        uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/PLL0_CLKOUT0_BUFG_INST
-    SLICE_X50Y35.CLK     net (fanout=682)      1.161   uBlaze_SPI/MB_SPI_i/clk_100_0000MHz
+    SLICE_X35Y70.CLK     net (fanout=832)      1.242   uBlaze_SPI/MB_SPI_i/clk_100_0000MHz
     -------------------------------------------------  ---------------------------
-    Total                                      4.851ns (2.320ns logic, 2.531ns route)
-                                                       (47.8% logic, 52.2% route)
+    Total                                      4.987ns (2.320ns logic, 2.667ns route)
+                                                       (46.5% logic, 53.5% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync_1 (SLICE_X50Y35.CLK), 1 path
+Paths for end point uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_2 (SLICE_X35Y70.CLK), 1 path
 --------------------------------------------------------------------------------
-Delay (setup path):     4.851ns (data path)
+Delay (setup path):     4.987ns (data path)
   Source:               USER_CLOCK (PAD)
-  Destination:          uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync_1 (FF)
-  Data Path Delay:      4.851ns (Levels of Logic = 4)
+  Destination:          uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_2 (FF)
+  Data Path Delay:      4.987ns (Levels of Logic = 4)
 
-  Maximum Data Path at Slow Process Corner: USER_CLOCK to uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync_1
+  Maximum Data Path at Slow Process Corner: USER_CLOCK to uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_2
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
@@ -297,85 +297,83 @@ Delay (setup path):     4.851ns (data path)
                                                        USER_CLOCK
                                                        USER_CLOCK_IBUFG
                                                        ProtoComp460.IMUX.2
-    BUFIO2_X1Y7.I        net (fanout=8)        0.460   USER_CLOCK_IBUFG
+    BUFIO2_X1Y7.I        net (fanout=8)        0.467   USER_CLOCK_IBUFG
     BUFIO2_X1Y7.DIVCLK   Tbufcko_DIVCLK        0.111   SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_2
                                                        SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_2
-    PLL_ADV_X0Y0.CLKIN2  net (fanout=1)        0.488   uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst_ML_NEW_DIVCLK
-    PLL_ADV_X0Y0.CLKOUT0 Tpllcko_CLK           0.690   uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst
+    PLL_ADV_X0Y1.CLKIN2  net (fanout=1)        0.518   uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst_ML_NEW_DIVCLK
+    PLL_ADV_X0Y1.CLKOUT0 Tpllcko_CLK           0.690   uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst
                                                        uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst
-    BUFGMUX_X2Y9.I0      net (fanout=1)        0.422   uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/SIG_PLL0_CLKOUT0
+    BUFGMUX_X2Y9.I0      net (fanout=1)        0.440   uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/SIG_PLL0_CLKOUT0
     BUFGMUX_X2Y9.O       Tgi0o                 0.209   uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/PLL0_CLKOUT0_BUFG_INST
                                                        uBlaze_SPI/MB_SPI_i/clock_generator_0/clock_generator_0/PLL0_CLKOUT0_BUFG_INST
-    SLICE_X50Y35.CLK     net (fanout=682)      1.161   uBlaze_SPI/MB_SPI_i/clk_100_0000MHz
+    SLICE_X35Y70.CLK     net (fanout=832)      1.242   uBlaze_SPI/MB_SPI_i/clk_100_0000MHz
     -------------------------------------------------  ---------------------------
-    Total                                      4.851ns (2.320ns logic, 2.531ns route)
-                                                       (47.8% logic, 52.2% route)
+    Total                                      4.987ns (2.320ns logic, 2.667ns route)
+                                                       (46.5% logic, 53.5% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: PATH "TS_axi4lite_0_reset_resync_path" TIG;
 --------------------------------------------------------------------------------
 
-Paths for end point uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync_1 (SLICE_X50Y35.B4), 1 path
+Paths for end point uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1 (SLICE_X35Y70.BX), 1 path
 --------------------------------------------------------------------------------
-Delay (hold path):      0.512ns (datapath - clock path skew - uncertainty)
-  Source:               uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync_0 (FF)
-  Destination:          uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync_1 (FF)
-  Data Path Delay:      0.512ns (Levels of Logic = 1)
+Delay (hold path):      0.687ns (datapath - clock path skew - uncertainty)
+  Source:               uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0 (FF)
+  Destination:          uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1 (FF)
+  Data Path Delay:      0.687ns (Levels of Logic = 0)
   Clock Path Skew:      0.000ns
   Source Clock:         uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
   Destination Clock:    uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync_0 to uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync_1
+  Minimum Data Path at Fast Process Corner: uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0 to uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X50Y35.AMUX    Tshcko                0.266   uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync<2>
-                                                       uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync_0
-    SLICE_X50Y35.B4      net (fanout=1)        0.115   uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync<0>
-    SLICE_X50Y35.CLK     Tah         (-Th)    -0.131   uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync<2>
-                                                       uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync<0>_rt
-                                                       uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync_1
+    SLICE_X35Y70.AQ      Tcko                  0.198   uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync<2>
+                                                       uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0
+    SLICE_X35Y70.BX      net (fanout=1)        0.430   uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync<0>
+    SLICE_X35Y70.CLK     Tckdi       (-Th)    -0.059   uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync<2>
+                                                       uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1
     -------------------------------------------------  ---------------------------
-    Total                                      0.512ns (0.397ns logic, 0.115ns route)
-                                                       (77.5% logic, 22.5% route)
+    Total                                      0.687ns (0.257ns logic, 0.430ns route)
+                                                       (37.4% logic, 62.6% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync_2 (SLICE_X50Y35.C5), 1 path
+Paths for end point uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1 (SLICE_X35Y72.BX), 1 path
 --------------------------------------------------------------------------------
-Delay (hold path):      0.587ns (datapath - clock path skew - uncertainty)
-  Source:               uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync_1 (FF)
-  Destination:          uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync_2 (FF)
-  Data Path Delay:      0.587ns (Levels of Logic = 1)
+Delay (hold path):      0.687ns (datapath - clock path skew - uncertainty)
+  Source:               uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0 (FF)
+  Destination:          uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1 (FF)
+  Data Path Delay:      0.687ns (Levels of Logic = 0)
   Clock Path Skew:      0.000ns
   Source Clock:         uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
   Destination Clock:    uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync_1 to uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync_2
+  Minimum Data Path at Fast Process Corner: uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0 to uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X50Y35.BMUX    Tshcko                0.266   uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync<2>
-                                                       uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync_1
-    SLICE_X50Y35.C5      net (fanout=1)        0.190   uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync<1>
-    SLICE_X50Y35.CLK     Tah         (-Th)    -0.131   uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync<2>
-                                                       uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync<1>_rt
-                                                       uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[1].clock_conv_inst/interconnect_aresetn_resync_2
+    SLICE_X35Y72.AQ      Tcko                  0.198   uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync<2>
+                                                       uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0
+    SLICE_X35Y72.BX      net (fanout=1)        0.430   uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync<0>
+    SLICE_X35Y72.CLK     Tckdi       (-Th)    -0.059   uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync<2>
+                                                       uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1
     -------------------------------------------------  ---------------------------
-    Total                                      0.587ns (0.397ns logic, 0.190ns route)
-                                                       (67.6% logic, 32.4% route)
+    Total                                      0.687ns (0.257ns logic, 0.430ns route)
+                                                       (37.4% logic, 62.6% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_2 (SLICE_X52Y39.CX), 1 path
+Paths for end point uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_2 (SLICE_X35Y70.CX), 1 path
 --------------------------------------------------------------------------------
-Delay (hold path):      0.677ns (datapath - clock path skew - uncertainty)
+Delay (hold path):      0.700ns (datapath - clock path skew - uncertainty)
   Source:               uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1 (FF)
   Destination:          uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_2 (FF)
-  Data Path Delay:      0.677ns (Levels of Logic = 0)
+  Data Path Delay:      0.700ns (Levels of Logic = 0)
   Clock Path Skew:      0.000ns
   Source Clock:         uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
   Destination Clock:    uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
@@ -385,14 +383,14 @@ Delay (hold path):      0.677ns (datapath - clock path skew - uncertainty)
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X52Y39.BQ      Tcko                  0.200   uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync<2>
+    SLICE_X35Y70.BQ      Tcko                  0.198   uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync<2>
                                                        uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1
-    SLICE_X52Y39.CX      net (fanout=1)        0.429   uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync<1>
-    SLICE_X52Y39.CLK     Tckdi       (-Th)    -0.048   uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync<2>
+    SLICE_X35Y70.CX      net (fanout=1)        0.443   uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync<1>
+    SLICE_X35Y70.CLK     Tckdi       (-Th)    -0.059   uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync<2>
                                                        uBlaze_SPI/MB_SPI_i/axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_2
     -------------------------------------------------  ---------------------------
-    Total                                      0.677ns (0.248ns logic, 0.429ns route)
-                                                       (36.6% logic, 63.4% route)
+    Total                                      0.700ns (0.257ns logic, 0.443ns route)
+                                                       (36.7% logic, 63.3% route)
 
 --------------------------------------------------------------------------------
 
@@ -403,13 +401,13 @@ Timing constraint: PATH "TS_TIG_microblaze_0_dlmb_POR_FF_I_path" TIG;
  0 timing errors detected. (0 setup errors, 0 hold errors)
 --------------------------------------------------------------------------------
 
-Paths for end point uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb/microblaze_0_dlmb/POR_FF_I (SLICE_X38Y51.SR), 1 path
+Paths for end point uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb/microblaze_0_dlmb/POR_FF_I (SLICE_X52Y70.SR), 1 path
 --------------------------------------------------------------------------------
-Delay (setup path):     1.958ns (data path - clock path skew + uncertainty)
+Delay (setup path):     2.563ns (data path - clock path skew + uncertainty)
   Source:               uBlaze_SPI/MB_SPI_i/proc_sys_reset_0/proc_sys_reset_0/Bus_Struct_Reset_0 (FF)
   Destination:          uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb/microblaze_0_dlmb/POR_FF_I (FF)
-  Data Path Delay:      1.832ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.031ns (0.453 - 0.484)
+  Data Path Delay:      2.440ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.028ns (0.232 - 0.260)
   Source Clock:         uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
   Destination Clock:    uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
   Clock Uncertainty:    0.095ns
@@ -423,27 +421,27 @@ Delay (setup path):     1.958ns (data path - clock path skew + uncertainty)
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X39Y43.AQ      Tcko                  0.391   uBlaze_SPI/MB_SPI_i/Generic_SPI/Generic_SPI/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_13
+    SLICE_X39Y64.DQ      Tcko                  0.391   uBlaze_SPI/MB_SPI_i/proc_sys_reset_0_BUS_STRUCT_RESET
                                                        uBlaze_SPI/MB_SPI_i/proc_sys_reset_0/proc_sys_reset_0/Bus_Struct_Reset_0
-    SLICE_X38Y51.SR      net (fanout=2)        1.051   uBlaze_SPI/MB_SPI_i/proc_sys_reset_0_BUS_STRUCT_RESET
-    SLICE_X38Y51.CLK     Tsrck                 0.390   uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb_LMB_Rst
+    SLICE_X52Y70.SR      net (fanout=2)        1.659   uBlaze_SPI/MB_SPI_i/proc_sys_reset_0_BUS_STRUCT_RESET
+    SLICE_X52Y70.CLK     Tsrck                 0.390   uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb_LMB_Rst
                                                        uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb/microblaze_0_dlmb/POR_FF_I
     -------------------------------------------------  ---------------------------
-    Total                                      1.832ns (0.781ns logic, 1.051ns route)
-                                                       (42.6% logic, 57.4% route)
+    Total                                      2.440ns (0.781ns logic, 1.659ns route)
+                                                       (32.0% logic, 68.0% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: PATH "TS_TIG_microblaze_0_dlmb_POR_FF_I_path" TIG;
 --------------------------------------------------------------------------------
 
-Paths for end point uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb/microblaze_0_dlmb/POR_FF_I (SLICE_X38Y51.SR), 1 path
+Paths for end point uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb/microblaze_0_dlmb/POR_FF_I (SLICE_X52Y70.SR), 1 path
 --------------------------------------------------------------------------------
-Delay (hold path):      0.828ns (datapath - clock path skew - uncertainty)
+Delay (hold path):      1.207ns (datapath - clock path skew - uncertainty)
   Source:               uBlaze_SPI/MB_SPI_i/proc_sys_reset_0/proc_sys_reset_0/Bus_Struct_Reset_0 (FF)
   Destination:          uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb/microblaze_0_dlmb/POR_FF_I (FF)
-  Data Path Delay:      0.829ns (Levels of Logic = 0)
-  Clock Path Skew:      0.001ns (0.177 - 0.176)
+  Data Path Delay:      1.197ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.010ns (0.066 - 0.076)
   Source Clock:         uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
   Destination Clock:    uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
   Clock Uncertainty:    0.000ns
@@ -452,14 +450,14 @@ Delay (hold path):      0.828ns (datapath - clock path skew - uncertainty)
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X39Y43.AQ      Tcko                  0.198   uBlaze_SPI/MB_SPI_i/Generic_SPI/Generic_SPI/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_13
+    SLICE_X39Y64.DQ      Tcko                  0.198   uBlaze_SPI/MB_SPI_i/proc_sys_reset_0_BUS_STRUCT_RESET
                                                        uBlaze_SPI/MB_SPI_i/proc_sys_reset_0/proc_sys_reset_0/Bus_Struct_Reset_0
-    SLICE_X38Y51.SR      net (fanout=2)        0.606   uBlaze_SPI/MB_SPI_i/proc_sys_reset_0_BUS_STRUCT_RESET
-    SLICE_X38Y51.CLK     Tcksr       (-Th)    -0.025   uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb_LMB_Rst
+    SLICE_X52Y70.SR      net (fanout=2)        0.974   uBlaze_SPI/MB_SPI_i/proc_sys_reset_0_BUS_STRUCT_RESET
+    SLICE_X52Y70.CLK     Tcksr       (-Th)    -0.025   uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb_LMB_Rst
                                                        uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb/microblaze_0_dlmb/POR_FF_I
     -------------------------------------------------  ---------------------------
-    Total                                      0.829ns (0.223ns logic, 0.606ns route)
-                                                       (26.9% logic, 73.1% route)
+    Total                                      1.197ns (0.223ns logic, 0.974ns route)
+                                                       (18.6% logic, 81.4% route)
 
 --------------------------------------------------------------------------------
 
@@ -470,13 +468,13 @@ Timing constraint: PATH "TS_TIG_microblaze_0_ilmb_POR_FF_I_path" TIG;
  0 timing errors detected. (0 setup errors, 0 hold errors)
 --------------------------------------------------------------------------------
 
-Paths for end point uBlaze_SPI/MB_SPI_i/microblaze_0_ilmb/microblaze_0_ilmb/POR_FF_I (SLICE_X42Y58.SR), 1 path
+Paths for end point uBlaze_SPI/MB_SPI_i/microblaze_0_ilmb/microblaze_0_ilmb/POR_FF_I (SLICE_X49Y70.SR), 1 path
 --------------------------------------------------------------------------------
-Delay (setup path):     2.898ns (data path - clock path skew + uncertainty)
+Delay (setup path):     2.141ns (data path - clock path skew + uncertainty)
   Source:               uBlaze_SPI/MB_SPI_i/proc_sys_reset_0/proc_sys_reset_0/Bus_Struct_Reset_0 (FF)
   Destination:          uBlaze_SPI/MB_SPI_i/microblaze_0_ilmb/microblaze_0_ilmb/POR_FF_I (FF)
-  Data Path Delay:      2.787ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.016ns (0.468 - 0.484)
+  Data Path Delay:      2.019ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.027ns (0.233 - 0.260)
   Source Clock:         uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
   Destination Clock:    uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
   Clock Uncertainty:    0.095ns
@@ -490,27 +488,27 @@ Delay (setup path):     2.898ns (data path - clock path skew + uncertainty)
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X39Y43.AQ      Tcko                  0.391   uBlaze_SPI/MB_SPI_i/Generic_SPI/Generic_SPI/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_13
+    SLICE_X39Y64.DQ      Tcko                  0.391   uBlaze_SPI/MB_SPI_i/proc_sys_reset_0_BUS_STRUCT_RESET
                                                        uBlaze_SPI/MB_SPI_i/proc_sys_reset_0/proc_sys_reset_0/Bus_Struct_Reset_0
-    SLICE_X42Y58.SR      net (fanout=2)        2.006   uBlaze_SPI/MB_SPI_i/proc_sys_reset_0_BUS_STRUCT_RESET
-    SLICE_X42Y58.CLK     Tsrck                 0.390   uBlaze_SPI/MB_SPI_i/microblaze_0_ilmb_LMB_Rst
+    SLICE_X49Y70.SR      net (fanout=2)        1.249   uBlaze_SPI/MB_SPI_i/proc_sys_reset_0_BUS_STRUCT_RESET
+    SLICE_X49Y70.CLK     Tsrck                 0.379   uBlaze_SPI/MB_SPI_i/microblaze_0_ilmb_LMB_Rst
                                                        uBlaze_SPI/MB_SPI_i/microblaze_0_ilmb/microblaze_0_ilmb/POR_FF_I
     -------------------------------------------------  ---------------------------
-    Total                                      2.787ns (0.781ns logic, 2.006ns route)
-                                                       (28.0% logic, 72.0% route)
+    Total                                      2.019ns (0.770ns logic, 1.249ns route)
+                                                       (38.1% logic, 61.9% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: PATH "TS_TIG_microblaze_0_ilmb_POR_FF_I_path" TIG;
 --------------------------------------------------------------------------------
 
-Paths for end point uBlaze_SPI/MB_SPI_i/microblaze_0_ilmb/microblaze_0_ilmb/POR_FF_I (SLICE_X42Y58.SR), 1 path
+Paths for end point uBlaze_SPI/MB_SPI_i/microblaze_0_ilmb/microblaze_0_ilmb/POR_FF_I (SLICE_X49Y70.SR), 1 path
 --------------------------------------------------------------------------------
-Delay (hold path):      1.360ns (datapath - clock path skew - uncertainty)
+Delay (hold path):      1.010ns (datapath - clock path skew - uncertainty)
   Source:               uBlaze_SPI/MB_SPI_i/proc_sys_reset_0/proc_sys_reset_0/Bus_Struct_Reset_0 (FF)
   Destination:          uBlaze_SPI/MB_SPI_i/microblaze_0_ilmb/microblaze_0_ilmb/POR_FF_I (FF)
-  Data Path Delay:      1.376ns (Levels of Logic = 0)
-  Clock Path Skew:      0.016ns (0.192 - 0.176)
+  Data Path Delay:      1.001ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.009ns (0.067 - 0.076)
   Source Clock:         uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
   Destination Clock:    uBlaze_SPI/MB_SPI_i/clk_100_0000MHz rising
   Clock Uncertainty:    0.000ns
@@ -519,14 +517,14 @@ Delay (hold path):      1.360ns (datapath - clock path skew - uncertainty)
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X39Y43.AQ      Tcko                  0.198   uBlaze_SPI/MB_SPI_i/Generic_SPI/Generic_SPI/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_13
+    SLICE_X39Y64.DQ      Tcko                  0.198   uBlaze_SPI/MB_SPI_i/proc_sys_reset_0_BUS_STRUCT_RESET
                                                        uBlaze_SPI/MB_SPI_i/proc_sys_reset_0/proc_sys_reset_0/Bus_Struct_Reset_0
-    SLICE_X42Y58.SR      net (fanout=2)        1.153   uBlaze_SPI/MB_SPI_i/proc_sys_reset_0_BUS_STRUCT_RESET
-    SLICE_X42Y58.CLK     Tcksr       (-Th)    -0.025   uBlaze_SPI/MB_SPI_i/microblaze_0_ilmb_LMB_Rst
+    SLICE_X49Y70.SR      net (fanout=2)        0.764   uBlaze_SPI/MB_SPI_i/proc_sys_reset_0_BUS_STRUCT_RESET
+    SLICE_X49Y70.CLK     Tcksr       (-Th)    -0.039   uBlaze_SPI/MB_SPI_i/microblaze_0_ilmb_LMB_Rst
                                                        uBlaze_SPI/MB_SPI_i/microblaze_0_ilmb/microblaze_0_ilmb/POR_FF_I
     -------------------------------------------------  ---------------------------
-    Total                                      1.376ns (0.223ns logic, 1.153ns route)
-                                                       (16.2% logic, 83.8% route)
+    Total                                      1.001ns (0.237ns logic, 0.764ns route)
+                                                       (23.7% logic, 76.3% route)
 
 --------------------------------------------------------------------------------
 
@@ -543,7 +541,7 @@ Clock to Setup on destination clock USER_CLOCK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-USER_CLOCK     |    3.363|         |         |         |
+USER_CLOCK     |    8.254|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -552,19 +550,19 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 29 paths, 0 nets, and 26 connections
+Constraints cover 29 paths, 0 nets, and 28 connections
 
 Design statistics:
 No global statistics to report.
 
-Analysis completed Thu May 11 17:38:15 2017 
+Analysis completed Tue May 16 12:47:32 2017 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 408 MB
+Peak Memory Usage: 455 MB
 
 
 

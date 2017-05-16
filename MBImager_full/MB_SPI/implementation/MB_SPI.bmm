@@ -1,4 +1,4 @@
-// File: C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_SPI\implementation\MB_SPI.bmm
+// File: C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_SPI\implementation\MB_SPI.bmm
 
 ADDRESS_MAP microblaze_0 MICROBLAZE-LE 100
 	ADDRESS_SPACE microblaze_0_bram_block_combined COMBINED [0x00000000:0x00007fff]

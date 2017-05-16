@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="NgdBuild" timeStamp="Thu May 11 17:25:41 2017">
+  <application stringID="NgdBuild" timeStamp="Tue May 16 12:32:20 2017">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -25,6 +25,10 @@
         <row stringID="row" value="3">
           <item stringID="variable" value="XILINXD_LICENSE_FILE"/>
           <item stringID="value" value="6062@localhost"/>
+        </row>
+        <row stringID="row" value="4">
+          <item stringID="variable" value="XIL_MAP_LOCWARN"/>
+          <item stringID="value" value="1"/>
         </row>
       </table>
       <item stringID="User_EnvOs" value="OS Information">
@@ -49,7 +53,7 @@
         <item DEFAULT="None" label="-bm" stringID="NGDBUILD_bmm_file" value="edkBmmFile.bmm"/>
         <item DEFAULT="None" label="-intstyle" stringID="NGDBUILD_intstyle" value="ise"/>
         <item DEFAULT="None" label="-dd" stringID="NGDBUILD_output_dir" value="_ngo"/>
-        <item DEFAULT="None" label="-p" stringID="NGDBUILD_partname" value="xc6slx25t-fgg484-3"/>
+        <item DEFAULT="None" label="-p" stringID="NGDBUILD_partname" value="xc6slx45-fgg484-3"/>
         <item DEFAULT="None" label="-sd" stringID="NGDBUILD_search_path" value="ipcore_dir"/>
         <item DEFAULT="None" label="-uc" stringID="NGDBUILD_ucf_file" value="Microblaze_System_top.ucf"/>
       </section>
@@ -58,9 +62,9 @@
       <section stringID="NGDBUILD_DESIGN_SUMMARY">
         <item dataType="int" stringID="NGDBUILD_NUM_ERRORS" value="0"/>
         <item dataType="int" stringID="NGDBUILD_FILTERED_WARNINGS" value="0"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_WARNINGS" value="75"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_WARNINGS" value="76"/>
         <item dataType="int" stringID="NGDBUILD_FILTERED_INFOS" value="0"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_INFOS" value="1"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_INFOS" value="2"/>
       </section>
       <section stringID="NGDBUILD_PRE_UNISIM_SUMMARY">
         <item dataType="int" stringID="NGDBUILD_NUM_AND2B1L" value="1"/>
