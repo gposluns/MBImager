@@ -19,7 +19,7 @@ use clock_generator_v4_03_a.all;
 entity clock_generator is
   generic (
     C_FAMILY           : string   := "spartan6" ;
-    C_DEVICE           : string   := "6slx45";
+    C_DEVICE           : string   := "6slx25t";
     C_PACKAGE          : string   := "fgg484";
     C_SPEEDGRADE       : string   := "-3";
     C_CLK_GEN          : string   := "PASSED"
@@ -525,7 +525,7 @@ end architecture STRUCTURE;
 -- C_ELABORATE_DIR = 
 -- C_ELABORATE_RES = NOT_SET
 -- C_FAMILY = spartan6
--- C_DEVICE = 6slx45
+-- C_DEVICE = 6slx25t
 -- C_PACKAGE = fgg484
 -- C_SPEEDGRADE = -3
 

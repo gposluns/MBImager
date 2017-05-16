@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 2.00 secs
-Total CPU time to Xst completion: 1.58 secs
+Total CPU time to Xst completion: 1.65 secs
  
 --> 
 TABLE OF CONTENTS
@@ -38,7 +38,7 @@ Input File Name                    : "MB_SPI_clock_generator_0_wrapper_xst.prj"
 Verilog Include Directory          : {"C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_SPI\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
-Target Device                      : xc6slx45fgg484-3
+Target Device                      : xc6slx25tfgg484-3
 Output File Name                   : "../implementation/MB_SPI_clock_generator_0_wrapper.ngc"
 
 ---- Source Options
@@ -111,7 +111,7 @@ Unit <MB_SPI_clock_generator_0_wrapper> synthesized.
 Synthesizing Unit <clock_generator>.
     Related source file is "C:/Users/shich/OneDrive/Documents/2017_Summer/MBImager/MBImager_full/MB_SPI/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd".
         C_FAMILY = "spartan6"
-        C_DEVICE = "6slx45"
+        C_DEVICE = "6slx25t"
         C_PACKAGE = "fgg484"
         C_SPEEDGRADE = "-3"
         C_CLK_GEN = "PASSED"
@@ -251,12 +251,12 @@ Primitive and Black Box Usage:
 Device utilization summary:
 ---------------------------
 
-Selected Device : 6slx45fgg484-3 
+Selected Device : 6slx25tfgg484-3 
 
 
 Slice Logic Utilization: 
- Number of Slice LUTs:                    1  out of  27288     0%  
-    Number used as Logic:                 1  out of  27288     0%  
+ Number of Slice LUTs:                    1  out of  15032     0%  
+    Number used as Logic:                 1  out of  15032     0%  
 
 Slice Logic Distribution: 
  Number of LUT Flip Flop pairs used:      1
@@ -267,11 +267,11 @@ Slice Logic Distribution:
 
 IO Utilization: 
  Number of IOs:                          25
- Number of bonded IOBs:                   0  out of    316     0%  
+ Number of bonded IOBs:                   0  out of    250     0%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
- Number of PLL_ADVs:                      1  out of      4    25%  
+ Number of PLL_ADVs:                      1  out of      2    50%  
 
 ---------------------------
 Partition Resource Summary:
@@ -318,8 +318,8 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 111.00 secs
-Total CPU time to Xst completion: 110.13 secs
+Total REAL time to Xst completion: 116.00 secs
+Total CPU time to Xst completion: 116.05 secs
  
 --> 
 

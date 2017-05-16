@@ -5,7 +5,7 @@ IntStyle: ise
 Flow: ise
 MHS File: MB_SPI.mhs
 Architecture: spartan6
-Device: xc6slx45
+Device: xc6slx25t
 Package: fgg484
 SpeedGrade: -3
 UserCmd1: 

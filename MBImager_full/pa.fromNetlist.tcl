@@ -1,7 +1,7 @@
 
 # PlanAhead Launch Script for Post-Synthesis pin planning, created by Project Navigator
 
-create_project -name MBImager_full -dir "C:/Users/shich/OneDrive/Documents/2017_Summer/MBImager/MBImager_full/planAhead_run_2" -part xc6slx45fgg484-3
+create_project -name MBImager_full -dir "C:/Users/shich/OneDrive/Documents/2017_Summer/MBImager/MBImager_full/planAhead_run_3" -part xc6slx25tfgg484-3
 set_property design_mode GateLvl [get_property srcset [current_run -impl]]
 set_property edif_top_file "C:/Users/shich/OneDrive/Documents/2017_Summer/MBImager/MBImager_full/MB_top.ngc" [ get_property srcset [ current_run ] ]
 add_files -norecurse { {C:/Users/shich/OneDrive/Documents/2017_Summer/MBImager/MBImager_full} {ipcore_dir} }

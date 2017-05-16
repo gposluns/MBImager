@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 1.42 secs
+Total CPU time to Xst completion: 1.68 secs
  
 --> 
 TABLE OF CONTENTS
@@ -38,7 +38,7 @@ Input File Name                    : "MB_SPI_xst.prj"
 Verilog Include Directory          : {"C:\Users\shich\OneDrive\Documents\2017_Summer\MBImager\MBImager_full\MB_SPI\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
-Target Device                      : xc6slx45fgg484-3
+Target Device                      : xc6slx25tfgg484-3
 Output File Name                   : "../implementation/MB_SPI.ngc"
 
 ---- Source Options
@@ -1033,7 +1033,7 @@ Optimizing unit <MB_SPI> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block MB_SPI, actual ratio is 6.
+Found area constraint ratio of 100 (+ 0) on block MB_SPI, actual ratio is 12.
 INFO:Xst:2260 - The FF/Latch <Generic_SPI/bus2ip_reset_int_core> in Unit <Generic_SPI> is equivalent to the following 2 FFs/Latches : <Generic_SPI/bus2ip_reset_int_core_1> <Generic_SPI/bus2ip_reset_int_core_2> 
 INFO:Xst:2260 - The FF/Latch <Generic_SPI/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg> in Unit <Generic_SPI> is equivalent to the following FF/Latch : <Generic_SPI/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1> 
 INFO:Xst:2260 - The FF/Latch <Generic_SPI/AXI_SPI_CORE_INTERFACE_I/SPI_MODULE_I/transfer_start> in Unit <Generic_SPI> is equivalent to the following FF/Latch : <Generic_SPI/AXI_SPI_CORE_INTERFACE_I/SPI_MODULE_I/transfer_start_1> 
@@ -1134,14 +1134,14 @@ Primitive and Black Box Usage:
 Device utilization summary:
 ---------------------------
 
-Selected Device : 6slx45fgg484-3 
+Selected Device : 6slx25tfgg484-3 
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            2089  out of  54576     3%  
- Number of Slice LUTs:                 2387  out of  27288     8%  
-    Number used as Logic:              2193  out of  27288     8%  
-    Number used as Memory:              194  out of   6408     3%  
+ Number of Slice Registers:            2089  out of  30064     6%  
+ Number of Slice LUTs:                 2387  out of  15032    15%  
+    Number used as Logic:              2193  out of  15032    14%  
+    Number used as Memory:              194  out of   3664     5%  
        Number used as RAM:               64
        Number used as SRL:              130
 
@@ -1154,15 +1154,15 @@ Slice Logic Distribution:
 
 IO Utilization: 
  Number of IOs:                          15
- Number of bonded IOBs:                   0  out of    316     0%  
+ Number of bonded IOBs:                   0  out of    250     0%  
     IOB Flip Flops/Latches:               8
 
 Specific Feature Utilization:
- Number of Block RAM/FIFO:               16  out of    116    13%  
+ Number of Block RAM/FIFO:               16  out of     52    30%  
     Number using Block RAM only:         16
  Number of BUFG/BUFGCTRLs:                4  out of     16    25%  
- Number of DSP48A1s:                      3  out of     58     5%  
- Number of PLL_ADVs:                      1  out of      4    25%  
+ Number of DSP48A1s:                      3  out of     38     7%  
+ Number of PLL_ADVs:                      1  out of      2    50%  
 
 ---------------------------
 Partition Resource Summary:
@@ -1502,12 +1502,12 @@ debug_module/debug_module/drck_i|    2.427|    3.477|    3.249|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 296.00 secs
-Total CPU time to Xst completion: 296.47 secs
+Total REAL time to Xst completion: 271.00 secs
+Total CPU time to Xst completion: 271.22 secs
  
 --> 
 
-Total memory usage is 463288 kilobytes
+Total memory usage is 431884 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   15 (   0 filtered)

@@ -3,7 +3,7 @@
 <Update_bits_deps>
 
   <Version XPSPNVER="1.0" EDKVER="14.7" />
-  <FPGA family="spartan6" device="xc6slx45" package="fgg484" speedgrade="-3" />
+  <FPGA family="spartan6" device="xc6slx25t" package="fgg484" speedgrade="-3" />
   <File Type="MHS" URL="../../MB_SPI.mhs" />
   <File Type="UCF" URL="../../data\MB_SPI.ucf" />
   <File Type="BitinitOpt" URL="../bitinit.opt" />

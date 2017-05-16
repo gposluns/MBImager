@@ -3,7 +3,7 @@ if { [ catch { xload xmp MB_SPI.xmp } result ] } {
   exit 10
 }
 xset arch spartan6
-xset dev xc6slx45
+xset dev xc6slx25t
 xset package fgg484
 xset speedgrade -3
 xset simulator isim
@@ -16,7 +16,7 @@ if { ! [ string equal -nocase $xpsArch "spartan6" ] } {
    set bMisMatch true
 }
 set xpsDev [xget dev]
-if { ! [ string equal -nocase $xpsDev "xc6slx45" ] } {
+if { ! [ string equal -nocase $xpsDev "xc6slx25t" ] } {
    set bMisMatch true
 }
 set xpsPkg [xget package]
@@ -31,7 +31,7 @@ if { $bMisMatch == true } {
    puts "Settings Mismatch:"
    puts "Current Project:"
    puts "	Family: spartan6"
-   puts "	Device: xc6slx45"
+   puts "	Device: xc6slx25t"
    puts "	Package: fgg484"
    puts "	Speed: -3"
    puts "XPS File: "

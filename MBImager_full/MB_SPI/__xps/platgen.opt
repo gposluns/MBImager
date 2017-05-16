@@ -1,2 +1,2 @@
- -p xc6slx45fgg484-3 -lang verilog$(PROJECT_SEARCHPATHOPT) $(GLOBAL_SEARCHPATHOPT) -toplevel no -ti MB_SPI_i -msg __xps/ise/xmsgprops.lst
+ -p xc6slx25tfgg484-3 -lang verilog$(PROJECT_SEARCHPATHOPT) $(GLOBAL_SEARCHPATHOPT) -toplevel no -ti MB_SPI_i -msg __xps/ise/xmsgprops.lst
 

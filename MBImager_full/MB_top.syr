@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 2.00 secs
-Total CPU time to Xst completion: 2.01 secs
+Total CPU time to Xst completion: 1.27 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 2.00 secs
-Total CPU time to Xst completion: 2.02 secs
+Total CPU time to Xst completion: 1.28 secs
  
 --> Reading design: MB_top.prj
 
@@ -46,7 +46,7 @@ Ignore Synthesis Constraint File   : NO
 ---- Target Parameters
 Output File Name                   : "MB_top"
 Output Format                      : NGC
-Target Device                      : xc6slx45-3-fgg484
+Target Device                      : xc6slx25t-3-fgg484
 
 ---- Source Options
 Top Module Name                    : MB_top
@@ -567,7 +567,7 @@ WARNING:Xst:1293 - FF/Latch <countpix_6> has a constant value of 0 in block <ima
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block MB_top, actual ratio is 2.
+Found area constraint ratio of 100 (+ 5) on block MB_top, actual ratio is 5.
 INFO:Xst:2260 - The FF/Latch <Generic_SPI/bus2ip_reset_int_core> in Unit <Generic_SPI> is equivalent to the following 2 FFs/Latches : <Generic_SPI/bus2ip_reset_int_core_1> <Generic_SPI/bus2ip_reset_int_core_2> 
 INFO:Xst:2260 - The FF/Latch <Generic_SPI/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg> in Unit <Generic_SPI> is equivalent to the following FF/Latch : <Generic_SPI/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1> 
 INFO:Xst:2260 - The FF/Latch <Generic_SPI/AXI_SPI_CORE_INTERFACE_I/SPI_MODULE_I/transfer_start> in Unit <Generic_SPI> is equivalent to the following FF/Latch : <Generic_SPI/AXI_SPI_CORE_INTERFACE_I/SPI_MODULE_I/transfer_start_1> 
@@ -732,14 +732,14 @@ Primitive and Black Box Usage:
 Device utilization summary:
 ---------------------------
 
-Selected Device : 6slx45fgg484-3 
+Selected Device : 6slx25tfgg484-3 
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            2501  out of  54576     4%  
- Number of Slice LUTs:                 2805  out of  27288    10%  
-    Number used as Logic:              2608  out of  27288     9%  
-    Number used as Memory:              197  out of   6408     3%  
+ Number of Slice Registers:            2501  out of  30064     8%  
+ Number of Slice LUTs:                 2805  out of  15032    18%  
+    Number used as Logic:              2608  out of  15032    17%  
+    Number used as Memory:              197  out of   3664     5%  
        Number used as RAM:               64
        Number used as SRL:              133
 
@@ -752,15 +752,15 @@ Slice Logic Distribution:
 
 IO Utilization: 
  Number of IOs:                          85
- Number of bonded IOBs:                  61  out of    316    19%  
+ Number of bonded IOBs:                  61  out of    250    24%  
     IOB Flip Flops/Latches:               8
 
 Specific Feature Utilization:
- Number of Block RAM/FIFO:               28  out of    116    24%  
+ Number of Block RAM/FIFO:               28  out of     52    53%  
     Number using Block RAM only:         28
  Number of BUFG/BUFGCTRLs:               15  out of     16    93%  
- Number of DSP48A1s:                      3  out of     58     5%  
- Number of PLL_ADVs:                      1  out of      4    25%  
+ Number of DSP48A1s:                      3  out of     38     7%  
+ Number of PLL_ADVs:                      1  out of      2    50%  
 
 ---------------------------
 Partition Resource Summary:
@@ -1284,12 +1284,12 @@ uBlaze_SPI/MB_SPI_i/debug_module/debug_module/drck_i|    2.427|    3.477|    3.2
 =========================================================================
 
 
-Total REAL time to Xst completion: 363.00 secs
-Total CPU time to Xst completion: 362.93 secs
+Total REAL time to Xst completion: 352.00 secs
+Total CPU time to Xst completion: 352.01 secs
  
 --> 
 
-Total memory usage is 439200 kilobytes
+Total memory usage is 439216 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  146 (   0 filtered)

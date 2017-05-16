@@ -90,7 +90,7 @@ begin
   clock_generator_0 : clock_generator
     generic map (
       C_FAMILY => "spartan6",
-      C_DEVICE => "6slx45",
+      C_DEVICE => "6slx25t",
       C_PACKAGE => "fgg484",
       C_SPEEDGRADE => "-3"
     )
