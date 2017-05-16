@@ -1,1 +1,1 @@
- -p spartan6 -lang verilog$(PROJECT_SEARCHPATHOPT) $(GLOBAL_SEARCHPATHOPT) -msg __xps/ise/xmsgprops.lst -s isim -X C:/Users/shich/OneDrive/Documents/2017_Summer/MBImager/MBImager_full/MB_SPI/
+ -p spartan6 -lang verilog$(PROJECT_SEARCHPATHOPT) $(GLOBAL_SEARCHPATHOPT) -msg __xps/ise/xmsgprops.lst -s isim -X D:/OneDrive/Documents/2017_Summer/MBImager/MBImager_full/MB_SPI/

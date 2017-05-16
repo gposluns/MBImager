@@ -1,5 +1,5 @@
 proc pnsynth {} {
-  cd C:/Users/shich/OneDrive/Documents/2017_Summer/MBImager/MBImager_full/MB_SPI
+  cd D:/OneDrive/Documents/2017_Summer/MBImager/MBImager_full/MB_SPI
   if { [ catch { xload xmp MB_SPI.xmp } result ] } {
     exit 10
   }
