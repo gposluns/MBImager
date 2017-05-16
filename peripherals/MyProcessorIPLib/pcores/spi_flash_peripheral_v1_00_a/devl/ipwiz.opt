@@ -1,0 +1,11 @@
+-batch 
+-create spi_flash_peripheral 
+-ver 1.00.a 
+-dir "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\peripherals\MyProcessorIPLib" 
+-lang verilog 
+-bus axi4lite s 
+-rst 
+-reg 4 
+-xps 
+-ise 
+-driver 

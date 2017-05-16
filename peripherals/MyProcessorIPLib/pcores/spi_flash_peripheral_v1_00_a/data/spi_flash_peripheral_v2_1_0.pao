@@ -1,0 +1,10 @@
+##############################################################################
+## Filename:          C:/Users/MBImager/Documents/MBImager_ams/repo/MBImager/peripherals/MyProcessorIPLib/pcores/spi_flash_peripheral_v1_00_a/data/spi_flash_peripheral_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Tue May 09 14:44:07 2017 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a  all 
+lib axi_lite_ipif_v1_01_a  all 
+lib spi_flash_peripheral_v1_00_a user_logic verilog
+lib spi_flash_peripheral_v1_00_a spi_flash_peripheral vhdl
