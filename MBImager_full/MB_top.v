@@ -84,6 +84,9 @@ wire ADC_CLK_n;
 // reg [7:0] ADC_TESTDATA1;
 // reg [7:0] ADC_TESTDATA2;
 // reg [7:0] ADC_TESTDATA3;
+wire W_CLK_MOD;
+wire W_CLKN_MOD;
+wire W_RO_ADC_CLK;
 
 /* Do not reset the Imager SPI regs */
 //	assign ISPI_RESETB = 1'b1;
@@ -134,8 +137,11 @@ ROImager imager_time (
     .MUX_ADD(MBI_MUX_ADD), 
     .ADC_PIXCLK(ADC_PIXCLK), 
 	.ADC_CLK(ADC_CLK),
-    .CLK_MOD(MBI_CLK_MOD), 
-    .CLKN_MOD(MBI_CLKN_MOD), 
+    .CLK_MOD(W_CLK_MOD), 
+    .CLKN_MOD(W_CLKN_MOD),
+	 .DRAIN_B(OK_DRAIN_B),
+	 .CLK_MOD_PHASE_SEL1(1'b0),
+	 .CLK_MOD_PHASE_SEL2(1'b0),
     .PRECH_COL(MBI_PRECH_COL), 
     .ADC_DATA_VALID(MBI_ADC_DATA_VALID),
 	.DDR_DATA_VALID(MBI_DDR_DATA_VALID),
@@ -400,6 +406,46 @@ ODDR2 #(
 	.S(1'b0) // 1-bit set input
 );
 // End of ODDR2_inst instantiatio
+
+// ------------------------------------------------
+// FOR SYNCED MOD CLK
+
+// Xilinx HDL Libraries Guide, version 13.4
+ODDR2 #(
+	.DDR_ALIGNMENT("NONE"), // Sets output alignment to "NONE", "C0" or "C1"
+	.INIT(1'b0), // Sets initial state of the Q output to 1'b0 or 1'b1
+	.SRTYPE("SYNC") // Specifies "SYNC" or "ASYNC" set/reset
+	) ODDR2_CLK_MOD_buf (
+	.Q(MBI_CLK_MOD), // 1-bit DDR output data
+	.C0(~W_CLK_MOD), // 1-bit clock input
+	.C1(W_CLK_MOD), // 1-bit clock input
+	.CE(1'b1), // 1-bit clock enable input
+	.D0(1'b0), // 1-bit data input (associated with C0)
+	.D1(1'b1), // 1-bit data input (associated with C1)
+	.R(1'b0), // 1-bit reset input
+	.S(1'b0) // 1-bit set input
+);
+// End of ODDR2_inst instantiatio
+
+// Xilinx HDL Libraries Guide, version 13.4
+ODDR2 #(
+	.DDR_ALIGNMENT("NONE"), // Sets output alignment to "NONE", "C0" or "C1"
+	.INIT(1'b0), // Sets initial state of the Q output to 1'b0 or 1'b1
+	.SRTYPE("SYNC") // Specifies "SYNC" or "ASYNC" set/reset
+	) ODDR2_CLKN_MOD_buf (
+	.Q(MBI_CLKN_MOD), // 1-bit DDR output data
+	.C0(~W_CLKN_MOD), // 1-bit clock input
+	.C1(W_CLKN_MOD), // 1-bit clock input
+	.CE(1'b1), // 1-bit clock enable input
+	.D0(1'b0), // 1-bit data input (associated with C0)
+	.D1(1'b1), // 1-bit data input (associated with C1)
+	.R(1'b0), // 1-bit reset input
+	.S(1'b0) // 1-bit set input
+);
+// End of ODDR2_inst instantiatio
+
+// END SYNC IMPLEMENTATION
+// ------------------------------------------------
 
 // Imager SPI upload
 Imager_SPI MBI_regs (

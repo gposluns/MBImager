@@ -120,9 +120,10 @@
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="../../OKelly/OK_imager1/ROImager_exp.v"/>
+      <outfile xil_pn:name="../OK_imager1/ROImager_exp.v"/>
       <outfile xil_pn:name="Imager_SPI.v"/>
       <outfile xil_pn:name="MB_SPI/MB_SPI.xmp"/>
       <outfile xil_pn:name="MB_SPI/MB_SPI_top.v"/>
@@ -179,12 +180,10 @@
       <outfile xil_pn:name="MB_SPI_microblaze_0_wrapper.ngc"/>
       <outfile xil_pn:name="MB_SPI_proc_sys_reset_0_wrapper.ngc"/>
     </transform>
-    <transform xil_pn:end_ts="1486755661" xil_pn:in_ck="-322373539011006765" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="6402920835725713925" xil_pn:start_ts="1486755645">
+    <transform xil_pn:end_ts="1494967509" xil_pn:in_ck="-6964605309421139781" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="6402920835725713925" xil_pn:start_ts="1494967467">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="MB_top.lso"/>
       <outfile xil_pn:name="MB_top.ngc"/>
       <outfile xil_pn:name="MB_top.ngr"/>
@@ -200,80 +199,88 @@
     <transform xil_pn:end_ts="1484682071" xil_pn:in_ck="1980434118663266794" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="5069202360468909795" xil_pn:start_ts="1484682071">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
     </transform>
     <transform xil_pn:end_ts="1486755695" xil_pn:in_ck="5694322373461876493" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-6414318457939739561" xil_pn:start_ts="1486755661">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name="MB_SPI.ncf"/>
       <outfile xil_pn:name="MB_top.bld"/>
       <outfile xil_pn:name="MB_top.ngd"/>
       <outfile xil_pn:name="MB_top_ngdbuild.xrpt"/>
       <outfile xil_pn:name="_ngo"/>
-      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
     <transform xil_pn:end_ts="1486755721" xil_pn:in_ck="7973567666091165778" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="-1933097906049163567" xil_pn:start_ts="1486755695">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name="MB_top.pcf"/>
       <outfile xil_pn:name="MB_top_map.map"/>
       <outfile xil_pn:name="MB_top_map.mrp"/>
-      <outfile xil_pn:name="MB_top_map.ncd"/>
       <outfile xil_pn:name="MB_top_map.ngm"/>
       <outfile xil_pn:name="MB_top_map.xrpt"/>
       <outfile xil_pn:name="MB_top_summary.xml"/>
       <outfile xil_pn:name="MB_top_usage.xml"/>
-      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
     <transform xil_pn:end_ts="1486755793" xil_pn:in_ck="-9215869380071282293" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-7126275392399626075" xil_pn:start_ts="1486755721">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="MB_top.ncd"/>
-      <outfile xil_pn:name="MB_top.pad"/>
-      <outfile xil_pn:name="MB_top.par"/>
-      <outfile xil_pn:name="MB_top.ptwx"/>
-      <outfile xil_pn:name="MB_top.unroutes"/>
-      <outfile xil_pn:name="MB_top.xpi"/>
-      <outfile xil_pn:name="MB_top_pad.csv"/>
-      <outfile xil_pn:name="MB_top_pad.txt"/>
-      <outfile xil_pn:name="MB_top_par.xrpt"/>
-      <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
+      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1486755832" xil_pn:in_ck="3670710308749540" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="396117104113915555" xil_pn:start_ts="1486755793">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
-      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="MB_top.ut"/>
-      <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
-      <outfile xil_pn:name="mb_top.bgn"/>
-      <outfile xil_pn:name="mb_top.bit"/>
-      <outfile xil_pn:name="mb_top.drc"/>
-      <outfile xil_pn:name="usage_statistics_webtalk.html"/>
-      <outfile xil_pn:name="webtalk.log"/>
-      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1484690004" xil_pn:in_ck="2651646183251074951" xil_pn:name="TRAN_exportToSDK" xil_pn:prop_ck="124571339" xil_pn:start_ts="1484689998">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="NotReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1493663068" xil_pn:in_ck="5200882885382894" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="8150872254684753111" xil_pn:start_ts="1493663066">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="InputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1486755793" xil_pn:in_ck="-4038175120059847858" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1486755788">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="MB_top.twr"/>
-      <outfile xil_pn:name="MB_top.twx"/>
-      <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
+      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:name="TRAN_exportToSDKnobit">
       <status xil_pn:value="SuccessfullyRun"/>
