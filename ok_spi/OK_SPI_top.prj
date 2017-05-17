@@ -1,0 +1,4 @@
+verilog work "shift_out.v"
+verilog work "shift_in.v"
+verilog work "../../../../../../Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM6310-LX45/okLibrary.v"
+verilog work "OK_SPI_top.v"
