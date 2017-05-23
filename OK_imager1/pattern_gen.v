@@ -47,8 +47,8 @@ module pattern_gen(
 // Implementation
 //----------------------------------------------------------------------------
 
-	reg	[10:1] Pat_i;
-	reg [10:1] Pat_cur;
+	reg [9:0] Pat_i;
+	reg [9:0] Pat_cur;
 	integer cntPat;
 	wire subc_inv;
 
@@ -124,6 +124,6 @@ module pattern_gen(
 
 	assign Pat_out = Pat_i;
 	
-	assign subc_inv = ((CntSubc/Mask_change_subc)%2==1 && CntSubc <= Mask_change_no*Mask_change_subc) ? 1 : 0;
+	assign subc_inv = (((CntSubc/Mask_change_subc)%2==1) && (CntSubc <= Mask_change_no*Mask_change_subc))||((CntSubc > Mask_change_no*Mask_change_subc)&&(Mask_change_no%2==1));
 
 endmodule
