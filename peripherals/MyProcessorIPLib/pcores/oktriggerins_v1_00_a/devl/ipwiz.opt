@@ -1,0 +1,9 @@
+-batch 
+-create oktriggerins 
+-ver 1.00.a 
+-dir "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\peripherals\MyProcessorIPLib" 
+-lang verilog 
+-bus axi4lite s 
+-reg 1 
+-xps 
+-driver 

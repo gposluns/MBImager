@@ -1,0 +1,10 @@
+##############################################################################
+## Filename:          C:/Users/MBImager/Documents/MBImager_ams/repo/MBImager/peripherals/MyProcessorIPLib/pcores/okwireouts_v1_00_a/data/okwireouts_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Tue May 23 10:12:59 2017 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a  all 
+lib axi_lite_ipif_v1_01_a  all 
+lib okwireouts_v1_00_a user_logic verilog
+lib okwireouts_v1_00_a okwireouts vhdl
