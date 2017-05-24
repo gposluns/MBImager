@@ -158,7 +158,7 @@ output                                    IP2Bus_Error;
   // USER logic implementation added here
   
   
-	okHost host (.okEH(okEH),
+	okHost host (.okHE(okHE),
 	.okHE(okHE),
 	.okUHU(okUHU),
 	.okUH(okUH),
@@ -166,38 +166,38 @@ output                                    IP2Bus_Error;
 	
 	okWireOR #(.N(32))wireOr (okEH, okEHx);
 	
-	okWireOut ep00 (.okEH(okEH), .okEH(okEHx[0*65 +: 65]), .ep_addr(8'h20), .ep_datain(slv_reg0));
-	okWireOut ep01 (.okEH(okEH), .okEH(okEHx[1*65 +: 65]), .ep_addr(8'h21), .ep_datain(slv_reg1));
-	okWireOut ep02 (.okEH(okEH), .okEH(okEHx[2*65 +: 65]), .ep_addr(8'h22), .ep_datain(slv_reg2));
-	okWireOut ep03 (.okEH(okEH), .okEH(okEHx[3*65 +: 65]), .ep_addr(8'h23), .ep_datain(slv_reg3));
-	okWireOut ep04 (.okEH(okEH), .okEH(okEHx[4*65 +: 65]), .ep_addr(8'h24), .ep_datain(slv_reg4));
-	okWireOut ep05 (.okEH(okEH), .okEH(okEHx[5*65 +: 65]), .ep_addr(8'h25), .ep_datain(slv_reg5));
-	okWireOut ep06 (.okEH(okEH), .okEH(okEHx[6*65 +: 65]), .ep_addr(8'h26), .ep_datain(slv_reg6));
-	okWireOut ep07 (.okEH(okEH), .okEH(okEHx[7*65 +: 65]), .ep_addr(8'h27), .ep_datain(slv_reg7));
-	okWireOut ep08 (.okEH(okEH), .okEH(okEHx[8*65 +: 65]), .ep_addr(8'h28), .ep_datain(slv_reg8));
-	okWireOut ep09 (.okEH(okEH), .okEH(okEHx[9*65 +: 65]), .ep_addr(8'h29), .ep_datain(slv_reg9));
-	okWireOut ep10 (.okEH(okEH), .okEH(okEHx[10*65 +: 65]), .ep_addr(8'h2a), .ep_datain(slv_reg10));
-	okWireOut ep11 (.okEH(okEH), .okEH(okEHx[11*65 +: 65]), .ep_addr(8'h2b), .ep_datain(slv_reg11));
-	okWireOut ep12 (.okEH(okEH), .okEH(okEHx[12*65 +: 65]), .ep_addr(8'h2c), .ep_datain(slv_reg12));
-	okWireOut ep13 (.okEH(okEH), .okEH(okEHx[13*65 +: 65]), .ep_addr(8'h2d), .ep_datain(slv_reg13));
-	okWireOut ep14 (.okEH(okEH), .okEH(okEHx[14*65 +: 65]), .ep_addr(8'h2e), .ep_datain(slv_reg14));
-	okWireOut ep15 (.okEH(okEH), .okEH(okEHx[15*65 +: 65]), .ep_addr(8'h2f), .ep_datain(slv_reg15));
-	okWireOut ep16 (.okEH(okEH), .okEH(okEHx[16*65 +: 65]), .ep_addr(8'h30), .ep_datain(slv_reg16));
-	okWireOut ep17 (.okEH(okEH), .okEH(okEHx[17*65 +: 65]), .ep_addr(8'h31), .ep_datain(slv_reg17));
-	okWireOut ep18 (.okEH(okEH), .okEH(okEHx[18*65 +: 65]), .ep_addr(8'h32), .ep_datain(slv_reg18));
-	okWireOut ep19 (.okEH(okEH), .okEH(okEHx[19*65 +: 65]), .ep_addr(8'h33), .ep_datain(slv_reg19));
-	okWireOut ep20 (.okEH(okEH), .okEH(okEHx[20*65 +: 65]), .ep_addr(8'h34), .ep_datain(slv_reg20));
-	okWireOut ep21 (.okEH(okEH), .okEH(okEHx[21*65 +: 65]), .ep_addr(8'h35), .ep_datain(slv_reg21));
-	okWireOut ep22 (.okEH(okEH), .okEH(okEHx[22*65 +: 65]), .ep_addr(8'h36), .ep_datain(slv_reg22));
-	okWireOut ep23 (.okEH(okEH), .okEH(okEHx[23*65 +: 65]), .ep_addr(8'h37), .ep_datain(slv_reg23));
-	okWireOut ep24 (.okEH(okEH), .okEH(okEHx[24*65 +: 65]), .ep_addr(8'h38), .ep_datain(slv_reg24));
-	okWireOut ep25 (.okEH(okEH), .okEH(okEHx[25*65 +: 65]), .ep_addr(8'h39), .ep_datain(slv_reg25));
-	okWireOut ep26 (.okEH(okEH), .okEH(okEHx[26*65 +: 65]), .ep_addr(8'h3a), .ep_datain(slv_reg26));
-	okWireOut ep27 (.okEH(okEH), .okEH(okEHx[27*65 +: 65]), .ep_addr(8'h3b), .ep_datain(slv_reg27));
-	okWireOut ep28 (.okEH(okEH), .okEH(okEHx[28*65 +: 65]), .ep_addr(8'h3c), .ep_datain(slv_reg28));
-	okWireOut ep29 (.okEH(okEH), .okEH(okEHx[29*65 +: 65]), .ep_addr(8'h3d), .ep_datain(slv_reg29));
-	okWireOut ep30 (.okEH(okEH), .okEH(okEHx[30*65 +: 65]), .ep_addr(8'h3e), .ep_datain(slv_reg30));
-	okWireOut ep31 (.okEH(okEH), .okEH(okEHx[31*65 +: 65]), .ep_addr(8'h3f), .ep_datain(slv_reg31));
+	okWireOut ep00 (.okHE(okHE), .okHE(okHEx[0*65 +: 65]), .ep_addr(8'h20), .ep_datain(slv_reg0));
+	okWireOut ep01 (.okHE(okHE), .okHE(okHEx[1*65 +: 65]), .ep_addr(8'h21), .ep_datain(slv_reg1));
+	okWireOut ep02 (.okHE(okHE), .okHE(okHEx[2*65 +: 65]), .ep_addr(8'h22), .ep_datain(slv_reg2));
+	okWireOut ep03 (.okHE(okHE), .okHE(okHEx[3*65 +: 65]), .ep_addr(8'h23), .ep_datain(slv_reg3));
+	okWireOut ep04 (.okHE(okHE), .okHE(okHEx[4*65 +: 65]), .ep_addr(8'h24), .ep_datain(slv_reg4));
+	okWireOut ep05 (.okHE(okHE), .okHE(okHEx[5*65 +: 65]), .ep_addr(8'h25), .ep_datain(slv_reg5));
+	okWireOut ep06 (.okHE(okHE), .okHE(okHEx[6*65 +: 65]), .ep_addr(8'h26), .ep_datain(slv_reg6));
+	okWireOut ep07 (.okHE(okHE), .okHE(okHEx[7*65 +: 65]), .ep_addr(8'h27), .ep_datain(slv_reg7));
+	okWireOut ep08 (.okHE(okHE), .okHE(okHEx[8*65 +: 65]), .ep_addr(8'h28), .ep_datain(slv_reg8));
+	okWireOut ep09 (.okHE(okHE), .okHE(okHEx[9*65 +: 65]), .ep_addr(8'h29), .ep_datain(slv_reg9));
+	okWireOut ep10 (.okHE(okHE), .okHE(okHEx[10*65 +: 65]), .ep_addr(8'h2a), .ep_datain(slv_reg10));
+	okWireOut ep11 (.okHE(okHE), .okHE(okHEx[11*65 +: 65]), .ep_addr(8'h2b), .ep_datain(slv_reg11));
+	okWireOut ep12 (.okHE(okHE), .okHE(okHEx[12*65 +: 65]), .ep_addr(8'h2c), .ep_datain(slv_reg12));
+	okWireOut ep13 (.okHE(okHE), .okHE(okHEx[13*65 +: 65]), .ep_addr(8'h2d), .ep_datain(slv_reg13));
+	okWireOut ep14 (.okHE(okHE), .okHE(okHEx[14*65 +: 65]), .ep_addr(8'h2e), .ep_datain(slv_reg14));
+	okWireOut ep15 (.okHE(okHE), .okHE(okHEx[15*65 +: 65]), .ep_addr(8'h2f), .ep_datain(slv_reg15));
+	okWireOut ep16 (.okHE(okHE), .okHE(okHEx[16*65 +: 65]), .ep_addr(8'h30), .ep_datain(slv_reg16));
+	okWireOut ep17 (.okHE(okHE), .okHE(okHEx[17*65 +: 65]), .ep_addr(8'h31), .ep_datain(slv_reg17));
+	okWireOut ep18 (.okHE(okHE), .okHE(okHEx[18*65 +: 65]), .ep_addr(8'h32), .ep_datain(slv_reg18));
+	okWireOut ep19 (.okHE(okHE), .okHE(okHEx[19*65 +: 65]), .ep_addr(8'h33), .ep_datain(slv_reg19));
+	okWireOut ep20 (.okHE(okHE), .okHE(okHEx[20*65 +: 65]), .ep_addr(8'h34), .ep_datain(slv_reg20));
+	okWireOut ep21 (.okHE(okHE), .okHE(okHEx[21*65 +: 65]), .ep_addr(8'h35), .ep_datain(slv_reg21));
+	okWireOut ep22 (.okHE(okHE), .okHE(okHEx[22*65 +: 65]), .ep_addr(8'h36), .ep_datain(slv_reg22));
+	okWireOut ep23 (.okHE(okHE), .okHE(okHEx[23*65 +: 65]), .ep_addr(8'h37), .ep_datain(slv_reg23));
+	okWireOut ep24 (.okHE(okHE), .okHE(okHEx[24*65 +: 65]), .ep_addr(8'h38), .ep_datain(slv_reg24));
+	okWireOut ep25 (.okHE(okHE), .okHE(okHEx[25*65 +: 65]), .ep_addr(8'h39), .ep_datain(slv_reg25));
+	okWireOut ep26 (.okHE(okHE), .okHE(okHEx[26*65 +: 65]), .ep_addr(8'h3a), .ep_datain(slv_reg26));
+	okWireOut ep27 (.okHE(okHE), .okHE(okHEx[27*65 +: 65]), .ep_addr(8'h3b), .ep_datain(slv_reg27));
+	okWireOut ep28 (.okHE(okHE), .okHE(okHEx[28*65 +: 65]), .ep_addr(8'h3c), .ep_datain(slv_reg28));
+	okWireOut ep29 (.okHE(okHE), .okHE(okHEx[29*65 +: 65]), .ep_addr(8'h3d), .ep_datain(slv_reg29));
+	okWireOut ep30 (.okHE(okHE), .okHE(okHEx[30*65 +: 65]), .ep_addr(8'h3e), .ep_datain(slv_reg30));
+	okWireOut ep31 (.okHE(okHE), .okHE(okHEx[31*65 +: 65]), .ep_addr(8'h3f), .ep_datain(slv_reg31));
   
   // ------------------------------------------------------
   // Example code to read/write user logic slave model s/w accessible registers
