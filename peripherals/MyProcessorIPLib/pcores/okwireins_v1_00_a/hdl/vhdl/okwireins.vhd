@@ -135,14 +135,9 @@ entity okwireins is
   (
     -- ADD USER PORTS BELOW THIS LINE ------------------
     --USER ports added here
-	okUHU_I							: in std_logic_vector(31 downto 0);
-	okUHU_O							: out std_logic_vector(31 downto 0);
-	okUHU_T							: out std_logic;
+	okUHU							: inout std_logic_vector(31 downto 0);
 	okHU							: out std_logic_vector(2 downto 0);
 	okUH							: in std_logic_vector(4 downto 0);
-	okAA_I							: in std_logic;
-	okAA_O							: out std_logic;
-	okAA_T							: out std_logic;
     -- ADD USER PORTS ABOVE THIS LINE ------------------
 
     -- DO NOT EDIT BELOW THIS LINE ---------------------
@@ -258,14 +253,9 @@ architecture IMP of okwireins is
       -- ADD USER PORTS BELOW THIS LINE ------------------
       --USER ports added here
 	  
-	okUHU_I							: in std_logic_vector(31 downto 0);
-	okUHU_O							: out std_logic_vector(31 downto 0);
-	okUHU_T							: out std_logic;
+	okUHU							: inout std_logic_vector(31 downto 0);
 	okHU							: out std_logic_vector(2 downto 0);
 	okUH							: in std_logic_vector(4 downto 0);
-	okAA_I							: in std_logic;
-	okAA_O							: out std_logic;
-	okAA_T							: out std_logic;
       -- ADD USER PORTS ABOVE THIS LINE ------------------
 
       -- DO NOT EDIT BELOW THIS LINE ---------------------
@@ -357,14 +347,9 @@ begin
       -- MAP USER PORTS BELOW THIS LINE ------------------
       --USER ports mapped here
 	  
-	  okUHU_I						=> okUHU_I,
-	  okUHU_O						=> okUHU_O,
-	  okUHU_T						=> okUHU_T,
+	  okUHU							=> okUHU,
 	  okHU							=> okHU,
 	  okUH							=> okUH,
-	  okAA_I						=> okAA_I,
-	  okAA_O						=> okAA_O,
-	  okAA_T						=> okAA_T,
       -- MAP USER PORTS ABOVE THIS LINE ------------------
 
       Bus2IP_Clk                     => ipif_Bus2IP_Clk,

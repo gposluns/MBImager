@@ -135,9 +135,7 @@ entity okwireouts is
   (
     -- ADD USER PORTS BELOW THIS LINE ------------------
     --USER ports added here
-	okUHU2_I							: in std_logic_vector(31 downto 0);
-	okUHU2_O							: out std_logic_vector(31 downto 0);
-	okUHU2_T							: out std_logic;
+	okUHU2							: in std_logic_vector(31 downto 0);
 	okUH2							: in std_logic_vector(4 downto 0);
 	okHU2							: out std_logic_vector(2 downto 0);
     -- ADD USER PORTS ABOVE THIS LINE ------------------
@@ -254,9 +252,7 @@ architecture IMP of okwireouts is
     (
       -- ADD USER PORTS BELOW THIS LINE ------------------
       --USER ports added here
-	okUHU_I							: in std_logic_vector(31 downto 0);
-	okUHU_O							: out std_logic_vector(31 downto 0);
-	okUHU_T							: out std_logic;
+	okUHU							: in std_logic_vector(31 downto 0);
 	okUH							: in std_logic_vector(4 downto 0);
 	okHU							: out std_logic_vector(2 downto 0);
       -- ADD USER PORTS ABOVE THIS LINE ------------------
@@ -347,10 +343,7 @@ begin
     (
       -- MAP USER PORTS BELOW THIS LINE ------------------
       --USER ports mapped here
-	  okUHU_I						=> okUHU2_I,
-	  okUHU_O						=> okUHU2_O,
-	  okUHU_T						=> okUHU2_T,
-	  okAA							=> okAA2,
+	  okUHU							=> okUHU2,
 	  okHU							=> okHU2,
 	  okUH							=> okUH2,
       -- MAP USER PORTS ABOVE THIS LINE ------------------

@@ -55,9 +55,7 @@ module user_logic
 (
   // -- ADD USER PORTS BELOW THIS LINE ---------------
   // --USER ports added here 
-  okUHU_I,
-  okUHU_O,
-  okUHU_T,
+  okUHU,
   okHU,
   okUH,
   // -- ADD USER PORTS ABOVE THIS LINE ---------------
@@ -89,9 +87,7 @@ parameter C_SLV_DWIDTH                   = 32;
 
 // -- ADD USER PORTS BELOW THIS LINE -----------------
 // --USER ports added here 
-input	[31:0]							okUHU_I;
-output	[31:0]							okUHU_O;
-output								okUHU_T;
+inout	[31:0]							okUHU;
 input	[4:0]							okUH;
 output 	[2:0]							okHU;
 // -- ADD USER PORTS ABOVE THIS LINE -----------------
@@ -118,7 +114,6 @@ output                                    IP2Bus_Error;
 	wire [112:0] okHE;
 	wire [32*65 - 1: 0] okEHx;
 	wire [64:0] okEH;
-	wire [31:0] okUHU;
   
   // Nets for user logic slave model s/w accessible register example
   reg        [C_SLV_DWIDTH-1 : 0]           slv_reg0;
@@ -162,16 +157,6 @@ output                                    IP2Bus_Error;
 
   // USER logic implementation added here
   
-     IOBUF #(
-.DRIVE(12), // Specify the output drive strength
-.IOSTANDARD("DEFAULT"), // Specify the I/O standard
-.SLEW("FAST") // Specify the output slew rate
-) IOBUF_OKUHU (
-.O(okUHU_O), // Buffer output
-.IO(okUHU), // Buffer inout port (connect directly to top-level port)
-.I(okUHU_I), // Buffer input
-.T(okUHU_T) // 3-state enable input, high=input, low=output
-);
   
 	okHost host (.okEH(okEH),
 	.okHE(okHE),
