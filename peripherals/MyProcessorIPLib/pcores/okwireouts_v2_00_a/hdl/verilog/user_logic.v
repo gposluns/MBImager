@@ -152,7 +152,7 @@ output                                    IP2Bus_Error;
   integer                                   byte_index, bit_index;
 
   // USER logic implementation added here
-  okWireOr #(.N(32)) wireor (okEH, okEHx);
+  okWireOR #(.N(32)) wireor (okEH, okEHx);
   
   okWireOut(.okHE(okHE), .okEH(okEHx[0*65 +: 65]), .ep_addr(8'h20), .ep_datain(slv_reg0));
   okWireOut(.okHE(okHE), .okEH(okEHx[1*65 +: 65]), .ep_addr(8'h21), .ep_datain(slv_reg1));
