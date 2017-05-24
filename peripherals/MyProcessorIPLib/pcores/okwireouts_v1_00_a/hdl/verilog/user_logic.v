@@ -159,7 +159,7 @@ output                                    IP2Bus_Error;
   
   
 	okHost host (.okHE(okHE),
-	.okHE(okHE),
+	.okEH(okEH),
 	.okUHU(okUHU),
 	.okUH(okUH),
 	.okHU(okHU));
