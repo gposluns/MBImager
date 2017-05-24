@@ -1,0 +1,11 @@
+##############################################################################
+## Filename:          D:/ISML/mbimager/peripherals/MyProcessorIPLib/pcores/okwireins_v2_00_a/data/okwireins_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Wed May 24 12:50:09 2017 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a  all 
+lib axi_lite_ipif_v1_01_a  all 
+lib okwireins_v2_00_a okLibrary verilog
+lib okwireins_v2_00_a user_logic verilog
+lib okwireins_v2_00_a okwireins vhdl
