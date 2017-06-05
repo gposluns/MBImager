@@ -13,6 +13,8 @@
 #include "xbasic_types.h"
 #include "xstatus.h"
 #include "xil_io.h"
+/*#include "xintc.h"
+#include "xparameters.h"*/
 
 /************************** Constant Definitions ***************************/
 
@@ -278,8 +280,23 @@
 #define OKTRIGGERINS_mReadSlaveReg31(BaseAddress, RegOffset) \
  	Xil_In32((BaseAddress) + (OKTRIGGERINS_SLV_REG31_OFFSET) + (RegOffset))
 
+/**
+ *  Defines the number of registers available for read and write*/
+#define TEST_AXI_LITE_USER_NUM_REG 32
+#define OKTRIGGERINS_NUM_REG TEST_AXI_LITE_USER_NUM_REG
+	
 /************************** Function Prototypes ****************************/
+u32 baseAddress;
+XInterruptHandler handlers [OKTRIGGERINS_NUM_REG][OKTRIGGERINS_NUM_REG];
+void* datas [OKTRIGGERINS_NUM_REG][OKTRIGGERINS_NUM_REG];
+u32 masks [OKTRIGGERINS_NUM_REG];
 
+void OKTRIGGERINS_Initialize(u32 baseaddr);
+void OKTRIGGERINS_SetInterruptMask(u8 trigger, u32 mask);
+void OKTRIGGERINS_RegisterHandler(u8 trigger, u32 mask, XInterruptHandler handler, void* data);
+void OKTRIGGERINS_Handler(void* data);
+u32 OKTRIGGERINS_GetTrigger(u8 trigger, u32 mask);
+void OKTRIGGERINS_ClearTrigger(u8 trigger);
 
 /**
  *
@@ -301,9 +318,6 @@
  *
  */
 XStatus OKTRIGGERINS_SelfTest(void * baseaddr_p);
-/**
-*  Defines the number of registers available for read and write*/
-#define TEST_AXI_LITE_USER_NUM_REG 32
 
 
 #endif /** OKTRIGGERINS_H */

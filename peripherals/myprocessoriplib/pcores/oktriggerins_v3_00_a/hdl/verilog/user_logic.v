@@ -55,6 +55,8 @@ module user_logic
 (
   // -- ADD USER PORTS BELOW THIS LINE ---------------
   // --USER ports added here 
+  okHE,
+  INTR,
   // -- ADD USER PORTS ABOVE THIS LINE ---------------
 
   // -- DO NOT EDIT BELOW THIS LINE ------------------
@@ -84,6 +86,8 @@ parameter C_SLV_DWIDTH                   = 32;
 
 // -- ADD USER PORTS BELOW THIS LINE -----------------
 // --USER ports added here 
+input		[112:0]						okHE;
+output									INTR;
 // -- ADD USER PORTS ABOVE THIS LINE -----------------
 
 // -- DO NOT EDIT BELOW THIS LINE --------------------
@@ -105,9 +109,12 @@ output                                    IP2Bus_Error;
 //----------------------------------------------------------------------------
 
   // --USER nets declarations added here, as needed for user logic
-
+  reg 	[C_SLV_DWIDTH*C_NUM_REG - 1 : 0]	triggers;
+  reg 	[C_SLV_DWIDTH*C_NUM_REG - 1 : 0]	masks;
+  initial masks = 0;
+  
   // Nets for user logic slave model s/w accessible register example
-  reg        [C_SLV_DWIDTH-1 : 0]           slv_reg0;
+  /*reg        [C_SLV_DWIDTH-1 : 0]           slv_reg0;
   reg        [C_SLV_DWIDTH-1 : 0]           slv_reg1;
   reg        [C_SLV_DWIDTH-1 : 0]           slv_reg2;
   reg        [C_SLV_DWIDTH-1 : 0]           slv_reg3;
@@ -138,7 +145,7 @@ output                                    IP2Bus_Error;
   reg        [C_SLV_DWIDTH-1 : 0]           slv_reg28;
   reg        [C_SLV_DWIDTH-1 : 0]           slv_reg29;
   reg        [C_SLV_DWIDTH-1 : 0]           slv_reg30;
-  reg        [C_SLV_DWIDTH-1 : 0]           slv_reg31;
+  reg        [C_SLV_DWIDTH-1 : 0]           slv_reg31;*/
   wire       [31 : 0]                       slv_reg_write_sel;
   wire       [31 : 0]                       slv_reg_read_sel;
   reg        [C_SLV_DWIDTH-1 : 0]           slv_ip2bus_data;
@@ -148,6 +155,30 @@ output                                    IP2Bus_Error;
 
   // USER logic implementation added here
 
+  genvar i;
+  generate
+	for (i = 0; i < C_NUM_REG; i = i + 1) begin
+		wire [C_SLV_DWIDTH - 1 : 0] trigger;
+		okTriggerIn triggerin (.okHE(okHE), .ep_addr(8'h40 + i), .ep_clk(Bus2IP_Clk), .ep_trigger(trigger));
+		always @(posedge Bus2IP_Clk) begin
+			if (Bus2IP_Resetn == 1'b0) begin
+				triggers <= 0;
+				masks <= 0;
+			end else begin
+				if (slv_reg_write_sel == 1 << (C_SLV_DWIDTH - i - 1)) begin
+					triggers [C_SLV_DWIDTH*i +: C_SLV_DWIDTH] <= 0;
+					for ( byte_index = 0; byte_index <= (C_SLV_DWIDTH/8)-1; byte_index = byte_index+1 )
+						if ( Bus2IP_BE[byte_index] == 1 )
+							masks[(C_SLV_DWIDTH*i) + (byte_index*8) +: 8] <= Bus2IP_Data[(byte_index*8) +: 8];
+				end else begin
+					triggers [C_SLV_DWIDTH*i +: C_SLV_DWIDTH] <= triggers[C_SLV_DWIDTH*i +: C_SLV_DWIDTH] | trigger;
+				end
+			end
+		end
+	end
+  endgenerate
+  
+  assign INTR = |(triggers & masks);
   // ------------------------------------------------------
   // Example code to read/write user logic slave model s/w accessible registers
   // 
@@ -177,7 +208,7 @@ output                                    IP2Bus_Error;
   always @( posedge Bus2IP_Clk )
     begin
 
-      if ( Bus2IP_Resetn == 1'b0 )
+      /*if ( Bus2IP_Resetn == 1'b0 )
         begin
           slv_reg0 <= 0;
           slv_reg1 <= 0;
@@ -376,47 +407,47 @@ output                                    IP2Bus_Error;
             slv_reg30 <= slv_reg30;
             slv_reg31 <= slv_reg31;
                     end
-        endcase
+        endcase*/
 
     end // SLAVE_REG_WRITE_PROC
 
   // implement slave model register read mux
-  always @( slv_reg_read_sel or slv_reg0 or slv_reg1 or slv_reg2 or slv_reg3 or slv_reg4 or slv_reg5 or slv_reg6 or slv_reg7 or slv_reg8 or slv_reg9 or slv_reg10 or slv_reg11 or slv_reg12 or slv_reg13 or slv_reg14 or slv_reg15 or slv_reg16 or slv_reg17 or slv_reg18 or slv_reg19 or slv_reg20 or slv_reg21 or slv_reg22 or slv_reg23 or slv_reg24 or slv_reg25 or slv_reg26 or slv_reg27 or slv_reg28 or slv_reg29 or slv_reg30 or slv_reg31 )
+  always @( slv_reg_read_sel or triggers)
     begin 
 
       case ( slv_reg_read_sel )
-        32'b10000000000000000000000000000000 : slv_ip2bus_data <= slv_reg0;
-        32'b01000000000000000000000000000000 : slv_ip2bus_data <= slv_reg1;
-        32'b00100000000000000000000000000000 : slv_ip2bus_data <= slv_reg2;
-        32'b00010000000000000000000000000000 : slv_ip2bus_data <= slv_reg3;
-        32'b00001000000000000000000000000000 : slv_ip2bus_data <= slv_reg4;
-        32'b00000100000000000000000000000000 : slv_ip2bus_data <= slv_reg5;
-        32'b00000010000000000000000000000000 : slv_ip2bus_data <= slv_reg6;
-        32'b00000001000000000000000000000000 : slv_ip2bus_data <= slv_reg7;
-        32'b00000000100000000000000000000000 : slv_ip2bus_data <= slv_reg8;
-        32'b00000000010000000000000000000000 : slv_ip2bus_data <= slv_reg9;
-        32'b00000000001000000000000000000000 : slv_ip2bus_data <= slv_reg10;
-        32'b00000000000100000000000000000000 : slv_ip2bus_data <= slv_reg11;
-        32'b00000000000010000000000000000000 : slv_ip2bus_data <= slv_reg12;
-        32'b00000000000001000000000000000000 : slv_ip2bus_data <= slv_reg13;
-        32'b00000000000000100000000000000000 : slv_ip2bus_data <= slv_reg14;
-        32'b00000000000000010000000000000000 : slv_ip2bus_data <= slv_reg15;
-        32'b00000000000000001000000000000000 : slv_ip2bus_data <= slv_reg16;
-        32'b00000000000000000100000000000000 : slv_ip2bus_data <= slv_reg17;
-        32'b00000000000000000010000000000000 : slv_ip2bus_data <= slv_reg18;
-        32'b00000000000000000001000000000000 : slv_ip2bus_data <= slv_reg19;
-        32'b00000000000000000000100000000000 : slv_ip2bus_data <= slv_reg20;
-        32'b00000000000000000000010000000000 : slv_ip2bus_data <= slv_reg21;
-        32'b00000000000000000000001000000000 : slv_ip2bus_data <= slv_reg22;
-        32'b00000000000000000000000100000000 : slv_ip2bus_data <= slv_reg23;
-        32'b00000000000000000000000010000000 : slv_ip2bus_data <= slv_reg24;
-        32'b00000000000000000000000001000000 : slv_ip2bus_data <= slv_reg25;
-        32'b00000000000000000000000000100000 : slv_ip2bus_data <= slv_reg26;
-        32'b00000000000000000000000000010000 : slv_ip2bus_data <= slv_reg27;
-        32'b00000000000000000000000000001000 : slv_ip2bus_data <= slv_reg28;
-        32'b00000000000000000000000000000100 : slv_ip2bus_data <= slv_reg29;
-        32'b00000000000000000000000000000010 : slv_ip2bus_data <= slv_reg30;
-        32'b00000000000000000000000000000001 : slv_ip2bus_data <= slv_reg31;
+        32'b10000000000000000000000000000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*0 +: C_SLV_DWIDTH];
+        32'b01000000000000000000000000000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*1 +: C_SLV_DWIDTH];
+        32'b00100000000000000000000000000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*2 +: C_SLV_DWIDTH];
+        32'b00010000000000000000000000000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*3 +: C_SLV_DWIDTH];
+        32'b00001000000000000000000000000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*4 +: C_SLV_DWIDTH];
+        32'b00000100000000000000000000000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*5 +: C_SLV_DWIDTH];
+        32'b00000010000000000000000000000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*6 +: C_SLV_DWIDTH];
+        32'b00000001000000000000000000000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*7 +: C_SLV_DWIDTH];
+        32'b00000000100000000000000000000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*8 +: C_SLV_DWIDTH];
+        32'b00000000010000000000000000000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*9 +: C_SLV_DWIDTH];
+        32'b00000000001000000000000000000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*10 +: C_SLV_DWIDTH];
+        32'b00000000000100000000000000000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*11 +: C_SLV_DWIDTH];
+        32'b00000000000010000000000000000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*12 +: C_SLV_DWIDTH];
+        32'b00000000000001000000000000000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*13 +: C_SLV_DWIDTH];
+        32'b00000000000000100000000000000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*14 +: C_SLV_DWIDTH];
+        32'b00000000000000010000000000000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*15 +: C_SLV_DWIDTH];
+        32'b00000000000000001000000000000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*16 +: C_SLV_DWIDTH];
+        32'b00000000000000000100000000000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*17 +: C_SLV_DWIDTH];
+        32'b00000000000000000010000000000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*18 +: C_SLV_DWIDTH];
+        32'b00000000000000000001000000000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*19 +: C_SLV_DWIDTH];
+        32'b00000000000000000000100000000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*20 +: C_SLV_DWIDTH];
+        32'b00000000000000000000010000000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*21 +: C_SLV_DWIDTH];
+        32'b00000000000000000000001000000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*22 +: C_SLV_DWIDTH];
+        32'b00000000000000000000000100000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*23 +: C_SLV_DWIDTH];
+        32'b00000000000000000000000010000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*24 +: C_SLV_DWIDTH];
+        32'b00000000000000000000000001000000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*25 +: C_SLV_DWIDTH];
+        32'b00000000000000000000000000100000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*26 +: C_SLV_DWIDTH];
+        32'b00000000000000000000000000010000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*27 +: C_SLV_DWIDTH];
+        32'b00000000000000000000000000001000 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*28 +: C_SLV_DWIDTH];
+        32'b00000000000000000000000000000100 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*29 +: C_SLV_DWIDTH];
+        32'b00000000000000000000000000000010 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*30 +: C_SLV_DWIDTH];
+        32'b00000000000000000000000000000001 : slv_ip2bus_data <= triggers[C_SLV_DWIDTH*31 +: C_SLV_DWIDTH];
         default : slv_ip2bus_data <= 0;
       endcase
 

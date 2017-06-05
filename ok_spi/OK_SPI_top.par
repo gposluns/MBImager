@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-COLE-PC::  Wed May 17 13:58:38 2017
+COLE-PC::  Thu May 18 10:16:41 2017
 
 par -w -intstyle ise -ol high -mt off OK_SPI_top_map.ncd OK_SPI_top.ncd
 OK_SPI_top.pcf 
@@ -126,7 +126,7 @@ Phase  1  : 7472 unrouted;      REAL time: 4 secs
 
 Phase  2  : 6440 unrouted;      REAL time: 5 secs 
 
-Phase  3  : 2578 unrouted;      REAL time: 8 secs 
+Phase  3  : 2578 unrouted;      REAL time: 7 secs 
 
 Phase  4  : 2578 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 9 secs 
 
@@ -142,8 +142,8 @@ Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL 
 
 Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 11 secs 
 
-Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 12 secs 
-Total REAL time to Router completion: 12 secs 
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 11 secs 
+Total REAL time to Router completion: 11 secs 
 Total CPU time to Router completion: 11 secs 
 
 Partition Implementation Status

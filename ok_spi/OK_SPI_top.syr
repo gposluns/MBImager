@@ -100,7 +100,7 @@ Auto BRAM Packing                  : NO
 Slice Utilization Ratio Delta      : 5
 
 ---- Other Options
-Cores Search Directories           : {"../../../../../../Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM6310-LX45"  }
+Cores Search Directories           : {"../../../../../../../Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM6310-LX45"  }
 
 =========================================================================
 
@@ -108,9 +108,9 @@ Cores Search Directories           : {"../../../../../../Program Files/Opal Kell
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OK_SPI\shift_out.v" into library work
+Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_SPI\shift_out.v" into library work
 Parsing module <shift_out>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OK_SPI\shift_in.v" into library work
+Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_SPI\shift_in.v" into library work
 Parsing module <shift_in>.
 Analyzing Verilog file "C:\Program Files\Opal Kelly\FrontPanelUSB\FrontPanelHDL\XEM6310-LX45\okLibrary.v" into library work
 Parsing module <okHost>.
@@ -125,20 +125,20 @@ Parsing module <okBTPipeIn>.
 Parsing module <okBTPipeOut>.
 Parsing module <okRegisterBridge>.
 Parsing module <okWireOR>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OK_SPI\OK_SPI_top.v" into library work
+Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_SPI\OK_SPI_top.v" into library work
 Parsing module <OK_SPI_top>.
 
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
-WARNING:HDLCompiler:1016 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OK_SPI\OK_SPI_top.v" Line 108: Port okAA is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_SPI\OK_SPI_top.v" Line 108: Port okAA is not connected to this instance
 
 Elaborating module <OK_SPI_top>.
 
 Elaborating module <IBUFGDS>.
 
 Elaborating module <shift_in>.
-WARNING:HDLCompiler:413 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OK_SPI\shift_in.v" Line 36: Result of 65-bit expression is truncated to fit in 64-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_SPI\shift_in.v" Line 36: Result of 65-bit expression is truncated to fit in 64-bit target.
 
 Elaborating module <shift_out>.
 
@@ -162,19 +162,19 @@ Elaborating module <okCoreHarness>.
 Elaborating module <okWireIn>.
 
 Elaborating module <okWireOut>.
-WARNING:HDLCompiler:189 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OK_SPI\OK_SPI_top.v" Line 121: Size mismatch in connection of port <ep_datain>. Formal port size is 32-bit while actual signal size is 5-bit.
-WARNING:HDLCompiler:189 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OK_SPI\OK_SPI_top.v" Line 122: Size mismatch in connection of port <ep_datain>. Formal port size is 32-bit while actual signal size is 64-bit.
+WARNING:HDLCompiler:189 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_SPI\OK_SPI_top.v" Line 121: Size mismatch in connection of port <ep_datain>. Formal port size is 32-bit while actual signal size is 5-bit.
+WARNING:HDLCompiler:189 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_SPI\OK_SPI_top.v" Line 122: Size mismatch in connection of port <ep_datain>. Formal port size is 32-bit while actual signal size is 64-bit.
 
 Elaborating module <okTriggerIn>.
-WARNING:HDLCompiler:189 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OK_SPI\OK_SPI_top.v" Line 124: Size mismatch in connection of port <ep_trigger>. Formal port size is 32-bit while actual signal size is 16-bit.
+WARNING:HDLCompiler:189 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_SPI\OK_SPI_top.v" Line 124: Size mismatch in connection of port <ep_trigger>. Formal port size is 32-bit while actual signal size is 16-bit.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <OK_SPI_top>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OK_SPI\OK_SPI_top.v".
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OK_SPI\OK_SPI_top.v" line 108: Output port <okClk> of the instance <host> is unconnected or connected to loadless signal.
+    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_SPI\OK_SPI_top.v".
+INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_SPI\OK_SPI_top.v" line 108: Output port <okClk> of the instance <host> is unconnected or connected to loadless signal.
     Found 1-bit register for signal <spi_c>.
     Found 1-bit register for signal <spi_s>.
     Found 32-bit register for signal <cntr>.
@@ -189,14 +189,14 @@ INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OK_SPI\OK
 Unit <OK_SPI_top> synthesized.
 
 Synthesizing Unit <shift_in>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OK_SPI\shift_in.v".
+    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_SPI\shift_in.v".
     Found 64-bit register for signal <contents>.
     Summary:
 	inferred  64 D-type flip-flop(s).
 Unit <shift_in> synthesized.
 
 Synthesizing Unit <shift_out>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OK_SPI\shift_out.v".
+    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_SPI\shift_out.v".
     Found 64-bit register for signal <contents>.
     Summary:
 	inferred  64 D-type flip-flop(s).
@@ -339,11 +339,11 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-Reading core <../../../../../../Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM6310-LX45/okWireIn.ngc>.
-Reading core <../../../../../../Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM6310-LX45/okWireOut.ngc>.
-Reading core <../../../../../../Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM6310-LX45/okTriggerIn.ngc>.
-Reading core <../../../../../../Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM6310-LX45/okCoreHarness.ngc>.
-Reading core <../../../../../../Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM6310-LX45/TFIFO64x8a_64x8b.ngc>.
+Reading core <../../../../../../../Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM6310-LX45/okWireIn.ngc>.
+Reading core <../../../../../../../Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM6310-LX45/okWireOut.ngc>.
+Reading core <../../../../../../../Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM6310-LX45/okTriggerIn.ngc>.
+Reading core <../../../../../../../Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM6310-LX45/okCoreHarness.ngc>.
+Reading core <../../../../../../../Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM6310-LX45/TFIFO64x8a_64x8b.ngc>.
 Loading core <okWireIn> for timing and area information for instance <data_in>.
 Loading core <okWireIn> for timing and area information for instance <data_in2>.
 Loading core <okWireIn> for timing and area information for instance <control_in>.
@@ -796,7 +796,7 @@ sys_clkp       |    5.425|         |         |         |
 
 
 Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 6.66 secs
+Total CPU time to Xst completion: 6.62 secs
  
 --> 
 

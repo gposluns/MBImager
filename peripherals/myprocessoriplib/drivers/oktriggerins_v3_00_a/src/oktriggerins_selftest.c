@@ -67,9 +67,9 @@ XStatus OKTRIGGERINS_SelfTest(void * baseaddr_p)
    */
   xil_printf("User logic slave module test...\n\r");
 
-  for (write_loop_index = 0 ; write_loop_index < OKTRIGGERINS_USER_NUM_REG; write_loop_index++)
+  for (write_loop_index = 0 ; write_loop_index < OKTRIGGERINS_NUM_REG; write_loop_index++)
     OKTRIGGERINS_mWriteSlaveReg0 (baseaddr, write_loop_index*4, (write_loop_index+1)*READ_WRITE_MUL_FACTOR);
-  for (read_loop_index = 0 ; read_loop_index < OKTRIGGERINS_USER_NUM_REG; read_loop_index++)
+  for (read_loop_index = 0 ; read_loop_index < OKTRIGGERINS_NUM_REG; read_loop_index++)
     if ( OKTRIGGERINS_mReadSlaveReg0 (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
       xil_printf ("Error reading register value at address %x", (int)baseaddr + read_loop_index*4);
       return XST_FAILURE;

@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="NgdBuild" timeStamp="Wed May 17 13:58:09 2017">
+  <application stringID="NgdBuild" timeStamp="Thu May 18 10:16:11 2017">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -58,8 +58,8 @@
         <item DEFAULT="None" label="-intstyle" stringID="NGDBUILD_intstyle" value="ise"/>
         <item DEFAULT="None" label="-dd" stringID="NGDBUILD_output_dir" value="_ngo"/>
         <item DEFAULT="None" label="-p" stringID="NGDBUILD_partname" value="xc6slx45-fgg484-2"/>
-        <item DEFAULT="None" label="-sd" stringID="NGDBUILD_search_path" value="../../../../../../Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM6310-LX45"/>
-        <item DEFAULT="None" label="-uc" stringID="NGDBUILD_ucf_file" value="C:/Users/MBImager/Downloads/constraint_file.ucf"/>
+        <item DEFAULT="None" label="-sd" stringID="NGDBUILD_search_path" value="../../../../../../../Program Files/Opal Kelly/FrontPanelUSB/FrontPanelHDL/XEM6310-LX45"/>
+        <item DEFAULT="None" label="-uc" stringID="NGDBUILD_ucf_file" value="C:/Users/MBImager/Documents/MBImager_ams/repo/MBImager/constraint_file.ucf"/>
       </section>
     </task>
     <task stringID="NGDBUILD_REPORT">

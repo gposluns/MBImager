@@ -39,7 +39,7 @@ module okHost
 	DCM_SP #(
 		.CLKIN_PERIOD(9.92),                  // Input clock period specified in nS
 		.CLKOUT_PHASE_SHIFT("FIXED"),         // Output phase shift (NONE, FIXED, VARIABLE)
-		.PHASE_SHIFT("-32"),                  // Fixed negative phase shift centers clock in "ctrl_in" data valid window.~1ns (-255 to 255)
+		.PHASE_SHIFT("-24"),                  // Fixed negative phase shift centers clock in "ctrl_in" data valid window.~1ns (-255 to 255)
 		.CLK_FEEDBACK("1X"),                  // Feedback source (NONE, 1X, 2X)
 		.DESKEW_ADJUST("SOURCE_SYNCHRONOUS"), // SYSTEM_SYNCHRNOUS or SOURCE_SYNCHRONOUS
 		.STARTUP_WAIT("FALSE")                // Delay config DONE until DCM_SP LOCKED (TRUE/FALSE)

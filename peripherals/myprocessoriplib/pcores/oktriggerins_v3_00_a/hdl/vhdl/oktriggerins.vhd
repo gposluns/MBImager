@@ -135,6 +135,8 @@ entity oktriggerins is
   (
     -- ADD USER PORTS BELOW THIS LINE ------------------
     --USER ports added here
+	okHE							: in std_logic_vector(112 downto 0);
+	INTR							: out std_logic;
     -- ADD USER PORTS ABOVE THIS LINE ------------------
 
     -- DO NOT EDIT BELOW THIS LINE ---------------------
@@ -249,6 +251,8 @@ architecture IMP of oktriggerins is
     (
       -- ADD USER PORTS BELOW THIS LINE ------------------
       --USER ports added here
+	  okHE							: in std_logic_vector(112 downto 0);
+	  INTR							: out std_logic;
       -- ADD USER PORTS ABOVE THIS LINE ------------------
 
       -- DO NOT EDIT BELOW THIS LINE ---------------------
@@ -337,6 +341,8 @@ begin
     (
       -- MAP USER PORTS BELOW THIS LINE ------------------
       --USER ports mapped here
+	  okHE							=> okHE,
+	  INTR							=> INTR,
       -- MAP USER PORTS ABOVE THIS LINE ------------------
 
       Bus2IP_Clk                     => ipif_Bus2IP_Clk,

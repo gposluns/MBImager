@@ -10,7 +10,7 @@ Target Device  : xc6slx45
 Target Package : fgg484
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Wed May 17 13:58:11 2017
+Mapped Date    : Thu May 18 10:16:14 2017
 
 Mapping design into LUTs...
 Running directed packing...
@@ -29,21 +29,21 @@ Phase 2.7  Design Feasibility Check
 INFO:Place:834 - Only a subset of IOs are locked. Out of 58 IOs, 57 are locked
    and 1 are not locked. If you would like to print the names of these IOs,
    please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
-Phase 2.7  Design Feasibility Check (Checksum:ba47f086) REAL time: 6 secs 
+Phase 2.7  Design Feasibility Check (Checksum:ba47f086) REAL time: 5 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:dcb36046) REAL time: 6 secs 
+Phase 3.31  Local Placement Optimization (Checksum:dcb36046) REAL time: 5 secs 
 
 Phase 4.2  Initial Placement for Architecture Specific Features
 ...
 Phase 4.2  Initial Placement for Architecture Specific Features
-(Checksum:70d469d1) REAL time: 15 secs 
+(Checksum:70d469d1) REAL time: 16 secs 
 
 Phase 5.36  Local Placement Optimization
-Phase 5.36  Local Placement Optimization (Checksum:70d469d1) REAL time: 15 secs 
+Phase 5.36  Local Placement Optimization (Checksum:70d469d1) REAL time: 16 secs 
 
 Phase 6.30  Global Clock Region Assignment
-Phase 6.30  Global Clock Region Assignment (Checksum:70d469d1) REAL time: 15 secs 
+Phase 6.30  Global Clock Region Assignment (Checksum:70d469d1) REAL time: 16 secs 
 
 Phase 7.3  Local Placement Optimization
 ...
@@ -71,8 +71,8 @@ Phase 12.5  Local Placement Optimization (Checksum:8011745) REAL time: 22 secs
 Phase 13.34  Placement Validation
 Phase 13.34  Placement Validation (Checksum:8e96e712) REAL time: 22 secs 
 
-Total REAL time to Placer completion: 23 secs 
-Total CPU  time to Placer completion: 23 secs 
+Total REAL time to Placer completion: 24 secs 
+Total CPU  time to Placer completion: 24 secs 
 Running post-placement packing...
 Writing output files...
 WARNING:PhysDesignRules:367 - The signal
@@ -178,7 +178,7 @@ Specific Feature Utilization:
 Average Fanout of Non-Clock Nets:                3.47
 
 Peak Memory Usage:  494 MB
-Total REAL time to MAP completion:  24 secs 
+Total REAL time to MAP completion:  25 secs 
 Total CPU time to MAP completion:   24 secs 
 
 Mapping completed.

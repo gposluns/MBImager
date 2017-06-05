@@ -2,23 +2,23 @@ Release 14.7 ngdbuild P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
--intstyle ise -dd _ngo -sd ../../../../../../Program Files/Opal
+-intstyle ise -dd _ngo -sd ../../../../../../../Program Files/Opal
 Kelly/FrontPanelUSB/FrontPanelHDL/XEM6310-LX45 -nt timestamp -uc
-C:/Users/MBImager/Downloads/constraint_file.ucf -p xc6slx45-fgg484-2
-OK_SPI_top.ngc OK_SPI_top.ngd
+C:/Users/MBImager/Documents/MBImager_ams/repo/MBImager/constraint_file.ucf -p
+xc6slx45-fgg484-2 OK_SPI_top.ngc OK_SPI_top.ngd
 
 Reading NGO file
-"C:/Users/MBImager/Documents/MBImager_ams/ISE_projects/OK_SPI/OK_SPI_top.ngc"
+"C:/Users/MBImager/Documents/MBImager_ams/repo/MBImager/OK_SPI/OK_SPI_top.ngc"
 ...
-Loading design module "../../../../../../Program Files/Opal
+Loading design module "../../../../../../../Program Files/Opal
 Kelly/FrontPanelUSB/FrontPanelHDL/XEM6310-LX45/okWireIn.ngc"...
-Loading design module "../../../../../../Program Files/Opal
+Loading design module "../../../../../../../Program Files/Opal
 Kelly/FrontPanelUSB/FrontPanelHDL/XEM6310-LX45/okWireOut.ngc"...
-Loading design module "../../../../../../Program Files/Opal
+Loading design module "../../../../../../../Program Files/Opal
 Kelly/FrontPanelUSB/FrontPanelHDL/XEM6310-LX45/okTriggerIn.ngc"...
-Loading design module "../../../../../../Program Files/Opal
+Loading design module "../../../../../../../Program Files/Opal
 Kelly/FrontPanelUSB/FrontPanelHDL/XEM6310-LX45/okCoreHarness.ngc"...
-Loading design module "../../../../../../Program Files/Opal
+Loading design module "../../../../../../../Program Files/Opal
 Kelly/FrontPanelUSB/FrontPanelHDL/XEM6310-LX45/TFIFO64x8a_64x8b.ngc"...
 Gathering constraint information from source properties...
 Done.
@@ -27,7 +27,7 @@ INFO:NgdBuild:889 - Pad net 'host/tbuf/IO' is not connected to an external port
    signal.
 
 Annotating constraints to design from ucf file
-"C:/Users/MBImager/Downloads/constraint_file.ucf" ...
+"C:/Users/MBImager/Documents/MBImager_ams/repo/MBImager/constraint_file.ucf" ...
 WARNING:NgdBuild - The value of SIM_DEVICE on instance 'host/core0/core0/r0' of
    type RAMB16BWER has been changed from 'SPARTAN3ADSP' to 'SPARTAN6' to correct
    post-ngdbuild and timing simulation for this primitive.  In order for

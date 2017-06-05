@@ -6,5 +6,6 @@
 
 lib proc_common_v3_00_a  all 
 lib axi_lite_ipif_v1_01_a  all 
+lib oktriggerins_v3_00_a okLibrary verilog
 lib oktriggerins_v3_00_a user_logic verilog
 lib oktriggerins_v3_00_a oktriggerins vhdl

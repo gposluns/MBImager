@@ -77,6 +77,7 @@
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
     <transform xil_pn:end_ts="1494958434" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1494958433">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1494958434" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="8252043090552365484" xil_pn:start_ts="1494958434">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -102,7 +103,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1495043885" xil_pn:in_ck="-7423902145527861466" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="514585443315958761" xil_pn:start_ts="1495043876">
+    <transform xil_pn:end_ts="1495116968" xil_pn:in_ck="-231976202038957839" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="514585443315958761" xil_pn:start_ts="1495116959">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -120,11 +121,11 @@
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1494962514" xil_pn:in_ck="7790762101971674582" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="8766221659840224217" xil_pn:start_ts="1494962514">
+    <transform xil_pn:end_ts="1495054882" xil_pn:in_ck="-6398307362630005797" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="8766221659840224217" xil_pn:start_ts="1495054882">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1495043890" xil_pn:in_ck="1996366711872667139" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="3331363831458876475" xil_pn:start_ts="1495043885">
+    <transform xil_pn:end_ts="1495116973" xil_pn:in_ck="6093208679061391444" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="3331363831458876475" xil_pn:start_ts="1495116968">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -134,7 +135,7 @@
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1495043917" xil_pn:in_ck="-163236197474177868" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="-7060404927121445762" xil_pn:start_ts="1495043890">
+    <transform xil_pn:end_ts="1495117000" xil_pn:in_ck="-3287124536187439239" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="-7060404927121445762" xil_pn:start_ts="1495116973">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -149,7 +150,7 @@
       <outfile xil_pn:name="OK_SPI_top_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1495043938" xil_pn:in_ck="-5102233179663305267" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-3829590541433901613" xil_pn:start_ts="1495043917">
+    <transform xil_pn:end_ts="1495117020" xil_pn:in_ck="6621042887368481554" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-3829590541433901613" xil_pn:start_ts="1495117000">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -164,7 +165,7 @@
       <outfile xil_pn:name="OK_SPI_top_par.xrpt"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1495043962" xil_pn:in_ck="-4346689843312097318" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="396117104113915555" xil_pn:start_ts="1495043938">
+    <transform xil_pn:end_ts="1495117046" xil_pn:in_ck="-4346689843312097318" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1495117020">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -181,9 +182,11 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
     </transform>
-    <transform xil_pn:end_ts="1495043938" xil_pn:in_ck="-163236197474178000" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1495043932">
+    <transform xil_pn:end_ts="1495117020" xil_pn:in_ck="-3287124536187439371" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1495117015">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="OK_SPI_top.twr"/>
