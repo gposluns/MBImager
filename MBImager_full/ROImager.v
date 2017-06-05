@@ -18,8 +18,8 @@ module ROImager
   MUX_ADD,						  // Output driver mux address
   ADC_PIXCLK,					  // Pixel CLK of TI_ADCs
   ADC_CLK,						  // ADC CLK of the TI_ADCs, 3x the ADC_PIXCLK
-  CLK_MOD,						  // Modulation clk for the ToF pixel
-  CLKN_MOD,						  // Modulation clk for the ToF pixel
+//  CLK_MOD,						  // Modulation clk for the ToF pixel	//testmodimp
+//  CLKN_MOD,						  // Modulation clk for the ToF pixel
   PRECH_COL,					  // Column precharge signal (used during readout)
   ADC_DATA_VALID,				  // It determines when the ADC data is valid
   DDR_DATA_VALID,				  // Determining the validity of the DDR output
@@ -46,8 +46,8 @@ output									  PRECHN_AMP;
 output		[5 : 0]						  MUX_ADD;
 input									  ADC_PIXCLK;
 input									  ADC_CLK;
-output									  CLK_MOD;
-output									  CLKN_MOD;
+//output									  CLK_MOD; //testmodimp
+//output									  CLKN_MOD;
 output									  PRECH_COL;
 output									  ADC_DATA_VALID;
 output									  DDR_DATA_VALID;
@@ -223,8 +223,8 @@ genvar byte_index;
   assign		PIXRES = PIXRES_i;
   assign		PRECHN_AMP = PRECHN_AMP_i;
   assign		MUX_ADD = MUX_ADD_i;
-  assign		CLK_MOD = 1;
-  assign		CLKN_MOD = 0;
+//  assign		CLK_MOD = 1;		//testmodimp
+//  assign		CLKN_MOD = 0;
   assign		PRECH_COL = PRECH_COL_i;
   assign		ADC_DATA_VALID = ADC_DATA_Vint;
   assign		DDR_DATA_VALID = DDR_DATA_VALID_int;
