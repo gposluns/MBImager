@@ -18,7 +18,7 @@ void OKTRIGGERINS_Initialize(void* baseaddr){
 	
 	 Xil_Out32(XPAR_OKWIREOUTS_0_BASEADDR + 4*4, 0xaa55aa55);
 	for (i = 0; i < 32; i++){
-		handlers[i] = NULL;
+		handlers[i] = OKTRIGGERINS_StubHandler;
 		datas[i] = NULL;
 	}
 }
@@ -45,4 +45,7 @@ void OKTRIGGERINS_Handler(void* data){
 		}
 	}
 	OKTRIGGERINS_mWriteSlaveReg0(baseaddress, 0, 0);
+}
+
+void OKTRIGGERINS_StubHandler(void* data){
 }

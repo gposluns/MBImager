@@ -297,6 +297,7 @@ void OKTRIGGERINS_RegisterHandler(u8 trigger, u32 mask, XInterruptHandler handle
 void OKTRIGGERINS_Handler(void* data);
 u32 OKTRIGGERINS_GetTrigger(u8 trigger, u32 mask);
 void OKTRIGGERINS_ClearTrigger(u8 trigger);
+void OKTRIGGERINS_StubHandler(void* data);
 
 /**
  *

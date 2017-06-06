@@ -107,6 +107,8 @@ void OKTRIGGERINS_RegisterHandler(XInterruptHandler handler, u32 mask, void* dat
 
 //the ublaze interrupt handler used by this driver
 void OKTRIGGERINS_Handler(void* data);
+
+void OKTRIGGERINS_StubHandler(void* data);
 /**
  *
  * Run a self-test on the driver/device. Note this may be a destructive test if
