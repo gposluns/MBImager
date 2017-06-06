@@ -1,14 +1,14 @@
 CipWiz::SetVersion "14.7";
 CipWiz::SetFlow "CREATE";
 CipWiz::SetParameter "ProjectDir" "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\peripherals\MyProcessorIPLib";
-CipWiz::SetParameter "IpName" "oktriggerins";
-CipWiz::SetParameter "IpVersion" "3.01.s";
+CipWiz::SetParameter "IpName" "oktriggerouts";
+CipWiz::SetParameter "IpVersion" "1.01.s";
 CipWiz::SetParameter "SimulatorName" "isim";
 CipWiz::SetParameter "HdlLanguage" "2";
 CipWiz::SetParameter "BusType" "256";
 CipWiz::SetParameter "IncludeIseFile" "FALSE";
 CipWiz::SetParameter "IncludeXpsFile" "TRUE";
-CipWiz::SetParameter "IncludeSoftwareDriverFile" "TRUE";
+CipWiz::SetParameter "IncludeSoftwareDriverFile" "FALSE";
 CipWiz::SetParameter "IncludeBFMSimulationFile" "FALSE";
 CipWiz::SetParameter "IncludeSlaveAttachmentSupport" "TRUE";
 CipWiz::SetParameter "IncludeMasterAttachmentSupport" "FALSE";
