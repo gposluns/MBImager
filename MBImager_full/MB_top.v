@@ -28,36 +28,35 @@ module MB_top(
     output [9:0] SPI_FLASH_SS,
     output SPI_FLASH_SCLK,
 	output ADC_READ_ACLK,		// The Linear ADC clk
-	output SPI_5V_EN,				// Enable the level shifters for the 5V devices SPI connection
-	output RS_POT,					// Reset potentiometers
+	output SPI_5V_EN,			// Enable the level shifters for the 5V devices SPI connection
+	output RS_POT,				// Reset potentiometers
 	input [7:0] ADC_DATA3,		// Data coming from the TIADC3
 	input [7:0] ADC_DATA2,		// Data coming from the TIADC2
 	input [7:0] ADC_DATA1,		// Data coming from the TIADC1
-	output ADC_INCLK,				// CLOCK sent to the TI ADCs (buffered ADC_PIXCLK)
+	output ADC_INCLK,			// CLOCK sent to the TI ADCs (buffered ADC_PIXCLK)
 	output MBI_CLK_CDS,			// Imager signal
 	output [7:0] MBI_ROW_ADD,	// Imager signal
 	output MBI_PIXRES,			// Imager signal
 	output MBI_PRECHN_AMP,		// Imager signal
 	output [5:0] MBI_MUX_ADD,	// Imager signal
 	output MBI_PIXRES_GLOB,		// Imager signal
-	output MBI_CLKL_MOD,			// Light source signal
-	output MBI_CLKN_MOD,			// Imager signal
+	output MBI_CLKN_MOD,		// Imager signal
 	output MBI_CLK_MOD,			// Imager signal
 	output MBI_PRECH_COL,		// Imager signal
 	output MBI_RESETN_GLOB,		// Imager signal
 	output MBI_DRAIN_B,			// Imager signal
-	input OK_DRAIN_B,				// Drain_b generated in OK_FSM
-	output ISPI_DATA,				// Imager SPI signal
+	input OK_DRAIN_B,			// Drain_b generated in OK_FSM
+	output ISPI_DATA,			// Imager SPI signal
 	output ISPI_REGCLK,			// Imager SPI signal
 	output ISPI_UPLOAD,			// Imager SPI signal
 	output [5:0] dout,			// FIFO data sent to OpalKelly
 	output fifo_dout_valid,		// FIFO data valid sent to OK
-	output fifo_clk,				// FIFO clk sent to OK
+	output fifo_clk,			// FIFO clk sent to OK
 	output FSMIND0,				// If high, the Exposure FSM (on OK) is active
-	input FSMIND1,					// If high, the ADC FSM (on MOBO) is active
-	input FSMIND0ACK,				// Acknowledge for FSMIND0
+	input FSMIND1,				// If high, the ADC FSM (on MOBO) is active
+	input FSMIND0ACK,			// Acknowledge for FSMIND0
 	output FSMIND1ACK,			// Acknowledge for FSMIND1
-	input OK_PIXRES_GLOB			// PIXRES_GLOB provided by OK board. Has to be forwarded to the imager
+	input OK_PIXRES_GLOB		// PIXRES_GLOB provided by OK board. Has to be forwarded to the imager
    );
 
 // -- Parameters
@@ -117,16 +116,6 @@ assign din[23:16] = DATA_IN_TO_DEVICE1[15:8];
 // assign din[15:8] = ADC_TESTDATA2;
 // assign din[23:16] = ADC_TESTDATA3;
 
-//mod_signal_gen mod_signal_gen_inst (
-//	.USER_CLOCK(USER_CLOCK),
-//	.W_FREQ_SEL(W_FREQ_SEL),
-//	.W_PHASE_SEL(W_PHASE_SEL),
-//	.W_DUTY_SEL(W_DUTY_SEL),
-//	.MBI_CLK_MOD(MBI_CLK_MOD),
-//	.MBI_CLKN_MOD(MBI_CLKN_MOD),
-//	.MBI_CLKL_MOD(MBI_CLKL_MOD)
-//);
-
 MB_SPI_top uBlaze_SPI (
     .EXT_RESET_N(EXT_RESET_N), 
     .USER_CLOCK(USER_CLOCK), 
@@ -145,8 +134,8 @@ ROImager imager_time (
     .MUX_ADD(MBI_MUX_ADD), 
     .ADC_PIXCLK(ADC_PIXCLK), 
 	.ADC_CLK(ADC_CLK),
-//    .CLK_MOD(MBI_CLK_MOD), 	//testmodimp
-//    .CLKN_MOD(MBI_CLKN_MOD), 
+    .CLK_MOD(MBI_CLK_MOD), 
+    .CLKN_MOD(MBI_CLKN_MOD), 
     .PRECH_COL(MBI_PRECH_COL), 
     .ADC_DATA_VALID(MBI_ADC_DATA_VALID),
 	.DDR_DATA_VALID(MBI_DDR_DATA_VALID),

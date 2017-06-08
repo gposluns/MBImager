@@ -1,4 +1,4 @@
-verilog work "D:/Shichen Lu/MBImager/MBImager/MBImager_full/MB_SPI/hdl/MB_SPI.v"
+verilog work "C:/Users/MBImager/Documents/MBImager_ams/ISE_projects/MotherBoard/MBImager_full/MB_SPI/hdl/MB_SPI.v"
 verilog work "TI_ADC_RO.v"
 verilog work "ROImager.v"
 verilog work "MB_SPI/MB_SPI_top.v"

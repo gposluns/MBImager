@@ -1,15 +1,15 @@
-D:\Shichen Lu\MBImager\MBImager\MBImager_full\MB_top.ngc 1496678626
-D:\Shichen Lu\MBImager\MBImager\MBImager_full/MB_SPI.ngc 1496433269
-D:\Shichen Lu\MBImager\MBImager\MBImager_full/MB_SPI_proc_sys_reset_0_wrapper.ngc 1496433270
-D:\Shichen Lu\MBImager\MBImager\MBImager_full/MB_SPI_clock_generator_0_wrapper.ngc 1496433270
-D:\Shichen Lu\MBImager\MBImager\MBImager_full/MB_SPI_generic_spi_wrapper.ngc 1496433270
-D:\Shichen Lu\MBImager\MBImager\MBImager_full/MB_SPI_microblaze_0_ilmb_wrapper.ngc 1496433270
-D:\Shichen Lu\MBImager\MBImager\MBImager_full/MB_SPI_microblaze_0_dlmb_wrapper.ngc 1496433270
-D:\Shichen Lu\MBImager\MBImager\MBImager_full/MB_SPI_axi4lite_0_wrapper.ngc 1496433270
-D:\Shichen Lu\MBImager\MBImager\MBImager_full/MB_SPI_microblaze_0_wrapper.ngc 1496433270
-D:\Shichen Lu\MBImager\MBImager\MBImager_full/MB_SPI_microblaze_0_i_bram_ctrl_wrapper.ngc 1496433270
-D:\Shichen Lu\MBImager\MBImager\MBImager_full/MB_SPI_microblaze_0_d_bram_ctrl_wrapper.ngc 1496433270
-D:\Shichen Lu\MBImager\MBImager\MBImager_full/MB_SPI_debug_module_wrapper.ngc 1496433270
-D:\Shichen Lu\MBImager\MBImager\MBImager_full/MB_SPI_microblaze_0_bram_block_wrapper.ngc 1496433270
-ipcore_dir/fifo_4kB.ngc 1496433277
+C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.ngc 1486755659
+C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full/MB_SPI.ngc 1484499848
+C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full/MB_SPI_proc_sys_reset_0_wrapper.ngc 1484499848
+C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full/MB_SPI_clock_generator_0_wrapper.ngc 1484499848
+C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full/MB_SPI_generic_spi_wrapper.ngc 1484499848
+C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full/MB_SPI_microblaze_0_ilmb_wrapper.ngc 1484499848
+C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full/MB_SPI_microblaze_0_dlmb_wrapper.ngc 1484499848
+C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full/MB_SPI_axi4lite_0_wrapper.ngc 1484499848
+C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full/MB_SPI_microblaze_0_wrapper.ngc 1484499848
+C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full/MB_SPI_microblaze_0_i_bram_ctrl_wrapper.ngc 1484499848
+C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full/MB_SPI_microblaze_0_d_bram_ctrl_wrapper.ngc 1484499848
+C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full/MB_SPI_debug_module_wrapper.ngc 1484499848
+C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full/MB_SPI_microblaze_0_bram_block_wrapper.ngc 1484499848
+ipcore_dir/fifo_4kB.ngc 1484610248
 OK

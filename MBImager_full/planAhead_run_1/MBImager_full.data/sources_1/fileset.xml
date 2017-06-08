@@ -1,83 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DARoots Version="1" Minor="26">
   <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
-    <Filter Type="EDIFSrcs"/>
-    <File Path="$PPRDIR/../MB_top.ngc">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../TI_ADC_RO.v">
       <FileInfo>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../MB_SPI_proc_sys_reset_0_wrapper.ngc">
+    <File Path="$PPRDIR/../ROImager.v">
       <FileInfo>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../MB_SPI_microblaze_0_wrapper.ngc">
+    <File Path="$PPRDIR/../MB_SPI/MB_SPI_top.v">
       <FileInfo>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../MB_SPI_microblaze_0_i_bram_ctrl_wrapper.ngc">
+    <File Path="$PPRDIR/../ipcore_dir/fifo_4kB.v">
       <FileInfo>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../MB_SPI_microblaze_0_ilmb_wrapper.ngc">
-      <FileInfo>
-        <Attr Name="UsedInSynthesis" Val="1"/>
-        <Attr Name="UsedInImplementation" Val="1"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../MB_SPI_microblaze_0_d_bram_ctrl_wrapper.ngc">
-      <FileInfo>
-        <Attr Name="UsedInSynthesis" Val="1"/>
-        <Attr Name="UsedInImplementation" Val="1"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../MB_SPI_microblaze_0_dlmb_wrapper.ngc">
-      <FileInfo>
-        <Attr Name="UsedInSynthesis" Val="1"/>
-        <Attr Name="UsedInImplementation" Val="1"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../MB_SPI_microblaze_0_bram_block_wrapper.ngc">
-      <FileInfo>
-        <Attr Name="UsedInSynthesis" Val="1"/>
-        <Attr Name="UsedInImplementation" Val="1"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../MB_SPI_generic_spi_wrapper.ngc">
-      <FileInfo>
-        <Attr Name="UsedInSynthesis" Val="1"/>
-        <Attr Name="UsedInImplementation" Val="1"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../MB_SPI_debug_module_wrapper.ngc">
-      <FileInfo>
-        <Attr Name="UsedInSynthesis" Val="1"/>
-        <Attr Name="UsedInImplementation" Val="1"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../MB_SPI_clock_generator_0_wrapper.ngc">
-      <FileInfo>
-        <Attr Name="UsedInSynthesis" Val="1"/>
-        <Attr Name="UsedInImplementation" Val="1"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../MB_SPI_axi4lite_0_wrapper.ngc">
-      <FileInfo>
-        <Attr Name="UsedInSynthesis" Val="1"/>
-        <Attr Name="UsedInImplementation" Val="1"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../MB_SPI.ngc">
-      <FileInfo>
-        <Attr Name="UsedInSynthesis" Val="1"/>
-        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../ipcore_dir/fifo_4kB.ngc">
@@ -86,11 +36,23 @@
         <Attr Name="UsedInImplementation" Val="1"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../Imager_SPI.v">
+      <FileInfo>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../MB_top.v">
+      <FileInfo>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
     <Config>
-      <Option Name="DesignMode" Val="GateLvl"/>
-      <Option Name="GateLvlMode" Val="EDIF"/>
-      <Option Name="TopFile" Val="$PPRDIR/../MB_top.ngc"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="MB_top"/>
     </Config>
   </FileSet>
 </DARoots>

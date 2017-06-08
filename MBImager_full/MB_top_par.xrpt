@@ -5,14 +5,14 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="par" timeStamp="Mon Jun 05 12:05:54 2017">
+  <application stringID="par" timeStamp="Fri Feb 10 14:42:05 2017">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
         <column stringID="value"/>
         <row stringID="row" value="0">
           <item stringID="variable" value="Path"/>
-          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt64;C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64;C:\Xilinx\14.7\ISE_DS\ISE\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\..\..\..\DocNav;C:\Xilinx\14.7\ISE_DS\PlanAhead\bin;C:\Xilinx\14.7\ISE_DS\EDK\bin\nt64;C:\Xilinx\14.7\ISE_DS\EDK\lib\nt64;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\powerpc-eabi\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnuwin\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\arm\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_be\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_le\bin;C:\Xilinx\14.7\ISE_DS\common\bin\nt64;C:\Xilinx\14.7\ISE_DS\common\lib\nt64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\AMD APP\bin\x86_64;C:\Program Files (x86)\AMD APP\bin\x86;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\MATLAB\R2015b\runtime\win64;C:\MATLAB\R2015b\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Anaconda2;C:\Program Files\Anaconda2\Scripts;C:\Program Files\Anaconda2\Library\bin"/>
+          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt64;C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64;C:\Xilinx\14.7\ISE_DS\ISE\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\..\..\..\DocNav;C:\Xilinx\14.7\ISE_DS\PlanAhead\bin;C:\Xilinx\14.7\ISE_DS\EDK\bin\nt64;C:\Xilinx\14.7\ISE_DS\EDK\lib\nt64;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\powerpc-eabi\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnuwin\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\arm\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_be\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_le\bin;C:\Xilinx\14.7\ISE_DS\common\bin\nt64;C:\Xilinx\14.7\ISE_DS\common\lib\nt64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\MATLAB\R2015b\runtime\win64;C:\MATLAB\R2015b\bin;C:\Program Files (x86)\IVI Foundation\IVI\bin;C:\Program Files\IVI Foundation\IVI\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Anaconda2;C:\Program Files\Anaconda2\Scripts;C:\Program Files\Anaconda2\Library\bin"/>
         </row>
         <row stringID="row" value="1">
           <item stringID="variable" value="PATHEXT"/>
@@ -43,13 +43,13 @@
         <item stringID="User_EnvOsname" value="Microsoft Windows 7 , 64-bit"/>
         <item stringID="User_EnvOsrelease" value="Service Pack 1  (build 7601)"/>
       </item>
-      <item stringID="User_EnvHost" value="MBImager-PC"/>
+      <item stringID="User_EnvHost" value="Cole-PC"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
         <row stringID="row" value="0">
-          <item stringID="arch" value="Intel(R) Core(TM) i5-2410M CPU @ 2.30GHz"/>
-          <item stringID="speed" value="2292 MHz"/>
+          <item stringID="arch" value="Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz"/>
+          <item stringID="speed" value="3591 MHz"/>
         </row>
       </table>
     </section>
@@ -63,12 +63,12 @@
     </task>
     <task stringID="PAR_PAR">
       <section stringID="PAR_DESIGN_SUMMARY">
-        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="37 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="34 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="1 mins 3 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="1 mins 1 secs "/>
         <item dataType="int" stringID="PAR_UNROUTES" value="0"/>
         <item dataType="float" stringID="PAR_TIMING_SCORE" value="0.000000"/>
-        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="38 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="36 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="1 mins 4 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="1 mins 1 secs "/>
       </section>
     </task>
     <task stringID="PAR_par">
@@ -87,35 +87,35 @@
             <item label="Routed" stringID="ROUTED" value="ROUTED"/>
             <item label="Resource" stringID="RESOURCE" value="BUFGMUX_X2Y10"/>
             <item label="Locked" stringID="LOCKED" value="No"/>
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="675.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.598000"/>
-            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.639000"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="763.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.599000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.640000"/>
           </row>
           <row stringID="row" value="2">
             <item label="Clock Net" stringID="CLOCK_NET" value="uBlaze_SPI/MB_SPI_i/microblaze_0_debug_Dbg_Clk"/>
             <item label="Routed" stringID="ROUTED" value="ROUTED"/>
             <item label="Resource" stringID="RESOURCE" value="BUFGMUX_X3Y14"/>
             <item label="Locked" stringID="LOCKED" value="No"/>
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="48.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.114000"/>
-            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.163000"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="63.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.179000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.231000"/>
           </row>
           <row stringID="row" value="3">
             <item label="Clock Net" stringID="CLOCK_NET" value="ADC_CLK_BUFG"/>
             <item label="Routed" stringID="ROUTED" value="ROUTED"/>
             <item label="Resource" stringID="RESOURCE" value="BUFGMUX_X2Y2"/>
             <item label="Locked" stringID="LOCKED" value="No"/>
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="47.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.209000"/>
-            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.259000"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="51.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.214000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.260000"/>
           </row>
           <row stringID="row" value="4">
             <item label="Clock Net" stringID="CLOCK_NET" value="CLKFIFO_BUFG"/>
             <item label="Routed" stringID="ROUTED" value="ROUTED"/>
             <item label="Resource" stringID="RESOURCE" value="BUFGMUX_X2Y9"/>
             <item label="Locked" stringID="LOCKED" value="No"/>
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="48.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.510000"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="54.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.580000"/>
             <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.626000"/>
           </row>
           <row stringID="row" value="5">
@@ -123,8 +123,8 @@
             <item label="Routed" stringID="ROUTED" value="ROUTED"/>
             <item label="Resource" stringID="RESOURCE" value="BUFGMUX_X3Y13"/>
             <item label="Locked" stringID="LOCKED" value="No"/>
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="29.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.693000"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="32.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.692000"/>
             <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.746000"/>
           </row>
           <row stringID="row" value="6">
@@ -149,25 +149,25 @@
             <item label="Clock Net" stringID="CLOCK_NET" value="uBlaze_SPI/MB_SPI_i/microblaze_0_debug_Dbg_Update"/>
             <item label="Routed" stringID="ROUTED" value="ROUTED"/>
             <item label="Resource" stringID="RESOURCE" value="Local"/>
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="21.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="3.845000"/>
-            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="5.186000"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="22.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="3.505000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="5.179000"/>
           </row>
           <row stringID="row" value="9">
             <item label="Clock Net" stringID="CLOCK_NET" value="ADC_READ_ACLK_int"/>
             <item label="Routed" stringID="ROUTED" value="ROUTED"/>
             <item label="Resource" stringID="RESOURCE" value="Local"/>
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="18.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.717000"/>
-            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.683000"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="21.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.918000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.940000"/>
           </row>
           <row stringID="row" value="10">
             <item label="Clock Net" stringID="CLOCK_NET" value="USER_CLOCK_IBUFG"/>
             <item label="Routed" stringID="ROUTED" value="ROUTED"/>
             <item label="Resource" stringID="RESOURCE" value="Local"/>
             <item dataType="float" label="Fanout" stringID="FANOUT" value="8.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.509000"/>
-            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="2.243000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.520000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="2.306000"/>
           </row>
         </table>
       </section>
@@ -3579,20 +3579,20 @@
       </section>
       <section stringID="PAR_UNROUTES_REPORT">
         <item dataType="int" stringID="PAR_UNROUTED_NETS" value="0"/>
-        <item dataType="int" stringID="PAR_TOTAL_SOURCELESS_NETS" value="2"/>
+        <item dataType="int" stringID="PAR_TOTAL_SOURCELESS_NETS" value="0"/>
         <item dataType="int" stringID="PAR_TOTAL_LOADLESS_NETS" value="461"/>
       </section>
     </task>
   </application>
 
-  <application stringID="Par" timeStamp="Mon Jun 05 12:05:55 2017">
+  <application stringID="Par" timeStamp="Fri Feb 10 14:42:05 2017">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
         <column stringID="value"/>
         <row stringID="row" value="0">
           <item stringID="variable" value="Path"/>
-          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt64;C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64;C:\Xilinx\14.7\ISE_DS\ISE\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\..\..\..\DocNav;C:\Xilinx\14.7\ISE_DS\PlanAhead\bin;C:\Xilinx\14.7\ISE_DS\EDK\bin\nt64;C:\Xilinx\14.7\ISE_DS\EDK\lib\nt64;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\powerpc-eabi\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnuwin\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\arm\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_be\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_le\bin;C:\Xilinx\14.7\ISE_DS\common\bin\nt64;C:\Xilinx\14.7\ISE_DS\common\lib\nt64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\AMD APP\bin\x86_64;C:\Program Files (x86)\AMD APP\bin\x86;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\MATLAB\R2015b\runtime\win64;C:\MATLAB\R2015b\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Anaconda2;C:\Program Files\Anaconda2\Scripts;C:\Program Files\Anaconda2\Library\bin"/>
+          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt64;C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64;C:\Xilinx\14.7\ISE_DS\ISE\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\..\..\..\DocNav;C:\Xilinx\14.7\ISE_DS\PlanAhead\bin;C:\Xilinx\14.7\ISE_DS\EDK\bin\nt64;C:\Xilinx\14.7\ISE_DS\EDK\lib\nt64;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\powerpc-eabi\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnuwin\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\arm\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_be\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_le\bin;C:\Xilinx\14.7\ISE_DS\common\bin\nt64;C:\Xilinx\14.7\ISE_DS\common\lib\nt64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\MATLAB\R2015b\runtime\win64;C:\MATLAB\R2015b\bin;C:\Program Files (x86)\IVI Foundation\IVI\bin;C:\Program Files\IVI Foundation\IVI\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Anaconda2;C:\Program Files\Anaconda2\Scripts;C:\Program Files\Anaconda2\Library\bin"/>
         </row>
         <row stringID="row" value="1">
           <item stringID="variable" value="PATHEXT"/>
@@ -3623,13 +3623,13 @@
         <item stringID="User_EnvOsname" value="Microsoft Windows 7 , 64-bit"/>
         <item stringID="User_EnvOsrelease" value="Service Pack 1  (build 7601)"/>
       </item>
-      <item stringID="User_EnvHost" value="MBImager-PC"/>
+      <item stringID="User_EnvHost" value="Cole-PC"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
         <row stringID="row" value="0">
-          <item stringID="arch" value="Intel(R) Core(TM) i5-2410M CPU @ 2.30GHz"/>
-          <item stringID="speed" value="2292 MHz"/>
+          <item stringID="arch" value="Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz"/>
+          <item stringID="speed" value="3591 MHz"/>
         </row>
       </table>
     </section>
@@ -3641,10 +3641,10 @@
           <item dataType="int" stringID="PAR_NUM_SLICE_LATCHTHRU" value="0"/>
           <item dataType="int" stringID="PAR_NUM_SLICE_LATCHLOGIC" value="7"/>
         </item>
-        <item AVAILABLE="15032" dataType="int" label="Number of Slice LUTS" stringID="PAR_SLICE_LUTS" value="2477">
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ONLY" value="126"/>
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O6ONLY" value="1536"/>
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ANDO6" value="436"/>
+        <item AVAILABLE="15032" dataType="int" label="Number of Slice LUTS" stringID="PAR_SLICE_LUTS" value="2275">
+          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ONLY" value="125"/>
+          <item dataType="int" stringID="PAR_NUM_LOGIC_O6ONLY" value="1535"/>
+          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ANDO6" value="437"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O5ONLY" value="0"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O6ONLY" value="0"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O5ANDO6" value="0"/>
@@ -3658,21 +3658,21 @@
           <item dataType="int" stringID="PAR_NUM_SRL_O6ONLY" value="24"/>
           <item dataType="int" stringID="PAR_NUM_SRL_O5ANDO6" value="54"/>
           <item dataType="int" stringID="PAR_NUM_LUT_RT_EXO6" value="6"/>
-          <item dataType="int" stringID="PAR_NUM_LUT_RT_EXO5" value="226"/>
+          <item dataType="int" stringID="PAR_NUM_LUT_RT_EXO5" value="25"/>
           <item dataType="int" stringID="PAR_NUM_LUT_RT_O5ANDO6" value="4"/>
-          <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_FLOP" value="226"/>
+          <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_FLOP" value="25"/>
           <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_CARRY4" value="10"/>
           <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_OTHERS" value="0"/>
         </item>
-        <item AVAILABLE="3758" dataType="int" stringID="PAR_OCCUPIED_SLICES" value="877">
-          <item AVAILABLE="963" dataType="int" stringID="PAR_NUM_SLICEL" value="219"/>
-          <item AVAILABLE="916" dataType="int" stringID="PAR_NUM_SLICEM" value="43"/>
-          <item AVAILABLE="1879" dataType="int" stringID="PAR_NUM_SLICEX" value="615"/>
+        <item AVAILABLE="3758" dataType="int" stringID="PAR_OCCUPIED_SLICES" value="999">
+          <item AVAILABLE="963" dataType="int" stringID="PAR_NUM_SLICEL" value="220"/>
+          <item AVAILABLE="916" dataType="int" stringID="PAR_NUM_SLICEM" value="45"/>
+          <item AVAILABLE="1879" dataType="int" stringID="PAR_NUM_SLICEX" value="734"/>
         </item>
-        <item dataType="int" stringID="PAR_OCCUPIED_LUT_AND_FF" value="2953">
-          <item dataType="int" stringID="PAR_OCCUPIED_LUT_ONLY" value="930"/>
-          <item dataType="int" stringID="PAR_OCCUPIED_FF_ONLY" value="476"/>
-          <item dataType="int" stringID="PAR_OCCUPIED_FF_AND_LUT" value="1547"/>
+        <item dataType="int" stringID="PAR_OCCUPIED_LUT_AND_FF" value="3281">
+          <item dataType="int" stringID="PAR_OCCUPIED_LUT_ONLY" value="1032"/>
+          <item dataType="int" stringID="PAR_OCCUPIED_FF_ONLY" value="1006"/>
+          <item dataType="int" stringID="PAR_OCCUPIED_FF_AND_LUT" value="1243"/>
         </item>
       </section>
       <section stringID="PAR_IOB_REPORTING">
