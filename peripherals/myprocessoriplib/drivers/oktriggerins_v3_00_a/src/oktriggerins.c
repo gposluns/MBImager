@@ -41,7 +41,7 @@ void OKTRIGGERINS_ClearTrigger(u8 trigger){
 void OKTRIGGERINS_RegisterHandler(u8 trigger, u32 mask, XInterruptHandler handler, void* data){
 	int i;
 	for (i = 0; i < OKTRIGGERINS_NUM_REG; i++){
-		if (mask & 1 << i == 0) continue;
+		if (mask & (1 << i) == 0) continue;
 		handlers[trigger][i] = handler;
 		datas[trigger][i] = data;
 	}
@@ -49,15 +49,11 @@ void OKTRIGGERINS_RegisterHandler(u8 trigger, u32 mask, XInterruptHandler handle
 
 void OKTRIGGERINS_Handler(void* data){
 	int i, j;
-	u32 triggers [OKTRIGGERINS_NUM_REG];
 	for (i = 0; i < OKTRIGGERINS_NUM_REG; i++){
-		triggers[i] = OKTRIGGERINS_GetTrigger(i, masks[i]);
-	}
-	for (i = 0; i < OKTRIGGERINS_NUM_REG; i++){
-		if (triggers[i] == 0) continue;
-		int temp = triggers[i];
-		for(j = 0; j < OKTRIGGERINS_NUM_REG; j++){
-			if (temp & 1 << j == 0) continue;
+		u32 trigger = OKTRIGGERINS_mReadReg(baseAddress, i*0x04);
+		if ((masks[i] & trigger) == 0) continue;
+		for(j = 0; j < 32; j++){
+			if ((masks[i] & trigger & (1 << j)) == 0) continue;
 			handlers[i][j](datas[i][j]);
 		}
 	}

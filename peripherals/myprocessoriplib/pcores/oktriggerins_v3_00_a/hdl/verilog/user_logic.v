@@ -162,8 +162,8 @@ output                                    IP2Bus_Error;
 		okTriggerIn triggerin (.okHE(okHE), .ep_addr(8'h40 + i), .ep_clk(Bus2IP_Clk), .ep_trigger(trigger));
 		always @(posedge Bus2IP_Clk) begin
 			if (Bus2IP_Resetn == 1'b0) begin
-				triggers <= 0;
-				masks <= 0;
+				//triggers <= 0;
+				//masks <= 0;
 			end else begin
 				if (slv_reg_write_sel == 1 << (C_SLV_DWIDTH - i - 1)) begin
 					triggers [C_SLV_DWIDTH*i +: C_SLV_DWIDTH] <= 0;
