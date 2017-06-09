@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: MB_top.prj
 
@@ -108,7 +108,7 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:/Users/MBImager/Documents/MBImager_ams/ISE_projects/MotherBoard/MBImager_full/MB_SPI/hdl/MB_SPI.v" into library work
+Analyzing Verilog file "D:/Shichen_Lu/MBImager/MBImager/MBImager_full/MB_SPI/hdl/MB_SPI.v" into library work
 Parsing module <MB_SPI>.
 Parsing module <MB_SPI_proc_sys_reset_0_wrapper>.
 Parsing module <MB_SPI_microblaze_0_ilmb_wrapper>.
@@ -121,17 +121,23 @@ Parsing module <MB_SPI_debug_module_wrapper>.
 Parsing module <MB_SPI_clock_generator_0_wrapper>.
 Parsing module <MB_SPI_axi4lite_0_wrapper>.
 Parsing module <MB_SPI_generic_spi_wrapper>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\TI_ADC_RO.v" into library work
+Analyzing Verilog file "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\freqchng_clkgen_highfreq.v" into library work
+Parsing module <freqchng_clkgen_highfreq>.
+Analyzing Verilog file "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\counter_nonoverlap_clkgen_highfreq.v" into library work
+Parsing module <counter_nonoverlap_clkgen>.
+Analyzing Verilog file "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\TI_ADC_RO.v" into library work
 Parsing module <TI_ADC_RO>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\ROImager.v" into library work
+Analyzing Verilog file "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\ROImager.v" into library work
 Parsing module <ROImager>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_SPI\MB_SPI_top.v" into library work
+Analyzing Verilog file "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\mod_signal_gen.v" into library work
+Parsing module <mod_signal_gen>.
+Analyzing Verilog file "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_SPI\MB_SPI_top.v" into library work
 Parsing module <MB_SPI_top>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\ipcore_dir\fifo_4kB.v" into library work
+Analyzing Verilog file "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\ipcore_dir\fifo_4kB.v" into library work
 Parsing module <fifo_4kB>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\Imager_SPI.v" into library work
+Analyzing Verilog file "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\Imager_SPI.v" into library work
 Parsing module <Imager_SPI>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" into library work
+Analyzing Verilog file "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" into library work
 Parsing module <MB_top>.
 Parsing module <ACLK_GENERATOR>.
 
@@ -141,20 +147,37 @@ Parsing module <ACLK_GENERATOR>.
 
 Elaborating module <MB_top>.
 
+Elaborating module <mod_signal_gen>.
+
+Elaborating module <freqchng_clkgen_highfreq>.
+
+Elaborating module <BUFG>.
+
+Elaborating module <PLL_BASE(BANDWIDTH="OPTIMIZED",CLK_FEEDBACK="CLKFBOUT",COMPENSATION="INTERNAL",DIVCLK_DIVIDE=1,CLKFBOUT_MULT=8,CLKFBOUT_PHASE=0.0,CLKOUT0_DIVIDE=5,CLKOUT0_PHASE=0.0,CLKOUT0_DUTY_CYCLE=0.5,CLKOUT1_DIVIDE=2,CLKOUT1_PHASE=0.0,CLKOUT1_DUTY_CYCLE=0.5,CLKOUT2_DIVIDE=2,CLKOUT2_PHASE=0.0,CLKOUT2_DUTY_CYCLE=0.5,CLKIN_PERIOD=10.0,REF_JITTER=0.01)>.
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\freqchng_clkgen_highfreq.v" Line 83: Assignment to clkout3_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\freqchng_clkgen_highfreq.v" Line 84: Assignment to clkout4_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\freqchng_clkgen_highfreq.v" Line 85: Assignment to clkout5_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\mod_signal_gen.v" Line 42: Assignment to LOCKED ignored, since the identifier is never used
+
+Elaborating module <counter_nonoverlap_clkgen>.
+WARNING:HDLCompiler:413 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\counter_nonoverlap_clkgen_highfreq.v" Line 73: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\counter_nonoverlap_clkgen_highfreq.v" Line 74: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\counter_nonoverlap_clkgen_highfreq.v" Line 75: Result of 32-bit expression is truncated to fit in 1-bit target.
+
+Elaborating module <ODDR2(DDR_ALIGNMENT="NONE",INIT=1'b0,SRTYPE="SYNC")>.
+
 Elaborating module <MB_SPI_top>.
 
 Elaborating module <MB_SPI>.
-WARNING:HDLCompiler:1499 - "C:/Users/MBImager/Documents/MBImager_ams/ISE_projects/MotherBoard/MBImager_full/MB_SPI/hdl/MB_SPI.v" Line 5: Empty module <MB_SPI> remains a black box.
+WARNING:HDLCompiler:1499 - "D:/Shichen_Lu/MBImager/MBImager/MBImager_full/MB_SPI/hdl/MB_SPI.v" Line 5: Empty module <MB_SPI> remains a black box.
 
 Elaborating module <ROImager>.
-WARNING:HDLCompiler:413 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\ROImager.v" Line 222: Result of 32-bit expression is truncated to fit in 8-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\ROImager.v" Line 225: Result of 32-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\ROImager.v" Line 222: Result of 32-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\ROImager.v" Line 225: Result of 32-bit expression is truncated to fit in 6-bit target.
 
 Elaborating module <ACLK_GENERATOR>.
-WARNING:HDLCompiler:413 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 436: Result of 17-bit expression is truncated to fit in 16-bit target.
-
-Elaborating module <BUFG>.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 158: Assignment to ADC_CLK90_n ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 451: Result of 17-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 173: Assignment to ADC_CLK90_n ignored, since the identifier is never used
 
 Elaborating module <TI_ADC_RO>.
 
@@ -163,54 +186,52 @@ Elaborating module <IBUF(IOSTANDARD="LVCMOS33")>.
 Elaborating module <IDDR2(DDR_ALIGNMENT="C0",INIT_Q0=1'b0,INIT_Q1=1'b0,SRTYPE="ASYNC")>.
 
 Elaborating module <fifo_4kB>.
-WARNING:HDLCompiler:1499 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\ipcore_dir\fifo_4kB.v" Line 39: Empty module <fifo_4kB> remains a black box.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 198: Assignment to full ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 199: Assignment to empty ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 200: Assignment to almost_empty ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 202: Assignment to flag_138cols ignored, since the identifier is never used
+WARNING:HDLCompiler:1499 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\ipcore_dir\fifo_4kB.v" Line 39: Empty module <fifo_4kB> remains a black box.
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 213: Assignment to full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 214: Assignment to empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 215: Assignment to almost_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 217: Assignment to flag_138cols ignored, since the identifier is never used
 
 Elaborating module <DCM_SP(CLKDV_DIVIDE=4,CLKFX_DIVIDE=10,CLKFX_MULTIPLY=5,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=10.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",DFS_FREQUENCY_MODE="LOW",DLL_FREQUENCY_MODE="LOW",DSS_MODE="NONE",DUTY_CYCLE_CORRECTION="TRUE",FACTORY_JF=16'b1100000010000000,PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 232: Assignment to CLK180_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 233: Assignment to CLK270_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 234: Assignment to CLK2X_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 235: Assignment to CLK2X180_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 236: Assignment to CLK90_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 238: Assignment to CLK_HS ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 239: Assignment to CLK_HS180 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 240: Assignment to LOCKED_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 241: Assignment to PSDONE_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 242: Assignment to STATUS_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 247: Assignment to CLK180_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 248: Assignment to CLK270_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 249: Assignment to CLK2X_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 250: Assignment to CLK2X180_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 251: Assignment to CLK90_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 253: Assignment to CLK_HS ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 254: Assignment to CLK_HS180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 255: Assignment to LOCKED_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 256: Assignment to PSDONE_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 257: Assignment to STATUS_2 ignored, since the identifier is never used
 
 Elaborating module <DCM_CLKGEN(CLKFXDV_DIVIDE=2.0,CLKFX_DIVIDE=48.0,CLKFX_MD_MAX=1.0,CLKFX_MULTIPLY=4.0,CLKIN_PERIOD=10.0,SPREAD_SPECTRUM="NONE",STARTUP_WAIT="FALSE")>.
 WARNING:HDLCompiler:413 - "N:/P.20131013/rtf/devlib/verilog/src/iSE/unisim_comp.v" Line 1246: Result of 64-bit expression is truncated to fit in 32-bit target.
-WARNING:HDLCompiler:1843 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 258: Possible conversion of parameter value of CLKFXDV_DIVIDE to fit the type of formal
+WARNING:HDLCompiler:1843 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 273: Possible conversion of parameter value of CLKFXDV_DIVIDE to fit the type of formal
 WARNING:HDLCompiler:413 - "N:/P.20131013/rtf/devlib/verilog/src/iSE/unisim_comp.v" Line 1247: Result of 64-bit expression is truncated to fit in 32-bit target.
-WARNING:HDLCompiler:1843 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 259: Possible conversion of parameter value of CLKFX_DIVIDE to fit the type of formal
+WARNING:HDLCompiler:1843 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 274: Possible conversion of parameter value of CLKFX_DIVIDE to fit the type of formal
 WARNING:HDLCompiler:413 - "N:/P.20131013/rtf/devlib/verilog/src/iSE/unisim_comp.v" Line 1248: Result of 64-bit expression is truncated to fit in 32-bit target.
-WARNING:HDLCompiler:1843 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 261: Possible conversion of parameter value of CLKFX_MULTIPLY to fit the type of formal
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 269: Assignment to ADC_CLK180 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 270: Assignment to CLKFXDV_1 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 271: Assignment to LOCKED_1 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 272: Assignment to PROGDONE_1 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 273: Assignment to STATUS_1 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 283: Assignment to ADC_CLK_n ignored, since the identifier is never used
+WARNING:HDLCompiler:1843 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 276: Possible conversion of parameter value of CLKFX_MULTIPLY to fit the type of formal
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 284: Assignment to ADC_CLK180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 285: Assignment to CLKFXDV_1 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 286: Assignment to LOCKED_1 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 287: Assignment to PROGDONE_1 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 288: Assignment to STATUS_1 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 298: Assignment to ADC_CLK_n ignored, since the identifier is never used
 
 Elaborating module <DCM_SP(CLKDV_DIVIDE=3,CLKFX_DIVIDE=4,CLKFX_MULTIPLY=2,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=10.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",DFS_FREQUENCY_MODE="LOW",DLL_FREQUENCY_MODE="LOW",DSS_MODE="NONE",DUTY_CYCLE_CORRECTION="TRUE",FACTORY_JF=16'b1100000010000000,PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 309: Assignment to CLK180 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 310: Assignment to ADC_CLK270 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 311: Assignment to CLK2X ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 312: Assignment to CLK2X180 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 315: Assignment to CLKFX ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 316: Assignment to CLKFX180 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 317: Assignment to LOCKED ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 318: Assignment to PSDONE ignored, since the identifier is never used
-WARNING:HDLCompiler:189 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 319: Size mismatch in connection of port <STATUS>. Formal port size is 8-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" Line 319: Assignment to STATUS ignored, since the identifier is never used
-
-Elaborating module <ODDR2(DDR_ALIGNMENT="NONE",INIT=1'b0,SRTYPE="SYNC")>.
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 324: Assignment to CLK180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 325: Assignment to ADC_CLK270 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 326: Assignment to CLK2X ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 327: Assignment to CLK2X180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 330: Assignment to CLKFX ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 331: Assignment to CLKFX180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 332: Assignment to LOCKED ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 333: Assignment to PSDONE ignored, since the identifier is never used
+WARNING:HDLCompiler:189 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 334: Size mismatch in connection of port <STATUS>. Formal port size is 8-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" Line 334: Assignment to STATUS ignored, since the identifier is never used
 
 Elaborating module <Imager_SPI>.
-WARNING:HDLCompiler:872 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\Imager_SPI.v" Line 35: Using initial value of regs since it is never assigned
+WARNING:HDLCompiler:872 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\Imager_SPI.v" Line 35: Using initial value of regs since it is never assigned
 
 Elaborating module <BUFGCE>.
 
@@ -219,28 +240,99 @@ Elaborating module <BUFGCE>.
 =========================================================================
 
 Synthesizing Unit <MB_top>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v".
+    Related source file is "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v".
         C_ADCCLK_R = 12
         C_CLKHS_D = 10
         C_CLKHS_M = 5
         C_FIFOREAD_R = 4
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" line 190: Output port <full> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" line 190: Output port <empty> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" line 190: Output port <almost_empty> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v" line 190: Output port <prog_full> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" line 205: Output port <full> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" line 205: Output port <empty> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" line 205: Output port <almost_empty> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v" line 205: Output port <prog_full> of the instance <fifo_inst_4kB> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <MB_top> synthesized.
 
+Synthesizing Unit <mod_signal_gen>.
+    Related source file is "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\mod_signal_gen.v".
+WARNING:Xst:647 - Input <DRAIN_B> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\mod_signal_gen.v" line 39: Output port <LOCKED> of the instance <freqchng> is unconnected or connected to loadless signal.
+    Found 1-bit 6-to-1 multiplexer for signal <FREQ_SEL[2]_X_2_o_Mux_0_o> created at line 54.
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <mod_signal_gen> synthesized.
+
+Synthesizing Unit <freqchng_clkgen_highfreq>.
+    Related source file is "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\freqchng_clkgen_highfreq.v".
+WARNING:Xst:653 - Signal <CLK_OUT_3> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <CLK_OUT_4> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <CLK_OUT_5> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+	no macro.
+Unit <freqchng_clkgen_highfreq> synthesized.
+
+Synthesizing Unit <counter_nonoverlap_clkgen>.
+    Related source file is "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\counter_nonoverlap_clkgen_highfreq.v".
+WARNING:Xst:647 - Input <FREQ_SEL<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <FREQ_SEL<2:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <R_CLK_OUT_MOD<0>>.
+    Found 1-bit register for signal <R_CLK_OUT_MODN<0>>.
+    Found 5-bit register for signal <count_32>.
+    Found 1-bit register for signal <R_CLK_OUT_MODL<1>>.
+    Found 1-bit register for signal <R_CLK_OUT_MOD<1>>.
+    Found 1-bit register for signal <R_CLK_OUT_MODN<1>>.
+    Found 4-bit register for signal <count_16>.
+    Found 1-bit register for signal <R_CLK_OUT_MODL<2>>.
+    Found 1-bit register for signal <R_CLK_OUT_MOD<2>>.
+    Found 1-bit register for signal <R_CLK_OUT_MODN<2>>.
+    Found 3-bit register for signal <count_8>.
+    Found 1-bit register for signal <R_CLK_OUT_MODL<0>>.
+    Found 5-bit subtractor for signal <PHASE_SEL[4]_GND_6_o_sub_5_OUT> created at line 44.
+    Found 5-bit subtractor for signal <PHASE_SEL[4]_GND_6_o_sub_6_OUT> created at line 44.
+    Found 5-bit subtractor for signal <PHASE_SEL[4]_PWR_6_o_sub_8_OUT> created at line 45.
+    Found 5-bit subtractor for signal <PHASE_SEL[4]_GND_6_o_sub_11_OUT> created at line 46.
+    Found 5-bit subtractor for signal <PHASE_SEL[4]_GND_6_o_sub_12_OUT> created at line 46.
+    Found 5-bit subtractor for signal <count_32[4]_GND_6_o_sub_15_OUT> created at line 48.
+    Found 4-bit subtractor for signal <PHASE_SEL[4]_GND_6_o_sub_22_OUT> created at line 55.
+    Found 4-bit subtractor for signal <PHASE_SEL[4]_GND_6_o_sub_23_OUT> created at line 55.
+    Found 4-bit subtractor for signal <PHASE_SEL[4]_PWR_6_o_sub_25_OUT> created at line 56.
+    Found 4-bit subtractor for signal <PHASE_SEL[4]_GND_6_o_sub_28_OUT> created at line 57.
+    Found 4-bit subtractor for signal <PHASE_SEL[4]_GND_6_o_sub_29_OUT> created at line 57.
+    Found 4-bit subtractor for signal <count_16[3]_GND_6_o_sub_32_OUT> created at line 59.
+    Found 3-bit subtractor for signal <PHASE_SEL[4]_GND_6_o_sub_39_OUT> created at line 66.
+    Found 3-bit subtractor for signal <PHASE_SEL[4]_GND_6_o_sub_40_OUT> created at line 66.
+    Found 3-bit subtractor for signal <PHASE_SEL[4]_PWR_6_o_sub_42_OUT> created at line 67.
+    Found 3-bit subtractor for signal <PHASE_SEL[4]_GND_6_o_sub_45_OUT> created at line 68.
+    Found 3-bit subtractor for signal <PHASE_SEL[4]_GND_6_o_sub_46_OUT> created at line 68.
+    Found 3-bit subtractor for signal <count_8[2]_GND_6_o_sub_49_OUT> created at line 70.
+    Found 5-bit comparator equal for signal <count_32[4]_PHASE_SEL[4]_equal_4_o> created at line 43
+    Found 5-bit comparator equal for signal <count_32[4]_PHASE_SEL[4]_equal_7_o> created at line 44
+    Found 5-bit comparator equal for signal <count_32[4]_PHASE_SEL[4]_equal_9_o> created at line 45
+    Found 5-bit comparator equal for signal <count_32[4]_PHASE_SEL[4]_equal_13_o> created at line 46
+    Found 4-bit comparator equal for signal <count_16[3]_PHASE_SEL[4]_equal_21_o> created at line 54
+    Found 4-bit comparator equal for signal <count_16[3]_PHASE_SEL[4]_equal_24_o> created at line 55
+    Found 4-bit comparator equal for signal <count_16[3]_PHASE_SEL[4]_equal_26_o> created at line 56
+    Found 4-bit comparator equal for signal <count_16[3]_PHASE_SEL[4]_equal_30_o> created at line 57
+    Found 3-bit comparator equal for signal <count_8[2]_PHASE_SEL[4]_equal_38_o> created at line 65
+    Found 3-bit comparator equal for signal <count_8[2]_PHASE_SEL[4]_equal_41_o> created at line 66
+    Found 3-bit comparator equal for signal <count_8[2]_PHASE_SEL[4]_equal_43_o> created at line 67
+    Found 3-bit comparator equal for signal <count_8[2]_PHASE_SEL[4]_equal_47_o> created at line 68
+    Summary:
+	inferred  18 Adder/Subtractor(s).
+	inferred  21 D-type flip-flop(s).
+	inferred  12 Comparator(s).
+	inferred   6 Multiplexer(s).
+Unit <counter_nonoverlap_clkgen> synthesized.
+
 Synthesizing Unit <MB_SPI_top>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_SPI\MB_SPI_top.v".
+    Related source file is "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_SPI\MB_SPI_top.v".
     Set property "BOX_TYPE = user_black_box" for instance <MB_SPI_i>.
     Summary:
 	no macro.
 Unit <MB_SPI_top> synthesized.
 
 Synthesizing Unit <ROImager>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\ROImager.v".
+    Related source file is "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\ROImager.v".
         phi1_cnt = 9
         phi2_cnt = 9
         C_NUM_MUX = 46
@@ -273,13 +365,13 @@ Synthesizing Unit <ROImager>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 32-bit adder for signal <rowadd[31]_GND_4_o_add_9_OUT> created at line 134.
-    Found 32-bit adder for signal <countpix[31]_GND_4_o_add_15_OUT> created at line 147.
+    Found 32-bit adder for signal <rowadd[31]_GND_10_o_add_9_OUT> created at line 134.
+    Found 32-bit adder for signal <countpix[31]_GND_10_o_add_15_OUT> created at line 147.
     Found 32-bit comparator greater for signal <n0008> created at line 138
-    Found 32-bit comparator greater for signal <GND_4_o_countpix[31]_LessThan_13_o> created at line 138
-    Found 32-bit comparator greater for signal <GND_4_o_countpix[31]_LessThan_35_o> created at line 168
+    Found 32-bit comparator greater for signal <GND_10_o_countpix[31]_LessThan_13_o> created at line 138
+    Found 32-bit comparator greater for signal <GND_10_o_countpix[31]_LessThan_35_o> created at line 168
     Found 32-bit comparator greater for signal <n0039> created at line 168
-    Found 32-bit comparator greater for signal <GND_4_o_rowadd[31]_LessThan_38_o> created at line 171
+    Found 32-bit comparator greater for signal <GND_10_o_rowadd[31]_LessThan_38_o> created at line 171
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred 127 D-type flip-flop(s).
@@ -289,11 +381,11 @@ Synthesizing Unit <ROImager>.
 Unit <ROImager> synthesized.
 
 Synthesizing Unit <ACLK_GENERATOR>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.v".
+    Related source file is "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.v".
     Found 1-bit register for signal <CLOCK_OUT>.
     Found 16-bit register for signal <counter>.
-    Found 16-bit adder for signal <counter[15]_GND_5_o_add_2_OUT> created at line 436.
-    Found 16-bit comparator greater for signal <GND_5_o_counter[15]_LessThan_2_o> created at line 429
+    Found 16-bit adder for signal <counter[15]_GND_11_o_add_2_OUT> created at line 451.
+    Found 16-bit comparator greater for signal <GND_11_o_counter[15]_LessThan_2_o> created at line 444
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  17 D-type flip-flop(s).
@@ -301,22 +393,22 @@ Synthesizing Unit <ACLK_GENERATOR>.
 Unit <ACLK_GENERATOR> synthesized.
 
 Synthesizing Unit <TI_ADC_RO>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\TI_ADC_RO.v".
+    Related source file is "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\TI_ADC_RO.v".
     Summary:
 	no macro.
 Unit <TI_ADC_RO> synthesized.
 
 Synthesizing Unit <Imager_SPI>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\Imager_SPI.v".
+    Related source file is "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\Imager_SPI.v".
     Found 1-bit register for signal <clk_en>.
     Found 1-bit register for signal <upload_i>.
     Found 40-bit register for signal <regdata>.
     Found 32-bit register for signal <count>.
-    Found 32-bit adder for signal <count[31]_GND_15_o_add_8_OUT> created at line 69.
-    Found 32-bit comparator greater for signal <GND_15_o_count[31]_LessThan_2_o> created at line 54
-    Found 32-bit comparator greater for signal <GND_15_o_count[31]_LessThan_4_o> created at line 56
-    Found 32-bit comparator greater for signal <GND_15_o_count[31]_LessThan_6_o> created at line 61
-    Found 32-bit comparator greater for signal <GND_15_o_count[31]_LessThan_8_o> created at line 67
+    Found 32-bit adder for signal <count[31]_GND_19_o_add_8_OUT> created at line 69.
+    Found 32-bit comparator greater for signal <GND_19_o_count[31]_LessThan_2_o> created at line 54
+    Found 32-bit comparator greater for signal <GND_19_o_count[31]_LessThan_4_o> created at line 56
+    Found 32-bit comparator greater for signal <GND_19_o_count[31]_LessThan_6_o> created at line 61
+    Found 32-bit comparator greater for signal <GND_19_o_count[31]_LessThan_8_o> created at line 67
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  74 D-type flip-flop(s).
@@ -327,21 +419,31 @@ Unit <Imager_SPI> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 4
+# Adders/Subtractors                                   : 22
  16-bit adder                                          : 1
+ 3-bit subtractor                                      : 6
  32-bit adder                                          : 3
-# Registers                                            : 17
- 1-bit register                                        : 10
+ 4-bit subtractor                                      : 6
+ 5-bit subtractor                                      : 6
+# Registers                                            : 29
+ 1-bit register                                        : 19
  16-bit register                                       : 1
  24-bit register                                       : 1
+ 3-bit register                                        : 1
  32-bit register                                       : 4
+ 4-bit register                                        : 1
  40-bit register                                       : 1
-# Comparators                                          : 10
+ 5-bit register                                        : 1
+# Comparators                                          : 22
  16-bit comparator greater                             : 1
+ 3-bit comparator equal                                : 4
  32-bit comparator greater                             : 9
-# Multiplexers                                         : 14
+ 4-bit comparator equal                                : 4
+ 5-bit comparator equal                                : 4
+# Multiplexers                                         : 21
  1-bit 2-to-1 multiplexer                              : 3
- 32-bit 2-to-1 multiplexer                             : 11
+ 1-bit 6-to-1 multiplexer                              : 1
+ 32-bit 2-to-1 multiplexer                             : 17
 # FSMs                                                 : 1
 
 =========================================================================
@@ -412,6 +514,12 @@ Unit <ACLK_GENERATOR> synthesized (advanced).
 Synthesizing (advanced) Unit <Imager_SPI>.
 The following registers are absorbed into counter <count>: 1 register on signal <count>.
 Unit <Imager_SPI> synthesized (advanced).
+
+Synthesizing (advanced) Unit <counter_nonoverlap_clkgen>.
+The following registers are absorbed into counter <count_32>: 1 register on signal <count_32>.
+The following registers are absorbed into counter <count_16>: 1 register on signal <count_16>.
+The following registers are absorbed into counter <count_8>: 1 register on signal <count_8>.
+Unit <counter_nonoverlap_clkgen> synthesized (advanced).
 WARNING:Xst:2677 - Node <MUX_ADD_i_6> of sequential type is unconnected in block <ROImager>.
 WARNING:Xst:2677 - Node <MUX_ADD_i_7> of sequential type is unconnected in block <ROImager>.
 WARNING:Xst:2677 - Node <MUX_ADD_i_8> of sequential type is unconnected in block <ROImager>.
@@ -443,19 +551,29 @@ WARNING:Xst:2677 - Node <MUX_ADD_i_31> of sequential type is unconnected in bloc
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 2
+# Adders/Subtractors                                   : 17
+ 3-bit subtractor                                      : 5
  32-bit adder                                          : 2
-# Counters                                             : 2
+ 4-bit subtractor                                      : 5
+ 5-bit subtractor                                      : 5
+# Counters                                             : 5
  16-bit up counter                                     : 1
+ 3-bit down counter                                    : 1
  32-bit up counter                                     : 1
-# Registers                                            : 144
- Flip-Flops                                            : 144
-# Comparators                                          : 10
+ 4-bit down counter                                    : 1
+ 5-bit down counter                                    : 1
+# Registers                                            : 153
+ Flip-Flops                                            : 153
+# Comparators                                          : 22
  16-bit comparator greater                             : 1
+ 3-bit comparator equal                                : 4
  32-bit comparator greater                             : 9
-# Multiplexers                                         : 14
+ 4-bit comparator equal                                : 4
+ 5-bit comparator equal                                : 4
+# Multiplexers                                         : 21
  1-bit 2-to-1 multiplexer                              : 3
- 32-bit 2-to-1 multiplexer                             : 11
+ 1-bit 6-to-1 multiplexer                              : 1
+ 32-bit 2-to-1 multiplexer                             : 17
 # FSMs                                                 : 1
 
 =========================================================================
@@ -477,7 +595,10 @@ Optimizing FSM <imager_time/FSM_0> on signal <STATADC[1:6]> with one-hot encodin
  00000000000000000000000000010010 | 010000
  00000000000000000000000000010100 | 100000
 ----------------------------------------------
+INFO:Xst:1901 - Instance pll_base_inst in unit pll_base_inst of type PLL_BASE has been replaced by PLL_ADV
 INFO:Xst:1901 - Instance BUFGCE_inst in unit Imager_SPI of type BUFGCE has been replaced by BUFGMUX
+
+Optimizing unit <freqchng_clkgen_highfreq> ...
 
 Optimizing unit <MB_SPI_top> ...
 
@@ -485,11 +606,23 @@ Optimizing unit <MB_top> ...
 
 Optimizing unit <TI_ADC_RO> ...
 
+Optimizing unit <mod_signal_gen> ...
+
+Optimizing unit <counter_nonoverlap_clkgen> ...
+
 Optimizing unit <Imager_SPI> ...
 
 Optimizing unit <ACLK_GENERATOR> ...
 
 Optimizing unit <ROImager> ...
+WARNING:Xst:2677 - Node <R_CLK_OUT_MODL_0> of sequential type is unconnected in block <nonoverlap_clkgen>.
+WARNING:Xst:2677 - Node <R_CLK_OUT_MOD_0> of sequential type is unconnected in block <nonoverlap_clkgen>.
+WARNING:Xst:2677 - Node <R_CLK_OUT_MODN_0> of sequential type is unconnected in block <nonoverlap_clkgen>.
+WARNING:Xst:2677 - Node <count_32_0> of sequential type is unconnected in block <nonoverlap_clkgen>.
+WARNING:Xst:2677 - Node <count_32_1> of sequential type is unconnected in block <nonoverlap_clkgen>.
+WARNING:Xst:2677 - Node <count_32_2> of sequential type is unconnected in block <nonoverlap_clkgen>.
+WARNING:Xst:2677 - Node <count_32_3> of sequential type is unconnected in block <nonoverlap_clkgen>.
+WARNING:Xst:2677 - Node <count_32_4> of sequential type is unconnected in block <nonoverlap_clkgen>.
 WARNING:Xst:1293 - FF/Latch <count_31> has a constant value of 0 in block <MBI_regs>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <count_30> has a constant value of 0 in block <MBI_regs>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <count_29> has a constant value of 0 in block <MBI_regs>. This FF/Latch will be trimmed during the optimization process.
@@ -535,6 +668,9 @@ WARNING:Xst:1293 - FF/Latch <countpix_9> has a constant value of 0 in block <ima
 WARNING:Xst:1293 - FF/Latch <countpix_8> has a constant value of 0 in block <imager_time>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <countpix_7> has a constant value of 0 in block <imager_time>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <countpix_6> has a constant value of 0 in block <imager_time>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <count_8_0> in Unit <nonoverlap_clkgen> is equivalent to the following FF/Latch, which will be removed : <count_16_0> 
+INFO:Xst:2261 - The FF/Latch <count_8_1> in Unit <nonoverlap_clkgen> is equivalent to the following FF/Latch, which will be removed : <count_16_1> 
+INFO:Xst:2261 - The FF/Latch <count_8_2> in Unit <nonoverlap_clkgen> is equivalent to the following FF/Latch, which will be removed : <count_16_2> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -616,8 +752,8 @@ Unit <imager_time> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 128
- Flip-Flops                                            : 128
+# Registers                                            : 138
+ Flip-Flops                                            : 138
 # Shift Registers                                      : 3
  14-bit shift register                                 : 1
  4-bit shift register                                  : 1
@@ -644,24 +780,24 @@ Top Level Output File Name         : MB_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 3360
-#      GND                         : 19
-#      INV                         : 60
+# BELS                             : 3393
+#      GND                         : 21
+#      INV                         : 64
 #      LUT1                        : 124
-#      LUT2                        : 254
-#      LUT3                        : 456
-#      LUT4                        : 432
-#      LUT5                        : 364
-#      LUT6                        : 813
+#      LUT2                        : 256
+#      LUT3                        : 461
+#      LUT4                        : 437
+#      LUT5                        : 366
+#      LUT6                        : 825
 #      LUT6_2                      : 96
 #      MULT_AND                    : 2
 #      MUXCY                       : 223
 #      MUXCY_L                     : 163
 #      MUXF7                       : 122
-#      VCC                         : 12
+#      VCC                         : 13
 #      XORCY                       : 220
-# FlipFlops/Latches                : 2507
-#      FD                          : 337
+# FlipFlops/Latches                : 2520
+#      FD                          : 344
 #      FD_1                        : 1
 #      FDC                         : 178
 #      FDC_1                       : 5
@@ -672,10 +808,10 @@ Primitive and Black Box Usage:
 #      FDR                         : 740
 #      FDRE                        : 666
 #      FDRE_1                      : 1
-#      FDS                         : 20
+#      FDS                         : 23
 #      FDSE                        : 45
 #      IDDR2                       : 24
-#      ODDR2                       : 4
+#      ODDR2                       : 7
 # RAMS                             : 44
 #      RAM32M                      : 16
 #      RAMB16BWER                  : 28
@@ -683,22 +819,22 @@ Primitive and Black Box Usage:
 #      SRL16                       : 1
 #      SRL16E                      : 50
 #      SRLC16E                     : 82
-# Clock Buffers                    : 12
-#      BUFG                        : 11
+# Clock Buffers                    : 14
+#      BUFG                        : 13
 #      BUFGMUX                     : 1
-# IO Buffers                       : 85
-#      IBUF                        : 32
+# IO Buffers                       : 96
+#      IBUF                        : 42
 #      IBUFG                       : 1
-#      OBUF                        : 52
+#      OBUF                        : 53
 # DCMs                             : 3
 #      DCM_CLKGEN                  : 1
 #      DCM_SP                      : 2
 # DSPs                             : 3
 #      DSP48A1                     : 3
-# Others                           : 3
+# Others                           : 4
 #      AND2B1L                     : 1
 #      BSCAN_SPARTAN6              : 1
-#      PLL_ADV                     : 1
+#      PLL_ADV                     : 2
 
 Device utilization summary:
 ---------------------------
@@ -707,31 +843,31 @@ Selected Device : 6slx25tfgg484-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            2499  out of  30064     8%  
- Number of Slice LUTs:                 2796  out of  15032    18%  
-    Number used as Logic:              2599  out of  15032    17%  
+ Number of Slice Registers:            2512  out of  30064     8%  
+ Number of Slice LUTs:                 2826  out of  15032    18%  
+    Number used as Logic:              2629  out of  15032    17%  
     Number used as Memory:              197  out of   3664     5%  
        Number used as RAM:               64
        Number used as SRL:              133
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   4097
-   Number with an unused Flip Flop:    1598  out of   4097    39%  
-   Number with an unused LUT:          1301  out of   4097    31%  
-   Number of fully used LUT-FF pairs:  1198  out of   4097    29%  
-   Number of unique control sets:       133
+ Number of LUT Flip Flop pairs used:   4131
+   Number with an unused Flip Flop:    1619  out of   4131    39%  
+   Number with an unused LUT:          1305  out of   4131    31%  
+   Number of fully used LUT-FF pairs:  1207  out of   4131    29%  
+   Number of unique control sets:       135
 
 IO Utilization: 
- Number of IOs:                          85
- Number of bonded IOBs:                  61  out of    250    24%  
+ Number of IOs:                          98
+ Number of bonded IOBs:                  72  out of    250    28%  
     IOB Flip Flops/Latches:               8
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:               28  out of     52    53%  
     Number using Block RAM only:         28
- Number of BUFG/BUFGCTRLs:               12  out of     16    75%  
+ Number of BUFG/BUFGCTRLs:               14  out of     16    87%  
  Number of DSP48A1s:                      3  out of     38     7%  
- Number of PLL_ADVs:                      1  out of      2    50%  
+ Number of PLL_ADVs:                      2  out of      2   100%  
 
 ---------------------------
 Partition Resource Summary:
@@ -751,20 +887,24 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+-------+
-Clock Signal                                                 | Clock buffer(FF name)                                                                                                                 | Load  |
--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+-------+
-MBI_regs/SPI_CLK_INV_17_o(MBI_regs/SPI_CLK_INV_17_o1_INV_0:O)| BUFGMUX(*)(ODDR2_ISPI_REGCLK_buf)                                                                                                     | 2     |
-clk_gen/CLOCK_OUT                                            | NONE(ODDR2_ADC_READ_ACLK_buf)                                                                                                         | 56    |
-USER_CLOCK                                                   | DCM_SP:CLKDV                                                                                                                          | 131   |
-ADC_CLK                                                      | DCM_SP:CLKDV                                                                                                                          | 58    |
-ADC_CLK                                                      | DCM_SP:CLK90                                                                                                                          | 48    |
-USER_CLOCK                                                   | PLL_ADV:CLKOUT0                                                                                                                       | 2027  |
-uBlaze_SPI/MB_SPI_i/debug_module/debug_module/drck_i         | BUFG                                                                                                                                  | 209   |
-uBlaze_SPI/MB_SPI_i/debug_module/Ext_JTAG_UPDATE             | NONE(uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.Use_Debug_Logic.Master_Core.Debug_Perf/command_reg_0)| 43    |
-ADC_CLK                                                      | BUFG                                                                                                                                  | 153   |
--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+-------+
-(*) This 1 clock signal(s) are generated by combinatorial logic,
+--------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                                                                                            | Clock buffer(FF name)                                                                                                                 | Load  |
+--------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+-------+
+MBI_regs/SPI_CLK_INV_41_o(MBI_regs/SPI_CLK_INV_41_o1_INV_0:O)                                           | BUFGMUX(*)(ODDR2_ISPI_REGCLK_buf)                                                                                                     | 2     |
+clk_gen/CLOCK_OUT                                                                                       | NONE(ODDR2_ADC_READ_ACLK_buf)                                                                                                         | 56    |
+USER_CLOCK                                                                                              | DCM_SP:CLKDV                                                                                                                          | 131   |
+ADC_CLK                                                                                                 | DCM_SP:CLKDV                                                                                                                          | 58    |
+ADC_CLK                                                                                                 | DCM_SP:CLK90                                                                                                                          | 48    |
+mod_signal_gen_inst/nonoverlap_clkgen/CLK_OUT_MOD(mod_signal_gen_inst/nonoverlap_clkgen/Mmux_n011611:O) | NONE(*)(mod_signal_gen_inst/ODDR2_CLK_MOD_buf)                                                                                        | 2     |
+mod_signal_gen_inst/nonoverlap_clkgen/CLK_OUT_MODN(mod_signal_gen_inst/nonoverlap_clkgen/Mmux_n011711:O)| NONE(*)(mod_signal_gen_inst/ODDR2_CLKN_MOD_buf)                                                                                       | 2     |
+mod_signal_gen_inst/nonoverlap_clkgen/CLK_OUT_MODL(mod_signal_gen_inst/nonoverlap_clkgen/Mmux_n011811:O)| NONE(*)(mod_signal_gen_inst/ODDR2_CLKL_MOD_buf)                                                                                       | 2     |
+mod_signal_gen_inst/FREQ_SEL[2]_X_2_o_Mux_0_o(mod_signal_gen_inst/Mmux_FREQ_SEL[2]_X_2_o_Mux_0_o11:O)   | BUFG(*)(mod_signal_gen_inst/nonoverlap_clkgen/count_8_0)                                                                              | 10    |
+USER_CLOCK                                                                                              | PLL_ADV:CLKOUT0                                                                                                                       | 2027  |
+uBlaze_SPI/MB_SPI_i/debug_module/debug_module/drck_i                                                    | BUFG                                                                                                                                  | 209   |
+uBlaze_SPI/MB_SPI_i/debug_module/Ext_JTAG_UPDATE                                                        | NONE(uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.Use_Debug_Logic.Master_Core.Debug_Perf/command_reg_0)| 43    |
+ADC_CLK                                                                                                 | BUFG                                                                                                                                  | 153   |
+--------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+-------+
+(*) These 5 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -810,6 +950,30 @@ Delay:               3.822ns (Levels of Logic = 3)
     ----------------------------------------
     Total                      3.822ns (0.950ns logic, 2.872ns route)
                                        (24.9% logic, 75.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'mod_signal_gen_inst/FREQ_SEL[2]_X_2_o_Mux_0_o'
+  Clock period: 4.264ns (frequency: 234.546MHz)
+  Total number of paths / destination ports: 64 / 13
+-------------------------------------------------------------------------
+Delay:               4.264ns (Levels of Logic = 3)
+  Source:            mod_signal_gen_inst/nonoverlap_clkgen/count_8_0 (FF)
+  Destination:       mod_signal_gen_inst/nonoverlap_clkgen/R_CLK_OUT_MOD_1 (FF)
+  Source Clock:      mod_signal_gen_inst/FREQ_SEL[2]_X_2_o_Mux_0_o rising
+  Destination Clock: mod_signal_gen_inst/FREQ_SEL[2]_X_2_o_Mux_0_o rising
+
+  Data Path: mod_signal_gen_inst/nonoverlap_clkgen/count_8_0 to mod_signal_gen_inst/nonoverlap_clkgen/R_CLK_OUT_MOD_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDS:C->Q             13   0.447   1.297  count_8_0 (count_8_0)
+     LUT6:I0->O            2   0.203   0.864  count_16[3]_PHASE_SEL[4]_equal_21_o421 (count_16[3]_PHASE_SEL[4]_equal_21_o42)
+     LUT4:I0->O            1   0.203   0.944  R_CLK_OUT_MOD_1_glue_set (R_CLK_OUT_MOD_1_glue_set)
+     LUT6:I0->O            1   0.203   0.000  R_CLK_OUT_MOD_1_rstpot (R_CLK_OUT_MOD_1_rstpot)
+     FD:D                      0.102          R_CLK_OUT_MOD_1
+    ----------------------------------------
+    Total                      4.264ns (1.158ns logic, 3.106ns route)
+                                       (27.2% logic, 72.8% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'USER_CLOCK'
@@ -920,13 +1084,13 @@ Delay:               4.640ns (Levels of Logic = 8)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDRE:C->Q             9   0.447   1.174  count_7 (count_7)
-     LUT5:I0->O            1   0.203   0.000  Mcompar_GND_15_o_count[31]_LessThan_6_o_lut<1> (Mcompar_GND_15_o_count[31]_LessThan_6_o_lut<1>)
-     MUXCY:S->O            1   0.172   0.000  Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<1> (Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<1>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<2> (Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<2>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<3> (Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<3>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<4> (Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<4>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<5> (Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<5>)
-     MUXCY:CI->O           3   0.213   0.898  Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<6> (Mcompar_GND_15_o_count[31]_LessThan_6_o_cy<6>)
+     LUT5:I0->O            1   0.203   0.000  Mcompar_GND_19_o_count[31]_LessThan_6_o_lut<1> (Mcompar_GND_19_o_count[31]_LessThan_6_o_lut<1>)
+     MUXCY:S->O            1   0.172   0.000  Mcompar_GND_19_o_count[31]_LessThan_6_o_cy<1> (Mcompar_GND_19_o_count[31]_LessThan_6_o_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_19_o_count[31]_LessThan_6_o_cy<2> (Mcompar_GND_19_o_count[31]_LessThan_6_o_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_19_o_count[31]_LessThan_6_o_cy<3> (Mcompar_GND_19_o_count[31]_LessThan_6_o_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_19_o_count[31]_LessThan_6_o_cy<4> (Mcompar_GND_19_o_count[31]_LessThan_6_o_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_19_o_count[31]_LessThan_6_o_cy<5> (Mcompar_GND_19_o_count[31]_LessThan_6_o_cy<5>)
+     MUXCY:CI->O           3   0.213   0.898  Mcompar_GND_19_o_count[31]_LessThan_6_o_cy<6> (Mcompar_GND_19_o_count[31]_LessThan_6_o_cy<6>)
      LUT4:I0->O           13   0.203   0.932  _n0075_inv1 (_n0075_inv)
      FDRE:CE                   0.322          count_0
     ----------------------------------------
@@ -954,6 +1118,30 @@ Offset:              4.513ns (Levels of Logic = 4)
     ----------------------------------------
     Total                      4.513ns (1.733ns logic, 2.780ns route)
                                        (38.4% logic, 61.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'mod_signal_gen_inst/FREQ_SEL[2]_X_2_o_Mux_0_o'
+  Total number of paths / destination ports: 70 / 4
+-------------------------------------------------------------------------
+Offset:              4.801ns (Levels of Logic = 5)
+  Source:            PHASE_SEL<2> (PAD)
+  Destination:       mod_signal_gen_inst/nonoverlap_clkgen/R_CLK_OUT_MOD_1 (FF)
+  Destination Clock: mod_signal_gen_inst/FREQ_SEL[2]_X_2_o_Mux_0_o rising
+
+  Data Path: PHASE_SEL<2> to mod_signal_gen_inst/nonoverlap_clkgen/R_CLK_OUT_MOD_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             9   1.222   1.058  PHASE_SEL_2_IBUF (PHASE_SEL_2_IBUF)
+     begin scope: 'mod_signal_gen_inst:PHASE_SEL<2>'
+     begin scope: 'mod_signal_gen_inst/nonoverlap_clkgen:PHASE_SEL<2>'
+     LUT6:I3->O            2   0.205   0.864  count_16[3]_PHASE_SEL[4]_equal_21_o421 (count_16[3]_PHASE_SEL[4]_equal_21_o42)
+     LUT4:I0->O            1   0.203   0.944  R_CLK_OUT_MOD_1_glue_set (R_CLK_OUT_MOD_1_glue_set)
+     LUT6:I0->O            1   0.203   0.000  R_CLK_OUT_MOD_1_rstpot (R_CLK_OUT_MOD_1_rstpot)
+     FD:D                      0.102          R_CLK_OUT_MOD_1
+    ----------------------------------------
+    Total                      4.801ns (1.935ns logic, 2.866ns route)
+                                       (40.3% logic, 59.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'USER_CLOCK'
@@ -1230,6 +1418,14 @@ Source Clock     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 clk_gen/CLOCK_OUT|    4.640|         |         |         |
 -----------------+---------+---------+---------+---------+
 
+Clock to Setup on destination clock mod_signal_gen_inst/FREQ_SEL[2]_X_2_o_Mux_0_o
+---------------------------------------------+---------+---------+---------+---------+
+                                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------------------------+---------+---------+---------+---------+
+mod_signal_gen_inst/FREQ_SEL[2]_X_2_o_Mux_0_o|    4.264|         |         |         |
+---------------------------------------------+---------+---------+---------+---------+
+
 Clock to Setup on destination clock uBlaze_SPI/MB_SPI_i/debug_module/Ext_JTAG_UPDATE
 ----------------------------------------------------+---------+---------+---------+---------+
                                                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
@@ -1253,14 +1449,14 @@ uBlaze_SPI/MB_SPI_i/debug_module/debug_module/drck_i|    2.427|    3.477|    3.2
 =========================================================================
 
 
-Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 13.31 secs
+Total REAL time to Xst completion: 23.00 secs
+Total CPU time to Xst completion: 23.40 secs
  
 --> 
 
-Total memory usage is 313456 kilobytes
+Total memory usage is 299888 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  144 (   0 filtered)
-Number of infos    :   67 (   0 filtered)
+Number of warnings :  165 (   0 filtered)
+Number of infos    :   72 (   0 filtered)
 

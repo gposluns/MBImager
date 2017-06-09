@@ -23,7 +23,10 @@
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
     <file xil_pn:fileType="FILE_SYNPLIFY_MISC" xil_pn:name="MB_SPI.ncf"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI.ngc"/>
+    <file xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI.ngc">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="PostSynthSim"/>
+    </file>
     <file xil_pn:fileType="FILE_MHS" xil_pn:name="MB_SPI/MB_SPI.mhs" xil_pn:origination="imported" xil_pn:subbranch="FPGAConfiguration">
       <branch xil_pn:name="Implementation"/>
       <branch xil_pn:name="BehavioralSim"/>
@@ -38,21 +41,54 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PLATGEN_OPT" xil_pn:name="MB_SPI/__xps/platgen.opt" xil_pn:origination="imported"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XPS_UCF" xil_pn:name="MB_SPI/data/MB_SPI.ucf" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_SYNPLIFY_MISC" xil_pn:name="MB_SPI_axi4lite_0_wrapper.ncf"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI_axi4lite_0_wrapper.ngc"/>
+    <file xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI_axi4lite_0_wrapper.ngc">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="PostSynthSim"/>
+    </file>
     <file xil_pn:fileType="FILE_SYNPLIFY_MISC" xil_pn:name="MB_SPI_clock_generator_0_wrapper.ncf"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI_clock_generator_0_wrapper.ngc"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI_debug_module_wrapper.ngc"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI_generic_spi_wrapper.ngc"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI_microblaze_0_bram_block_wrapper.ngc"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI_microblaze_0_d_bram_ctrl_wrapper.ngc"/>
+    <file xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI_clock_generator_0_wrapper.ngc">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="PostSynthSim"/>
+    </file>
+    <file xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI_debug_module_wrapper.ngc">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="PostSynthSim"/>
+    </file>
+    <file xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI_generic_spi_wrapper.ngc">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="PostSynthSim"/>
+    </file>
+    <file xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI_microblaze_0_bram_block_wrapper.ngc">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="PostSynthSim"/>
+    </file>
+    <file xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI_microblaze_0_d_bram_ctrl_wrapper.ngc">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="PostSynthSim"/>
+    </file>
     <file xil_pn:fileType="FILE_SYNPLIFY_MISC" xil_pn:name="MB_SPI_microblaze_0_dlmb_wrapper.ncf"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI_microblaze_0_dlmb_wrapper.ngc"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI_microblaze_0_i_bram_ctrl_wrapper.ngc"/>
+    <file xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI_microblaze_0_dlmb_wrapper.ngc">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="PostSynthSim"/>
+    </file>
+    <file xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI_microblaze_0_i_bram_ctrl_wrapper.ngc">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="PostSynthSim"/>
+    </file>
     <file xil_pn:fileType="FILE_SYNPLIFY_MISC" xil_pn:name="MB_SPI_microblaze_0_ilmb_wrapper.ncf"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI_microblaze_0_ilmb_wrapper.ngc"/>
+    <file xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI_microblaze_0_ilmb_wrapper.ngc">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="PostSynthSim"/>
+    </file>
     <file xil_pn:fileType="FILE_SYNPLIFY_MISC" xil_pn:name="MB_SPI_microblaze_0_wrapper.ncf"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI_microblaze_0_wrapper.ngc"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI_proc_sys_reset_0_wrapper.ngc"/>
+    <file xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI_microblaze_0_wrapper.ngc">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="PostSynthSim"/>
+    </file>
+    <file xil_pn:fileType="FILE_NGC" xil_pn:name="MB_SPI_proc_sys_reset_0_wrapper.ngc">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="PostSynthSim"/>
+    </file>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="MB_top.bld"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="MB_top.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="MB_top.lso"/>
@@ -74,7 +110,6 @@
     <file xil_pn:fileType="FILE_XPI" xil_pn:name="MB_top.xpi"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="MB_top.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="MB_top_envsettings.html"/>
-    <file xil_pn:fileType="FILE_LOG" xil_pn:name="MB_top_fpga_editor.log"/>
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="MB_top_guide.ncd" xil_pn:origination="imported"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="MB_top_map.map" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="MB_top_map.mrp" xil_pn:subbranch="Map"/>
@@ -96,51 +131,22 @@
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
-    <file xil_pn:fileType="FILE_LOG" xil_pn:name="ipcore_dir/coregen.log"/>
-    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="mb_top.bgn" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BIT" xil_pn:name="mb_top.bit" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_DRC" xil_pn:name="mb_top.drc" xil_pn:subbranch="FPGAConfiguration"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_MB_top_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
-    <file xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1484929976" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1484929976">
+    <transform xil_pn:end_ts="1497023951" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-978428197657683786" xil_pn:start_ts="1497023951">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1484929976" xil_pn:in_ck="90172601093908508" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1484929976">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="../../OKelly/OK_imager1/ROImager_exp.v"/>
-      <outfile xil_pn:name="Imager_SPI.v"/>
-      <outfile xil_pn:name="MB_SPI/MB_SPI.xmp"/>
-      <outfile xil_pn:name="MB_SPI/MB_SPI_top.v"/>
-      <outfile xil_pn:name="MB_top.v"/>
-      <outfile xil_pn:name="ROImager.v"/>
-      <outfile xil_pn:name="TI_ADC_RO.v"/>
-      <outfile xil_pn:name="fifo_timing.v"/>
-      <outfile xil_pn:name="tb_MB_top.v"/>
-    </transform>
-    <transform xil_pn:end_ts="1484499844" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1484499844">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1484499844" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-978428197657683786" xil_pn:start_ts="1484499844">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1484610359" xil_pn:in_ck="1886881137114750347" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="-4914472695400763529" xil_pn:start_ts="1484610358">
+    <transform xil_pn:end_ts="1497023952" xil_pn:in_ck="1886881137114750347" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="-4914472695400763529" xil_pn:start_ts="1497023951">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="ipcore_dir/fifo_4kB.ngc"/>
@@ -150,15 +156,15 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1484499844" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="-9218714994541604296" xil_pn:start_ts="1484499844">
+    <transform xil_pn:end_ts="1497023952" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="-9218714994541604296" xil_pn:start_ts="1497023952">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1484499844" xil_pn:in_ck="6926845303658113370" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="3678518879327959942" xil_pn:start_ts="1484499844">
+    <transform xil_pn:end_ts="1497023952" xil_pn:in_ck="6926845303658113370" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="3678518879327959942" xil_pn:start_ts="1497023952">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1484499848" xil_pn:in_ck="-1222141247708501257" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="4088288616551650113" xil_pn:start_ts="1484499844">
+    <transform xil_pn:end_ts="1497024070" xil_pn:in_ck="-1222141247708501257" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="4088288616551650113" xil_pn:start_ts="1497024047">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="MB_SPI.ngc"/>
@@ -179,7 +185,7 @@
       <outfile xil_pn:name="MB_SPI_microblaze_0_wrapper.ngc"/>
       <outfile xil_pn:name="MB_SPI_proc_sys_reset_0_wrapper.ngc"/>
     </transform>
-    <transform xil_pn:end_ts="1486755661" xil_pn:in_ck="-322373539011006765" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="6402920835725713925" xil_pn:start_ts="1486755645">
+    <transform xil_pn:end_ts="1497036413" xil_pn:in_ck="6887994107868875713" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="6402920835725713925" xil_pn:start_ts="1497036387">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -197,11 +203,11 @@
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1484682071" xil_pn:in_ck="1980434118663266794" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="5069202360468909795" xil_pn:start_ts="1484682071">
+    <transform xil_pn:end_ts="1497035951" xil_pn:in_ck="1980434118663266794" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="5069202360468909795" xil_pn:start_ts="1497035951">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1486755695" xil_pn:in_ck="5694322373461876493" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-6414318457939739561" xil_pn:start_ts="1486755661">
+    <transform xil_pn:end_ts="1497036470" xil_pn:in_ck="5694322373461876493" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-6414318457939739561" xil_pn:start_ts="1497036413">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -212,12 +218,10 @@
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1486755721" xil_pn:in_ck="7973567666091165778" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="-1933097906049163567" xil_pn:start_ts="1486755695">
+    <transform xil_pn:end_ts="1497036502" xil_pn:in_ck="7973567666091165778" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="-1933097906049163567" xil_pn:start_ts="1497036470">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="MB_top.pcf"/>
       <outfile xil_pn:name="MB_top_map.map"/>
       <outfile xil_pn:name="MB_top_map.mrp"/>
@@ -228,7 +232,7 @@
       <outfile xil_pn:name="MB_top_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1486755793" xil_pn:in_ck="-9215869380071282293" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-7126275392399626075" xil_pn:start_ts="1486755721">
+    <transform xil_pn:end_ts="1497036543" xil_pn:in_ck="-9215869380071282293" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-7126275392399626075" xil_pn:start_ts="1497036502">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -243,12 +247,10 @@
       <outfile xil_pn:name="MB_top_par.xrpt"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1486755832" xil_pn:in_ck="3670710308749540" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="396117104113915555" xil_pn:start_ts="1486755793">
+    <transform xil_pn:end_ts="1497036581" xil_pn:in_ck="3670710308749540" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="396117104113915555" xil_pn:start_ts="1497036543">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="MB_top.ut"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
       <outfile xil_pn:name="mb_top.bgn"/>
@@ -258,26 +260,24 @@
       <outfile xil_pn:name="webtalk.log"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1484690004" xil_pn:in_ck="2651646183251074951" xil_pn:name="TRAN_exportToSDK" xil_pn:prop_ck="124571339" xil_pn:start_ts="1484689998">
+    <transform xil_pn:end_ts="1497033532" xil_pn:in_ck="5200882885382894" xil_pn:name="TRAN_impactProgrammingTool" xil_pn:prop_ck="2682241697568822907" xil_pn:start_ts="1497033532">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="InputChanged"/>
     </transform>
-    <transform xil_pn:end_ts="1493663068" xil_pn:in_ck="5200882885382894" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="8150872254684753111" xil_pn:start_ts="1493663066">
+    <transform xil_pn:end_ts="1497033896" xil_pn:in_ck="5200882885382894" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="8150872254684753111" xil_pn:start_ts="1497033892">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
     </transform>
-    <transform xil_pn:end_ts="1486755793" xil_pn:in_ck="-4038175120059847858" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1486755788">
+    <transform xil_pn:end_ts="1497036543" xil_pn:in_ck="-4038175120059847858" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1497036535">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="MB_top.twr"/>
       <outfile xil_pn:name="MB_top.twx"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
-    </transform>
-    <transform xil_pn:name="TRAN_exportToSDKnobit">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
     </transform>
   </transforms>
 
