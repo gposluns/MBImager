@@ -476,9 +476,9 @@
    <widget class="QPushButton" name="Reset">
     <property name="geometry">
      <rect>
-      <x>410</x>
+      <x>300</x>
       <y>510</y>
-      <width>131</width>
+      <width>181</width>
       <height>51</height>
      </rect>
     </property>
@@ -486,103 +486,38 @@
      <string>Reset View</string>
     </property>
    </widget>
-   <widget class="QGroupBox" name="groupBox_2">
+   <widget class="QPushButton" name="ApplyImg">
     <property name="geometry">
      <rect>
       <x>750</x>
       <y>400</y>
-      <width>381</width>
-      <height>171</height>
+      <width>181</width>
+      <height>51</height>
      </rect>
     </property>
-    <property name="title">
-     <string>Image Correction (CEP mode only)</string>
+    <property name="text">
+     <string>Apply Image Correction</string>
     </property>
-    <widget class="QPushButton" name="CalibBlack">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>30</y>
-       <width>161</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Capture Black</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="ApplyImg">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>30</y>
-       <width>161</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Apply Correction</string>
-     </property>
-     <property name="checkable">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="CalibBG">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>100</y>
-       <width>161</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Capture Background Light</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="EqualizeImg">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>100</y>
-       <width>161</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Equalize Image</string>
-     </property>
-     <property name="checkable">
-      <bool>true</bool>
-     </property>
-    </widget>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
    </widget>
-   <zorder>groupBox_2</zorder>
-   <zorder>groupBox</zorder>
-   <zorder>DispImage</zorder>
-   <zorder>groupBox2</zorder>
-   <zorder>Zoom</zorder>
-   <zorder>label</zorder>
-   <zorder>XSlider</zorder>
-   <zorder>YSlider</zorder>
-   <zorder>Xbox</zorder>
-   <zorder>Ybox</zorder>
-   <zorder>BitLoad</zorder>
-   <zorder>DispType</zorder>
-   <zorder>maskslabel</zorder>
-   <zorder>maskschangeslabel</zorder>
-   <zorder>SubChange</zorder>
-   <zorder>exposurelabel</zorder>
-   <zorder>Masks</zorder>
-   <zorder>MaskChanges</zorder>
-   <zorder>Exposure</zorder>
-   <zorder>maskschangeslabel_2</zorder>
-   <zorder>SaveImages</zorder>
-   <zorder>label_3</zorder>
-   <zorder>NumImages</zorder>
-   <zorder>RecVideo</zorder>
-   <zorder>PattLoad</zorder>
-   <zorder>Reset</zorder>
+   <widget class="QPushButton" name="EqualizeImg">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>400</y>
+      <width>181</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Equalize Image</string>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

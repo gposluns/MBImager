@@ -15,8 +15,8 @@ import time
 import Queue
 import math
 import os
-import csv
 import struct
+import pickle
 #from pathlib2 import Path
 #initialize global variables
 
@@ -24,11 +24,11 @@ TEST_SIZE = 20
 FPS = 20 #set fps of video output 
 
 #ok wire addresses
-EXP_ADD = 0x11
-NUM_MASKS_ADD = 0x12
-MASK_CHANGES_ADD = 0x13
-SUBS_PER_ADD = 0x14
-PATT_IN_ADD = 0x15
+EXP_WIRE= 0x11
+NUM_MASKS_WIRE = 0x12
+MASK_CHANGES_WIRE = 0x13
+SUBS_PER_WIRE = 0x14
+PATT_IN_WIRE = 0x15
 
 #flags
 running = False
@@ -41,17 +41,6 @@ bitfile = ''
 pattfile = ''
 toSave = 0 #images left to save
 
-bg_calib = 0
-black_calib = 0
-d_count = TEST_SIZE
-d_set = 0
-bg_count = TEST_SIZE
-bg_set = 0
-
-bg_img1 = np.zeros((80,60))
-d_img1 = np.zeros((80,60))
-bg_img2 = np.zeros((80,60))
-d_img2 = np.zeros((80,60))
 
 Ui_MainWindow, QtBaseClass = uic.loadUiType("GUILayout.ui")
 #initialize fifo queues to hold camera data before being displayed
@@ -68,10 +57,17 @@ dev = ok.okCFrontPanel()
 dev.OpenBySerial("")
 
 #load calibration
-darkArray1= np.load('darkArray1.npy')
-darkArray2= np.load('darkArray2.npy')
-whiteArray1= np.load('whiteArray1.npy')
-whiteArray2= np.load('whiteArray2.npy')
+
+with open("expDark.pkl", "rb") as fp:
+    expDark = pickle.load(fp)    
+
+with open("expWhite.pkl", "rb") as fp:
+    expWhite = pickle.load(fp)    
+
+#darkArray1= np.load('darkArray1.npy')
+#darkArray2= np.load('darkArray2.npy')
+#whiteArray1= np.load('whiteArray1.npy')
+#whiteArray2= np.load('whiteArray2.npy')
 
 #error = dev.ConfigureFPGA("ok_imager.bit")
 #print error
@@ -83,6 +79,10 @@ whiteArray2= np.load('whiteArray2.npy')
 #    print "FrontPanel host interface enabled."
 #else:
 #    sys.stderr.write("FrontPanel host interface not detected.")
+def bytearray_to_bitarray(data, num):
+    base = int(num/8)
+    shift = num % 8
+    return (data[base] & (0x80>>shift)) >> (7-shift)
 
 def grab(queue1,queue2):
     '''
@@ -139,6 +139,13 @@ def grab(queue1,queue2):
     else: #odd
         percent = float(maskchanges+1)*float(subchange)*100/(2*float(masks))
     
+    totExposure = masks*(28.8+exposure)
+    key = min(expDark.keys(), key=lambda k: abs(k-totExposure))
+    print key
+    darkArray1 = expDark[key][0]
+    darkArray2 = expDark[key][1]
+    whiteArray1 = expWhite[key][0]
+    whiteArray2 = expWhite[key][1]
     darkimg1 = np.zeros((79,60))
     darkimg2 = np.zeros((79,60))
     whiteimg1 = np.zeros((79,60))
@@ -150,21 +157,22 @@ def grab(queue1,queue2):
             whiteimg1[i][j] = np.poly1d(whiteArray1[i][j])(percent)
             whiteimg2[i][j] = np.poly1d(whiteArray2[i][j])(percent)
     
-    dev.SetWireInValue(EXP_ADD,exposure)
-    dev.SetWireInValue(NUM_MASKS_ADD,masks)
-    #dev.SetWireInValue(NUM_MASKS_ADD,1024-2)
-    dev.SetWireInValue(MASK_CHANGES_ADD,maskchanges)
-    dev.SetWireInValue(SUBS_PER_ADD,subchange)
+    dev.SetWireInValue(EXP_WIRE,exposure)
+    dev.SetWireInValue(NUM_MASKS_WIRE,masks)
+    #dev.SetWireInValue(NUM_MASKS_WIRE,1024-2)
+    dev.SetWireInValue(MASK_CHANGES_WIRE,maskchanges)
+    dev.SetWireInValue(SUBS_PER_WIRE,subchange)
     
-    dev.SetWireInValue(PATT_IN_ADD, 0xfff003ff) #patgen_stop,patgen_start,patgen_in
+    dev.SetWireInValue(PATT_IN_WIRE, 0xfff003ff) #patgen_stop,patgen_start,patgen_in
     time.sleep(0.1)
     dev.UpdateWireIns()
     time.sleep(0.1)
     if pattfile != '':
-        print '1'
+        print 'starting'
         dev.ActivateTriggerIn(0x53, 0x0)
         dev.WriteToPipeIn(0x80, pattern)
-        
+        print 'done'
+    stuck = 0
     while(running):
         dev.UpdateTriggerOuts()
         # If the FIFO is full, read everything and display one frame only
@@ -196,7 +204,18 @@ def grab(queue1,queue2):
 #                im2[i] = im[i][139:507:2]
             im1[:,:] = im[:row,138:506:2]
             im2[:,:] = im[:row,139:507:2]
-            
+        else:
+            stuck +=1
+            if stuck >10:
+                # assert reset signal to initialize the FIFO.
+                dev.SetWireInValue(0x10, 0xff, 0x01)
+                dev.UpdateWireIns()
+                # deactivate reset signal and activate counter.
+                dev.SetWireInValue(0x10, 0x00, 0x01)
+                dev.UpdateWireIns()
+                time.sleep(0.01) #allow time for FIFO to reset
+                stuck = 0
+                
         if queue1.qsize() < 15:
             queue1.put(im1)
             queue2.put(im2)
@@ -261,8 +280,6 @@ class MyWindowClass(QtWidgets.QMainWindow, Ui_MainWindow):
         self.RecVideo.toggled.connect(self.rec_video)
         self.PattLoad.clicked.connect(self.patt_load)
         self.Reset.clicked.connect(self.reset_frame)
-        self.CalibBlack.clicked.connect(self.calib_d)
-        self.CalibBG.clicked.connect(self.calib_bg)
         self.ApplyImg.toggled.connect(self.apply_calib)
         self.EqualizeImg.toggled.connect(self.equalize)
         
@@ -271,9 +288,6 @@ class MyWindowClass(QtWidgets.QMainWindow, Ui_MainWindow):
         #disable buttons at startup
         self.SaveImages.setEnabled(False)
         self.RecVideo.setEnabled(False)
-        self.ApplyImg.setEnabled(False)
-        self.CalibBlack.setEnabled(False)
-        self.CalibBG.setEnabled(False)
         
         #self.window_width = self.ImgWidget.frameSize().width()
         #self.window_height = self.ImgWidget.frameSize().height()
@@ -286,31 +300,7 @@ class MyWindowClass(QtWidgets.QMainWindow, Ui_MainWindow):
         self.timer = QtCore.QTimer(self)
         self.timer.timeout.connect(self.update_frame)
         self.timer.start(1)
-    def calib_d(self):
-        '''reset counter and variables to allow collection of dark frame data'''
-        global d_count, d_img1, d_img2, disp_type
-        self.CalibBlack.setEnabled(False)
-        disp_type = self.DispType.currentText()
-        if disp_type == 'CEP':
-            d_img1 = np.zeros((80,60))
-            d_img2 = np.zeros((80,60))
-#        elif disp_type == 'CEP-TOF':
-#            d_img1 = np.zeros((160,120))
-#            d_img2 = np.zeros((160,120))
-        d_count = 0
-        
-        
-    def calib_bg(self):
-        '''reset counter and variables to allow collection of background light/ bright frame data'''
-        global bg_count, bg_img1, bg_img2
-        self.CalibBG.setEnabled(False)
-        if disp_type == 'CEP':
-            bg_img1 = np.zeros((80,60))
-            bg_img2 = np.zeros((80,60))
-#        elif disp_type == 'CEP-TOF':
-#            bg_img1 = np.zeros((160,120))
-#            bg_img2 = np.zeros((160,120))
-        bg_count =0
+
         
     def apply_calib(self):
         '''toggle calibration on and off'''
@@ -363,6 +353,9 @@ class MyWindowClass(QtWidgets.QMainWindow, Ui_MainWindow):
             if pattfile != '':
                 file = open(str(pattfile),"rb")
                 image= bytearray(file.read())
+                
+                num_channel = 16
+                channel_width = 18
                 #get start index of the pixel array
                 pix_start_pos = struct.unpack_from('<L', image, 10)[0]
                 
@@ -372,11 +365,20 @@ class MyWindowClass(QtWidgets.QMainWindow, Ui_MainWindow):
                 #get the height
                 pat_height = struct.unpack_from('<L', image, 22)[0]
                 
-                #generate the pattern
+                image = image[pix_start_pos: pix_start_pos+pat_width*pat_height]    
+                image = [bytearray_to_bitarray(image,i) for i in range(pat_width*pat_height)]
                 pattern = bytearray()
-                for i in range(pix_start_pos, pix_start_pos+pat_height*pat_width/4):
-                    if (image[i] != 0):
-                        pattern.append(image[i])
+                for y in range(pat_height):
+                    for x in range(channel_width):
+                        one_byte = 0
+                        for i in range (num_channel):
+                            one_byte += image[y*pat_width + x + channel_width * i] <<(7-(i%8))
+                            #print image[y*pat_width + x + channel_width * i],
+                            #print one_byte, 
+                            if ((i+1)%8 == 0):
+                                #print bin(one_byte^ 0xff),
+                                pattern.append(one_byte ^ 0xff) #make 0 = white, 1 = black
+                                one_byte = 0
                 file.close()
                 
                 
@@ -496,8 +498,7 @@ class MyWindowClass(QtWidgets.QMainWindow, Ui_MainWindow):
         the user by calling OwnImageWidget.setImage().
         '''
         global toSave, disp_type,folder1, folder2, video1, video2
-        global bg_count,d_count, bg_img1, d_img1, bg_img2, d_img2, bg_set, d_set, equalize
-        global whiteimg1, whiteimg2, darkimg1, darkimg2
+        global whiteimg1, whiteimg2, darkimg1, darkimg2, equalize
         zoom = self.Zoom.value()
         x = self.XSlider.value()
         y = self.YSlider.value()
@@ -525,73 +526,30 @@ class MyWindowClass(QtWidgets.QMainWindow, Ui_MainWindow):
             else:
                 save = 0
                 self.SaveImages.setEnabled(True)
-               
-            if disp_type=='ALL':
-                Z1 = np.zeros((80,60), np.uint8)
-                Z2 = np.zeros((80,60), np.uint8)
-#                for i in range(80):
-#                    Z1[i] = img1[i][2:62]
-#                    Z2[i] = img2[i][2:62]
-                Z1[:,:] = img1[:80,2:62]
-                Z2[:,:] = img2[:80,2:62]
-                if bg_count <TEST_SIZE:
-                    bg_img1 += Z1
-                    bg_img2 += Z2
-                    if bg_count ==TEST_SIZE-1:
-                        bg_img1 = bg_img1/TEST_SIZE
-                        bg_img2 = bg_img2/TEST_SIZE
-                        bg_set = 1
-                        self.CalibBG.setEnabled(True)
-                        if d_set ==1:
-                            self.ApplyImg.setEnabled(True)     
-                    bg_count+=1
-                if d_count <TEST_SIZE:
-                    d_img1 += Z1
-                    d_img2 += Z2
-                    if d_count ==TEST_SIZE-1:
-                        d_img1 = d_img1/TEST_SIZE
-                        d_img2 = d_img2/TEST_SIZE
-                        d_set = 1
-                        self.CalibBlack.setEnabled(True)
-                        if bg_set ==1:
-                            self.ApplyImg.setEnabled(True) 
-                    d_count +=1
-                if calib_on:
-                    if np.count_nonzero(bg_img1-d_img1) == (80*60) and np.count_nonzero(bg_img2-d_img2) ==(80*60):
-                        Z1 = (Z1-d_img1)*(np.mean(bg_img1-d_img1))/(bg_img1-d_img1)+np.mean(d_img1)
-                        Z2 = (Z2-d_img2)*(np.mean(bg_img2-d_img2))/(bg_img2-d_img2)+np.mean(d_img2)
-                        Z1 = Z1.astype(np.uint8)
-                        Z2 = Z2.astype(np.uint8)
-                        if equalize:
-                            Z1 = cv2.equalizeHist(Z1)
-                            Z2 = cv2.equalizeHist(Z2)
-                        Z1_pad = np.zeros(img1.shape, np.uint8)
-                        Z2_pad = np.zeros(img2.shape, np.uint8)
-                        Z1_pad[:Z1.shape[0],2:Z1.shape[1]+2] = Z1
-                        Z2_pad[:Z2.shape[0],2:Z2.shape[1]+2] = Z2
-                        img1[:Z1.shape[0],2:Z1.shape[1]+2] =np.zeros(Z1.shape)
-                        img2[:Z2.shape[0],2:Z2.shape[1]+2] =np.zeros(Z2.shape)
-                        img1 += Z1_pad
-                        img2 += Z2_pad
-                raw1 = np.zeros((79,60), np.uint8)
-                raw2 = np.zeros((79,60), np.uint8)
-                raw1[:,:] = img1[1:80,2:62]
-                raw2[:,:] = img2[1:80,2:62]
+            raw1 = np.zeros((79,60), np.uint8)
+            raw2 = np.zeros((79,60), np.uint8)
+            raw1[:,:] = img1[1:80,2:62]
+            raw2[:,:] = img2[1:80,2:62]
+            
+            if calib_on:
                 raw1 = (raw1-darkimg1)*(np.mean(whiteimg1-darkimg1))/(whiteimg1-darkimg1)+np.mean(darkimg1)
                 raw2 = (raw2-darkimg2)*(np.mean(whiteimg2-darkimg2))/(whiteimg2-darkimg2)+np.mean(darkimg2)
                 raw1 = raw1.astype(np.uint8)
                 raw2 = raw2.astype(np.uint8)
-                if equalize:
-                    raw1 = cv2.equalizeHist(raw1)
-                    raw2 = cv2.equalizeHist(raw2)
-                raw1_pad = np.zeros(img1.shape, np.uint8)
-                raw2_pad = np.zeros(img2.shape, np.uint8)
-                raw1_pad[1:raw1.shape[0]+1,2:raw1.shape[1]+2] = raw1
-                raw2_pad[1:raw2.shape[0]+1,2:raw2.shape[1]+2] = raw2
-                img1[1:raw1.shape[0]+1,2:raw1.shape[1]+2] =np.zeros(raw1.shape)
-                img2[1:raw2.shape[0]+1,2:raw2.shape[1]+2] =np.zeros(raw2.shape)
-                img1 += raw1_pad
-                img2 += raw2_pad
+            
+            if equalize:
+                raw1 = cv2.equalizeHist(raw1)
+                raw2 = cv2.equalizeHist(raw2)
+            raw1_pad = np.zeros(img1.shape, np.uint8)
+            raw2_pad = np.zeros(img2.shape, np.uint8)
+            raw1_pad[1:raw1.shape[0]+1,2:raw1.shape[1]+2] = raw1
+            raw2_pad[1:raw2.shape[0]+1,2:raw2.shape[1]+2] = raw2
+            img1[1:raw1.shape[0]+1,2:raw1.shape[1]+2] =np.zeros(raw1.shape)
+            img2[1:raw2.shape[0]+1,2:raw2.shape[1]+2] =np.zeros(raw2.shape)
+            img1 += raw1_pad
+            img2 += raw2_pad   
+            if disp_type=='ALL':
+                
                 if recording:
                     video1.write(img1)
                     video2.write(img2) #must be in nparray format
@@ -604,44 +562,12 @@ class MyWindowClass(QtWidgets.QMainWindow, Ui_MainWindow):
                 img2 = img2.scaled(184*2*math.sqrt(zoom), 160*2*math.sqrt(zoom))
                 #self.ImgWidget1.resize(184*2,160*2)
             elif disp_type == 'CEP':
+                
                 Z1 = np.zeros((80,60), np.uint8)
                 Z2 = np.zeros((80,60), np.uint8)
-#                for i in range(80):
-#                    Z1[i] = img1[i][2:62]
-#                    Z2[i] = img2[i][2:62]
+
                 Z1[:,:] = img1[:80,2:62]
                 Z2[:,:] = img2[:80,2:62]
-                if bg_count <TEST_SIZE:
-                    bg_img1 += Z1
-                    bg_img2 += Z2
-                    if bg_count ==TEST_SIZE-1:
-                        bg_img1 = bg_img1/TEST_SIZE
-                        bg_img2 = bg_img2/TEST_SIZE
-                        bg_set = 1
-                        self.CalibBG.setEnabled(True)
-                        if d_set ==1:
-                            self.ApplyImg.setEnabled(True)     
-                    bg_count+=1
-                if d_count <TEST_SIZE:
-                    d_img1 += Z1
-                    d_img2 += Z2
-                    if d_count ==TEST_SIZE-1:
-                        d_img1 = d_img1/TEST_SIZE
-                        d_img2 = d_img2/TEST_SIZE
-                        d_set = 1
-                        self.CalibBlack.setEnabled(True)
-                        if bg_set ==1:
-                            self.ApplyImg.setEnabled(True) 
-                    d_count +=1
-                if calib_on:
-                    if np.count_nonzero(bg_img1-d_img1) == (80*60) and np.count_nonzero(bg_img2-d_img2) ==(80*60):
-                        Z1 = (Z1-d_img1)*(np.mean(bg_img1-d_img1))/(bg_img1-d_img1)+np.mean(d_img1)
-                        Z2 = (Z2-d_img2)*(np.mean(bg_img2-d_img2))/(bg_img2-d_img2)+np.mean(d_img2)
-                        Z1 = Z1.astype(np.uint8)
-                        Z2 = Z2.astype(np.uint8)   
-                if equalize:
-                    Z1 = cv2.equalizeHist(Z1)
-                    Z2 = cv2.equalizeHist(Z2)
                 if recording:
                     video1.write(Z1)
                     video2.write(Z2)
@@ -661,37 +587,7 @@ class MyWindowClass(QtWidgets.QMainWindow, Ui_MainWindow):
 #                    Z2[i] = img2[i][62:182]
                 Z1[:,:] = img1[:160,62:182]
                 Z2[:,:] = img2[:160,62:182]
-                if bg_count <TEST_SIZE:
-                    bg_img1 += Z1
-                    bg_img2 += Z2
-                    if bg_count ==TEST_SIZE-1:
-                        bg_img1 = bg_img1/TEST_SIZE
-                        bg_img2 = bg_img2/TEST_SIZE
-                        bg_set = 1
-                        self.CalibBG.setEnabled(True)
-                        if d_set ==1:
-                            self.ApplyImg.setEnabled(True)     
-                    bg_count+=1
-                if d_count <TEST_SIZE:
-                    d_img1 += Z1
-                    d_img2 += Z2
-                    if d_count ==TEST_SIZE-1:
-                        d_img1 = d_img1/TEST_SIZE
-                        d_img2 = d_img2/TEST_SIZE
-                        d_set = 1
-                        self.CalibBlack.setEnabled(True)
-                        if bg_set ==1:
-                            self.ApplyImg.setEnabled(True) 
-                    d_count +=1
-                if calib_on:
-                    #if np.count_nonzero(bg_img1-d_img1) == (160*120) and np.count_nonzero(bg_img2-d_img2) ==(160*120):
-                    Z1 = abs((Z1-d_img1))#*(np.mean(bg_img1-d_img1))/(bg_img1-d_img1))
-                    Z2 = abs((Z2-d_img2))#*(np.mean(bg_img2-d_img2))/(bg_img2-d_img2))
-                    Z1 = Z1.astype(np.uint8)
-                    Z2 = Z2.astype(np.uint8)   
-                if equalize:
-                    Z1 = cv2.equalizeHist(Z1)
-                    Z2 = cv2.equalizeHist(Z2)
+                
                 if recording:
                     video1.write(Z1)
                     video2.write(Z2)
@@ -710,7 +606,7 @@ class MyWindowClass(QtWidgets.QMainWindow, Ui_MainWindow):
         '''Start and end thread which displays camera output based on state 
         of the Display Image button.
         '''
-        global running, bitfile, calib_on, d_set, bg_set
+        global running, bitfile, calib_on
         if self.DispImage.isChecked():
             if bitfile == '':
                 #make error box pop up if bit file not loaded
@@ -729,21 +625,14 @@ class MyWindowClass(QtWidgets.QMainWindow, Ui_MainWindow):
             else:
                 self.RecVideo.setEnabled(True)
                 self.SaveImages.setEnabled(True)
-                self.CalibBlack.setEnabled(True)
-                self.CalibBG.setEnabled(True)
                 running = True
                 capture_thread = threading.Thread(target=grab, args = (q1,q2))
                 capture_thread.start()
                 self.DispImage.setText('Stop Displaying Image')
-                d_set = 0
-                bg_set = 0
         else:
             running = False
             self.RecVideo.setChecked(False) #stop recording video
             self.RecVideo.setEnabled(False)
-            self.SaveImages.setEnabled(False)
-            self.ApplyImg.setEnabled(False)
-            self.ApplyImg.setChecked(False)
             self.DispImage.setText('Display Image')
 
     def closeEvent(self, event):
