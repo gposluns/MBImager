@@ -27,7 +27,6 @@ void OKTRIGGERINS_RegisterHandler (XInterruptHandler handler, u32 mask, void* da
 	int i;
 	for (i = 0 ; i <32; i++){
 		if (mask & 1 << i != 0){
-			Xil_Out32(XPAR_OKWIREOUTS_0_BASEADDR + 4*5, 0x7e570000 + i);
 			handlers[i] = handler;
 			datas[i] = data;
 		}
@@ -37,10 +36,8 @@ void OKTRIGGERINS_RegisterHandler (XInterruptHandler handler, u32 mask, void* da
 void OKTRIGGERINS_Handler(void* data){
 	int i;
 	u32 triggers = OKTRIGGERINS_mReadSlaveReg0(baseaddress, 0);
-	Xil_Out32(XPAR_OKWIREOUTS_0_BASEADDR + 4*7, 0x707e57);
 	for (i = 0; i < 32; i++){
-		if (triggers & 1 << i != 0){
-			Xil_Out32(XPAR_OKWIREOUTS_0_BASEADDR + 4*6, 0x7e57ed00 + i);
+		if ((triggers & 1 << i) != 0){
 			handlers[i](datas[i]);
 		}
 	}
