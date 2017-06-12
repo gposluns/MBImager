@@ -110,7 +110,7 @@ output                                    IP2Bus_Error;
 
   // --USER nets declarations added here, as needed for user logic
   wire [65*C_NUM_REG - 1 : 0] okEHx;
-  reg [C_SLV_DWIDTH*C_NUM_REG - 1 : 0] slv_regs;
+  reg [C_SLV_DWIDTH*C_NUM_REG - 1 : 0] slv_regs;  //all slv regs as 1 big one for generate block usage
 
   // Nets for user logic slave model s/w accessible register example
   /*reg        [C_SLV_DWIDTH-1 : 0]           slv_reg0;
@@ -153,12 +153,10 @@ output                                    IP2Bus_Error;
   integer                                   byte_index, bit_index;
 
   // USER logic implementation added here
-  initial slv_regs = 0;
-  
 	genvar i;
 	generate
 		for (i = 0; i < C_NUM_REG; i = i + 1) begin
-			okTriggerOut triggerout(
+			okTriggerOut triggerout(		
 				.okEH(okEHx[65*i +: 65]), 
 				.okHE(okHE), 
 				.ep_clk(Bus2IP_Clk), 
@@ -166,7 +164,7 @@ output                                    IP2Bus_Error;
 				.ep_trigger(slv_regs[C_SLV_DWIDTH*i +: C_SLV_DWIDTH])
 			);
 			
-			always @(posedge Bus2IP_Clk) begin
+			always @(posedge Bus2IP_Clk) begin  //axi bus read logic, same as auto-genrated logic but in for loop and using large slv reg isntead of smaller ones
 				if (Bus2IP_Resetn == 1'b0) slv_regs <= 0;
 				else if (slv_reg_write_sel == 1 << C_SLV_DWIDTH - i - 1) begin
 					for ( byte_index = 0; byte_index <= (C_SLV_DWIDTH/8)-1; byte_index = byte_index+1 )
@@ -175,7 +173,7 @@ output                                    IP2Bus_Error;
 				end	else slv_regs[C_SLV_DWIDTH*i +: C_SLV_DWIDTH] <= 0;		
 			end
 			
-			if (i > 0) begin
+			if (i > 0) begin //axi bus write logic, similar to auto-generate logic but with large bus and in a for loop
 				always @(slv_reg_read_sel or slv_regs) 
 					if (slv_reg_read_sel == 0)
 						slv_ip2bus_data <= 0;
@@ -183,10 +181,10 @@ output                                    IP2Bus_Error;
 						if (slv_reg_read_sel == 1 << C_SLV_DWIDTH - i - 1) 
 							slv_ip2bus_data <= slv_regs[C_SLV_DWIDTH*i +: C_SLV_DWIDTH];
 						else 
-							if (slv_reg_read_sel[i] & |slv_reg_read_sel[i - 1:0] == 1)
+							if (slv_reg_read_sel[i] & |slv_reg_read_sel[i - 1:0] == 1) //checks to set to 0 if there are 2 bits set in read_sel, will trigger on at least 1 loop iteration if that's the case
 								slv_ip2bus_data <= 0;
 			end else begin
-				always @(slv_reg_read_sel or slv_regs[C_SLV_DWIDTH - 1: 0])
+				always @(slv_reg_read_sel or slv_regs[C_SLV_DWIDTH - 1: 0]) //i = 0 case handled separately bc it breaks multiple set bit logic above
 					if (slv_reg_read_sel == 1 << C_SLV_DWIDTH - 1)
 						slv_ip2bus_data <= slv_regs[C_SLV_DWIDTH - 1 : 0];
 			end

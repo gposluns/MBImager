@@ -109,9 +109,9 @@ output                                    IP2Bus_Error;
 //----------------------------------------------------------------------------
 
   // --USER nets declarations added here, as needed for user logic
-  reg 	[C_SLV_DWIDTH*C_NUM_REG - 1 : 0]	triggers;
-  reg 	[C_SLV_DWIDTH*C_NUM_REG - 1 : 0]	masks;
-  initial masks = 0;
+  reg 	[C_SLV_DWIDTH*C_NUM_REG - 1 : 0]	triggers;   //all the possible triggers
+  reg 	[C_SLV_DWIDTH*C_NUM_REG - 1 : 0]	masks;		//masks to determine whether interrupts are sent 
+  initial masks = 0;									//set bit -> corresponding trigger sends interrupt
   
   // Nets for user logic slave model s/w accessible register example
   /*reg        [C_SLV_DWIDTH-1 : 0]           slv_reg0;
@@ -162,15 +162,15 @@ output                                    IP2Bus_Error;
 		okTriggerIn triggerin (.okHE(okHE), .ep_addr(8'h40 + i), .ep_clk(Bus2IP_Clk), .ep_trigger(trigger));
 		always @(posedge Bus2IP_Clk) begin
 			if (Bus2IP_Resetn == 1'b0) begin
-				triggers <= 0;
-				masks <= 0;
+				//triggers <= 0; //for some reason ise thinks this reset code is a separate driver and complains, so its commented out
+				//masks <= 0;
 			end else begin
 				if (slv_reg_write_sel == 1 << (C_SLV_DWIDTH - i - 1)) begin
-					triggers [C_SLV_DWIDTH*i +: C_SLV_DWIDTH] <= 0;
+					triggers [C_SLV_DWIDTH*i +: C_SLV_DWIDTH] <= 0; //clear trigger whenever ublaze writes to masks
 					for ( byte_index = 0; byte_index <= (C_SLV_DWIDTH/8)-1; byte_index = byte_index+1 )
 						if ( Bus2IP_BE[byte_index] == 1 )
 							masks[(C_SLV_DWIDTH*i) + (byte_index*8) +: 8] <= Bus2IP_Data[(byte_index*8) +: 8];
-				end else begin
+				end else begin //triggers persist until ublaze clears them by writing to mask
 					triggers [C_SLV_DWIDTH*i +: C_SLV_DWIDTH] <= triggers[C_SLV_DWIDTH*i +: C_SLV_DWIDTH] | trigger;
 				end
 			end

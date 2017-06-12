@@ -99,7 +99,7 @@ void* baseaddress;
 XInterruptHandler handlers[32];
 void* datas[32];
 
-//initializes the driver with the base address, also registers to give interrupts
+//initializes the driver with the base address, sets handlers to stub handlers
 void OKTRIGGERINS_Initialize(void* baseaddr);
 
 //registers an interrupt handler to 1 or more triggers (indicated by mask)
@@ -108,6 +108,7 @@ void OKTRIGGERINS_RegisterHandler(XInterruptHandler handler, u32 mask, void* dat
 //the ublaze interrupt handler used by this driver
 void OKTRIGGERINS_Handler(void* data);
 
+//stub handler does nothing
 void OKTRIGGERINS_StubHandler(void* data);
 /**
  *

@@ -285,18 +285,39 @@
 #define TEST_AXI_LITE_USER_NUM_REG 32
 #define OKTRIGGERINS_NUM_REG TEST_AXI_LITE_USER_NUM_REG
 	
-/************************** Function Prototypes ****************************/
-u32 baseAddress;
-XInterruptHandler handlers [OKTRIGGERINS_NUM_REG][OKTRIGGERINS_NUM_REG];
-void* datas [OKTRIGGERINS_NUM_REG][OKTRIGGERINS_NUM_REG];
-u32 masks [OKTRIGGERINS_NUM_REG];
+//base address of the peripheral (can't be >1 so no need for a struct)
+u32 baseAddress; 
 
+//up to 1024 interrupt handlers, 1/trigger bit, organized by trigger
+XInterruptHandler handlers [OKTRIGGERINS_NUM_REG][OKTRIGGERINS_NUM_REG]; 
+
+//up to 1024 data pointers to pass to corresponding handlers, same organization
+void* datas [OKTRIGGERINS_NUM_REG][OKTRIGGERINS_NUM_REG];
+
+//interrupt masks currently being used for each trigger are saved here for convenience
+u32 masks [OKTRIGGERINS_NUM_REG];	
+/************************** Function Prototypes ****************************/
+
+//Initializes the driver with base address and stub handlers
 void OKTRIGGERINS_Initialize(u32 baseaddr);
+
+//Sets the interrupt mask for a trigger (set bit -> interrupt on trigger on this bit)
+//The trigger is cleared when this function is called
 void OKTRIGGERINS_SetInterruptMask(u8 trigger, u32 mask);
+
+//Registers an interrupt handler to a bit(s) of a trigger, indicated by mask
 void OKTRIGGERINS_RegisterHandler(u8 trigger, u32 mask, XInterruptHandler handler, void* data);
+
+//Interrupt handler used by this driver, pass to your interrupt controller
 void OKTRIGGERINS_Handler(void* data);
+
+//Gets the value of a trigger, bitwise anded with a mask
 u32 OKTRIGGERINS_GetTrigger(u8 trigger, u32 mask);
+
+//Clears a trigger (this just calls SetInterrupt Mask with the saved mask value for that trigger)
 void OKTRIGGERINS_ClearTrigger(u8 trigger);
+
+//Stub handler clears the interrupting trigger and nothing else
 void OKTRIGGERINS_StubHandler(void* data);
 
 /**
