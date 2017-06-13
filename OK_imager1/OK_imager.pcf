@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Feb 10 17:09:29 2017
+// Written by: Map P.20131013 on Tue Jun 13 12:47:43 2017
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -2753,10 +2753,10 @@ PIN
         PINNAME CLKB;
 PIN ODDR2_inst_1_pins<1> = BEL "ODDR2_inst_1" PINNAME CK0;
 TIMEGRP CLK_HS = BEL "pat_gen/state_FSM_FFd2" BEL "pat_gen/state_FSM_FFd1" BEL
-        "pat_gen/Pat_i_10" BEL "pat_gen/Pat_i_9" BEL "pat_gen/Pat_i_8" BEL
-        "pat_gen/Pat_i_7" BEL "pat_gen/Pat_i_6" BEL "pat_gen/Pat_i_5" BEL
-        "pat_gen/Pat_i_4" BEL "pat_gen/Pat_i_3" BEL "pat_gen/Pat_i_2" BEL
-        "pat_gen/Pat_i_1" BEL "pat_gen/cntPat_11" BEL "pat_gen/cntPat_10" BEL
+        "pat_gen/Pat_i_9" BEL "pat_gen/Pat_i_8" BEL "pat_gen/Pat_i_7" BEL
+        "pat_gen/Pat_i_6" BEL "pat_gen/Pat_i_5" BEL "pat_gen/Pat_i_4" BEL
+        "pat_gen/Pat_i_3" BEL "pat_gen/Pat_i_2" BEL "pat_gen/Pat_i_1" BEL
+        "pat_gen/Pat_i_0" BEL "pat_gen/cntPat_11" BEL "pat_gen/cntPat_10" BEL
         "pat_gen/cntPat_9" BEL "pat_gen/cntPat_8" BEL "pat_gen/cntPat_7" BEL
         "pat_gen/cntPat_6" BEL "pat_gen/cntPat_5" BEL "pat_gen/cntPat_4" BEL
         "pat_gen/cntPat_3" BEL "pat_gen/cntPat_2" BEL "pat_gen/cntPat_1" BEL
@@ -3017,8 +3017,8 @@ TS_okSysClk = PERIOD TIMEGRP "okSysClk" 10 ns HIGH 50%;
 TS_hostIF_dcm0_clk0 = PERIOD TIMEGRP "hostIF_dcm0_clk0" TS_okHostClk PHASE
         -0.93 ns HIGH 50%;
 TS_CLK_HS = PERIOD TIMEGRP "CLK_HS" TS_okSysClk HIGH 50%;
-TS_CLK_HS180 = PERIOD TIMEGRP "CLK_HS180" TS_okSysClk PHASE 5 ns HIGH 50%;
 TS_sys_clkDV = PERIOD TIMEGRP "sys_clkDV" TS_okSysClk * 3 HIGH 50%;
+TS_CLK_HS180 = PERIOD TIMEGRP "CLK_HS180" TS_okSysClk PHASE 5 ns HIGH 50%;
 TS_CLKMPRE_int = PERIOD TIMEGRP "CLKMPRE_int" TS_sys_clkDV / 0.166666667 HIGH
         50%;
 TS_CLKMPRE_int180 = PERIOD TIMEGRP "CLKMPRE_int180" TS_sys_clkDV / 0.166666667

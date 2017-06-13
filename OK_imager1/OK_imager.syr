@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.41 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.41 secs
  
 --> Reading design: OK_imager.prj
 
@@ -108,11 +108,11 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\ROImager_exp_PatSeperate.v" into library work
+Analyzing Verilog file "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\ROImager_exp_PatSeperate.v" into library work
 Parsing module <ROImager_exp_PatSeperate>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\pattern_gen.v" into library work
+Analyzing Verilog file "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\pattern_gen.v" into library work
 Parsing module <pattern_gen>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\okLibrary.v" into library work
+Analyzing Verilog file "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\okLibrary.v" into library work
 Parsing module <okHost>.
 Parsing module <okCoreHarness>.
 Parsing module <okWireIn>.
@@ -125,13 +125,13 @@ Parsing module <okBTPipeIn>.
 Parsing module <okBTPipeOut>.
 Parsing module <okRegisterBridge>.
 Parsing module <okWireOR>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\ipcore_dir\fifo_usbout.v" into library work
+Analyzing Verilog file "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\ipcore_dir\fifo_usbout.v" into library work
 Parsing module <fifo_usbout>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\ipcore_dir\fifo_patterns.v" into library work
+Analyzing Verilog file "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\ipcore_dir\fifo_patterns.v" into library work
 Parsing module <fifo_patterns>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\ipcore_dir\fifo_6to24.v" into library work
+Analyzing Verilog file "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\ipcore_dir\fifo_6to24.v" into library work
 Parsing module <fifo_6to24>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" into library work
+Analyzing Verilog file "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" into library work
 Parsing module <OK_imager>.
 
 =========================================================================
@@ -143,51 +143,50 @@ Elaborating module <OK_imager>.
 Elaborating module <IBUFGDS>.
 
 Elaborating module <fifo_6to24>.
-WARNING:HDLCompiler:1499 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\ipcore_dir\fifo_6to24.v" Line 39: Empty module <fifo_6to24> remains a black box.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 172: Assignment to full ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 173: Assignment to empty ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 174: Assignment to almost_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1499 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\ipcore_dir\fifo_6to24.v" Line 39: Empty module <fifo_6to24> remains a black box.
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 172: Assignment to full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 173: Assignment to empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 174: Assignment to almost_empty ignored, since the identifier is never used
 
 Elaborating module <fifo_usbout>.
-WARNING:HDLCompiler:1499 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\ipcore_dir\fifo_usbout.v" Line 39: Empty module <fifo_usbout> remains a black box.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 187: Assignment to empty_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1499 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\ipcore_dir\fifo_usbout.v" Line 39: Empty module <fifo_usbout> remains a black box.
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 187: Assignment to empty_2 ignored, since the identifier is never used
 
 Elaborating module <fifo_patterns>.
-WARNING:HDLCompiler:1499 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\ipcore_dir\fifo_patterns.v" Line 39: Empty module <fifo_patterns> remains a black box.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 198: Assignment to full_pat ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 199: Assignment to empty_pat ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 200: Assignment to valid_pat ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 201: Assignment to prog_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1499 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\ipcore_dir\fifo_patterns.v" Line 39: Empty module <fifo_patterns> remains a black box.
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 198: Assignment to full_pat ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 199: Assignment to empty_pat ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 200: Assignment to valid_pat ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 201: Assignment to prog_full ignored, since the identifier is never used
 
 Elaborating module <ROImager_exp_PatSeperate>.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 209: Assignment to CLKMPRE_EN ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 209: Assignment to CLKMPRE_EN ignored, since the identifier is never used
 
 Elaborating module <pattern_gen>.
-WARNING:HDLCompiler:413 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\pattern_gen.v" Line 127: Result of 32-bit expression is truncated to fit in 1-bit target.
 
 Elaborating module <DCM_SP(CLKDV_DIVIDE=3.0,CLKFX_DIVIDE=3,CLKFX_MULTIPLY=3,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=10.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",DFS_FREQUENCY_MODE="LOW",DLL_FREQUENCY_MODE="LOW",DSS_MODE="NONE",DUTY_CYCLE_CORRECTION="TRUE",FACTORY_JF=16'b1100000010000000,PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 265: Assignment to CLK180 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 266: Assignment to CLK270 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 267: Assignment to CLK2X_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 268: Assignment to CLK2X180 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 269: Assignment to CLK90 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 273: Assignment to LOCKED_HS ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 274: Assignment to PSDONE ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 275: Assignment to STATUS ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 265: Assignment to CLK180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 266: Assignment to CLK270 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 267: Assignment to CLK2X_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 268: Assignment to CLK2X180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 269: Assignment to CLK90 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 273: Assignment to LOCKED_HS ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 274: Assignment to PSDONE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 275: Assignment to STATUS ignored, since the identifier is never used
 
 Elaborating module <DCM_SP(CLKDV_DIVIDE=2.0,CLKFX_DIVIDE=18,CLKFX_MULTIPLY=3,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=10.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",DFS_FREQUENCY_MODE="LOW",DLL_FREQUENCY_MODE="LOW",DSS_MODE="NONE",DUTY_CYCLE_CORRECTION="TRUE",FACTORY_JF=16'b1100000010000000,PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 310: Assignment to CLK180_MPRE ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 311: Assignment to CLK270_MPRE ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 312: Assignment to CLK2X_MPRE ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 313: Assignment to CLK2X180_MPRE ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 314: Assignment to CLK90_MPRE ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 318: Assignment to LOCKED_MPRE ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 319: Assignment to PSDONE_MPRE ignored, since the identifier is never used
-WARNING:HDLCompiler:189 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 320: Size mismatch in connection of port <STATUS>. Formal port size is 8-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 320: Assignment to STATUS_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 310: Assignment to CLK180_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 311: Assignment to CLK270_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 312: Assignment to CLK2X_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 313: Assignment to CLK2X180_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 314: Assignment to CLK90_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 318: Assignment to LOCKED_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 319: Assignment to PSDONE_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:189 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 320: Size mismatch in connection of port <STATUS>. Formal port size is 8-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 320: Assignment to STATUS_MPRE ignored, since the identifier is never used
 
 Elaborating module <ODDR2(DDR_ALIGNMENT="NONE",INIT=1'b0,SRTYPE="SYNC")>.
-WARNING:HDLCompiler:1016 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\okLibrary.v" Line 39: Port CLK180 is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\okLibrary.v" Line 39: Port CLK180 is not connected to this instance
 
 Elaborating module <okHost>.
 
@@ -210,7 +209,7 @@ Elaborating module <okWireIn>.
 Elaborating module <okWireOut>.
 
 Elaborating module <okTriggerIn>.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" Line 391: Assignment to trig53in ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 391: Assignment to trig53in ignored, since the identifier is never used
 
 Elaborating module <okTriggerOut>.
 
@@ -221,26 +220,26 @@ Elaborating module <okPipeOut>.
 =========================================================================
 
 Synthesizing Unit <OK_imager>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v".
+    Related source file is "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v".
         C_CLKHS_D = 3
         C_CLKHS_M = 3
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" line 164: Output port <full> of the instance <fifo_databuf> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" line 164: Output port <empty> of the instance <fifo_databuf> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" line 164: Output port <almost_empty> of the instance <fifo_databuf> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" line 179: Output port <empty> of the instance <fifo256kB_out> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" line 191: Output port <full> of the instance <FIFO_Patterns> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" line 191: Output port <empty> of the instance <FIFO_Patterns> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" line 191: Output port <valid> of the instance <FIFO_Patterns> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" line 191: Output port <prog_full> of the instance <FIFO_Patterns> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" line 205: Output port <CLKMPRE_EN> of the instance <ROImager_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager1.v" line 391: Output port <ep_trigger> of the instance <trigIn53> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" line 164: Output port <full> of the instance <fifo_databuf> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" line 164: Output port <empty> of the instance <fifo_databuf> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" line 164: Output port <almost_empty> of the instance <fifo_databuf> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" line 179: Output port <empty> of the instance <fifo256kB_out> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" line 191: Output port <full> of the instance <FIFO_Patterns> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" line 191: Output port <empty> of the instance <FIFO_Patterns> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" line 191: Output port <valid> of the instance <FIFO_Patterns> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" line 191: Output port <prog_full> of the instance <FIFO_Patterns> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" line 205: Output port <CLKMPRE_EN> of the instance <ROImager_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" line 391: Output port <ep_trigger> of the instance <trigIn53> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <OK_imager> synthesized.
 WARNING:Xst:2144 - The value of attribute <SAFE_RECOVERY_STATE> (<recovery_state_value>) does not match fsm state <state> size (8).
 
 Synthesizing Unit <ROImager_exp_PatSeperate>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\ROImager_exp_PatSeperate.v".
+    Related source file is "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\ROImager_exp_PatSeperate.v".
         C_EXP_SUBSC = 10
         C_NUM_PATT = 100
         C_MASK_DES_L = 18
@@ -298,7 +297,7 @@ Unit <ROImager_exp_PatSeperate> synthesized.
 WARNING:Xst:2144 - The value of attribute <SAFE_RECOVERY_STATE> (S_subc_first) does not match fsm state <state> size (5).
 
 Synthesizing Unit <pattern_gen>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\pattern_gen.v".
+    Related source file is "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\pattern_gen.v".
         S_init = 5'b00001
         S_subc_first = 5'b00010
         S_subc_pats = 5'b00100
@@ -329,10 +328,10 @@ Synthesizing Unit <pattern_gen>.
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
     Found 32-bit adder for signal <cntPat[31]_GND_9_o_add_2_OUT> created at line 80.
-    Found 32x32-bit multiplier for signal <n0104> created at line 127.
+    Found 32x32-bit multiplier for signal <n0107> created at line 127.
     Found 32-bit comparator greater for signal <GND_9_o_cntPat[31]_LessThan_2_o> created at line 78
     Found 32-bit comparator greater for signal <CntSubc[31]_Num_Pat[31]_LessThan_12_o> created at line 98
-    Found 32-bit comparator lessequal for signal <n0059> created at line 127
+    Found 32-bit comparator greater for signal <n0059> created at line 127
     Summary:
 	inferred   1 Multiplier(s).
 	inferred   1 Adder/Subtractor(s).
@@ -448,7 +447,7 @@ Synthesizing Unit <div_32u_32u>.
 Unit <div_32u_32u> synthesized.
 
 Synthesizing Unit <okHost>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\okLibrary.v".
+    Related source file is "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\okLibrary.v".
     Set property "IOB = TRUE" for instance <iob_regs[0].regin0>.
     Set property "IOB = TRUE" for instance <iob_regs[0].regout0>.
     Set property "IOB = TRUE" for instance <iob_regs[0].regvalid>.
@@ -557,7 +556,7 @@ Synthesizing Unit <okHost>.
 Unit <okHost> synthesized.
 
 Synthesizing Unit <okWireOR>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\okLibrary.v".
+    Related source file is "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\okLibrary.v".
         N = 5
     Summary:
 	no macro.
@@ -611,8 +610,8 @@ Macro Statistics
  32-bit register                                       : 3
  8-bit register                                        : 1
 # Comparators                                          : 40
- 32-bit comparator greater                             : 6
- 32-bit comparator lessequal                           : 2
+ 32-bit comparator greater                             : 7
+ 32-bit comparator lessequal                           : 1
  33-bit comparator lessequal                           : 1
  34-bit comparator lessequal                           : 1
  35-bit comparator lessequal                           : 1
@@ -699,8 +698,8 @@ Macro Statistics
 # Registers                                            : 224
  Flip-Flops                                            : 224
 # Comparators                                          : 40
- 32-bit comparator greater                             : 6
- 32-bit comparator lessequal                           : 2
+ 32-bit comparator greater                             : 7
+ 32-bit comparator lessequal                           : 1
  33-bit comparator lessequal                           : 1
  34-bit comparator lessequal                           : 1
  35-bit comparator lessequal                           : 1
@@ -764,7 +763,7 @@ Optimizing FSM <pat_gen/FSM_1> on signal <state[1:4]> with ONE-HOT encoding.
  00100 | 0100
  01000 | 1000
 -------------------
-WARNING:Xst:2677 - Node <Mmult_n01043> of sequential type is unconnected in block <pattern_gen>.
+WARNING:Xst:2677 - Node <Mmult_n01073> of sequential type is unconnected in block <pattern_gen>.
 INFO:Xst:2261 - The FF/Latch <fsm_stat_i_6> in Unit <ROImager_exp_PatSeperate> is equivalent to the following FF/Latch, which will be removed : <fsm_stat_i_8> 
 INFO:Xst:2261 - The FF/Latch <fsm_stat_i_5> in Unit <ROImager_exp_PatSeperate> is equivalent to the following FF/Latch, which will be removed : <fsm_stat_i_7> 
 
@@ -878,8 +877,8 @@ Primitive and Black Box Usage:
 #      LUT2                        : 391
 #      LUT3                        : 304
 #      LUT4                        : 927
-#      LUT5                        : 761
-#      LUT6                        : 1236
+#      LUT5                        : 751
+#      LUT6                        : 1246
 #      LUT6_2                      : 50
 #      MUXCY                       : 1297
 #      MUXF7                       : 21
@@ -1042,11 +1041,11 @@ Timing constraint: Default period analysis for Clock 'sys_clkp'
 -------------------------------------------------------------------------
 Delay:               125.453ns (Levels of Logic = 421)
   Source:            ROImager_inst/count_subsc_31 (FF)
-  Destination:       pat_gen/Pat_i_10 (FF)
+  Destination:       pat_gen/Pat_i_9 (FF)
   Source Clock:      sys_clkp rising 0.1X
   Destination Clock: sys_clkp falling
 
-  Data Path: ROImager_inst/count_subsc_31 to pat_gen/Pat_i_10
+  Data Path: ROImager_inst/count_subsc_31 to pat_gen/Pat_i_9
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
@@ -1470,9 +1469,9 @@ Delay:               125.453ns (Levels of Logic = 421)
      MUXCY:CI->O           1   0.023   0.000  pat_gen/CntSubc[31]_Mask_change_subc[31]_div_48/Mcompar_o<0>_cy<12> (pat_gen/CntSubc[31]_Mask_change_subc[31]_div_48/Mcompar_o<0>_cy<12>)
      MUXCY:CI->O           1   0.023   0.000  pat_gen/CntSubc[31]_Mask_change_subc[31]_div_48/Mcompar_o<0>_cy<13> (pat_gen/CntSubc[31]_Mask_change_subc[31]_div_48/Mcompar_o<0>_cy<13>)
      MUXCY:CI->O           1   0.023   0.000  pat_gen/CntSubc[31]_Mask_change_subc[31]_div_48/Mcompar_o<0>_cy<14> (pat_gen/CntSubc[31]_Mask_change_subc[31]_div_48/Mcompar_o<0>_cy<14>)
-     MUXCY:CI->O          10   0.235   1.008  pat_gen/CntSubc[31]_Mask_change_subc[31]_div_48/Mcompar_o<0>_cy<15> (pat_gen/n0103<0>)
-     LUT5:I4->O            1   0.254   0.000  pat_gen/Mmux_state[4]_PatGen_start[9]_mux_43_OUT93 (pat_gen/state[4]_PatGen_start[9]_mux_43_OUT<1>)
-     FD_1:D                    0.074          pat_gen/Pat_i_2
+     MUXCY:CI->O          10   0.235   1.008  pat_gen/CntSubc[31]_Mask_change_subc[31]_div_48/Mcompar_o<0>_cy<15> (pat_gen/n0106<0>)
+     LUT6:I5->O            1   0.254   0.000  pat_gen/Mmux_state[4]_PatGen_start[9]_mux_43_OUT93 (pat_gen/state[4]_PatGen_start[9]_mux_43_OUT<1>)
+     FD_1:D                    0.074          pat_gen/Pat_i_1
     ----------------------------------------
     Total                    125.453ns (37.066ns logic, 88.387ns route)
                                        (29.5% logic, 70.5% route)
@@ -1677,14 +1676,14 @@ sys_clkp       |   16.901|    4.259|  125.453|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 21.00 secs
-Total CPU time to Xst completion: 21.52 secs
+Total REAL time to Xst completion: 31.00 secs
+Total CPU time to Xst completion: 30.79 secs
  
 --> 
 
-Total memory usage is 321360 kilobytes
+Total memory usage is 388284 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   56 (   0 filtered)
+Number of warnings :   55 (   0 filtered)
 Number of infos    :   51 (   0 filtered)
 

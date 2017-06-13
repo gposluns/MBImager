@@ -1,0 +1,25 @@
+
+
+
+// Instantiate the module
+ROImager instance_name (
+    .RESET(RESET), 
+    .PHI1(PHI1), 
+    .ROW_ADD(ROW_ADD), 
+    .PIXRES(PIXRES), 
+    .PRECHN_AMP(PRECHN_AMP), 
+    .MUX_ADD(MUX_ADD), 
+    .ADC_PIXCLK(ADC_PIXCLK), 
+    .ADC_CLK(ADC_CLK), 
+    .CLK_MOD(CLK_MOD), 
+    .CLKN_MOD(CLKN_MOD), 
+    .PRECH_COL(PRECH_COL), 
+    .ADC_DATA_VALID(ADC_DATA_VALID), 
+    .DDR_DATA_VALID(DDR_DATA_VALID), 
+    .FSMIND0(FSMIND0), 
+    .FSMIND1(FSMIND1), 
+    .FSMIND0ACK(FSMIND0ACK), 
+    .FSMIND1ACK(FSMIND1ACK)
+    );
+
+

@@ -10,7 +10,7 @@ Target Device  : xc6slx45
 Target Package : fgg484
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Fri Feb 10 17:08:33 2017
+Mapped Date    : Tue Jun 13 12:46:20 2017
 
 Mapping design into LUTs...
 WARNING:MapLib:41 - All members of TNM group "CLKDV" have been optimized out of
@@ -121,13 +121,13 @@ Derivative  |
 195|30308512598932294000000000000000000000000000000000|
 | TS_CLK_HS                     |     10.000ns|     78.298ns|          N/A|           71|           
 0|30308512598932294000000000000000000000000000000000|            0|
-| TS_CLK_HS180                  |     10.000ns|      2.666ns|          N/A|            0|            0|            0|   
-        0|
 | TS_sys_clkDV                  |     30.000ns|     16.000ns|      1.929ns|            0|            0|            0|   
    111706|
 |  TS_CLKMPRE_int               |    180.000ns|     11.575ns|          N/A|            0|            0|       111706|   
         0|
 |  TS_CLKMPRE_int180            |    180.000ns|      2.666ns|          N/A|            0|            0|            0|   
+        0|
+| TS_CLK_HS180                  |     10.000ns|      2.666ns|          N/A|            0|            0|            0|   
         0|
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+---
 ----------+
@@ -138,56 +138,56 @@ Derivative  |
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
 Running timing-driven placement...
-Total REAL time at the beginning of Placer: 10 secs 
-Total CPU  time at the beginning of Placer: 10 secs 
+Total REAL time at the beginning of Placer: 21 secs 
+Total CPU  time at the beginning of Placer: 13 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:4edfe44b) REAL time: 11 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:4edfe44b) REAL time: 23 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:4edfe44b) REAL time: 11 secs 
+Phase 2.7  Design Feasibility Check (Checksum:4edfe44b) REAL time: 24 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:a85470b) REAL time: 11 secs 
+Phase 3.31  Local Placement Optimization (Checksum:a85470b) REAL time: 24 secs 
 
 Phase 4.2  Initial Placement for Architecture Specific Features
 
 Phase 4.2  Initial Placement for Architecture Specific Features
-(Checksum:b1ae8779) REAL time: 24 secs 
+(Checksum:b1ae8779) REAL time: 39 secs 
 
 Phase 5.36  Local Placement Optimization
-Phase 5.36  Local Placement Optimization (Checksum:b1ae8779) REAL time: 24 secs 
+Phase 5.36  Local Placement Optimization (Checksum:b1ae8779) REAL time: 39 secs 
 
 Phase 6.30  Global Clock Region Assignment
-Phase 6.30  Global Clock Region Assignment (Checksum:b1ae8779) REAL time: 24 secs 
+Phase 6.30  Global Clock Region Assignment (Checksum:b1ae8779) REAL time: 39 secs 
 
 Phase 7.3  Local Placement Optimization
-Phase 7.3  Local Placement Optimization (Checksum:b1ae8779) REAL time: 24 secs 
+Phase 7.3  Local Placement Optimization (Checksum:b1ae8779) REAL time: 40 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:b1ae8779) REAL time: 24 secs 
+Phase 8.5  Local Placement Optimization (Checksum:b1ae8779) REAL time: 40 secs 
 
 Phase 9.8  Global Placement
-..........................................................
-.......................................................................................................................
-...................................................................................................................................................................................................
-...................................
-Phase 9.8  Global Placement (Checksum:9f15e1a2) REAL time: 43 secs 
+.....................................................................
+........................................................................................................................................................................
+........................................................................................................................................
+....................................
+Phase 9.8  Global Placement (Checksum:a1b570b8) REAL time: 1 mins 5 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:9f15e1a2) REAL time: 43 secs 
+Phase 10.5  Local Placement Optimization (Checksum:a1b570b8) REAL time: 1 mins 5 secs 
 
 Phase 11.18  Placement Optimization
-Phase 11.18  Placement Optimization (Checksum:a76ff6df) REAL time: 52 secs 
+Phase 11.18  Placement Optimization (Checksum:ebf939af) REAL time: 1 mins 18 secs 
 
 Phase 12.5  Local Placement Optimization
-Phase 12.5  Local Placement Optimization (Checksum:a76ff6df) REAL time: 52 secs 
+Phase 12.5  Local Placement Optimization (Checksum:ebf939af) REAL time: 1 mins 18 secs 
 
 Phase 13.34  Placement Validation
-Phase 13.34  Placement Validation (Checksum:ff0941e7) REAL time: 52 secs 
+Phase 13.34  Placement Validation (Checksum:668aafe2) REAL time: 1 mins 18 secs 
 
-Total REAL time to Placer completion: 55 secs 
-Total CPU  time to Placer completion: 55 secs 
+Total REAL time to Placer completion: 1 mins 22 secs 
+Total CPU  time to Placer completion: 1 mins 12 secs 
 Running post-placement packing...
 Writing output files...
 WARNING:PhysDesignRules:367 - The signal
@@ -213,10 +213,10 @@ Slice Logic Utilization:
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                      3,302 out of  27,288   12%
+  Number of Slice LUTs:                      3,293 out of  27,288   12%
     Number used as logic:                    3,221 out of  27,288   11%
-      Number using O6 output only:           2,234
-      Number using O5 output only:             219
+      Number using O6 output only:           2,235
+      Number using O5 output only:             218
       Number using O5 and O6:                  768
       Number used as ROM:                        0
     Number used as Memory:                      45 out of   6,408    1%
@@ -232,18 +232,18 @@ Slice Logic Utilization:
         Number using O6 output only:             1
         Number using O5 output only:             0
         Number using O5 and O6:                  0
-    Number used exclusively as route-thrus:     36
-      Number with same-slice register load:     25
+    Number used exclusively as route-thrus:     27
+      Number with same-slice register load:     16
       Number with same-slice carry load:        11
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                 1,293 out of   6,822   18%
+  Number of occupied Slices:                 1,282 out of   6,822   18%
   Number of MUXCYs used:                     1,456 out of  13,644   10%
-  Number of LUT Flip Flop pairs used:        3,871
-    Number with an unused Flip Flop:         2,360 out of   3,871   60%
-    Number with an unused LUT:                 569 out of   3,871   14%
-    Number of fully used LUT-FF pairs:         942 out of   3,871   24%
+  Number of LUT Flip Flop pairs used:        3,868
+    Number with an unused Flip Flop:         2,347 out of   3,868   60%
+    Number with an unused LUT:                 575 out of   3,868   14%
+    Number of fully used LUT-FF pairs:         946 out of   3,868   24%
     Number of unique control sets:              85
     Number of slice register sites lost
       to control set restrictions:             327 out of  54,576    1%
@@ -296,9 +296,9 @@ Specific Feature Utilization:
 
 Average Fanout of Non-Clock Nets:                4.27
 
-Peak Memory Usage:  594 MB
-Total REAL time to MAP completion:  57 secs 
-Total CPU time to MAP completion:   57 secs 
+Peak Memory Usage:  609 MB
+Total REAL time to MAP completion:  1 mins 25 secs 
+Total CPU time to MAP completion:   1 mins 15 secs 
 
 Mapping completed.
 See MAP report file "OK_imager_map.mrp" for details.
