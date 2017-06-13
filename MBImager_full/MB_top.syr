@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: MB_top.prj
 
@@ -121,8 +121,8 @@ Parsing module <MB_SPI_debug_module_wrapper>.
 Parsing module <MB_SPI_clock_generator_0_wrapper>.
 Parsing module <MB_SPI_axi4lite_0_wrapper>.
 Parsing module <MB_SPI_generic_spi_wrapper>.
-Analyzing Verilog file "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\freqchng_clkgen_highfreq.v" into library work
-Parsing module <freqchng_clkgen_highfreq>.
+Analyzing Verilog file "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\freqchng_clkgen.v" into library work
+Parsing module <freqchng_clkgen>.
 Analyzing Verilog file "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\counter_nonoverlap_clkgen_highfreq.v" into library work
 Parsing module <counter_nonoverlap_clkgen>.
 Analyzing Verilog file "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\TI_ADC_RO.v" into library work
@@ -149,14 +149,11 @@ Elaborating module <MB_top>.
 
 Elaborating module <mod_signal_gen>.
 
-Elaborating module <freqchng_clkgen_highfreq>.
+Elaborating module <freqchng_clkgen>.
 
 Elaborating module <BUFG>.
 
-Elaborating module <PLL_BASE(BANDWIDTH="OPTIMIZED",CLK_FEEDBACK="CLKFBOUT",COMPENSATION="INTERNAL",DIVCLK_DIVIDE=1,CLKFBOUT_MULT=8,CLKFBOUT_PHASE=0.0,CLKOUT0_DIVIDE=5,CLKOUT0_PHASE=0.0,CLKOUT0_DUTY_CYCLE=0.5,CLKOUT1_DIVIDE=2,CLKOUT1_PHASE=0.0,CLKOUT1_DUTY_CYCLE=0.5,CLKOUT2_DIVIDE=2,CLKOUT2_PHASE=0.0,CLKOUT2_DUTY_CYCLE=0.5,CLKIN_PERIOD=10.0,REF_JITTER=0.01)>.
-WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\freqchng_clkgen_highfreq.v" Line 83: Assignment to clkout3_unused ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\freqchng_clkgen_highfreq.v" Line 84: Assignment to clkout4_unused ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\freqchng_clkgen_highfreq.v" Line 85: Assignment to clkout5_unused ignored, since the identifier is never used
+Elaborating module <PLL_BASE(BANDWIDTH="OPTIMIZED",CLK_FEEDBACK="CLKFBOUT",COMPENSATION="SYSTEM_SYNCHRONOUS",DIVCLK_DIVIDE=1,CLKFBOUT_MULT=4,CLKFBOUT_PHASE=0.0,CLKOUT0_DIVIDE=125,CLKOUT0_PHASE=0.0,CLKOUT0_DUTY_CYCLE=0.5,CLKOUT1_DIVIDE=63,CLKOUT1_PHASE=0.0,CLKOUT1_DUTY_CYCLE=0.5,CLKOUT2_DIVIDE=25,CLKOUT2_PHASE=0.0,CLKOUT2_DUTY_CYCLE=0.5,CLKOUT3_DIVIDE=13,CLKOUT3_PHASE=0.0,CLKOUT3_DUTY_CYCLE=0.5,CLKOUT4_DIVIDE=6,CLKOUT4_PHASE=0.0,CLKOUT4_DUTY_CYCLE=0.5,CLKOUT5_DIVIDE=3,CLKOUT5_PHASE=0.0,CLKOUT5_DUTY_CYCLE=0.5,CLKIN_PERIOD=10.0,REF_JITTER=0.01)>.
 WARNING:HDLCompiler:1127 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\mod_signal_gen.v" Line 42: Assignment to LOCKED ignored, since the identifier is never used
 
 Elaborating module <counter_nonoverlap_clkgen>.
@@ -262,14 +259,11 @@ INFO:Xst:3210 - "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\mod_signal_gen.v"
 	inferred   1 Multiplexer(s).
 Unit <mod_signal_gen> synthesized.
 
-Synthesizing Unit <freqchng_clkgen_highfreq>.
-    Related source file is "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\freqchng_clkgen_highfreq.v".
-WARNING:Xst:653 - Signal <CLK_OUT_3> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <CLK_OUT_4> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <CLK_OUT_5> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+Synthesizing Unit <freqchng_clkgen>.
+    Related source file is "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\freqchng_clkgen.v".
     Summary:
 	no macro.
-Unit <freqchng_clkgen_highfreq> synthesized.
+Unit <freqchng_clkgen> synthesized.
 
 Synthesizing Unit <counter_nonoverlap_clkgen>.
     Related source file is "D:\Shichen_Lu\MBImager\MBImager\MBImager_full\counter_nonoverlap_clkgen_highfreq.v".
@@ -598,7 +592,7 @@ Optimizing FSM <imager_time/FSM_0> on signal <STATADC[1:6]> with one-hot encodin
 INFO:Xst:1901 - Instance pll_base_inst in unit pll_base_inst of type PLL_BASE has been replaced by PLL_ADV
 INFO:Xst:1901 - Instance BUFGCE_inst in unit Imager_SPI of type BUFGCE has been replaced by BUFGMUX
 
-Optimizing unit <freqchng_clkgen_highfreq> ...
+Optimizing unit <freqchng_clkgen> ...
 
 Optimizing unit <MB_SPI_top> ...
 
@@ -615,14 +609,19 @@ Optimizing unit <Imager_SPI> ...
 Optimizing unit <ACLK_GENERATOR> ...
 
 Optimizing unit <ROImager> ...
-WARNING:Xst:2677 - Node <R_CLK_OUT_MODL_0> of sequential type is unconnected in block <nonoverlap_clkgen>.
-WARNING:Xst:2677 - Node <R_CLK_OUT_MOD_0> of sequential type is unconnected in block <nonoverlap_clkgen>.
-WARNING:Xst:2677 - Node <R_CLK_OUT_MODN_0> of sequential type is unconnected in block <nonoverlap_clkgen>.
-WARNING:Xst:2677 - Node <count_32_0> of sequential type is unconnected in block <nonoverlap_clkgen>.
-WARNING:Xst:2677 - Node <count_32_1> of sequential type is unconnected in block <nonoverlap_clkgen>.
-WARNING:Xst:2677 - Node <count_32_2> of sequential type is unconnected in block <nonoverlap_clkgen>.
-WARNING:Xst:2677 - Node <count_32_3> of sequential type is unconnected in block <nonoverlap_clkgen>.
-WARNING:Xst:2677 - Node <count_32_4> of sequential type is unconnected in block <nonoverlap_clkgen>.
+WARNING:Xst:2677 - Node <R_CLK_OUT_MODL_1> of sequential type is unconnected in block <nonoverlap_clkgen>.
+WARNING:Xst:2677 - Node <R_CLK_OUT_MODL_2> of sequential type is unconnected in block <nonoverlap_clkgen>.
+WARNING:Xst:2677 - Node <R_CLK_OUT_MOD_1> of sequential type is unconnected in block <nonoverlap_clkgen>.
+WARNING:Xst:2677 - Node <R_CLK_OUT_MOD_2> of sequential type is unconnected in block <nonoverlap_clkgen>.
+WARNING:Xst:2677 - Node <R_CLK_OUT_MODN_1> of sequential type is unconnected in block <nonoverlap_clkgen>.
+WARNING:Xst:2677 - Node <R_CLK_OUT_MODN_2> of sequential type is unconnected in block <nonoverlap_clkgen>.
+WARNING:Xst:2677 - Node <count_8_0> of sequential type is unconnected in block <nonoverlap_clkgen>.
+WARNING:Xst:2677 - Node <count_8_1> of sequential type is unconnected in block <nonoverlap_clkgen>.
+WARNING:Xst:2677 - Node <count_8_2> of sequential type is unconnected in block <nonoverlap_clkgen>.
+WARNING:Xst:2677 - Node <count_16_0> of sequential type is unconnected in block <nonoverlap_clkgen>.
+WARNING:Xst:2677 - Node <count_16_1> of sequential type is unconnected in block <nonoverlap_clkgen>.
+WARNING:Xst:2677 - Node <count_16_2> of sequential type is unconnected in block <nonoverlap_clkgen>.
+WARNING:Xst:2677 - Node <count_16_3> of sequential type is unconnected in block <nonoverlap_clkgen>.
 WARNING:Xst:1293 - FF/Latch <count_31> has a constant value of 0 in block <MBI_regs>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <count_30> has a constant value of 0 in block <MBI_regs>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <count_29> has a constant value of 0 in block <MBI_regs>. This FF/Latch will be trimmed during the optimization process.
@@ -668,9 +667,6 @@ WARNING:Xst:1293 - FF/Latch <countpix_9> has a constant value of 0 in block <ima
 WARNING:Xst:1293 - FF/Latch <countpix_8> has a constant value of 0 in block <imager_time>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <countpix_7> has a constant value of 0 in block <imager_time>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <countpix_6> has a constant value of 0 in block <imager_time>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <count_8_0> in Unit <nonoverlap_clkgen> is equivalent to the following FF/Latch, which will be removed : <count_16_0> 
-INFO:Xst:2261 - The FF/Latch <count_8_1> in Unit <nonoverlap_clkgen> is equivalent to the following FF/Latch, which will be removed : <count_16_1> 
-INFO:Xst:2261 - The FF/Latch <count_8_2> in Unit <nonoverlap_clkgen> is equivalent to the following FF/Latch, which will be removed : <count_16_2> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -752,8 +748,8 @@ Unit <imager_time> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 138
- Flip-Flops                                            : 138
+# Registers                                            : 136
+ Flip-Flops                                            : 136
 # Shift Registers                                      : 3
  14-bit shift register                                 : 1
  4-bit shift register                                  : 1
@@ -780,15 +776,15 @@ Top Level Output File Name         : MB_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 3393
+# BELS                             : 3388
 #      GND                         : 21
 #      INV                         : 64
 #      LUT1                        : 124
-#      LUT2                        : 256
-#      LUT3                        : 461
-#      LUT4                        : 437
-#      LUT5                        : 366
-#      LUT6                        : 825
+#      LUT2                        : 255
+#      LUT3                        : 458
+#      LUT4                        : 434
+#      LUT5                        : 371
+#      LUT6                        : 822
 #      LUT6_2                      : 96
 #      MULT_AND                    : 2
 #      MUXCY                       : 223
@@ -796,8 +792,8 @@ Primitive and Black Box Usage:
 #      MUXF7                       : 122
 #      VCC                         : 13
 #      XORCY                       : 220
-# FlipFlops/Latches                : 2520
-#      FD                          : 344
+# FlipFlops/Latches                : 2518
+#      FD                          : 340
 #      FD_1                        : 1
 #      FDC                         : 178
 #      FDC_1                       : 5
@@ -808,7 +804,7 @@ Primitive and Black Box Usage:
 #      FDR                         : 740
 #      FDRE                        : 666
 #      FDRE_1                      : 1
-#      FDS                         : 23
+#      FDS                         : 25
 #      FDSE                        : 45
 #      IDDR2                       : 24
 #      ODDR2                       : 7
@@ -822,8 +818,8 @@ Primitive and Black Box Usage:
 # Clock Buffers                    : 14
 #      BUFG                        : 13
 #      BUFGMUX                     : 1
-# IO Buffers                       : 96
-#      IBUF                        : 42
+# IO Buffers                       : 98
+#      IBUF                        : 44
 #      IBUFG                       : 1
 #      OBUF                        : 53
 # DCMs                             : 3
@@ -843,23 +839,23 @@ Selected Device : 6slx25tfgg484-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            2512  out of  30064     8%  
- Number of Slice LUTs:                 2826  out of  15032    18%  
-    Number used as Logic:              2629  out of  15032    17%  
+ Number of Slice Registers:            2510  out of  30064     8%  
+ Number of Slice LUTs:                 2821  out of  15032    18%  
+    Number used as Logic:              2624  out of  15032    17%  
     Number used as Memory:              197  out of   3664     5%  
        Number used as RAM:               64
        Number used as SRL:              133
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   4131
-   Number with an unused Flip Flop:    1619  out of   4131    39%  
-   Number with an unused LUT:          1305  out of   4131    31%  
-   Number of fully used LUT-FF pairs:  1207  out of   4131    29%  
+ Number of LUT Flip Flop pairs used:   4126
+   Number with an unused Flip Flop:    1616  out of   4126    39%  
+   Number with an unused LUT:          1305  out of   4126    31%  
+   Number of fully used LUT-FF pairs:  1205  out of   4126    29%  
    Number of unique control sets:       135
 
 IO Utilization: 
  Number of IOs:                          98
- Number of bonded IOBs:                  72  out of    250    28%  
+ Number of bonded IOBs:                  74  out of    250    29%  
     IOB Flip Flops/Latches:               8
 
 Specific Feature Utilization:
@@ -887,24 +883,24 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+-------+
-Clock Signal                                                                                            | Clock buffer(FF name)                                                                                                                 | Load  |
---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+-------+
-MBI_regs/SPI_CLK_INV_41_o(MBI_regs/SPI_CLK_INV_41_o1_INV_0:O)                                           | BUFGMUX(*)(ODDR2_ISPI_REGCLK_buf)                                                                                                     | 2     |
-clk_gen/CLOCK_OUT                                                                                       | NONE(ODDR2_ADC_READ_ACLK_buf)                                                                                                         | 56    |
-USER_CLOCK                                                                                              | DCM_SP:CLKDV                                                                                                                          | 131   |
-ADC_CLK                                                                                                 | DCM_SP:CLKDV                                                                                                                          | 58    |
-ADC_CLK                                                                                                 | DCM_SP:CLK90                                                                                                                          | 48    |
-mod_signal_gen_inst/nonoverlap_clkgen/CLK_OUT_MOD(mod_signal_gen_inst/nonoverlap_clkgen/Mmux_n011611:O) | NONE(*)(mod_signal_gen_inst/ODDR2_CLK_MOD_buf)                                                                                        | 2     |
-mod_signal_gen_inst/nonoverlap_clkgen/CLK_OUT_MODN(mod_signal_gen_inst/nonoverlap_clkgen/Mmux_n011711:O)| NONE(*)(mod_signal_gen_inst/ODDR2_CLKN_MOD_buf)                                                                                       | 2     |
-mod_signal_gen_inst/nonoverlap_clkgen/CLK_OUT_MODL(mod_signal_gen_inst/nonoverlap_clkgen/Mmux_n011811:O)| NONE(*)(mod_signal_gen_inst/ODDR2_CLKL_MOD_buf)                                                                                       | 2     |
-mod_signal_gen_inst/FREQ_SEL[2]_X_2_o_Mux_0_o(mod_signal_gen_inst/Mmux_FREQ_SEL[2]_X_2_o_Mux_0_o11:O)   | BUFG(*)(mod_signal_gen_inst/nonoverlap_clkgen/count_8_0)                                                                              | 10    |
-USER_CLOCK                                                                                              | PLL_ADV:CLKOUT0                                                                                                                       | 2027  |
-uBlaze_SPI/MB_SPI_i/debug_module/debug_module/drck_i                                                    | BUFG                                                                                                                                  | 209   |
-uBlaze_SPI/MB_SPI_i/debug_module/Ext_JTAG_UPDATE                                                        | NONE(uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.Use_Debug_Logic.Master_Core.Debug_Perf/command_reg_0)| 43    |
-ADC_CLK                                                                                                 | BUFG                                                                                                                                  | 153   |
---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+-------+
-(*) These 5 clock signal(s) are generated by combinatorial logic,
+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                                                                                        | Clock buffer(FF name)                                                                                                                 | Load  |
+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+-------+
+MBI_regs/SPI_CLK_INV_41_o(MBI_regs/SPI_CLK_INV_41_o1_INV_0:O)                                       | BUFGMUX(*)(ODDR2_ISPI_REGCLK_buf)                                                                                                     | 2     |
+clk_gen/CLOCK_OUT                                                                                   | NONE(ODDR2_ADC_READ_ACLK_buf)                                                                                                         | 56    |
+USER_CLOCK                                                                                          | DCM_SP:CLKDV                                                                                                                          | 131   |
+ADC_CLK                                                                                             | DCM_SP:CLKDV                                                                                                                          | 58    |
+ADC_CLK                                                                                             | DCM_SP:CLK90                                                                                                                          | 48    |
+mod_signal_gen_inst/nonoverlap_clkgen/R_CLK_OUT_MOD_0                                               | NONE(mod_signal_gen_inst/ODDR2_CLK_MOD_buf)                                                                                           | 2     |
+mod_signal_gen_inst/nonoverlap_clkgen/R_CLK_OUT_MODN_0                                              | NONE(mod_signal_gen_inst/ODDR2_CLKN_MOD_buf)                                                                                          | 2     |
+mod_signal_gen_inst/nonoverlap_clkgen/R_CLK_OUT_MODL_0                                              | NONE(mod_signal_gen_inst/ODDR2_CLKL_MOD_buf)                                                                                          | 2     |
+mod_signal_gen_inst/FREQ_SEL[2]_X_2_o_Mux_0_o(mod_signal_gen_inst/Mmux_FREQ_SEL[2]_X_2_o_Mux_0_o1:O)| BUFG(*)(mod_signal_gen_inst/nonoverlap_clkgen/count_32_0)                                                                             | 8     |
+USER_CLOCK                                                                                          | PLL_ADV:CLKOUT0                                                                                                                       | 2027  |
+uBlaze_SPI/MB_SPI_i/debug_module/debug_module/drck_i                                                | BUFG                                                                                                                                  | 209   |
+uBlaze_SPI/MB_SPI_i/debug_module/Ext_JTAG_UPDATE                                                    | NONE(uBlaze_SPI/MB_SPI_i/microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.Use_Debug_Logic.Master_Core.Debug_Perf/command_reg_0)| 43    |
+ADC_CLK                                                                                             | BUFG                                                                                                                                  | 153   |
+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+-------+
+(*) These 2 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -953,27 +949,27 @@ Delay:               3.822ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'mod_signal_gen_inst/FREQ_SEL[2]_X_2_o_Mux_0_o'
-  Clock period: 4.264ns (frequency: 234.546MHz)
-  Total number of paths / destination ports: 64 / 13
+  Clock period: 4.237ns (frequency: 236.024MHz)
+  Total number of paths / destination ports: 68 / 13
 -------------------------------------------------------------------------
-Delay:               4.264ns (Levels of Logic = 3)
-  Source:            mod_signal_gen_inst/nonoverlap_clkgen/count_8_0 (FF)
-  Destination:       mod_signal_gen_inst/nonoverlap_clkgen/R_CLK_OUT_MOD_1 (FF)
+Delay:               4.237ns (Levels of Logic = 3)
+  Source:            mod_signal_gen_inst/nonoverlap_clkgen/count_32_0 (FF)
+  Destination:       mod_signal_gen_inst/nonoverlap_clkgen/R_CLK_OUT_MODN_0 (FF)
   Source Clock:      mod_signal_gen_inst/FREQ_SEL[2]_X_2_o_Mux_0_o rising
   Destination Clock: mod_signal_gen_inst/FREQ_SEL[2]_X_2_o_Mux_0_o rising
 
-  Data Path: mod_signal_gen_inst/nonoverlap_clkgen/count_8_0 to mod_signal_gen_inst/nonoverlap_clkgen/R_CLK_OUT_MOD_1
+  Data Path: mod_signal_gen_inst/nonoverlap_clkgen/count_32_0 to mod_signal_gen_inst/nonoverlap_clkgen/R_CLK_OUT_MODN_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDS:C->Q             13   0.447   1.297  count_8_0 (count_8_0)
-     LUT6:I0->O            2   0.203   0.864  count_16[3]_PHASE_SEL[4]_equal_21_o421 (count_16[3]_PHASE_SEL[4]_equal_21_o42)
-     LUT4:I0->O            1   0.203   0.944  R_CLK_OUT_MOD_1_glue_set (R_CLK_OUT_MOD_1_glue_set)
-     LUT6:I0->O            1   0.203   0.000  R_CLK_OUT_MOD_1_rstpot (R_CLK_OUT_MOD_1_rstpot)
-     FD:D                      0.102          R_CLK_OUT_MOD_1
+     FDS:C->Q              9   0.447   1.174  count_32_0 (count_32_0)
+     LUT6:I1->O            2   0.203   0.981  count_32[4]_PHASE_SEL[4]_equal_13_o5231 (count_32[4]_PHASE_SEL[4]_equal_13_o523)
+     LUT6:I0->O            1   0.203   0.924  count_32[4]_PHASE_SEL[4]_equal_13_o5 (count_32[4]_PHASE_SEL[4]_equal_13_o)
+     LUT5:I0->O            1   0.203   0.000  R_CLK_OUT_MODN_0_rstpot (R_CLK_OUT_MODN_0_rstpot)
+     FD:D                      0.102          R_CLK_OUT_MODN_0
     ----------------------------------------
-    Total                      4.264ns (1.158ns logic, 3.106ns route)
-                                       (27.2% logic, 72.8% route)
+    Total                      4.237ns (1.158ns logic, 3.079ns route)
+                                       (27.3% logic, 72.7% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'USER_CLOCK'
@@ -1121,27 +1117,29 @@ Offset:              4.513ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'mod_signal_gen_inst/FREQ_SEL[2]_X_2_o_Mux_0_o'
-  Total number of paths / destination ports: 70 / 4
+  Total number of paths / destination ports: 84 / 2
 -------------------------------------------------------------------------
-Offset:              4.801ns (Levels of Logic = 5)
+Offset:              6.738ns (Levels of Logic = 7)
   Source:            PHASE_SEL<2> (PAD)
-  Destination:       mod_signal_gen_inst/nonoverlap_clkgen/R_CLK_OUT_MOD_1 (FF)
+  Destination:       mod_signal_gen_inst/nonoverlap_clkgen/R_CLK_OUT_MOD_0 (FF)
   Destination Clock: mod_signal_gen_inst/FREQ_SEL[2]_X_2_o_Mux_0_o rising
 
-  Data Path: PHASE_SEL<2> to mod_signal_gen_inst/nonoverlap_clkgen/R_CLK_OUT_MOD_1
+  Data Path: PHASE_SEL<2> to mod_signal_gen_inst/nonoverlap_clkgen/R_CLK_OUT_MOD_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             9   1.222   1.058  PHASE_SEL_2_IBUF (PHASE_SEL_2_IBUF)
+     IBUF:I->O             6   1.222   1.089  PHASE_SEL_2_IBUF (PHASE_SEL_2_IBUF)
      begin scope: 'mod_signal_gen_inst:PHASE_SEL<2>'
      begin scope: 'mod_signal_gen_inst/nonoverlap_clkgen:PHASE_SEL<2>'
-     LUT6:I3->O            2   0.205   0.864  count_16[3]_PHASE_SEL[4]_equal_21_o421 (count_16[3]_PHASE_SEL[4]_equal_21_o42)
-     LUT4:I0->O            1   0.203   0.944  R_CLK_OUT_MOD_1_glue_set (R_CLK_OUT_MOD_1_glue_set)
-     LUT6:I0->O            1   0.203   0.000  R_CLK_OUT_MOD_1_rstpot (R_CLK_OUT_MOD_1_rstpot)
-     FD:D                      0.102          R_CLK_OUT_MOD_1
+     LUT6:I1->O            2   0.203   0.721  Msub_PHASE_SEL[4]_GND_6_o_sub_12_OUT_cy<0>321 (Msub_PHASE_SEL[4]_GND_6_o_sub_12_OUT_cy<0>32)
+     LUT5:I3->O            1   0.203   0.684  count_32[4]_PHASE_SEL[4]_equal_13_o411 (count_32[4]_PHASE_SEL[4]_equal_13_o41)
+     LUT3:I1->O            2   0.203   0.981  count_32[4]_PHASE_SEL[4]_equal_13_o41 (count_32[4]_PHASE_SEL[4]_equal_13_o5)
+     LUT6:I0->O            1   0.203   0.924  count_32[4]_PHASE_SEL[4]_equal_7_o5 (count_32[4]_PHASE_SEL[4]_equal_7_o)
+     LUT5:I0->O            1   0.203   0.000  R_CLK_OUT_MOD_0_rstpot (R_CLK_OUT_MOD_0_rstpot)
+     FD:D                      0.102          R_CLK_OUT_MOD_0
     ----------------------------------------
-    Total                      4.801ns (1.935ns logic, 2.866ns route)
-                                       (40.3% logic, 59.7% route)
+    Total                      6.738ns (2.339ns logic, 4.399ns route)
+                                       (34.7% logic, 65.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'USER_CLOCK'
@@ -1423,7 +1421,7 @@ Clock to Setup on destination clock mod_signal_gen_inst/FREQ_SEL[2]_X_2_o_Mux_0_
                                              | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------------------------------------+---------+---------+---------+---------+
-mod_signal_gen_inst/FREQ_SEL[2]_X_2_o_Mux_0_o|    4.264|         |         |         |
+mod_signal_gen_inst/FREQ_SEL[2]_X_2_o_Mux_0_o|    4.237|         |         |         |
 ---------------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock uBlaze_SPI/MB_SPI_i/debug_module/Ext_JTAG_UPDATE
@@ -1450,13 +1448,13 @@ uBlaze_SPI/MB_SPI_i/debug_module/debug_module/drck_i|    2.427|    3.477|    3.2
 
 
 Total REAL time to Xst completion: 23.00 secs
-Total CPU time to Xst completion: 23.40 secs
+Total CPU time to Xst completion: 23.00 secs
  
 --> 
 
-Total memory usage is 299888 kilobytes
+Total memory usage is 300784 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  165 (   0 filtered)
-Number of infos    :   72 (   0 filtered)
+Number of warnings :  164 (   0 filtered)
+Number of infos    :   69 (   0 filtered)
 

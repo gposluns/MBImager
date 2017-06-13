@@ -1,5 +1,5 @@
 verilog work "D:/Shichen_Lu/MBImager/MBImager/MBImager_full/MB_SPI/hdl/MB_SPI.v"
-verilog work "freqchng_clkgen_highfreq.v"
+verilog work "freqchng_clkgen.v"
 verilog work "counter_nonoverlap_clkgen_highfreq.v"
 verilog work "TI_ADC_RO.v"
 verilog work "ROImager.v"

@@ -1,12 +1,12 @@
-C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\OK_imager.ngc 1486764503
-ipcore_dir/fifo_6to24.ngc 1480956000
-C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1/okWireIn.ngc 1400623588
-C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1/okWireOut.ngc 1400623588
-C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1/okTriggerIn.ngc 1400623588
-C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1/okTriggerOut.ngc 1400623588
-C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1/okPipeOut.ngc 1400623588
-ipcore_dir/fifo_usbout.ngc 1480881100
-ipcore_dir/fifo_patterns.ngc 1486145446
-C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1/okCoreHarness.ngc 1400623588
-C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1/TFIFO64x8a_64x8b.ngc 1400623588
+D:\Shichen_Lu\MBImager\MBImager\OK_imager1\OK_imager.ngc 1497382193
+ipcore_dir/fifo_6to24.ngc 1496433278
+D:\Shichen_Lu\MBImager\MBImager\OK_imager1/okWireIn.ngc 1496433280
+D:\Shichen_Lu\MBImager\MBImager\OK_imager1/okWireOut.ngc 1496433280
+D:\Shichen_Lu\MBImager\MBImager\OK_imager1/okTriggerIn.ngc 1496433280
+D:\Shichen_Lu\MBImager\MBImager\OK_imager1/okTriggerOut.ngc 1496433280
+D:\Shichen_Lu\MBImager\MBImager\OK_imager1/okPipeOut.ngc 1496433280
+ipcore_dir/fifo_usbout.ngc 1496433279
+ipcore_dir/fifo_patterns.ngc 1496433279
+D:\Shichen_Lu\MBImager\MBImager\OK_imager1/okCoreHarness.ngc 1496433280
+D:\Shichen_Lu\MBImager\MBImager\OK_imager1/TFIFO64x8a_64x8b.ngc 1496433278
 OK

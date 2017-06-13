@@ -36,6 +36,7 @@ module OK_imager(
 	output wire [10:1] MSTREAM,
 	output wire OK_DRAIN_B,
 	output wire OK_PIXRES_GLOB,
+	output	[31:0] PHASE_SEL, //testmodimp
 	input wire FSMIND0,				// If high, the Exposure FSM (on OK) is active
 	output wire FSMIND1,
 	output wire FSMIND0ACK,
@@ -384,6 +385,7 @@ okWireIn	wire12		(.okHE(okHE),								.ep_addr(8'h12),							.ep_dataout(wirePat
 okWireIn	wire13		(.okHE(okHE),								.ep_addr(8'h13),							.ep_dataout(wireMaskChng) );
 okWireIn	wire14		(.okHE(okHE),								.ep_addr(8'h14),							.ep_dataout(wireMaskChngSubc) );
 okWireIn	wire15		(.okHE(okHE),								.ep_addr(8'h15),							.ep_dataout(wirePatterns) );
+okWireIn okPHASE_SEL (.okHE(okHE),								.ep_addr(8'h16),							.ep_dataout(PHASE_SEL)	); //testmodimp
 // comment the top okWireIn modules for simulations!
 okWireOut 	wire22		(.okHE(okHE),	.okEH(okEHx[0*65 +: 65]),	.ep_addr(8'h22),							.ep_datain(wireExp) );
 okWireOut 	wire23		(.okHE(okHE),	.okEH(okEHx[3*65 +: 65]),	.ep_addr(8'h23),							.ep_datain(wirePat) );

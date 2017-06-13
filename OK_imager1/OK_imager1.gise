@@ -220,81 +220,84 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1486764505" xil_pn:in_ck="-5968055084953764219" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-7031424421206006752" xil_pn:start_ts="1486764481">
+    <transform xil_pn:end_ts="1497382194" xil_pn:in_ck="-3430378465423615052" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-7031424421206006752" xil_pn:start_ts="1497382157">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="OK_imager.lso"/>
       <outfile xil_pn:name="OK_imager.ngc"/>
       <outfile xil_pn:name="OK_imager.ngr"/>
       <outfile xil_pn:name="OK_imager.prj"/>
+      <outfile xil_pn:name="OK_imager.stx"/>
       <outfile xil_pn:name="OK_imager.syr"/>
       <outfile xil_pn:name="OK_imager.xst"/>
       <outfile xil_pn:name="OK_imager_xst.xrpt"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1484685826" xil_pn:in_ck="-4311615097163559957" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-8119240588370518032" xil_pn:start_ts="1484685826">
+    <transform xil_pn:end_ts="1497382194" xil_pn:in_ck="-4311615097163559957" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-8119240588370518032" xil_pn:start_ts="1497382194">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1486764512" xil_pn:in_ck="820423631596590985" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-2260270000890458382" xil_pn:start_ts="1486764505">
+    <transform xil_pn:end_ts="1497382206" xil_pn:in_ck="820423631596590985" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-2260270000890458382" xil_pn:start_ts="1497382194">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name="OK_imager.bld"/>
       <outfile xil_pn:name="OK_imager.ngd"/>
       <outfile xil_pn:name="OK_imager_ngdbuild.xrpt"/>
       <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1486764572" xil_pn:in_ck="1605590598387686624" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="-7060404927121445762" xil_pn:start_ts="1486764512">
+    <transform xil_pn:end_ts="1497382304" xil_pn:in_ck="1605590598387686624" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="-7060404927121445762" xil_pn:start_ts="1497382206">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
-      <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name="OK_imager.pcf"/>
       <outfile xil_pn:name="OK_imager_map.map"/>
       <outfile xil_pn:name="OK_imager_map.mrp"/>
+      <outfile xil_pn:name="OK_imager_map.ncd"/>
       <outfile xil_pn:name="OK_imager_map.ngm"/>
       <outfile xil_pn:name="OK_imager_map.xrpt"/>
       <outfile xil_pn:name="OK_imager_summary.xml"/>
       <outfile xil_pn:name="OK_imager_usage.xml"/>
+      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1486764723" xil_pn:in_ck="-6083760404914783975" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-3829590541433901613" xil_pn:start_ts="1486764572">
+    <transform xil_pn:end_ts="1497382540" xil_pn:in_ck="-6083760404914783975" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-3829590541433901613" xil_pn:start_ts="1497382304">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
-      <status xil_pn:value="NotReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputRemoved"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="OK_imager.ncd"/>
+      <outfile xil_pn:name="OK_imager.pad"/>
+      <outfile xil_pn:name="OK_imager.par"/>
+      <outfile xil_pn:name="OK_imager.ptwx"/>
+      <outfile xil_pn:name="OK_imager.unroutes"/>
+      <outfile xil_pn:name="OK_imager.xpi"/>
+      <outfile xil_pn:name="OK_imager_pad.csv"/>
+      <outfile xil_pn:name="OK_imager_pad.txt"/>
+      <outfile xil_pn:name="OK_imager_par.xrpt"/>
+      <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1486764747" xil_pn:in_ck="6577251932949993393" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1486764723">
+    <transform xil_pn:end_ts="1497382576" xil_pn:in_ck="6577251932949993393" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1497382540">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
-      <status xil_pn:value="NotReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputRemoved"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="OK_imager.ut"/>
+      <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
+      <outfile xil_pn:name="ok_imager.bgn"/>
+      <outfile xil_pn:name="ok_imager.bit"/>
+      <outfile xil_pn:name="ok_imager.drc"/>
+      <outfile xil_pn:name="usage_statistics_webtalk.html"/>
+      <outfile xil_pn:name="webtalk.log"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
     </transform>
     <transform xil_pn:end_ts="1486074854" xil_pn:in_ck="6577251932949993393" xil_pn:name="TRAN_postParSimModel" xil_pn:prop_ck="-3027161503001135254" xil_pn:start_ts="1486074805">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
@@ -317,21 +320,18 @@
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputRemoved"/>
     </transform>
-    <transform xil_pn:end_ts="1486764723" xil_pn:in_ck="-1843678860252134052" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1486764715">
+    <transform xil_pn:end_ts="1497382540" xil_pn:in_ck="-1843678860252134052" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1497382527">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="NotReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputRemoved"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="OK_imager.twr"/>
+      <outfile xil_pn:name="OK_imager.twx"/>
+      <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
     </transform>
     <transform xil_pn:end_ts="1486073545" xil_pn:in_ck="-3537308434653885498" xil_pn:name="TRAN_postSynthesisSimModel" xil_pn:prop_ck="-5944418221093427006" xil_pn:start_ts="1486073542">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>

@@ -36,7 +36,7 @@ module mod_signal_gen(
 	wire				W_SELECTED_FREQ;
 	wire				FLAG_HIGH_FREQ;			//for clk and clkn generation, passes information about if highfreq module is used
 	
-	freqchng_clkgen_highfreq freqchng(					//PLL for frequency generation from USER_CLOCK
+	freqchng_clkgen freqchng(					//PLL for frequency generation from USER_CLOCK
 		.CLK_IN(USER_CLOCK),						//to cover larger frequency range, there is a high and a low frequency version of this module
 		.RESET(1'b0),								//use module name "freqchng_clkgen" for lowfreq or "freqchng_clkgen_highfreq" for high freq
 		.LOCKED(LOCKED),							//availiable frequences (refers to final output freq for signals):
