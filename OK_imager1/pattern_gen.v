@@ -48,7 +48,7 @@ module pattern_gen(
 //----------------------------------------------------------------------------
 
 	reg [9:0] Pat_i;
-	reg [9:0] Pat_cur;
+	//reg [9:0] Pat_cur;
 	integer cntPat;
 	wire subc_inv;
 
@@ -84,7 +84,7 @@ module pattern_gen(
 					Pat_i <= Pat_in;
 					state <= S_subc_pats;
 				end
-			end
+				end
             S_subc_pats : begin
 				if (FIFO_empty && ~FIFO_wr) begin
 					FIFO_wr <= 1;

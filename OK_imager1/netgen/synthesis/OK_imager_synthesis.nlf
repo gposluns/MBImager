@@ -10,8 +10,10 @@ Processing design ...
   Preping design's networks ...
   Preping design's macros ...
 Writing Verilog netlist file
-'C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\OKelly\OK_imager1\netgen\
-synthesis\OK_imager_synthesis.v' ...
+'D:\MBImager-master\OK_imager1\netgen\synthesis\OK_imager_synthesis.v' ...
+WARNING:NetListWriters - Padding or triming the value for hex property
+   FACTORY_JF:
+Triming from 16'B1100000010000000 to 0000.
 WARNING:NetListWriters - Padding or triming the value for hex property
    FACTORY_JF:
 Triming from 16'B1100000010000000 to 0000.
@@ -21,6 +23,6 @@ Triming from 16'B1100000010000000 to 0000.
 INFO:NetListWriters:633 - The generated Verilog netlist contains Xilinx UNISIM
    simulation primitives and has to be used with UNISIM simulation library for
    correct compilation and simulation. 
-Number of warnings: 2
+Number of warnings: 3
 Number of info messages: 1
-Total memory usage is 140980 kilobytes
+Total memory usage is 188080 kilobytes

@@ -72,7 +72,7 @@ input		[31:0]						  Num_Pat;
 		FSMIND1_i <= 0;
 		OK_PIXRES_GLOB <= 1;
 		count_mpre <= 0;
-		count_subsc <= 1;
+		count_subsc <= 0; 
 		OK_DRAIN_B <= 0;
 		CLKMPRE_EN = 0;
 		STREAM <= 0;
@@ -137,7 +137,7 @@ input		[31:0]						  Num_Pat;
 				OK_DRAIN_B <= 1;
 				if (count_mpre*18 <= Exp_subc*100) begin
 					count_mpre <= count_mpre + 1;
-				end else if (count_subsc <= Num_Pat) begin
+				end else if (count_subsc < Num_Pat) begin
 					count_mpre <= 0;
 					state <= S_subc_n;
 				end else begin

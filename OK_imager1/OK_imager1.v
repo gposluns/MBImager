@@ -88,10 +88,10 @@ wire [7:0] STATUS;
 wire FSMstop;
 wire [7:0] fsm_stat;
 wire RstPat;
-wire [10:1] Pat_to_FIFO;
-wire [10:1] Pat_in;
-wire [10:1] PatGen_start;
-wire [10:1] PatGen_stop;
+wire [9:0] Pat_to_FIFO;
+wire [9:0] Pat_in;
+wire [9:0] PatGen_start;
+wire [9:0] PatGen_stop;
 wire PatFIFO_wr;
 wire PatFIFO_empty;
 wire CLKMPRE_EN;
@@ -123,9 +123,9 @@ assign trig6Aout[1] = flag_2frames;
 assign trig6Aout[31:2] = 30'b0;
 assign din_pipe[23:0]=dout_buf;
 assign din_pipe[31:24]=8'b0;
-assign Pat_in[10:1] = wirePatterns[10:1];
-assign PatGen_start[10:1] = wirePatterns[20:11];
-assign PatGen_stop[10:1] = wirePatterns[30:21];
+assign Pat_in[9:0] = wirePatterns[9:0];
+assign PatGen_start[9:0] = wirePatterns[19:10];
+assign PatGen_stop[9:0] = wirePatterns[29:20];//wirePatterns[30:21];
 
 
 /* // Generating test data instead of ADCs data
