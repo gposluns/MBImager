@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.ncd
-OUTFILE=C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_top.bit
+INFILE=D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.ncd
+OUTFILE=D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.bit
 FAMILY=Spartan6
 PART=xc6slx25t-3fgg484
-WORKINGDIR=C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full
+WORKINGDIR=D:\Shichen_Lu\MBImager\MBImager\MBImager_full
 LICENSE=WebPack
-USER_INFO=174208431_1777515441_210640978_209
+USER_INFO=__0_0_0

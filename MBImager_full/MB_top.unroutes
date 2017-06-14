@@ -1,11 +1,11 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Fri Feb 10 14:43:06 2017
+Tue Jun 13 15:54:52 2017
 
 All signals are completely routed.
 
-WARNING:ParHelpers:361 - There are 461 loadless signals in this design. This design will cause Bitgen to issue DRC
+WARNING:ParHelpers:361 - There are 462 loadless signals in this design. This design will cause Bitgen to issue DRC
    warnings.
 
    adc_sample/DATA_IN_TO_DEVICE1<0>
@@ -37,6 +37,7 @@ WARNING:ParHelpers:361 - There are 461 loadless signals in this design. This des
    fifo_inst_4kB/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/aempty_fwft_i
    fifo_inst_4kB/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i
    fifo_inst_4kB/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i
+   mod_signal_gen_inst/freqchng/LOCKED
    uBlaze_SPI/MB_SPI_i/Generic_SPI/Generic_SPI/AXI_SPI_CORE_INTERFACE_I/MAP_SIGNALS_AND_REG_WITH_FIFOS.RECEIVE_FIFO_I/Addr_Counters[3].MUXCY_L_I/LO
    uBlaze_SPI/MB_SPI_i/Generic_SPI/Generic_SPI/AXI_SPI_CORE_INTERFACE_I/MAP_SIGNALS_AND_REG_WITH_FIFOS.TRANSMIT_FIFO_I/Addr_Counters[3].MUXCY_L_I/LO
    uBlaze_SPI/MB_SPI_i/Generic_SPI/IP2INTC_Irpt
