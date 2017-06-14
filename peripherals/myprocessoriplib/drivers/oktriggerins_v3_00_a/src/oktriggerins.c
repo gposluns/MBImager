@@ -94,10 +94,10 @@ void OKTRIGGERINS_RegisterHandler(u8 trigger, u32 mask, XInterruptHandler handle
 void OKTRIGGERINS_Handler(void* data){
 	int i, j;
 	for (i = 0; i < OKTRIGGERINS_NUM_REG; i++){
-		u32 trigger = OKTRIGGERINS_mReadReg(baseAddress, i*0x04);
-		if ((masks[i] & trigger) == 0) continue;
+		u32 trigger = OKTRIGGERINS_GetTrigger(i, masks[i]);
+		if (trigger == 0) continue;
 		for(j = 0; j < 32; j++){
-			if ((masks[i] & trigger & (1 << j)) == 0) continue;
+			if ((trigger & (1 << j)) == 0) continue;
 			handlers[i][j](datas[i][j]);
 		}
 	}
