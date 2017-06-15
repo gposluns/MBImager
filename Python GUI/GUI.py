@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon May 15 12:24:34 2017
-
+Last modified June 15 12:17:00 2017
+Version: initial
 @author: Wendy
 """
 from FrontPanelAPI import ok #must have FrontPanelAPI folder in site-packages
@@ -95,7 +96,7 @@ def grab(queue1,queue2):
         queue2 -- queue for camera bucket 2 output
     '''
     global running, form, exposure, masks, maskchanges, subchange, pattfile, pattern
-    global darkimg1, darkimg2, whiteimg1, whiteimg2
+    global darkimg1, darkimg2, whiteimg1, whiteimg2, percent
     row = 160
     N_adc = 4
     N_adcCh = 3
@@ -133,8 +134,9 @@ def grab(queue1,queue2):
         subchange = 0
     if subchange*maskchanges >masks:
         maskchanges = masks/subchange
-    
-    if maskchanges%2 ==0: #even 
+    if maskchanges == 0:
+        percent = 100
+    elif maskchanges%2 ==0: #even 
         percent = (1-float(maskchanges)*float(subchange)/(2*float(masks)))*100
     else: #odd
         percent = float(maskchanges+1)*float(subchange)*100/(2*float(masks))
@@ -498,7 +500,7 @@ class MyWindowClass(QtWidgets.QMainWindow, Ui_MainWindow):
         the user by calling OwnImageWidget.setImage().
         '''
         global toSave, disp_type,folder1, folder2, video1, video2
-        global whiteimg1, whiteimg2, darkimg1, darkimg2, equalize
+        global whiteimg1, whiteimg2, darkimg1, darkimg2, equalize, percent
         zoom = self.Zoom.value()
         x = self.XSlider.value()
         y = self.YSlider.value()
@@ -526,28 +528,23 @@ class MyWindowClass(QtWidgets.QMainWindow, Ui_MainWindow):
             else:
                 save = 0
                 self.SaveImages.setEnabled(True)
-            raw1 = np.zeros((79,60), np.uint8)
-            raw2 = np.zeros((79,60), np.uint8)
-            raw1[:,:] = img1[1:80,2:62]
-            raw2[:,:] = img2[1:80,2:62]
+            calib1 = np.zeros((79,60), np.uint8)
+            calib2 = np.zeros((79,60), np.uint8)
+            calib1[:,:] = img1[1:80,2:62]
+            calib2[:,:] = img2[1:80,2:62]
             
             if calib_on:
-                raw1 = (raw1-darkimg1)*(np.mean(whiteimg1-darkimg1))/(whiteimg1-darkimg1)+np.mean(darkimg1)
-                raw2 = (raw2-darkimg2)*(np.mean(whiteimg2-darkimg2))/(whiteimg2-darkimg2)+np.mean(darkimg2)
-                raw1 = raw1.astype(np.uint8)
-                raw2 = raw2.astype(np.uint8)
-            
+                calib1 = np.clip((calib1-darkimg1)*(np.mean(whiteimg1-darkimg1))/(whiteimg1-darkimg1)+np.mean(darkimg1),0,255)
+                calib2 = np.clip((calib2-darkimg2)*(np.mean(whiteimg2-darkimg2))/(whiteimg2-darkimg2)+np.mean(darkimg2),0, 255)
+                calib1 = calib1.astype(np.uint8)
+                calib2 = calib2.astype(np.uint8)
             if equalize:
-                raw1 = cv2.equalizeHist(raw1)
-                raw2 = cv2.equalizeHist(raw2)
-            raw1_pad = np.zeros(img1.shape, np.uint8)
-            raw2_pad = np.zeros(img2.shape, np.uint8)
-            raw1_pad[1:raw1.shape[0]+1,2:raw1.shape[1]+2] = raw1
-            raw2_pad[1:raw2.shape[0]+1,2:raw2.shape[1]+2] = raw2
-            img1[1:raw1.shape[0]+1,2:raw1.shape[1]+2] =np.zeros(raw1.shape)
-            img2[1:raw2.shape[0]+1,2:raw2.shape[1]+2] =np.zeros(raw2.shape)
-            img1 += raw1_pad
-            img2 += raw2_pad   
+                calib1 = cv2.equalizeHist(calib1)
+                calib2 = cv2.equalizeHist(calib2)
+            if percent !=0:
+                img1[1:calib1.shape[0]+1,2:calib1.shape[1]+2] =calib1
+            if percent !=100:
+                img2[1:calib2.shape[0]+1,2:calib2.shape[1]+2] =calib2 
             if disp_type=='ALL':
                 
                 if recording:
