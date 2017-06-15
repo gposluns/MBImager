@@ -20,6 +20,7 @@ void OKTRIGGERINS_Initialize(u32 baseaddr){
 	
 	int i, j;
 	for (i = 0; i < OKTRIGGERINS_NUM_REG; i++){
+		masks[i] = 0;
 		for (j = 0; j < OKTRIGGERINS_NUM_REG; j++){
 			handlers [i][j] = OKTRIGGERINS_StubHandler;
 			datas [i][j] = (void*)i;
