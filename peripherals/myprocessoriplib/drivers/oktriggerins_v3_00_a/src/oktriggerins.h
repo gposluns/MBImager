@@ -299,23 +299,23 @@ u32 masks [OKTRIGGERINS_NUM_REG];
 /************************** Function Prototypes ****************************/
 
 //Initializes the driver with base address and stub handlers
-void OKTRIGGERINS_Initialize(u32 baseaddr);
+XStatus OKTRIGGERINS_Initialize(u32 baseaddr);
 
 //Sets the interrupt mask for a trigger (set bit -> interrupt on trigger on this bit)
 //The trigger is cleared when this function is called
-void OKTRIGGERINS_SetInterruptMask(u8 trigger, u32 mask);
+XStatus OKTRIGGERINS_SetInterruptMask(u8 trigger, u32 mask);
 
 //Registers an interrupt handler to a bit(s) of a trigger, indicated by mask
-void OKTRIGGERINS_RegisterHandler(u8 trigger, u32 mask, XInterruptHandler handler, void* data);
+XStatus OKTRIGGERINS_RegisterHandler(u8 trigger, u32 mask, XInterruptHandler handler, void* data);
 
 //Interrupt handler used by this driver, pass to your interrupt controller
 void OKTRIGGERINS_Handler(void* data);
 
 //Gets the value of a trigger, bitwise anded with a mask
-u32 OKTRIGGERINS_GetTrigger(u8 trigger, u32 mask);
+XStatus OKTRIGGERINS_GetTrigger(u8 trigger, u32 mask, u32* buffer);
 
 //Clears a trigger (this just calls SetInterrupt Mask with the saved mask value for that trigger)
-void OKTRIGGERINS_ClearTrigger(u8 trigger);
+XStatus OKTRIGGERINS_ClearTrigger(u8 trigger);
 
 //Stub handler clears the interrupting trigger and nothing else
 void OKTRIGGERINS_StubHandler(void* data);
