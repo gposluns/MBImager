@@ -58,37 +58,37 @@ function Z=showOneFrame( frame, displayIdt,dispframe,handles, imgCalib  )
         %image = zeros(row, indiCol, 'uint8');
         image = Z;
         imshow(image);
-%         if displayIdt==1
-%             axes(handles.axes3);
-%             imhist(image, 256);
-%         else %2
-%             axes(handles.axes4);
-%             imhist(image, 256);
-%         end
+        if displayIdt==1
+            axes(handles.axes3);
+            imhist(image, 256);
+        else %2
+            axes(handles.axes4);
+            imhist(image, 256);
+        end
         
     elseif dispframe == 2
 
         %image = zeros(160,120, 'uint8');
         image = Z(1:160,63:182);
         imshow(image);
-%          if displayIdt==1
-%             axes(handles.axes3);
-%             imhist(image, 256);
-%         else
-%             axes(handles.axes4);
-%             imhist(image, 256);
-%         end
+         if displayIdt==1
+            axes(handles.axes3);
+            imhist(image, 256);
+        else
+            axes(handles.axes4);
+            imhist(image, 256);
+        end
      else
         %image = zeros(80, 60, 'uint8');
         image = Z(1:80,3:62);
         imshow(image);
-%          if displayIdt==1
-%             axes(handles.axes3);
-%             imhist(image, 256);
-%         else
-%             axes(handles.axes4);
-%             imhist(image, 256);
-%         end
+         if displayIdt==1
+            axes(handles.axes3);
+            imhist(image, 256);
+        else
+            axes(handles.axes4);
+            imhist(image, 256);
+        end
     end
 
 end
