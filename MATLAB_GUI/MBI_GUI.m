@@ -1,3 +1,6 @@
+%Date modified: 2017-06-15
+%Author: Wendy
+%Modifications: Added image calibration 
 function varargout = MBI_GUI(varargin)
 % MBI_GUI MATLAB code for MBI_GUI.fig
 %      MBI_GUI, by itself, creates a new MBI_GUI or raises the existing
@@ -22,7 +25,7 @@ function varargout = MBI_GUI(varargin)
 
 % Edit the above text to modify the response to help MBI_GUI
 
-% Last Modified by GUIDE v2.5 04-Feb-2017 20:23:23
+% Last Modified by GUIDE v2.5 14-Jun-2017 11:40:49
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -60,6 +63,9 @@ handles.pattern=0;
 handles.exp = 0;
 handles.numPat = 0;
 
+
+global imgCalib;
+imgCalib = 0;
 global mysave;
 mysave=0;
 global mysaveMulti;
@@ -171,9 +177,9 @@ if handles.obj.ptr~=0
         
         % write the pattern into the fifo thru a pipeout endpoint
         ok.writetopipein(handles.obj, hex2dec('80'), handles.pattern, length(handles.pattern));
-        inputPattern = handles.pattern
+        inputPattern = handles.pattern;
         % read the pattern saved to fifo thru a pipein endpoint
-        patternReading = ok.readfrompipeout(handles.obj, hex2dec('B0'), 16)
+        patternReading = ok.readfrompipeout(handles.obj, hex2dec('B0'), 16);
     end
 else
     msgbox('Please load bitfile first.');
@@ -202,10 +208,14 @@ global numPatStr;
 global MaskChngStr;
 global MaskChngPerStr;
 global DispFrame;
+global imgCalib;
 
 if get(hObject,'Value') % if this toggle button is pressed
     
     if handles.obj.ptr~=0  % if there's a bit file loaded
+        expDark = load('expDark.mat');
+        expWhite = load('expWhite.mat');
+        
         set(hObject, 'BackgroundColor',[1 1 0]);
         set(hObject,'String','Display Image - Stop');
         
@@ -220,7 +230,7 @@ if get(hObject,'Value') % if this toggle button is pressed
             if length(size(str2num(expStr)))==2
                 if size(str2num(expStr))==[1 1]
                     % valid
-                    handles.exp=str2num(expStr)
+                    handles.exp=str2num(expStr);
                 end
             else 
                 % invalid
@@ -235,7 +245,7 @@ if get(hObject,'Value') % if this toggle button is pressed
             if length(size(str2num(numPatStr)))==2
                 if size(str2num(numPatStr))==[1 1]
                     % valid
-                    handles.numPat=str2num(numPatStr)
+                    handles.numPat=str2num(numPatStr);
                 end
             else 
                 % invalid
@@ -251,9 +261,9 @@ if get(hObject,'Value') % if this toggle button is pressed
                 if size(str2num(MaskChngPerStr))==[1 1]
                     if (str2num(MaskChngPerStr)>0)
                         % valid
-                        handles.MaskChngPer=str2num(MaskChngPerStr)
+                        handles.MaskChngPer=str2num(MaskChngPerStr);
                     else
-                        handles.MaskChngPer=2*str2num(numPatStr)
+                        handles.MaskChngPer=2*str2num(numPatStr);
                     end
                 end
             else 
@@ -268,7 +278,10 @@ if get(hObject,'Value') % if this toggle button is pressed
         if ~isempty(str2num(MaskChngStr))
             if length(size(str2num(MaskChngStr)))==2
                 if size(str2num(MaskChngStr))==[1 1]
-                    handles.MaskChng=str2num(MaskChngStr)
+                    handles.MaskChng=str2num(MaskChngStr);
+                    if handles.MaskChng*handles.MaskChngPer > handles.numPat
+                        handles.MaskChng = handles.numPat/handles.MaskChngPer;
+                    end
                 end
             else 
                 % invalid
@@ -276,6 +289,33 @@ if get(hObject,'Value') % if this toggle button is pressed
             
         else
             % no valid input
+        end
+        %find masking percent
+        if handles.MaskChng == 0
+            handles.percent = 100;
+        elseif mod(handles.MaskChng,2) ==0 %even
+            handles.percent = (1-handles.MaskChng*handles.MaskChngPer/(2*handles.numPat))*100;
+        else %odd
+            handles.percent = (handles.MaskChng+1)*handles.MaskChngPer*100/(2*handles.numPat);
+        end
+        %array of exposure times of calibration
+        expArray = [16390, 32780, 11920, 28310, 7450, 23840, 2980, 19370, 35760, 14900, 31290, 10430, 26820, 5960, 22350, 1490, 17880, 34270, 13410, 29800, 8940, 25330, 4470, 20860];
+        %find closest exposure time
+        totExp = handles.numPat*(28.8+handles.exp);
+        tmp = abs(expArray- totExp);
+        [c index] = min(tmp);
+        calibExp = expArray(index);
+        handles.darkimg1 = zeros(79,60);
+        handles.darkimg2 = zeros(79,60);
+        handles.whiteimg1 = zeros(79,60);
+        handles.whiteimg2 = zeros(79,60);
+        for row = 1:79
+            for col = 1:60
+                handles.darkimg1(row,col) = polyval(reshape(expDark.(strcat('x',int2str(calibExp)))(1,row,col,:),[1,6]),handles.percent);
+                handles.darkimg2(row,col) = polyval(reshape(expDark.(strcat('x',int2str(calibExp)))(2,row,col,:),[1,6]),handles.percent);
+                handles.whiteimg1(row,col) = polyval(reshape(expWhite.(strcat('x',int2str(calibExp)))(1,row,col,:),[1,6]),handles.percent);
+                handles.whiteimg2(row,col) = polyval(reshape(expWhite.(strcat('x',int2str(calibExp)))(2,row,col,:),[1,6]),handles.percent);
+            end
         end
         
         % write the exposure value into a wirein endpoint
@@ -287,15 +327,15 @@ if get(hObject,'Value') % if this toggle button is pressed
         % write the number of subscene that the mask change should happen into a wirein endpoint
         ok.setwireinvalue(handles.obj,hex2dec('14'),handles.MaskChngPer, hex2dec('ffff'));
         % write the number of subscene that the mask change should happen into a wirein endpoint
-        ok.setwireinvalue(handles.obj,hex2dec('15'),hex2dec('ffff'), hex2dec('ffff'));
+        ok.setwireinvalue(handles.obj,hex2dec('15'),hex2dec('fff003ff'), hex2dec('ffffffff'));
         ok.updatewireins(handles.obj);
         
         % read the exposure and number of patterns values from two wireout
         % endpoints
-        ok.updatewireouts(handles.obj);
-        exposureReading = ok.getwireoutvalue(handles.obj, hex2dec('22'))
-        numPatternReading = ok.getwireoutvalue(handles.obj, hex2dec('23'))
-        MaskPatChange = ok.getwireoutvalue(handles.obj, hex2dec('24'))
+%         ok.updatewireouts(handles.obj);
+%         exposureReading = ok.getwireoutvalue(handles.obj, hex2dec('22'))
+%         numPatternReading = ok.getwireoutvalue(handles.obj, hex2dec('23'))
+%         MaskPatChange = ok.getwireoutvalue(handles.obj, hex2dec('24'))
 
         % rest and start the counter
         ShowBWImages(handles.obj);
@@ -306,61 +346,61 @@ if get(hObject,'Value') % if this toggle button is pressed
         % for i = 1:200
         while get(hObject,'Value')
             % read from the exposure and number of patterns fields
-            expStr=get(handles.ExposureEdit, 'String');
-            numPatStr=get(handles.NumPatternsEdit, 'String');
-            MaskChngStr=get(handles.NumMaskEdit, 'String');
-            MaskChngPerStr=get(handles.MaskCngSubcEdit, 'String');
-
-            % determine if the input of exposure field is a valid number
-            if ~isempty(str2num(expStr))
-                if length(size(str2num(expStr)))==2
-                    if size(str2num(expStr))==[1 1]
-                        % valid
-                        handles.exp=str2num(expStr);
-                    end
-                end
-            end
-            % determine if the input of number of patterns field is a valid number
-            if ~isempty(str2num(numPatStr))
-                if length(size(str2num(numPatStr)))==2
-                    if size(str2num(numPatStr))==[1 1]
-                        % valid
-                        handles.numPat=str2num(numPatStr);
-                    end
-                end
-            end
-            % determine if the input of number of Mask changes field is a valid number
-            if ~isempty(str2num(MaskChngPerStr))
-                if length(size(str2num(MaskChngPerStr)))==2
-                    if size(str2num(MaskChngPerStr))==[1 1]
-                        if (str2num(MaskChngPerStr)>0)
-                            % valid
-                            handles.MaskChngPer=str2num(MaskChngPerStr);
-                        else
-                            handles.MaskChngPer=2*str2num(numPatStr);
-                        end
-                    end
-                end
-            end
-        
-            % determine if the input of number of Mask change subscene field is a valid number
-            if ~isempty(str2num(MaskChngStr))
-                if length(size(str2num(MaskChngStr)))==2
-                    if size(str2num(MaskChngStr))==[1 1]
-                        handles.MaskChng=str2num(MaskChngStr);
-                    end
-                end
-            end
-
-            % write the exposure value into a wirein endpoint
-            ok.setwireinvalue(handles.obj,hex2dec('11'),handles.exp, hex2dec('ffff'));
-            % write the number of patterns value into a wirein endpoint
-            ok.setwireinvalue(handles.obj,hex2dec('12'),handles.numPat, hex2dec('ffff'));
-            % write the number of pattern changes into a wirein endpoint
-            ok.setwireinvalue(handles.obj,hex2dec('13'),handles.MaskChng, hex2dec('ffff'));
-            % write the number of subscene that the mask change should happen into a wirein endpoint
-            ok.setwireinvalue(handles.obj,hex2dec('14'),handles.MaskChngPer, hex2dec('ffff'));
-            ok.updatewireins(handles.obj);
+%             expStr=get(handles.ExposureEdit, 'String');
+%             numPatStr=get(handles.NumPatternsEdit, 'String');
+%             MaskChngStr=get(handles.NumMaskEdit, 'String');
+%             MaskChngPerStr=get(handles.MaskCngSubcEdit, 'String');
+% 
+%             % determine if the input of exposure field is a valid number
+%             if ~isempty(str2num(expStr))
+%                 if length(size(str2num(expStr)))==2
+%                     if size(str2num(expStr))==[1 1]
+%                         % valid
+%                         handles.exp=str2num(expStr);
+%                     end
+%                 end
+%             end
+%             % determine if the input of number of patterns field is a valid number
+%             if ~isempty(str2num(numPatStr))
+%                 if length(size(str2num(numPatStr)))==2
+%                     if size(str2num(numPatStr))==[1 1]
+%                         % valid
+%                         handles.numPat=str2num(numPatStr);
+%                     end
+%                 end
+%             end
+%             % determine if the input of number of Mask changes field is a valid number
+%             if ~isempty(str2num(MaskChngPerStr))
+%                 if length(size(str2num(MaskChngPerStr)))==2
+%                     if size(str2num(MaskChngPerStr))==[1 1]
+%                         if (str2num(MaskChngPerStr)>0)
+%                             % valid
+%                             handles.MaskChngPer=str2num(MaskChngPerStr);
+%                         else
+%                             handles.MaskChngPer=2*str2num(numPatStr);
+%                         end
+%                     end
+%                 end
+%             end
+%         
+%             % determine if the input of number of Mask change subscene field is a valid number
+%             if ~isempty(str2num(MaskChngStr))
+%                 if length(size(str2num(MaskChngStr)))==2
+%                     if size(str2num(MaskChngStr))==[1 1]
+%                         handles.MaskChng=str2num(MaskChngStr);
+%                     end
+%                 end
+%             end
+% 
+%             % write the exposure value into a wirein endpoint
+%             ok.setwireinvalue(handles.obj,hex2dec('11'),handles.exp, hex2dec('ffff'));
+%             % write the number of patterns value into a wirein endpoint
+%             ok.setwireinvalue(handles.obj,hex2dec('12'),handles.numPat, hex2dec('ffff'));
+%             % write the number of pattern changes into a wirein endpoint
+%             ok.setwireinvalue(handles.obj,hex2dec('13'),handles.MaskChng, hex2dec('ffff'));
+%             % write the number of subscene that the mask change should happen into a wirein endpoint
+%             ok.setwireinvalue(handles.obj,hex2dec('14'),handles.MaskChngPer, hex2dec('ffff'));
+%             ok.updatewireins(handles.obj);
 
             % read if full/oneFrameReady flag is triggered
             ok.updatetriggerouts(handles.obj);          
@@ -371,7 +411,7 @@ if get(hObject,'Value') % if this toggle button is pressed
             if stuck_cnt>=50;
                 stuck_cnt = 1;
             	ShowBWImages(handles.obj);
-                ok.activatetriggerin(handles.obj, hex2dec('53'), 2);
+                %ok.activatetriggerin(handles.obj, hex2dec('53'), 2);
             elseif full
                 stuck_cnt = 1;
                 % read from and clear the fifo
@@ -382,27 +422,27 @@ if get(hObject,'Value') % if this toggle button is pressed
                 % display the first arrangement in axes1
                 axes(handles.axes1);
 %                 [handles.Z1, handles.Z3]=showTwoFrame( fullFrame, 1 );
-                handles.Z1=showOneFrame( fullFrame, 1 ,DispFrame,handles);
+                handles.Z1=showOneFrame( fullFrame, 1 ,DispFrame,handles, imgCalib);
                 % rescale due to the zooming function
-                if XL<=10
-                    xlim(XL*184);
-                    ylim(YL*160);
-                else
-                    xlim(XL);
-                    ylim(YL);
-                end
+%                 if XL<=10
+%                     xlim(XL*184);
+%                     ylim(YL*160);
+%                 else
+%                     xlim(XL);
+%                     ylim(YL);
+%                 end
                 % display the second arrangement in axes2
                 axes(handles.axes2);
 %                 [handles.Z2, handles.Z4]=showTwoFrame( fullFrame, 2 );
-                handles.Z2=showOneFrame( fullFrame, 2 ,DispFrame,handles);
+                handles.Z2=showOneFrame( fullFrame, 2 ,DispFrame,handles, imgCalib);
                 % rescale due to the zooming function
-                if XL<=10
-                    xlim(XL*184);
-                    ylim(YL*160);
-                else
-                    xlim(XL);
-                    ylim(YL);
-                end
+%                 if XL<=10
+%                     xlim(XL*184);
+%                     ylim(YL*160);
+%                 else
+%                     xlim(XL);
+%                     ylim(YL);
+%                 end
                 % if save one image button is pressed
                 if mysave
                     storeImgs(hObject, eventdata, handles);
@@ -427,27 +467,27 @@ if get(hObject,'Value') % if this toggle button is pressed
                 % display the first arrangement in axes1
                 axes(handles.axes1);
 %                 [handles.Z1, handles.Z3]=showTwoFrame( oneFrame, 1 );
-                handles.Z1=showOneFrame( oneFrame, 1,DispFrame,handles );
+                handles.Z1=showOneFrame( oneFrame, 1,DispFrame,handles, imgCalib );
                 % rescale due to the zooming function
-               if XL<=10
-                    xlim(XL*184);
-                    ylim(YL*160);
-               else
-                    xlim(XL);
-                    ylim(YL);
-               end
+%                if XL<=10
+%                     xlim(XL*184);
+%                     ylim(YL*160);
+%                else
+%                     xlim(XL);
+%                     ylim(YL);
+%                end
                 % display the second arrangement in axes2
                 axes(handles.axes2);
                 [handles.Z2, handles.Z4]=showTwoFrame( oneFrame, 2 );
-                handles.Z2=showOneFrame( oneFrame, 2 ,DispFrame,handles);
+                handles.Z2=showOneFrame( oneFrame, 2 ,DispFrame,handles, imgCalib);
                 % rescale due to the zooming function
-                if XL<=10
-                    xlim(XL*184);
-                    ylim(YL*160);
-                else
-                    xlim(XL);
-                    ylim(YL);
-                end
+%                 if XL<=10
+%                     xlim(XL*184);
+%                     ylim(YL*160);
+%                 else
+%                     xlim(XL);
+%                     ylim(YL);
+%                 end
                 % if save one image button is pressed
                 if mysave
                     storeImgs(hObject, eventdata, handles);
@@ -910,3 +950,35 @@ function Resolution_Pop_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+
+
+% --- If Enable == 'on', executes on mouse press in 5 pixel border.
+% --- Otherwise, executes on mouse press in 5 pixel border or over DisplayImgTogglebtn.
+function DisplayImgTogglebtn_ButtonDownFcn(hObject, eventdata, handles)
+% hObject    handle to DisplayImgTogglebtn (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on key press with focus on DisplayImgTogglebtn and none of its controls.
+function DisplayImgTogglebtn_KeyPressFcn(hObject, eventdata, handles)
+% hObject    handle to DisplayImgTogglebtn (see GCBO)
+% eventdata  structure with the following fields (see MATLAB.UI.CONTROL.UICONTROL)
+%	Key: name of the key that was pressed, in lower case
+%	Character: character interpretation of the key(s) that was pressed
+%	Modifier: name(s) of the modifier key(s) (i.e., control, shift) pressed
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in ImageCalibToggle.
+function ImageCalibToggle_Callback(hObject, eventdata, handles)
+% hObject    handle to ImageCalibToggle (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hint: get(hObject,'Value') returns toggle state of ImageCalibToggle
+global imgCalib
+imgCalib = get(hObject,'Value');
+
+guidata(hObject, handles);
+

@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue May 30 11:53:23 2017
+// Written by: Map P.20131013 on Fri Jun 16 11:50:38 2017
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -17,6 +17,11 @@ COMP "MSTREAM<9>" LOCATE = SITE "C11" LEVEL 1;
 COMP "OK_DRAIN_B" LOCATE = SITE "C6" LEVEL 1;
 COMP "CLKM" LOCATE = SITE "A18" LEVEL 1;
 COMP "okAA" LOCATE = SITE "W11" LEVEL 1;
+COMP "PHASE_SEL<0>" LOCATE = SITE "C9" LEVEL 1;
+COMP "PHASE_SEL<1>" LOCATE = SITE "A10" LEVEL 1;
+COMP "PHASE_SEL<2>" LOCATE = SITE "C13" LEVEL 1;
+COMP "PHASE_SEL<3>" LOCATE = SITE "B12" LEVEL 1;
+COMP "PHASE_SEL<4>" LOCATE = SITE "C10" LEVEL 1;
 COMP "MSTREAM<10>" LOCATE = SITE "A16" LEVEL 1;
 COMP "okUHU<10>" LOCATE = SITE "W4" LEVEL 1;
 COMP "okUHU<11>" LOCATE = SITE "AB6" LEVEL 1;
@@ -63,7 +68,6 @@ COMP "okUHU<7>" LOCATE = SITE "AA2" LEVEL 1;
 COMP "okUHU<8>" LOCATE = SITE "Y7" LEVEL 1;
 COMP "okUHU<9>" LOCATE = SITE "Y4" LEVEL 1;
 COMP "FSMIND1ACK" LOCATE = SITE "A7" LEVEL 1;
-COMP "FPGA_rst_n" LOCATE = SITE "C13" LEVEL 1;
 COMP "led<0>" LOCATE = SITE "V19" LEVEL 1;
 COMP "led<1>" LOCATE = SITE "V18" LEVEL 1;
 COMP "led<2>" LOCATE = SITE "Y19" LEVEL 1;
@@ -1140,7 +1144,39 @@ TIMEGRP hostIF_dcm0_clk0 = BEL "hostIF/regctrlout1" BEL "hostIF/regctrlout0"
         "fifo_databuf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_3"
         BEL
         "fifo_databuf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_2"
-        BEL "wire15/ep_datahold_0" BEL "wire15/ep_datahold_1" BEL
+        BEL "okPHASE_SEL/ep_datahold_0" BEL "okPHASE_SEL/ep_datahold_1" BEL
+        "okPHASE_SEL/ep_datahold_2" BEL "okPHASE_SEL/ep_datahold_3" BEL
+        "okPHASE_SEL/ep_datahold_4" BEL "okPHASE_SEL/ep_datahold_5" BEL
+        "okPHASE_SEL/ep_datahold_6" BEL "okPHASE_SEL/ep_datahold_7" BEL
+        "okPHASE_SEL/ep_datahold_8" BEL "okPHASE_SEL/ep_datahold_9" BEL
+        "okPHASE_SEL/ep_datahold_10" BEL "okPHASE_SEL/ep_datahold_11" BEL
+        "okPHASE_SEL/ep_datahold_12" BEL "okPHASE_SEL/ep_datahold_13" BEL
+        "okPHASE_SEL/ep_datahold_14" BEL "okPHASE_SEL/ep_datahold_15" BEL
+        "okPHASE_SEL/ep_datahold_16" BEL "okPHASE_SEL/ep_datahold_17" BEL
+        "okPHASE_SEL/ep_datahold_18" BEL "okPHASE_SEL/ep_datahold_19" BEL
+        "okPHASE_SEL/ep_datahold_20" BEL "okPHASE_SEL/ep_datahold_21" BEL
+        "okPHASE_SEL/ep_datahold_22" BEL "okPHASE_SEL/ep_datahold_23" BEL
+        "okPHASE_SEL/ep_datahold_24" BEL "okPHASE_SEL/ep_datahold_25" BEL
+        "okPHASE_SEL/ep_datahold_26" BEL "okPHASE_SEL/ep_datahold_27" BEL
+        "okPHASE_SEL/ep_datahold_28" BEL "okPHASE_SEL/ep_datahold_29" BEL
+        "okPHASE_SEL/ep_datahold_30" BEL "okPHASE_SEL/ep_datahold_31" BEL
+        "okPHASE_SEL/ep_dataout_0" BEL "okPHASE_SEL/ep_dataout_1" BEL
+        "okPHASE_SEL/ep_dataout_2" BEL "okPHASE_SEL/ep_dataout_3" BEL
+        "okPHASE_SEL/ep_dataout_4" BEL "okPHASE_SEL/ep_dataout_5" BEL
+        "okPHASE_SEL/ep_dataout_6" BEL "okPHASE_SEL/ep_dataout_7" BEL
+        "okPHASE_SEL/ep_dataout_8" BEL "okPHASE_SEL/ep_dataout_9" BEL
+        "okPHASE_SEL/ep_dataout_10" BEL "okPHASE_SEL/ep_dataout_11" BEL
+        "okPHASE_SEL/ep_dataout_12" BEL "okPHASE_SEL/ep_dataout_13" BEL
+        "okPHASE_SEL/ep_dataout_14" BEL "okPHASE_SEL/ep_dataout_15" BEL
+        "okPHASE_SEL/ep_dataout_16" BEL "okPHASE_SEL/ep_dataout_17" BEL
+        "okPHASE_SEL/ep_dataout_18" BEL "okPHASE_SEL/ep_dataout_19" BEL
+        "okPHASE_SEL/ep_dataout_20" BEL "okPHASE_SEL/ep_dataout_21" BEL
+        "okPHASE_SEL/ep_dataout_22" BEL "okPHASE_SEL/ep_dataout_23" BEL
+        "okPHASE_SEL/ep_dataout_24" BEL "okPHASE_SEL/ep_dataout_25" BEL
+        "okPHASE_SEL/ep_dataout_26" BEL "okPHASE_SEL/ep_dataout_27" BEL
+        "okPHASE_SEL/ep_dataout_28" BEL "okPHASE_SEL/ep_dataout_29" BEL
+        "okPHASE_SEL/ep_dataout_30" BEL "okPHASE_SEL/ep_dataout_31" BEL
+        "wire15/ep_datahold_0" BEL "wire15/ep_datahold_1" BEL
         "wire15/ep_datahold_2" BEL "wire15/ep_datahold_3" BEL
         "wire15/ep_datahold_4" BEL "wire15/ep_datahold_5" BEL
         "wire15/ep_datahold_6" BEL "wire15/ep_datahold_7" BEL
@@ -3016,9 +3052,9 @@ TS_okHostClk = PERIOD TIMEGRP "okHostClk" 9.92 ns HIGH 50%;
 TS_okSysClk = PERIOD TIMEGRP "okSysClk" 10 ns HIGH 50%;
 TS_hostIF_dcm0_clk0 = PERIOD TIMEGRP "hostIF_dcm0_clk0" TS_okHostClk PHASE
         -0.93 ns HIGH 50%;
+TS_CLK_HS = PERIOD TIMEGRP "CLK_HS" TS_okSysClk HIGH 50%;
 TS_CLK_HS180 = PERIOD TIMEGRP "CLK_HS180" TS_okSysClk PHASE 5 ns HIGH 50%;
 TS_sys_clkDV = PERIOD TIMEGRP "sys_clkDV" TS_okSysClk * 3 HIGH 50%;
-TS_CLK_HS = PERIOD TIMEGRP "CLK_HS" TS_okSysClk HIGH 50%;
 TS_CLKMPRE_int180 = PERIOD TIMEGRP "CLKMPRE_int180" TS_sys_clkDV / 0.166666667
         PHASE 90 ns HIGH 50%;
 TS_CLKMPRE_int = PERIOD TIMEGRP "CLKMPRE_int" TS_sys_clkDV / 0.166666667 HIGH

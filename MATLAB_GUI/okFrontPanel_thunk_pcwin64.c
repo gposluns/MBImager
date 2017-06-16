@@ -1,4 +1,4 @@
-/* C thunk file for functions in okFrontPanel_proto.m generated on Mon May  1 14:29:24 2017. */
+/* C thunk file for functions in okFrontPanel_proto.m generated on Fri Jun 16 12:57:20 2017. */
 
 
 #ifdef _WIN32

@@ -1,13 +1,13 @@
-# 1 "C:\\Users\\MBImager\\Documents\\MBImager_ams\\MATLAB\\MATLAB_GUI\\okFrontPanelDLL.h"
+# 1 "D:\\MBImager-master\\MATLAB_GUI\\okFrontPanelDLL.h"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "C:\\Users\\MBImager\\Documents\\MBImager_ams\\MATLAB\\MATLAB_GUI\\okFrontPanelDLL.h"
-# 31 "C:\\Users\\MBImager\\Documents\\MBImager_ams\\MATLAB\\MATLAB_GUI\\okFrontPanelDLL.h"
+# 1 "D:\\MBImager-master\\MATLAB_GUI\\okFrontPanelDLL.h"
+# 31 "D:\\MBImager-master\\MATLAB_GUI\\okFrontPanelDLL.h"
  typedef unsigned int UINT32;
  typedef unsigned char UINT8;
-# 44 "C:\\Users\\MBImager\\Documents\\MBImager_ams\\MATLAB\\MATLAB_GUI\\okFrontPanelDLL.h"
+# 44 "D:\\MBImager-master\\MATLAB_GUI\\okFrontPanelDLL.h"
  typedef const char * okFP_dll_pchar;
-# 60 "C:\\Users\\MBImager\\Documents\\MBImager_ams\\MATLAB\\MATLAB_GUI\\okFrontPanelDLL.h"
+# 60 "D:\\MBImager-master\\MATLAB_GUI\\okFrontPanelDLL.h"
 typedef unsigned long okPLL22150_HANDLE;
 typedef unsigned long okPLL22393_HANDLE;
 typedef unsigned long okFrontPanel_HANDLE;
@@ -21,7 +21,7 @@ typedef int Bool;
 
 
  typedef char okBool;
-# 84 "C:\\Users\\MBImager\\Documents\\MBImager_ams\\MATLAB\\MATLAB_GUI\\okFrontPanelDLL.h"
+# 84 "D:\\MBImager-master\\MATLAB_GUI\\okFrontPanelDLL.h"
 typedef enum {
  ok_ClkSrc22150_Ref=0,
  ok_ClkSrc22150_Div1ByN=1,
@@ -104,7 +104,7 @@ typedef enum {
  ok_InvalidResetProfile = -19,
  ok_InvalidParameter = -20
 } ok_ErrorCode;
-# 221 "C:\\Users\\MBImager\\Documents\\MBImager_ams\\MATLAB\\MATLAB_GUI\\okFrontPanelDLL.h"
+# 221 "D:\\MBImager-master\\MATLAB_GUI\\okFrontPanelDLL.h"
 enum okEFPGAConfigurationMethod {
  ok_FPGAConfigurationMethod_NVRAM = (0),
  ok_FPGAConfigurationMethod_JTAG = (1)

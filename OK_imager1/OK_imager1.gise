@@ -225,7 +225,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1496159507" xil_pn:in_ck="-3430378465423615052" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-7031424421206006752" xil_pn:start_ts="1496159471">
+    <transform xil_pn:end_ts="1497628124" xil_pn:in_ck="-3430378465423615052" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-7031424421206006752" xil_pn:start_ts="1497628083">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -247,24 +247,20 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1496159519" xil_pn:in_ck="820423631596590985" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-2260270000890458382" xil_pn:start_ts="1496159507">
+    <transform xil_pn:end_ts="1497628137" xil_pn:in_ck="820423631596590985" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-2260270000890458382" xil_pn:start_ts="1497628124">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="OK_imager.bld"/>
       <outfile xil_pn:name="OK_imager.ngd"/>
       <outfile xil_pn:name="OK_imager_ngdbuild.xrpt"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1496159607" xil_pn:in_ck="1605590598387686624" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="-7060404927121445762" xil_pn:start_ts="1496159519">
+    <transform xil_pn:end_ts="1497628243" xil_pn:in_ck="1605590598387686624" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="-7060404927121445762" xil_pn:start_ts="1497628137">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="OK_imager.pcf"/>
       <outfile xil_pn:name="OK_imager_map.map"/>
       <outfile xil_pn:name="OK_imager_map.mrp"/>
@@ -275,7 +271,7 @@
       <outfile xil_pn:name="OK_imager_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1496159803" xil_pn:in_ck="-6083760404914783975" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-3829590541433901613" xil_pn:start_ts="1496159607">
+    <transform xil_pn:end_ts="1497628441" xil_pn:in_ck="-6083760404914783975" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-3829590541433901613" xil_pn:start_ts="1497628243">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -294,6 +290,10 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="OK_imager.ut"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
       <outfile xil_pn:name="ok_imager.bgn"/>
@@ -328,7 +328,7 @@
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputRemoved"/>
     </transform>
-    <transform xil_pn:end_ts="1496159803" xil_pn:in_ck="-1843678860252134052" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1496159792">
+    <transform xil_pn:end_ts="1497628452" xil_pn:in_ck="-1843678860252134052" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1497628441">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="OK_imager.twr"/>
