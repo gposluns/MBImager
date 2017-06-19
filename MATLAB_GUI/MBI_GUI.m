@@ -25,7 +25,7 @@ function varargout = MBI_GUI(varargin)
 
 % Edit the above text to modify the response to help MBI_GUI
 
-% Last Modified by GUIDE v2.5 14-Jun-2017 11:40:49
+% Last Modified by GUIDE v2.5 19-Jun-2017 16:28:14
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -981,4 +981,3 @@ global imgCalib
 imgCalib = get(hObject,'Value');
 
 guidata(hObject, handles);
-
