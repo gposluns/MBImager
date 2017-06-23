@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Jun 16 11:50:38 2017
+// Written by: Map P.20131013 on Fri Jun 23 15:26:28 2017
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -2708,19 +2708,19 @@ TIMEGRP hostIF_dcm0_clk0 = BEL "hostIF/regctrlout1" BEL "hostIF/regctrlout0"
         "hostIF/core0/core0/a0/pc0/upper_reg_banks_RAMD" BEL
         "hostIF/dcm0_bufg" PIN "SP6_INS_BUFIO2FB_DCM_ML_BUFIO2FB_3_pins<1>"
         PIN "hostIF/dcm0_pins<1>";
-PIN ROImager_inst/Mmult_n0100_pins<110> = BEL "ROImager_inst/Mmult_n0100"
+PIN ROImager_inst/Mmult_n0096_pins<110> = BEL "ROImager_inst/Mmult_n0096"
         PINNAME CLK;
 PIN ODDR2_CLKMPRE_IO_pins<2> = BEL "ODDR2_CLKMPRE_IO" PINNAME CK1;
-PIN ROImager_inst/Mmult_n01001_pins<110> = BEL "ROImager_inst/Mmult_n01001"
+PIN ROImager_inst/Mmult_n00961_pins<110> = BEL "ROImager_inst/Mmult_n00961"
         PINNAME CLK;
 TIMEGRP CLKMPRE_int = BEL "ROImager_inst/state_FSM_FFd1" BEL
         "ROImager_inst/state_FSM_FFd2" BEL "ROImager_inst/state_FSM_FFd4" BEL
         "ROImager_inst/state_FSM_FFd5" BEL "ROImager_inst/state_FSM_FFd3" BEL
         "ROImager_inst/state_FSM_FFd6" PIN
-        "ROImager_inst/Mmult_n0100_pins<110>" BEL "ROImager_inst/fsm_stat_i_6"
+        "ROImager_inst/Mmult_n0096_pins<110>" BEL "ROImager_inst/fsm_stat_i_6"
         BEL "ROImager_inst/fsm_stat_i_3" BEL "ROImager_inst/fsm_stat_i_1" BEL
-        "ROImager_inst/OK_PIXRES_GLOB" BEL "ROImager_inst/FSMIND1_i" BEL
-        "ROImager_inst/OK_DRAIN_B" BEL "ROImager_inst/count_subsc_31" BEL
+        "ROImager_inst/FSMIND1_i" BEL "ROImager_inst/OK_DRAIN_B" BEL
+        "ROImager_inst/OK_PIXRES_GLOB" BEL "ROImager_inst/count_subsc_31" BEL
         "ROImager_inst/count_subsc_30" BEL "ROImager_inst/count_subsc_29" BEL
         "ROImager_inst/count_subsc_28" BEL "ROImager_inst/count_subsc_27" BEL
         "ROImager_inst/count_subsc_26" BEL "ROImager_inst/count_subsc_25" BEL
@@ -2756,7 +2756,7 @@ TIMEGRP CLKMPRE_int = BEL "ROImager_inst/state_FSM_FFd1" BEL
         "CLKMPRE_int_BUFG" BEL "ROImager_inst/STREAM" BEL
         "ROImager_inst/fsm_stat_i_5" BEL "ROImager_inst/fsm_stat_i_4" BEL
         "ROImager_inst/fsm_stat_i_2" PIN "ODDR2_CLKMPRE_IO_pins<2>" PIN
-        "ROImager_inst/Mmult_n01001_pins<110>";
+        "ROImager_inst/Mmult_n00961_pins<110>";
 PIN
         FIFO_Patterns/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram_pins<26>
         = BEL

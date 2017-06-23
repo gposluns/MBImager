@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.50 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.26 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.50 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.28 secs
  
 --> Reading design: OK_imager.prj
 
@@ -279,19 +279,19 @@ Synthesizing Unit <ROImager_exp_PatSeperate>.
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
     Found 32-bit adder for signal <count_mpre[31]_GND_6_o_add_4_OUT> created at line 110.
-    Found 32-bit adder for signal <count_subsc[31]_GND_6_o_add_5_OUT> created at line 114.
-    Found 32x5-bit multiplier for signal <n0100> created at line 138.
-    Found 32x7-bit multiplier for signal <n0101> created at line 138.
+    Found 32-bit adder for signal <count_subsc[31]_GND_6_o_add_13_OUT> created at line 130.
+    Found 32x5-bit multiplier for signal <n0096> created at line 138.
+    Found 32x7-bit multiplier for signal <n0097> created at line 138.
     Found 32-bit comparator greater for signal <GND_6_o_count_mpre[31]_LessThan_2_o> created at line 104
     Found 32-bit comparator greater for signal <GND_6_o_count_mpre[31]_LessThan_4_o> created at line 108
-    Found 32-bit comparator greater for signal <n0020> created at line 138
-    Found 32-bit comparator greater for signal <count_subsc[31]_Num_Pat[31]_LessThan_28_o> created at line 140
+    Found 32-bit comparator greater for signal <n0018> created at line 138
+    Found 32-bit comparator greater for signal <count_subsc[31]_Num_Pat[31]_LessThan_25_o> created at line 140
     Summary:
 	inferred   2 Multiplier(s).
 	inferred   2 Adder/Subtractor(s).
 	inferred  78 D-type flip-flop(s).
 	inferred   4 Comparator(s).
-	inferred  11 Multiplexer(s).
+	inferred   9 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <ROImager_exp_PatSeperate> synthesized.
 WARNING:Xst:2144 - The value of attribute <SAFE_RECOVERY_STATE> (S_subc_first) does not match fsm state <state> size (5).
@@ -644,10 +644,10 @@ Macro Statistics
  62-bit comparator lessequal                           : 1
  63-bit comparator lessequal                           : 1
  64-bit comparator lessequal                           : 1
-# Multiplexers                                         : 1023
+# Multiplexers                                         : 1021
  1-bit 2-to-1 multiplexer                              : 1001
  10-bit 2-to-1 multiplexer                             : 8
- 32-bit 2-to-1 multiplexer                             : 14
+ 32-bit 2-to-1 multiplexer                             : 12
 # FSMs                                                 : 2
 
 =========================================================================
@@ -733,10 +733,10 @@ Macro Statistics
  62-bit comparator lessequal                           : 1
  63-bit comparator lessequal                           : 1
  64-bit comparator lessequal                           : 1
-# Multiplexers                                         : 1023
+# Multiplexers                                         : 1021
  1-bit 2-to-1 multiplexer                              : 1001
  10-bit 2-to-1 multiplexer                             : 8
- 32-bit 2-to-1 multiplexer                             : 14
+ 32-bit 2-to-1 multiplexer                             : 12
 # FSMs                                                 : 2
 
 =========================================================================
@@ -871,15 +871,15 @@ Top Level Output File Name         : OK_imager.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 6116
+# BELS                             : 6115
 #      GND                         : 14
 #      INV                         : 67
 #      LUT1                        : 229
 #      LUT2                        : 391
-#      LUT3                        : 304
-#      LUT4                        : 929
-#      LUT5                        : 753
-#      LUT6                        : 1246
+#      LUT3                        : 305
+#      LUT4                        : 895
+#      LUT5                        : 754
+#      LUT6                        : 1277
 #      LUT6_2                      : 50
 #      MUXCY                       : 1297
 #      MUXF7                       : 21
@@ -931,17 +931,17 @@ Selected Device : 6slx45fgg484-2
 
 Slice Logic Utilization: 
  Number of Slice Registers:            1986  out of  54576     3%  
- Number of Slice LUTs:                 4014  out of  27288    14%  
-    Number used as Logic:              3969  out of  27288    14%  
+ Number of Slice LUTs:                 4013  out of  27288    14%  
+    Number used as Logic:              3968  out of  27288    14%  
     Number used as Memory:               45  out of   6408     0%  
        Number used as RAM:               44
        Number used as SRL:                1
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   5112
-   Number with an unused Flip Flop:    3126  out of   5112    61%  
-   Number with an unused LUT:          1098  out of   5112    21%  
-   Number of fully used LUT-FF pairs:   888  out of   5112    17%  
+ Number of LUT Flip Flop pairs used:   5111
+   Number with an unused Flip Flop:    3125  out of   5111    61%  
+   Number with an unused LUT:          1098  out of   5111    21%  
+   Number of fully used LUT-FF pairs:   888  out of   5111    17%  
    Number of unique control sets:       102
 
 IO Utilization: 
@@ -1670,19 +1670,19 @@ Clock to Setup on destination clock sys_clkp
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-okUH<0>        |   17.496|         |  127.024|         |
-sys_clkp       |   16.901|    4.259|  125.453|         |
+okUH<0>        |   17.847|         |  127.024|         |
+sys_clkp       |   17.252|    4.259|  125.453|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 35.00 secs
-Total CPU time to Xst completion: 34.91 secs
+Total REAL time to Xst completion: 29.00 secs
+Total CPU time to Xst completion: 28.38 secs
  
 --> 
 
-Total memory usage is 387832 kilobytes
+Total memory usage is 391832 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   55 (   0 filtered)
