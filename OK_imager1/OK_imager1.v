@@ -83,6 +83,7 @@ wire full_2;
 wire empty;
 wire empty_2;
 wire flag_2frames;
+wire flag_1frame;
 wire d_buf_valid;
 wire fifo1_rd_en;
 wire [7:0] STATUS;
@@ -121,7 +122,8 @@ assign FPGA_rst_n = ~FSMstop;
 assign rst = wireout[0];
 assign trig6Aout[0] = full_2;
 assign trig6Aout[1] = flag_2frames;
-assign trig6Aout[31:2] = 30'b0;
+assign trig6Aout[2] = ~flag_1frame;
+assign trig6Aout[31:3] = 29'b0;
 assign din_pipe[23:0]=dout_buf;
 assign din_pipe[31:24]=8'b0;
 assign Pat_in[9:0] = wirePatterns[9:0];
@@ -186,7 +188,8 @@ fifo_usbout fifo256kB_out (
   .dout(dout_buf), // output [23 : 0] dout
   .full(full_2), // output full
   .empty(empty_2), // output empty
-  .prog_full(flag_2frames) // output prog_full
+  .prog_full(flag_2frames), // output prog_full
+  .prog_empty(flag_1frame)
 );
 
 fifo_patterns FIFO_Patterns (

@@ -3,11 +3,19 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
+<<<<<<< HEAD
 <application name="pn" timeStamp="Fri Jun 23 15:26:32 2017">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="4F5E433DCC0F40CB8F7E5D8318E96BA3" type="project"/>
 <property name="ProjectIteration" value="137" type="project"/>
 <property name="ProjectFile" value="C:/Users/Wendy/Documents/GitHub/MBImager/OK_imager1/OK_imager1.xise" type="project"/>
+=======
+<application name="pn" timeStamp="Fri Jun 23 15:45:14 2017">
+<section name="Project Information" visible="false">
+<property name="ProjectID" value="4F5E433DCC0F40CB8F7E5D8318E96BA3" type="project"/>
+<property name="ProjectIteration" value="138" type="project"/>
+<property name="ProjectFile" value="C:/Users/MBImager/Documents/MBImager_ams/repo/MBImager/OK_imager1/OK_imager1.xise" type="project"/>
+>>>>>>> 94b931893c4bc3aff282d28966cf0bc2367de8b9
 <property name="ProjectCreationTimestamp" value="2016-10-27T10:39:27" type="project"/>
 </section>
 <section name="Project Statistics" visible="true">
@@ -26,7 +34,11 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PROP_UserConstraintEditorPreference" value="Text Editor" type="process"/>
 <property name="PROP_intProjectCreationTimestamp" value="2016-10-27T10:39:27" type="design"/>
 <property name="PROP_intWbtProjectID" value="4F5E433DCC0F40CB8F7E5D8318E96BA3" type="design"/>
+<<<<<<< HEAD
 <property name="PROP_intWbtProjectIteration" value="137" type="process"/>
+=======
+<property name="PROP_intWbtProjectIteration" value="138" type="process"/>
+>>>>>>> 94b931893c4bc3aff282d28966cf0bc2367de8b9
 <property name="PROP_intWorkingDirLocWRTProjDir" value="Same" type="design"/>
 <property name="PROP_intWorkingDirUsed" value="No" type="design"/>
 <property name="PROP_selectedSimRootSourceNode_behav" value="work.TB_OKimager" type="process"/>
@@ -34,6 +46,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PROP_selectedSimSourceNode" value="uut" type="process"/>
 <property name="PROP_xilxBitgStart_IntDone" value="true" type="process"/>
 <property name="PROP_AutoTop" value="false" type="design"/>
+<property name="PROP_CompxlibEdkSimLib" value="true" type="process"/>
 <property name="PROP_DevFamily" value="Spartan6" type="design"/>
 <property name="PROP_DevDevice" value="xc6slx45" type="design"/>
 <property name="PROP_DevFamilyPMName" value="spartan6" type="design"/>

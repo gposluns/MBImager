@@ -1,5 +1,9 @@
 //! **************************************************************************
+<<<<<<< HEAD
 // Written by: Map P.20131013 on Fri Jun 23 15:26:28 2017
+=======
+// Written by: Map P.20131013 on Fri Jun 23 15:45:11 2017
+>>>>>>> 94b931893c4bc3aff282d28966cf0bc2367de8b9
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -1768,6 +1772,44 @@ TIMEGRP hostIF_dcm0_clk0 = BEL "hostIF/regctrlout1" BEL "hostIF/regctrlout0"
         PIN
         "fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[87].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram_pins<29>"
         BEL
+        "fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gpe.rdpe/diff_pntr_pad_16"
+        BEL
+        "fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gpe.rdpe/diff_pntr_pad_15"
+        BEL
+        "fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gpe.rdpe/diff_pntr_pad_14"
+        BEL
+        "fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gpe.rdpe/diff_pntr_pad_13"
+        BEL
+        "fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gpe.rdpe/diff_pntr_pad_12"
+        BEL
+        "fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gpe.rdpe/diff_pntr_pad_11"
+        BEL
+        "fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gpe.rdpe/diff_pntr_pad_10"
+        BEL
+        "fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gpe.rdpe/diff_pntr_pad_9"
+        BEL
+        "fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gpe.rdpe/diff_pntr_pad_8"
+        BEL
+        "fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gpe.rdpe/diff_pntr_pad_7"
+        BEL
+        "fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gpe.rdpe/diff_pntr_pad_6"
+        BEL
+        "fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gpe.rdpe/diff_pntr_pad_5"
+        BEL
+        "fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gpe.rdpe/diff_pntr_pad_4"
+        BEL
+        "fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gpe.rdpe/diff_pntr_pad_3"
+        BEL
+        "fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gpe.rdpe/diff_pntr_pad_2"
+        BEL
+        "fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gpe.rdpe/diff_pntr_pad_1"
+        BEL
+        "fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gpe.rdpe/prog_empty_i"
+        BEL
+        "fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gpe.rdpe/ram_wr_en_i"
+        BEL
+        "fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gpe.rdpe/ram_rd_en_i"
+        BEL
         "fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_15"
         BEL
         "fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_14"
@@ -2715,9 +2757,14 @@ PIN ROImager_inst/Mmult_n00961_pins<110> = BEL "ROImager_inst/Mmult_n00961"
         PINNAME CLK;
 TIMEGRP CLKMPRE_int = BEL "ROImager_inst/state_FSM_FFd1" BEL
         "ROImager_inst/state_FSM_FFd2" BEL "ROImager_inst/state_FSM_FFd4" BEL
+<<<<<<< HEAD
         "ROImager_inst/state_FSM_FFd5" BEL "ROImager_inst/state_FSM_FFd3" BEL
         "ROImager_inst/state_FSM_FFd6" PIN
         "ROImager_inst/Mmult_n0096_pins<110>" BEL "ROImager_inst/fsm_stat_i_6"
+=======
+        "ROImager_inst/state_FSM_FFd3" BEL "ROImager_inst/state_FSM_FFd6" PIN
+        "ROImager_inst/Mmult_n0100_pins<110>" BEL "ROImager_inst/fsm_stat_i_6"
+>>>>>>> 94b931893c4bc3aff282d28966cf0bc2367de8b9
         BEL "ROImager_inst/fsm_stat_i_3" BEL "ROImager_inst/fsm_stat_i_1" BEL
         "ROImager_inst/FSMIND1_i" BEL "ROImager_inst/OK_DRAIN_B" BEL
         "ROImager_inst/OK_PIXRES_GLOB" BEL "ROImager_inst/count_subsc_31" BEL
@@ -2755,8 +2802,13 @@ TIMEGRP CLKMPRE_int = BEL "ROImager_inst/state_FSM_FFd1" BEL
         "ROImager_inst/count_mpre_0" BEL "ROImager_inst/FSMIND0ACK_i" BEL
         "CLKMPRE_int_BUFG" BEL "ROImager_inst/STREAM" BEL
         "ROImager_inst/fsm_stat_i_5" BEL "ROImager_inst/fsm_stat_i_4" BEL
+<<<<<<< HEAD
         "ROImager_inst/fsm_stat_i_2" PIN "ODDR2_CLKMPRE_IO_pins<2>" PIN
         "ROImager_inst/Mmult_n00961_pins<110>";
+=======
+        "ROImager_inst/fsm_stat_i_2" BEL "ROImager_inst/state_FSM_FFd5" PIN
+        "ODDR2_CLKMPRE_IO_pins<2>" PIN "ROImager_inst/Mmult_n01001_pins<110>";
+>>>>>>> 94b931893c4bc3aff282d28966cf0bc2367de8b9
 PIN
         FIFO_Patterns/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram_pins<26>
         = BEL
@@ -2999,39 +3051,40 @@ PIN SP6_BUFIO_INSERT_ML_BUFIO2_0_pins<0> = BEL "SP6_BUFIO_INSERT_ML_BUFIO2_0"
         PINNAME DIVCLK;
 PIN DCM_SP_CLKHS_pins<5> = BEL "DCM_SP_CLKHS" PINNAME CLKIN;
 TIMEGRP okSysClk = BEL "trigOut6A/ep_trigger0_0" BEL "trigOut6A/ep_trigger0_1"
-        BEL "trigOut6A/captrig0" BEL "trigOut6A/captrig1" BEL
-        "trigOut6A/eptrig_0" BEL "trigOut6A/eptrig_1" BEL "trigOut6A/eptrig_2"
-        BEL "trigOut6A/eptrig_3" BEL "trigOut6A/eptrig_4" BEL
-        "trigOut6A/eptrig_5" BEL "trigOut6A/eptrig_6" BEL "trigOut6A/eptrig_7"
-        BEL "trigOut6A/eptrig_8" BEL "trigOut6A/eptrig_9" BEL
-        "trigOut6A/eptrig_10" BEL "trigOut6A/eptrig_11" BEL
-        "trigOut6A/eptrig_12" BEL "trigOut6A/eptrig_13" BEL
-        "trigOut6A/eptrig_14" BEL "trigOut6A/eptrig_15" BEL
-        "trigOut6A/eptrig_16" BEL "trigOut6A/eptrig_17" BEL
-        "trigOut6A/eptrig_18" BEL "trigOut6A/eptrig_19" BEL
-        "trigOut6A/eptrig_20" BEL "trigOut6A/eptrig_21" BEL
-        "trigOut6A/eptrig_22" BEL "trigOut6A/eptrig_23" BEL
-        "trigOut6A/eptrig_24" BEL "trigOut6A/eptrig_25" BEL
-        "trigOut6A/eptrig_26" BEL "trigOut6A/eptrig_27" BEL
-        "trigOut6A/eptrig_28" BEL "trigOut6A/eptrig_29" BEL
-        "trigOut6A/eptrig_30" BEL "trigOut6A/eptrig_31" BEL
-        "trigOut6A/trighold_0" BEL "trigOut6A/trighold_1" BEL
-        "trigOut6A/trighold_2" BEL "trigOut6A/trighold_3" BEL
-        "trigOut6A/trighold_4" BEL "trigOut6A/trighold_5" BEL
-        "trigOut6A/trighold_6" BEL "trigOut6A/trighold_7" BEL
-        "trigOut6A/trighold_8" BEL "trigOut6A/trighold_9" BEL
-        "trigOut6A/trighold_10" BEL "trigOut6A/trighold_11" BEL
-        "trigOut6A/trighold_12" BEL "trigOut6A/trighold_13" BEL
-        "trigOut6A/trighold_14" BEL "trigOut6A/trighold_15" BEL
-        "trigOut6A/trighold_16" BEL "trigOut6A/trighold_17" BEL
-        "trigOut6A/trighold_18" BEL "trigOut6A/trighold_19" BEL
-        "trigOut6A/trighold_20" BEL "trigOut6A/trighold_21" BEL
-        "trigOut6A/trighold_22" BEL "trigOut6A/trighold_23" BEL
-        "trigOut6A/trighold_24" BEL "trigOut6A/trighold_25" BEL
-        "trigOut6A/trighold_26" BEL "trigOut6A/trighold_27" BEL
-        "trigOut6A/trighold_28" BEL "trigOut6A/trighold_29" BEL
-        "trigOut6A/trighold_30" BEL "trigOut6A/trighold_31" PIN
-        "SP6_BUFIO_INSERT_ML_BUFIO2_0_pins<0>" PIN "DCM_SP_CLKHS_pins<5>";
+        BEL "trigOut6A/ep_trigger0_2" BEL "trigOut6A/captrig0" BEL
+        "trigOut6A/captrig1" BEL "trigOut6A/eptrig_0" BEL "trigOut6A/eptrig_1"
+        BEL "trigOut6A/eptrig_2" BEL "trigOut6A/eptrig_3" BEL
+        "trigOut6A/eptrig_4" BEL "trigOut6A/eptrig_5" BEL "trigOut6A/eptrig_6"
+        BEL "trigOut6A/eptrig_7" BEL "trigOut6A/eptrig_8" BEL
+        "trigOut6A/eptrig_9" BEL "trigOut6A/eptrig_10" BEL
+        "trigOut6A/eptrig_11" BEL "trigOut6A/eptrig_12" BEL
+        "trigOut6A/eptrig_13" BEL "trigOut6A/eptrig_14" BEL
+        "trigOut6A/eptrig_15" BEL "trigOut6A/eptrig_16" BEL
+        "trigOut6A/eptrig_17" BEL "trigOut6A/eptrig_18" BEL
+        "trigOut6A/eptrig_19" BEL "trigOut6A/eptrig_20" BEL
+        "trigOut6A/eptrig_21" BEL "trigOut6A/eptrig_22" BEL
+        "trigOut6A/eptrig_23" BEL "trigOut6A/eptrig_24" BEL
+        "trigOut6A/eptrig_25" BEL "trigOut6A/eptrig_26" BEL
+        "trigOut6A/eptrig_27" BEL "trigOut6A/eptrig_28" BEL
+        "trigOut6A/eptrig_29" BEL "trigOut6A/eptrig_30" BEL
+        "trigOut6A/eptrig_31" BEL "trigOut6A/trighold_0" BEL
+        "trigOut6A/trighold_1" BEL "trigOut6A/trighold_2" BEL
+        "trigOut6A/trighold_3" BEL "trigOut6A/trighold_4" BEL
+        "trigOut6A/trighold_5" BEL "trigOut6A/trighold_6" BEL
+        "trigOut6A/trighold_7" BEL "trigOut6A/trighold_8" BEL
+        "trigOut6A/trighold_9" BEL "trigOut6A/trighold_10" BEL
+        "trigOut6A/trighold_11" BEL "trigOut6A/trighold_12" BEL
+        "trigOut6A/trighold_13" BEL "trigOut6A/trighold_14" BEL
+        "trigOut6A/trighold_15" BEL "trigOut6A/trighold_16" BEL
+        "trigOut6A/trighold_17" BEL "trigOut6A/trighold_18" BEL
+        "trigOut6A/trighold_19" BEL "trigOut6A/trighold_20" BEL
+        "trigOut6A/trighold_21" BEL "trigOut6A/trighold_22" BEL
+        "trigOut6A/trighold_23" BEL "trigOut6A/trighold_24" BEL
+        "trigOut6A/trighold_25" BEL "trigOut6A/trighold_26" BEL
+        "trigOut6A/trighold_27" BEL "trigOut6A/trighold_28" BEL
+        "trigOut6A/trighold_29" BEL "trigOut6A/trighold_30" BEL
+        "trigOut6A/trighold_31" PIN "SP6_BUFIO_INSERT_ML_BUFIO2_0_pins<0>" PIN
+        "DCM_SP_CLKHS_pins<5>";
 TIMEGRP okHostINOUT_grp = BEL "okUHU<31>" BEL "okUHU<30>" BEL "okUHU<29>" BEL
         "okUHU<28>" BEL "okUHU<27>" BEL "okUHU<26>" BEL "okUHU<25>" BEL
         "okUHU<24>" BEL "okUHU<23>" BEL "okUHU<22>" BEL "okUHU<21>" BEL
@@ -3055,10 +3108,10 @@ TS_hostIF_dcm0_clk0 = PERIOD TIMEGRP "hostIF_dcm0_clk0" TS_okHostClk PHASE
 TS_CLK_HS = PERIOD TIMEGRP "CLK_HS" TS_okSysClk HIGH 50%;
 TS_CLK_HS180 = PERIOD TIMEGRP "CLK_HS180" TS_okSysClk PHASE 5 ns HIGH 50%;
 TS_sys_clkDV = PERIOD TIMEGRP "sys_clkDV" TS_okSysClk * 3 HIGH 50%;
-TS_CLKMPRE_int180 = PERIOD TIMEGRP "CLKMPRE_int180" TS_sys_clkDV / 0.166666667
-        PHASE 90 ns HIGH 50%;
 TS_CLKMPRE_int = PERIOD TIMEGRP "CLKMPRE_int" TS_sys_clkDV / 0.166666667 HIGH
         50%;
+TS_CLKMPRE_int180 = PERIOD TIMEGRP "CLKMPRE_int180" TS_sys_clkDV / 0.166666667
+        PHASE 90 ns HIGH 50%;
 TIMEGRP "okHostINOUT_grp" OFFSET = IN 2 ns VALID 4 ns BEFORE COMP "okUH<0>"
         "RISING";
 TIMEGRP "okHostINOUT_grp" OFFSET = OUT 8 ns AFTER COMP "okUH<0>" "RISING";

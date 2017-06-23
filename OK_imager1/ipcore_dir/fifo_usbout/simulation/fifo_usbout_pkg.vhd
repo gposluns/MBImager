@@ -200,6 +200,7 @@ PACKAGE fifo_usbout_pkg IS
            CLK                       : IN  std_logic;
            RST                       : IN  std_logic;
            PROG_FULL                 : OUT std_logic;
+           PROG_EMPTY                : OUT std_logic;
            WR_EN 		     : IN  std_logic;
            RD_EN                     : IN  std_logic;
            DIN                       : IN  std_logic_vector(24-1 DOWNTO 0);

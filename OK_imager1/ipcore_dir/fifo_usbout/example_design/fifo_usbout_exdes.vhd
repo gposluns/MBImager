@@ -76,6 +76,7 @@ entity fifo_usbout_exdes is
            CLK                       : IN  std_logic;
            RST                       : IN  std_logic;
            PROG_FULL                 : OUT std_logic;
+           PROG_EMPTY                : OUT std_logic;
            WR_EN 		     : IN  std_logic;
            RD_EN                     : IN  std_logic;
            DIN                       : IN  std_logic_vector(24-1 DOWNTO 0);
@@ -98,6 +99,7 @@ architecture xilinx of fifo_usbout_exdes is
            CLK                       : IN  std_logic;
            RST                       : IN  std_logic;
            PROG_FULL                 : OUT std_logic;
+           PROG_EMPTY                : OUT std_logic;
            WR_EN 		     : IN  std_logic;
            RD_EN                     : IN  std_logic;
            DIN                       : IN  std_logic_vector(24-1 DOWNTO 0);
@@ -122,6 +124,7 @@ begin
            CLK                       => clk_i,
            RST                       => rst,
            PROG_FULL                 => prog_full,
+           PROG_EMPTY                => prog_empty,
            WR_EN 		     => wr_en,
            RD_EN                     => rd_en,
            DIN                       => din,

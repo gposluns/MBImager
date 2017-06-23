@@ -1,4 +1,5 @@
 INTSTYLE=ise
+<<<<<<< HEAD
 INFILE=C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager.ncd
 OUTFILE=C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager.bit
 FAMILY=Spartan6
@@ -6,3 +7,12 @@ PART=xc6slx45-2fgg484
 WORKINGDIR=C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1
 LICENSE=ISE
 USER_INFO=174208431_1777515441_210640978_209
+=======
+INFILE=C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager.ncd
+OUTFILE=C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager.bit
+FAMILY=Spartan6
+PART=xc6slx45-2fgg484
+WORKINGDIR=C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1
+LICENSE=WebPack
+USER_INFO=__0_0_0
+>>>>>>> 94b931893c4bc3aff282d28966cf0bc2367de8b9
