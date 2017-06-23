@@ -1,4 +1,4 @@
-function Z=showOneFrame( frame, displayIdt,dispframe,handles, imgCalib  )
+function Z=showOneFrame( frame, displayIdt,dispframe,handles, imgCalib, showHist  )
 % This function arranges the data received from pipeout endpoint and
 % displays and returns the resulting array/image
 % frame contains the data to be processed
@@ -52,37 +52,21 @@ function Z=showOneFrame( frame, displayIdt,dispframe,handles, imgCalib  )
         end
     end
     
-
     % display the resulting image
-     if dispframe == 0
+    if dispframe == 0
         %image = zeros(row, indiCol, 'uint8');
         image = Z;
-        imshow(image);
-        if displayIdt==1
-            axes(handles.axes3);
-            imhist(image, 256);
-        else %2
-            axes(handles.axes4);
-            imhist(image, 256);
-        end
-        
     elseif dispframe == 2
 
         %image = zeros(160,120, 'uint8');
-        image = Z(1:160,63:182);
-        imshow(image);
-         if displayIdt==1
-            axes(handles.axes3);
-            imhist(image, 256);
-        else
-            axes(handles.axes4);
-            imhist(image, 256);
-        end
-     else
+        image = Z(1:160,63:182);  
+    else
         %image = zeros(80, 60, 'uint8');
-        image = Z(1:80,3:62);
-        imshow(image);
-         if displayIdt==1
+        image = Z(1:80,3:62); 
+    end
+    imshow(image);
+    if showHist
+        if displayIdt==1
             axes(handles.axes3);
             imhist(image, 256);
         else

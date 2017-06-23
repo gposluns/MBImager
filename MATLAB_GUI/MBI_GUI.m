@@ -25,7 +25,7 @@ function varargout = MBI_GUI(varargin)
 
 % Edit the above text to modify the response to help MBI_GUI
 
-% Last Modified by GUIDE v2.5 19-Jun-2017 16:28:14
+% Last Modified by GUIDE v2.5 19-Jun-2017 16:35:00
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -63,7 +63,8 @@ handles.pattern=0;
 handles.exp = 0;
 handles.numPat = 0;
 
-
+global showHist;
+showHist = 0;
 global imgCalib;
 imgCalib = 0;
 global mysave;
@@ -209,6 +210,7 @@ global MaskChngStr;
 global MaskChngPerStr;
 global DispFrame;
 global imgCalib;
+global showHist;
 
 if get(hObject,'Value') % if this toggle button is pressed
     
@@ -422,7 +424,7 @@ if get(hObject,'Value') % if this toggle button is pressed
                 % display the first arrangement in axes1
                 axes(handles.axes1);
 %                 [handles.Z1, handles.Z3]=showTwoFrame( fullFrame, 1 );
-                handles.Z1=showOneFrame( fullFrame, 1 ,DispFrame,handles, imgCalib);
+                handles.Z1=showOneFrame( fullFrame, 1 ,DispFrame,handles, imgCalib, showHist);
                 % rescale due to the zooming function
 %                 if XL<=10
 %                     xlim(XL*184);
@@ -434,7 +436,7 @@ if get(hObject,'Value') % if this toggle button is pressed
                 % display the second arrangement in axes2
                 axes(handles.axes2);
 %                 [handles.Z2, handles.Z4]=showTwoFrame( fullFrame, 2 );
-                handles.Z2=showOneFrame( fullFrame, 2 ,DispFrame,handles, imgCalib);
+                handles.Z2=showOneFrame( fullFrame, 2 ,DispFrame,handles, imgCalib,showHist);
                 % rescale due to the zooming function
 %                 if XL<=10
 %                     xlim(XL*184);
@@ -467,7 +469,7 @@ if get(hObject,'Value') % if this toggle button is pressed
                 % display the first arrangement in axes1
                 axes(handles.axes1);
 %                 [handles.Z1, handles.Z3]=showTwoFrame( oneFrame, 1 );
-                handles.Z1=showOneFrame( oneFrame, 1,DispFrame,handles, imgCalib );
+                handles.Z1=showOneFrame( oneFrame, 1,DispFrame,handles, imgCalib, showHist );
                 % rescale due to the zooming function
 %                if XL<=10
 %                     xlim(XL*184);
@@ -479,7 +481,7 @@ if get(hObject,'Value') % if this toggle button is pressed
                 % display the second arrangement in axes2
                 axes(handles.axes2);
                 [handles.Z2, handles.Z4]=showTwoFrame( oneFrame, 2 );
-                handles.Z2=showOneFrame( oneFrame, 2 ,DispFrame,handles, imgCalib);
+                handles.Z2=showOneFrame( oneFrame, 2 ,DispFrame,handles, imgCalib, showHist);
                 % rescale due to the zooming function
 %                 if XL<=10
 %                     xlim(XL*184);
@@ -981,3 +983,14 @@ global imgCalib
 imgCalib = get(hObject,'Value');
 
 guidata(hObject, handles);
+
+
+% --- Executes on button press in histtoggle.
+function histtoggle_Callback(hObject, eventdata, handles)
+% hObject    handle to histtoggle (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+global showHist
+showHist = get(hObject, 'Value');
+
+% Hint: get(hObject,'Value') returns toggle state of histtoggle
