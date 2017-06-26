@@ -219,7 +219,7 @@
     </transform>
     <transform xil_pn:end_ts="1497382920" xil_pn:in_ck="5200882885382894" xil_pn:name="TRAN_impactProgrammingTool" xil_pn:prop_ck="2682241697568822907" xil_pn:start_ts="1497382920">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputChanged"/>
@@ -227,7 +227,7 @@
     </transform>
     <transform xil_pn:end_ts="1497033896" xil_pn:in_ck="5200882885382894" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="8150872254684753111" xil_pn:start_ts="1497033892">
       <status xil_pn:value="AbortedRun"/>
-      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForced"/>
