@@ -1,10 +1,10 @@
 Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_SPI\synthesis\xst_temp_dir\
+--> Parameter TMPDIR set to D:\MBImager\MBImager_full\MB_SPI\synthesis\xst_temp_dir\
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> 
 TABLE OF CONTENTS
@@ -35,7 +35,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "MB_SPI_microblaze_0_d_bram_ctrl_wrapper_xst.prj"
-Verilog Include Directory          : {"C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_SPI\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"D:\MBImager\MBImager_full\MB_SPI\pcores\" "D:\ISE\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "D:\ISE\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc6slx25tfgg484-3
@@ -62,43 +62,43 @@ Cores Search Directories           : {../implementation}
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/lmb_bram_if_funcs.vhd" into library lmb_bram_if_cntlr_v3_10_c
+Parsing VHDL file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/lmb_bram_if_funcs.vhd" into library lmb_bram_if_cntlr_v3_10_c
 Parsing package <lmb_bram_if_funcs>.
 Parsing package body <lmb_bram_if_funcs>.
-Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/xor18.vhd" into library lmb_bram_if_cntlr_v3_10_c
+Parsing VHDL file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/xor18.vhd" into library lmb_bram_if_cntlr_v3_10_c
 Parsing entity <XOR18>.
 Parsing architecture <IMP> of entity <xor18>.
-Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/parity.vhd" into library lmb_bram_if_cntlr_v3_10_c
+Parsing VHDL file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/parity.vhd" into library lmb_bram_if_cntlr_v3_10_c
 Parsing entity <Parity>.
 Parsing architecture <IMP> of entity <parity>.
-Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/parityenable.vhd" into library lmb_bram_if_cntlr_v3_10_c
+Parsing VHDL file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/parityenable.vhd" into library lmb_bram_if_cntlr_v3_10_c
 Parsing entity <ParityEnable>.
 Parsing architecture <IMP> of entity <parityenable>.
-Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/checkbit_handler.vhd" into library lmb_bram_if_cntlr_v3_10_c
+Parsing VHDL file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/checkbit_handler.vhd" into library lmb_bram_if_cntlr_v3_10_c
 Parsing entity <checkbit_handler>.
 Parsing architecture <IMP> of entity <checkbit_handler>.
-Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/correct_one_bit.vhd" into library lmb_bram_if_cntlr_v3_10_c
+Parsing VHDL file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/correct_one_bit.vhd" into library lmb_bram_if_cntlr_v3_10_c
 Parsing entity <Correct_One_Bit>.
 Parsing architecture <IMP> of entity <correct_one_bit>.
-Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/pselect.vhd" into library lmb_bram_if_cntlr_v3_10_c
+Parsing VHDL file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/pselect.vhd" into library lmb_bram_if_cntlr_v3_10_c
 Parsing entity <pselect>.
 Parsing architecture <imp> of entity <pselect>.
-Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/pselect_mask.vhd" into library lmb_bram_if_cntlr_v3_10_c
+Parsing VHDL file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/pselect_mask.vhd" into library lmb_bram_if_cntlr_v3_10_c
 Parsing entity <pselect_mask>.
 Parsing architecture <imp> of entity <pselect_mask>.
-Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/plb_interface.vhd" into library lmb_bram_if_cntlr_v3_10_c
+Parsing VHDL file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/plb_interface.vhd" into library lmb_bram_if_cntlr_v3_10_c
 Parsing entity <plb_interface>.
 Parsing architecture <IMP> of entity <plb_interface>.
-Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/axi_interface.vhd" into library lmb_bram_if_cntlr_v3_10_c
+Parsing VHDL file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/axi_interface.vhd" into library lmb_bram_if_cntlr_v3_10_c
 Parsing entity <axi_interface>.
 Parsing architecture <IMP> of entity <axi_interface>.
-Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/lmb_mux.vhd" into library lmb_bram_if_cntlr_v3_10_c
+Parsing VHDL file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/lmb_mux.vhd" into library lmb_bram_if_cntlr_v3_10_c
 Parsing entity <lmb_mux>.
 Parsing architecture <imp> of entity <lmb_mux>.
-Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/lmb_bram_if_cntlr.vhd" into library lmb_bram_if_cntlr_v3_10_c
+Parsing VHDL file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/lmb_bram_if_cntlr.vhd" into library lmb_bram_if_cntlr_v3_10_c
 Parsing entity <lmb_bram_if_cntlr>.
 Parsing architecture <imp> of entity <lmb_bram_if_cntlr>.
-Parsing VHDL file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_SPI\hdl\MB_SPI_microblaze_0_d_bram_ctrl_wrapper.vhd" into library work
+Parsing VHDL file "D:\MBImager\MBImager_full\MB_SPI\hdl\MB_SPI_microblaze_0_d_bram_ctrl_wrapper.vhd" into library work
 Parsing entity <MB_SPI_microblaze_0_d_bram_ctrl_wrapper>.
 Parsing architecture <STRUCTURE> of entity <mb_spi_microblaze_0_d_bram_ctrl_wrapper>.
 
@@ -119,13 +119,13 @@ Elaborating entity <pselect_mask> (architecture <imp>) with generics from librar
 =========================================================================
 
 Synthesizing Unit <MB_SPI_microblaze_0_d_bram_ctrl_wrapper>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_SPI\hdl\MB_SPI_microblaze_0_d_bram_ctrl_wrapper.vhd".
+    Related source file is "D:\MBImager\MBImager_full\MB_SPI\hdl\MB_SPI_microblaze_0_d_bram_ctrl_wrapper.vhd".
     Summary:
 	no macro.
 Unit <MB_SPI_microblaze_0_d_bram_ctrl_wrapper> synthesized.
 
 Synthesizing Unit <lmb_bram_if_cntlr>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/lmb_bram_if_cntlr.vhd".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/lmb_bram_if_cntlr.vhd".
         C_FAMILY = "spartan6"
         C_HIGHADDR = "00000000000000000111111111111111"
         C_BASEADDR = "00000000000000000000000000000000"
@@ -194,7 +194,7 @@ WARNING:Xst:647 - Input <S_AXI_CTRL_WVALID> is never used. This port will be pre
 WARNING:Xst:647 - Input <S_AXI_CTRL_BREADY> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <S_AXI_CTRL_ARVALID> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <S_AXI_CTRL_RREADY> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/lmb_bram_if_cntlr.vhd" line 547: Output port <LMB_ReadStrobe> of the instance <lmb_mux_I> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/lmb_bram_if_cntlr.vhd" line 547: Output port <LMB_ReadStrobe> of the instance <lmb_mux_I> is unconnected or connected to loadless signal.
     Found 1-bit register for signal <lmb_as>.
     Found 1-bit register for signal <Sl_Rdy>.
     Summary:
@@ -202,7 +202,7 @@ INFO:Xst:3210 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_br
 Unit <lmb_bram_if_cntlr> synthesized.
 
 Synthesizing Unit <lmb_mux>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/lmb_mux.vhd".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/lmb_mux.vhd".
         C_BASEADDR = "00000000000000000000000000000000"
         C_MASK = "01000000000000000000000000000000"
         C_MASK1 = "00000000100000000000000000000000"
@@ -236,7 +236,7 @@ WARNING:Xst:647 - Input <LMB3_WriteStrobe> is never used. This port will be pres
 Unit <lmb_mux> synthesized.
 
 Synthesizing Unit <pselect_mask>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/pselect_mask.vhd".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/pselect_mask.vhd".
         C_AW = 32
         C_BAR = "00000000000000000000000000000000"
         C_MASK = "01000000000000000000000000000000"
@@ -448,12 +448,12 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.89 secs
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.74 secs
  
 --> 
 
-Total memory usage is 274068 kilobytes
+Total memory usage is 310820 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   57 (   0 filtered)

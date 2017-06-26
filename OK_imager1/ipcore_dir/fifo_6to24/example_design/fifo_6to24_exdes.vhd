@@ -80,8 +80,8 @@ entity fifo_6to24_exdes is
            RST                       : IN  std_logic;
            WR_EN 		     : IN  std_logic;
            RD_EN                     : IN  std_logic;
-           DIN                       : IN  std_logic_vector(6-1 DOWNTO 0);
-           DOUT                      : OUT std_logic_vector(24-1 DOWNTO 0);
+           DIN                       : IN  std_logic_vector(8-1 DOWNTO 0);
+           DOUT                      : OUT std_logic_vector(32-1 DOWNTO 0);
            FULL                      : OUT std_logic;
            EMPTY                     : OUT std_logic);
 
@@ -105,8 +105,8 @@ architecture xilinx of fifo_6to24_exdes is
            RST                       : IN  std_logic;
            WR_EN 		     : IN  std_logic;
            RD_EN                     : IN  std_logic;
-           DIN                       : IN  std_logic_vector(6-1 DOWNTO 0);
-           DOUT                      : OUT std_logic_vector(24-1 DOWNTO 0);
+           DIN                       : IN  std_logic_vector(8-1 DOWNTO 0);
+           DOUT                      : OUT std_logic_vector(32-1 DOWNTO 0);
            FULL                      : OUT std_logic;
            EMPTY                     : OUT std_logic);
 

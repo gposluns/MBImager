@@ -1,7 +1,7 @@
 
-<EDKSYSTEM EDKVERSION="14.7" EDWVERSION="1.2" TIMESTAMP="Fri Dec 02 13:01:41 2016">
+<EDKSYSTEM EDKVERSION="14.7" EDWVERSION="1.2" TIMESTAMP="Mon Jun 19 16:07:34 2017">
 
-  <SYSTEMINFO ARCH="spartan6" DEVICE="xc6slx25t" PACKAGE="fgg484" PART="xc6slx25tfgg484-3" SOURCE="C:/Users/MBImager/Documents/Navid_ISE/MBImager_full/MB_SPI/MB_SPI.xmp" SPEEDGRADE="-3"/>
+  <SYSTEMINFO ARCH="spartan6" DEVICE="xc6slx25t" PACKAGE="fgg484" PART="xc6slx25tfgg484-3" SOURCE="D:/MBImager/MBImager_full/MB_SPI/MB_SPI.xmp" SPEEDGRADE="-3"/>
 
   <EXTERNALPORTS>
     <PORT DIR="I" MHS_INDEX="0" NAME="EXT_RESET_N" RSTPOLARITY="0" SIGIS="RST" SIGNAME="RESET">
@@ -1532,7 +1532,7 @@
       <DESCRIPTION TYPE="SHORT">MicroBlaze</DESCRIPTION>
       <DESCRIPTION TYPE="LONG">The MicroBlaze 32 bit soft processor</DESCRIPTION>
       <DOCUMENTATION>
-        <DOCUMENT SOURCE="C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/microblaze_v8_50_c/doc/microblaze.pdf" TYPE="IP"/>
+        <DOCUMENT SOURCE="D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/microblaze_v8_50_c/doc/microblaze.pdf" TYPE="IP"/>
       </DOCUMENTATION>
       <LICENSEINFO ICON_NAME="ps_core_preferred"/>
       <PARAMETERS>

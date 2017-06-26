@@ -135,6 +135,7 @@ input		[31:0]						  Num_Pat;
 				fsm_stat_i <= 8'b11111100;
 				OK_PIXRES_GLOB <= 0;
 				OK_DRAIN_B <= 1;
+				//wait for exp_susc micro sec
 				if (count_mpre*18 <= Exp_subc*100) begin
 					count_mpre <= count_mpre + 1;
 				end else if (count_subsc <= Num_Pat) begin

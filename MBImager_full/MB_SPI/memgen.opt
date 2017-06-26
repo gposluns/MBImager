@@ -1,0 +1,8 @@
+-p
+xc6slx25tfgg484-3
+-pe
+microblaze_0
+D:/ISE/14.7/ISE_DS/EDK/sw/lib/microblaze/mb_bootloop_le.elf
+-od
+D:/MBImager/MBImager_full
+D:/MBImager/MBImager_full/MB_SPI/MB_SPI.mhs

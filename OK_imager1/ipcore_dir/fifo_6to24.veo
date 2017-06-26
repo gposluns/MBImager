@@ -22,7 +22,7 @@
 *     devices, or systems.  Use in such applications are expressly             *
 *     prohibited.                                                              *
 *                                                                              *
-*     (c) Copyright 1995-2016 Xilinx, Inc.                                     *
+*     (c) Copyright 1995-2017 Xilinx, Inc.                                     *
 *     All rights reserved.                                                     *
 *******************************************************************************/
 
@@ -61,10 +61,10 @@ fifo_6to24 your_instance_name (
   .rst(rst), // input rst
   .wr_clk(wr_clk), // input wr_clk
   .rd_clk(rd_clk), // input rd_clk
-  .din(din), // input [5 : 0] din
+  .din(din), // input [7 : 0] din
   .wr_en(wr_en), // input wr_en
   .rd_en(rd_en), // input rd_en
-  .dout(dout), // output [23 : 0] dout
+  .dout(dout), // output [31 : 0] dout
   .full(full), // output full
   .empty(empty), // output empty
   .almost_empty(almost_empty), // output almost_empty

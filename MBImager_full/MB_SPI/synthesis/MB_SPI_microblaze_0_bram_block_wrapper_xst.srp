@@ -1,10 +1,10 @@
 Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_SPI\synthesis\xst_temp_dir\
+--> Parameter TMPDIR set to D:\MBImager\MBImager_full\MB_SPI\synthesis\xst_temp_dir\
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> 
 TABLE OF CONTENTS
@@ -35,7 +35,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "MB_SPI_microblaze_0_bram_block_wrapper_xst.prj"
-Verilog Include Directory          : {"C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_SPI\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"D:\MBImager\MBImager_full\MB_SPI\pcores\" "D:\ISE\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "D:\ISE\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc6slx25tfgg484-3
@@ -62,9 +62,9 @@ Cores Search Directories           : {../implementation}
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:/Users/MBImager/Documents/MBImager_ams/ISE_projects/MotherBoard/MBImager_full/MB_SPI/hdl/elaborate/microblaze_0_bram_block_elaborate_v1_00_a/hdl/verilog/microblaze_0_bram_block_elaborate.v" into library microblaze_0_bram_block_elaborate_v1_00_a
+Analyzing Verilog file "D:/MBImager/MBImager_full/MB_SPI/hdl/elaborate/microblaze_0_bram_block_elaborate_v1_00_a/hdl/verilog/microblaze_0_bram_block_elaborate.v" into library microblaze_0_bram_block_elaborate_v1_00_a
 Parsing module <microblaze_0_bram_block_elaborate>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_SPI\hdl\MB_SPI_microblaze_0_bram_block_wrapper.v" into library work
+Analyzing Verilog file "D:\MBImager\MBImager_full\MB_SPI\hdl\MB_SPI_microblaze_0_bram_block_wrapper.v" into library work
 Parsing module <MB_SPI_microblaze_0_bram_block_wrapper>.
 
 =========================================================================
@@ -74,8 +74,8 @@ Parsing module <MB_SPI_microblaze_0_bram_block_wrapper>.
 Elaborating module <MB_SPI_microblaze_0_bram_block_wrapper>.
 
 Elaborating module <microblaze_0_bram_block_elaborate(C_MEMSIZE=32'b01000000000000000,C_PORT_DWIDTH=32,C_PORT_AWIDTH=32,C_NUM_WE=4,C_FAMILY="spartan6")>.
-WARNING:HDLCompiler:1127 - "C:/Users/MBImager/Documents/MBImager_ams/ISE_projects/MotherBoard/MBImager_full/MB_SPI/hdl/elaborate/microblaze_0_bram_block_elaborate_v1_00_a/hdl/verilog/microblaze_0_bram_block_elaborate.v" Line 181: Assignment to pgassign1 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/MBImager/Documents/MBImager_ams/ISE_projects/MotherBoard/MBImager_full/MB_SPI/hdl/elaborate/microblaze_0_bram_block_elaborate_v1_00_a/hdl/verilog/microblaze_0_bram_block_elaborate.v" Line 182: Assignment to pgassign2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:/MBImager/MBImager_full/MB_SPI/hdl/elaborate/microblaze_0_bram_block_elaborate_v1_00_a/hdl/verilog/microblaze_0_bram_block_elaborate.v" Line 181: Assignment to pgassign1 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:/MBImager/MBImager_full/MB_SPI/hdl/elaborate/microblaze_0_bram_block_elaborate_v1_00_a/hdl/verilog/microblaze_0_bram_block_elaborate.v" Line 182: Assignment to pgassign2 ignored, since the identifier is never used
 
 Elaborating module <RAMB16BWER(INIT_FILE="microblaze_0_bram_block_combined_0.mem",DATA_WIDTH_A=2,DATA_WIDTH_B=2)>.
 
@@ -114,14 +114,14 @@ Elaborating module <RAMB16BWER(INIT_FILE="microblaze_0_bram_block_combined_15.me
 =========================================================================
 
 Synthesizing Unit <MB_SPI_microblaze_0_bram_block_wrapper>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_SPI\hdl\MB_SPI_microblaze_0_bram_block_wrapper.v".
+    Related source file is "D:\MBImager\MBImager_full\MB_SPI\hdl\MB_SPI_microblaze_0_bram_block_wrapper.v".
     Set property "KEEP_HIERARCHY = YES".
     Summary:
 	no macro.
 Unit <MB_SPI_microblaze_0_bram_block_wrapper> synthesized.
 
 Synthesizing Unit <microblaze_0_bram_block_elaborate>.
-    Related source file is "C:/Users/MBImager/Documents/MBImager_ams/ISE_projects/MotherBoard/MBImager_full/MB_SPI/hdl/elaborate/microblaze_0_bram_block_elaborate_v1_00_a/hdl/verilog/microblaze_0_bram_block_elaborate.v".
+    Related source file is "D:/MBImager/MBImager_full/MB_SPI/hdl/elaborate/microblaze_0_bram_block_elaborate_v1_00_a/hdl/verilog/microblaze_0_bram_block_elaborate.v".
         C_MEMSIZE = 32'b00000000000000001000000000000000
         C_PORT_DWIDTH = 32
         C_PORT_AWIDTH = 32
@@ -363,12 +363,12 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 4.68 secs
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.59 secs
  
 --> 
 
-Total memory usage is 241684 kilobytes
+Total memory usage is 294628 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    6 (   0 filtered)

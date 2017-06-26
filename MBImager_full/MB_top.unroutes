@@ -1,42 +1,41 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Fri Feb 10 14:43:06 2017
+Wed Jun 21 16:06:34 2017
 
 All signals are completely routed.
 
-WARNING:ParHelpers:361 - There are 461 loadless signals in this design. This design will cause Bitgen to issue DRC
+WARNING:ParHelpers:361 - There are 460 loadless signals in this design. This design will cause Bitgen to issue DRC
    warnings.
 
-   adc_sample/DATA_IN_TO_DEVICE1<0>
-   adc_sample/DATA_IN_TO_DEVICE1<1>
-   adc_sample/DATA_IN_TO_DEVICE1<2>
-   adc_sample/DATA_IN_TO_DEVICE1<3>
-   adc_sample/DATA_IN_TO_DEVICE1<4>
-   adc_sample/DATA_IN_TO_DEVICE1<5>
-   adc_sample/DATA_IN_TO_DEVICE1<6>
-   adc_sample/DATA_IN_TO_DEVICE1<7>
-   adc_sample/DATA_IN_TO_DEVICE2<0>
-   adc_sample/DATA_IN_TO_DEVICE2<1>
-   adc_sample/DATA_IN_TO_DEVICE2<2>
-   adc_sample/DATA_IN_TO_DEVICE2<3>
-   adc_sample/DATA_IN_TO_DEVICE2<4>
-   adc_sample/DATA_IN_TO_DEVICE2<5>
-   adc_sample/DATA_IN_TO_DEVICE2<6>
-   adc_sample/DATA_IN_TO_DEVICE2<7>
-   adc_sample/DATA_IN_TO_DEVICE3<0>
-   adc_sample/DATA_IN_TO_DEVICE3<1>
-   adc_sample/DATA_IN_TO_DEVICE3<2>
-   adc_sample/DATA_IN_TO_DEVICE3<3>
-   adc_sample/DATA_IN_TO_DEVICE3<4>
-   adc_sample/DATA_IN_TO_DEVICE3<5>
-   adc_sample/DATA_IN_TO_DEVICE3<6>
-   adc_sample/DATA_IN_TO_DEVICE3<7>
+   U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.U_GAND_SRL_SET/SRL_Q_O
+   U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[1].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.U_GAND_SRL_SET/SRL_Q_O
+   U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.U_GAND_SRL_SET/SRL_Q_O
+   U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.U_GAND_SRL_SET/SRL_Q_O
    fifo_inst_4kB/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg<0>
    fifo_inst_4kB/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg<1>
    fifo_inst_4kB/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/aempty_fwft_i
    fifo_inst_4kB/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i
    fifo_inst_4kB/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i
+   icon_control0<10>
+   icon_control0<11>
+   icon_control0<15>
+   icon_control0<16>
+   icon_control0<17>
+   icon_control0<18>
+   icon_control0<24>
+   icon_control0<25>
+   icon_control0<26>
+   icon_control0<27>
+   icon_control0<28>
+   icon_control0<29>
+   icon_control0<30>
+   icon_control0<31>
+   icon_control0<32>
+   icon_control0<33>
+   icon_control0<34>
+   icon_control0<35>
+   icon_control0<7>
    uBlaze_SPI/MB_SPI_i/Generic_SPI/Generic_SPI/AXI_SPI_CORE_INTERFACE_I/MAP_SIGNALS_AND_REG_WITH_FIFOS.RECEIVE_FIFO_I/Addr_Counters[3].MUXCY_L_I/LO
    uBlaze_SPI/MB_SPI_i/Generic_SPI/Generic_SPI/AXI_SPI_CORE_INTERFACE_I/MAP_SIGNALS_AND_REG_WITH_FIFOS.TRANSMIT_FIFO_I/Addr_Counters[3].MUXCY_L_I/LO
    uBlaze_SPI/MB_SPI_i/Generic_SPI/IP2INTC_Irpt

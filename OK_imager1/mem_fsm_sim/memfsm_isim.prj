@@ -1,0 +1,33 @@
+verilog work "./../ipcore_dir/mem_if/user_design/rtl/infrastructure.v"
+verilog work "./../ipcore_dir/mem_if/user_design/rtl/memc_wrapper.v"
+verilog work "./../ipcore_dir/mem_if/user_design/rtl/mem_if.v"
+verilog work "./../ipcore_dir/mem_if/user_design/rtl/mcb_controller/iodrp_controller.v"
+verilog work "./../ipcore_dir/mem_if/user_design/rtl/mcb_controller/iodrp_mcb_controller.v"
+verilog work "./../ipcore_dir/mem_if/user_design/rtl/mcb_controller/mcb_raw_wrapper.v"
+verilog work "./../ipcore_dir/mem_if/user_design/rtl/mcb_controller/mcb_soft_calibration.v"
+verilog work "./../ipcore_dir/mem_if/user_design/rtl/mcb_controller/mcb_soft_calibration_top.v"
+verilog work "./../ipcore_dir/mem_if/user_design/rtl/mcb_controller/mcb_ui_top.v"
+
+verilog work "./oksim/okWireOR.v"
+verilog work "./oksim/okWireIn.v"
+verilog work "./oksim/okWireOut.v"
+verilog work "./oksim/okPipeIn.v"
+verilog work "./oksim/okPipeOut.v"
+verilog work "./oksim/okTriggerIn.v"
+verilog work "./oksim/okTriggerOut.v"
+verilog work "./oksim/okHost.v"
+
+verilog work "./../ipcore_dir/fifo_patterns.v"
+verilog work "./../ipcore_dir/fifo_usbout.v"
+verilog work "./../ipcore_dir/fifo_6to24.v"
+verilog work "./../ipcore_dir/fifo_pipein.v"
+verilog work "./../ipcore_dir/fifo_memout.v"
+
+verilog  work  $XILINX/verilog/src/glbl.v
+verilog work "./../OK_imager1.v"
+verilog work "./../ROImager_exp_PatSeperate.v"
+verilog work "./../load_pattern.v"
+verilog work "./../mem_fsm.v"
+
+verilog work "./memfsm_tf.v"
+verilog  work  ./../ipcore_dir/mem_if/user_design/sim/ddr2_model_c3.v -d x1Gb -d sg3 -d x16 -i ./../

@@ -1,7 +1,7 @@
 #Release 14.7 - par P.20131013 (nt64)
 #Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-#Fri Feb 10 14:43:06 2017
+#Wed Jun 21 16:06:34 2017
 
 #
 ## NOTE: This file is designed to be imported into a spreadsheet program
@@ -54,7 +54,7 @@ AA10,,IOBM,IO_L41P_2,UNUSED,,2,,,,,,,,,
 AA11,,,VCCO_2,,,2,,,,,3.30,,,,
 AA12,dout<5>,IOB,IO_L31P_GCLK31_D14_2,OUTPUT,LVCMOS33,2,12,SLOW,,,,LOCATED,NO,NONE,
 AA13,,,GND,,,,,,,,,,,,
-AA14,,IOBM,IO_L6P_2,UNUSED,,2,,,,,,,,,
+AA14,dout<6>,IOB,IO_L6P_2,OUTPUT,LVCMOS33,2,12,SLOW,,,,LOCATED,NO,NONE,
 AA15,,,VCCO_2,,,2,,,,,3.30,,,,
 AA16,,IOBM,IO_L19P_2,UNUSED,,2,,,,,,,,,
 AA17,,,GND,,,,,,,,,,,,
@@ -383,7 +383,7 @@ R9,,IOBM,IO_L59P_2,UNUSED,,2,,,,,,,,,
 R10,,,VCCAUX,,,,,,,,2.5,,,,
 R11,,,NC,,,,,,,,,,,,
 R12,,,VCCAUX,,,,,,,,2.5,,,,
-R13,,IOBM,IO_L12P_D1_MISO2_2,UNUSED,,2,,,,,,,,,
+R13,dout<7>,IOB,IO_L12P_D1_MISO2_2,OUTPUT,LVCMOS33,2,12,SLOW,,,,LOCATED,NO,NONE,
 R14,,,VCCINT,,,,,,,,1.2,,,,
 R15,,,NC,,,,,,,,,,,,
 R16,,,NC,,,,,,,,,,,,

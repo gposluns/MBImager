@@ -1,0 +1,591 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.45 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.45 secs
+ 
+--> Reading design: okHost.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "okHost.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "okHost"
+Output Format                      : NGC
+Target Device                      : xc6slx45-2-fgg484
+
+---- Source Options
+Top Module Name                    : okHost
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "D:\MBImager\OK_imager1\okLibrary.v" into library work
+Parsing module <okHost>.
+Parsing module <okCoreHarness>.
+Parsing module <okWireIn>.
+Parsing module <okWireOut>.
+Parsing module <okTriggerIn>.
+Parsing module <okTriggerOut>.
+Parsing module <okPipeIn>.
+Parsing module <okPipeOut>.
+Parsing module <okBTPipeIn>.
+Parsing module <okBTPipeOut>.
+Parsing module <okRegisterBridge>.
+Parsing module <okWireOR>.
+Analyzing Verilog file "D:\MBImager\OK_imager1\ipcore_dir\mem_if\user_design\rtl\mcb_controller\iodrp_mcb_controller.v" into library work
+Parsing module <iodrp_mcb_controller>.
+Analyzing Verilog file "D:\MBImager\OK_imager1\ipcore_dir\mem_if\user_design\rtl\infrastructure.v" into library work
+Parsing module <infrastructure>.
+Analyzing Verilog file "D:\MBImager\OK_imager1\ipcore_dir\mem_if\user_design\rtl\mcb_controller\iodrp_controller.v" into library work
+Parsing module <iodrp_controller>.
+Analyzing Verilog file "D:\MBImager\OK_imager1\ipcore_dir\mem_if\user_design\rtl\mcb_controller\mcb_raw_wrapper.v" into library work
+Parsing module <mcb_raw_wrapper>.
+Analyzing Verilog file "D:\MBImager\OK_imager1\ipcore_dir\mem_if\user_design\rtl\mcb_controller\mcb_soft_calibration.v" into library work
+Parsing module <mcb_soft_calibration>.
+Analyzing Verilog file "D:\MBImager\OK_imager1\ipcore_dir\mem_if\user_design\rtl\mcb_controller\mcb_soft_calibration_top.v" into library work
+Parsing module <mcb_soft_calibration_top>.
+Analyzing Verilog file "D:\MBImager\OK_imager1\ipcore_dir\mem_if\user_design\rtl\mcb_controller\mcb_ui_top.v" into library work
+Parsing module <mcb_ui_top>.
+Analyzing Verilog file "D:\MBImager\OK_imager1\ipcore_dir\mem_if\user_design\rtl\memc_wrapper.v" into library work
+Parsing module <memc_wrapper>.
+Parsing VHDL file "D:\MBImager\OK_imager1\okLibrary.vhd" into library work
+Parsing entity <okHost>.
+Parsing architecture <archHost> of entity <okhost>.
+Parsing entity <okWireOR>.
+Parsing architecture <archWireOR> of entity <okwireor>.
+Parsing package <FRONTPANEL>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <okHost> (architecture <archHost>) from library <work>.
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\okLibrary.vhd" Line 66: Assignment to nothc0 ignored, since the identifier is never used
+WARNING:HDLCompiler:89 - "D:\MBImager\OK_imager1\okLibrary.vhd" Line 38: <fdre> remains a black-box since it has no binding entity.
+Going to verilog side to elaborate module okCoreHarness
+
+Elaborating module <okCoreHarness>.
+Back to vhdl to continue elaboration
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <okHost>.
+    Related source file is "D:\MBImager\OK_imager1\okLibrary.vhd".
+    Set property "IOB = TRUE" for instance <iob_regs[0].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[0].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[0].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[1].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[1].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[1].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[2].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[2].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[2].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[3].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[3].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[3].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[4].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[4].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[4].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[5].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[5].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[5].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[6].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[6].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[6].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[7].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[7].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[7].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[8].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[8].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[8].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[9].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[9].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[9].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[10].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[10].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[10].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[11].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[11].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[11].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[12].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[12].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[12].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[13].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[13].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[13].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[14].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[14].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[14].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[15].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[15].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[15].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[16].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[16].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[16].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[17].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[17].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[17].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[18].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[18].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[18].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[19].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[19].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[19].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[20].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[20].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[20].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[21].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[21].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[21].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[22].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[22].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[22].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[23].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[23].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[23].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[24].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[24].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[24].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[25].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[25].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[25].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[26].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[26].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[26].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[27].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[27].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[27].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[28].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[28].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[28].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[29].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[29].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[29].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[30].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[30].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[30].regvalid>.
+    Set property "IOB = TRUE" for instance <iob_regs[31].regin0>.
+    Set property "IOB = TRUE" for instance <iob_regs[31].regout0>.
+    Set property "IOB = TRUE" for instance <iob_regs[31].regvalid>.
+    Set property "IOB = TRUE" for instance <regctrlout0>.
+    Set property "IOB = TRUE" for instance <regctrlout1>.
+    Set property "IOB = TRUE" for instance <regctrlout2>.
+    Set property "IOB = TRUE" for instance <regctrlin0a>.
+    Set property "IOB = TRUE" for instance <regctrlin1a>.
+    Set property "IOB = TRUE" for instance <regctrlin2a>.
+    Set property "IOB = TRUE" for instance <regctrlin3a>.
+    Summary:
+	no macro.
+Unit <okHost> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <okCoreHarness.ngc>.
+Reading core <TFIFO64x8a_64x8b.ngc>.
+Loading core <TFIFO64x8a_64x8b> for timing and area information for instance <core0/a0/cb0>.
+Loading core <okCoreHarness> for timing and area information for instance <core0>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 103
+ Flip-Flops                                            : 103
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <okHost> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block okHost, actual ratio is 2.
+INFO:Xst:2260 - The FF/Latch <core0/a0/pc0/sync_interrupt_flop> in Unit <core0> is equivalent to the following FF/Latch : <core0/a0/pc0/sync_sleep_flop> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/gl0.wr/gwss.wsts/ram_full_i> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/gl0.rd/grss.rsts/ram_empty_i> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <core0/a0/pc0/sync_interrupt_flop> in Unit <core0> is equivalent to the following FF/Latch : <core0/a0/pc0/sync_sleep_flop> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/gl0.wr/gwss.wsts/ram_full_i> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/gl0.rd/grss.rsts/ram_empty_i> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/gl0.wr/gwss.wsts/ram_full_i> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/gl0.rd/grss.rsts/ram_empty_i> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/gl0.wr/gwss.wsts/ram_full_i> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/gl0.rd/grss.rsts/ram_empty_i> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/gl0.rd/grss.rsts/ram_empty_fb_i> 
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 103
+ Flip-Flops                                            : 103
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : okHost.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 1333
+#      GND                         : 3
+#      INV                         : 42
+#      LUT1                        : 101
+#      LUT2                        : 66
+#      LUT3                        : 34
+#      LUT4                        : 138
+#      LUT5                        : 129
+#      LUT6                        : 445
+#      LUT6_2                      : 50
+#      MUXCY                       : 162
+#      MUXF7                       : 2
+#      VCC                         : 2
+#      XORCY                       : 159
+# FlipFlops/Latches                : 871
+#      FD                          : 132
+#      FDC                         : 95
+#      FDCE                        : 157
+#      FDE                         : 278
+#      FDP                         : 33
+#      FDPE                        : 8
+#      FDR                         : 33
+#      FDRE                        : 133
+#      FDSE                        : 2
+# RAMS                             : 18
+#      RAM128X1S                   : 8
+#      RAM32M                      : 4
+#      RAM64M                      : 2
+#      RAM64X1D                    : 2
+#      RAMB16BWER                  : 2
+# Shift Registers                  : 1
+#      SRLC16E                     : 1
+# Clock Buffers                    : 1
+#      BUFG                        : 1
+# IO Buffers                       : 220
+#      IBUF                        : 69
+#      IBUFG                       : 1
+#      IOBUF                       : 33
+#      OBUF                        : 117
+# DCMs                             : 1
+#      DCM_SP                      : 1
+# Others                           : 1
+#      DNA_PORT                    : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45fgg484-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             768  out of  54576     1%  
+ Number of Slice LUTs:                 1050  out of  27288     3%  
+    Number used as Logic:              1005  out of  27288     3%  
+    Number used as Memory:               45  out of   6408     0%  
+       Number used as RAM:               44
+       Number used as SRL:                1
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1292
+   Number with an unused Flip Flop:     524  out of   1292    40%  
+   Number with an unused LUT:           242  out of   1292    18%  
+   Number of fully used LUT-FF pairs:   526  out of   1292    40%  
+   Number of unique control sets:        39
+
+IO Utilization: 
+ Number of IOs:                         220
+ Number of bonded IOBs:                 220  out of    316    69%  
+    IOB Flip Flops/Latches:             103
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                2  out of    116     1%  
+    Number using Block RAM only:          2
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+-------------------------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                                 | Load  |
+-----------------------------------+-------------------------------------------------------+-------+
+okUH<0>                            | DCM_SP:CLK0                                           | 890   |
+core0/okHE<41>                     | NONE(core0/core0/a0/pm0/ram_1k_generate.s6.kcpsm6_rom)| 1     |
+-----------------------------------+-------------------------------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 7.818ns (Maximum Frequency: 127.910MHz)
+   Minimum input arrival time before clock: 6.602ns
+   Maximum output required time after clock: 4.380ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'okUH<0>'
+  Clock period: 7.818ns (frequency: 127.910MHz)
+  Total number of paths / destination ports: 24852 / 1447
+-------------------------------------------------------------------------
+Delay:               7.818ns (Levels of Logic = 3)
+  Source:            core0/core0/a0/pm0/ram_1k_generate.s6.kcpsm6_rom (RAM)
+  Destination:       core0/core0/a0/atmel_status_fuses_19 (FF)
+  Source Clock:      okUH<0> rising +-24
+  Destination Clock: okUH<0> rising +-24
+
+  Data Path: core0/core0/a0/pm0/ram_1k_generate.s6.kcpsm6_rom to core0/core0/a0/atmel_status_fuses_19
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB16BWER:CLKA->DOA7   16   2.100   1.181  core0/a0/pm0/ram_1k_generate.s6.kcpsm6_rom (core0/a0/pico_instr<7>)
+     LUT6_2:I3->O5        10   0.214   1.284  core0/a0/pc0/data_path_loop[6].output_data.sy_kk_mux_lut (core0/a0/pico_port_id<6>)
+     LUT5:I1->O            8   0.254   0.944  core0/a0/_n0185_inv11 (core0/a0/_n0185_inv1)
+     LUT5:I4->O           20   0.254   1.285  core0/a0/_n0206_inv1 (core0/a0/_n0206_inv)
+     FDE:CE                    0.302          core0/a0/atmel_status_fuses_0
+    ----------------------------------------
+    Total                      7.818ns (3.124ns logic, 4.694ns route)
+                                       (40.0% logic, 60.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'core0/okHE<41>'
+  Clock period: 3.081ns (frequency: 324.570MHz)
+  Total number of paths / destination ports: 18 / 18
+-------------------------------------------------------------------------
+Delay:               3.081ns (Levels of Logic = 0)
+  Source:            core0/core0/a0/pm0/ram_1k_generate.s6.kcpsm6_rom (RAM)
+  Destination:       core0/core0/a0/pm0/ram_1k_generate.s6.kcpsm6_rom (RAM)
+  Source Clock:      core0/okHE<41> rising
+  Destination Clock: core0/okHE<41> rising
+
+  Data Path: core0/core0/a0/pm0/ram_1k_generate.s6.kcpsm6_rom to core0/core0/a0/pm0/ram_1k_generate.s6.kcpsm6_rom
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB16BWER:CLKB->DOB15    1   2.100   0.681  core0/a0/pm0/ram_1k_generate.s6.kcpsm6_rom (core0/a0/pm0/n0016<15>)
+     RAMB16BWER:DIB15          0.300          core0/a0/pm0/ram_1k_generate.s6.kcpsm6_rom
+    ----------------------------------------
+    Total                      3.081ns (2.400ns logic, 0.681ns route)
+                                       (77.9% logic, 22.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'okUH<0>'
+  Total number of paths / destination ports: 155 / 131
+-------------------------------------------------------------------------
+Offset:              6.602ns (Levels of Logic = 6)
+  Source:            okAA (PAD)
+  Destination:       core0/core0/a0/c0/t_count_11 (FF)
+  Destination Clock: okUH<0> rising +-24
+
+  Data Path: okAA to core0/core0/a0/c0/t_count_11
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IOBUF:IO->O          27   1.328   1.436  tbuf (okHC<37>)
+     begin scope: 'core0:okHC<37>'
+     LUT3:I2->O            3   0.254   1.196  core0/a0/c0/Mmux_t_count[23]_GND_19_o_mux_23_OUT1011 (core0/a0/c0/Mmux_t_count[23]_GND_19_o_mux_23_OUT101)
+     LUT5:I0->O            1   0.254   0.790  core0/a0/c0/t_state[31]_t_count[23]_select_94_OUT<11>22 (core0/a0/c0/t_state[31]_t_count[23]_select_94_OUT<11>22)
+     LUT5:I3->O            3   0.250   0.766  core0/a0/c0/t_state[31]_t_count[23]_select_94_OUT<11>23 (core0/a0/c0/t_state[31]_t_count[23]_select_94_OUT<11>2)
+     LUT5:I4->O            1   0.254   0.000  core0/a0/c0/t_state[31]_t_count[23]_select_94_OUT<9>1 (core0/a0/c0/t_state[31]_t_count[23]_select_94_OUT<9>)
+     FDRE:D                    0.074          core0/a0/c0/t_count_9
+    ----------------------------------------
+    Total                      6.602ns (2.414ns logic, 4.188ns route)
+                                       (36.6% logic, 63.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'okUH<0>'
+  Total number of paths / destination ports: 183 / 150
+-------------------------------------------------------------------------
+Offset:              4.380ns (Levels of Logic = 2)
+  Source:            core0/core0/ti_addr_0 (FF)
+  Destination:       okHE<32> (PAD)
+  Source Clock:      okUH<0> rising +-24
+
+  Data Path: core0/core0/ti_addr_0 to okHE<32>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              8   0.525   0.943  core0/ti_addr_0 (okHE<32>)
+     end scope: 'core0:okHE<32>'
+     OBUF:I->O                 2.912          okHE_32_OBUF (okHE<32>)
+    ----------------------------------------
+    Total                      4.380ns (3.437ns logic, 0.943ns route)
+                                       (78.5% logic, 21.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock core0/okHE<41>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+core0/okHE<41> |    3.081|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock okUH<0>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+okUH<0>        |    7.818|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 19.00 secs
+Total CPU time to Xst completion: 18.99 secs
+ 
+--> 
+
+Total memory usage is 316000 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :   15 (   0 filtered)
+

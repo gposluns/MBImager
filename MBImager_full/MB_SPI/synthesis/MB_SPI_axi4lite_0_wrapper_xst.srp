@@ -1,10 +1,10 @@
 Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_SPI\synthesis\xst_temp_dir\
+--> Parameter TMPDIR set to D:\MBImager\MBImager_full\MB_SPI\synthesis\xst_temp_dir\
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> 
 TABLE OF CONTENTS
@@ -35,7 +35,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "MB_SPI_axi4lite_0_wrapper_xst.prj"
-Verilog Include Directory          : {"C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_SPI\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"D:\MBImager\MBImager_full\MB_SPI\pcores\" "D:\ISE\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "D:\ISE\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc6slx25tfgg484-3
@@ -62,128 +62,128 @@ Cores Search Directories           : {../implementation}
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axic_sample_cycle_ratio.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axic_sample_cycle_ratio.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_axic_sample_cycle_ratio>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axic_sync_clock_converter.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axic_sync_clock_converter.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_axic_sync_clock_converter>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_a_axi3_conv.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_a_axi3_conv.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_a_axi3_conv>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_addr_arbiter_sasd.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_addr_arbiter_sasd.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_addr_arbiter_sasd>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_addr_arbiter.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_addr_arbiter.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_addr_arbiter>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_addr_decoder.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_addr_decoder.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_addr_decoder>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_a_downsizer.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_a_downsizer.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_a_downsizer>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_arbiter_resp.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_arbiter_resp.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_arbiter_resp>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_a_upsizer.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_a_upsizer.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_a_upsizer>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi3_conv.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi3_conv.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_axi3_conv>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axic_fifo.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axic_fifo.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_axic_fifo>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_clock_converter.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_clock_converter.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_axi_clock_converter>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axic_register_slice.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axic_register_slice.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_axic_register_slice>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axic_reg_srl_fifo.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axic_reg_srl_fifo.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_axic_reg_srl_fifo>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_crossbar.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_crossbar.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_axi_crossbar>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axic_srl_fifo.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axic_srl_fifo.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_axic_srl_fifo>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_data_fifo.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_data_fifo.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_axi_data_fifo>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_downsizer.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_downsizer.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_axi_downsizer>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axilite_conv.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axilite_conv.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_axilite_conv>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_protocol_converter.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_protocol_converter.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_axi_protocol_converter>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_register_slice.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_register_slice.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_axi_register_slice>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_upsizer.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_upsizer.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_axi_upsizer>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_b_downsizer.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_b_downsizer.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_b_downsizer>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_carry_and.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_carry_and.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_carry_and>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_carry_latch_and.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_carry_latch_and.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_carry_latch_and>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_carry_latch_or.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_carry_latch_or.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_carry_latch_or>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_carry_or.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_carry_or.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_carry_or>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_carry.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_carry.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_carry>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_command_fifo.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_command_fifo.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_command_fifo>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_comparator_mask_static.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_comparator_mask_static.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_comparator_mask_static>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_comparator_mask.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_comparator_mask.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_comparator_mask>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_comparator_sel_mask_static.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_comparator_sel_mask_static.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_comparator_sel_mask_static>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_comparator_sel_mask.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_comparator_sel_mask.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_comparator_sel_mask>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_comparator_sel_static.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_comparator_sel_static.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_comparator_sel_static>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_comparator_sel.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_comparator_sel.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_comparator_sel>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_comparator_static.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_comparator_static.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_comparator_static>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_comparator.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_comparator.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_comparator>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_converter_bank.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_converter_bank.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_converter_bank>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar_sasd.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar_sasd.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_crossbar_sasd>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_crossbar>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_data_fifo_bank.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_data_fifo_bank.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_data_fifo_bank>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_decerr_slave.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_decerr_slave.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_decerr_slave>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_fifo_gen.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_fifo_gen.v" into library axi_interconnect_v1_06_a
 Parsing module <fifo_generator_v9_1>.
 Parsing module <ict106_fifo_gen>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_mux_enc.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_mux_enc.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_mux_enc>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_mux.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_mux.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_mux>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_ndeep_srl.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_ndeep_srl.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_ndeep_srl>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_nto1_mux.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_nto1_mux.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_nto1_mux>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_protocol_conv_bank.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_protocol_conv_bank.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_protocol_conv_bank>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_r_axi3_conv.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_r_axi3_conv.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_r_axi3_conv>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_r_downsizer.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_r_downsizer.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_r_downsizer>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_register_slice_bank.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_register_slice_bank.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_register_slice_bank>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_r_upsizer.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_r_upsizer.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_r_upsizer>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_si_transactor.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_si_transactor.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_si_transactor>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_splitter.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_splitter.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_splitter>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_w_axi3_conv.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_w_axi3_conv.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_w_axi3_conv>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_wdata_mux.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_wdata_mux.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_wdata_mux>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_wdata_router.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_wdata_router.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_wdata_router>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_w_downsizer.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_w_downsizer.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_w_downsizer>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_w_upsizer.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_w_upsizer.v" into library axi_interconnect_v1_06_a
 Parsing module <ict106_w_upsizer>.
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" into library axi_interconnect_v1_06_a
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" into library axi_interconnect_v1_06_a
 Parsing module <axi_interconnect>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_SPI\hdl\MB_SPI_axi4lite_0_wrapper.v" into library work
+Analyzing Verilog file "D:\MBImager\MBImager_full\MB_SPI\hdl\MB_SPI_axi4lite_0_wrapper.v" into library work
 Parsing module <MB_SPI_axi4lite_0_wrapper>.
 
 =========================================================================
@@ -308,8 +308,8 @@ Elaborating module
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000001010000001111111111111111,C_S_AXI_BASE_ID=1024'b0,C_S_AXI_HIGH_ID=1024'b0,C_S_AXI_SUPPORTS_WRITE=16'b1111111111111111,C_S_AXI_SUPPORTS_READ=16'b1111111111111111,C_M_AXI_SUPPORTS_WRITE=16'b1111111111111111,C_M_AXI_SUPPORTS_READ=16'b1111111111111111,C_AXI_SUPPORTS_USER_SIGNALS=0,C_AXI_AWUSER_WIDTH=1,C_AXI_ARUSER_WIDTH=1,C_AXI_WUSER_WIDTH=1,C_AXI_RUSER_WIDTH=1,C_AXI_BUSER_WIDTH=1,C_S_AXI_ARB_PRIORITY=512'b0,C_M_AXI_SECURE=16'b0,C_INTERCONNECT_R_REGISTER=0,C_USE_CTRL_PORT=0,C_USE_INTERRUPT=1,C_RANGE_CHECK=1,C_ADDR_DECODE=1,C_S_AXI_CTRL_ADDR_WIDTH=32,C_S_AXI_CTRL_DATA_WIDTH=32,C_DEBUG=0,C_MAX_DEBUG_THREADS=1>.
 
 Elaborating module <ict106_addr_arbiter_sasd(C_MAX_S=16,C_FAMILY="spartan6",C_NUM_S=1,C_NUM_S_LOG=1,C_AMESG_WIDTH=60,C_GRANT_ENC=1,C_ARB_PRIORITY=512'b0)>.
-WARNING:HDLCompiler:413 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar_sasd.v" Line 608: Result of 32-bit expression is truncated to fit in 8-bit target.
-WARNING:HDLCompiler:413 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar_sasd.v" Line 609: Result of 32-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar_sasd.v" Line 608: Result of 32-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar_sasd.v" Line 609: Result of 32-bit expression is truncated to fit in 8-bit target.
 
 Elaborating module
 <ict106_addr_decoder(C_FAMILY="spartan6",C_NUM_TARGETS=2,C_NUM_TARGETS_LOG=32'sb01,C_NUM_RANGES=16,C_ADDR_WIDTH=32,C_TARGET_ENC=1,C_TARGET_HOT=1,C_REGION_ENC=1,C_BASE_ADDR=16384'b11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
@@ -338,16 +338,16 @@ Elaborating module <ict106_carry_and(C_FAMILY="spartan6")>.
 Elaborating module <MUXCY>.
 
 Elaborating module <ict106_comparator_static(C_FAMILY="spartan6",C_VALUE=20'b01000000101000000000,C_DATA_WIDTH=20)>.
-WARNING:HDLCompiler:413 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_addr_decoder.v" Line 213: Result of 32-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_addr_decoder.v" Line 213: Result of 32-bit expression is truncated to fit in 2-bit target.
 
 Elaborating module <ict106_splitter(C_NUM_M=3)>.
 
 Elaborating module <ict106_splitter(C_NUM_M=2)>.
-WARNING:HDLCompiler:413 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar_sasd.v" Line 684: Result of 32-bit expression is truncated to fit in 8-bit target.
-WARNING:HDLCompiler:413 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar_sasd.v" Line 685: Result of 32-bit expression is truncated to fit in 8-bit target.
-WARNING:HDLCompiler:413 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar_sasd.v" Line 686: Result of 32-bit expression is truncated to fit in 2-bit target.
-WARNING:HDLCompiler:413 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar_sasd.v" Line 687: Result of 32-bit expression is truncated to fit in 8-bit target.
-WARNING:HDLCompiler:413 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar_sasd.v" Line 688: Result of 32-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar_sasd.v" Line 684: Result of 32-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar_sasd.v" Line 685: Result of 32-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar_sasd.v" Line 686: Result of 32-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar_sasd.v" Line 687: Result of 32-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar_sasd.v" Line 688: Result of 32-bit expression is truncated to fit in 8-bit target.
 
 Elaborating module <ict106_mux_enc(C_FAMILY="spartan6",C_RATIO=3,C_SEL_WIDTH=32'sb010,C_DATA_WIDTH=1)>.
 
@@ -360,20 +360,20 @@ Elaborating module <ict106_axic_register_slice(C_FAMILY="spartan6",C_DATA_WIDTH=
 Elaborating module <ict106_mux_enc(C_FAMILY="spartan6",C_RATIO=3,C_SEL_WIDTH=32'sb010,C_DATA_WIDTH=3)>.
 
 Elaborating module <ict106_decerr_slave(C_AXI_ID_WIDTH=1,C_AXI_DATA_WIDTH=32,C_AXI_RUSER_WIDTH=1,C_AXI_BUSER_WIDTH=1)>.
-WARNING:HDLCompiler:413 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_decerr_slave.v" Line 208: Result of 32-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_decerr_slave.v" Line 208: Result of 32-bit expression is truncated to fit in 8-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <MB_SPI_axi4lite_0_wrapper>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_SPI\hdl\MB_SPI_axi4lite_0_wrapper.v".
+    Related source file is "D:\MBImager\MBImager_full\MB_SPI\hdl\MB_SPI_axi4lite_0_wrapper.v".
     Summary:
 	no macro.
 Unit <MB_SPI_axi4lite_0_wrapper> synthesized.
 
 Synthesizing Unit <axi_interconnect>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v".
         C_BASEFAMILY = "spartan6"
         C_NUM_SLAVE_SLOTS = 1
         C_NUM_MASTER_SLOTS = 2
@@ -508,30 +508,30 @@ WARNING:Xst:647 - Input <M_AXI_BUSER> is never used. This port will be preserved
 WARNING:Xst:647 - Input <M_AXI_RID> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <M_AXI_RLAST> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <M_AXI_RUSER> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 1857: Output port <S_AXI_BID> of the instance <si_register_slice_bank> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 1857: Output port <S_AXI_BUSER> of the instance <si_register_slice_bank> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 1857: Output port <S_AXI_RID> of the instance <si_register_slice_bank> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 1857: Output port <S_AXI_RLAST> of the instance <si_register_slice_bank> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 1857: Output port <S_AXI_RUSER> of the instance <si_register_slice_bank> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 1857: Output port <M_AXI_AWREGION> of the instance <si_register_slice_bank> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 1857: Output port <M_AXI_WID> of the instance <si_register_slice_bank> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 1857: Output port <M_AXI_ARREGION> of the instance <si_register_slice_bank> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 1978: Output port <M_AXI_AWUSER> of the instance <mi_register_slice_bank> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 1978: Output port <M_AXI_WUSER> of the instance <mi_register_slice_bank> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 1978: Output port <M_AXI_ARUSER> of the instance <mi_register_slice_bank> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 2214: Output port <M_AXI_RESET_OUT_N> of the instance <si_converter_bank> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 2214: Output port <M_AXI_AWREGION> of the instance <si_converter_bank> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 2214: Output port <M_AXI_ARREGION> of the instance <si_converter_bank> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 2338: Output port <S_AXI_RESET_OUT_N> of the instance <mi_converter_bank> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 2338: Output port <INTERCONNECT_RESET_OUT_N> of the instance <mi_converter_bank> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 2462: Output port <M_AXI_AWREGION> of the instance <si_data_fifo_bank> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 2462: Output port <M_AXI_ARREGION> of the instance <si_data_fifo_bank> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 1857: Output port <S_AXI_BID> of the instance <si_register_slice_bank> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 1857: Output port <S_AXI_BUSER> of the instance <si_register_slice_bank> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 1857: Output port <S_AXI_RID> of the instance <si_register_slice_bank> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 1857: Output port <S_AXI_RLAST> of the instance <si_register_slice_bank> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 1857: Output port <S_AXI_RUSER> of the instance <si_register_slice_bank> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 1857: Output port <M_AXI_AWREGION> of the instance <si_register_slice_bank> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 1857: Output port <M_AXI_WID> of the instance <si_register_slice_bank> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 1857: Output port <M_AXI_ARREGION> of the instance <si_register_slice_bank> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 1978: Output port <M_AXI_AWUSER> of the instance <mi_register_slice_bank> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 1978: Output port <M_AXI_WUSER> of the instance <mi_register_slice_bank> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 1978: Output port <M_AXI_ARUSER> of the instance <mi_register_slice_bank> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 2214: Output port <M_AXI_RESET_OUT_N> of the instance <si_converter_bank> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 2214: Output port <M_AXI_AWREGION> of the instance <si_converter_bank> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 2214: Output port <M_AXI_ARREGION> of the instance <si_converter_bank> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 2338: Output port <S_AXI_RESET_OUT_N> of the instance <mi_converter_bank> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 2338: Output port <INTERCONNECT_RESET_OUT_N> of the instance <mi_converter_bank> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 2462: Output port <M_AXI_AWREGION> of the instance <si_data_fifo_bank> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/axi_interconnect.v" line 2462: Output port <M_AXI_ARREGION> of the instance <si_data_fifo_bank> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <axi_interconnect> synthesized.
 
 Synthesizing Unit <ict106_register_slice_bank_1>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_register_slice_bank.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_register_slice_bank.v".
         C_FAMILY = "spartan6"
         C_NUM_SLOTS = 1
         C_AXI_ID_WIDTH = 512'b00000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001
@@ -558,7 +558,7 @@ Synthesizing Unit <ict106_register_slice_bank_1>.
 Unit <ict106_register_slice_bank_1> synthesized.
 
 Synthesizing Unit <ict106_axi_register_slice>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_register_slice.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_register_slice.v".
         C_FAMILY = "spartan6"
         C_AXI_ID_WIDTH = 1
         C_AXI_ADDR_WIDTH = 32
@@ -588,7 +588,7 @@ WARNING:Xst:647 - Input <M_AXI_RUSER> is never used. This port will be preserved
 Unit <ict106_axi_register_slice> synthesized.
 
 Synthesizing Unit <ict106_axic_register_slice_1>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axic_register_slice.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axic_register_slice.v".
         C_FAMILY = "spartan6"
         C_DATA_WIDTH = 63
         C_REG_CONFIG = 32'b00000000000000000000000000000000
@@ -599,7 +599,7 @@ WARNING:Xst:647 - Input <ARESET> is never used. This port will be preserved and 
 Unit <ict106_axic_register_slice_1> synthesized.
 
 Synthesizing Unit <ict106_axic_register_slice_2>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axic_register_slice.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axic_register_slice.v".
         C_FAMILY = "spartan6"
         C_DATA_WIDTH = 38
         C_REG_CONFIG = 32'b00000000000000000000000000000000
@@ -610,7 +610,7 @@ WARNING:Xst:647 - Input <ARESET> is never used. This port will be preserved and 
 Unit <ict106_axic_register_slice_2> synthesized.
 
 Synthesizing Unit <ict106_axic_register_slice_3>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axic_register_slice.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axic_register_slice.v".
         C_FAMILY = "spartan6"
         C_DATA_WIDTH = 3
         C_REG_CONFIG = 32'b00000000000000000000000000000000
@@ -621,7 +621,7 @@ WARNING:Xst:647 - Input <ARESET> is never used. This port will be preserved and 
 Unit <ict106_axic_register_slice_3> synthesized.
 
 Synthesizing Unit <ict106_axic_register_slice_4>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axic_register_slice.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axic_register_slice.v".
         C_FAMILY = "spartan6"
         C_DATA_WIDTH = 36
         C_REG_CONFIG = 32'b00000000000000000000000000000000
@@ -632,7 +632,7 @@ WARNING:Xst:647 - Input <ARESET> is never used. This port will be preserved and 
 Unit <ict106_axic_register_slice_4> synthesized.
 
 Synthesizing Unit <ict106_register_slice_bank_2>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_register_slice_bank.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_register_slice_bank.v".
         C_FAMILY = "spartan6"
         C_NUM_SLOTS = 2
         C_AXI_ID_WIDTH = 512'b00000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001
@@ -659,7 +659,7 @@ Synthesizing Unit <ict106_register_slice_bank_2>.
 Unit <ict106_register_slice_bank_2> synthesized.
 
 Synthesizing Unit <ict106_protocol_conv_bank>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_protocol_conv_bank.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_protocol_conv_bank.v".
         C_FAMILY = "spartan6"
         C_NUM_SLOTS = 2
         C_AXI_ID_MAX_WIDTH = 1
@@ -682,7 +682,7 @@ Synthesizing Unit <ict106_protocol_conv_bank>.
 Unit <ict106_protocol_conv_bank> synthesized.
 
 Synthesizing Unit <ict106_axi_protocol_converter>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_protocol_converter.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_protocol_converter.v".
         C_FAMILY = "spartan6"
         C_AXI_PROTOCOL = 32'b00000000000000000000000000000010
         C_IGNORE_RID = 0
@@ -727,7 +727,7 @@ WARNING:Xst:647 - Input <M_AXI_RLAST> is never used. This port will be preserved
 Unit <ict106_axi_protocol_converter> synthesized.
 
 Synthesizing Unit <ict106_axilite_conv>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axilite_conv.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axilite_conv.v".
         C_FAMILY = "spartan6"
         C_AXI_ID_WIDTH = 1
         C_AXI_ADDR_WIDTH = 32
@@ -750,7 +750,7 @@ Synthesizing Unit <ict106_axilite_conv>.
 Unit <ict106_axilite_conv> synthesized.
 
 Synthesizing Unit <ict106_converter_bank_1>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_converter_bank.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_converter_bank.v".
         C_FAMILY = "spartan6"
         C_NUM_SLOTS = 1
         C_AXI_ID_WIDTH = 512'b00000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001
@@ -777,7 +777,7 @@ Synthesizing Unit <ict106_converter_bank_1>.
 Unit <ict106_converter_bank_1> synthesized.
 
 Synthesizing Unit <ict106_axi_clock_converter>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_clock_converter.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_clock_converter.v".
         C_FAMILY = "spartan6"
         C_AXI_ID_WIDTH = 1
         C_AXI_ADDR_WIDTH = 32
@@ -830,7 +830,7 @@ INFO:Xst:2774 - HDL ADVISOR - KEEP property attached to signal S_AXI_ACLK may hi
 Unit <ict106_axi_clock_converter> synthesized.
 
 Synthesizing Unit <ict106_converter_bank_2>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_converter_bank.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_converter_bank.v".
         C_FAMILY = "spartan6"
         C_NUM_SLOTS = 2
         C_AXI_ID_WIDTH = 512'b00000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001
@@ -852,13 +852,13 @@ Synthesizing Unit <ict106_converter_bank_2>.
         C_AXI_RUSER_WIDTH = 1
         C_AXI_BUSER_WIDTH = 1
         C_HEMISPHERE = "mi"
-INFO:Xst:3210 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_converter_bank.v" line 552: Output port <INTERCONNECT_RESET_OUT_N> of the instance <gen_conv_slot[1].clock_conv_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_converter_bank.v" line 552: Output port <INTERCONNECT_RESET_OUT_N> of the instance <gen_conv_slot[1].clock_conv_inst> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <ict106_converter_bank_2> synthesized.
 
 Synthesizing Unit <ict106_data_fifo_bank_1>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_data_fifo_bank.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_data_fifo_bank.v".
         C_FAMILY = "spartan6"
         C_NUM_SLOTS = 1
         C_AXI_ID_WIDTH = 512'b00000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001
@@ -885,7 +885,7 @@ Synthesizing Unit <ict106_data_fifo_bank_1>.
 Unit <ict106_data_fifo_bank_1> synthesized.
 
 Synthesizing Unit <ict106_axi_data_fifo>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_data_fifo.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_data_fifo.v".
         C_FAMILY = "spartan6"
         C_AXI_ID_WIDTH = 1
         C_AXI_ADDR_WIDTH = 32
@@ -909,7 +909,7 @@ WARNING:Xst:647 - Input <ARESETN> is never used. This port will be preserved and
 Unit <ict106_axi_data_fifo> synthesized.
 
 Synthesizing Unit <ict106_data_fifo_bank_2>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_data_fifo_bank.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_data_fifo_bank.v".
         C_FAMILY = "spartan6"
         C_NUM_SLOTS = 2
         C_AXI_ID_WIDTH = 512'b00000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001
@@ -936,7 +936,7 @@ Synthesizing Unit <ict106_data_fifo_bank_2>.
 Unit <ict106_data_fifo_bank_2> synthesized.
 
 Synthesizing Unit <ict106_axi_crossbar>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_crossbar.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axi_crossbar.v".
         C_MAX_S = 16
         C_MAX_M = 16
         C_NUM_ADDR_RANGES = 16
@@ -1032,7 +1032,7 @@ Synthesizing Unit <ict106_axi_crossbar>.
 Unit <ict106_axi_crossbar> synthesized.
 
 Synthesizing Unit <ict106_crossbar_sasd>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar_sasd.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar_sasd.v".
         C_MAX_S = 16
         C_MAX_M = 16
         C_NUM_ADDR_RANGES = 16
@@ -1124,8 +1124,8 @@ WARNING:Xst:647 - Input <S_AXI_CTRL_WVALID> is never used. This port will be pre
 WARNING:Xst:647 - Input <S_AXI_CTRL_BREADY> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <S_AXI_CTRL_ARVALID> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <S_AXI_CTRL_RREADY> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar_sasd.v" line 1114: Output port <S_AXI_BID> of the instance <gen_crossbar.gen_decerr.decerr_slave_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar_sasd.v" line 1114: Output port <S_AXI_RID> of the instance <gen_crossbar.gen_decerr.decerr_slave_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar_sasd.v" line 1114: Output port <S_AXI_BID> of the instance <gen_crossbar.gen_decerr.decerr_slave_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_crossbar_sasd.v" line 1114: Output port <S_AXI_RID> of the instance <gen_crossbar.gen_decerr.decerr_slave_inst> is unconnected or connected to loadless signal.
     Found 3-bit register for signal <m_atarget_hot>.
     Found 2-bit register for signal <m_atarget_enc>.
     Found 1-bit register for signal <reset>.
@@ -1136,7 +1136,7 @@ INFO:Xst:2774 - HDL ADVISOR - IOB property attached to signal reset may hinder X
 Unit <ict106_crossbar_sasd> synthesized.
 
 Synthesizing Unit <ict106_addr_arbiter_sasd>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_addr_arbiter_sasd.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_addr_arbiter_sasd.v".
         C_MAX_S = 16
         C_FAMILY = "spartan6"
         C_NUM_S = 1
@@ -1158,7 +1158,7 @@ Synthesizing Unit <ict106_addr_arbiter_sasd>.
 Unit <ict106_addr_arbiter_sasd> synthesized.
 
 Synthesizing Unit <ict106_addr_decoder>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_addr_decoder.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_addr_decoder.v".
         C_MAX_M = 16
         C_FAMILY = "spartan6"
         C_NUM_TARGETS = 2
@@ -1213,7 +1213,7 @@ WARNING:Xst:647 - Input <ADDR<11:0>> is never used. This port will be preserved 
 Unit <ict106_addr_decoder> synthesized.
 
 Synthesizing Unit <ict106_comparator_static_1>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_comparator_static.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_comparator_static.v".
         C_FAMILY = "spartan6"
         C_VALUE = 20'b01000001010000000000
         C_DATA_WIDTH = 20
@@ -1222,14 +1222,14 @@ Synthesizing Unit <ict106_comparator_static_1>.
 Unit <ict106_comparator_static_1> synthesized.
 
 Synthesizing Unit <ict106_carry_and>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_carry_and.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_carry_and.v".
         C_FAMILY = "spartan6"
     Summary:
 	no macro.
 Unit <ict106_carry_and> synthesized.
 
 Synthesizing Unit <ict106_comparator_static_2>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_comparator_static.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_comparator_static.v".
         C_FAMILY = "spartan6"
         C_VALUE = 20'b01000000101000000000
         C_DATA_WIDTH = 20
@@ -1238,7 +1238,7 @@ Synthesizing Unit <ict106_comparator_static_2>.
 Unit <ict106_comparator_static_2> synthesized.
 
 Synthesizing Unit <ict106_splitter_1>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_splitter.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_splitter.v".
         C_NUM_M = 3
     Found 3-bit register for signal <m_ready_d>.
     Summary:
@@ -1246,7 +1246,7 @@ Synthesizing Unit <ict106_splitter_1>.
 Unit <ict106_splitter_1> synthesized.
 
 Synthesizing Unit <ict106_splitter_2>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_splitter.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_splitter.v".
         C_NUM_M = 2
     Found 2-bit register for signal <m_ready_d>.
     Summary:
@@ -1254,7 +1254,7 @@ Synthesizing Unit <ict106_splitter_2>.
 Unit <ict106_splitter_2> synthesized.
 
 Synthesizing Unit <ict106_mux_enc_1>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_mux_enc.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_mux_enc.v".
         C_FAMILY = "spartan6"
         C_RATIO = 3
         C_SEL_WIDTH = 2
@@ -1264,7 +1264,7 @@ Synthesizing Unit <ict106_mux_enc_1>.
 Unit <ict106_mux_enc_1> synthesized.
 
 Synthesizing Unit <ict106_mux_enc_2>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_mux_enc.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_mux_enc.v".
         C_FAMILY = "spartan6"
         C_RATIO = 1
         C_SEL_WIDTH = 1
@@ -1275,7 +1275,7 @@ WARNING:Xst:647 - Input <S> is never used. This port will be preserved and left 
 Unit <ict106_mux_enc_2> synthesized.
 
 Synthesizing Unit <ict106_mux_enc_3>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_mux_enc.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_mux_enc.v".
         C_FAMILY = "spartan6"
         C_RATIO = 3
         C_SEL_WIDTH = 2
@@ -1285,7 +1285,7 @@ Synthesizing Unit <ict106_mux_enc_3>.
 Unit <ict106_mux_enc_3> synthesized.
 
 Synthesizing Unit <ict106_axic_register_slice_5>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axic_register_slice.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_axic_register_slice.v".
         C_FAMILY = "spartan6"
         C_DATA_WIDTH = 36
         C_REG_CONFIG = 32'b00000000000000000000000000000000
@@ -1296,7 +1296,7 @@ WARNING:Xst:647 - Input <ARESET> is never used. This port will be preserved and 
 Unit <ict106_axic_register_slice_5> synthesized.
 
 Synthesizing Unit <ict106_mux_enc_4>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_mux_enc.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_mux_enc.v".
         C_FAMILY = "spartan6"
         C_RATIO = 3
         C_SEL_WIDTH = 2
@@ -1306,7 +1306,7 @@ Synthesizing Unit <ict106_mux_enc_4>.
 Unit <ict106_mux_enc_4> synthesized.
 
 Synthesizing Unit <ict106_decerr_slave>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_decerr_slave.v".
+    Related source file is "D:/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v1_06_a/hdl/verilog/ict106_decerr_slave.v".
         C_AXI_ID_WIDTH = 1
         C_AXI_DATA_WIDTH = 32
         C_AXI_BUSER_WIDTH = 1
@@ -1972,12 +1972,12 @@ axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/S_AXI_ACLK|    1.9
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 6.96 secs
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.16 secs
  
 --> 
 
-Total memory usage is 275112 kilobytes
+Total memory usage is 311876 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  204 (   0 filtered)

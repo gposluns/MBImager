@@ -26,7 +26,7 @@ module OK_imager(
 	input wire sys_clkn,
 	input wire sys_clkp,
 	output wire[7:0] led,
-	input wire[5:0] im_data,
+	input wire[7:0] im_data, //changed from 5:0
 	input wire im_data_val,
 	input wire im_data_clk,
 	output wire FPGA_rst_n,
@@ -39,12 +39,42 @@ module OK_imager(
 	input wire FSMIND0,				// If high, the Exposure FSM (on OK) is active
 	output wire FSMIND1,
 	output wire FSMIND0ACK,
-	input wire FSMIND1ACK
+	input wire FSMIND1ACK,
+	
+	//ddr2 inputs and outputs
+//	input wire c3_sys_clk_n,
+//	input wire c3_sys_clk_p,
+
+	inout wire [15:0] mcb3_dram_dq,
+	output wire [12:0] mcb3_dram_a,
+	output wire [2:0] mcb3_dram_ba,
+	output wire mcb3_dram_ras_n,
+	output wire mcb3_dram_cas_n,
+	output wire mcb3_dram_we_n,
+	output wire mcb3_dram_odt,
+	output wire mcb3_dram_cke,
+	output wire mcb3_dram_dm,
+	inout wire mcb3_dram_udqs,
+	inout wire mcb3_dram_udqs_n,
+	inout wire mcb3_rzq,
+	inout wire mcb3_zio,
+	output wire mcb3_dram_udm,
+	inout wire mcb3_dram_dqs,
+	inout wire mcb3_dram_dqs_n,
+	output wire mcb3_dram_ck,
+	output wire mcb3_dram_ck_n,
+	output wire c3_calib_done
     );
 
 // -- Parameters
 parameter	C_CLKHS_D		= 3;	// Devide value for CLKHS to USER_CLOCK. value - D - (1-256)
 parameter	C_CLKHS_M		= 3;	// Multiply value for CLKHS to USER_CLOCK. value - M - (2-256)
+
+//ddr2 ports width
+localparam  C3_P0_MASK_SIZE          = 8;
+localparam C3_P0_DATA_PORT_SIZE      = 64;
+localparam C3_P1_MASK_SIZE           = 8;
+localparam C3_P1_DATA_PORT_SIZE      = 64;
 
 	// Clock
 wire sys_clk;
@@ -59,14 +89,14 @@ IBUFGDS osc_clk(
 wire okClk;
 wire [112:0] okHE;
 wire [64:0] okEH;
-wire [5*65-1:0] okEHx;
+wire [6*65-1:0] okEHx;
 // Adjust size of okEHx to fit the number of outgoing endpoints in your design (n*65-1:0)
 
 // Circuit wires
 wire rst;				// FIFO reset
 wire wr_en;				// FIFO write enable
 wire rd_en;				// FIFO read enable
-wire [23:0] dout;		// FIFO output data
+wire [31:0] dout; //changed from 23:0		// FIFO output data
 wire [23:0] dout_buf;	// 2nd FIFO output 
 wire [31:0] din_pipe;	// 2nd FIFO output 
 wire [31:0] wireout;
@@ -80,6 +110,7 @@ wire [31:0] trig53in;
 wire full;
 wire full_2;
 wire empty;
+wire almost_empty;
 wire empty_2;
 wire flag_2frames;
 wire d_buf_valid;
@@ -104,6 +135,89 @@ reg [7:0] ADC_TESTDATA3;
 wire [23:0] din;
 wire [5:0] dout_test;
 
+//undeclared wires 
+wire CLK_HS;
+wire full_pat;	
+wire empty_pat;
+wire valid_pat;
+wire prog_full;
+wire CLKMPRE_int;
+wire CLK0;
+wire CLK180;
+wire CLK270;
+wire CLK2X_2;
+wire CLK2X180;
+wire CLK90;
+wire sys_clkDV;
+wire CLK_HS180;
+wire LOCKED_HS;
+wire PSDONE;
+wire CLK0_MPRE;
+wire CLK180_MPRE;
+wire CLK270_MPRE;
+wire CLK2X_MPRE;
+wire CLK2X180_MPRE;
+wire CLK90_MPRE;
+wire CLKDV;
+wire CLKMPRE_int180;
+wire LOCKED_MPRE;
+wire PSDONE_MPRE;
+wire [7:0]STATUS_MPRE;
+
+
+
+wire pipe80in_high;
+wire [31:0] pipe80in_data;
+wire pattern_stored;
+wire read_done;
+
+//ddr2 wires
+//note that p0 read and p1 write wires are not used
+wire 		c3_clk0;
+wire 		c3_rst0;
+wire		c3_p0_cmd_en;
+wire [2:0]	c3_p0_cmd_instr;
+wire [5:0]	c3_p0_cmd_bl;
+wire [29:0]	c3_p0_cmd_byte_addr;
+wire		c3_p0_cmd_empty;
+wire		c3_p0_cmd_full;
+wire		c3_p0_wr_en;
+wire [C3_P0_MASK_SIZE - 1:0]	c3_p0_wr_mask;
+wire [C3_P0_DATA_PORT_SIZE - 1:0]	c3_p0_wr_data;
+wire		c3_p0_wr_full;
+wire		c3_p0_wr_empty;
+wire [6:0]	c3_p0_wr_count;
+wire		c3_p0_wr_underrun;
+wire		c3_p0_wr_error;
+wire		c3_p0_rd_en;
+wire [C3_P0_DATA_PORT_SIZE - 1:0]	c3_p0_rd_data;
+wire		c3_p0_rd_full;
+wire		c3_p0_rd_empty;
+wire [6:0]	c3_p0_rd_count;
+wire		c3_p0_rd_overflow;
+wire		c3_p0_rd_error;
+wire		c3_p1_cmd_en;
+wire [2:0]	c3_p1_cmd_instr;
+wire [5:0]	c3_p1_cmd_bl;
+wire [29:0]	c3_p1_cmd_byte_addr;
+wire		c3_p1_cmd_empty;
+wire		c3_p1_cmd_full;
+wire		c3_p1_wr_en;
+wire [C3_P1_MASK_SIZE - 1:0]	c3_p1_wr_mask;
+wire [C3_P1_DATA_PORT_SIZE - 1:0]	c3_p1_wr_data;
+wire		c3_p1_wr_full;
+wire		c3_p1_wr_empty;
+wire [6:0]	c3_p1_wr_count;
+wire		c3_p1_wr_underrun;
+wire		c3_p1_wr_error;
+wire		c3_p1_rd_en;
+wire [C3_P1_DATA_PORT_SIZE - 1:0]	c3_p1_rd_data;
+wire		c3_p1_rd_full;
+wire		c3_p1_rd_empty;
+wire [6:0]	c3_p1_rd_count;
+wire		c3_p1_rd_overflow;
+wire		c3_p1_rd_error;
+
 // TB sims values
 // assign wireExp = 32'h000A;
 // assign wirePat = 32'h0014;
@@ -112,8 +226,27 @@ wire [5:0] dout_test;
 // assign wireout = 32'h0000;
 
 // Circuit assignements
+wire [2:0] write_happens;
+wire wait_mem;
+//reg check_trig;
+//initial check_trig = 0;
+//always @(posedge c3_clk0) begin
+//	if (trig53in[0]) check_trig <= 1;
+//end
+//assign led[7] = check_trig;
+//assign led[6] = trig53in[0];
+//assign led[7:4] = 4'b1111;
+//assign led[3:1] = write_happens;
+//assign led[0] = pattern_stored;
+
 assign led = fsm_stat;
-assign FSMstop = rst | flag_2frames;
+
+//reg fifo_full_checker;
+//initial fifo_full_checker <= 0;
+//always @(posedge flag_2frames) fifo_full_checker<= 1;
+//assign led[7] = fifo_full_checker;
+
+assign FSMstop = rst;// | flag_2frames; //| pattern_stored;
 // assign FSMstop = rst;
 assign RstPat = FSMstop | FSMIND1;
 assign FPGA_rst_n = ~FSMstop;
@@ -160,7 +293,131 @@ fifo_24to6_testData fifo_testdata (
 );
  */
  
+ 
+//DDR2 SDRAM MCB
+
+mem_if u_mem_if (
+
+  .c3_sys_clk_p           (sys_clkp),
+  .c3_sys_clk_n           (sys_clkn),
+	.c3_sys_clk(sys_clk),
+
+  .c3_sys_rst_i           (rst),                        
+
+  .mcb3_dram_dq           (mcb3_dram_dq),  
+  .mcb3_dram_a            (mcb3_dram_a),  
+  .mcb3_dram_ba           (mcb3_dram_ba),
+  .mcb3_dram_ras_n        (mcb3_dram_ras_n),                        
+  .mcb3_dram_cas_n        (mcb3_dram_cas_n),                        
+  .mcb3_dram_we_n         (mcb3_dram_we_n),                          
+  .mcb3_dram_odt          (mcb3_dram_odt),
+  .mcb3_dram_cke          (mcb3_dram_cke),                          
+  .mcb3_dram_ck           (mcb3_dram_ck),                          
+  .mcb3_dram_ck_n         (mcb3_dram_ck_n),       
+  .mcb3_dram_dqs          (mcb3_dram_dqs),                          
+  .mcb3_dram_dqs_n        (mcb3_dram_dqs_n),
+  .mcb3_dram_udqs         (mcb3_dram_udqs),    // for X16 parts                        
+  .mcb3_dram_udqs_n       (mcb3_dram_udqs_n),  // for X16 parts
+  .mcb3_dram_udm          (mcb3_dram_udm),     // for X16 parts
+  .mcb3_dram_dm           (mcb3_dram_dm),
+  .c3_clk0		        (c3_clk0),
+  .c3_rst0		        (c3_rst0),
+	.c3_calib_done          (c3_calib_done),
+	.mcb3_rzq               (mcb3_rzq),
+   .mcb3_zio               (mcb3_zio),
+               
+   .c3_p0_cmd_clk                          (c3_clk0),
+   .c3_p0_cmd_en                           (c3_p0_cmd_en),
+   .c3_p0_cmd_instr                        (c3_p0_cmd_instr),
+   .c3_p0_cmd_bl                           (c3_p0_cmd_bl),
+   .c3_p0_cmd_byte_addr                    (c3_p0_cmd_byte_addr),
+   .c3_p0_cmd_empty                        (c3_p0_cmd_empty),
+   .c3_p0_cmd_full                         (c3_p0_cmd_full),
+   .c3_p0_wr_clk                           (c3_clk0),
+   .c3_p0_wr_en                            (c3_p0_wr_en),
+   .c3_p0_wr_mask                          (c3_p0_wr_mask),
+   .c3_p0_wr_data                          (c3_p0_wr_data),
+   .c3_p0_wr_full                          (c3_p0_wr_full),
+   .c3_p0_wr_empty                         (c3_p0_wr_empty),
+   .c3_p0_wr_count                         (c3_p0_wr_count),
+   .c3_p0_wr_underrun                      (c3_p0_wr_underrun),
+   .c3_p0_wr_error                         (c3_p0_wr_error),
+   .c3_p0_rd_clk                           (c3_clk0),
+   .c3_p0_rd_en                            (c3_p0_rd_en),
+   .c3_p0_rd_data                          (c3_p0_rd_data),
+   .c3_p0_rd_full                          (c3_p0_rd_full),
+   .c3_p0_rd_empty                         (c3_p0_rd_empty),
+   .c3_p0_rd_count                         (c3_p0_rd_count),
+   .c3_p0_rd_overflow                      (c3_p0_rd_overflow),
+   .c3_p0_rd_error                         (c3_p0_rd_error),
+   .c3_p1_cmd_clk                          (c3_clk0),
+   .c3_p1_cmd_en                           (c3_p1_cmd_en),
+   .c3_p1_cmd_instr                        (c3_p1_cmd_instr),
+   .c3_p1_cmd_bl                           (c3_p1_cmd_bl),
+   .c3_p1_cmd_byte_addr                    (c3_p1_cmd_byte_addr),
+   .c3_p1_cmd_empty                        (c3_p1_cmd_empty),
+   .c3_p1_cmd_full                         (c3_p1_cmd_full),
+   .c3_p1_wr_clk                           (c3_clk0),
+   .c3_p1_wr_en                            (c3_p1_wr_en),
+   .c3_p1_wr_mask                          (c3_p1_wr_mask),
+   .c3_p1_wr_data                          (c3_p1_wr_data),
+   .c3_p1_wr_full                          (c3_p1_wr_full),
+   .c3_p1_wr_empty                         (c3_p1_wr_empty),
+   .c3_p1_wr_count                         (c3_p1_wr_count),
+   .c3_p1_wr_underrun                      (c3_p1_wr_underrun),
+   .c3_p1_wr_error                         (c3_p1_wr_error),
+   .c3_p1_rd_clk                           (c3_clk0),
+   .c3_p1_rd_en                            (c3_p1_rd_en),
+   .c3_p1_rd_data                          (c3_p1_rd_data),
+   .c3_p1_rd_full                          (c3_p1_rd_full),
+   .c3_p1_rd_empty                         (c3_p1_rd_empty),
+   .c3_p1_rd_count                         (c3_p1_rd_count),
+   .c3_p1_rd_overflow                      (c3_p1_rd_overflow),
+   .c3_p1_rd_error                         (c3_p1_rd_error)
+);
+ 
+
+
+//wire tempfifo_valid; 
+//wire tempfifo_empty;
+//wire tempfifo_full;
+//wire [7:0] tempfifo_dout;
+//fifo_8to8 temp_fifo(
+//  .clk(im_data_clk), // input clk
+//  .rst(rst), // input rst
+//  .din(im_data), // input [7 : 0] din
+//  .wr_en(im_data_val), // input wr_en
+//  .rd_en(!tempfifo_empty), // input rd_en
+//  .dout(tempfifo_dout), // output [7 : 0] dout
+//  .full(tempfifo_full), // output full
+//  .empty(tempfifo_empty), // output empty
+//  .valid(tempfifo_valid) // output valid
+//);
+//
+// wire [23:0] temp_data;
+// assign temp_data = dout[23:0];//24'hf0f0f0; 
+// // FIFO for changing the data width from 6 to 24
+//fifo_6to24 fifo_databuf (
+//  .rst(rst), // input rst
+//  .wr_clk(im_data_clk), // input wr_clk
+//  .rd_clk(okClk), // input rd_clk
+//  .din(tempfifo_dout), // input [5 : 0] din
+//  .wr_en(tempfifo_valid), // input wr_en
+//  .rd_en(1'b1), // input rd_en
+//  .dout(dout), // output [23 : 0] dout
+//  .full(full), // output full
+//  .empty(empty), // output empty
+//  .almost_empty(almost_empty), // output almost_empty
+//  .valid(d_buf_valid) // output valid
+//); 
+ 
+ wire [23:0] temp_data;
+ assign temp_data = dout[23:0];//24'hf0f0f0; 
  // FIFO for changing the data width from 6 to 24
+ 
+// wire [7:0]switched_data;
+// assign switched_data = {im_data[7],im_data[3],im_data[5:4],im_data[6],im_data[2:0]};
+ 
 fifo_6to24 fifo_databuf (
   .rst(rst), // input rst
   .wr_clk(im_data_clk), // input wr_clk
@@ -179,7 +436,8 @@ fifo_6to24 fifo_databuf (
 fifo_usbout fifo256kB_out (
   .clk(okClk), // input clk
   .rst(rst), // input rst
-  .din(dout), // input [23 : 0] din
+//  .din(dout), // input [23 : 0] din
+  .din(temp_data), // input [23 : 0] din
   .wr_en(d_buf_valid), // input wr_en
   .rd_en(rd_en), // input rd_en
   .dout(dout_buf), // output [23 : 0] dout
@@ -188,7 +446,8 @@ fifo_usbout fifo256kB_out (
   .prog_full(flag_2frames) // output prog_full
 );
 
-fifo_patterns FIFO_Patterns (
+
+fifo_patterns FIFO_Patterns_cam (
   .clk(CLK_HS), // input clk
   .rst(RstPat), // input rst
   .din(Pat_to_FIFO), // input [9 : 0] din
@@ -201,6 +460,36 @@ fifo_patterns FIFO_Patterns (
   .prog_full(prog_full), // output prog_full
   .prog_empty(PatFIFO_empty) // output prog_empty
 );
+
+wire pat_fifo_wr_en;
+wire pat_fifo_rd_en;
+wire outfifo_full;
+wire outfifo_empty;
+wire [15:0] MSTREAM16;
+
+wire fifo_mem_rst;
+//assign fifo_mem_rst = RstPat && (c3_p1_rd_empty);
+
+reg fifo_rst_cnt;
+always @ (posedge CLK_HS) begin
+	if (RstPat) fifo_rst_cnt <= 0;
+	else fifo_rst_cnt <= 1;
+end
+assign fifo_mem_rst = RstPat && fifo_rst_cnt;
+
+fifo_memout fifo_mem_pats (
+  .rst(fifo_mem_rst), // input rst
+  .wr_clk(c3_clk0), // input wr_clk
+  .rd_clk(CLK_HS), // input rd_clk
+  .din(c3_p1_rd_data), // input [63 : 0] din
+  .wr_en(pat_fifo_wr_en), // input wr_en
+  .rd_en(pat_fifo_rd_en), // input rd_en
+  .dout(MSTREAM16), // output [15 : 0] dout
+  //.full(outfifo_full), // output full
+  .empty(outfifo_empty), // output empty
+  .prog_full(outfifo_full)
+);
+
 
 ROImager_exp_PatSeperate ROImager_inst (
     .RESET(FSMstop), 
@@ -219,21 +508,100 @@ ROImager_exp_PatSeperate ROImager_inst (
     .FSMIND1ACK(FSMIND1ACK)
     );
 
-pattern_gen pat_gen (
-    .rst(RstPat), 
+//pattern_gen pat_gen (
+//    .rst(RstPat), 
+//    .clk(CLK_HS), 
+//    .Pat_in(Pat_in), 
+//    .PatGen_start(PatGen_start), 
+//    .PatGen_stop(PatGen_stop), 
+//    .Num_Pat(wirePat), 
+//    .CntSubc(CntSubc), 
+//    // .FSMIND0(FSMIND0), 
+//    .FIFO_empty(PatFIFO_empty), 
+//    .Mask_change_subc(wireMaskChngSubc), 
+//	.Mask_change_no(wireMaskChng),
+//    .FIFO_wr(PatFIFO_wr), 
+//    .Pat_out(Pat_to_FIFO)
+//    );
+	 
+	 
+load_pattern pat_gen (
+    .rst(fifo_mem_rst), //changed from rst_pat
     .clk(CLK_HS), 
-    .Pat_in(Pat_in), 
-    .PatGen_start(PatGen_start), 
-    .PatGen_stop(PatGen_stop), 
+	 .pat_fifo_rd_en(pat_fifo_rd_en),
+	 .pat_in(MSTREAM16[9:0]),
+	 
     .Num_Pat(wirePat), 
     .CntSubc(CntSubc), 
-    // .FSMIND0(FSMIND0), 
     .FIFO_empty(PatFIFO_empty), 
-    .Mask_change_subc(wireMaskChngSubc), 
-	.Mask_change_no(wireMaskChng),
+	 .camfifo_empty(empty_pat),
+	 .camfifo_full(full_pat),
+	 
     .FIFO_wr(PatFIFO_wr), 
     .Pat_out(Pat_to_FIFO)
-    );
+);
+
+mem_fsm mem_controller(
+//	.fsm_rst(rst),
+	.fsm_rst(FSMstop),
+		
+	.okClk(okClk),
+	.pipein_high(pipe80in_high),
+	.pipein_data(pipe80in_data),
+		
+	.write_start(trig53in[0]),
+	.Num_Pat(wirePat),
+		
+	.mem_calib_done(c3_calib_done),
+	.mem_clk(c3_clk0),
+	.c3_p0_cmd_en(c3_p0_cmd_en),
+	.c3_p0_cmd_instr(c3_p0_cmd_instr),
+	.c3_p0_cmd_bl(c3_p0_cmd_bl),
+	.c3_p0_cmd_byte_addr(c3_p0_cmd_byte_addr),
+	.c3_p0_cmd_empty(c3_p0_cmd_empty),
+	.c3_p0_cmd_full(c3_p0_cmd_full),
+	.c3_p0_wr_en(c3_p0_wr_en),
+	.c3_p0_wr_data(c3_p0_wr_data),
+	.c3_p0_wr_mask(c3_p0_wr_mask),
+	.c3_p0_wr_full(c3_p0_wr_full),
+	.c3_p0_wr_empty(c3_p0_wr_empty),
+   .c3_p0_wr_count(c3_p0_wr_count),
+   .c3_p0_wr_underrun(c3_p0_wr_underrun),
+   .c3_p0_wr_error(c3_p0_wr_error),
+	
+	.c3_p1_cmd_en                           (c3_p1_cmd_en),
+   .c3_p1_cmd_instr                        (c3_p1_cmd_instr),
+   .c3_p1_cmd_bl                           (c3_p1_cmd_bl),
+   .c3_p1_cmd_byte_addr                    (c3_p1_cmd_byte_addr),
+   .c3_p1_cmd_empty                        (c3_p1_cmd_empty),
+   .c3_p1_cmd_full                         (c3_p1_cmd_full),
+	.c3_p1_rd_en                            (c3_p1_rd_en),
+   .c3_p1_rd_full                          (c3_p1_rd_full),
+   .c3_p1_rd_empty                         (c3_p1_rd_empty),
+   .c3_p1_rd_count                         (c3_p1_rd_count),
+   .c3_p1_rd_overflow                      (c3_p1_rd_overflow),
+   .c3_p1_rd_error                         (c3_p1_rd_error),
+	.c3_p1_rd_data(c3_p1_rd_data),
+	
+	.read_start(FSMIND1),
+	.outfifo_full(outfifo_full),
+	.outfifo_empty(outfifo_empty),
+	.outfifo_wr_en(pat_fifo_wr_en),
+	.read_done(read_done),
+	
+	.write_happens(write_happens),
+	
+	.write_done(pattern_stored)
+);	 
+
+
+//generating c3_sys_clk
+//wire c3_sys_clk;
+//CLK_DDR ddr_clk(
+//	.CLK_IN1(sys_clk),
+//	.CLK_OUT1(c3_sys_clk)
+//);
+
 
 // Generating the CLK_HS
 // DCM_CLKGEN: Frequency Aligned Digital Clock Manager
@@ -375,7 +743,7 @@ okHost hostIF (
 );
 
 // Adjust N to fit the number of outgoing endpoints in your design (.N(n))
-okWireOR # (.N(5)) wireOR (okEH, okEHx);
+okWireOR # (.N(6)) wireOR (okEH, okEHx);
 
 // FrontPanel module instantiations
 okWireIn	wire10		(.okHE(okHE),								.ep_addr(8'h10),							.ep_dataout(wireout) );
@@ -388,8 +756,9 @@ okWireIn	wire15		(.okHE(okHE),								.ep_addr(8'h15),							.ep_dataout(wirePat
 okWireOut 	wire22		(.okHE(okHE),	.okEH(okEHx[0*65 +: 65]),	.ep_addr(8'h22),							.ep_datain(wireExp) );
 okWireOut 	wire23		(.okHE(okHE),	.okEH(okEHx[3*65 +: 65]),	.ep_addr(8'h23),							.ep_datain(wirePat) );
 okWireOut 	wire24		(.okHE(okHE),	.okEH(okEHx[4*65 +: 65]),	.ep_addr(8'h24),							.ep_datain(wireMaskChng) );
-okTriggerIn trigIn53 	(.okHE(okHE),								.ep_addr(8'h53), 	.ep_clk(CLKDV), 		.ep_trigger(trig53in));
+okTriggerIn trigIn53 	(.okHE(okHE),								.ep_addr(8'h53), 	.ep_clk(c3_clk0), 		.ep_trigger(trig53in));
 okTriggerOut trigOut6A	(.okHE(okHE), 	.okEH(okEHx[1*65 +: 65]),	.ep_addr(8'h6a), 	.ep_clk(sys_clk), 		.ep_trigger(trig6Aout));
 okPipeOut	pipeA0		(.okHE(okHE),	.okEH(okEHx[2*65 +: 65]),	.ep_addr(8'hA0),	.ep_read(rd_en),		.ep_datain(din_pipe) );
+okPipeIn 	pipe80		(.okHE(okHE),	.okEH(okEHx[5*65 +: 65]),	.ep_addr(8'h80),	.ep_write(pipe80in_high),	.ep_dataout(pipe80in_data));
 
 endmodule

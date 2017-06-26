@@ -1,1 +1,1 @@
- -p spartan6 -lang verilog$(PROJECT_SEARCHPATHOPT) $(GLOBAL_SEARCHPATHOPT) -msg __xps/ise/xmsgprops.lst -s isim -X C:/Users/MBImager/Documents/Imager_System_Temp_Sensor/Microblaze_System/
+ -p spartan6 -lang verilog$(PROJECT_SEARCHPATHOPT) $(GLOBAL_SEARCHPATHOPT) -msg __xps/ise/xmsgprops.lst -s isim -X D:/MBImager/MBImager_full/MB_SPI/
