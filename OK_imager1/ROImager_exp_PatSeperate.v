@@ -145,7 +145,7 @@ input [31:0]			PROJ_DELAY;
 				end else begin
 					CLKMPRE_EN = 0;
 					count_mpre <= 0;
-					count_subsc <= count_subsc + 1;
+					//count_subsc <= count_subsc + 1;
 					state <= S_subc_n;
 				end
             end

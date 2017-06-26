@@ -287,20 +287,20 @@ Synthesizing Unit <ROImager_exp_PatSeperate>.
     Found 32-bit subtractor for signal <fst_cntr[31]_GND_6_o_sub_5_OUT> created at line 101.
     Found 32-bit subtractor for signal <timer[31]_GND_6_o_sub_14_OUT> created at line 130.
     Found 32-bit adder for signal <count_mpre[31]_GND_6_o_add_23_OUT> created at line 144.
-    Found 32-bit adder for signal <count_subsc[31]_GND_6_o_add_24_OUT> created at line 148.
-    Found 32x5-bit multiplier for signal <n0136> created at line 172.
-    Found 32x7-bit multiplier for signal <n0137> created at line 172.
+    Found 32-bit adder for signal <count_subsc[31]_GND_6_o_add_32_OUT> created at line 164.
+    Found 32x5-bit multiplier for signal <n0132> created at line 172.
+    Found 32x7-bit multiplier for signal <n0133> created at line 172.
     Found 32-bit comparator greater for signal <GND_6_o_fst_cntr[31]_LessThan_4_o> created at line 100
     Found 32-bit comparator greater for signal <GND_6_o_count_mpre[31]_LessThan_21_o> created at line 138
     Found 32-bit comparator greater for signal <GND_6_o_count_mpre[31]_LessThan_23_o> created at line 142
-    Found 32-bit comparator greater for signal <n0047> created at line 172
-    Found 32-bit comparator greater for signal <count_subsc[31]_Num_Pat[31]_LessThan_47_o> created at line 174
+    Found 32-bit comparator greater for signal <n0045> created at line 172
+    Found 32-bit comparator greater for signal <count_subsc[31]_Num_Pat[31]_LessThan_44_o> created at line 174
     Summary:
 	inferred   2 Multiplier(s).
 	inferred   4 Adder/Subtractor(s).
 	inferred 143 D-type flip-flop(s).
 	inferred   5 Comparator(s).
-	inferred  21 Multiplexer(s).
+	inferred  19 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <ROImager_exp_PatSeperate> synthesized.
 WARNING:Xst:2144 - The value of attribute <SAFE_RECOVERY_STATE> (S_subc_first) does not match fsm state <state> size (5).
@@ -654,10 +654,10 @@ Macro Statistics
  62-bit comparator lessequal                           : 1
  63-bit comparator lessequal                           : 1
  64-bit comparator lessequal                           : 1
-# Multiplexers                                         : 1033
+# Multiplexers                                         : 1031
  1-bit 2-to-1 multiplexer                              : 1005
  10-bit 2-to-1 multiplexer                             : 8
- 32-bit 2-to-1 multiplexer                             : 19
+ 32-bit 2-to-1 multiplexer                             : 17
  8-bit 2-to-1 multiplexer                              : 1
 # FSMs                                                 : 2
 
@@ -751,10 +751,10 @@ Macro Statistics
  62-bit comparator lessequal                           : 1
  63-bit comparator lessequal                           : 1
  64-bit comparator lessequal                           : 1
-# Multiplexers                                         : 1033
+# Multiplexers                                         : 1031
  1-bit 2-to-1 multiplexer                              : 1005
  10-bit 2-to-1 multiplexer                             : 8
- 32-bit 2-to-1 multiplexer                             : 19
+ 32-bit 2-to-1 multiplexer                             : 17
  8-bit 2-to-1 multiplexer                              : 1
 # FSMs                                                 : 2
 
@@ -908,18 +908,18 @@ Top Level Output File Name         : OK_imager.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 6231
+# BELS                             : 6233
 #      GND                         : 14
 #      INV                         : 81
 #      LUT1                        : 230
-#      LUT2                        : 405
-#      LUT3                        : 305
-#      LUT4                        : 900
-#      LUT5                        : 724
-#      LUT6                        : 1331
+#      LUT2                        : 410
+#      LUT3                        : 306
+#      LUT4                        : 897
+#      LUT5                        : 725
+#      LUT6                        : 1328
 #      LUT6_2                      : 50
 #      MUXCY                       : 1326
-#      MUXF7                       : 20
+#      MUXF7                       : 21
 #      VCC                         : 5
 #      XORCY                       : 840
 # FlipFlops/Latches                : 2121
@@ -967,17 +967,17 @@ Selected Device : 6slx45fgg484-2
 
 Slice Logic Utilization: 
  Number of Slice Registers:            2018  out of  54576     3%  
- Number of Slice LUTs:                 4071  out of  27288    14%  
-    Number used as Logic:              4026  out of  27288    14%  
+ Number of Slice LUTs:                 4072  out of  27288    14%  
+    Number used as Logic:              4027  out of  27288    14%  
     Number used as Memory:               45  out of   6408     0%  
        Number used as RAM:               44
        Number used as SRL:                1
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   5172
-   Number with an unused Flip Flop:    3154  out of   5172    60%  
-   Number with an unused LUT:          1101  out of   5172    21%  
-   Number of fully used LUT-FF pairs:   917  out of   5172    17%  
+ Number of LUT Flip Flop pairs used:   5173
+   Number with an unused Flip Flop:    3155  out of   5173    60%  
+   Number with an unused LUT:          1101  out of   5173    21%  
+   Number of fully used LUT-FF pairs:   917  out of   5173    17%  
    Number of unique control sets:       102
 
 IO Utilization: 
@@ -1033,7 +1033,7 @@ Speed Grade: -2
 
    Minimum period: 250.905ns (Maximum Frequency: 3.986MHz)
    Minimum input arrival time before clock: 6.602ns
-   Maximum output required time after clock: 6.615ns
+   Maximum output required time after clock: 6.584ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -1590,22 +1590,22 @@ Offset:              6.602ns (Levels of Logic = 6)
 Timing constraint: Default OFFSET IN BEFORE for Clock 'sys_clkp'
   Total number of paths / destination ports: 16 / 14
 -------------------------------------------------------------------------
-Offset:              3.899ns (Levels of Logic = 3)
+Offset:              4.242ns (Levels of Logic = 3)
   Source:            FSMIND0 (PAD)
-  Destination:       ROImager_inst/state_FSM_FFd6 (FF)
+  Destination:       ROImager_inst/FSMIND1_i (FF)
   Destination Clock: sys_clkp rising 0.1X
 
-  Data Path: FSMIND0 to ROImager_inst/state_FSM_FFd6
+  Data Path: FSMIND0 to ROImager_inst/FSMIND1_i
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            13   1.328   1.326  FSMIND0_IBUF (FSMIND0_IBUF)
-     LUT5:I2->O            1   0.235   0.682  ROImager_inst/state_FSM_FFd6-In5 (ROImager_inst/state_FSM_FFd6-In6)
-     LUT4:I3->O            1   0.254   0.000  ROImager_inst/state_FSM_FFd6-In7 (ROImager_inst/state_FSM_FFd6-In)
-     FD:D                      0.074          ROImager_inst/state_FSM_FFd6
+     IBUF:I->O            13   1.328   1.374  FSMIND0_IBUF (FSMIND0_IBUF)
+     LUT5:I1->O            1   0.254   0.958  ROImager_inst/state_state[7]_FSMIND1_i_Select_79_o1 (ROImager_inst/state_state[7]_FSMIND1_i_Select_79_o)
+     LUT5:I1->O            1   0.254   0.000  ROImager_inst/state_state[7]_FSMIND1_i_Select_79_o2 (ROImager_inst/state[7]_FSMIND1_i_Select_79_o)
+     FD:D                      0.074          ROImager_inst/FSMIND1_i
     ----------------------------------------
-    Total                      3.899ns (1.891ns logic, 2.008ns route)
-                                       (48.5% logic, 51.5% route)
+    Total                      4.242ns (1.910ns logic, 2.332ns route)
+                                       (45.0% logic, 55.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'im_data_clk'
@@ -1633,7 +1633,7 @@ Offset:              4.211ns (Levels of Logic = 3)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'okUH<0>'
   Total number of paths / destination ports: 106 / 72
 -------------------------------------------------------------------------
-Offset:              6.615ns (Levels of Logic = 3)
+Offset:              6.584ns (Levels of Logic = 3)
   Source:            wire10/ep_dataout_0 (FF)
   Destination:       FPGA_rst_n (PAD)
   Source Clock:      okUH<0> rising +-24
@@ -1642,13 +1642,13 @@ Offset:              6.615ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            91   0.525   2.247  ep_dataout_0 (ep_dataout<0>)
+     FDRE:C->Q            87   0.525   2.216  ep_dataout_0 (ep_dataout<0>)
      end scope: 'wire10:ep_dataout<0>'
      LUT2:I0->O            1   0.250   0.681  FPGA_rst_n1 (FPGA_rst_n_OBUF)
      OBUF:I->O                 2.912          FPGA_rst_n_OBUF (FPGA_rst_n)
     ----------------------------------------
-    Total                      6.615ns (3.687ns logic, 2.928ns route)
-                                       (55.7% logic, 44.3% route)
+    Total                      6.584ns (3.687ns logic, 2.897ns route)
+                                       (56.0% logic, 44.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'sys_clkp'
@@ -1688,7 +1688,7 @@ Clock to Setup on destination clock im_data_clk
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
 im_data_clk    |    3.421|         |         |         |
-okUH<0>        |    3.122|         |         |         |
+okUH<0>        |    3.091|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock okUH<0>
@@ -1706,19 +1706,19 @@ Clock to Setup on destination clock sys_clkp
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-okUH<0>        |   17.884|         |  127.024|         |
-sys_clkp       |   17.289|    4.259|  125.453|         |
+okUH<0>        |   17.988|         |  127.024|         |
+sys_clkp       |   17.393|    4.259|  125.453|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 22.00 secs
-Total CPU time to Xst completion: 22.50 secs
+Total CPU time to Xst completion: 22.06 secs
  
 --> 
 
-Total memory usage is 322180 kilobytes
+Total memory usage is 321004 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   78 (   0 filtered)
