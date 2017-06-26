@@ -15,7 +15,7 @@ CONFIG VCCAUX = "3.3"; //Required for Spartan-6
 #NET "okHU[0]"        LOC="AA8"    | IOSTANDARD="LVCMOS18" | SLEW="FAST";
 #NET "okHU[1]"        LOC="U10"    | IOSTANDARD="LVCMOS18" | SLEW="FAST";
 #NET "okHU[2]"        LOC="AB5"    | IOSTANDARD="LVCMOS18" | SLEW="FAST";
-#NET "okUH[0]"        LOC="Y12"    | IOSTANDARD="LVCMOS18";
+#NET "okUH[0]"        LOC="Y12"    | IOSTANDARD="LVCMOS18"; 
 #NET "okUH[1]"        LOC="AA4"    | IOSTANDARD="LVCMOS18";
 #NET "okUH[2]"        LOC="AB3"    | IOSTANDARD="LVCMOS18";
 #NET "okUH[3]"        LOC="Y6"     | IOSTANDARD="LVCMOS18";

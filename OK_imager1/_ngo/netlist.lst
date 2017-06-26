@@ -1,17 +1,4 @@
-<<<<<<< HEAD
-C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager.ngc 1498245889
-ipcore_dir/fifo_6to24.ngc 1494601379
-C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1/okWireIn.ngc 1494601373
-C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1/okWireOut.ngc 1494601373
-C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1/okTriggerIn.ngc 1494601373
-C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1/okTriggerOut.ngc 1494601373
-C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1/okPipeOut.ngc 1494601372
-ipcore_dir/fifo_usbout.ngc 1494601387
-ipcore_dir/fifo_patterns.ngc 1494601385
-C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1/okCoreHarness.ngc 1494601371
-C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1/TFIFO64x8a_64x8b.ngc 1494601370
-=======
-C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager.ngc 1498247038
+C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager.ngc 1498493638
 ipcore_dir/fifo_6to24.ngc 1480959600
 C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1/okWireIn.ngc 1400627188
 C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1/okWireOut.ngc 1400627188
@@ -22,5 +9,4 @@ ipcore_dir/fifo_usbout.ngc 1498246565
 ipcore_dir/fifo_patterns.ngc 1486149046
 C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1/okCoreHarness.ngc 1400627188
 C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1/TFIFO64x8a_64x8b.ngc 1400627188
->>>>>>> 94b931893c4bc3aff282d28966cf0bc2367de8b9
 OK
