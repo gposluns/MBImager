@@ -1,1 +1,0 @@
- -p spartan6 -lang vhdl$(PROJECT_SEARCHPATHOPT) $(GLOBAL_SEARCHPATHOPT) -msg __xps/ise/xmsgprops.lst -s isim -X C:/Users/MBImager/Documents/Imager_System_Temp_Sensor/Microblaze_System/

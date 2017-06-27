@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;Board_config_old/src/testperiph.c&apos; to &apos;Boad_config_old.c&apos;" description="Rename resource &apos;testperiph.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/testperiph.c" name="Boad_config_old.c" stamp="1484583664548" updateReferences="true"/>
-</session>

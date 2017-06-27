@@ -1,3 +1,0 @@
-PROCESSOR=microblaze_0
-REPOSITORIES=-lp ../../peripherals
-HWSPEC=../system_hw_platform/system.xml

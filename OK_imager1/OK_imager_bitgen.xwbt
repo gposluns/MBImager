@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager.ncd
-OUTFILE=C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager.bit
-FAMILY=Spartan6
-PART=xc6slx45-2fgg484
-WORKINGDIR=C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1
-LICENSE=WebPack
-USER_INFO=__0_0_0
