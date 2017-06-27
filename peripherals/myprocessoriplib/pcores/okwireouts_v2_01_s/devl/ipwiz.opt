@@ -1,0 +1,8 @@
+-batch 
+-create okwireouts 
+-ver 2.01.s 
+-dir "D:\ISML\mbimager\peripherals\MyProcessorIPLib" 
+-lang verilog 
+-bus axi4lite s 
+-reg 32 
+-xps 

@@ -1,0 +1,22 @@
+
+
+
+// Instantiate the module
+ROImager_exp_PatSeperate instance_name (
+    .RESET(RESET), 
+    .OK_PIXRES_GLOB(OK_PIXRES_GLOB), 
+    .CLKMPRE(CLKMPRE), 
+    .CLKMPRE_EN(CLKMPRE_EN), 
+    .STREAM(STREAM), 
+    .OK_DRAIN_B(OK_DRAIN_B), 
+    .fsm_stat(fsm_stat), 
+    .Exp_subc(Exp_subc), 
+    .Num_Pat(Num_Pat), 
+    .CntSubc(CntSubc), 
+    .FSMIND0(FSMIND0), 
+    .FSMIND1(FSMIND1), 
+    .FSMIND0ACK(FSMIND0ACK), 
+    .FSMIND1ACK(FSMIND1ACK)
+    );
+
+

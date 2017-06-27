@@ -1,0 +1,11 @@
+##############################################################################
+## Filename:          C:/Users/MBImager/Documents/MBImager_ams/repo/MBImager/peripherals/MyProcessorIPLib/pcores/oktriggerins_v3_00_a/data/oktriggerins_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Fri Jun 02 10:01:17 2017 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a  all 
+lib axi_lite_ipif_v1_01_a  all 
+lib oktriggerins_v3_00_a okLibrary verilog
+lib oktriggerins_v3_00_a user_logic verilog
+lib oktriggerins_v3_00_a oktriggerins vhdl
