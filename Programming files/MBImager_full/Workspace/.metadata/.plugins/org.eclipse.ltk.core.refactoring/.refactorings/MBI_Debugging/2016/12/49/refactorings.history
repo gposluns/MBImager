@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;MBI_Debugging/src/testperiph.c&apos; to &apos;Debugging.c&apos;" description="Rename resource &apos;testperiph.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/testperiph.c" name="Debugging.c" stamp="1480712178212" updateReferences="true"/>
-</session>

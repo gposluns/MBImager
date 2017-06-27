@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.ncd
-OUTFILE=D:\Shichen_Lu\MBImager\MBImager\MBImager_full\MB_top.bit
-FAMILY=Spartan6
-PART=xc6slx25t-3fgg484
-WORKINGDIR=D:\Shichen_Lu\MBImager\MBImager\MBImager_full
-LICENSE=WebPack
-USER_INFO=__0_0_0
