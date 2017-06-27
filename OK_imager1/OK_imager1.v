@@ -98,6 +98,7 @@ wire PatFIFO_wr;
 wire PatFIFO_empty;
 wire CLKMPRE_EN;
 wire [31:0] CntSubc;
+wire [31:0] MIN_FRAME_TIME;
 
 wire im_data_val_test;
 reg [7:0] ADC_TESTDATA1;
@@ -220,7 +221,8 @@ ROImager_exp_PatSeperate ROImager_inst (
     .FSMIND0(FSMIND0), 
     .FSMIND1(FSMIND1), 
     .FSMIND0ACK(FSMIND0ACK), 
-    .FSMIND1ACK(FSMIND1ACK)
+    .FSMIND1ACK(FSMIND1ACK),
+	 .MIN_FRAME_TIME(MIN_FRAME_TIME)
     );
 
 pattern_gen pat_gen (
@@ -389,6 +391,7 @@ okWireIn	wire13		(.okHE(okHE),								.ep_addr(8'h13),							.ep_dataout(wireMas
 okWireIn	wire14		(.okHE(okHE),								.ep_addr(8'h14),							.ep_dataout(wireMaskChngSubc) );
 okWireIn	wire15		(.okHE(okHE),								.ep_addr(8'h15),							.ep_dataout(wirePatterns) );
 okWireIn okPHASE_SEL (.okHE(okHE),								.ep_addr(8'h16),							.ep_dataout(PHASE_SEL)	); //testmodimp
+okWireIn framewire   (.okHE(okHE),								.ep_addr(8'h18),							.ep_dataout(MIN_FRAME_TIME));
 // comment the top okWireIn modules for simulations!
 okWireOut 	wire22		(.okHE(okHE),	.okEH(okEHx[0*65 +: 65]),	.ep_addr(8'h22),							.ep_datain(wireExp) );
 okWireOut 	wire23		(.okHE(okHE),	.okEH(okEHx[3*65 +: 65]),	.ep_addr(8'h23),							.ep_datain(wirePat) );
