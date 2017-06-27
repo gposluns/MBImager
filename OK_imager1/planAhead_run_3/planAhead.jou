@@ -1,0 +1,11 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Tue May 02 15:16:32 2017
+# Process ID: 9812
+# Log file: C:/Users/MBImager/Documents/MBImager_ams/repo/MBImager/OK_imager1/planAhead_run_3/planAhead.log
+# Journal file: C:/Users/MBImager/Documents/MBImager_ams/repo/MBImager/OK_imager1/planAhead_run_3/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source C:/Users/MBImager/Documents/MBImager_ams/repo/MBImager/OK_imager1/pa.fromHdl.tcl
+update_compile_order -fileset sim_1

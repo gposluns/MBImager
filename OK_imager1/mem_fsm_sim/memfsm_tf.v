@@ -249,6 +249,12 @@ module memfsm_tf;
 		WriteToPipeIn(8'h80, pipeInSize);
 		$display("write to pipe at:                             %dns", $time);
 	
+		#200000;
+		SetWireInValue(8'h10, 32'hffff, 32'h000f);     // rst
+		UpdateWireIns;
+		#500;
+		SetWireInValue(8'h10, 32'h0000, 32'hffff);     // FRONTPANEL API
+		UpdateWireIns;       
 		
 	end
 	

@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Wed Jun 21 16:05:46 2017
+// Written by: Map P.20131013 on Mon Jun 26 18:06:59 2017
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -21,10 +21,10 @@ COMP "MBI_CLK_MOD" LOCATE = SITE "AA6" LEVEL 1;
 COMP "dout<0>" LOCATE = SITE "V11" LEVEL 1;
 COMP "dout<1>" LOCATE = SITE "Y12" LEVEL 1;
 COMP "dout<2>" LOCATE = SITE "W12" LEVEL 1;
-COMP "dout<3>" LOCATE = SITE "Y11" LEVEL 1;
+COMP "dout<3>" LOCATE = SITE "AA14" LEVEL 1;
 COMP "dout<4>" LOCATE = SITE "AB12" LEVEL 1;
 COMP "dout<5>" LOCATE = SITE "AA12" LEVEL 1;
-COMP "dout<6>" LOCATE = SITE "AA14" LEVEL 1;
+COMP "dout<6>" LOCATE = SITE "Y11" LEVEL 1;
 COMP "dout<7>" LOCATE = SITE "R13" LEVEL 1;
 COMP "MBI_PRECH_COL" LOCATE = SITE "W9" LEVEL 1;
 COMP "MBI_RESETN_GLOB" LOCATE = SITE "AB6" LEVEL 1;

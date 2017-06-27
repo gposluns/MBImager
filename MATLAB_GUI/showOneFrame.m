@@ -1,4 +1,4 @@
-function Z=showOneFrame( frame, displayIdt,dispframe,handles  )
+function Z=showOneFrame( frame, displayIdt,dispframe,handles, imgCalib, showHist  )
 % This function arranges the data received from pipeout endpoint and
 % displays and returns the resulting array/image
 % frame contains the data to be processed
@@ -30,43 +30,43 @@ function Z=showOneFrame( frame, displayIdt,dispframe,handles  )
     % save the arrangements according to the method selected
     % <MODIFY ARRANGEMENTS HERE IF NECESSARY>
     if displayIdt==1
-        Z=ZT(:,140:2:506);
-    else
         Z=ZT(:,139:2:505);
+        if imgCalib && (handles.percent ~=0)
+            calib = Z(2:80,3:62);
+            calib = (mean(mean(handles.whiteimg1-handles.darkimg1))*(double(calib)-handles.darkimg1)./(handles.whiteimg1-handles.darkimg1))+ mean(mean(handles.darkimg1));
+            calib(calib>255) = 255;
+            calib(calib<0) = 0;
+            calib = uint8(calib);
+            Z(2:80,3:62) = calib;
+        end
+    else
+        Z=ZT(:,140:2:506);
+        
+        if imgCalib && (handles.percent ~=100)
+            calib = Z(2:80,3:62);
+            calib = (double(calib)-handles.darkimg2)*mean(mean(handles.whiteimg2-handles.darkimg2))./(handles.whiteimg2-handles.darkimg2)+mean(mean(handles.darkimg2));
+            calib(calib>255) = 255;
+            calib(calib<0) = 0;
+            calib = uint8(calib);
+            Z(2:80,3:62) = calib;
+        end
     end
     
-
     % display the resulting image
-     if dispframe == 0
-        image = zeros(row, indiCol, 'uint8');
+    if dispframe == 0
+        %image = zeros(row, indiCol, 'uint8');
         image = Z;
-        imshow(image);
-        axes(handles.axes3);
-        if displayIdt==1
-            axes(handles.axes3);
-            imhist(image, 256);
-        else
-            axes(handles.axes4);
-            imhist(image, 256);
-        end
-        
     elseif dispframe == 2
 
-        image = zeros(160,120, 'uint8');
-        image = Z(1:160,63:182);
-        imshow(image);
-         if displayIdt==1
-            axes(handles.axes3);
-            imhist(image, 256);
-        else
-            axes(handles.axes4);
-            imhist(image, 256);
-        end
-     else
-        image = zeros(80, 60, 'uint8');
-        image = Z(1:80,3:62);
-        imshow(image);
-         if displayIdt==1
+        %image = zeros(160,120, 'uint8');
+        image = Z(1:160,63:182);  
+    else
+        %image = zeros(80, 60, 'uint8');
+        image = Z(1:80,3:62); 
+    end
+    imshow(image);
+    if showHist
+        if displayIdt==1
             axes(handles.axes3);
             imhist(image, 256);
         else

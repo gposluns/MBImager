@@ -81,7 +81,7 @@ module mem_if #
    parameter C3_CALIB_SOFT_IP        = "TRUE",       
                                        // # = TRUE, Enables the soft calibration logic,
                                        // # = FALSE, Disables the soft calibration logic.
-   parameter C3_SIMULATION           = "FALSE",       
+   parameter C3_SIMULATION           = "TRUE",       
                                        // # = TRUE, Simulating the design. Useful to reduce the simulation time,
                                        // # = FALSE, Implementing the design.
    parameter C3_RST_ACT_LOW          = 0,       

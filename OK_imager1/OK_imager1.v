@@ -36,6 +36,7 @@ module OK_imager(
 	output wire [10:1] MSTREAM,
 	output wire OK_DRAIN_B,
 	output wire OK_PIXRES_GLOB,
+	output	[31:0] PHASE_SEL, //testmodimp
 	input wire FSMIND0,				// If high, the Exposure FSM (on OK) is active
 	output wire FSMIND1,
 	output wire FSMIND0ACK,
@@ -113,16 +114,17 @@ wire empty;
 wire almost_empty;
 wire empty_2;
 wire flag_2frames;
+wire flag_1frame;
 wire d_buf_valid;
 wire fifo1_rd_en;
 wire [7:0] STATUS;
 wire FSMstop;
 wire [7:0] fsm_stat;
 wire RstPat;
-wire [10:1] Pat_to_FIFO;
-wire [10:1] Pat_in;
-wire [10:1] PatGen_start;
-wire [10:1] PatGen_stop;
+wire [9:0] Pat_to_FIFO;
+wire [9:0] Pat_in;
+wire [9:0] PatGen_start;
+wire [9:0] PatGen_stop;
 wire PatFIFO_wr;
 wire PatFIFO_empty;
 wire CLKMPRE_EN;
@@ -253,12 +255,13 @@ assign FPGA_rst_n = ~FSMstop;
 assign rst = wireout[0];
 assign trig6Aout[0] = full_2;
 assign trig6Aout[1] = flag_2frames;
-assign trig6Aout[31:2] = 30'b0;
+assign trig6Aout[2] = ~flag_1frame;
+assign trig6Aout[31:3] = 29'b0;
 assign din_pipe[23:0]=dout_buf;
 assign din_pipe[31:24]=8'b0;
-assign Pat_in[10:1] = wirePatterns[10:1];
-assign PatGen_start[10:1] = wirePatterns[20:11];
-assign PatGen_stop[10:1] = wirePatterns[30:21];
+assign Pat_in[9:0] = wirePatterns[9:0];
+assign PatGen_start[9:0] = wirePatterns[19:10];
+assign PatGen_stop[9:0] = wirePatterns[29:20];//wirePatterns[30:21];
 
 
 /* // Generating test data instead of ADCs data
@@ -444,6 +447,7 @@ fifo_usbout fifo256kB_out (
   .full(full_2), // output full
   .empty(empty_2), // output empty
   .prog_full(flag_2frames) // output prog_full
+  //.prog_empty(flag_1frame)
 );
 
 
@@ -752,6 +756,7 @@ okWireIn	wire12		(.okHE(okHE),								.ep_addr(8'h12),							.ep_dataout(wirePat
 okWireIn	wire13		(.okHE(okHE),								.ep_addr(8'h13),							.ep_dataout(wireMaskChng) );
 okWireIn	wire14		(.okHE(okHE),								.ep_addr(8'h14),							.ep_dataout(wireMaskChngSubc) );
 okWireIn	wire15		(.okHE(okHE),								.ep_addr(8'h15),							.ep_dataout(wirePatterns) );
+okWireIn okPHASE_SEL (.okHE(okHE),								.ep_addr(8'h16),							.ep_dataout(PHASE_SEL)	); //testmodimp
 // comment the top okWireIn modules for simulations!
 okWireOut 	wire22		(.okHE(okHE),	.okEH(okEHx[0*65 +: 65]),	.ep_addr(8'h22),							.ep_datain(wireExp) );
 okWireOut 	wire23		(.okHE(okHE),	.okEH(okEHx[3*65 +: 65]),	.ep_addr(8'h23),							.ep_datain(wirePat) );

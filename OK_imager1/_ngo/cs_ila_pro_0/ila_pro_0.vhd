@@ -8,7 +8,7 @@
 -- \   \   \/     Version    : 14.7
 --  \   \         Application: XILINX CORE Generator
 --  /   /         Filename   : ila_pro_0.vhd
--- /___/   /\     Timestamp  : Fri Jun 23 12:03:04 Eastern Daylight Time 2017
+-- /___/   /\     Timestamp  : Mon Jun 26 18:38:12 Eastern Daylight Time 2017
 -- \   \  /  \
 --  \___\/\___\
 --
@@ -26,11 +26,9 @@ ENTITY ila_pro_0 IS
     TRIG1: in std_logic_vector(7 downto 0);
     TRIG2: in std_logic_vector(7 downto 0);
     TRIG3: in std_logic_vector(0 to 0);
-    TRIG4: in std_logic_vector(5 downto 0);
+    TRIG4: in std_logic_vector(4 downto 0);
     TRIG5: in std_logic_vector(0 to 0);
-    TRIG6: in std_logic_vector(0 to 0);
-    TRIG7: in std_logic_vector(0 to 0);
-    TRIG8: in std_logic_vector(0 to 0));
+    TRIG6: in std_logic_vector(0 to 0));
 END ila_pro_0;
 
 ARCHITECTURE ila_pro_0_a OF ila_pro_0 IS

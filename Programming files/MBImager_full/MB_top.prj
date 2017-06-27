@@ -1,0 +1,7 @@
+verilog work "D:/MBImager-master/MBImager_full/MB_SPI/hdl/MB_SPI.v"
+verilog work "TI_ADC_RO.v"
+verilog work "ROImager.v"
+verilog work "MB_SPI/MB_SPI_top.v"
+verilog work "ipcore_dir/fifo_4kB.v"
+verilog work "Imager_SPI.v"
+verilog work "MB_top.v"
