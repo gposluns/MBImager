@@ -74,7 +74,7 @@ input [31:0]			PROJ_DELAY;
   integer			count_mpre;
   integer			count_subsc;
   reg [8:1]			fsm_stat_i;
-  reg [31:0] 	fst_cntr;
+  integer 	fst_cntr;
     reg [31:0]		timer;
 	 reg TRIGGER_PROJ_i;
 
@@ -101,10 +101,11 @@ input [31:0]			PROJ_DELAY;
 			fst_cntr <= fst_cntr - 1;
 			TRIGGER_PROJ_i <= 0;
 		end else if (STREAM == 1 && fst_cntr == 0) begin
+			fst_cntr <= 0;
 			TRIGGER_PROJ_i <= 1;
 		end else begin
 			fst_cntr <= C_NUM_ROWS*18 - PROJ_DELAY;
-			TRIGGER_PROJ_i <= TRIGGER_PROJ_i;
+			TRIGGER_PROJ_i <= 0;
 		end
   end
 
