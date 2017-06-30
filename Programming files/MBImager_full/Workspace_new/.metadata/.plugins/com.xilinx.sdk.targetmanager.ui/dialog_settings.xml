@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<section name="Workbench">
-	<item value="bootloop" key="MB_SPI_hw_platform-microblaze_0-initElf"/>
-	<item value="D:\MBImager-master\MBImager_full\edkBmmFile_bd.bmm" key="MB_SPI_hw_platform-bmmFile"/>
-	<item value="D:\MBImager-master\MBImager_full\mb_top.bit" key="MB_SPI_hw_platform-bitFile"/>
-</section>

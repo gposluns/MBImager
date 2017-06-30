@@ -1,7 +1,0 @@
-verilog work "ROImager_exp_PatSeperate.v"
-verilog work "pattern_gen.v"
-verilog work "okLibrary.v"
-verilog work "ipcore_dir/fifo_usbout.v"
-verilog work "ipcore_dir/fifo_patterns.v"
-verilog work "ipcore_dir/fifo_6to24.v"
-verilog work "OK_imager1.v"

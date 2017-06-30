@@ -25,6 +25,8 @@ module ROImager_exp_PatSeperate
   FSMIND0ACK,					  // Acknowledge for FSMIND0
   FSMIND1ACK,					  // Acknowledge for FSMIND1
   
+  MIN_FRAME_TIME,
+  
   CLK_HS,						  // Fast clock for projector trigger
   TRIGGER_PROJ,				  // Output to projector trigger  
   PROJ_DELAY					  // Time between projector trigger and STREAM going low, in CLK_HS periods
@@ -43,8 +45,6 @@ parameter S_subc_last = 8'b00001000;
 parameter S_FSM1 = 8'b00010000;
 parameter S_FSM1_ACK = 8'b00100000;
 
-parameter MIN_FRAME_TIME = 11111;  //2ms in isim 
-
 // -- Ports
 input									  RESET;
 input									  FSMIND0;
@@ -61,6 +61,8 @@ output		[8:1]						  fsm_stat;
 input		[31:0]						  Exp_subc;
 input		[31:0]						  Num_Pat;
 
+input [31:0] MIN_FRAME_TIME;
+
 input CLK_HS;
 output TRIGGER_PROJ;
 input [31:0]			PROJ_DELAY;
@@ -74,7 +76,7 @@ input [31:0]			PROJ_DELAY;
   integer			count_mpre;
   integer			count_subsc;
   reg [8:1]			fsm_stat_i;
-  reg [31:0] 	fst_cntr;
+  integer 	fst_cntr;
     reg [31:0]		timer;
 	 reg TRIGGER_PROJ_i;
 
@@ -101,10 +103,11 @@ input [31:0]			PROJ_DELAY;
 			fst_cntr <= fst_cntr - 1;
 			TRIGGER_PROJ_i <= 0;
 		end else if (STREAM == 1 && fst_cntr == 0) begin
+			fst_cntr <= 0;
 			TRIGGER_PROJ_i <= 1;
 		end else begin
 			fst_cntr <= C_NUM_ROWS*18 - PROJ_DELAY;
-			TRIGGER_PROJ_i <= TRIGGER_PROJ_i;
+			TRIGGER_PROJ_i <= 0;
 		end
   end
 
