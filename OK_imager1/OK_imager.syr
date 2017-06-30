@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: OK_imager.prj
 
@@ -108,11 +108,11 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\ROImager_exp_PatSeperate.v" into library work
+Analyzing Verilog file "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\ROImager_exp_PatSeperate.v" into library work
 Parsing module <ROImager_exp_PatSeperate>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\pattern_gen.v" into library work
+Analyzing Verilog file "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\pattern_gen.v" into library work
 Parsing module <pattern_gen>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\okLibrary.v" into library work
+Analyzing Verilog file "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\okLibrary.v" into library work
 Parsing module <okHost>.
 Parsing module <okCoreHarness>.
 Parsing module <okWireIn>.
@@ -125,69 +125,69 @@ Parsing module <okBTPipeIn>.
 Parsing module <okBTPipeOut>.
 Parsing module <okRegisterBridge>.
 Parsing module <okWireOR>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\ipcore_dir\fifo_usbout.v" into library work
+Analyzing Verilog file "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\ipcore_dir\fifo_usbout.v" into library work
 Parsing module <fifo_usbout>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\ipcore_dir\fifo_patterns.v" into library work
+Analyzing Verilog file "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\ipcore_dir\fifo_patterns.v" into library work
 Parsing module <fifo_patterns>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\ipcore_dir\fifo_6to24.v" into library work
+Analyzing Verilog file "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\ipcore_dir\fifo_6to24.v" into library work
 Parsing module <fifo_6to24>.
-Analyzing Verilog file "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" into library work
+Analyzing Verilog file "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" into library work
 Parsing module <OK_imager>.
 
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
-WARNING:HDLCompiler:1016 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 209: Port CLK_HS is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 209: Port CLK_HS is not connected to this instance
 
 Elaborating module <OK_imager>.
 
 Elaborating module <IBUFGDS>.
 
 Elaborating module <fifo_6to24>.
-WARNING:HDLCompiler:1499 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\ipcore_dir\fifo_6to24.v" Line 39: Empty module <fifo_6to24> remains a black box.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 175: Assignment to full ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 176: Assignment to empty ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 177: Assignment to almost_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1499 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\ipcore_dir\fifo_6to24.v" Line 39: Empty module <fifo_6to24> remains a black box.
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 175: Assignment to full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 176: Assignment to empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 177: Assignment to almost_empty ignored, since the identifier is never used
 
 Elaborating module <fifo_usbout>.
-WARNING:HDLCompiler:1499 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\ipcore_dir\fifo_usbout.v" Line 39: Empty module <fifo_usbout> remains a black box.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 190: Assignment to empty_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1499 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\ipcore_dir\fifo_usbout.v" Line 39: Empty module <fifo_usbout> remains a black box.
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 190: Assignment to empty_2 ignored, since the identifier is never used
 
 Elaborating module <fifo_patterns>.
-WARNING:HDLCompiler:1499 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\ipcore_dir\fifo_patterns.v" Line 39: Empty module <fifo_patterns> remains a black box.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 202: Assignment to full_pat ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 203: Assignment to empty_pat ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 204: Assignment to valid_pat ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 205: Assignment to prog_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1499 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\ipcore_dir\fifo_patterns.v" Line 39: Empty module <fifo_patterns> remains a black box.
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 202: Assignment to full_pat ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 203: Assignment to empty_pat ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 204: Assignment to valid_pat ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 205: Assignment to prog_full ignored, since the identifier is never used
 
 Elaborating module <ROImager_exp_PatSeperate>.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 213: Assignment to CLKMPRE_EN ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 213: Assignment to CLKMPRE_EN ignored, since the identifier is never used
 
 Elaborating module <pattern_gen>.
 
 Elaborating module <DCM_SP(CLKDV_DIVIDE=3.0,CLKFX_DIVIDE=3,CLKFX_MULTIPLY=3,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=10.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",DFS_FREQUENCY_MODE="LOW",DLL_FREQUENCY_MODE="LOW",DSS_MODE="NONE",DUTY_CYCLE_CORRECTION="TRUE",FACTORY_JF=16'b1100000010000000,PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 269: Assignment to CLK180 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 270: Assignment to CLK270 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 271: Assignment to CLK2X_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 272: Assignment to CLK2X180 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 273: Assignment to CLK90 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 277: Assignment to LOCKED_HS ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 278: Assignment to PSDONE ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 279: Assignment to STATUS ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 269: Assignment to CLK180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 270: Assignment to CLK270 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 271: Assignment to CLK2X_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 272: Assignment to CLK2X180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 273: Assignment to CLK90 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 277: Assignment to LOCKED_HS ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 278: Assignment to PSDONE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 279: Assignment to STATUS ignored, since the identifier is never used
 
 Elaborating module <DCM_SP(CLKDV_DIVIDE=2.0,CLKFX_DIVIDE=18,CLKFX_MULTIPLY=3,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=10.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",DFS_FREQUENCY_MODE="LOW",DLL_FREQUENCY_MODE="LOW",DSS_MODE="NONE",DUTY_CYCLE_CORRECTION="TRUE",FACTORY_JF=16'b1100000010000000,PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 314: Assignment to CLK180_MPRE ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 315: Assignment to CLK270_MPRE ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 316: Assignment to CLK2X_MPRE ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 317: Assignment to CLK2X180_MPRE ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 318: Assignment to CLK90_MPRE ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 322: Assignment to LOCKED_MPRE ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 323: Assignment to PSDONE_MPRE ignored, since the identifier is never used
-WARNING:HDLCompiler:189 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 324: Size mismatch in connection of port <STATUS>. Formal port size is 8-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 324: Assignment to STATUS_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 314: Assignment to CLK180_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 315: Assignment to CLK270_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 316: Assignment to CLK2X_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 317: Assignment to CLK2X180_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 318: Assignment to CLK90_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 322: Assignment to LOCKED_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 323: Assignment to PSDONE_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:189 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 324: Size mismatch in connection of port <STATUS>. Formal port size is 8-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 324: Assignment to STATUS_MPRE ignored, since the identifier is never used
 
 Elaborating module <ODDR2(DDR_ALIGNMENT="NONE",INIT=1'b0,SRTYPE="SYNC")>.
-WARNING:HDLCompiler:1016 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\okLibrary.v" Line 39: Port CLK180 is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\okLibrary.v" Line 39: Port CLK180 is not connected to this instance
 
 Elaborating module <okHost>.
 
@@ -210,41 +210,41 @@ Elaborating module <okWireIn>.
 Elaborating module <okWireOut>.
 
 Elaborating module <okTriggerIn>.
-WARNING:HDLCompiler:1127 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 396: Assignment to trig53in ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 396: Assignment to trig53in ignored, since the identifier is never used
 
 Elaborating module <okTriggerOut>.
 
 Elaborating module <okPipeOut>.
-WARNING:HDLCompiler:552 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" Line 209: Input port CLK_HS is not connected on this instance
+WARNING:HDLCompiler:552 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" Line 209: Input port CLK_HS is not connected on this instance
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <OK_imager>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v".
+    Related source file is "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v".
         C_CLKHS_D = 3
         C_CLKHS_M = 3
 WARNING:Xst:2898 - Port 'PROJ_DELAY', unconnected in block instance 'ROImager_inst', is tied to GND.
 WARNING:Xst:2898 - Port 'CLK_HS', unconnected in block instance 'ROImager_inst', is tied to GND.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" line 167: Output port <full> of the instance <fifo_databuf> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" line 167: Output port <empty> of the instance <fifo_databuf> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" line 167: Output port <almost_empty> of the instance <fifo_databuf> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" line 182: Output port <empty> of the instance <fifo256kB_out> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" line 195: Output port <full> of the instance <FIFO_Patterns> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" line 195: Output port <empty> of the instance <FIFO_Patterns> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" line 195: Output port <valid> of the instance <FIFO_Patterns> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" line 195: Output port <prog_full> of the instance <FIFO_Patterns> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" line 209: Output port <CLKMPRE_EN> of the instance <ROImager_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" line 209: Output port <TRIGGER_PROJ> of the instance <ROImager_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\OK_imager1.v" line 396: Output port <ep_trigger> of the instance <trigIn53> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" line 167: Output port <full> of the instance <fifo_databuf> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" line 167: Output port <empty> of the instance <fifo_databuf> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" line 167: Output port <almost_empty> of the instance <fifo_databuf> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" line 182: Output port <empty> of the instance <fifo256kB_out> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" line 195: Output port <full> of the instance <FIFO_Patterns> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" line 195: Output port <empty> of the instance <FIFO_Patterns> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" line 195: Output port <valid> of the instance <FIFO_Patterns> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" line 195: Output port <prog_full> of the instance <FIFO_Patterns> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" line 209: Output port <CLKMPRE_EN> of the instance <ROImager_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" line 209: Output port <TRIGGER_PROJ> of the instance <ROImager_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\OK_imager1.v" line 396: Output port <ep_trigger> of the instance <trigIn53> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <OK_imager> synthesized.
 WARNING:Xst:2144 - The value of attribute <SAFE_RECOVERY_STATE> (<recovery_state_value>) does not match fsm state <state> size (8).
 
 Synthesizing Unit <ROImager_exp_PatSeperate>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\ROImager_exp_PatSeperate.v".
+    Related source file is "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\ROImager_exp_PatSeperate.v".
         C_EXP_SUBSC = 10
         C_NUM_PATT = 100
         C_MASK_DES_L = 18
@@ -306,7 +306,7 @@ Unit <ROImager_exp_PatSeperate> synthesized.
 WARNING:Xst:2144 - The value of attribute <SAFE_RECOVERY_STATE> (S_subc_first) does not match fsm state <state> size (5).
 
 Synthesizing Unit <pattern_gen>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\pattern_gen.v".
+    Related source file is "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\pattern_gen.v".
         S_init = 5'b00001
         S_subc_first = 5'b00010
         S_subc_pats = 5'b00100
@@ -456,7 +456,7 @@ Synthesizing Unit <div_32u_32u>.
 Unit <div_32u_32u> synthesized.
 
 Synthesizing Unit <okHost>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\okLibrary.v".
+    Related source file is "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\okLibrary.v".
     Set property "IOB = TRUE" for instance <iob_regs[0].regin0>.
     Set property "IOB = TRUE" for instance <iob_regs[0].regout0>.
     Set property "IOB = TRUE" for instance <iob_regs[0].regvalid>.
@@ -565,7 +565,7 @@ Synthesizing Unit <okHost>.
 Unit <okHost> synthesized.
 
 Synthesizing Unit <okWireOR>.
-    Related source file is "C:\Users\MBImager\Documents\MBImager_ams\repo\MBImager\OK_imager1\okLibrary.v".
+    Related source file is "C:\Users\Wendy\Documents\GitHub\MBImager\OK_imager1\okLibrary.v".
         N = 5
     Summary:
 	no macro.
@@ -1713,12 +1713,12 @@ sys_clkp       |   17.393|    4.259|  125.453|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 22.00 secs
-Total CPU time to Xst completion: 22.06 secs
+Total REAL time to Xst completion: 27.00 secs
+Total CPU time to Xst completion: 26.62 secs
  
 --> 
 
-Total memory usage is 321004 kilobytes
+Total memory usage is 356356 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   78 (   0 filtered)

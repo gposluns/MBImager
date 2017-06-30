@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Mon Jun 26 12:15:16 2017
+// Written by: Map P.20131013 on Mon Jun 26 17:51:17 2017
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -19,7 +19,6 @@ COMP "CLKM" LOCATE = SITE "A18" LEVEL 1;
 COMP "okAA" LOCATE = SITE "W11" LEVEL 1;
 COMP "PHASE_SEL<0>" LOCATE = SITE "C9" LEVEL 1;
 COMP "PHASE_SEL<1>" LOCATE = SITE "A10" LEVEL 1;
-COMP "PHASE_SEL<2>" LOCATE = SITE "C13" LEVEL 1;
 COMP "PHASE_SEL<3>" LOCATE = SITE "B12" LEVEL 1;
 COMP "PHASE_SEL<4>" LOCATE = SITE "C10" LEVEL 1;
 COMP "MSTREAM<10>" LOCATE = SITE "A16" LEVEL 1;
@@ -68,6 +67,7 @@ COMP "okUHU<7>" LOCATE = SITE "AA2" LEVEL 1;
 COMP "okUHU<8>" LOCATE = SITE "Y7" LEVEL 1;
 COMP "okUHU<9>" LOCATE = SITE "Y4" LEVEL 1;
 COMP "FSMIND1ACK" LOCATE = SITE "A7" LEVEL 1;
+COMP "FPGA_rst_n" LOCATE = SITE "C13" LEVEL 1;
 COMP "led<0>" LOCATE = SITE "V19" LEVEL 1;
 COMP "led<1>" LOCATE = SITE "V18" LEVEL 1;
 COMP "led<2>" LOCATE = SITE "Y19" LEVEL 1;

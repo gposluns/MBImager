@@ -1,7 +1,7 @@
 Release 14.7 Drc P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Mon Jun 26 12:19:22 2017
+Mon Jun 26 17:54:56 2017
 
 drc -z OK_imager.ncd OK_imager.pcf
 
