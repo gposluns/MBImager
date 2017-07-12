@@ -9,6 +9,7 @@
 #include <QFile>
 #include "stdlib.h"
 #include <QThread>
+#include <mutex>
 
 #define EXP_WIRE 0x11
 #define NUM_MASKS_WIRE 0x12
@@ -35,9 +36,14 @@ public:
     okCFrontPanel ok;
     std::list<unsigned char*> queue1;
     std::list<unsigned char*> queue2;
+    int fails;
+    std::mutex list_mutex;
 
 private:
     bool running;
+    unsigned char* pattern;
+    int patternLength;
+    bool patternSet;
 signals:
     void okLoadFailed();
     void debugSignal(void* data);
