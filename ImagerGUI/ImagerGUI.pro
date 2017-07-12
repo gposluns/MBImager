@@ -29,6 +29,7 @@ SOURCES += \
     okworker.cpp \
     imagedisplay.cpp
 
+
 HEADERS += \
         mainwindow.h \
     okworker.h \
