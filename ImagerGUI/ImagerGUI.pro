@@ -34,13 +34,46 @@ HEADERS += \
         mainwindow.h \
     okworker.h \
     okFrontPanelDLL.h \
-    imagedisplay.h
+    imagedisplay.h \
+    chooseser.h
 
 FORMS += \
         mainwindow.ui
+
+include (C:\qwt-6.1.3\features\qwt.prf)
+
+CONFIG += qwt
 
 
 unix|win32: LIBS += -L$$PWD/./ -lokFrontPanel
 
 INCLUDEPATH += $$PWD/.
+INCLUDEPATH += C:\opencv\build\include
+INCLUDEPATH += C:\Users\MBImager\Documents\picklingtools\PicklingTools170Release.tar\PicklingTools170Release\C++
+INCLUDEPATH += C:\Users\MBImager\Documents\picklingtools\PicklingTools170Release.tar\PicklingTools170Release\C++\opencontainers_1_8_5\include
+INCLUDEPATH += C:\Qt\Tools\mingw530_32\lib\gcc\i686-w64-mingw32\5.3.0
+
+
+LIBS += -LC:/opencv-build/lib -lopencv_core320
+LIBS += -LC:/opencv-build/lib -lopencv_highgui320
+LIBS += -LC:/opencv-build/lib -lopencv_imgcodecs320
+LIBS += -LC:/opencv-build/lib -lopencv_imgproc320
+LIBS += -LC:/opencv-build/lib -lopencv_features2d320
+LIBS += -LC:/opencv-build/lib -lopencv_calib3d320
+LIBS += -LC:/opencv-build/lib -lopencv_videoio320
+LIBS += -LC:/opencv-build/lib -lopencv_video320
+LIBS += -LC:/opencv-build/lib -lopencv_calib3d320
+LIBS += -LC:/opencv-build/lib -lopencv_flann320
+LIBS += -LC:/opencv-build/lib -lopencv_ml320
+LIBS += -LC:/opencv-build/lib -lopencv_objdetect320
+LIBS += -LC:/opencv-build/lib -lopencv_photo320
+LIBS += -LC:/opencv-build/lib -lopencv_shape320
+LIBS += -LC:/opencv-build/lib -lopencv_stitching320
+LIBS += -LC:/opencv-build/lib -lopencv_superres320
+LIBS += -LC:/opencv-build/lib -lopencv_ts320
+LIBS += -LC:/opencv-build/lib -lopencv_videostab320
+
+
+
+
 DEPENDPATH += $$PWD/.

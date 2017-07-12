@@ -15,6 +15,17 @@
 #include "stdlib.h"
 #include <QImage>
 #include <QDebug>
+#include <thread>
+#include <mutex>
+#include <QDir>
+#include <QDateTime>
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc.hpp>
+#include <opencv2/imgcodecs/imgcodecs.hpp>
+#include <opencv2/videoio.hpp>
+#include <qwt_plot_histogram.h>
+#include <chooseser.h>
 
 namespace Ui {
 class MainWindow;
@@ -36,10 +47,24 @@ private:
     QTimer* timer;
     QImage im1;
     QImage im2;
-    bool dontDelete;
+    std::thread *workerThread;
+    int imagesToSave;
+    //cv::VideoWriter video1;
+    QwtPlotHistogram histogram;
+    Tab dark;
+    Tab light;
+    unsigned char darkimg1 [79][60];
+    unsigned char lightimg1 [79][60];
+    unsigned char darkimg2 [79][60];
+    unsigned char lightimg2 [79][60];
+    int mean1;
+    int mean2;
+    int meandark1;
+    int meandark2;
 
 protected:
     void closeEvent(QCloseEvent* close);
+    void callShowImages();
 
 signals:
     void closing();
@@ -57,6 +82,9 @@ private slots:
     void on_XSlider_valueChanged(int value);
     void updateFrame();
     void on_Zoom_valueChanged(int value);
+    void on_SaveImages_clicked();
+    void on_RecVideo_toggled(bool checked);
+    void on_Reset_clicked();
 };
 
 #endif // MAINWINDOW_H
