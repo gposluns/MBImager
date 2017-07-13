@@ -33,7 +33,6 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(this, SIGNAL(stop()), worker, SLOT(stop()));
     //connect(this, SIGNAL(display(int, int, int, int, QString)), worker, SLOT(showImages(int,int,int,int, QString)));
 
-    histogram.attach(ui->histogram1);
     //cv::Mat img = cv::imread("testing.bmp", CV_LOAD_IMAGE_GRAYSCALE);
     //cv::MatND hist;
     int histSize[1] = {256};
@@ -42,12 +41,7 @@ MainWindow::MainWindow(QWidget *parent) :
     const float* ranges[1] = {hranges};
     //cv::calcHist(&img, 1, channels, cv::Mat(), hist, 1, histSize, ranges);
 
-    Val lightVal;
-    Val darkVal;
-    LoadValFromFile("expWhite.pkl", lightVal);
-    LoadValFromFile("expDark.pkl", darkVal);
-    dark = darkVal;
-    light = lightVal;
+
 
     }
   catch (std::exception& e){
@@ -84,16 +78,6 @@ void MainWindow::on_PattLoad_clicked()
     emit pattLoadClicked(file);
 }
 
-double evalPoly (int n, double x, Arr coeffs){
-    double degacc = 1;
-    double acc = 0;
-    for (int i = 0; i < n; i++){
-        double coeff = coeffs[n];
-        acc += degacc*coeff;
-        degacc *= x;
-    }
-    return acc;
-}
 
 void MainWindow::on_DispImage_toggled(bool checked)
 {
@@ -104,50 +88,6 @@ void MainWindow::on_DispImage_toggled(bool checked)
     }
     else{
 
-        int exposure = ui->expBox->value();
-        int masks = ui->maskBox->value();
-        int maskchngs = ui->maskChngBox->value();
-        int subc = ui->subcBox->value();
-        double percent = 0;
-
-        if (subc*maskchngs > masks) maskchngs = masks/subc;
-        if (maskchngs == 0) percent = 100;
-        else if (maskchngs % 2 == 0) percent = 100*(1 - maskchngs*subc/masks/2);
-        else percent = 100*(maskchngs + 1)*subc/masks/2;
-
-        int totExp = masks*(28.8 + exposure);
-
-        int key = totExp/1490;
-        key *= 1490;
-        if (key > 2980*12) key = 2980*12;
-
-        Arr lightb1 = light[key][0];
-        Arr lightb2 = light[key][1];
-        Arr darkb1 = dark[key][0];
-        Arr darkb2 = dark[key][1];
-
-        mean1 = 0;
-        mean2 = 0;
-        meandark1 = 0;
-        meandark2 = 0;
-
-        for (int i = 0; i < 79; i++){
-            for (int j = 0; j < 60; j++){
-                lightimg1[i][j] = evalPoly(6, percent, lightb1[i][j]);
-                darkimg1[i][j] = evalPoly(6, percent, darkb1[i][j]);
-                lightimg2[i][j] = evalPoly(6, percent, lightb2[i][j]);
-                darkimg2[i][j] = evalPoly(6, percent, darkb2[i][j]);
-                mean1 += lightimg1[i][j] - darkimg1[i][j];
-                mean2 += lightimg2[i][j] - darkimg2[i][j];
-                meandark1 += darkimg1[i][j];
-                meandark2 += darkimg2[i][j];
-            }
-        }
-
-        mean1 /= 79 * 60;
-        mean2 /= 79 * 60;
-        meandark1 /= 79 * 60;
-        meandark2 /= 79 * 60;
 
         workerThread = new std::thread(&MainWindow::callShowImages, this);
 
@@ -247,14 +187,6 @@ void MainWindow::updateFrame(){
     unload_list(&(worker->queue2), &temp2, worker);
     //qDebug() << "postqueue" << temp1.bits()[184*160 - 1];
 
-    if (ui->ApplyImg->isChecked()){
-        for (int i = 1; i < 80; i++){
-            for (int j = 2; j < 62; j++){
-                temp1.setPixel(i, j, meandark1 + (temp1.pixel(i, j) - darkimg1[i - 1][j - 2])*mean1/(lightimg1[i - 1][j - 2] - darkimg1[i - 1][j - 2]));
-                temp2.setPixel(i, j, meandark2 + (temp2.pixel(i, j) - darkimg2[i - 1][j - 2])*mean2/(lightimg2[i - 1][j - 2] - darkimg2[i - 1][j - 2]));
-            }
-        }
-    }
 
     //qDebug() << "made new images";
     if (ui->DispType->currentText()=="ALL"){

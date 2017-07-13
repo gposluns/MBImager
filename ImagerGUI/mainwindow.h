@@ -23,9 +23,8 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/imgcodecs/imgcodecs.hpp>
-#include <opencv2/videoio.hpp>
-#include <qwt_plot_histogram.h>
-#include <chooseser.h>
+#include <opencv2/videoio/videoio.hpp>
+
 
 namespace Ui {
 class MainWindow;
@@ -49,18 +48,7 @@ private:
     QImage im2;
     std::thread *workerThread;
     int imagesToSave;
-    //cv::VideoWriter video1;
-    QwtPlotHistogram histogram;
-    Tab dark;
-    Tab light;
-    unsigned char darkimg1 [79][60];
-    unsigned char lightimg1 [79][60];
-    unsigned char darkimg2 [79][60];
-    unsigned char lightimg2 [79][60];
-    int mean1;
-    int mean2;
-    int meandark1;
-    int meandark2;
+    cv::VideoWriter video1;
 
 protected:
     void closeEvent(QCloseEvent* close);
