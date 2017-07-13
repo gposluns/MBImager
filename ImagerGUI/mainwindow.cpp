@@ -34,6 +34,10 @@ MainWindow::MainWindow(QWidget *parent) :
     //connect(this, SIGNAL(display(int, int, int, int, QString)), worker, SLOT(showImages(int,int,int,int, QString)));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   // histogram.attach(ui->histogram1);
+>>>>>>> 8063ae280484c9a29d22f348085f1c73fd47f707
 =======
    // histogram.attach(ui->histogram1);
 >>>>>>> 8063ae280484c9a29d22f348085f1c73fd47f707
@@ -46,7 +50,10 @@ MainWindow::MainWindow(QWidget *parent) :
     //cv::calcHist(&img, 1, channels, cv::Mat(), hist, 1, histSize, ranges);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 8063ae280484c9a29d22f348085f1c73fd47f707
     //Val lightVal;
     //Val darkVal;
     //LoadValFromFile("expWhite.pkl", lightVal);
@@ -79,6 +86,9 @@ MainWindow::MainWindow(QWidget *parent) :
        }
     }
     darkFile.close();
+<<<<<<< HEAD
+>>>>>>> 8063ae280484c9a29d22f348085f1c73fd47f707
+=======
 >>>>>>> 8063ae280484c9a29d22f348085f1c73fd47f707
 
 
@@ -119,7 +129,10 @@ void MainWindow::on_PattLoad_clicked()
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 8063ae280484c9a29d22f348085f1c73fd47f707
 double evalPoly (int n, double x, double* coeffs){
     double degacc = 1;
     double acc = 0;

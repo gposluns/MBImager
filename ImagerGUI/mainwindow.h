@@ -20,6 +20,7 @@
 #include <QDir>
 #include <QDateTime>
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc.hpp>
@@ -27,6 +28,8 @@
 #include <opencv2/videoio/videoio.hpp>
 
 =======
+=======
+>>>>>>> 8063ae280484c9a29d22f348085f1c73fd47f707
 //#include <opencv2/core/core.hpp>
 //#include <opencv2/highgui/highgui.hpp>
 //#include <opencv2/imgproc.hpp>
@@ -40,6 +43,9 @@
 #define NUM_EXPOSURES 24
 #define EXP_ROWS 79
 #define EXP_COLS 60
+<<<<<<< HEAD
+>>>>>>> 8063ae280484c9a29d22f348085f1c73fd47f707
+=======
 >>>>>>> 8063ae280484c9a29d22f348085f1c73fd47f707
 
 namespace Ui {
