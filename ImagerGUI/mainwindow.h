@@ -19,13 +19,19 @@
 #include <mutex>
 #include <QDir>
 #include <QDateTime>
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc.hpp>
-#include <opencv2/imgcodecs/imgcodecs.hpp>
-#include <opencv2/videoio.hpp>
-#include <qwt_plot_histogram.h>
-#include <chooseser.h>
+//#include <opencv2/core/core.hpp>
+//#include <opencv2/highgui/highgui.hpp>
+//#include <opencv2/imgproc.hpp>
+//#include <opencv2/imgcodecs/imgcodecs.hpp>
+//#include <opencv2/videoio.hpp>
+//#include <qwt_plot_histogram.h>
+#include <QByteArray>
+#include <QFile>
+
+#define COEFFS_PER_EXPOSURE 56880
+#define NUM_EXPOSURES 24
+#define EXP_ROWS 79
+#define EXP_COLS 60
 
 namespace Ui {
 class MainWindow;
@@ -50,13 +56,13 @@ private:
     std::thread *workerThread;
     int imagesToSave;
     //cv::VideoWriter video1;
-    QwtPlotHistogram histogram;
-    Tab dark;
-    Tab light;
-    unsigned char darkimg1 [79][60];
-    unsigned char lightimg1 [79][60];
-    unsigned char darkimg2 [79][60];
-    unsigned char lightimg2 [79][60];
+    //QwtPlotHistogram histogram;
+    double dark [NUM_EXPOSURES][COEFFS_PER_EXPOSURE];
+    double light [NUM_EXPOSURES][COEFFS_PER_EXPOSURE];
+    unsigned char darkimg1 [EXP_ROWS][EXP_COLS];
+    unsigned char lightimg1 [EXP_ROWS][EXP_COLS];
+    unsigned char darkimg2 [EXP_ROWS][EXP_COLS];
+    unsigned char lightimg2 [EXP_ROWS][EXP_COLS];
     int mean1;
     int mean2;
     int meandark1;
