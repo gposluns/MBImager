@@ -3,7 +3,7 @@
 
 okWorker::okWorker(QObject *parent) : QObject(parent)
 {
-    qDebug() <<'okWorker Crash';
+    //qDebug() <<'okWorker Crash';
     if (false == okFrontPanelDLL_LoadLib(nullptr)){
         emit okLoadFailed();
     }

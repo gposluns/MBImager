@@ -33,14 +33,53 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(this, SIGNAL(stop()), worker, SLOT(stop()));
     //connect(this, SIGNAL(display(int, int, int, int, QString)), worker, SLOT(showImages(int,int,int,int, QString)));
 
+<<<<<<< HEAD
+=======
+   // histogram.attach(ui->histogram1);
+>>>>>>> 8063ae280484c9a29d22f348085f1c73fd47f707
     //cv::Mat img = cv::imread("testing.bmp", CV_LOAD_IMAGE_GRAYSCALE);
     //cv::MatND hist;
-    int histSize[1] = {256};
-    int channels[1] = {0};
-    float hranges[2] = {0.0,255.0};
-    const float* ranges[1] = {hranges};
+   // int histSize[1] = {256};
+    //int channels[1] = {0};
+   // float hranges[2] = {0.0,255.0};
+   // const float* ranges[1] = {hranges};
     //cv::calcHist(&img, 1, channels, cv::Mat(), hist, 1, histSize, ranges);
 
+<<<<<<< HEAD
+=======
+    //Val lightVal;
+    //Val darkVal;
+    //LoadValFromFile("expWhite.pkl", lightVal);
+    //LoadValFromFile("expDark.pkl", darkVal);
+    QFile lightFile("whiteData.exp");
+    //qDebug() << lightFile.exists() << lightFile.open(QIODevice::ReadOnly);
+    while(!lightFile.atEnd()){
+       QByteArray exp = lightFile.read(4);
+       char* exposure = exp.data();
+       int expo = *(int*)exposure;
+       //qDebug() << expo << (int)exposure[3] << (int)exposure[2] << (int)exposure[1] << (int)exposure[0];
+       QByteArray data = lightFile.read(COEFFS_PER_EXPOSURE * 8);
+       char* coeffs = data.data();
+       for (int i = 0; i < COEFFS_PER_EXPOSURE; i++){
+           light [expo/1490][i] = *(double*)(coeffs + i*8);
+       }
+    }
+    lightFile.close();
+
+    QFile darkFile("darkData.exp");
+    darkFile.open(QIODevice::ReadOnly);
+    while(!darkFile.atEnd()){
+       QByteArray exp = darkFile.read(4);
+       char* exposure = exp.data();
+       int expo = *(int*)exposure;
+       QByteArray data = darkFile.read(COEFFS_PER_EXPOSURE * 8);
+       char* coeffs = data.data();
+       for (int i = 0; i < COEFFS_PER_EXPOSURE; i++){
+           dark [expo/1490][i] = *(double*)(coeffs + i*8);
+       }
+    }
+    darkFile.close();
+>>>>>>> 8063ae280484c9a29d22f348085f1c73fd47f707
 
 
     }
@@ -61,6 +100,7 @@ void MainWindow::on_BitLoad_clicked()
         qDebug() << "no bitfile chosen";
         return;
     }
+    qDebug() << bitFileName;
     worker->ok.OpenBySerial("");
     worker->ok.ConfigureFPGA(bitFileName.toStdString());
     if (!worker->ok.IsFrontPanelEnabled()){
@@ -78,6 +118,18 @@ void MainWindow::on_PattLoad_clicked()
     emit pattLoadClicked(file);
 }
 
+<<<<<<< HEAD
+=======
+double evalPoly (int n, double x, double* coeffs){
+    double degacc = 1;
+    double acc = 0;
+    for (int i = 0; i < n; i++){
+        acc += degacc*coeffs[n];
+        degacc *= x;
+    }
+    return acc;
+}
+>>>>>>> 8063ae280484c9a29d22f348085f1c73fd47f707
 
 void MainWindow::on_DispImage_toggled(bool checked)
 {
@@ -88,6 +140,48 @@ void MainWindow::on_DispImage_toggled(bool checked)
     }
     else{
 
+<<<<<<< HEAD
+=======
+        int exposure = ui->expBox->value();
+        int masks = ui->maskBox->value();
+        int maskchngs = ui->maskChngBox->value();
+        int subc = ui->subcBox->value();
+        double percent = 0;
+
+        if (subc*maskchngs > masks) maskchngs = masks/subc;
+        if (maskchngs == 0) percent = 100;
+        else if (maskchngs % 2 == 0) percent = 100*(1 - maskchngs*subc/masks/2);
+        else percent = 100*(maskchngs + 1)*subc/masks/2;
+
+        int totExp = masks*(28.8 + exposure);
+
+        int key = totExp/1490;
+        if (key > 24) key = 24;
+
+
+        mean1 = 0;
+        mean2 = 0;
+        meandark1 = 0;
+        meandark2 = 0;
+
+        for (int i = 0; i < EXP_ROWS; i++){
+            for (int j = 0; j < EXP_COLS; j++){
+                lightimg1[i][j] = evalPoly(6, percent, &(light[key][6 * (i*EXP_ROWS + j)]));
+                darkimg1[i][j] = evalPoly(6, percent, &(dark[key][6 * (i*EXP_ROWS + j)]));
+                lightimg2[i][j] = evalPoly(6, percent, &(light[key][COEFFS_PER_EXPOSURE/2 + 6*(i*EXP_ROWS + j)]));
+                darkimg2[i][j] = evalPoly(6, percent, &(dark[key][COEFFS_PER_EXPOSURE/2 + 6*(i*EXP_ROWS + j)]));
+                mean1 += lightimg1[i][j] - darkimg1[i][j];
+                mean2 += lightimg2[i][j] - darkimg2[i][j];
+                meandark1 += darkimg1[i][j];
+                meandark2 += darkimg2[i][j];
+            }
+        }
+
+        mean1 /= 79 * 60;
+        mean2 /= 79 * 60;
+        meandark1 /= 79 * 60;
+        meandark2 /= 79 * 60;
+>>>>>>> 8063ae280484c9a29d22f348085f1c73fd47f707
 
         workerThread = new std::thread(&MainWindow::callShowImages, this);
 
@@ -252,19 +346,19 @@ void MainWindow::on_SaveImages_clicked()
 
 void MainWindow::on_RecVideo_toggled(bool checked)
 {
-    cv::Size size;
+    //cv::Size size;
     if (checked){
         if (ui->DispType->currentText() == "ALL"){
-            size.height = 160;
-            size.width = 184;
+           // size.height = 160;
+           // size.width = 184;
         }
         else if (ui->DispType->currentText() == "CEP"){
-            size.height = 80;
-            size.width = 60;
+          //  size.height = 80;
+           // size.width = 60;
         }
         else{
-            size.height = 160;
-            size.width = 120;
+          //  size.height = 160;
+          //  size.width = 120;
         }
         QDir dir(QString("MBImagerGUI/Saved Videos"));
         if (!dir.exists()){
