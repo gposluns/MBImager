@@ -2,6 +2,9 @@
 #include "ui_mainwindow.h"
 #include <exception>
 
+double dark [NUM_EXPOSURES][COEFFS_PER_EXPOSURE];
+double light [NUM_EXPOSURES][COEFFS_PER_EXPOSURE];
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -11,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     worker = new okWorker();
     //okThread = new QThread();
-
+    videoRec = false;
     //worker->moveToThread(okThread);
     //okThread->start();
 
@@ -33,14 +36,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(this, SIGNAL(stop()), worker, SLOT(stop()));
     //connect(this, SIGNAL(display(int, int, int, int, QString)), worker, SLOT(showImages(int,int,int,int, QString)));
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
    // histogram.attach(ui->histogram1);
->>>>>>> 8063ae280484c9a29d22f348085f1c73fd47f707
-=======
-   // histogram.attach(ui->histogram1);
->>>>>>> 8063ae280484c9a29d22f348085f1c73fd47f707
     //cv::Mat img = cv::imread("testing.bmp", CV_LOAD_IMAGE_GRAYSCALE);
     //cv::MatND hist;
    // int histSize[1] = {256};
@@ -49,15 +45,11 @@ MainWindow::MainWindow(QWidget *parent) :
    // const float* ranges[1] = {hranges};
     //cv::calcHist(&img, 1, channels, cv::Mat(), hist, 1, histSize, ranges);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 8063ae280484c9a29d22f348085f1c73fd47f707
     //Val lightVal;
     //Val darkVal;
     //LoadValFromFile("expWhite.pkl", lightVal);
     //LoadValFromFile("expDark.pkl", darkVal);
+
     QFile lightFile("whiteData.exp");
     //qDebug() << lightFile.exists() << lightFile.open(QIODevice::ReadOnly);
     while(!lightFile.atEnd()){
@@ -86,10 +78,6 @@ MainWindow::MainWindow(QWidget *parent) :
        }
     }
     darkFile.close();
-<<<<<<< HEAD
->>>>>>> 8063ae280484c9a29d22f348085f1c73fd47f707
-=======
->>>>>>> 8063ae280484c9a29d22f348085f1c73fd47f707
 
 
     }
@@ -128,11 +116,6 @@ void MainWindow::on_PattLoad_clicked()
     emit pattLoadClicked(file);
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 8063ae280484c9a29d22f348085f1c73fd47f707
 double evalPoly (int n, double x, double* coeffs){
     double degacc = 1;
     double acc = 0;
@@ -142,7 +125,6 @@ double evalPoly (int n, double x, double* coeffs){
     }
     return acc;
 }
->>>>>>> 8063ae280484c9a29d22f348085f1c73fd47f707
 
 void MainWindow::on_DispImage_toggled(bool checked)
 {
@@ -153,8 +135,6 @@ void MainWindow::on_DispImage_toggled(bool checked)
     }
     else{
 
-<<<<<<< HEAD
-=======
         int exposure = ui->expBox->value();
         int masks = ui->maskBox->value();
         int maskchngs = ui->maskChngBox->value();
@@ -194,7 +174,6 @@ void MainWindow::on_DispImage_toggled(bool checked)
         mean2 /= 79 * 60;
         meandark1 /= 79 * 60;
         meandark2 /= 79 * 60;
->>>>>>> 8063ae280484c9a29d22f348085f1c73fd47f707
 
         workerThread = new std::thread(&MainWindow::callShowImages, this);
 
@@ -259,6 +238,9 @@ void MainWindow::on_XSlider_valueChanged(int arg1)
 void MainWindow::closeEvent(QCloseEvent* close){
     //emit stop();
     timer->stop();
+    if (videoRec){
+        video1->release();
+    }
     //okThread->quit();
 }
 
@@ -274,6 +256,7 @@ void unload_list(std::list<unsigned char*> *list, QImage* image, okWorker *worke
 void MainWindow::updateFrame(){
     //qDebug() << "about to check queue";
    // while (worker->listLock){ QThread::usleep(1); qDebug() << "gui waiting on list lock";}
+
 
     if (worker->queue1.empty()){
         //qDebug() << "empty queue";
@@ -294,6 +277,14 @@ void MainWindow::updateFrame(){
     unload_list(&(worker->queue2), &temp2, worker);
     //qDebug() << "postqueue" << temp1.bits()[184*160 - 1];
 
+    if (ui->ApplyImg->isChecked()){
+        for (int i = 1; i < 80; i++){
+            for (int j = 2; j < 62; j++){
+                temp1.setPixel(i, j, meandark1 + (temp1.pixel(i, j) - darkimg1[i - 1][j - 2])*mean1/(lightimg1[i - 1][j - 2] - darkimg1[i - 1][j - 2]));
+                temp2.setPixel(i, j, meandark2 + (temp2.pixel(i, j) - darkimg2[i - 1][j - 2])*mean2/(lightimg2[i - 1][j - 2] - darkimg2[i - 1][j - 2]));
+            }
+        }
+    }
 
     //qDebug() << "made new images";
     if (ui->DispType->currentText()=="ALL"){
@@ -305,6 +296,10 @@ void MainWindow::updateFrame(){
             temp1.save(path);
             path = dir.path() + "/bucket2 " + date.toString("yyyy-M-d-h-m-s-z") + ".png";
             temp2.save(path);
+        }
+        if (videoRec){
+            cv::Mat mat1(temp1.height(), temp1.width(), CV_8UC1, temp1.scanLine(0));
+            video1->write(mat1);
         }
 
     }
@@ -319,19 +314,29 @@ void MainWindow::updateFrame(){
             path = dir.path() + "/bucket2 " + date.toString("yyyy-M-d-h-m-s-z") + ".png";
             temp2.copy(2, 0, 60, 80).save(path);
         }
+        if (videoRec){
+            cv::Mat mat1(temp1.height(), temp1.width(), CV_8UC1, temp1.scanLine(0));
+            video1->write(mat1);
+
+        }
 
     }
     else{ //TOF
-        im1 = temp1.copy(62, 0, 182, 160).scaled(120*2*sqrt(ui->ImgWidget1->zoom), 160*2*sqrt(ui->ImgWidget1->zoom));
-        im2 = temp2.copy(62, 0, 182, 160).scaled(120*2*sqrt(ui->ImgWidget2->zoom), 160*2*sqrt(ui->ImgWidget2->zoom));
+        im1 = temp1.copy(62, 0, 120, 160).scaled(120*2*sqrt(ui->ImgWidget1->zoom), 160*2*sqrt(ui->ImgWidget1->zoom));
+        im2 = temp2.copy(62, 0, 120, 160).scaled(120*2*sqrt(ui->ImgWidget2->zoom), 160*2*sqrt(ui->ImgWidget2->zoom));
 
         if (imagesToSave > 0){
             imagesToSave--;
             QString path = dir.path() + "/bucket1 " + date.toString("yyyy-M-d-h-m-s-z") + ".png";
-            temp1.copy(62, 0, 182, 160).save(path);
+            temp1.copy(62, 0, 120, 160).save(path);
             path = dir.path() + "/bucket2 " + date.toString("yyyy-M-d-h-m-s-z") + ".png";
-            temp2.copy(62, 0, 182, 160).save(path);
+            temp2.copy(62, 0, 120, 160).save(path);
         }
+        if (videoRec){
+            cv::Mat mat1(temp1.copy(62, 0, 120, 160).height(), temp1.copy(62, 0, 120, 160).width(), CV_8UC1, temp1.copy(62, 0, 120, 160).scanLine(0));
+            video1->write(mat1);
+        }
+
     }
 
 
@@ -359,20 +364,25 @@ void MainWindow::on_SaveImages_clicked()
 
 void MainWindow::on_RecVideo_toggled(bool checked)
 {
-    //cv::Size size;
+    cv::Size size;
     if (checked){
+        /*if (!ui->DispImage->isChecked()){
+            ui->RecVideo->setChecked(false);
+            return;
+        }*/
         if (ui->DispType->currentText() == "ALL"){
-           // size.height = 160;
-           // size.width = 184;
+            size.height = 160;
+            size.width = 184;
         }
         else if (ui->DispType->currentText() == "CEP"){
-          //  size.height = 80;
-           // size.width = 60;
+            size.height = 160;
+            size.width = 184;
         }
         else{
-          //  size.height = 160;
-          //  size.width = 120;
+            size.height = 160;
+            size.width = 120;
         }
+
         QDir dir(QString("MBImagerGUI/Saved Videos"));
         if (!dir.exists()){
             dir.mkpath(dir.path());
@@ -380,13 +390,14 @@ void MainWindow::on_RecVideo_toggled(bool checked)
         QDateTime date = QDateTime::currentDateTime();
         QString vidpath =dir.path()+ "/bucket1 " + date.toString("yyyy-M-d-h-m-s-z") + ".avi" ;
 
-        //video1 = new cv::VideoWriter(vidpath.toStdString(), 541215044, 30, size);
-       //^CRASHES HERE
-
+        video1 = new cv::VideoWriter(vidpath.toStdString(), 541215044 , 60, size);
+        videoRec = true;
 
     }
-    else{
-       // video1->release();
+    else if (videoRec){
+        videoRec = false;
+        video1->release();
+
     }
 }
 
@@ -395,4 +406,9 @@ void MainWindow::on_Reset_clicked()
     ui->xBox->setValue(0);
     ui->yBox->setValue(0);
     ui->Zoom->setValue(1);
+}
+
+void MainWindow::on_DispType_currentIndexChanged(int index)
+{
+    ui->RecVideo->setChecked(false);
 }
