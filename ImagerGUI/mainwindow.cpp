@@ -315,6 +315,7 @@ void MainWindow::updateFrame(){
             temp2.copy(2, 0, 60, 80).save(path);
         }
         if (videoRec){
+            //for unknown reason, 80*60 area won't save as video
             cv::Mat mat1(temp1.height(), temp1.width(), CV_8UC1, temp1.scanLine(0));
             video1->write(mat1);
 
