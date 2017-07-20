@@ -27,21 +27,21 @@ module testfx_spi;
 	// Inputs
 	reg MISO;
 	reg CLK_IN;
-	reg [31:0] din;
-	reg trigger;
-	reg [0:0] target;
-	reg CPOL;
-	reg CPHA;
+	wire [15:0] din;
+	wire trigger;
+	wire [9:0] target;
+	wire CPOL;
+	wire CPHA;
 
 	// Outputs
 	wire MOSI;
 	wire SPI_CLK;
-	wire [0:0] SPI_SS;
-	wire [31:0] dout;
+	wire [9:0] SPI_SS;
+	wire [15:0] dout;
 	wire valid;
 
 	// Instantiate the Unit Under Test (UUT)
-	spi_master_4byte uut (
+	spi_master_4byte # (.N(10), .C(16)) uut (
 		.MISO(MISO), 
 		.MOSI(MOSI), 
 		.SPI_CLK(SPI_CLK), 
@@ -55,53 +55,24 @@ module testfx_spi;
 		.CPOL(CPOL), 
 		.CPHA(CPHA)
 	);
+	
+	spi_programmer programmer (
+		.command(din),
+		.ss(target),
+		.ready(valid),
+		.trigger(trigger),
+		.clock(CLK_IN),
+		.CPOL(CPOL),
+		.CPHA(CPHA)
+	);
 
 	initial begin
 		// Initialize Inputs
 		MISO = 0;
 		CLK_IN = 0;
-		din = 0;
-		trigger = 0;
-		target = 0;
-		CPOL = 0;
-		CPHA = 0;
 
 		// Wait 100 ns for global reset to finish
-		#1000;
-      
-		din = 32'haaaa3333;
-		target = 1;
-		trigger = 1;
 		
-		#10;
-		trigger = 0;
-		
-		#1000;
-		
-		CPHA = 1;
-		din = 32'hbbbb4444;
-		trigger = 1;
-		
-		#10;
-		trigger = 0;
-		
-		#1000;
-		CPOL = 1;
-		din = 32'hcccc5555;
-		trigger = 1;
-		
-		#10;
-		trigger = 0;
-		
-		#1000;
-		
-		CPHA = 0;
-		din = 32'hdddd6666;
-		trigger = 1;
-		
-		#10;
-		trigger = 0;
-		// Add stimulus here
 
 	end
 	
