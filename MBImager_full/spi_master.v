@@ -77,25 +77,23 @@ module spi_master_4byte(
 			clk_div <= clk_div - 1;  
 		end else begin
 			clk_div <= CLK_RATIO;
-			SPI_CLK_i <= ~SPI_CLK_i;
-		end
-	 end
-	 
-	 always @(posedge SPI_CLK_i) begin
-		if (running) begin
-			shift_in <= {shift_in[C - 2:0], MISO};
-			if (counter <= 0) begin
-				running <= 0;
-				SS_i <= 0;
-				valid_i <= 1;
+			if (SPI_CLK_i == 0) begin
+				SPI_CLK_i <= 1;
+				if (running) begin
+					shift_in <= {shift_in[C - 2:0], MISO};
+					if (counter <= 0) begin
+						running <= 0;
+						SS_i <= 0;
+						valid_i <= 1;
+					end
+				end
+			end else begin
+				SPI_CLK_i <= 0;
+				if (running) begin		
+					shift_out <= {1'b0, shift_out[C - 1:1]};
+					counter <= counter - 1;
+				end
 			end
-		end
-	 end
-	 
-	 always @(negedge SPI_CLK_i) begin
-		if (running) begin		
-			shift_out <= {1'b0, shift_out[C - 1:1]};
-			counter <= counter - 1;
 		end
 	 end
 	 

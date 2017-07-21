@@ -28,7 +28,7 @@ module spi_programmer(
 	 output CPHA
     );
 
-	parameter NUM_COMMANDS = 28;
+	parameter NUM_COMMANDS = 64;
 
 	reg [16*NUM_COMMANDS - 1:0] commands;
 	reg [10*NUM_COMMANDS - 1:0] targets;
