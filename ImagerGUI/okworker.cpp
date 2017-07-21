@@ -116,13 +116,15 @@ void okWorker::showImages(int exp, int numMasks, int maskChngs, int subcPer, QSt
         ok.UpdateTriggerOuts();
         //main camera loop
        // qDebug() << "running ok loop, time=" << clock() << "clks/sec=" << CLOCKS_PER_SEC;
+        //qDebug() << "loop started";
 
         if (ok.IsTriggered(0x6a, 0x01)){
             ok.ReadFromPipeOut(0xa0, 262144, datainFull);
+            ok.UpdateTriggerOuts();
             stuck = 0;
             im1 = (unsigned char*)malloc (im_row*184);
             im2 = (unsigned char*)malloc (im_row*184);
-            qDebug() << 1;
+            //qDebug() << 1;
             //if (ok.IsTriggered(0x6a, 0x02)){
                 //qDebug() << "also 2";
               //  fails++;
@@ -130,19 +132,22 @@ void okWorker::showImages(int exp, int numMasks, int maskChngs, int subcPer, QSt
         }
         else if (ok.IsTriggered(0x6a, 0x02)){
             ok.ReadFromPipeOut(0xa0, 2*frame_length, datainFull);
+            ok.UpdateTriggerOuts();
             stuck = 0;
-           // qDebug() << 2;
+            //qDebug() << 2;
             im1 = (unsigned char*)malloc (im_row*184);
             im2 = (unsigned char*)malloc (im_row*184);
         }
         else if (ok.IsTriggered(0x6a, 0x04)){
             ok.ReadFromPipeOut(0xa0, frame_length, datainFull);
+            ok.UpdateTriggerOuts();
             stuck = 0;
-           // qDebug() << 4;
+            //qDebug() << 4;
             im1 = (unsigned char*)malloc (im_row*184);
             im2 = (unsigned char*)malloc (im_row*184);
         }
         else{
+            //qDebug() << 0;
             stuck++;
            // fails--;
             if(stuck > 1000){
@@ -177,9 +182,23 @@ void okWorker::showImages(int exp, int numMasks, int maskChngs, int subcPer, QSt
         }
         //qDebug() << "small loops ran, time=" << clock();
 
-        if (im1[184*160 - 1] == 255){
+        /*if (im1[184*160 - 1] == 255){
+            if (ok.IsTriggered(0x6a, 0x01)){
+                qDebug() << 1;
+            }
+            else if (ok.IsTriggered(0x6a, 0x02)){
+                qDebug() << 2;
+            }
+            else if (ok.IsTriggered(0x6a, 0x04)){
+                qDebug() << 4 << "white";
+            }
+            else{
+                qDebug() << "?";
+            }
+            free(im1);
+            free(im2);
             continue;
-        }
+        }*/
 
         //qDebug() << "prequeue:" << im1[184*160 - 1];
 
