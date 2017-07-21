@@ -17,6 +17,11 @@
  PORT SPI_FLASH_MOSI = Generic_SPI_MOSI_O, DIR = O
  PORT SPI_FLASH_SCLK = Generic_SPI_SCK_O, DIR = O
  PORT SPI_FLASH_MISO = Generic_SPI_MISO_I, DIR = I
+ PORT okHE = net_okHE, DIR = I, VEC = [112:0]
+ PORT hdl_control_0_OUT3_pin = hdl_control_0_OUT3, DIR = O, VEC = [31:0]
+ PORT hdl_receive_0_IN4_pin = hdl_receive_0_IN4, DIR = I, VEC = [31:0]
+ PORT oktriggerouts_0_okEH_pin = oktriggerouts_0_okEH, DIR = O, VEC = [64:0]
+ PORT okwireouts_0_okEH_pin = okwireouts_0_okEH, DIR = O, VEC = [64:0]
 
 
 BEGIN proc_sys_reset
@@ -43,7 +48,7 @@ BEGIN lmb_bram_if_cntlr
  PARAMETER INSTANCE = microblaze_0_i_bram_ctrl
  PARAMETER HW_VER = 3.10.c
  PARAMETER C_BASEADDR = 0x00000000
- PARAMETER C_HIGHADDR = 0x00007FFF
+ PARAMETER C_HIGHADDR = 0x00007fff
  BUS_INTERFACE SLMB = microblaze_0_ilmb
  BUS_INTERFACE BRAM_PORT = microblaze_0_i_bram_ctrl_2_microblaze_0_bram_block
 END
@@ -59,7 +64,7 @@ BEGIN lmb_bram_if_cntlr
  PARAMETER INSTANCE = microblaze_0_d_bram_ctrl
  PARAMETER HW_VER = 3.10.c
  PARAMETER C_BASEADDR = 0x00000000
- PARAMETER C_HIGHADDR = 0x00007FFF
+ PARAMETER C_HIGHADDR = 0x00007fff
  BUS_INTERFACE SLMB = microblaze_0_dlmb
  BUS_INTERFACE BRAM_PORT = microblaze_0_d_bram_ctrl_2_microblaze_0_bram_block
 END
@@ -92,6 +97,7 @@ BEGIN microblaze
  BUS_INTERFACE DEBUG = microblaze_0_debug
  BUS_INTERFACE DLMB = microblaze_0_dlmb
  BUS_INTERFACE ILMB = microblaze_0_ilmb
+ BUS_INTERFACE INTERRUPT = axi_intc_0_INTERRUPT
  PORT MB_RESET = proc_sys_reset_0_MB_Reset
  PORT CLK = clk_100_0000MHz
 END
@@ -146,5 +152,86 @@ BEGIN axi_spi
  PORT MOSI_O = Generic_SPI_MOSI_O
  PORT SCK_O = Generic_SPI_SCK_O
  PORT MISO_I = Generic_SPI_MISO_I
+ PORT IP2INTC_Irpt = Generic_SPI_IP2INTC_Irpt
+END
+
+BEGIN hdl_control
+ PARAMETER INSTANCE = hdl_control_0
+ PARAMETER HW_VER = 1.00.a
+ PARAMETER C_NUM_REG = 32
+ PARAMETER C_BASEADDR = 0x7e200000
+ PARAMETER C_HIGHADDR = 0x7e20ffff
+ BUS_INTERFACE S_AXI = axi4lite_0
+ PORT S_AXI_ACLK = clk_100_0000MHz
+ PORT OUT3 = hdl_control_0_OUT3
+END
+
+BEGIN hdl_receive
+ PARAMETER INSTANCE = hdl_receive_0
+ PARAMETER HW_VER = 1.00.a
+ PARAMETER C_NUM_REG = 32
+ PARAMETER C_BASEADDR = 0x7e220000
+ PARAMETER C_HIGHADDR = 0x7e22ffff
+ BUS_INTERFACE S_AXI = axi4lite_0
+ PORT S_AXI_ACLK = clk_100_0000MHz
+ PORT IN4 = hdl_receive_0_IN4
+END
+
+BEGIN oktriggerins
+ PARAMETER INSTANCE = oktriggerins_0
+ PARAMETER HW_VER = 3.00.a
+ PARAMETER C_NUM_REG = 32
+ PARAMETER C_BASEADDR = 0x7a400000
+ PARAMETER C_HIGHADDR = 0x7a40ffff
+ BUS_INTERFACE S_AXI = axi4lite_0
+ PORT S_AXI_ACLK = clk_100_0000MHz
+ PORT INTR = oktriggerins_0_INTR
+ PORT okHE = net_okHE
+END
+
+BEGIN oktriggerouts
+ PARAMETER INSTANCE = oktriggerouts_0
+ PARAMETER HW_VER = 1.00.a
+ PARAMETER C_NUM_REG = 32
+ PARAMETER C_BASEADDR = 0x73e00000
+ PARAMETER C_HIGHADDR = 0x73e0ffff
+ BUS_INTERFACE S_AXI = axi4lite_0
+ PORT S_AXI_ACLK = clk_100_0000MHz
+ PORT okEH = oktriggerouts_0_okEH
+ PORT okHE = net_okHE
+END
+
+BEGIN okwireins
+ PARAMETER INSTANCE = okwireins_0
+ PARAMETER HW_VER = 2.00.a
+ PARAMETER C_NUM_REG = 32
+ PARAMETER C_BASEADDR = 0x7d600000
+ PARAMETER C_HIGHADDR = 0x7d60ffff
+ BUS_INTERFACE S_AXI = axi4lite_0
+ PORT S_AXI_ACLK = clk_100_0000MHz
+ PORT okHE = net_okHE
+END
+
+BEGIN okwireouts
+ PARAMETER INSTANCE = okwireouts_0
+ PARAMETER HW_VER = 2.00.a
+ PARAMETER C_NUM_REG = 32
+ PARAMETER C_BASEADDR = 0x77000000
+ PARAMETER C_HIGHADDR = 0x7700ffff
+ BUS_INTERFACE S_AXI = axi4lite_0
+ PORT S_AXI_ACLK = clk_100_0000MHz
+ PORT okEH = okwireouts_0_okEH
+ PORT okHE = net_okHE
+END
+
+BEGIN axi_intc
+ PARAMETER INSTANCE = axi_intc_0
+ PARAMETER HW_VER = 1.04.a
+ PARAMETER C_BASEADDR = 0x41200000
+ PARAMETER C_HIGHADDR = 0x4120ffff
+ BUS_INTERFACE S_AXI = axi4lite_0
+ BUS_INTERFACE INTERRUPT = axi_intc_0_INTERRUPT
+ PORT S_AXI_ACLK = clk_100_0000MHz
+ PORT Intr = oktriggerins_0_INTR & Generic_SPI_IP2INTC_Irpt
 END
 

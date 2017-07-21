@@ -1,0 +1,19 @@
+##############################################################################
+## Filename:          C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_SPI\pcores/okwireouts_v2_00_a/data/okwireouts_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Fri Jun 16 13:50:40 2017 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a proc_common_pkg vhdl
+lib proc_common_v3_00_a ipif_pkg vhdl
+lib proc_common_v3_00_a or_muxcy vhdl
+lib proc_common_v3_00_a or_gate128 vhdl
+lib proc_common_v3_00_a family_support vhdl
+lib proc_common_v3_00_a pselect_f vhdl
+lib proc_common_v3_00_a counter_f vhdl
+lib axi_lite_ipif_v1_01_a address_decoder vhdl
+lib axi_lite_ipif_v1_01_a slave_attachment vhdl
+lib axi_lite_ipif_v1_01_a axi_lite_ipif vhdl
+lib okwireouts_v2_00_a okLibrary verilog
+lib okwireouts_v2_00_a user_logic verilog
+lib okwireouts_v2_00_a okwireouts vhdl

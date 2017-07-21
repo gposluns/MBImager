@@ -9,7 +9,12 @@ module MB_SPI
     SPI_FLASH_SS,
     SPI_FLASH_MOSI,
     SPI_FLASH_SCLK,
-    SPI_FLASH_MISO
+    SPI_FLASH_MISO,
+    okHE,
+    hdl_control_0_OUT3_pin,
+    hdl_receive_0_IN4_pin,
+    oktriggerouts_0_okEH_pin,
+    okwireouts_0_okEH_pin
   );
   input EXT_RESET_N;
   input USER_CLOCK;
@@ -17,34 +22,40 @@ module MB_SPI
   output SPI_FLASH_MOSI;
   output SPI_FLASH_SCLK;
   input SPI_FLASH_MISO;
+  input [112:0] okHE;
+  output [31:0] hdl_control_0_OUT3_pin;
+  input [31:0] hdl_receive_0_IN4_pin;
+  output [64:0] oktriggerouts_0_okEH_pin;
+  output [64:0] okwireouts_0_okEH_pin;
 
   // Internal signals
 
   wire Ext_BRK;
   wire Ext_NM_BRK;
+  wire Generic_SPI_IP2INTC_Irpt;
   wire Generic_SPI_MISO_I;
   wire Generic_SPI_MOSI_O;
   wire Generic_SPI_SCK_O;
   wire [9:0] Generic_SPI_SS_O;
   wire RESET;
-  wire [63:0] axi4lite_0_M_ARADDR;
-  wire [1:0] axi4lite_0_M_ARESETN;
-  wire [1:0] axi4lite_0_M_ARREADY;
-  wire [1:0] axi4lite_0_M_ARVALID;
-  wire [63:0] axi4lite_0_M_AWADDR;
-  wire [1:0] axi4lite_0_M_AWREADY;
-  wire [1:0] axi4lite_0_M_AWVALID;
-  wire [1:0] axi4lite_0_M_BREADY;
-  wire [3:0] axi4lite_0_M_BRESP;
-  wire [1:0] axi4lite_0_M_BVALID;
-  wire [63:0] axi4lite_0_M_RDATA;
-  wire [1:0] axi4lite_0_M_RREADY;
-  wire [3:0] axi4lite_0_M_RRESP;
-  wire [1:0] axi4lite_0_M_RVALID;
-  wire [63:0] axi4lite_0_M_WDATA;
-  wire [1:0] axi4lite_0_M_WREADY;
-  wire [7:0] axi4lite_0_M_WSTRB;
-  wire [1:0] axi4lite_0_M_WVALID;
+  wire [287:0] axi4lite_0_M_ARADDR;
+  wire [8:0] axi4lite_0_M_ARESETN;
+  wire [8:0] axi4lite_0_M_ARREADY;
+  wire [8:0] axi4lite_0_M_ARVALID;
+  wire [287:0] axi4lite_0_M_AWADDR;
+  wire [8:0] axi4lite_0_M_AWREADY;
+  wire [8:0] axi4lite_0_M_AWVALID;
+  wire [8:0] axi4lite_0_M_BREADY;
+  wire [17:0] axi4lite_0_M_BRESP;
+  wire [8:0] axi4lite_0_M_BVALID;
+  wire [287:0] axi4lite_0_M_RDATA;
+  wire [8:0] axi4lite_0_M_RREADY;
+  wire [17:0] axi4lite_0_M_RRESP;
+  wire [8:0] axi4lite_0_M_RVALID;
+  wire [287:0] axi4lite_0_M_WDATA;
+  wire [8:0] axi4lite_0_M_WREADY;
+  wire [35:0] axi4lite_0_M_WSTRB;
+  wire [8:0] axi4lite_0_M_WVALID;
   wire [31:0] axi4lite_0_S_ARADDR;
   wire [1:0] axi4lite_0_S_ARBURST;
   wire [3:0] axi4lite_0_S_ARCACHE;
@@ -82,7 +93,12 @@ module MB_SPI
   wire [0:0] axi4lite_0_S_WREADY;
   wire [3:0] axi4lite_0_S_WSTRB;
   wire [0:0] axi4lite_0_S_WVALID;
+  wire axi_intc_0_INTERRUPT_Interrupt;
+  wire [1:0] axi_intc_0_INTERRUPT_Interrupt_Ack;
+  wire [0:31] axi_intc_0_INTERRUPT_Interrupt_Address;
   wire [0:0] clk_100_0000MHz;
+  wire [31:0] hdl_control_0_OUT3;
+  wire [31:0] hdl_receive_0_IN4;
   wire [0:31] microblaze_0_d_bram_ctrl_2_microblaze_0_bram_block_BRAM_Addr;
   wire microblaze_0_d_bram_ctrl_2_microblaze_0_bram_block_BRAM_Clk;
   wire [0:31] microblaze_0_d_bram_ctrl_2_microblaze_0_bram_block_BRAM_Din;
@@ -151,15 +167,21 @@ module MB_SPI
   wire net_ExternalPort_0;
   wire net_gnd0;
   wire [0:0] net_gnd1;
-  wire [1:0] net_gnd2;
+  wire [0:1] net_gnd2;
   wire [0:2] net_gnd3;
   wire [0:3] net_gnd4;
+  wire [8:0] net_gnd9;
   wire [9:0] net_gnd10;
   wire [0:15] net_gnd16;
   wire [0:31] net_gnd32;
   wire [0:4095] net_gnd4096;
+  wire [112:0] net_okHE;
   wire net_vcc0;
-  wire [1:0] pgassign1;
+  wire oktriggerins_0_INTR;
+  wire [64:0] oktriggerouts_0_okEH;
+  wire [64:0] okwireouts_0_okEH;
+  wire [8:0] pgassign1;
+  wire [1:0] pgassign2;
   wire [0:0] proc_sys_reset_0_BUS_STRUCT_RESET;
   wire proc_sys_reset_0_Dcm_locked;
   wire [0:0] proc_sys_reset_0_Interconnect_aresetn;
@@ -174,17 +196,32 @@ module MB_SPI
   assign SPI_FLASH_MOSI = Generic_SPI_MOSI_O;
   assign SPI_FLASH_SCLK = Generic_SPI_SCK_O;
   assign Generic_SPI_MISO_I = SPI_FLASH_MISO;
+  assign net_okHE = okHE;
+  assign hdl_control_0_OUT3_pin = hdl_control_0_OUT3;
+  assign hdl_receive_0_IN4 = hdl_receive_0_IN4_pin;
+  assign oktriggerouts_0_okEH_pin = oktriggerouts_0_okEH;
+  assign okwireouts_0_okEH_pin = okwireouts_0_okEH;
+  assign pgassign1[8:8] = clk_100_0000MHz[0:0];
+  assign pgassign1[7:7] = clk_100_0000MHz[0:0];
+  assign pgassign1[6:6] = clk_100_0000MHz[0:0];
+  assign pgassign1[5:5] = clk_100_0000MHz[0:0];
+  assign pgassign1[4:4] = clk_100_0000MHz[0:0];
+  assign pgassign1[3:3] = clk_100_0000MHz[0:0];
+  assign pgassign1[2:2] = clk_100_0000MHz[0:0];
   assign pgassign1[1:1] = clk_100_0000MHz[0:0];
   assign pgassign1[0:0] = clk_100_0000MHz[0:0];
+  assign pgassign2[1] = oktriggerins_0_INTR;
+  assign pgassign2[0] = Generic_SPI_IP2INTC_Irpt;
   assign net_gnd0 = 1'b0;
   assign net_gnd1[0:0] = 1'b0;
   assign net_gnd10[9:0] = 10'b0000000000;
   assign net_gnd16[0:15] = 16'b0000000000000000;
-  assign net_gnd2[1:0] = 2'b00;
+  assign net_gnd2[0:1] = 2'b00;
   assign net_gnd3[0:2] = 3'b000;
   assign net_gnd32[0:31] = 32'b00000000000000000000000000000000;
   assign net_gnd4[0:3] = 4'b0000;
   assign net_gnd4096[0:4095] = 4096'h0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+  assign net_gnd9[8:0] = 9'b000000000;
   assign net_vcc0 = 1'b1;
 
   (* BOX_TYPE = "user_black_box" *)
@@ -329,15 +366,15 @@ module MB_SPI
       .SPLB_CTRL_PLB_wrPrim ( net_gnd0 ),
       .SPLB_CTRL_PLB_abort ( net_gnd0 ),
       .SPLB_CTRL_PLB_busLock ( net_gnd0 ),
-      .SPLB_CTRL_PLB_MSize ( net_gnd2[1:0] ),
+      .SPLB_CTRL_PLB_MSize ( net_gnd2 ),
       .SPLB_CTRL_PLB_lockErr ( net_gnd0 ),
       .SPLB_CTRL_PLB_wrBurst ( net_gnd0 ),
       .SPLB_CTRL_PLB_rdBurst ( net_gnd0 ),
       .SPLB_CTRL_PLB_wrPendReq ( net_gnd0 ),
       .SPLB_CTRL_PLB_rdPendReq ( net_gnd0 ),
-      .SPLB_CTRL_PLB_wrPendPri ( net_gnd2[1:0] ),
-      .SPLB_CTRL_PLB_rdPendPri ( net_gnd2[1:0] ),
-      .SPLB_CTRL_PLB_reqPri ( net_gnd2[1:0] ),
+      .SPLB_CTRL_PLB_wrPendPri ( net_gnd2 ),
+      .SPLB_CTRL_PLB_rdPendPri ( net_gnd2 ),
+      .SPLB_CTRL_PLB_reqPri ( net_gnd2 ),
       .SPLB_CTRL_PLB_TAttribute ( net_gnd16 ),
       .SPLB_CTRL_Sl_wrBTerm (  ),
       .SPLB_CTRL_Sl_rdWdAddr (  ),
@@ -479,15 +516,15 @@ module MB_SPI
       .SPLB_CTRL_PLB_wrPrim ( net_gnd0 ),
       .SPLB_CTRL_PLB_abort ( net_gnd0 ),
       .SPLB_CTRL_PLB_busLock ( net_gnd0 ),
-      .SPLB_CTRL_PLB_MSize ( net_gnd2[1:0] ),
+      .SPLB_CTRL_PLB_MSize ( net_gnd2 ),
       .SPLB_CTRL_PLB_lockErr ( net_gnd0 ),
       .SPLB_CTRL_PLB_wrBurst ( net_gnd0 ),
       .SPLB_CTRL_PLB_rdBurst ( net_gnd0 ),
       .SPLB_CTRL_PLB_wrPendReq ( net_gnd0 ),
       .SPLB_CTRL_PLB_rdPendReq ( net_gnd0 ),
-      .SPLB_CTRL_PLB_wrPendPri ( net_gnd2[1:0] ),
-      .SPLB_CTRL_PLB_rdPendPri ( net_gnd2[1:0] ),
-      .SPLB_CTRL_PLB_reqPri ( net_gnd2[1:0] ),
+      .SPLB_CTRL_PLB_wrPendPri ( net_gnd2 ),
+      .SPLB_CTRL_PLB_rdPendPri ( net_gnd2 ),
+      .SPLB_CTRL_PLB_reqPri ( net_gnd2 ),
       .SPLB_CTRL_PLB_TAttribute ( net_gnd16 ),
       .SPLB_CTRL_Sl_wrBTerm (  ),
       .SPLB_CTRL_Sl_rdWdAddr (  ),
@@ -539,15 +576,15 @@ module MB_SPI
       .CLK ( clk_100_0000MHz[0] ),
       .RESET ( microblaze_0_dlmb_LMB_Rst ),
       .MB_RESET ( proc_sys_reset_0_MB_Reset ),
-      .INTERRUPT ( net_gnd0 ),
-      .INTERRUPT_ADDRESS ( net_gnd32 ),
-      .INTERRUPT_ACK (  ),
+      .INTERRUPT ( axi_intc_0_INTERRUPT_Interrupt ),
+      .INTERRUPT_ADDRESS ( axi_intc_0_INTERRUPT_Interrupt_Address ),
+      .INTERRUPT_ACK ( axi_intc_0_INTERRUPT_Interrupt_Ack[1:0] ),
       .EXT_BRK ( Ext_BRK ),
       .EXT_NM_BRK ( Ext_NM_BRK ),
       .DBG_STOP ( net_gnd0 ),
       .MB_Halted (  ),
       .MB_Error (  ),
-      .WAKEUP ( net_gnd2[1:0] ),
+      .WAKEUP ( net_gnd2 ),
       .SLEEP (  ),
       .DBG_WAKEUP (  ),
       .LOCKSTEP_MASTER_OUT (  ),
@@ -589,7 +626,7 @@ module MB_SPI
       .IPLB_MRdDBus ( net_gnd32 ),
       .IPLB_MRdWdAddr ( net_gnd4 ),
       .IPLB_MRearbitrate ( net_gnd0 ),
-      .IPLB_MSSize ( net_gnd2[1:0] ),
+      .IPLB_MSSize ( net_gnd2 ),
       .IPLB_MTimeout ( net_gnd0 ),
       .DATA_READ ( microblaze_0_dlmb_LMB_ReadDBus ),
       .DREADY ( microblaze_0_dlmb_LMB_Ready ),
@@ -630,7 +667,7 @@ module MB_SPI
       .DPLB_MRdDBus ( net_gnd32 ),
       .DPLB_MRdWdAddr ( net_gnd4 ),
       .DPLB_MRearbitrate ( net_gnd0 ),
-      .DPLB_MSSize ( net_gnd2[1:0] ),
+      .DPLB_MSSize ( net_gnd2 ),
       .DPLB_MTimeout ( net_gnd0 ),
       .M_AXI_IP_AWID (  ),
       .M_AXI_IP_AWADDR (  ),
@@ -649,7 +686,7 @@ module MB_SPI
       .M_AXI_IP_WVALID (  ),
       .M_AXI_IP_WREADY ( net_gnd0 ),
       .M_AXI_IP_BID ( net_gnd1[0:0] ),
-      .M_AXI_IP_BRESP ( net_gnd2 ),
+      .M_AXI_IP_BRESP ( net_gnd2[0:1] ),
       .M_AXI_IP_BVALID ( net_gnd0 ),
       .M_AXI_IP_BREADY (  ),
       .M_AXI_IP_ARID (  ),
@@ -665,7 +702,7 @@ module MB_SPI
       .M_AXI_IP_ARREADY ( net_gnd0 ),
       .M_AXI_IP_RID ( net_gnd1[0:0] ),
       .M_AXI_IP_RDATA ( net_gnd32[0:31] ),
-      .M_AXI_IP_RRESP ( net_gnd2 ),
+      .M_AXI_IP_RRESP ( net_gnd2[0:1] ),
       .M_AXI_IP_RLAST ( net_gnd0 ),
       .M_AXI_IP_RVALID ( net_gnd0 ),
       .M_AXI_IP_RREADY (  ),
@@ -728,7 +765,7 @@ module MB_SPI
       .M_AXI_IC_WREADY ( net_gnd0 ),
       .M_AXI_IC_WUSER (  ),
       .M_AXI_IC_BID ( net_gnd1[0:0] ),
-      .M_AXI_IC_BRESP ( net_gnd2 ),
+      .M_AXI_IC_BRESP ( net_gnd2[0:1] ),
       .M_AXI_IC_BVALID ( net_gnd0 ),
       .M_AXI_IC_BREADY (  ),
       .M_AXI_IC_BUSER ( net_gnd1[0:0] ),
@@ -750,7 +787,7 @@ module MB_SPI
       .M_AXI_IC_ARBAR (  ),
       .M_AXI_IC_RID ( net_gnd1[0:0] ),
       .M_AXI_IC_RDATA ( net_gnd32[0:31] ),
-      .M_AXI_IC_RRESP ( net_gnd2 ),
+      .M_AXI_IC_RRESP ( net_gnd2[0:1] ),
       .M_AXI_IC_RLAST ( net_gnd0 ),
       .M_AXI_IC_RVALID ( net_gnd0 ),
       .M_AXI_IC_RREADY (  ),
@@ -790,7 +827,7 @@ module MB_SPI
       .M_AXI_DC_WREADY ( net_gnd0 ),
       .M_AXI_DC_WUSER (  ),
       .M_AXI_DC_BID ( net_gnd1[0:0] ),
-      .M_AXI_DC_BRESP ( net_gnd2 ),
+      .M_AXI_DC_BRESP ( net_gnd2[0:1] ),
       .M_AXI_DC_BVALID ( net_gnd0 ),
       .M_AXI_DC_BREADY (  ),
       .M_AXI_DC_BUSER ( net_gnd1[0:0] ),
@@ -812,7 +849,7 @@ module MB_SPI
       .M_AXI_DC_ARBAR (  ),
       .M_AXI_DC_RID ( net_gnd1[0:0] ),
       .M_AXI_DC_RDATA ( net_gnd32[0:31] ),
-      .M_AXI_DC_RRESP ( net_gnd2 ),
+      .M_AXI_DC_RRESP ( net_gnd2[0:1] ),
       .M_AXI_DC_RLAST ( net_gnd0 ),
       .M_AXI_DC_RVALID ( net_gnd0 ),
       .M_AXI_DC_RREADY (  ),
@@ -1217,7 +1254,7 @@ module MB_SPI
       .PLB_busLock ( net_gnd0 ),
       .PLB_RNW ( net_gnd0 ),
       .PLB_BE ( net_gnd4 ),
-      .PLB_MSize ( net_gnd2[1:0] ),
+      .PLB_MSize ( net_gnd2 ),
       .PLB_size ( net_gnd4 ),
       .PLB_type ( net_gnd3 ),
       .PLB_lockErr ( net_gnd0 ),
@@ -1226,9 +1263,9 @@ module MB_SPI
       .PLB_rdBurst ( net_gnd0 ),
       .PLB_wrPendReq ( net_gnd0 ),
       .PLB_rdPendReq ( net_gnd0 ),
-      .PLB_wrPendPri ( net_gnd2[1:0] ),
-      .PLB_rdPendPri ( net_gnd2[1:0] ),
-      .PLB_reqPri ( net_gnd2[1:0] ),
+      .PLB_wrPendPri ( net_gnd2 ),
+      .PLB_rdPendPri ( net_gnd2 ),
+      .PLB_reqPri ( net_gnd2 ),
       .PLB_TAttribute ( net_gnd16 ),
       .Sl_addrAck (  ),
       .Sl_SSize (  ),
@@ -1631,9 +1668,9 @@ module MB_SPI
       .M_AXI_WUSER (  ),
       .M_AXI_WVALID ( axi4lite_0_M_WVALID ),
       .M_AXI_WREADY ( axi4lite_0_M_WREADY ),
-      .M_AXI_BID ( net_gnd2 ),
+      .M_AXI_BID ( net_gnd9 ),
       .M_AXI_BRESP ( axi4lite_0_M_BRESP ),
-      .M_AXI_BUSER ( net_gnd2 ),
+      .M_AXI_BUSER ( net_gnd9 ),
       .M_AXI_BVALID ( axi4lite_0_M_BVALID ),
       .M_AXI_BREADY ( axi4lite_0_M_BREADY ),
       .M_AXI_ARID (  ),
@@ -1649,11 +1686,11 @@ module MB_SPI
       .M_AXI_ARUSER (  ),
       .M_AXI_ARVALID ( axi4lite_0_M_ARVALID ),
       .M_AXI_ARREADY ( axi4lite_0_M_ARREADY ),
-      .M_AXI_RID ( net_gnd2 ),
+      .M_AXI_RID ( net_gnd9 ),
       .M_AXI_RDATA ( axi4lite_0_M_RDATA ),
       .M_AXI_RRESP ( axi4lite_0_M_RRESP ),
-      .M_AXI_RLAST ( net_gnd2 ),
-      .M_AXI_RUSER ( net_gnd2 ),
+      .M_AXI_RLAST ( net_gnd9 ),
+      .M_AXI_RUSER ( net_gnd9 ),
       .M_AXI_RVALID ( axi4lite_0_M_RVALID ),
       .M_AXI_RREADY ( axi4lite_0_M_RREADY ),
       .S_AXI_CTRL_AWADDR ( net_gnd32[0:31] ),
@@ -1802,7 +1839,254 @@ module MB_SPI
       .SS_I ( net_gnd10 ),
       .SS_O ( Generic_SPI_SS_O ),
       .SS_T (  ),
-      .IP2INTC_Irpt (  )
+      .IP2INTC_Irpt ( Generic_SPI_IP2INTC_Irpt )
+    );
+
+  (* BOX_TYPE = "user_black_box" *)
+  MB_SPI_hdl_control_0_wrapper
+    hdl_control_0 (
+      .OUT0 (  ),
+      .OUT1 (  ),
+      .OUT2 (  ),
+      .OUT3 ( hdl_control_0_OUT3 ),
+      .OUT4 (  ),
+      .OUT5 (  ),
+      .OUT6 (  ),
+      .OUT7 (  ),
+      .OUT8 (  ),
+      .OUT9 (  ),
+      .OUT10 (  ),
+      .OUT11 (  ),
+      .OUT12 (  ),
+      .OUT13 (  ),
+      .OUT14 (  ),
+      .OUT15 (  ),
+      .OUT16 (  ),
+      .OUT17 (  ),
+      .OUT18 (  ),
+      .OUT19 (  ),
+      .OUT20 (  ),
+      .OUT21 (  ),
+      .OUT22 (  ),
+      .OUT23 (  ),
+      .OUT24 (  ),
+      .OUT25 (  ),
+      .OUT26 (  ),
+      .OUT27 (  ),
+      .OUT28 (  ),
+      .OUT29 (  ),
+      .OUT30 (  ),
+      .OUT31 (  ),
+      .S_AXI_ACLK ( clk_100_0000MHz[0] ),
+      .S_AXI_ARESETN ( axi4lite_0_M_ARESETN[2] ),
+      .S_AXI_AWADDR ( axi4lite_0_M_AWADDR[95:64] ),
+      .S_AXI_AWVALID ( axi4lite_0_M_AWVALID[2] ),
+      .S_AXI_WDATA ( axi4lite_0_M_WDATA[95:64] ),
+      .S_AXI_WSTRB ( axi4lite_0_M_WSTRB[11:8] ),
+      .S_AXI_WVALID ( axi4lite_0_M_WVALID[2] ),
+      .S_AXI_BREADY ( axi4lite_0_M_BREADY[2] ),
+      .S_AXI_ARADDR ( axi4lite_0_M_ARADDR[95:64] ),
+      .S_AXI_ARVALID ( axi4lite_0_M_ARVALID[2] ),
+      .S_AXI_RREADY ( axi4lite_0_M_RREADY[2] ),
+      .S_AXI_ARREADY ( axi4lite_0_M_ARREADY[2] ),
+      .S_AXI_RDATA ( axi4lite_0_M_RDATA[95:64] ),
+      .S_AXI_RRESP ( axi4lite_0_M_RRESP[5:4] ),
+      .S_AXI_RVALID ( axi4lite_0_M_RVALID[2] ),
+      .S_AXI_WREADY ( axi4lite_0_M_WREADY[2] ),
+      .S_AXI_BRESP ( axi4lite_0_M_BRESP[5:4] ),
+      .S_AXI_BVALID ( axi4lite_0_M_BVALID[2] ),
+      .S_AXI_AWREADY ( axi4lite_0_M_AWREADY[2] )
+    );
+
+  (* BOX_TYPE = "user_black_box" *)
+  MB_SPI_hdl_receive_0_wrapper
+    hdl_receive_0 (
+      .IN0 ( net_gnd32[0:31] ),
+      .IN1 ( net_gnd32[0:31] ),
+      .IN2 ( net_gnd32[0:31] ),
+      .IN3 ( net_gnd32[0:31] ),
+      .IN4 ( hdl_receive_0_IN4 ),
+      .IN5 ( net_gnd32[0:31] ),
+      .IN6 ( net_gnd32[0:31] ),
+      .IN7 ( net_gnd32[0:31] ),
+      .IN8 ( net_gnd32[0:31] ),
+      .IN9 ( net_gnd32[0:31] ),
+      .IN10 ( net_gnd32[0:31] ),
+      .IN11 ( net_gnd32[0:31] ),
+      .IN12 ( net_gnd32[0:31] ),
+      .IN13 ( net_gnd32[0:31] ),
+      .IN14 ( net_gnd32[0:31] ),
+      .IN15 ( net_gnd32[0:31] ),
+      .IN16 ( net_gnd32[0:31] ),
+      .IN17 ( net_gnd32[0:31] ),
+      .IN18 ( net_gnd32[0:31] ),
+      .IN19 ( net_gnd32[0:31] ),
+      .IN20 ( net_gnd32[0:31] ),
+      .IN21 ( net_gnd32[0:31] ),
+      .IN22 ( net_gnd32[0:31] ),
+      .IN23 ( net_gnd32[0:31] ),
+      .IN24 ( net_gnd32[0:31] ),
+      .IN25 ( net_gnd32[0:31] ),
+      .IN26 ( net_gnd32[0:31] ),
+      .IN27 ( net_gnd32[0:31] ),
+      .IN28 ( net_gnd32[0:31] ),
+      .IN29 ( net_gnd32[0:31] ),
+      .IN30 ( net_gnd32[0:31] ),
+      .IN31 ( net_gnd32[0:31] ),
+      .S_AXI_ACLK ( clk_100_0000MHz[0] ),
+      .S_AXI_ARESETN ( axi4lite_0_M_ARESETN[3] ),
+      .S_AXI_AWADDR ( axi4lite_0_M_AWADDR[127:96] ),
+      .S_AXI_AWVALID ( axi4lite_0_M_AWVALID[3] ),
+      .S_AXI_WDATA ( axi4lite_0_M_WDATA[127:96] ),
+      .S_AXI_WSTRB ( axi4lite_0_M_WSTRB[15:12] ),
+      .S_AXI_WVALID ( axi4lite_0_M_WVALID[3] ),
+      .S_AXI_BREADY ( axi4lite_0_M_BREADY[3] ),
+      .S_AXI_ARADDR ( axi4lite_0_M_ARADDR[127:96] ),
+      .S_AXI_ARVALID ( axi4lite_0_M_ARVALID[3] ),
+      .S_AXI_RREADY ( axi4lite_0_M_RREADY[3] ),
+      .S_AXI_ARREADY ( axi4lite_0_M_ARREADY[3] ),
+      .S_AXI_RDATA ( axi4lite_0_M_RDATA[127:96] ),
+      .S_AXI_RRESP ( axi4lite_0_M_RRESP[7:6] ),
+      .S_AXI_RVALID ( axi4lite_0_M_RVALID[3] ),
+      .S_AXI_WREADY ( axi4lite_0_M_WREADY[3] ),
+      .S_AXI_BRESP ( axi4lite_0_M_BRESP[7:6] ),
+      .S_AXI_BVALID ( axi4lite_0_M_BVALID[3] ),
+      .S_AXI_AWREADY ( axi4lite_0_M_AWREADY[3] )
+    );
+
+  (* BOX_TYPE = "user_black_box" *)
+  MB_SPI_oktriggerins_0_wrapper
+    oktriggerins_0 (
+      .okHE ( net_okHE ),
+      .INTR ( oktriggerins_0_INTR ),
+      .S_AXI_ACLK ( clk_100_0000MHz[0] ),
+      .S_AXI_ARESETN ( axi4lite_0_M_ARESETN[4] ),
+      .S_AXI_AWADDR ( axi4lite_0_M_AWADDR[159:128] ),
+      .S_AXI_AWVALID ( axi4lite_0_M_AWVALID[4] ),
+      .S_AXI_WDATA ( axi4lite_0_M_WDATA[159:128] ),
+      .S_AXI_WSTRB ( axi4lite_0_M_WSTRB[19:16] ),
+      .S_AXI_WVALID ( axi4lite_0_M_WVALID[4] ),
+      .S_AXI_BREADY ( axi4lite_0_M_BREADY[4] ),
+      .S_AXI_ARADDR ( axi4lite_0_M_ARADDR[159:128] ),
+      .S_AXI_ARVALID ( axi4lite_0_M_ARVALID[4] ),
+      .S_AXI_RREADY ( axi4lite_0_M_RREADY[4] ),
+      .S_AXI_ARREADY ( axi4lite_0_M_ARREADY[4] ),
+      .S_AXI_RDATA ( axi4lite_0_M_RDATA[159:128] ),
+      .S_AXI_RRESP ( axi4lite_0_M_RRESP[9:8] ),
+      .S_AXI_RVALID ( axi4lite_0_M_RVALID[4] ),
+      .S_AXI_WREADY ( axi4lite_0_M_WREADY[4] ),
+      .S_AXI_BRESP ( axi4lite_0_M_BRESP[9:8] ),
+      .S_AXI_BVALID ( axi4lite_0_M_BVALID[4] ),
+      .S_AXI_AWREADY ( axi4lite_0_M_AWREADY[4] )
+    );
+
+  (* BOX_TYPE = "user_black_box" *)
+  MB_SPI_oktriggerouts_0_wrapper
+    oktriggerouts_0 (
+      .okHE ( net_okHE ),
+      .okEH ( oktriggerouts_0_okEH ),
+      .S_AXI_ACLK ( clk_100_0000MHz[0] ),
+      .S_AXI_ARESETN ( axi4lite_0_M_ARESETN[5] ),
+      .S_AXI_AWADDR ( axi4lite_0_M_AWADDR[191:160] ),
+      .S_AXI_AWVALID ( axi4lite_0_M_AWVALID[5] ),
+      .S_AXI_WDATA ( axi4lite_0_M_WDATA[191:160] ),
+      .S_AXI_WSTRB ( axi4lite_0_M_WSTRB[23:20] ),
+      .S_AXI_WVALID ( axi4lite_0_M_WVALID[5] ),
+      .S_AXI_BREADY ( axi4lite_0_M_BREADY[5] ),
+      .S_AXI_ARADDR ( axi4lite_0_M_ARADDR[191:160] ),
+      .S_AXI_ARVALID ( axi4lite_0_M_ARVALID[5] ),
+      .S_AXI_RREADY ( axi4lite_0_M_RREADY[5] ),
+      .S_AXI_ARREADY ( axi4lite_0_M_ARREADY[5] ),
+      .S_AXI_RDATA ( axi4lite_0_M_RDATA[191:160] ),
+      .S_AXI_RRESP ( axi4lite_0_M_RRESP[11:10] ),
+      .S_AXI_RVALID ( axi4lite_0_M_RVALID[5] ),
+      .S_AXI_WREADY ( axi4lite_0_M_WREADY[5] ),
+      .S_AXI_BRESP ( axi4lite_0_M_BRESP[11:10] ),
+      .S_AXI_BVALID ( axi4lite_0_M_BVALID[5] ),
+      .S_AXI_AWREADY ( axi4lite_0_M_AWREADY[5] )
+    );
+
+  (* BOX_TYPE = "user_black_box" *)
+  MB_SPI_okwireins_0_wrapper
+    okwireins_0 (
+      .okHE ( net_okHE ),
+      .S_AXI_ACLK ( clk_100_0000MHz[0] ),
+      .S_AXI_ARESETN ( axi4lite_0_M_ARESETN[6] ),
+      .S_AXI_AWADDR ( axi4lite_0_M_AWADDR[223:192] ),
+      .S_AXI_AWVALID ( axi4lite_0_M_AWVALID[6] ),
+      .S_AXI_WDATA ( axi4lite_0_M_WDATA[223:192] ),
+      .S_AXI_WSTRB ( axi4lite_0_M_WSTRB[27:24] ),
+      .S_AXI_WVALID ( axi4lite_0_M_WVALID[6] ),
+      .S_AXI_BREADY ( axi4lite_0_M_BREADY[6] ),
+      .S_AXI_ARADDR ( axi4lite_0_M_ARADDR[223:192] ),
+      .S_AXI_ARVALID ( axi4lite_0_M_ARVALID[6] ),
+      .S_AXI_RREADY ( axi4lite_0_M_RREADY[6] ),
+      .S_AXI_ARREADY ( axi4lite_0_M_ARREADY[6] ),
+      .S_AXI_RDATA ( axi4lite_0_M_RDATA[223:192] ),
+      .S_AXI_RRESP ( axi4lite_0_M_RRESP[13:12] ),
+      .S_AXI_RVALID ( axi4lite_0_M_RVALID[6] ),
+      .S_AXI_WREADY ( axi4lite_0_M_WREADY[6] ),
+      .S_AXI_BRESP ( axi4lite_0_M_BRESP[13:12] ),
+      .S_AXI_BVALID ( axi4lite_0_M_BVALID[6] ),
+      .S_AXI_AWREADY ( axi4lite_0_M_AWREADY[6] )
+    );
+
+  (* BOX_TYPE = "user_black_box" *)
+  MB_SPI_okwireouts_0_wrapper
+    okwireouts_0 (
+      .okHE ( net_okHE ),
+      .okEH ( okwireouts_0_okEH ),
+      .S_AXI_ACLK ( clk_100_0000MHz[0] ),
+      .S_AXI_ARESETN ( axi4lite_0_M_ARESETN[7] ),
+      .S_AXI_AWADDR ( axi4lite_0_M_AWADDR[255:224] ),
+      .S_AXI_AWVALID ( axi4lite_0_M_AWVALID[7] ),
+      .S_AXI_WDATA ( axi4lite_0_M_WDATA[255:224] ),
+      .S_AXI_WSTRB ( axi4lite_0_M_WSTRB[31:28] ),
+      .S_AXI_WVALID ( axi4lite_0_M_WVALID[7] ),
+      .S_AXI_BREADY ( axi4lite_0_M_BREADY[7] ),
+      .S_AXI_ARADDR ( axi4lite_0_M_ARADDR[255:224] ),
+      .S_AXI_ARVALID ( axi4lite_0_M_ARVALID[7] ),
+      .S_AXI_RREADY ( axi4lite_0_M_RREADY[7] ),
+      .S_AXI_ARREADY ( axi4lite_0_M_ARREADY[7] ),
+      .S_AXI_RDATA ( axi4lite_0_M_RDATA[255:224] ),
+      .S_AXI_RRESP ( axi4lite_0_M_RRESP[15:14] ),
+      .S_AXI_RVALID ( axi4lite_0_M_RVALID[7] ),
+      .S_AXI_WREADY ( axi4lite_0_M_WREADY[7] ),
+      .S_AXI_BRESP ( axi4lite_0_M_BRESP[15:14] ),
+      .S_AXI_BVALID ( axi4lite_0_M_BVALID[7] ),
+      .S_AXI_AWREADY ( axi4lite_0_M_AWREADY[7] )
+    );
+
+  (* BOX_TYPE = "user_black_box" *)
+  MB_SPI_axi_intc_0_wrapper
+    axi_intc_0 (
+      .S_AXI_ACLK ( clk_100_0000MHz[0] ),
+      .S_AXI_ARESETN ( axi4lite_0_M_ARESETN[8] ),
+      .S_AXI_AWADDR ( axi4lite_0_M_AWADDR[264:256] ),
+      .S_AXI_AWVALID ( axi4lite_0_M_AWVALID[8] ),
+      .S_AXI_AWREADY ( axi4lite_0_M_AWREADY[8] ),
+      .S_AXI_WDATA ( axi4lite_0_M_WDATA[287:256] ),
+      .S_AXI_WSTRB ( axi4lite_0_M_WSTRB[35:32] ),
+      .S_AXI_WVALID ( axi4lite_0_M_WVALID[8] ),
+      .S_AXI_WREADY ( axi4lite_0_M_WREADY[8] ),
+      .S_AXI_BRESP ( axi4lite_0_M_BRESP[17:16] ),
+      .S_AXI_BVALID ( axi4lite_0_M_BVALID[8] ),
+      .S_AXI_BREADY ( axi4lite_0_M_BREADY[8] ),
+      .S_AXI_ARADDR ( axi4lite_0_M_ARADDR[264:256] ),
+      .S_AXI_ARVALID ( axi4lite_0_M_ARVALID[8] ),
+      .S_AXI_ARREADY ( axi4lite_0_M_ARREADY[8] ),
+      .S_AXI_RDATA ( axi4lite_0_M_RDATA[287:256] ),
+      .S_AXI_RRESP ( axi4lite_0_M_RRESP[17:16] ),
+      .S_AXI_RVALID ( axi4lite_0_M_RVALID[8] ),
+      .S_AXI_RREADY ( axi4lite_0_M_RREADY[8] ),
+      .Intr ( pgassign2 ),
+      .Irq ( axi_intc_0_INTERRUPT_Interrupt ),
+      .Interrupt_address ( axi_intc_0_INTERRUPT_Interrupt_Address[0:31] ),
+      .Processor_ack ( axi_intc_0_INTERRUPT_Interrupt_Ack ),
+      .Processor_clk ( net_gnd0 ),
+      .Processor_rst ( net_gnd0 ),
+      .Interrupt_address_in ( net_gnd32[0:31] ),
+      .Processor_ack_out (  )
     );
 
 endmodule
@@ -4714,7 +4998,7 @@ module MB_SPI_axi4lite_0_wrapper
   input INTERCONNECT_ACLK;
   input INTERCONNECT_ARESETN;
   output [0:0] S_AXI_ARESET_OUT_N;
-  output [1:0] M_AXI_ARESET_OUT_N;
+  output [8:0] M_AXI_ARESET_OUT_N;
   output IRQ;
   input [0:0] S_AXI_ACLK;
   input [0:0] S_AXI_AWID;
@@ -4760,52 +5044,52 @@ module MB_SPI_axi4lite_0_wrapper
   output [0:0] S_AXI_RUSER;
   output [0:0] S_AXI_RVALID;
   input [0:0] S_AXI_RREADY;
-  input [1:0] M_AXI_ACLK;
-  output [1:0] M_AXI_AWID;
-  output [63:0] M_AXI_AWADDR;
-  output [15:0] M_AXI_AWLEN;
-  output [5:0] M_AXI_AWSIZE;
-  output [3:0] M_AXI_AWBURST;
-  output [3:0] M_AXI_AWLOCK;
-  output [7:0] M_AXI_AWCACHE;
-  output [5:0] M_AXI_AWPROT;
-  output [7:0] M_AXI_AWREGION;
-  output [7:0] M_AXI_AWQOS;
-  output [1:0] M_AXI_AWUSER;
-  output [1:0] M_AXI_AWVALID;
-  input [1:0] M_AXI_AWREADY;
-  output [1:0] M_AXI_WID;
-  output [63:0] M_AXI_WDATA;
-  output [7:0] M_AXI_WSTRB;
-  output [1:0] M_AXI_WLAST;
-  output [1:0] M_AXI_WUSER;
-  output [1:0] M_AXI_WVALID;
-  input [1:0] M_AXI_WREADY;
-  input [1:0] M_AXI_BID;
-  input [3:0] M_AXI_BRESP;
-  input [1:0] M_AXI_BUSER;
-  input [1:0] M_AXI_BVALID;
-  output [1:0] M_AXI_BREADY;
-  output [1:0] M_AXI_ARID;
-  output [63:0] M_AXI_ARADDR;
-  output [15:0] M_AXI_ARLEN;
-  output [5:0] M_AXI_ARSIZE;
-  output [3:0] M_AXI_ARBURST;
-  output [3:0] M_AXI_ARLOCK;
-  output [7:0] M_AXI_ARCACHE;
-  output [5:0] M_AXI_ARPROT;
-  output [7:0] M_AXI_ARREGION;
-  output [7:0] M_AXI_ARQOS;
-  output [1:0] M_AXI_ARUSER;
-  output [1:0] M_AXI_ARVALID;
-  input [1:0] M_AXI_ARREADY;
-  input [1:0] M_AXI_RID;
-  input [63:0] M_AXI_RDATA;
-  input [3:0] M_AXI_RRESP;
-  input [1:0] M_AXI_RLAST;
-  input [1:0] M_AXI_RUSER;
-  input [1:0] M_AXI_RVALID;
-  output [1:0] M_AXI_RREADY;
+  input [8:0] M_AXI_ACLK;
+  output [8:0] M_AXI_AWID;
+  output [287:0] M_AXI_AWADDR;
+  output [71:0] M_AXI_AWLEN;
+  output [26:0] M_AXI_AWSIZE;
+  output [17:0] M_AXI_AWBURST;
+  output [17:0] M_AXI_AWLOCK;
+  output [35:0] M_AXI_AWCACHE;
+  output [26:0] M_AXI_AWPROT;
+  output [35:0] M_AXI_AWREGION;
+  output [35:0] M_AXI_AWQOS;
+  output [8:0] M_AXI_AWUSER;
+  output [8:0] M_AXI_AWVALID;
+  input [8:0] M_AXI_AWREADY;
+  output [8:0] M_AXI_WID;
+  output [287:0] M_AXI_WDATA;
+  output [35:0] M_AXI_WSTRB;
+  output [8:0] M_AXI_WLAST;
+  output [8:0] M_AXI_WUSER;
+  output [8:0] M_AXI_WVALID;
+  input [8:0] M_AXI_WREADY;
+  input [8:0] M_AXI_BID;
+  input [17:0] M_AXI_BRESP;
+  input [8:0] M_AXI_BUSER;
+  input [8:0] M_AXI_BVALID;
+  output [8:0] M_AXI_BREADY;
+  output [8:0] M_AXI_ARID;
+  output [287:0] M_AXI_ARADDR;
+  output [71:0] M_AXI_ARLEN;
+  output [26:0] M_AXI_ARSIZE;
+  output [17:0] M_AXI_ARBURST;
+  output [17:0] M_AXI_ARLOCK;
+  output [35:0] M_AXI_ARCACHE;
+  output [26:0] M_AXI_ARPROT;
+  output [35:0] M_AXI_ARREGION;
+  output [35:0] M_AXI_ARQOS;
+  output [8:0] M_AXI_ARUSER;
+  output [8:0] M_AXI_ARVALID;
+  input [8:0] M_AXI_ARREADY;
+  input [8:0] M_AXI_RID;
+  input [287:0] M_AXI_RDATA;
+  input [17:0] M_AXI_RRESP;
+  input [8:0] M_AXI_RLAST;
+  input [8:0] M_AXI_RUSER;
+  input [8:0] M_AXI_RVALID;
+  output [8:0] M_AXI_RREADY;
   input [31:0] S_AXI_CTRL_AWADDR;
   input S_AXI_CTRL_AWVALID;
   output S_AXI_CTRL_AWREADY;
@@ -4986,5 +5270,464 @@ module MB_SPI_generic_spi_wrapper
   output [9:0] SS_O;
   output SS_T;
   output IP2INTC_Irpt;
+endmodule
+
+module MB_SPI_hdl_control_0_wrapper
+  (
+    OUT0,
+    OUT1,
+    OUT2,
+    OUT3,
+    OUT4,
+    OUT5,
+    OUT6,
+    OUT7,
+    OUT8,
+    OUT9,
+    OUT10,
+    OUT11,
+    OUT12,
+    OUT13,
+    OUT14,
+    OUT15,
+    OUT16,
+    OUT17,
+    OUT18,
+    OUT19,
+    OUT20,
+    OUT21,
+    OUT22,
+    OUT23,
+    OUT24,
+    OUT25,
+    OUT26,
+    OUT27,
+    OUT28,
+    OUT29,
+    OUT30,
+    OUT31,
+    S_AXI_ACLK,
+    S_AXI_ARESETN,
+    S_AXI_AWADDR,
+    S_AXI_AWVALID,
+    S_AXI_WDATA,
+    S_AXI_WSTRB,
+    S_AXI_WVALID,
+    S_AXI_BREADY,
+    S_AXI_ARADDR,
+    S_AXI_ARVALID,
+    S_AXI_RREADY,
+    S_AXI_ARREADY,
+    S_AXI_RDATA,
+    S_AXI_RRESP,
+    S_AXI_RVALID,
+    S_AXI_WREADY,
+    S_AXI_BRESP,
+    S_AXI_BVALID,
+    S_AXI_AWREADY
+  );
+  output [31:0] OUT0;
+  output [31:0] OUT1;
+  output [31:0] OUT2;
+  output [31:0] OUT3;
+  output [31:0] OUT4;
+  output [31:0] OUT5;
+  output [31:0] OUT6;
+  output [31:0] OUT7;
+  output [31:0] OUT8;
+  output [31:0] OUT9;
+  output [31:0] OUT10;
+  output [31:0] OUT11;
+  output [31:0] OUT12;
+  output [31:0] OUT13;
+  output [31:0] OUT14;
+  output [31:0] OUT15;
+  output [31:0] OUT16;
+  output [31:0] OUT17;
+  output [31:0] OUT18;
+  output [31:0] OUT19;
+  output [31:0] OUT20;
+  output [31:0] OUT21;
+  output [31:0] OUT22;
+  output [31:0] OUT23;
+  output [31:0] OUT24;
+  output [31:0] OUT25;
+  output [31:0] OUT26;
+  output [31:0] OUT27;
+  output [31:0] OUT28;
+  output [31:0] OUT29;
+  output [31:0] OUT30;
+  output [31:0] OUT31;
+  input S_AXI_ACLK;
+  input S_AXI_ARESETN;
+  input [31:0] S_AXI_AWADDR;
+  input S_AXI_AWVALID;
+  input [31:0] S_AXI_WDATA;
+  input [3:0] S_AXI_WSTRB;
+  input S_AXI_WVALID;
+  input S_AXI_BREADY;
+  input [31:0] S_AXI_ARADDR;
+  input S_AXI_ARVALID;
+  input S_AXI_RREADY;
+  output S_AXI_ARREADY;
+  output [31:0] S_AXI_RDATA;
+  output [1:0] S_AXI_RRESP;
+  output S_AXI_RVALID;
+  output S_AXI_WREADY;
+  output [1:0] S_AXI_BRESP;
+  output S_AXI_BVALID;
+  output S_AXI_AWREADY;
+endmodule
+
+module MB_SPI_hdl_receive_0_wrapper
+  (
+    IN0,
+    IN1,
+    IN2,
+    IN3,
+    IN4,
+    IN5,
+    IN6,
+    IN7,
+    IN8,
+    IN9,
+    IN10,
+    IN11,
+    IN12,
+    IN13,
+    IN14,
+    IN15,
+    IN16,
+    IN17,
+    IN18,
+    IN19,
+    IN20,
+    IN21,
+    IN22,
+    IN23,
+    IN24,
+    IN25,
+    IN26,
+    IN27,
+    IN28,
+    IN29,
+    IN30,
+    IN31,
+    S_AXI_ACLK,
+    S_AXI_ARESETN,
+    S_AXI_AWADDR,
+    S_AXI_AWVALID,
+    S_AXI_WDATA,
+    S_AXI_WSTRB,
+    S_AXI_WVALID,
+    S_AXI_BREADY,
+    S_AXI_ARADDR,
+    S_AXI_ARVALID,
+    S_AXI_RREADY,
+    S_AXI_ARREADY,
+    S_AXI_RDATA,
+    S_AXI_RRESP,
+    S_AXI_RVALID,
+    S_AXI_WREADY,
+    S_AXI_BRESP,
+    S_AXI_BVALID,
+    S_AXI_AWREADY
+  );
+  input [31:0] IN0;
+  input [31:0] IN1;
+  input [31:0] IN2;
+  input [31:0] IN3;
+  input [31:0] IN4;
+  input [31:0] IN5;
+  input [31:0] IN6;
+  input [31:0] IN7;
+  input [31:0] IN8;
+  input [31:0] IN9;
+  input [31:0] IN10;
+  input [31:0] IN11;
+  input [31:0] IN12;
+  input [31:0] IN13;
+  input [31:0] IN14;
+  input [31:0] IN15;
+  input [31:0] IN16;
+  input [31:0] IN17;
+  input [31:0] IN18;
+  input [31:0] IN19;
+  input [31:0] IN20;
+  input [31:0] IN21;
+  input [31:0] IN22;
+  input [31:0] IN23;
+  input [31:0] IN24;
+  input [31:0] IN25;
+  input [31:0] IN26;
+  input [31:0] IN27;
+  input [31:0] IN28;
+  input [31:0] IN29;
+  input [31:0] IN30;
+  input [31:0] IN31;
+  input S_AXI_ACLK;
+  input S_AXI_ARESETN;
+  input [31:0] S_AXI_AWADDR;
+  input S_AXI_AWVALID;
+  input [31:0] S_AXI_WDATA;
+  input [3:0] S_AXI_WSTRB;
+  input S_AXI_WVALID;
+  input S_AXI_BREADY;
+  input [31:0] S_AXI_ARADDR;
+  input S_AXI_ARVALID;
+  input S_AXI_RREADY;
+  output S_AXI_ARREADY;
+  output [31:0] S_AXI_RDATA;
+  output [1:0] S_AXI_RRESP;
+  output S_AXI_RVALID;
+  output S_AXI_WREADY;
+  output [1:0] S_AXI_BRESP;
+  output S_AXI_BVALID;
+  output S_AXI_AWREADY;
+endmodule
+
+module MB_SPI_oktriggerins_0_wrapper
+  (
+    okHE,
+    INTR,
+    S_AXI_ACLK,
+    S_AXI_ARESETN,
+    S_AXI_AWADDR,
+    S_AXI_AWVALID,
+    S_AXI_WDATA,
+    S_AXI_WSTRB,
+    S_AXI_WVALID,
+    S_AXI_BREADY,
+    S_AXI_ARADDR,
+    S_AXI_ARVALID,
+    S_AXI_RREADY,
+    S_AXI_ARREADY,
+    S_AXI_RDATA,
+    S_AXI_RRESP,
+    S_AXI_RVALID,
+    S_AXI_WREADY,
+    S_AXI_BRESP,
+    S_AXI_BVALID,
+    S_AXI_AWREADY
+  );
+  input [112:0] okHE;
+  output INTR;
+  input S_AXI_ACLK;
+  input S_AXI_ARESETN;
+  input [31:0] S_AXI_AWADDR;
+  input S_AXI_AWVALID;
+  input [31:0] S_AXI_WDATA;
+  input [3:0] S_AXI_WSTRB;
+  input S_AXI_WVALID;
+  input S_AXI_BREADY;
+  input [31:0] S_AXI_ARADDR;
+  input S_AXI_ARVALID;
+  input S_AXI_RREADY;
+  output S_AXI_ARREADY;
+  output [31:0] S_AXI_RDATA;
+  output [1:0] S_AXI_RRESP;
+  output S_AXI_RVALID;
+  output S_AXI_WREADY;
+  output [1:0] S_AXI_BRESP;
+  output S_AXI_BVALID;
+  output S_AXI_AWREADY;
+endmodule
+
+module MB_SPI_oktriggerouts_0_wrapper
+  (
+    okHE,
+    okEH,
+    S_AXI_ACLK,
+    S_AXI_ARESETN,
+    S_AXI_AWADDR,
+    S_AXI_AWVALID,
+    S_AXI_WDATA,
+    S_AXI_WSTRB,
+    S_AXI_WVALID,
+    S_AXI_BREADY,
+    S_AXI_ARADDR,
+    S_AXI_ARVALID,
+    S_AXI_RREADY,
+    S_AXI_ARREADY,
+    S_AXI_RDATA,
+    S_AXI_RRESP,
+    S_AXI_RVALID,
+    S_AXI_WREADY,
+    S_AXI_BRESP,
+    S_AXI_BVALID,
+    S_AXI_AWREADY
+  );
+  input [112:0] okHE;
+  output [64:0] okEH;
+  input S_AXI_ACLK;
+  input S_AXI_ARESETN;
+  input [31:0] S_AXI_AWADDR;
+  input S_AXI_AWVALID;
+  input [31:0] S_AXI_WDATA;
+  input [3:0] S_AXI_WSTRB;
+  input S_AXI_WVALID;
+  input S_AXI_BREADY;
+  input [31:0] S_AXI_ARADDR;
+  input S_AXI_ARVALID;
+  input S_AXI_RREADY;
+  output S_AXI_ARREADY;
+  output [31:0] S_AXI_RDATA;
+  output [1:0] S_AXI_RRESP;
+  output S_AXI_RVALID;
+  output S_AXI_WREADY;
+  output [1:0] S_AXI_BRESP;
+  output S_AXI_BVALID;
+  output S_AXI_AWREADY;
+endmodule
+
+module MB_SPI_okwireins_0_wrapper
+  (
+    okHE,
+    S_AXI_ACLK,
+    S_AXI_ARESETN,
+    S_AXI_AWADDR,
+    S_AXI_AWVALID,
+    S_AXI_WDATA,
+    S_AXI_WSTRB,
+    S_AXI_WVALID,
+    S_AXI_BREADY,
+    S_AXI_ARADDR,
+    S_AXI_ARVALID,
+    S_AXI_RREADY,
+    S_AXI_ARREADY,
+    S_AXI_RDATA,
+    S_AXI_RRESP,
+    S_AXI_RVALID,
+    S_AXI_WREADY,
+    S_AXI_BRESP,
+    S_AXI_BVALID,
+    S_AXI_AWREADY
+  );
+  input [112:0] okHE;
+  input S_AXI_ACLK;
+  input S_AXI_ARESETN;
+  input [31:0] S_AXI_AWADDR;
+  input S_AXI_AWVALID;
+  input [31:0] S_AXI_WDATA;
+  input [3:0] S_AXI_WSTRB;
+  input S_AXI_WVALID;
+  input S_AXI_BREADY;
+  input [31:0] S_AXI_ARADDR;
+  input S_AXI_ARVALID;
+  input S_AXI_RREADY;
+  output S_AXI_ARREADY;
+  output [31:0] S_AXI_RDATA;
+  output [1:0] S_AXI_RRESP;
+  output S_AXI_RVALID;
+  output S_AXI_WREADY;
+  output [1:0] S_AXI_BRESP;
+  output S_AXI_BVALID;
+  output S_AXI_AWREADY;
+endmodule
+
+module MB_SPI_okwireouts_0_wrapper
+  (
+    okHE,
+    okEH,
+    S_AXI_ACLK,
+    S_AXI_ARESETN,
+    S_AXI_AWADDR,
+    S_AXI_AWVALID,
+    S_AXI_WDATA,
+    S_AXI_WSTRB,
+    S_AXI_WVALID,
+    S_AXI_BREADY,
+    S_AXI_ARADDR,
+    S_AXI_ARVALID,
+    S_AXI_RREADY,
+    S_AXI_ARREADY,
+    S_AXI_RDATA,
+    S_AXI_RRESP,
+    S_AXI_RVALID,
+    S_AXI_WREADY,
+    S_AXI_BRESP,
+    S_AXI_BVALID,
+    S_AXI_AWREADY
+  );
+  input [112:0] okHE;
+  output [64:0] okEH;
+  input S_AXI_ACLK;
+  input S_AXI_ARESETN;
+  input [31:0] S_AXI_AWADDR;
+  input S_AXI_AWVALID;
+  input [31:0] S_AXI_WDATA;
+  input [3:0] S_AXI_WSTRB;
+  input S_AXI_WVALID;
+  input S_AXI_BREADY;
+  input [31:0] S_AXI_ARADDR;
+  input S_AXI_ARVALID;
+  input S_AXI_RREADY;
+  output S_AXI_ARREADY;
+  output [31:0] S_AXI_RDATA;
+  output [1:0] S_AXI_RRESP;
+  output S_AXI_RVALID;
+  output S_AXI_WREADY;
+  output [1:0] S_AXI_BRESP;
+  output S_AXI_BVALID;
+  output S_AXI_AWREADY;
+endmodule
+
+module MB_SPI_axi_intc_0_wrapper
+  (
+    S_AXI_ACLK,
+    S_AXI_ARESETN,
+    S_AXI_AWADDR,
+    S_AXI_AWVALID,
+    S_AXI_AWREADY,
+    S_AXI_WDATA,
+    S_AXI_WSTRB,
+    S_AXI_WVALID,
+    S_AXI_WREADY,
+    S_AXI_BRESP,
+    S_AXI_BVALID,
+    S_AXI_BREADY,
+    S_AXI_ARADDR,
+    S_AXI_ARVALID,
+    S_AXI_ARREADY,
+    S_AXI_RDATA,
+    S_AXI_RRESP,
+    S_AXI_RVALID,
+    S_AXI_RREADY,
+    Intr,
+    Irq,
+    Interrupt_address,
+    Processor_ack,
+    Processor_clk,
+    Processor_rst,
+    Interrupt_address_in,
+    Processor_ack_out
+  );
+  input S_AXI_ACLK;
+  input S_AXI_ARESETN;
+  input [8:0] S_AXI_AWADDR;
+  input S_AXI_AWVALID;
+  output S_AXI_AWREADY;
+  input [31:0] S_AXI_WDATA;
+  input [3:0] S_AXI_WSTRB;
+  input S_AXI_WVALID;
+  output S_AXI_WREADY;
+  output [1:0] S_AXI_BRESP;
+  output S_AXI_BVALID;
+  input S_AXI_BREADY;
+  input [8:0] S_AXI_ARADDR;
+  input S_AXI_ARVALID;
+  output S_AXI_ARREADY;
+  output [31:0] S_AXI_RDATA;
+  output [1:0] S_AXI_RRESP;
+  output S_AXI_RVALID;
+  input S_AXI_RREADY;
+  input [1:0] Intr;
+  output Irq;
+  output [31:0] Interrupt_address;
+  input [1:0] Processor_ack;
+  input Processor_clk;
+  input Processor_rst;
+  input [31:0] Interrupt_address_in;
+  output [1:0] Processor_ack_out;
 endmodule
 

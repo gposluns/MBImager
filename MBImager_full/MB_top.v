@@ -40,12 +40,8 @@ module MB_top(
 	output MBI_PRECHN_AMP,		// Imager signal
 	output [5:0] MBI_MUX_ADD,	// Imager signal
 	output MBI_PIXRES_GLOB,		// Imager signal
-	output MBI_CLKL_MOD,			// Light source signal testmodimp
 	output MBI_CLKN_MOD,		// Imager signal
 	output MBI_CLK_MOD,			// Imager signal
-	input	[2:0] 	FREQ_SEL,			//OK board input for frequency selection of generated signals
-	input [4:0]		PHASE_SEL,			//OK board input for phase selection between CLK and CLKL
-	input [3:0]		DUTY_SEL,			//OK board input for duty selection of CLK and CLKN
 	output MBI_PRECH_COL,		// Imager signal
 	output MBI_RESETN_GLOB,		// Imager signal
 	output MBI_DRAIN_B,			// Imager signal
@@ -120,17 +116,6 @@ assign din[23:16] = DATA_IN_TO_DEVICE1[15:8];
 // assign din[15:8] = ADC_TESTDATA2;
 // assign din[23:16] = ADC_TESTDATA3;
 
-mod_signal_gen mod_signal_gen_inst (
-	.USER_CLOCK(USER_CLOCK),
-	.FREQ_SEL(FREQ_SEL),
-	.PHASE_SEL(PHASE_SEL),
-	.DUTY_SEL(DUTY_SEL),
-	.DRAIN_B(OK_DRAIN_B),
-	.MBI_CLK_MOD(MBI_CLK_MOD),
-	.MBI_CLKN_MOD(MBI_CLKN_MOD),
-	.MBI_CLKL_MOD(MBI_CLKL_MOD)
-);
-
 MB_SPI_top uBlaze_SPI (
     .EXT_RESET_N(EXT_RESET_N), 
     .USER_CLOCK(USER_CLOCK), 
@@ -149,8 +134,8 @@ ROImager imager_time (
     .MUX_ADD(MBI_MUX_ADD), 
     .ADC_PIXCLK(ADC_PIXCLK), 
 	.ADC_CLK(ADC_CLK),
-//    .CLK_MOD(MBI_CLK_MOD), 		//testmodimp
-//    .CLKN_MOD(MBI_CLKN_MOD), 	
+    .CLK_MOD(MBI_CLK_MOD), 
+    .CLKN_MOD(MBI_CLKN_MOD), 
     .PRECH_COL(MBI_PRECH_COL), 
     .ADC_DATA_VALID(MBI_ADC_DATA_VALID),
 	.DDR_DATA_VALID(MBI_DDR_DATA_VALID),
