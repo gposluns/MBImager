@@ -36,6 +36,7 @@ module spi_master_4byte(
 	 parameter N = 1; //number of slave select bits
 	 parameter C = 32; //maximum transmission length in bits, up to 2^32
 	 parameter CLK_RATIO = 100;
+	 parameter SS_SPACE = 1;
 
 	 input MISO;
     output MOSI;
@@ -73,6 +74,8 @@ module spi_master_4byte(
 			shift_in <= 0;
 			SS_i <= target;
 			valid_i <= 0;
+			clk_div <= CLK_RATIO*SS_SPACE;
+			SPI_CLK_i <= 0;
 		end else if (clk_div > 0) begin
 			clk_div <= clk_div - 1;  
 		end else begin
@@ -81,10 +84,9 @@ module spi_master_4byte(
 				SPI_CLK_i <= 1;
 				if (running) begin
 					shift_in <= {shift_in[C - 2:0], MISO};
-					if (counter <= 0) begin
+					if (counter == 0) begin
 						running <= 0;
-						SS_i <= 0;
-						valid_i <= 1;
+						clk_div <= CLK_RATIO*SS_SPACE;
 					end
 				end
 			end else begin
@@ -92,6 +94,9 @@ module spi_master_4byte(
 				if (running) begin		
 					shift_out <= {1'b0, shift_out[C - 1:1]};
 					counter <= counter - 1;
+				end else begin
+					SS_i <= 0;
+					valid_i <= 1;
 				end
 			end
 		end

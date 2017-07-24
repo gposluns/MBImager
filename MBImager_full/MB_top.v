@@ -130,7 +130,7 @@ wire [9:0] target;
 wire spi_trigger;
 wire spi_done;
 	 
-spi_master_4byte #(.N(10), .C(16)) spi_master(
+spi_master_4byte #(.N(10), .C(16), .CLK_RATIO(16), .SS_SPACE(10)) spi_master(
 	.MISO(SPI_FLASH_MISO),
 	.MOSI(SPI_FLASH_MOSI),
 	.SPI_CLK(SPI_FLASH_SCLK),
