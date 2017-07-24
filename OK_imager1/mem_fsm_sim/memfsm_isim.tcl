@@ -30,6 +30,8 @@ wave add -radix hex /memfsm_tf/uut/full_pat
 
 
 divider add "uut/ro_imager"
+wave add -radix hex /memfsm_tf/uut/CLKM
+wave add -radix hex /memfsm_tf/uut/ROImager_inst/CLKMPRE
 wave add -radix hex /memfsm_tf/uut/ROImager_inst/RESET
 wave add -radix hex /memfsm_tf/uut/ROImager_inst/state
 wave add -radix hex /memfsm_tf/uut/ROImager_inst/fsm_stat_i

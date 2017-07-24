@@ -36,7 +36,7 @@ module OK_imager(
 	output wire [10:1] MSTREAM,
 	output wire OK_DRAIN_B,
 	output wire OK_PIXRES_GLOB,
-	output	[31:0] PHASE_SEL, //testmodimp
+	//output	[31:0] PHASE_SEL, //testmodimp
 	input wire FSMIND0,				// If high, the Exposure FSM (on OK) is active
 	output wire FSMIND1,
 	output wire FSMIND0ACK,
@@ -64,7 +64,9 @@ module OK_imager(
 	inout wire mcb3_dram_dqs_n,
 	output wire mcb3_dram_ck,
 	output wire mcb3_dram_ck_n,
-	output wire c3_calib_done
+//	output wire c3_calib_done,
+	
+	output wire trigger_proj
     );
 
 // -- Parameters
@@ -175,6 +177,7 @@ wire read_done;
 
 //ddr2 wires
 //note that p0 read and p1 write wires are not used
+wire c3_calib_done;
 wire 		c3_clk0;
 wire 		c3_rst0;
 wire		c3_p0_cmd_en;
@@ -219,7 +222,10 @@ wire		c3_p1_rd_empty;
 wire [6:0]	c3_p1_rd_count;
 wire		c3_p1_rd_overflow;
 wire		c3_p1_rd_error;
-
+wire [31:0] MIN_FRAME_TIME;
+//wire trigger_proj;
+wire [31:0] proj_delay;
+	 
 // TB sims values
 // assign wireExp = 32'h000A;
 // assign wirePat = 32'h0014;
@@ -247,6 +253,7 @@ assign led = fsm_stat;
 //initial fifo_full_checker <= 0;
 //always @(posedge flag_2frames) fifo_full_checker<= 1;
 //assign led[7] = fifo_full_checker;
+
 
 assign FSMstop = rst;// | flag_2frames; //| pattern_stored;
 // assign FSMstop = rst;
@@ -296,7 +303,7 @@ fifo_24to6_testData fifo_testdata (
 );
  */
  
- 
+
 //DDR2 SDRAM MCB
 
 mem_if u_mem_if (
@@ -446,8 +453,8 @@ fifo_usbout fifo256kB_out (
   .dout(dout_buf), // output [23 : 0] dout
   .full(full_2), // output full
   .empty(empty_2), // output empty
-  .prog_full(flag_2frames) // output prog_full
-  //.prog_empty(flag_1frame)
+  .prog_full(flag_2frames), // output prog_full
+  .prog_empty(flag_1frame)
 );
 
 
@@ -509,7 +516,12 @@ ROImager_exp_PatSeperate ROImager_inst (
     .FSMIND0(FSMIND0), 
     .FSMIND1(FSMIND1), 
     .FSMIND0ACK(FSMIND0ACK), 
-    .FSMIND1ACK(FSMIND1ACK)
+    .FSMIND1ACK(FSMIND1ACK),
+	 .MIN_FRAME_TIME(MIN_FRAME_TIME),
+	 
+	 .CLK_HS(CLK_HS),						  // Fast clock for projector trigger
+    .TRIGGER_PROJ(trigger_proj),				  // Output to projector trigger  
+    .PROJ_DELAY(proj_delay)
     );
 
 //pattern_gen pat_gen (
@@ -533,7 +545,7 @@ load_pattern pat_gen (
     .rst(fifo_mem_rst), //changed from rst_pat
     .clk(CLK_HS), 
 	 .pat_fifo_rd_en(pat_fifo_rd_en),
-	 .pat_in(MSTREAM16[9:0]),
+	 .pat_in(MSTREAM16[15:6]),
 	 
     .Num_Pat(wirePat), 
     .CntSubc(CntSubc), 
@@ -711,8 +723,8 @@ ODDR2 #(
 	.C0(CLK_HS), // 1-bit clock input
 	.C1(CLK_HS180), // 1-bit clock input
 	.CE(1'b1), // 1-bit clock enable input
-	.D0(1'b0), // 1-bit data input (associated with C0)
-	.D1(1'b1), // 1-bit data input (associated with C1)
+	.D0(1'b1), // 1-bit data input (associated with C0)
+	.D1(1'b0), // 1-bit data input (associated with C1)
 	.R(1'b0), // 1-bit reset input
 	.S(1'b0) // 1-bit set input
 );
@@ -756,7 +768,9 @@ okWireIn	wire12		(.okHE(okHE),								.ep_addr(8'h12),							.ep_dataout(wirePat
 okWireIn	wire13		(.okHE(okHE),								.ep_addr(8'h13),							.ep_dataout(wireMaskChng) );
 okWireIn	wire14		(.okHE(okHE),								.ep_addr(8'h14),							.ep_dataout(wireMaskChngSubc) );
 okWireIn	wire15		(.okHE(okHE),								.ep_addr(8'h15),							.ep_dataout(wirePatterns) );
-okWireIn okPHASE_SEL (.okHE(okHE),								.ep_addr(8'h16),							.ep_dataout(PHASE_SEL)	); //testmodimp
+okWireIn framewire   (.okHE(okHE),								.ep_addr(8'h18),							.ep_dataout(MIN_FRAME_TIME) );
+okWireIn wire19   (.okHE(okHE),								.ep_addr(8'h19),							.ep_dataout(proj_delay) );
+//okWireIn okPHASE_SEL (.okHE(okHE),								.ep_addr(8'h16),							.ep_dataout(PHASE_SEL)	); //testmodimp
 // comment the top okWireIn modules for simulations!
 okWireOut 	wire22		(.okHE(okHE),	.okEH(okEHx[0*65 +: 65]),	.ep_addr(8'h22),							.ep_datain(wireExp) );
 okWireOut 	wire23		(.okHE(okHE),	.okEH(okEHx[3*65 +: 65]),	.ep_addr(8'h23),							.ep_datain(wirePat) );

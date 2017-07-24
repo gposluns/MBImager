@@ -135,8 +135,8 @@ module memfsm_tf;
 		.mcb3_dram_udm          (mcb3_dram_udm),     // for X16 parts
 		.mcb3_dram_dm           (mcb3_dram_dm),
 		.mcb3_rzq               (rzq3),
-		.mcb3_zio               (zio3),
-		.c3_calib_done				(calib_done)
+		.mcb3_zio               (zio3)
+		//.c3_calib_done				(calib_done)
 	);
 	
 // ========================================================================== //
@@ -201,15 +201,17 @@ module memfsm_tf;
 	
 	integer k;
 	reg  [7:0]  pipeIn [0:(pipeInSize-1)];
-	initial for (k=0; k<pipeInSize; k=k+1) pipeIn[k] = k;
-	/* initial begin
+	//initial for (k=0; k<pipeInSize; k=k+1) pipeIn[k] = k;
+	initial begin
 		for (k=0; k<pipeInSize; k=k+1) begin
-			if (k < 160*18*2 | k >= 160*18*2*2)
-				pipeIn[k] = 8'h00;		
+			if (k < 160*18*2)
+				pipeIn[k] = 8'h00;	
+			else if(k >= 160*18*2*2)
+				pipeIn[k] = 8'hff;
 			else
-				pipeIn[k] = 8'h55;
+				pipeIn[k] = k-160*18*2;//8'b00001111;
 		end
-	end */
+	end
 
 	reg  [7:0]  pipeOut [0:(pipeOutSize-1)];
 	initial for (k=0; k<pipeOutSize; k=k+1) pipeOut[k] = k;
@@ -239,7 +241,8 @@ module memfsm_tf;
 		UpdateWireIns;       
 		$display("start at:                             %dns", $time);
 		
-		wait(calib_done);
+		//wait(calib_done);
+		#35000;
 		$display("Calibration Done");
 		
 		ActivateTriggerIn(8'h53, 0);
@@ -249,13 +252,24 @@ module memfsm_tf;
 		WriteToPipeIn(8'h80, pipeInSize);
 		$display("write to pipe at:                             %dns", $time);
 	
-		#200000;
+		/* #200000;
 		SetWireInValue(8'h10, 32'hffff, 32'h000f);     // rst
 		UpdateWireIns;
-		#500;
+		#5000;
 		SetWireInValue(8'h10, 32'h0000, 32'hffff);     // FRONTPANEL API
 		UpdateWireIns;       
 		
+		#35000; 
+		wait(calib_done);
+		$display("Calibration Done");
+		
+		ActivateTriggerIn(8'h53, 0);
+		$display("Write Pattern at:                             %dns", $time);
+		#10;
+		
+		WriteToPipeIn(8'h80, pipeInSize);
+		$display("write to pipe at:                             %dns", $time);
+		 */
 	end
 	
 	always @* begin

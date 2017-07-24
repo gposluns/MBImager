@@ -55,7 +55,7 @@ module okHost(
 	input   wire [64:0]  okEH
 );
 
-`include "parameters.v"
+`include "params.v"
 `include "mappings.v"
 
 // Local okHost signals

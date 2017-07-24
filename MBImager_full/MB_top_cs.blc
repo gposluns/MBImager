@@ -80,10 +80,10 @@ NGCBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   2
 
-Total memory usage is 258668 kilobytes
+Total memory usage is 247868 kilobytes
 
 Writing NGC file "D:/MBImager/MBImager_full/MB_top_cs.ngc" ...
-Total REAL time to NGCBUILD completion:  44 sec
-Total CPU time to NGCBUILD completion:   43 sec
+Total REAL time to NGCBUILD completion:  41 sec
+Total CPU time to NGCBUILD completion:   41 sec
 
 Writing NGCBUILD log file "D:/MBImager/MBImager_full/MB_top_cs.blc"...

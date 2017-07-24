@@ -45,7 +45,8 @@ module fifo_usbout(
   dout,
   full,
   empty,
-  prog_full
+  prog_full,
+  prog_empty
 );
 
 input clk;
@@ -57,6 +58,7 @@ output [23 : 0] dout;
 output full;
 output empty;
 output prog_full;
+output prog_empty;
 
 // synthesis translate_off
 
@@ -170,29 +172,29 @@ output prog_full;
     .C_PRELOAD_LATENCY(1),
     .C_PRELOAD_REGS(0),
     .C_PRIM_FIFO_TYPE("8kx4"),
-    .C_PROG_EMPTY_THRESH_ASSERT_VAL(2),
+    .C_PROG_EMPTY_THRESH_ASSERT_VAL(22079),
     .C_PROG_EMPTY_THRESH_ASSERT_VAL_AXIS(1022),
     .C_PROG_EMPTY_THRESH_ASSERT_VAL_RACH(1022),
     .C_PROG_EMPTY_THRESH_ASSERT_VAL_RDCH(1022),
     .C_PROG_EMPTY_THRESH_ASSERT_VAL_WACH(1022),
     .C_PROG_EMPTY_THRESH_ASSERT_VAL_WDCH(1022),
     .C_PROG_EMPTY_THRESH_ASSERT_VAL_WRCH(1022),
-    .C_PROG_EMPTY_THRESH_NEGATE_VAL(3),
-    .C_PROG_EMPTY_TYPE(0),
+    .C_PROG_EMPTY_THRESH_NEGATE_VAL(22080),
+    .C_PROG_EMPTY_TYPE(1),
     .C_PROG_EMPTY_TYPE_AXIS(0),
     .C_PROG_EMPTY_TYPE_RACH(0),
     .C_PROG_EMPTY_TYPE_RDCH(0),
     .C_PROG_EMPTY_TYPE_WACH(0),
     .C_PROG_EMPTY_TYPE_WDCH(0),
     .C_PROG_EMPTY_TYPE_WRCH(0),
-    .C_PROG_FULL_THRESH_ASSERT_VAL(22080),
+    .C_PROG_FULL_THRESH_ASSERT_VAL(44160),
     .C_PROG_FULL_THRESH_ASSERT_VAL_AXIS(1023),
     .C_PROG_FULL_THRESH_ASSERT_VAL_RACH(1023),
     .C_PROG_FULL_THRESH_ASSERT_VAL_RDCH(1023),
     .C_PROG_FULL_THRESH_ASSERT_VAL_WACH(1023),
     .C_PROG_FULL_THRESH_ASSERT_VAL_WDCH(1023),
     .C_PROG_FULL_THRESH_ASSERT_VAL_WRCH(1023),
-    .C_PROG_FULL_THRESH_NEGATE_VAL(22079),
+    .C_PROG_FULL_THRESH_NEGATE_VAL(44159),
     .C_PROG_FULL_TYPE(1),
     .C_PROG_FULL_TYPE_AXIS(0),
     .C_PROG_FULL_TYPE_RACH(0),
@@ -261,6 +263,7 @@ output prog_full;
     .FULL(full),
     .EMPTY(empty),
     .PROG_FULL(prog_full),
+    .PROG_EMPTY(prog_empty),
     .BACKUP(),
     .BACKUP_MARKER(),
     .SRST(),
@@ -286,7 +289,6 @@ output prog_full;
     .DATA_COUNT(),
     .RD_DATA_COUNT(),
     .WR_DATA_COUNT(),
-    .PROG_EMPTY(),
     .SBITERR(),
     .DBITERR(),
     .M_ACLK(),

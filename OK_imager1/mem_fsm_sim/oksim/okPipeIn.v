@@ -18,7 +18,7 @@ module okPipeIn(
 	output reg  [31:0]  ep_dataout
 	);
 
-`include "parameters.v" 
+`include "params.v" 
 `include "mappings.v"
 
 assign okEH[okEH_DATAH:okEH_DATAL] = 0;

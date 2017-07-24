@@ -8,7 +8,7 @@
 -- \   \   \/     Version    : 14.7
 --  \   \         Application: Xilinx CORE Generator
 --  /   /         Filename   : icon_pro.vho
--- /___/   /\     Timestamp  : Wed Jun 14 12:31:59 Eastern Daylight Time 2017
+-- /___/   /\     Timestamp  : Thu Jul 13 13:28:07 Eastern Daylight Time 2017
 -- \   \  /  \
 --  \___\/\___\
 --

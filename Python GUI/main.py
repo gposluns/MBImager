@@ -102,6 +102,7 @@ def grab(queue1,queue2):
     N_mux = 46
     col = N_adc*N_adcCh*N_mux
     datain128 = bytearray(262144)
+    datain2 = bytearray(176640)
     datain1 = bytearray(88320)
     
     im = np.zeros((row ,col), np.uint8)
@@ -109,8 +110,10 @@ def grab(queue1,queue2):
     im2 = np.zeros((row ,184), np.uint8)
     
     # assert reset signal to initialize the FIFO.
+    print "reset system at start"
     dev.SetWireInValue(0x10, 0xff, 0x01)
     dev.UpdateWireIns()
+    time.sleep(0.01)
     # deactivate reset signal and activate counter.
     dev.SetWireInValue(0x10, 0x00, 0x01)
     dev.UpdateWireIns()
@@ -163,7 +166,8 @@ def grab(queue1,queue2):
     dev.SetWireInValue(MASK_CHANGES_WIRE,maskchanges)
     dev.SetWireInValue(SUBS_PER_WIRE,subchange)
     
-    dev.SetWireInValue(PATT_IN_WIRE, 0xfff003ff) #patgen_stop,patgen_start,patgen_in
+    dev.SetWireInValue(0x18, 0x00055555)
+    #dev.SetWireInValue(PATT_IN_WIRE, 0xfff003ff) #patgen_stop,patgen_start,patgen_in
     time.sleep(0.1)
     dev.UpdateWireIns()
     time.sleep(0.1)
@@ -177,6 +181,11 @@ def grab(queue1,queue2):
         dev.UpdateTriggerOuts()
         # If the FIFO is full, read everything and display one frame only
         if dev.IsTriggered(0x6A, 0x01) == True:
+            print "fifo full"
+            if dev.IsTriggered(0x6A, 0x02) == True:
+                print "also 2 frames"
+            if dev.IsTriggered(0x6A, 0x04) == True:
+                print "also 1 frame"
             dev.ReadFromPipeOut(0xA0, datain128)
             for i in range(row):
                 for j in range(N_adc):
@@ -189,9 +198,26 @@ def grab(queue1,queue2):
 #                im2[i] = im[i][139:507:2]
             im1[:,:] = im[:row,138:506:2]
             im2[:,:] = im[:row,139:507:2]
-             
-        # If one frame is ready in FIFO
+        #if 2 frames are in fifo, read both and display 1
         elif dev.IsTriggered(0x6A, 0x02) == True:
+            print "2 frames"
+            if dev.IsTriggered(0x6A, 0x04) == True:
+                print "also 1 frame"
+            dev.ReadFromPipeOut(0xA0, datain2)
+            for i in range(row):
+                for j in range(N_adc):
+                    for k in range(N_adcCh):
+                        for l in range(N_mux):
+                            im[row-1-i][col-1-(j*N_adcCh*N_mux+(2-k)*N_mux+45-l)] = datain1[i*col+l*N_adc*N_adcCh+k*N_adc+j]
+            #im = im/255
+#            for i in range(row):
+#                im1[i] = im[i][138:506:2]
+#                im2[i] = im[i][139:507:2]
+            im1[:,:] = im[:row,138:506:2]
+            im2[:,:] = im[:row,139:507:2]     
+        # If one frame is ready in FIFO
+        elif dev.IsTriggered(0x6A, 0x04) == True:
+            print "1 frame"
             dev.ReadFromPipeOut(0xA0, datain1)
             for i in range(row):
                 for j in range(N_adc):
@@ -206,8 +232,10 @@ def grab(queue1,queue2):
             im2[:,:] = im[:row,139:507:2]
         else:
             stuck +=1
+            print "no frame"
             if stuck >10:
                 # assert reset signal to initialize the FIFO.
+                print "reset system when stuck"
                 dev.SetWireInValue(0x10, 0xff, 0x01)
                 dev.UpdateWireIns()
                 # deactivate reset signal and activate counter.
@@ -623,6 +651,9 @@ class MyWindowClass(QtWidgets.QMainWindow, Ui_MainWindow):
                 errorBox.addButton(QtWidgets.QPushButton('OK'), QtWidgets.QMessageBox.YesRole)
                 errorBox.exec_()
             else:
+                error= dev.ConfigureFPGA(str(bitfile))
+                print error
+                
                 self.RecVideo.setEnabled(True)
                 self.SaveImages.setEnabled(True)
                 running = True

@@ -162,15 +162,14 @@ Parsing module <OK_imager>.
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
-WARNING:HDLCompiler:1016 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 484: Port full is not connected to this instance
-WARNING:HDLCompiler:1016 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 498: Port CLK_HS is not connected to this instance
+WARNING:HDLCompiler:1016 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 491: Port full is not connected to this instance
 
 Elaborating module <OK_imager>.
 
 Elaborating module <IBUFGDS>.
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 262: Assignment to Pat_in ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 263: Assignment to PatGen_start ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 264: Assignment to PatGen_stop ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 269: Assignment to Pat_in ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 270: Assignment to PatGen_start ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 271: Assignment to PatGen_stop ignored, since the identifier is never used
 
 Elaborating module <mem_if>.
 
@@ -651,73 +650,73 @@ WARNING:HDLCompiler:634 - "D:\MBImager\OK_imager1\ipcore_dir\mem_if\user_design\
 WARNING:HDLCompiler:634 - "D:\MBImager\OK_imager1\ipcore_dir\mem_if\user_design\rtl\mem_if.v" Line 377: Net <c3_p5_wr_data[31]> does not have a driver.
 WARNING:HDLCompiler:634 - "D:\MBImager\OK_imager1\ipcore_dir\mem_if\user_design\rtl\mem_if.v" Line 383: Net <c3_p5_rd_clk> does not have a driver.
 WARNING:HDLCompiler:634 - "D:\MBImager\OK_imager1\ipcore_dir\mem_if\user_design\rtl\mem_if.v" Line 384: Net <c3_p5_rd_en> does not have a driver.
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 327: Assignment to c3_rst0 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 350: Assignment to c3_p0_rd_data ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 351: Assignment to c3_p0_rd_full ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 352: Assignment to c3_p0_rd_empty ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 353: Assignment to c3_p0_rd_count ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 354: Assignment to c3_p0_rd_overflow ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 355: Assignment to c3_p0_rd_error ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 367: Assignment to c3_p1_wr_full ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 368: Assignment to c3_p1_wr_empty ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 369: Assignment to c3_p1_wr_count ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 370: Assignment to c3_p1_wr_underrun ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 371: Assignment to c3_p1_wr_error ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 334: Assignment to c3_rst0 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 357: Assignment to c3_p0_rd_data ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 358: Assignment to c3_p0_rd_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 359: Assignment to c3_p0_rd_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 360: Assignment to c3_p0_rd_count ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 361: Assignment to c3_p0_rd_overflow ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 362: Assignment to c3_p0_rd_error ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 374: Assignment to c3_p1_wr_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 375: Assignment to c3_p1_wr_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 376: Assignment to c3_p1_wr_count ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 377: Assignment to c3_p1_wr_underrun ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 378: Assignment to c3_p1_wr_error ignored, since the identifier is never used
 
 Elaborating module <fifo_6to24>.
 WARNING:HDLCompiler:1499 - "D:\MBImager\OK_imager1\ipcore_dir\fifo_6to24.v" Line 39: Empty module <fifo_6to24> remains a black box.
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 432: Assignment to full ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 433: Assignment to empty ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 434: Assignment to almost_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 439: Assignment to full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 440: Assignment to empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 441: Assignment to almost_empty ignored, since the identifier is never used
 
 Elaborating module <fifo_usbout>.
 WARNING:HDLCompiler:1499 - "D:\MBImager\OK_imager1\ipcore_dir\fifo_usbout.v" Line 39: Empty module <fifo_usbout> remains a black box.
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 448: Assignment to empty_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 455: Assignment to empty_2 ignored, since the identifier is never used
 
 Elaborating module <fifo_patterns>.
 WARNING:HDLCompiler:1499 - "D:\MBImager\OK_imager1\ipcore_dir\fifo_patterns.v" Line 39: Empty module <fifo_patterns> remains a black box.
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 463: Assignment to valid_pat ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 464: Assignment to prog_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 470: Assignment to valid_pat ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 471: Assignment to prog_full ignored, since the identifier is never used
 
 Elaborating module <fifo_memout>.
 WARNING:HDLCompiler:1499 - "D:\MBImager\OK_imager1\ipcore_dir\fifo_memout.v" Line 39: Empty module <fifo_memout> remains a black box.
 
 Elaborating module <ROImager_exp_PatSeperate>.
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 502: Assignment to CLKMPRE_EN ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 509: Assignment to CLKMPRE_EN ignored, since the identifier is never used
 
 Elaborating module <load_pattern>.
 
 Elaborating module <mem_fsm>.
-WARNING:HDLCompiler:413 - "D:\MBImager\OK_imager1\mem_fsm.v" Line 220: Result of 8-bit expression is truncated to fit in 7-bit target.
-WARNING:HDLCompiler:413 - "D:\MBImager\OK_imager1\mem_fsm.v" Line 230: Result of 7-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "D:\MBImager\OK_imager1\mem_fsm.v" Line 224: Result of 8-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:413 - "D:\MBImager\OK_imager1\mem_fsm.v" Line 234: Result of 7-bit expression is truncated to fit in 6-bit target.
 
 Elaborating module <fifo_pipein>.
 WARNING:HDLCompiler:1499 - "D:\MBImager\OK_imager1\ipcore_dir\fifo_pipein.v" Line 39: Empty module <fifo_pipein> remains a black box.
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\mem_fsm.v" Line 348: Assignment to infifo_full ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 594: Assignment to read_done ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 596: Assignment to write_happens ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 598: Assignment to pattern_stored ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\mem_fsm.v" Line 352: Assignment to infifo_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 606: Assignment to read_done ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 608: Assignment to write_happens ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 610: Assignment to pattern_stored ignored, since the identifier is never used
 
 Elaborating module <DCM_SP(CLKDV_DIVIDE=3.0,CLKFX_DIVIDE=3,CLKFX_MULTIPLY=3,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=10.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",DFS_FREQUENCY_MODE="LOW",DLL_FREQUENCY_MODE="LOW",DSS_MODE="NONE",DUTY_CYCLE_CORRECTION="TRUE",FACTORY_JF=16'b1100000010000000,PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 637: Assignment to CLK180 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 638: Assignment to CLK270 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 639: Assignment to CLK2X_2 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 640: Assignment to CLK2X180 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 641: Assignment to CLK90 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 645: Assignment to LOCKED_HS ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 646: Assignment to PSDONE ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 647: Assignment to STATUS ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 649: Assignment to CLK180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 650: Assignment to CLK270 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 651: Assignment to CLK2X_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 652: Assignment to CLK2X180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 653: Assignment to CLK90 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 657: Assignment to LOCKED_HS ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 658: Assignment to PSDONE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 659: Assignment to STATUS ignored, since the identifier is never used
 
 Elaborating module <DCM_SP(CLKDV_DIVIDE=2.0,CLKFX_DIVIDE=18,CLKFX_MULTIPLY=3,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=10.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",DFS_FREQUENCY_MODE="LOW",DLL_FREQUENCY_MODE="LOW",DSS_MODE="NONE",DUTY_CYCLE_CORRECTION="TRUE",FACTORY_JF=16'b1100000010000000,PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 682: Assignment to CLK180_MPRE ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 683: Assignment to CLK270_MPRE ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 684: Assignment to CLK2X_MPRE ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 685: Assignment to CLK2X180_MPRE ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 686: Assignment to CLK90_MPRE ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 687: Assignment to CLKDV ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 690: Assignment to LOCKED_MPRE ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 691: Assignment to PSDONE_MPRE ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 692: Assignment to STATUS_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 694: Assignment to CLK180_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 695: Assignment to CLK270_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 696: Assignment to CLK2X_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 697: Assignment to CLK2X180_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 698: Assignment to CLK90_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 699: Assignment to CLKDV ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 702: Assignment to LOCKED_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 703: Assignment to PSDONE_MPRE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 704: Assignment to STATUS_MPRE ignored, since the identifier is never used
 
 Elaborating module <ODDR2(DDR_ALIGNMENT="NONE",INIT=1'b0,SRTYPE="SYNC")>.
 WARNING:HDLCompiler:1016 - "D:\MBImager\OK_imager1\okLibrary.v" Line 39: Port CLK180 is not connected to this instance
@@ -735,7 +734,7 @@ Elaborating module <okCoreHarness>.
 Elaborating module <okWireOR(N=6)>.
 
 Elaborating module <okWireIn>.
-WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 757: Assignment to wireMaskChngSubc ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 769: Assignment to wireMaskChngSubc ignored, since the identifier is never used
 
 Elaborating module <okWireOut>.
 
@@ -746,12 +745,10 @@ Elaborating module <okTriggerOut>.
 Elaborating module <okPipeOut>.
 
 Elaborating module <okPipeIn>.
-WARNING:HDLCompiler:634 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 117: Net <flag_1frame> does not have a driver.
-WARNING:HDLCompiler:634 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 194: Net <c3_p0_rd_en> does not have a driver.
-WARNING:HDLCompiler:634 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 207: Net <c3_p1_wr_en> does not have a driver.
-WARNING:HDLCompiler:634 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 208: Net <c3_p1_wr_mask[7]> does not have a driver.
-WARNING:HDLCompiler:634 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 209: Net <c3_p1_wr_data[63]> does not have a driver.
-WARNING:HDLCompiler:552 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 498: Input port CLK_HS is not connected on this instance
+WARNING:HDLCompiler:634 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 197: Net <c3_p0_rd_en> does not have a driver.
+WARNING:HDLCompiler:634 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 210: Net <c3_p1_wr_en> does not have a driver.
+WARNING:HDLCompiler:634 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 211: Net <c3_p1_wr_mask[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "D:\MBImager\OK_imager1\OK_imager1.v" Line 212: Net <c3_p1_wr_data[63]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -761,37 +758,33 @@ Synthesizing Unit <OK_imager>.
     Related source file is "D:\MBImager\OK_imager1\OK_imager1.v".
         C_CLKHS_D = 3
         C_CLKHS_M = 3
-WARNING:Xst:2898 - Port 'PROJ_DELAY', unconnected in block instance 'ROImager_inst', is tied to GND.
-WARNING:Xst:2898 - Port 'CLK_HS', unconnected in block instance 'ROImager_inst', is tied to GND.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 302: Output port <c3_p0_rd_data> of the instance <u_mem_if> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 302: Output port <c3_p0_rd_count> of the instance <u_mem_if> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 302: Output port <c3_p1_wr_count> of the instance <u_mem_if> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 302: Output port <c3_rst0> of the instance <u_mem_if> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 302: Output port <c3_p0_rd_full> of the instance <u_mem_if> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 302: Output port <c3_p0_rd_empty> of the instance <u_mem_if> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 302: Output port <c3_p0_rd_overflow> of the instance <u_mem_if> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 302: Output port <c3_p0_rd_error> of the instance <u_mem_if> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 302: Output port <c3_p1_wr_full> of the instance <u_mem_if> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 302: Output port <c3_p1_wr_empty> of the instance <u_mem_if> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 302: Output port <c3_p1_wr_underrun> of the instance <u_mem_if> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 302: Output port <c3_p1_wr_error> of the instance <u_mem_if> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 424: Output port <full> of the instance <fifo_databuf> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 424: Output port <empty> of the instance <fifo_databuf> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 424: Output port <almost_empty> of the instance <fifo_databuf> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 439: Output port <empty> of the instance <fifo256kB_out> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 454: Output port <valid> of the instance <FIFO_Patterns_cam> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 454: Output port <prog_full> of the instance <FIFO_Patterns_cam> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 484: Output port <full> of the instance <fifo_mem_pats> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 498: Output port <CLKMPRE_EN> of the instance <ROImager_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 498: Output port <TRIGGER_PROJ> of the instance <ROImager_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 548: Output port <write_happens> of the instance <mem_controller> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 548: Output port <read_done> of the instance <mem_controller> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 548: Output port <write_done> of the instance <mem_controller> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 757: Output port <ep_dataout> of the instance <wire14> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 758: Output port <ep_dataout> of the instance <wire15> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 309: Output port <c3_p0_rd_data> of the instance <u_mem_if> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 309: Output port <c3_p0_rd_count> of the instance <u_mem_if> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 309: Output port <c3_p1_wr_count> of the instance <u_mem_if> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 309: Output port <c3_rst0> of the instance <u_mem_if> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 309: Output port <c3_p0_rd_full> of the instance <u_mem_if> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 309: Output port <c3_p0_rd_empty> of the instance <u_mem_if> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 309: Output port <c3_p0_rd_overflow> of the instance <u_mem_if> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 309: Output port <c3_p0_rd_error> of the instance <u_mem_if> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 309: Output port <c3_p1_wr_full> of the instance <u_mem_if> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 309: Output port <c3_p1_wr_empty> of the instance <u_mem_if> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 309: Output port <c3_p1_wr_underrun> of the instance <u_mem_if> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 309: Output port <c3_p1_wr_error> of the instance <u_mem_if> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 431: Output port <full> of the instance <fifo_databuf> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 431: Output port <empty> of the instance <fifo_databuf> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 431: Output port <almost_empty> of the instance <fifo_databuf> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 446: Output port <empty> of the instance <fifo256kB_out> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 461: Output port <valid> of the instance <FIFO_Patterns_cam> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 461: Output port <prog_full> of the instance <FIFO_Patterns_cam> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 491: Output port <full> of the instance <fifo_mem_pats> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 505: Output port <CLKMPRE_EN> of the instance <ROImager_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 560: Output port <write_happens> of the instance <mem_controller> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 560: Output port <read_done> of the instance <mem_controller> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 560: Output port <write_done> of the instance <mem_controller> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 769: Output port <ep_dataout> of the instance <wire14> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\OK_imager1.v" line 770: Output port <ep_dataout> of the instance <wire15> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <c3_p1_wr_mask> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <c3_p1_wr_data> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <flag_1frame> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <c3_p0_rd_en> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <c3_p1_wr_en> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Found 1-bit register for signal <fifo_rst_cnt>.
@@ -2071,7 +2064,7 @@ INFO:Xst:1799 - State 111010 is never reached in FSM <STATE>.
     Found 13-bit adder for signal <n0474> created at line 480.
     Found 15-bit adder for signal <_n0883> created at line 480.
     Found 15-bit adder for signal <n0484> created at line 480.
-    Found 13-bit adder for signal <_n0885> created at line 480.
+    Found 13-bit adder for signal <_n0888> created at line 480.
     Found 13-bit adder for signal <n0492> created at line 480.
     Found 1-bit 3-to-1 multiplexer for signal <IODRP_SDO> created at line 792.
     Found 10-bit comparator greater for signal <RstCounter[9]_GND_15_o_LessThan_17_o> created at line 550
@@ -2184,7 +2177,6 @@ Synthesizing Unit <ROImager_exp_PatSeperate>.
         S_subc_last = 8'b00001000
         S_FSM1 = 8'b00010000
         S_FSM1_ACK = 8'b00100000
-        MIN_FRAME_TIME = 11111
     Set property "FSM_ENCODING = ONE-HOT" for signal <state>.
     Set property "SAFE_IMPLEMENTATION = YES" for signal <state>.
     Set property "SAFE_RECOVERY_STATE = <recovery_state_value>" for signal <state>.
@@ -2204,32 +2196,37 @@ Synthesizing Unit <ROImager_exp_PatSeperate>.
     Found finite state machine <FSM_3> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 6                                              |
-    | Transitions        | 24                                             |
-    | Inputs             | 9                                              |
+    | Transitions        | 23                                             |
+    | Inputs             | 10                                             |
     | Outputs            | 6                                              |
     | Clock              | CLKMPRE (rising_edge)                          |
+    | Reset              | RESET (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00000001                                       |
     | Power Up State     | 00000001                                       |
     | Recovery State     | 00000001                                       |
     | Encoding           | ONE-HOT                                        |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 32-bit subtractor for signal <fst_cntr[31]_GND_57_o_sub_5_OUT> created at line 101.
-    Found 32-bit subtractor for signal <timer[31]_GND_57_o_sub_14_OUT> created at line 130.
-    Found 32-bit adder for signal <count_mpre[31]_GND_57_o_add_23_OUT> created at line 144.
-    Found 32-bit adder for signal <count_subsc[31]_GND_57_o_add_32_OUT> created at line 164.
-    Found 32x5-bit multiplier for signal <n0132> created at line 173.
-    Found 32x7-bit multiplier for signal <n0133> created at line 173.
-    Found 32-bit comparator greater for signal <GND_57_o_fst_cntr[31]_LessThan_4_o> created at line 100
-    Found 32-bit comparator greater for signal <GND_57_o_count_mpre[31]_LessThan_21_o> created at line 138
-    Found 32-bit comparator greater for signal <GND_57_o_count_mpre[31]_LessThan_23_o> created at line 142
-    Found 32-bit comparator greater for signal <n0045> created at line 173
-    Found 32-bit comparator greater for signal <count_subsc[31]_Num_Pat[31]_LessThan_44_o> created at line 175
+    Found 32-bit subtractor for signal <fst_cntr[31]_GND_57_o_sub_6_OUT> created at line 111.
+    Found 32-bit subtractor for signal <GND_57_o_PROJ_DELAY[31]_sub_10_OUT> created at line 116.
+    Found 32-bit subtractor for signal <timer[31]_GND_57_o_sub_17_OUT> created at line 142.
+    Found 32-bit adder for signal <count_mpre[31]_GND_57_o_add_21_OUT> created at line 156.
+    Found 32-bit adder for signal <count_subsc[31]_GND_57_o_add_30_OUT> created at line 176.
+    Found 32x5-bit multiplier for signal <n0140> created at line 185.
+    Found 32x7-bit multiplier for signal <n0141> created at line 185.
+    Found 32-bit comparator greater for signal <GND_57_o_fst_cntr[31]_LessThan_5_o> created at line 110
+    Found 32-bit comparator greater for signal <GND_57_o_count_mpre[31]_LessThan_19_o> created at line 150
+    Found 32-bit comparator greater for signal <GND_57_o_count_mpre[31]_LessThan_21_o> created at line 154
+    Found 32-bit comparator greater for signal <GND_57_o_count_mpre[31]_LessThan_29_o> created at line 170
+    Found 32-bit comparator greater for signal <n0043> created at line 185
+    Found 32-bit comparator greater for signal <count_subsc[31]_Num_Pat[31]_LessThan_42_o> created at line 187
     Summary:
 	inferred   2 Multiplier(s).
-	inferred   4 Adder/Subtractor(s).
+	inferred   5 Adder/Subtractor(s).
 	inferred 143 D-type flip-flop(s).
-	inferred   5 Comparator(s).
-	inferred  20 Multiplexer(s).
+	inferred   6 Comparator(s).
+	inferred  25 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <ROImager_exp_PatSeperate> synthesized.
 WARNING:Xst:2144 - The value of attribute <SAFE_RECOVERY_STATE> (S_subc_first) does not match fsm state <state> size (5).
@@ -2254,8 +2251,8 @@ Synthesizing Unit <load_pattern>.
     Found finite state machine <FSM_4> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 4                                              |
-    | Transitions        | 16                                             |
-    | Inputs             | 8                                              |
+    | Transitions        | 12                                             |
+    | Inputs             | 7                                              |
     | Outputs            | 4                                              |
     | Clock              | clk (falling_edge)                             |
     | Reset              | rst (positive)                                 |
@@ -2292,7 +2289,7 @@ WARNING:Xst:647 - Input <c3_p1_cmd_full> is never used. This port will be preser
 WARNING:Xst:647 - Input <c3_p1_rd_full> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <c3_p1_rd_overflow> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <c3_p1_rd_error> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "D:\MBImager\OK_imager1\mem_fsm.v" line 340: Output port <full> of the instance <infifo> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\MBImager\OK_imager1\mem_fsm.v" line 344: Output port <full> of the instance <infifo> is unconnected or connected to loadless signal.
     Register <c3_p1_cmd_instr> equivalent to <c3_p1_cmd_en> has been removed
     Found 5-bit register for signal <c3_p1_cmd_bl>.
     Found 1-bit register for signal <infifo_rd_en>.
@@ -2323,17 +2320,17 @@ INFO:Xst:3210 - "D:\MBImager\OK_imager1\mem_fsm.v" line 340: Output port <full> 
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 33-bit subtractor for signal <num_pat_bytes[32]_GND_61_o_sub_15_OUT> created at line 214.
-    Found 7-bit subtractor for signal <n0143[6:0]> created at line 230.
-    Found 32-bit adder for signal <Num_Pat[31]_GND_61_o_add_2_OUT> created at line 100.
-    Found 7-bit adder for signal <bl_cnt[6]_GND_61_o_add_17_OUT> created at line 220.
-    Found 32-bit adder for signal <wr_counter[31]_GND_61_o_add_18_OUT> created at line 221.
-    Found 30-bit adder for signal <c3_p0_cmd_byte_addr[29]_GND_61_o_add_26_OUT> created at line 250.
-    Found 30-bit adder for signal <c3_p1_cmd_byte_addr[29]_GND_61_o_add_39_OUT> created at line 320.
-    Found 33x5-bit multiplier for signal <n0130> created at line 100.
-    Found 33x8-bit multiplier for signal <n0126> created at line 100.
-    Found 33-bit comparator equal for signal <GND_61_o_num_pat_bytes[32]_equal_16_o> created at line 214
-    Found 33-bit comparator equal for signal <GND_61_o_num_pat_bytes[32]_equal_26_o> created at line 239
+    Found 33-bit subtractor for signal <num_pat_bytes[32]_GND_61_o_sub_16_OUT> created at line 218.
+    Found 7-bit subtractor for signal <n0145[6:0]> created at line 234.
+    Found 32-bit adder for signal <Num_Pat[31]_GND_61_o_add_3_OUT> created at line 104.
+    Found 7-bit adder for signal <bl_cnt[6]_GND_61_o_add_18_OUT> created at line 224.
+    Found 32-bit adder for signal <wr_counter[31]_GND_61_o_add_19_OUT> created at line 225.
+    Found 30-bit adder for signal <c3_p0_cmd_byte_addr[29]_GND_61_o_add_27_OUT> created at line 254.
+    Found 30-bit adder for signal <c3_p1_cmd_byte_addr[29]_GND_61_o_add_40_OUT> created at line 324.
+    Found 33x5-bit multiplier for signal <n0132> created at line 104.
+    Found 33x8-bit multiplier for signal <n0127> created at line 104.
+    Found 33-bit comparator equal for signal <GND_61_o_num_pat_bytes[32]_equal_17_o> created at line 218
+    Found 33-bit comparator equal for signal <GND_61_o_num_pat_bytes[32]_equal_27_o> created at line 243
     WARNING:Xst:2404 -  FFs/Latches <read_done<0:0>> (without init value) have a constant value of 0 in block <mem_fsm>.
     WARNING:Xst:2404 -  FFs/Latches <c3_p0_cmd_instr<1:3>> (without init value) have a constant value of 0 in block <mem_fsm>.
     WARNING:Xst:2404 -  FFs/Latches <c3_p1_cmd_instr<2:1>> (without init value) have a constant value of 0 in block <mem_fsm>.
@@ -2472,7 +2469,7 @@ Macro Statistics
  32x7-bit multiplier                                   : 1
  33x5-bit multiplier                                   : 1
  33x8-bit multiplier                                   : 1
-# Adders/Subtractors                                   : 48
+# Adders/Subtractors                                   : 49
  10-bit adder                                          : 5
  11-bit adder                                          : 3
  12-bit adder                                          : 3
@@ -2483,7 +2480,7 @@ Macro Statistics
  3-bit adder                                           : 2
  30-bit adder                                          : 2
  32-bit adder                                          : 5
- 32-bit subtractor                                     : 2
+ 32-bit subtractor                                     : 3
  33-bit subtractor                                     : 1
  4-bit adder                                           : 1
  6-bit adder                                           : 2
@@ -2507,21 +2504,21 @@ Macro Statistics
  6-bit register                                        : 6
  7-bit register                                        : 5
  8-bit register                                        : 19
-# Comparators                                          : 23
+# Comparators                                          : 24
  10-bit comparator greater                             : 1
- 32-bit comparator greater                             : 7
+ 32-bit comparator greater                             : 8
  33-bit comparator equal                               : 2
  6-bit comparator equal                                : 1
  6-bit comparator greater                              : 1
  7-bit comparator equal                                : 1
  8-bit comparator greater                              : 8
  8-bit comparator lessequal                            : 2
-# Multiplexers                                         : 98
- 1-bit 2-to-1 multiplexer                              : 35
+# Multiplexers                                         : 103
+ 1-bit 2-to-1 multiplexer                              : 39
  1-bit 3-to-1 multiplexer                              : 1
  10-bit 2-to-1 multiplexer                             : 3
  30-bit 2-to-1 multiplexer                             : 2
- 32-bit 2-to-1 multiplexer                             : 16
+ 32-bit 2-to-1 multiplexer                             : 17
  6-bit 2-to-1 multiplexer                              : 5
  7-bit 2-to-1 multiplexer                              : 8
  8-bit 2-to-1 multiplexer                              : 26
@@ -2555,7 +2552,8 @@ Loading core <okWireIn> for timing and area information for instance <wire12>.
 Loading core <okWireIn> for timing and area information for instance <wire13>.
 Loading core <okWireIn> for timing and area information for instance <wire14>.
 Loading core <okWireIn> for timing and area information for instance <wire15>.
-Loading core <okWireIn> for timing and area information for instance <okPHASE_SEL>.
+Loading core <okWireIn> for timing and area information for instance <framewire>.
+Loading core <okWireIn> for timing and area information for instance <wire19>.
 Loading core <okWireOut> for timing and area information for instance <wire22>.
 Loading core <okWireOut> for timing and area information for instance <wire23>.
 Loading core <okWireOut> for timing and area information for instance <wire24>.
@@ -2593,10 +2591,6 @@ WARNING:Xst:1710 - FF/Latch <memcell_addr_reg_2> (without init value) has a cons
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <SELFREFRESH_REQ_R2> (without init value) has a constant value of 0 in block <mcb_soft_calibration_inst>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <SELFREFRESH_REQ_R3> (without init value) has a constant value of 0 in block <mcb_soft_calibration_inst>. This FF/Latch will be trimmed during the optimization process.
 
-Synthesizing (advanced) Unit <ROImager_exp_PatSeperate>.
-The following registers are absorbed into counter <fst_cntr>: 1 register on signal <fst_cntr>.
-Unit <ROImager_exp_PatSeperate> synthesized (advanced).
-
 Synthesizing (advanced) Unit <iodrp_controller>.
 The following registers are absorbed into counter <bit_cnt>: 1 register on signal <bit_cnt>.
 Unit <iodrp_controller> synthesized (advanced).
@@ -2629,13 +2623,13 @@ Macro Statistics
  32x7-bit multiplier                                   : 1
  33x5-bit multiplier                                   : 1
  33x8-bit multiplier                                   : 1
-# Adders/Subtractors                                   : 30
+# Adders/Subtractors                                   : 32
  10-bit adder                                          : 7
  11-bit adder                                          : 1
  12-bit adder                                          : 1
  30-bit adder                                          : 2
  32-bit adder                                          : 5
- 32-bit subtractor                                     : 1
+ 32-bit subtractor                                     : 3
  33-bit subtractor                                     : 1
  6-bit adder                                           : 1
  7-bit adder                                           : 2
@@ -2645,32 +2639,31 @@ Macro Statistics
 # Adder Trees                                          : 2
  10-bit / 4-inputs adder tree                          : 1
  8-bit / 5-inputs adder tree                           : 1
-# Counters                                             : 11
+# Counters                                             : 10
  10-bit up counter                                     : 1
  16-bit up counter                                     : 1
  3-bit up counter                                      : 2
- 32-bit down counter                                   : 1
  4-bit up counter                                      : 1
  6-bit up counter                                      : 1
  8-bit up counter                                      : 3
  8-bit updown counter                                  : 1
-# Registers                                            : 633
- Flip-Flops                                            : 633
-# Comparators                                          : 23
+# Registers                                            : 665
+ Flip-Flops                                            : 665
+# Comparators                                          : 24
  10-bit comparator greater                             : 1
- 32-bit comparator greater                             : 7
+ 32-bit comparator greater                             : 8
  33-bit comparator equal                               : 2
  6-bit comparator equal                                : 1
  6-bit comparator greater                              : 1
  7-bit comparator equal                                : 1
  8-bit comparator greater                              : 8
  8-bit comparator lessequal                            : 2
-# Multiplexers                                         : 105
- 1-bit 2-to-1 multiplexer                              : 49
+# Multiplexers                                         : 111
+ 1-bit 2-to-1 multiplexer                              : 53
  1-bit 3-to-1 multiplexer                              : 1
  10-bit 2-to-1 multiplexer                             : 2
  30-bit 2-to-1 multiplexer                             : 2
- 32-bit 2-to-1 multiplexer                             : 15
+ 32-bit 2-to-1 multiplexer                             : 17
  6-bit 2-to-1 multiplexer                              : 5
  7-bit 2-to-1 multiplexer                              : 8
  8-bit 2-to-1 multiplexer                              : 22
@@ -2694,9 +2687,6 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IODRPCTRLR_MEMCELL_
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IODRPCTRLR_MEMCELL_ADDR_5> (without init value) has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IODRPCTRLR_MEMCELL_ADDR_6> (without init value) has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <DRP_BKST> (without init value) has a constant value of 0 in block <iodrp_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <TRIGGER_PROJ_i> has a constant value of 0 in block <ROImager_exp_PatSeperate>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1426 - The value init of the FF/Latch write_happens_1 hinder the constant cleaning in the block mem_fsm.
-   You should achieve better results by setting this init to 1.
 WARNING:Xst:1293 - FF/Latch <write_happens_0> has a constant value of 0 in block <mem_fsm>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <write_happens_2> has a constant value of 0 in block <mem_fsm>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <c3_p1_cmd_bl_0> in Unit <mem_fsm> is equivalent to the following 5 FFs/Latches, which will be removed : <c3_p1_cmd_bl_1> <c3_p1_cmd_bl_2> <c3_p1_cmd_bl_3> <c3_p1_cmd_bl_4> <c3_p1_cmd_en> 
@@ -2861,7 +2851,7 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c3_p0_cmd_byte_addr
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c3_p0_cmd_byte_addr_7> has a constant value of 0 in block <mem_fsm>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:1901 - Instance U_BUFG_CLK1 in unit infrastructure of type BUFGCE has been replaced by BUFGMUX
 INFO:Xst:2261 - The FF/Latch <MCB_UIADDR_2> in Unit <mcb_soft_calibration> is equivalent to the following 2 FFs/Latches, which will be removed : <MCB_UIADDR_3> <MCB_UIADDR_4> 
-INFO:Xst:2261 - The FF/Latch <fsm_stat_i_5> in Unit <ROImager_exp_PatSeperate> is equivalent to the following 3 FFs/Latches, which will be removed : <fsm_stat_i_6> <fsm_stat_i_7> <fsm_stat_i_8> 
+INFO:Xst:2261 - The FF/Latch <fsm_stat_i_6> in Unit <ROImager_exp_PatSeperate> is equivalent to the following FF/Latch, which will be removed : <fsm_stat_i_8> 
 
 Optimizing unit <OK_imager> ...
 
@@ -2878,6 +2868,7 @@ Optimizing unit <iodrp_mcb_controller> ...
 Optimizing unit <infrastructure> ...
 
 Optimizing unit <ROImager_exp_PatSeperate> ...
+INFO:Xst:2261 - The FF/Latch <fsm_stat_i_5> in Unit <ROImager_exp_PatSeperate> is equivalent to the following FF/Latch, which will be removed : <fsm_stat_i_7> 
 
 Optimizing unit <mem_fsm> ...
 WARNING:Xst:1293 - FF/Latch <wr_counter_0> has a constant value of 0 in block <mem_fsm>. This FF/Latch will be trimmed during the optimization process.
@@ -2887,6 +2878,7 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <wr_counter_2> has a
 Optimizing unit <load_pattern> ...
 WARNING:Xst:1710 - FF/Latch <u_mem_if/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/data_reg_7> (without init value) has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <u_mem_if/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_mcb_controller/data_reg_7> (without init value) has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <u_mem_if/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/DONE_SOFTANDHARD_CAL> of sequential type is unconnected in block <OK_imager>.
 WARNING:Xst:2677 - Node <u_mem_if/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_mcb_controller/read_data_7> of sequential type is unconnected in block <OK_imager>.
 WARNING:Xst:2677 - Node <u_mem_if/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_mcb_controller/read_data_6> of sequential type is unconnected in block <OK_imager>.
 WARNING:Xst:2677 - Node <u_mem_if/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_mcb_controller/read_data_5> of sequential type is unconnected in block <OK_imager>.
@@ -2903,34 +2895,16 @@ WARNING:Xst:2677 - Node <mem_controller/c3_p1_cmd_byte_addr_29> of sequential ty
 WARNING:Xst:2677 - Node <mem_controller/c3_p1_cmd_byte_addr_28> of sequential type is unconnected in block <OK_imager>.
 WARNING:Xst:2677 - Node <mem_controller/c3_p1_cmd_byte_addr_27> of sequential type is unconnected in block <OK_imager>.
 WARNING:Xst:2677 - Node <mem_controller/write_happens_1> of sequential type is unconnected in block <OK_imager>.
-WARNING:Xst:1293 - FF/Latch <mem_controller/bl_cnt_6> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <ROImager_inst/timer_14> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <ROImager_inst/timer_15> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <ROImager_inst/timer_16> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <ROImager_inst/timer_17> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <ROImager_inst/timer_18> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <ROImager_inst/timer_19> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <ROImager_inst/timer_20> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <ROImager_inst/timer_21> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <ROImager_inst/timer_22> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <ROImager_inst/timer_23> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <ROImager_inst/timer_24> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <ROImager_inst/timer_25> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <ROImager_inst/timer_26> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <ROImager_inst/timer_27> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <ROImager_inst/timer_28> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <ROImager_inst/timer_29> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <ROImager_inst/timer_30> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <ROImager_inst/timer_31> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <u_mem_if/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/RstCounter_5> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <u_mem_if/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/RstCounter_6> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <u_mem_if/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/RstCounter_7> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <u_mem_if/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/RstCounter_8> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <u_mem_if/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/RstCounter_9> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <u_mem_if/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/RstCounter_8> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <u_mem_if/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/RstCounter_7> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <u_mem_if/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/RstCounter_6> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <u_mem_if/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/RstCounter_5> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <mem_controller/bl_cnt_6> has a constant value of 0 in block <OK_imager>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block OK_imager, actual ratio is 12.
+Found area constraint ratio of 100 (+ 5) on block OK_imager, actual ratio is 13.
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <fifo_databuf> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <fifo_databuf> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <fifo_databuf> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
@@ -2985,7 +2959,8 @@ INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <mem_controller/infifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <mem_controller/infifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <mem_controller/infifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
-FlipFlop mem_controller/bl_cnt_0 has been replicated 1 time(s)
+FlipFlop mem_controller/bl_cnt_0 has been replicated 2 time(s)
+FlipFlop mem_controller/bl_cnt_1 has been replicated 1 time(s)
 FlipFlop mem_controller/state_FSM_FFd1 has been replicated 2 time(s)
 FlipFlop mem_controller/state_FSM_FFd2 has been replicated 1 time(s)
 FlipFlop mem_controller/state_FSM_FFd3 has been replicated 1 time(s)
@@ -2997,8 +2972,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 681
- Flip-Flops                                            : 681
+# Registers                                            : 734
+ Flip-Flops                                            : 734
 
 =========================================================================
 
@@ -3021,33 +2996,33 @@ Top Level Output File Name         : OK_imager.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 5003
+# BELS                             : 5366
 #      GND                         : 19
-#      INV                         : 131
-#      LUT1                        : 385
-#      LUT2                        : 591
-#      LUT3                        : 173
-#      LUT4                        : 525
-#      LUT5                        : 460
-#      LUT6                        : 1273
+#      INV                         : 209
+#      LUT1                        : 390
+#      LUT2                        : 599
+#      LUT3                        : 189
+#      LUT4                        : 532
+#      LUT5                        : 561
+#      LUT6                        : 1203
 #      LUT6_2                      : 50
 #      MULT_AND                    : 7
-#      MUXCY                       : 771
-#      MUXF7                       : 24
+#      MUXCY                       : 878
+#      MUXF7                       : 37
 #      VCC                         : 7
-#      XORCY                       : 587
-# FlipFlops/Latches                : 2921
-#      FD                          : 263
-#      FDC                         : 623
+#      XORCY                       : 685
+# FlipFlops/Latches                : 3057
+#      FD                          : 207
+#      FDC                         : 643
 #      FDCE                        : 480
-#      FDE                         : 308
+#      FDE                         : 341
 #      FDE_1                       : 10
 #      FDP                         : 133
-#      FDPE                        : 18
-#      FDR                         : 145
+#      FDPE                        : 19
+#      FDR                         : 217
 #      FDR_1                       : 36
-#      FDRE                        : 894
-#      FDS                         : 6
+#      FDRE                        : 958
+#      FDS                         : 8
 #      FDS_1                       : 1
 #      FDSE                        : 2
 #      ODDR2                       : 2
@@ -3063,13 +3038,13 @@ Primitive and Black Box Usage:
 # Clock Buffers                    : 10
 #      BUFG                        : 9
 #      BUFGMUX                     : 1
-# IO Buffers                       : 157
+# IO Buffers                       : 125
 #      IBUF                        : 16
 #      IBUFG                       : 1
 #      IBUFGDS                     : 1
 #      IOBUF                       : 51
 #      IOBUFDS                     : 2
-#      OBUF                        : 62
+#      OBUF                        : 30
 #      OBUFT                       : 23
 #      OBUFTDS                     : 1
 # DCMs                             : 3
@@ -3094,23 +3069,23 @@ Selected Device : 6slx45fgg484-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            2818  out of  54576     5%  
- Number of Slice LUTs:                 3633  out of  27288    13%  
-    Number used as Logic:              3588  out of  27288    13%  
+ Number of Slice Registers:            2954  out of  54576     5%  
+ Number of Slice LUTs:                 3778  out of  27288    13%  
+    Number used as Logic:              3733  out of  27288    13%  
     Number used as Memory:               45  out of   6408     0%  
        Number used as RAM:               44
        Number used as SRL:                1
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   5105
-   Number with an unused Flip Flop:    2287  out of   5105    44%  
-   Number with an unused LUT:          1472  out of   5105    28%  
-   Number of fully used LUT-FF pairs:  1346  out of   5105    26%  
-   Number of unique control sets:       169
+ Number of LUT Flip Flop pairs used:   5318
+   Number with an unused Flip Flop:    2364  out of   5318    44%  
+   Number with an unused LUT:          1540  out of   5318    28%  
+   Number of fully used LUT-FF pairs:  1414  out of   5318    26%  
+   Number of unique control sets:       174
 
 IO Utilization: 
- Number of IOs:                         161
- Number of bonded IOBs:                 161  out of    316    50%  
+ Number of IOs:                         129
+ Number of bonded IOBs:                 129  out of    316    40%  
     IOB Flip Flops/Latches:             103
 
 Specific Feature Utilization:
@@ -3141,13 +3116,13 @@ Clock Information:
 -----------------------------------+--------------------------------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                                        | Load  |
 -----------------------------------+--------------------------------------------------------------+-------+
-sys_clkp                           | DCM_SP:CLKFX                                                 | 355   |
+sys_clkp                           | DCM_SP:CLKFX                                                 | 388   |
 sys_clkp                           | DCM_SP:CLKFX180                                              | 1     |
 sys_clkp                           | DCM_SP:CLKDV+DCM_SP:CLKFX180                                 | 1     |
-sys_clkp                           | DCM_SP:CLKDV+DCM_SP:CLKFX                                    | 97    |
-okUH<0>                            | DCM_SP:CLK0                                                  | 1829  |
-sys_clkp                           | PLL_ADV:CLKOUT3                                              | 316   |
-sys_clkp                           | PLL_ADV:CLKOUT2                                              | 384   |
+sys_clkp                           | DCM_SP:CLKDV+DCM_SP:CLKFX                                    | 116   |
+okUH<0>                            | DCM_SP:CLK0                                                  | 1912  |
+sys_clkp                           | PLL_ADV:CLKOUT3                                              | 315   |
+sys_clkp                           | PLL_ADV:CLKOUT2                                              | 386   |
 im_data_clk                        | IBUF                                                         | 66    |
 hostIF/core0/okHE<41>              | NONE(hostIF/core0/core0/a0/pm0/ram_1k_generate.s6.kcpsm6_rom)| 1     |
 -----------------------------------+--------------------------------------------------------------+-------+
@@ -3161,9 +3136,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 39.015ns (Maximum Frequency: 25.631MHz)
+   Minimum period: 39.384ns (Maximum Frequency: 25.391MHz)
    Minimum input arrival time before clock: 6.602ns
-   Maximum output required time after clock: 6.792ns
+   Maximum output required time after clock: 6.802ns
    Maximum combinational path delay: 3.717ns
 
 Timing Details:
@@ -3171,45 +3146,11 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'sys_clkp'
-  Clock period: 39.015ns (frequency: 25.631MHz)
-  Total number of paths / destination ports: 151368 / 2388
--------------------------------------------------------------------------
-Delay:               6.242ns (Levels of Logic = 13)
-  Source:            mem_controller/wr_counter_5 (FF)
-  Destination:       mem_controller/c3_p1_cmd_byte_addr_26 (FF)
-  Source Clock:      sys_clkp rising 6.3X
-  Destination Clock: sys_clkp rising 6.3X
-
-  Data Path: mem_controller/wr_counter_5 to mem_controller/c3_p1_cmd_byte_addr_26
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDC:C->Q              7   0.525   1.138  mem_controller/wr_counter_5 (mem_controller/wr_counter_5)
-     LUT6:I3->O            1   0.235   0.000  mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_26_o_lut<1> (mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_26_o_lut<1>)
-     MUXCY:S->O            1   0.215   0.000  mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_26_o_cy<1> (mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_26_o_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_26_o_cy<2> (mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_26_o_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_26_o_cy<3> (mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_26_o_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_26_o_cy<4> (mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_26_o_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_26_o_cy<5> (mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_26_o_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_26_o_cy<6> (mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_26_o_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_26_o_cy<7> (mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_26_o_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_26_o_cy<8> (mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_26_o_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_26_o_cy<9> (mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_26_o_cy<9>)
-     MUXCY:CI->O          83   0.023   2.077  mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_26_o_cy<10> (mem_controller/GND_61_o_num_pat_bytes[32]_equal_26_o)
-     LUT5:I4->O           19   0.254   1.261  mem_controller/_n0567_inv1_rstpot (mem_controller/_n0567_inv1_rstpot)
-     LUT4:I3->O            1   0.254   0.000  mem_controller/c3_p1_cmd_byte_addr_8_dpot (mem_controller/c3_p1_cmd_byte_addr_8_dpot)
-     FDCE:D                    0.074          mem_controller/c3_p1_cmd_byte_addr_8
-    ----------------------------------------
-    Total                      6.242ns (1.766ns logic, 4.476ns route)
-                                       (28.3% logic, 71.7% route)
-
-=========================================================================
 Timing constraint: Default period analysis for Clock 'okUH<0>'
-  Clock period: 9.905ns (frequency: 100.959MHz)
-  Total number of paths / destination ports: 38645 / 6582
+  Clock period: 9.966ns (frequency: 100.341MHz)
+  Total number of paths / destination ports: 39680 / 6749
 -------------------------------------------------------------------------
-Delay:               9.905ns (Levels of Logic = 8)
+Delay:               9.966ns (Levels of Logic = 8)
   Source:            hostIF/core0/core0/ti_addr_1 (FF)
   Destination:       fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram (RAM)
   Source Clock:      okUH<0> rising +-24
@@ -3219,21 +3160,55 @@ Delay:               9.905ns (Levels of Logic = 8)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q             20   0.525   1.716  core0/ti_addr_1 (okHE<33>)
+     FDE:C->Q             21   0.525   1.740  core0/ti_addr_1 (okHE<33>)
      end scope: 'hostIF/core0:okHE<33>'
      begin scope: 'pipeA0:okHE<33>'
      LUT6:I1->O            1   0.254   1.137  okEH<32>81 (okEH<32>8)
      LUT6:I0->O           34   0.254   1.553  okEH<32>83 (okEH<32>)
-     LUT2:I1->O            4   0.254   0.912  ep_read1 (ep_read)
+     LUT2:I1->O            5   0.254   0.949  ep_read1 (ep_read)
      end scope: 'pipeA0:ep_read'
      begin scope: 'fifo256kB_out:rd_en'
      LUT3:I1->O           41   0.250   1.671  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/tmp_ram_rd_en1 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/tmp_ram_rd_en)
      begin scope: 'fifo256kB_out/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr:ENB'
-     LUT3:I2->O            6   0.254   0.875  out8 (ramloop[2].ram.ram_enb)
-     RAMB16BWER:ENB            0.250          ramloop[2].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram
+     LUT3:I2->O            6   0.254   0.875  out6 (ramloop[0].ram.ram_enb)
+     RAMB16BWER:ENB            0.250          ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram
     ----------------------------------------
-    Total                      9.905ns (2.041ns logic, 7.864ns route)
-                                       (20.6% logic, 79.4% route)
+    Total                      9.966ns (2.041ns logic, 7.925ns route)
+                                       (20.5% logic, 79.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'sys_clkp'
+  Clock period: 39.384ns (frequency: 25.391MHz)
+  Total number of paths / destination ports: 162499 / 2474
+-------------------------------------------------------------------------
+Delay:               6.301ns (Levels of Logic = 13)
+  Source:            mem_controller/wr_counter_5 (FF)
+  Destination:       mem_controller/c3_p1_cmd_byte_addr_26 (FF)
+  Source Clock:      sys_clkp rising 6.3X
+  Destination Clock: sys_clkp rising 6.3X
+
+  Data Path: mem_controller/wr_counter_5 to mem_controller/c3_p1_cmd_byte_addr_26
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              6   0.525   1.104  mem_controller/wr_counter_5 (mem_controller/wr_counter_5)
+     LUT6:I3->O            1   0.235   0.000  mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_27_o_lut<1> (mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_27_o_lut<1>)
+     MUXCY:S->O            1   0.215   0.000  mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_27_o_cy<1> (mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_27_o_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_27_o_cy<2> (mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_27_o_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_27_o_cy<3> (mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_27_o_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_27_o_cy<4> (mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_27_o_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_27_o_cy<5> (mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_27_o_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_27_o_cy<6> (mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_27_o_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_27_o_cy<7> (mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_27_o_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_27_o_cy<8> (mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_27_o_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_27_o_cy<9> (mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_27_o_cy<9>)
+     MUXCY:CI->O          95   0.023   2.170  mem_controller/Mcompar_GND_61_o_num_pat_bytes[32]_equal_27_o_cy<10> (mem_controller/GND_61_o_num_pat_bytes[32]_equal_27_o)
+     LUT5:I4->O           19   0.254   1.261  mem_controller/_n0577_inv1_rstpot (mem_controller/_n0577_inv1_rstpot)
+     LUT4:I3->O            1   0.254   0.000  mem_controller/c3_p1_cmd_byte_addr_8_dpot (mem_controller/c3_p1_cmd_byte_addr_8_dpot)
+     FDCE:D                    0.074          mem_controller/c3_p1_cmd_byte_addr_8
+    ----------------------------------------
+    Total                      6.301ns (1.766ns logic, 4.535ns route)
+                                       (28.0% logic, 72.0% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'im_data_clk'
@@ -3310,7 +3285,7 @@ Offset:              6.602ns (Levels of Logic = 6)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'sys_clkp'
-  Total number of paths / destination ports: 435 / 255
+  Total number of paths / destination ports: 428 / 279
 -------------------------------------------------------------------------
 Offset:              5.713ns (Levels of Logic = 3)
   Source:            u_mem_if/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/samc_0:UOREFRSHFLAG (PAD)
@@ -3354,9 +3329,9 @@ Offset:              4.211ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'okUH<0>'
-  Total number of paths / destination ports: 151 / 118
+  Total number of paths / destination ports: 119 / 86
 -------------------------------------------------------------------------
-Offset:              6.792ns (Levels of Logic = 3)
+Offset:              6.802ns (Levels of Logic = 3)
   Source:            wire10/ep_dataout_0 (FF)
   Destination:       FPGA_rst_n (PAD)
   Source Clock:      okUH<0> rising +-24
@@ -3365,19 +3340,19 @@ Offset:              6.792ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q           212   0.525   2.419  ep_dataout_0 (ep_dataout<0>)
+     FDRE:C->Q           246   0.525   2.429  ep_dataout_0 (ep_dataout<0>)
      end scope: 'wire10:ep_dataout<0>'
      INV:I->O              1   0.255   0.681  FPGA_rst_n1_INV_0 (FPGA_rst_n_OBUF)
      OBUF:I->O                 2.912          FPGA_rst_n_OBUF (FPGA_rst_n)
     ----------------------------------------
-    Total                      6.792ns (3.692ns logic, 3.100ns route)
-                                       (54.4% logic, 45.6% route)
+    Total                      6.802ns (3.692ns logic, 3.110ns route)
+                                       (54.3% logic, 45.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'sys_clkp'
   Total number of paths / destination ports: 314 / 215
 -------------------------------------------------------------------------
-Offset:              5.140ns (Levels of Logic = 1)
+Offset:              5.474ns (Levels of Logic = 1)
   Source:            ROImager_inst/STREAM (FF)
   Destination:       STREAM (PAD)
   Source Clock:      sys_clkp rising 0.1X
@@ -3386,11 +3361,11 @@ Offset:              5.140ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              43   0.525   1.703  ROImager_inst/STREAM (ROImager_inst/STREAM)
+     FDR:C->Q             78   0.525   2.037  ROImager_inst/STREAM (ROImager_inst/STREAM)
      OBUF:I->O                 2.912          STREAM_OBUF (STREAM)
     ----------------------------------------
-    Total                      5.140ns (3.437ns logic, 1.703ns route)
-                                       (66.9% logic, 33.1% route)
+    Total                      5.474ns (3.437ns logic, 2.037ns route)
+                                       (62.8% logic, 37.2% route)
 
 =========================================================================
 Timing constraint: Default path analysis
@@ -3431,7 +3406,7 @@ Clock to Setup on destination clock im_data_clk
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
 im_data_clk    |    3.421|         |         |         |
-okUH<0>        |    3.403|         |         |         |
+okUH<0>        |    3.413|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock okUH<0>
@@ -3440,7 +3415,7 @@ Clock to Setup on destination clock okUH<0>
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
 im_data_clk    |    1.280|         |         |         |
-okUH<0>        |    9.905|         |         |         |
+okUH<0>        |    9.966|         |         |         |
 sys_clkp       |    4.723|         |         |         |
 ---------------+---------+---------+---------+---------+
 
@@ -3449,21 +3424,21 @@ Clock to Setup on destination clock sys_clkp
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-okUH<0>        |   24.242|         |    6.495|         |
-sys_clkp       |   16.834|    3.976|    6.468|         |
+okUH<0>        |   24.335|         |    6.274|         |
+sys_clkp       |   16.797|    3.976|    6.389|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 54.00 secs
-Total CPU time to Xst completion: 53.50 secs
+Total REAL time to Xst completion: 51.00 secs
+Total CPU time to Xst completion: 51.12 secs
  
 --> 
 
-Total memory usage is 387344 kilobytes
+Total memory usage is 404028 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 1184 (   0 filtered)
+Number of warnings : 1159 (   0 filtered)
 Number of infos    :  227 (   0 filtered)
 

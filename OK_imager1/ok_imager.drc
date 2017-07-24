@@ -1,7 +1,7 @@
 Release 14.7 Drc P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Mon Jun 26 18:44:16 2017
+Fri Jul 21 17:30:37 2017
 
 drc -z OK_imager.ncd OK_imager.pcf
 
@@ -9,17 +9,14 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net icon_control0<13> is
    sourced by a combinatorial pin. This is not good design practice. Use the CE
    pin to control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:367 - The signal
-   <u_mem_if/memc3_infrastructure_inst/rst_tmp> is incomplete. The signal does
-   not drive any load pins in the design.
+   <hostIF/core0/core0/a0/cb0/BU2/U0/grf.rf/mem/gdm.dm/Mram_RAM1_RAMD_O> is
+   incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <FIFO_Patterns_cam/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fif
    o.gl0.wr/gwss.gpf.wrpf/wr_pntr_plus1_pad<0>_mand1> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <hostIF/core0/core0/a0/cb0/BU2/U0/grf.rf/mem/gdm.dm/Mram_RAM2_RAMD_O> is
-   incomplete. The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <hostIF/core0/core0/a0/cb0/BU2/U0/grf.rf/mem/gdm.dm/Mram_RAM1_RAMD_O> is
    incomplete. The signal does not drive any load pins in the design.
 INFO:PhysDesignRules:1861 - To achieve optimal frequency synthesis performance
    with the CLKFX and CLKFX180 outputs of the DCM comp DCM_SP_CLKHS, consult the
@@ -31,5 +28,5 @@ WARNING:PhysDesignRules:2410 - This design is using one or more 9K Block RAMs
    (RAMB8BWER).  9K Block RAM initialization data, both user defined and
    default, may be incorrect and should not be used.  For more information,
    please reference Xilinx Answer Record 39999.
-DRC detected 0 errors and 6 warnings.  Please see the previously displayed
+DRC detected 0 errors and 5 warnings.  Please see the previously displayed
 individual error or warning messages for more details.

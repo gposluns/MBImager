@@ -1,6 +1,6 @@
 verilog work "./../ipcore_dir/mem_if/user_design/rtl/infrastructure.v"
 verilog work "./../ipcore_dir/mem_if/user_design/rtl/memc_wrapper.v"
-verilog work "./../ipcore_dir/mem_if/user_design/rtl/mem_if.v"
+verilog work "./mem_if.v"
 verilog work "./../ipcore_dir/mem_if/user_design/rtl/mcb_controller/iodrp_controller.v"
 verilog work "./../ipcore_dir/mem_if/user_design/rtl/mcb_controller/iodrp_mcb_controller.v"
 verilog work "./../ipcore_dir/mem_if/user_design/rtl/mcb_controller/mcb_raw_wrapper.v"

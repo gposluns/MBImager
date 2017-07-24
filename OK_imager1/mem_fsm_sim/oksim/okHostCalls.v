@@ -29,7 +29,7 @@
 //    The task and operation can then be called with a:
 //       WriteToPipeIn2(8'h80, 1024);//endpoint 0x80 pipe received pipeIn2
 //------------------------------------------------------------------------
-`include "parameters.v"
+`include "params.v"
                  
 `define DNOP                  3'h0
 `define DReset                3'h1

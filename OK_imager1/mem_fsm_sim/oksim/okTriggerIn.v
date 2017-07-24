@@ -17,7 +17,7 @@ module okTriggerIn(
 	output reg  [31:0]  ep_trigger
 	);
 
-`include "parameters.v" 
+`include "params.v" 
 `include "mappings.v"
 
 reg  [31:0] eptrig;

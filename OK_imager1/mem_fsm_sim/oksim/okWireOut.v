@@ -17,7 +17,7 @@ module okWireOut(
 	input  wire [31:0]  ep_datain
 	);
 
-`include "parameters.v" 
+`include "params.v" 
 `include "mappings.v"
 
 reg  [31:0] wirehold;

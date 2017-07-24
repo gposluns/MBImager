@@ -5,14 +5,14 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Xst" timeStamp="Mon Jun 26 17:44:38 2017">
+  <application stringID="Xst" timeStamp="Thu Jun 29 15:24:32 2017">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
         <column stringID="value"/>
         <row stringID="row" value="0">
           <item stringID="variable" value="Path"/>
-          <item stringID="value" value="D:\ISE\14.7\ISE_DS\ISE\\lib\nt64;D:\ISE\14.7\ISE_DS\ISE\\bin\nt64;D:\ISE\14.7\ISE_DS\ISE\bin\nt64;D:\ISE\14.7\ISE_DS\ISE\lib\nt64;D:\ISE\14.7\ISE_DS\ISE\..\..\..\DocNav;D:\ISE\14.7\ISE_DS\PlanAhead\bin;D:\ISE\14.7\ISE_DS\EDK\bin\nt64;D:\ISE\14.7\ISE_DS\EDK\lib\nt64;D:\ISE\14.7\ISE_DS\EDK\gnu\microblaze\nt\bin;D:\ISE\14.7\ISE_DS\EDK\gnu\powerpc-eabi\nt\bin;D:\ISE\14.7\ISE_DS\EDK\gnuwin\bin;D:\ISE\14.7\ISE_DS\EDK\gnu\arm\nt\bin;D:\ISE\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_be\bin;D:\ISE\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_le\bin;D:\ISE\14.7\ISE_DS\common\bin\nt64;D:\ISE\14.7\ISE_DS\common\lib\nt64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Users\Jackie\AppData\Local\Microsoft\WindowsApps"/>
+          <item stringID="value" value="D:\ISE\14.7\ISE_DS\ISE\\lib\nt64;D:\ISE\14.7\ISE_DS\ISE\\bin\nt64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Users\Jackie\AppData\Local\Microsoft\WindowsApps"/>
         </row>
         <row stringID="row" value="1">
           <item stringID="variable" value="PATHEXT"/>
@@ -26,22 +26,10 @@
           <item stringID="variable" value="XILINXD_LICENSE_FILE"/>
           <item stringID="value" value="6062@localhost"/>
         </row>
-        <row stringID="row" value="4">
-          <item stringID="variable" value="XILINX_DSP"/>
-          <item stringID="value" value="D:\ISE\14.7\ISE_DS\ISE"/>
-        </row>
-        <row stringID="row" value="5">
-          <item stringID="variable" value="XILINX_EDK"/>
-          <item stringID="value" value="D:\ISE\14.7\ISE_DS\EDK"/>
-        </row>
-        <row stringID="row" value="6">
-          <item stringID="variable" value="XILINX_PLANAHEAD"/>
-          <item stringID="value" value="D:\ISE\14.7\ISE_DS\PlanAhead"/>
-        </row>
       </table>
       <item stringID="User_EnvOs" value="OS Information">
-        <item stringID="User_EnvOsname" value="Microsoft , 64-bit"/>
-        <item stringID="User_EnvOsrelease" value="major release  (build 9200)"/>
+        <item stringID="User_EnvOsname" value="Microsoft Windows 7 , 64-bit"/>
+        <item stringID="User_EnvOsrelease" value="major release  (build 7600)"/>
       </item>
       <item stringID="User_EnvHost" value="DESKTOP-NO742GG"/>
       <table stringID="User_EnvCpu">

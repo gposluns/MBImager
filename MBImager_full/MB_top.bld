@@ -3,10 +3,72 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 Command Line: D:\ISE\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe -intstyle
 ise -dd _ngo -sd ipcore_dir -aul -aut -nt timestamp -u -uc
-Microblaze_System_top.ucf -bm edkBmmFile.bmm -p xc6slx25t-fgg484-3 MB_top_cs.ngc
+Microblaze_System_top.ucf -bm edkBmmFile.bmm -p xc6slx25t-fgg484-3 MB_top.ngc
 MB_top.ngd
 
-Reading NGO file "D:/MBImager/MBImager_full/MB_top_cs.ngc" ...
+Reading NGO file "D:/MBImager/MBImager_full/MB_top.ngc" ...
+Loading design module "ipcore_dir/fifo_4kB.ngc"...
+Loading design module "D:\MBImager\MBImager_full/MB_SPI.ngc"...
+Loading design module
+"D:\MBImager\MBImager_full/MB_SPI_proc_sys_reset_0_wrapper.ngc"...
+Loading design module
+"D:\MBImager\MBImager_full/MB_SPI_clock_generator_0_wrapper.ngc"...
+Loading design module
+"D:\MBImager\MBImager_full/MB_SPI_generic_spi_wrapper.ngc"...
+Loading design module
+"D:\MBImager\MBImager_full/MB_SPI_microblaze_0_ilmb_wrapper.ngc"...
+Loading design module
+"D:\MBImager\MBImager_full/MB_SPI_microblaze_0_dlmb_wrapper.ngc"...
+Loading design module
+"D:\MBImager\MBImager_full/MB_SPI_axi4lite_0_wrapper.ngc"...
+Loading design module
+"D:\MBImager\MBImager_full/MB_SPI_microblaze_0_wrapper.ngc"...
+Loading design module
+"D:\MBImager\MBImager_full/MB_SPI_microblaze_0_i_bram_ctrl_wrapper.ngc"...
+Loading design module
+"D:\MBImager\MBImager_full/MB_SPI_microblaze_0_d_bram_ctrl_wrapper.ngc"...
+Loading design module
+"D:\MBImager\MBImager_full/MB_SPI_debug_module_wrapper.ngc"...
+Loading design module
+"D:\MBImager\MBImager_full/MB_SPI_microblaze_0_bram_block_wrapper.ngc"...
+Applying constraints in
+"D:\MBImager\MBImager_full/MB_SPI_microblaze_0_ilmb_wrapper.ncf" to module
+"uBlaze_SPI/MB_SPI_i/microblaze_0_ilmb"...
+Checking Constraint Associations...
+Applying constraints in
+"D:\MBImager\MBImager_full/MB_SPI_microblaze_0_dlmb_wrapper.ncf" to module
+"uBlaze_SPI/MB_SPI_i/microblaze_0_dlmb"...
+Checking Constraint Associations...
+Applying constraints in
+"D:\MBImager\MBImager_full/MB_SPI_axi4lite_0_wrapper.ncf" to module
+"uBlaze_SPI/MB_SPI_i/axi4lite_0"...
+Checking Constraint Associations...
+Applying constraints in
+"D:\MBImager\MBImager_full/MB_SPI_microblaze_0_wrapper.ncf" to module
+"uBlaze_SPI/MB_SPI_i/microblaze_0"...
+Checking Constraint Associations...
+Applying constraints in "D:\MBImager\MBImager_full/MB_SPI.ncf" to module
+"uBlaze_SPI/MB_SPI_i"...
+WARNING:ConstraintSystem:191 - The TNM 'sys_clk_pin', does not directly or
+   indirectly drive any flip-flops, latches and/or RAMS and cannot be actively
+   used by the referencing Period constraint 'TS_sys_clk_pin'. If clock manager
+   blocks are directly or indirectly driven, a new TNM constraint will not be
+   derived even though the referencing constraint is a PERIOD constraint unless
+   an output of the clock manager drives flip-flops, latches or RAMs. This TNM
+   is used in the following user PERIOD specification:
+   <TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 100000 kHz;>
+   [D:\MBImager\MBImager_full/MB_SPI.ncf(9)]
+
+WARNING:ConstraintSystem:197 - The following specification is invalid because
+   the referenced TNM constraint was removed:
+   <TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 100000 kHz;>
+   [D:\MBImager\MBImager_full/MB_SPI.ncf(9)]
+
+Checking Constraint Associations...
+INFO:NgdBuild:981 - Could not find any associations for the following
+   constraint:
+       '<NET "CLK" TNM_NET = sys_clk_pin;>
+   [D:\MBImager\MBImager_full/MB_SPI.ncf(8)]'
 Gathering constraint information from source properties...
 Done.
 
@@ -122,15 +184,7 @@ WARNING:ConstraintSystem:135 - Constraint <INST
    .clock_conv_inst/interconnect_aresetn_resync<2>_inv1_INV_0" (type=INV).
 
 WARNING:ConstraintSystem - A target design object for the Locate constraint
-   '<NET "SPI_FLASH_SS_0_OBUF" LOC = F15>' could not be found and so the Locate
-   constraint will be removed.
-
-WARNING:ConstraintSystem - A target design object for the Locate constraint
-   '<NET "SPI_FLASH_SS_3_OBUF" LOC = A20>' could not be found and so the Locate
-   constraint will be removed.
-
-WARNING:ConstraintSystem - A target design object for the Locate constraint
-   '<NET "SPI_FLASH_SS_4_OBUF" LOC = D17>' could not be found and so the Locate
+   '<NET "SPI_FLASH_SCLK_OBUF" LOC = V17>' could not be found and so the Locate
    constraint will be removed.
 
 WARNING:ConstraintSystem - A target design object for the Locate constraint
@@ -138,7 +192,7 @@ WARNING:ConstraintSystem - A target design object for the Locate constraint
    constraint will be removed.
 
 WARNING:ConstraintSystem - A target design object for the Locate constraint
-   '<NET "SPI_FLASH_SCLK_OBUF" LOC = V17>' could not be found and so the Locate
+   '<NET "SPI_FLASH_SS_0_OBUF" LOC = F15>' could not be found and so the Locate
    constraint will be removed.
 
 WARNING:ConstraintSystem - A target design object for the Locate constraint
@@ -149,8 +203,31 @@ WARNING:ConstraintSystem - A target design object for the Locate constraint
    '<NET "SPI_FLASH_SS_2_OBUF" LOC = B20>' could not be found and so the Locate
    constraint will be removed.
 
+WARNING:ConstraintSystem:119 - Constraint <NET "spi_cs<5>" LOC = C18>: This
+   constraint cannot be distributed from the design objects matching 'NET:
+   UniqueName: /MB_top/EXPANDED/spi_cs<5>' because those design objects do not
+   contain or drive any instances of the correct type.
+
 WARNING:ConstraintSystem - A target design object for the Locate constraint
-   '<NET "SPI_FLASH_MISO_IBUF" LOC = AB20>' could not be found and so the Locate
+   '<NET "spi_cs<5>" LOC = C18>' could not be found and so the Locate constraint
+   will be removed.
+
+WARNING:ConstraintSystem:119 - Constraint <NET "spi_cs<5>" DRIVE = 24>: This
+   constraint cannot be distributed from the design objects matching 'NET:
+   UniqueName: /MB_top/EXPANDED/spi_cs<5>' because those design objects do not
+   contain or drive any instances of the correct type.
+
+WARNING:ConstraintSystem:119 - Constraint <NET "spi_cs<5>" IOSTANDARD =
+   "LVCMOS33">: This constraint cannot be distributed from the design objects
+   matching 'NET: UniqueName: /MB_top/EXPANDED/spi_cs<5>' because those design
+   objects do not contain or drive any instances of the correct type.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "SPI_FLASH_SS_4_OBUF" LOC = D17>' could not be found and so the Locate
+   constraint will be removed.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "SPI_FLASH_SS_3_OBUF" LOC = A20>' could not be found and so the Locate
    constraint will be removed.
 
 WARNING:ConstraintSystem - A target design object for the Locate constraint
@@ -184,24 +261,9 @@ WARNING:ConstraintSystem:119 - Constraint <NET "spi_cs<6>" IOSTANDARD =
    matching 'NET: UniqueName: /MB_top/EXPANDED/spi_cs<6>' because those design
    objects do not contain or drive any instances of the correct type.
 
-WARNING:ConstraintSystem:119 - Constraint <NET "spi_cs<5>" LOC = C18>: This
-   constraint cannot be distributed from the design objects matching 'NET:
-   UniqueName: /MB_top/EXPANDED/spi_cs<5>' because those design objects do not
-   contain or drive any instances of the correct type.
-
 WARNING:ConstraintSystem - A target design object for the Locate constraint
-   '<NET "spi_cs<5>" LOC = C18>' could not be found and so the Locate constraint
-   will be removed.
-
-WARNING:ConstraintSystem:119 - Constraint <NET "spi_cs<5>" DRIVE = 24>: This
-   constraint cannot be distributed from the design objects matching 'NET:
-   UniqueName: /MB_top/EXPANDED/spi_cs<5>' because those design objects do not
-   contain or drive any instances of the correct type.
-
-WARNING:ConstraintSystem:119 - Constraint <NET "spi_cs<5>" IOSTANDARD =
-   "LVCMOS33">: This constraint cannot be distributed from the design objects
-   matching 'NET: UniqueName: /MB_top/EXPANDED/spi_cs<5>' because those design
-   objects do not contain or drive any instances of the correct type.
+   '<NET "SPI_FLASH_MISO_IBUF" LOC = AB20>' could not be found and so the Locate
+   constraint will be removed.
 
 WARNING:ConstraintSystem:58 - Constraint <TIMEGRP axi4lite_0_reset_source = FFS
    PADS CPUS;>: CPUS "*" does not match any design objects.
@@ -210,46 +272,6 @@ WARNING:ConstraintSystem:194 - The TNM 'axi4lite_0_reset_resync', does not
    directly or indirectly drive any flip-flops, latches and/or RAMs and is not
    actively used by any referencing constraint.
 
-WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SS_0_OBUF" LOC = F15> is
-   overridden on the design object SPI_FLASH_SS<0> by the constraint <NET
-   "SPI_FLASH_SS[0]" LOC = F15;> [Microblaze_System_top.ucf(63)].
-WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SS_0_OBUF" DRIVE = 24> is
-   overridden on the design object SPI_FLASH_SS<0> by the constraint <NET
-   "SPI_FLASH_SS[0]" DRIVE = 24;> [Microblaze_System_top.ucf(46)].
-WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SS_0_OBUF" IOSTANDARD =
-   "LVCMOS33"> is overridden on the design object SPI_FLASH_SS<0> by the
-   constraint <NET "SPI_FLASH_SS[0]" IOSTANDARD = LVCMOS33;>
-   [Microblaze_System_top.ucf(45)].
-WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SS_3_OBUF" LOC = A20> is
-   overridden on the design object SPI_FLASH_SS<3> by the constraint <NET
-   "SPI_FLASH_SS[3]" LOC = A20;> [Microblaze_System_top.ucf(60)].
-WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SS_3_OBUF" DRIVE = 24> is
-   overridden on the design object SPI_FLASH_SS<3> by the constraint <NET
-   "SPI_FLASH_SS[3]" DRIVE = 24;> [Microblaze_System_top.ucf(40)].
-WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SS_3_OBUF" IOSTANDARD =
-   "LVCMOS33"> is overridden on the design object SPI_FLASH_SS<3> by the
-   constraint <NET "SPI_FLASH_SS[3]" IOSTANDARD = LVCMOS33;>
-   [Microblaze_System_top.ucf(39)].
-WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SS_4_OBUF" LOC = D17> is
-   overridden on the design object SPI_FLASH_SS<4> by the constraint <NET
-   "SPI_FLASH_SS[4]" LOC = D17;> [Microblaze_System_top.ucf(59)].
-WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SS_4_OBUF" DRIVE = 24> is
-   overridden on the design object SPI_FLASH_SS<4> by the constraint <NET
-   "SPI_FLASH_SS[4]" DRIVE = 24;> [Microblaze_System_top.ucf(38)].
-WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SS_4_OBUF" IOSTANDARD =
-   "LVCMOS33"> is overridden on the design object SPI_FLASH_SS<4> by the
-   constraint <NET "SPI_FLASH_SS[4]" IOSTANDARD = LVCMOS33;>
-   [Microblaze_System_top.ucf(37)].
-WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_MOSI_OBUF" LOC = W18> is
-   overridden on the design object SPI_FLASH_MOSI by the constraint <NET
-   "SPI_FLASH_MOSI" LOC = W18;> [Microblaze_System_top.ucf(65)].
-WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_MOSI_OBUF" DRIVE = 24> is
-   overridden on the design object SPI_FLASH_MOSI by the constraint <NET
-   "SPI_FLASH_MOSI" DRIVE = 24;> [Microblaze_System_top.ucf(48)].
-WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_MOSI_OBUF" IOSTANDARD =
-   "LVCMOS33"> is overridden on the design object SPI_FLASH_MOSI by the
-   constraint <NET "SPI_FLASH_MOSI" IOSTANDARD = LVCMOS33;>
-   [Microblaze_System_top.ucf(47)].
 WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SCLK_OBUF" LOC = V17> is
    overridden on the design object SPI_FLASH_SCLK by the constraint <NET
    "SPI_FLASH_SCLK" LOC = V17;> [Microblaze_System_top.ucf(66)].
@@ -260,6 +282,26 @@ WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SCLK_OBUF" IOSTANDARD =
    "LVCMOS33"> is overridden on the design object SPI_FLASH_SCLK by the
    constraint <NET "SPI_FLASH_SCLK" IOSTANDARD = LVCMOS33;>
    [Microblaze_System_top.ucf(51)].
+WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_MOSI_OBUF" LOC = W18> is
+   overridden on the design object SPI_FLASH_MOSI by the constraint <NET
+   "SPI_FLASH_MOSI" LOC = W18;> [Microblaze_System_top.ucf(65)].
+WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_MOSI_OBUF" DRIVE = 24> is
+   overridden on the design object SPI_FLASH_MOSI by the constraint <NET
+   "SPI_FLASH_MOSI" DRIVE = 24;> [Microblaze_System_top.ucf(48)].
+WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_MOSI_OBUF" IOSTANDARD =
+   "LVCMOS33"> is overridden on the design object SPI_FLASH_MOSI by the
+   constraint <NET "SPI_FLASH_MOSI" IOSTANDARD = LVCMOS33;>
+   [Microblaze_System_top.ucf(47)].
+WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SS_0_OBUF" LOC = F15> is
+   overridden on the design object SPI_FLASH_SS<0> by the constraint <NET
+   "SPI_FLASH_SS[0]" LOC = F15;> [Microblaze_System_top.ucf(63)].
+WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SS_0_OBUF" DRIVE = 24> is
+   overridden on the design object SPI_FLASH_SS<0> by the constraint <NET
+   "SPI_FLASH_SS[0]" DRIVE = 24;> [Microblaze_System_top.ucf(46)].
+WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SS_0_OBUF" IOSTANDARD =
+   "LVCMOS33"> is overridden on the design object SPI_FLASH_SS<0> by the
+   constraint <NET "SPI_FLASH_SS[0]" IOSTANDARD = LVCMOS33;>
+   [Microblaze_System_top.ucf(45)].
 WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SS_1_OBUF" LOC = C19> is
    overridden on the design object SPI_FLASH_SS<1> by the constraint <NET
    "SPI_FLASH_SS[1]" LOC = C19;> [Microblaze_System_top.ucf(62)].
@@ -280,16 +322,26 @@ WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SS_2_OBUF" IOSTANDARD =
    "LVCMOS33"> is overridden on the design object SPI_FLASH_SS<2> by the
    constraint <NET "SPI_FLASH_SS[2]" IOSTANDARD = LVCMOS33;>
    [Microblaze_System_top.ucf(41)].
-WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_MISO_IBUF" LOC = AB20> is
-   overridden on the design object SPI_FLASH_MISO by the constraint <NET
-   "SPI_FLASH_MISO" LOC = AB20;> [Microblaze_System_top.ucf(64)].
-WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_MISO_IBUF" DRIVE = 24> is
-   overridden on the design object SPI_FLASH_MISO by the constraint <NET
-   "SPI_FLASH_MISO" DRIVE = 24;> [Microblaze_System_top.ucf(50)].
-WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_MISO_IBUF" IOSTANDARD =
-   "LVCMOS33"> is overridden on the design object SPI_FLASH_MISO by the
-   constraint <NET "SPI_FLASH_MISO" IOSTANDARD = LVCMOS33;>
-   [Microblaze_System_top.ucf(49)].
+WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SS_4_OBUF" LOC = D17> is
+   overridden on the design object SPI_FLASH_SS<4> by the constraint <NET
+   "SPI_FLASH_SS[4]" LOC = D17;> [Microblaze_System_top.ucf(59)].
+WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SS_4_OBUF" DRIVE = 24> is
+   overridden on the design object SPI_FLASH_SS<4> by the constraint <NET
+   "SPI_FLASH_SS[4]" DRIVE = 24;> [Microblaze_System_top.ucf(38)].
+WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SS_4_OBUF" IOSTANDARD =
+   "LVCMOS33"> is overridden on the design object SPI_FLASH_SS<4> by the
+   constraint <NET "SPI_FLASH_SS[4]" IOSTANDARD = LVCMOS33;>
+   [Microblaze_System_top.ucf(37)].
+WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SS_3_OBUF" LOC = A20> is
+   overridden on the design object SPI_FLASH_SS<3> by the constraint <NET
+   "SPI_FLASH_SS[3]" LOC = A20;> [Microblaze_System_top.ucf(60)].
+WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SS_3_OBUF" DRIVE = 24> is
+   overridden on the design object SPI_FLASH_SS<3> by the constraint <NET
+   "SPI_FLASH_SS[3]" DRIVE = 24;> [Microblaze_System_top.ucf(40)].
+WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SS_3_OBUF" IOSTANDARD =
+   "LVCMOS33"> is overridden on the design object SPI_FLASH_SS<3> by the
+   constraint <NET "SPI_FLASH_SS[3]" IOSTANDARD = LVCMOS33;>
+   [Microblaze_System_top.ucf(39)].
 WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SS_7_OBUF" LOC = N1> is
    overridden on the design object SPI_FLASH_SS<7> by the constraint <NET
    "SPI_FLASH_SS[7]" LOC = N1;> [Microblaze_System_top.ucf(56)].
@@ -320,6 +372,16 @@ WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_SS_9_OBUF" IOSTANDARD =
    "LVCMOS33"> is overridden on the design object SPI_FLASH_SS<9> by the
    constraint <NET "SPI_FLASH_SS[9]" IOSTANDARD = LVCMOS33;>
    [Microblaze_System_top.ucf(27)].
+WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_MISO_IBUF" LOC = AB20> is
+   overridden on the design object SPI_FLASH_MISO by the constraint <NET
+   "SPI_FLASH_MISO" LOC = AB20;> [Microblaze_System_top.ucf(64)].
+WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_MISO_IBUF" DRIVE = 24> is
+   overridden on the design object SPI_FLASH_MISO by the constraint <NET
+   "SPI_FLASH_MISO" DRIVE = 24;> [Microblaze_System_top.ucf(50)].
+WARNING:NgdBuild:1012 - The constraint <NET "SPI_FLASH_MISO_IBUF" IOSTANDARD =
+   "LVCMOS33"> is overridden on the design object SPI_FLASH_MISO by the
+   constraint <NET "SPI_FLASH_MISO" IOSTANDARD = LVCMOS33;>
+   [Microblaze_System_top.ucf(49)].
 Done...
 
 Processing BMM file "edkBmmFile.bmm" ...
@@ -339,12 +401,12 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings:  73
+  Number of warnings:  75
 
-Total memory usage is 246960 kilobytes
+Total memory usage is 275672 kilobytes
 
 Writing NGD file "MB_top.ngd" ...
-Total REAL time to NGDBUILD completion:  12 sec
-Total CPU time to NGDBUILD completion:   9 sec
+Total REAL time to NGDBUILD completion:  57 sec
+Total CPU time to NGDBUILD completion:   54 sec
 
 Writing NGDBUILD log file "MB_top.bld"...

@@ -137,10 +137,12 @@ module load_pattern(
          endcase
 		end
 	
-	//assign Pat_out = Pat_i;
+//	assign Pat_out = Pat_i;
 	genvar i;
 	generate
-	for (i=0; i<10; i=i+1) assign Pat_out[i] = Pat_i[9-i];// && 10'h000;
+	for (i=0; i<10; i=i+1) begin
+		assign Pat_out[i] = Pat_i[9-i];// && 10'h000;
+	end
 	endgenerate
 	
 endmodule

@@ -20,7 +20,7 @@ module okBTPipeIn(
 	input  wire         ep_ready
 	);
 
-`include "parameters.v" 
+`include "params.v" 
 `include "mappings.v"
 
 assign ep_blockstrobe              = ti_blockstrobe & (ti_addr == ep_addr);

@@ -18,7 +18,7 @@ module okPipeOut(
 	input  wire [31:0]  ep_datain
 	);
 
-`include "parameters.v" 
+`include "params.v" 
 `include "mappings.v"
 
 assign okEH[okEH_DATAH:okEH_DATAL] = (ti_addr == ep_addr) ? (ep_datain) : (0);

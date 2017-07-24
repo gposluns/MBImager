@@ -60,7 +60,7 @@
     <property xil_pn:name="Change Device Speed To" xil_pn:value="-2" xil_pn:valueState="default"/>
     <property xil_pn:name="Change Device Speed To Post Trace" xil_pn:value="-2" xil_pn:valueState="default"/>
     <property xil_pn:name="Combinatorial Logic Optimization" xil_pn:value="false" xil_pn:valueState="default"/>
-    <property xil_pn:name="Compile EDK Simulation Library" xil_pn:value="true" xil_pn:valueState="default"/>
+    <property xil_pn:name="Compile EDK Simulation Library" xil_pn:value="false" xil_pn:valueState="default"/>
     <property xil_pn:name="Compile SIMPRIM (Timing) Simulation Library" xil_pn:value="true" xil_pn:valueState="default"/>
     <property xil_pn:name="Compile UNISIM (Functional) Simulation Library" xil_pn:value="true" xil_pn:valueState="default"/>
     <property xil_pn:name="Compile XilinxCoreLib (CORE Generator) Simulation Library" xil_pn:value="true" xil_pn:valueState="default"/>
@@ -383,8 +383,8 @@
     <property xil_pn:name="PROP_PostSynthSimTop" xil_pn:value="" xil_pn:valueState="default"/>
     <property xil_pn:name="PROP_PostXlateSimTop" xil_pn:value="" xil_pn:valueState="default"/>
     <property xil_pn:name="PROP_PreSynthesis" xil_pn:value="PreSynthesis" xil_pn:valueState="default"/>
-    <property xil_pn:name="PROP_intProjectCreationTimestamp" xil_pn:value="2017-06-26T18:05:54" xil_pn:valueState="non-default"/>
-    <property xil_pn:name="PROP_intWbtProjectID" xil_pn:value="8A648D230F1B437B8B89253CD4387DFE" xil_pn:valueState="non-default"/>
+    <property xil_pn:name="PROP_intProjectCreationTimestamp" xil_pn:value="2017-06-29T15:50:54" xil_pn:valueState="non-default"/>
+    <property xil_pn:name="PROP_intWbtProjectID" xil_pn:value="89426D0FBCF1401993C3D31A87A0895A" xil_pn:valueState="non-default"/>
     <property xil_pn:name="PROP_intWorkingDirLocWRTProjDir" xil_pn:value="Same" xil_pn:valueState="non-default"/>
     <property xil_pn:name="PROP_intWorkingDirUsed" xil_pn:value="No" xil_pn:valueState="non-default"/>
   </properties>

@@ -92,8 +92,12 @@ module mem_fsm(
 	wire infifo_empty;
 	wire [31:0] infifo_datain;
 	
+	//due to fifos w/ different width
+	//assign infifo_datain[31:16] = {pipein_data[11:8] ,pipein_data[15:12], pipein_data[3:0], pipein_data[7:4]};
+	//assign infifo_datain[15:0] = {pipeiein_data[11:8] ,pipein_data[15:12], pipein_data[3:0], pipein_data[7:4]};
+	assign infifo_datain[31:16] = {pipein_data[7:0], pipein_data[15:8]};
+	assign infifo_datain[15:0] = { pipein_data[23:16], pipein_data[31:24]};
 	
-	assign infifo_datain = pipein_data;// {pipein_data[15:0], pipein_data[31:16]};
 	assign c3_p0_wr_mask = 8'h00;
 	//num pat + start + last
 	//one pat is 2 bytes (16 channels) * 18*160
