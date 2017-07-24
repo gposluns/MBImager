@@ -63,7 +63,7 @@ module mod_signal_gen(
 		.OPTION_SEL(OPTION_SEL),
 		.CLK_IN(W_SELECTED_FREQ),							//for higher frequencies, resolution of phase and duty change lowers
 		.FREQ_SEL(3'b000),									//100kHz-4MHz: 5-bit resolution ps, 4-bit resolution duty
-		.PHASE_SEL(5'b11111),								//10MHz & 25MHz: 4-bit resolution ps, 3-bit resolution duty
+		.PHASE_SEL(PHASE_SEL),								//10MHz & 25MHz: 4-bit resolution ps, 3-bit resolution duty
 		.DUTY_SEL(DUTY_SEL),									//50MHz: 3-bit resolution ps, 2-bit resolution duty
 		.FLAG_HIGH_FREQ(FLAG_HIGH_FREQ),
 		.DRAIN_B(DRAIN_B),

@@ -47,7 +47,7 @@ module counter_nonoverlap_clkgen(
 		if (count == {PHASE_SEL,12'h000} - 1'b1 - {DUTY_SEL,12'h000}) R_CLK_OUT_MOD[0] = 1;
 		if (count == {PHASE_SEL,12'h000} - 17'h10000) R_CLK_OUT_MODN[0] = 0;
 		if (count == {PHASE_SEL,12'h000} - 17'h10000 - 1'b1 - {DUTY_SEL,12'h000}) R_CLK_OUT_MODN[0] = 1;
-		if ((~DRAIN_B) & (count == {PHASE_SEL,12'h000} - 4'hF - {DUTY_SEL,12'h000})) ;
+		if ((~DRAIN_B) && (count == {PHASE_SEL,12'h000} - 5'hFF - {DUTY_SEL,12'h000})) ;
 		else count = count - 1'b1;
 	end
 	

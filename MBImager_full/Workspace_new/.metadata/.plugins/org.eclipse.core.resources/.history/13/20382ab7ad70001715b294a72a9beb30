@@ -139,7 +139,7 @@ int main(void)
 		}
 
 	//	Vref#2 config
-		Status = SpiPotWrite(&SpiInstance, SPI_DEVICE_ID, 1, 150, 1);
+		Status = SpiPotWrite(&SpiInstance, SPI_DEVICE_ID, 1, 110, 1);
 	//	Status = SpiPotWrite(&SpiInstance, SPI_DEVICE_ID, 1, 125, 1);
 		if (Status != XST_SUCCESS) {
 			print("SpiPot1Write Failed");
@@ -169,7 +169,7 @@ int main(void)
 		}
 
 	//	Vref#4 config
-		Status = SpiPotWrite(&SpiInstance, SPI_DEVICE_ID, 3, 110, 1);
+		Status = SpiPotWrite(&SpiInstance, SPI_DEVICE_ID, 3, 120, 1);
 	//	Status = SpiPotWrite(&SpiInstance, SPI_DEVICE_ID, 3, 175, 1);
 		if (Status != XST_SUCCESS) {
 			print("SpiPot1Write Failed");
