@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue May 30 11:53:23 2017
+// Written by: Map P.20131013 on Thu Jul 20 15:34:26 2017
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -16,7 +16,14 @@ COMP "MSTREAM<8>" LOCATE = SITE "A14" LEVEL 1;
 COMP "MSTREAM<9>" LOCATE = SITE "C11" LEVEL 1;
 COMP "OK_DRAIN_B" LOCATE = SITE "C6" LEVEL 1;
 COMP "CLKM" LOCATE = SITE "A18" LEVEL 1;
+COMP "OPTION_SEL<0>" LOCATE = SITE "D7" LEVEL 1;
+COMP "OPTION_SEL<1>" LOCATE = SITE "D10" LEVEL 1;
 COMP "okAA" LOCATE = SITE "W11" LEVEL 1;
+COMP "PHASE_SEL<0>" LOCATE = SITE "C9" LEVEL 1;
+COMP "PHASE_SEL<1>" LOCATE = SITE "A10" LEVEL 1;
+COMP "PHASE_SEL<2>" LOCATE = SITE "B12" LEVEL 1;
+COMP "PHASE_SEL<3>" LOCATE = SITE "D8" LEVEL 1;
+COMP "PHASE_SEL<4>" LOCATE = SITE "C10" LEVEL 1;
 COMP "MSTREAM<10>" LOCATE = SITE "A16" LEVEL 1;
 COMP "okUHU<10>" LOCATE = SITE "W4" LEVEL 1;
 COMP "okUHU<11>" LOCATE = SITE "AB6" LEVEL 1;
@@ -1140,7 +1147,71 @@ TIMEGRP hostIF_dcm0_clk0 = BEL "hostIF/regctrlout1" BEL "hostIF/regctrlout0"
         "fifo_databuf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_3"
         BEL
         "fifo_databuf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_2"
-        BEL "wire15/ep_datahold_0" BEL "wire15/ep_datahold_1" BEL
+        BEL "okOPTION_SEL/ep_datahold_0" BEL "okOPTION_SEL/ep_datahold_1" BEL
+        "okOPTION_SEL/ep_datahold_2" BEL "okOPTION_SEL/ep_datahold_3" BEL
+        "okOPTION_SEL/ep_datahold_4" BEL "okOPTION_SEL/ep_datahold_5" BEL
+        "okOPTION_SEL/ep_datahold_6" BEL "okOPTION_SEL/ep_datahold_7" BEL
+        "okOPTION_SEL/ep_datahold_8" BEL "okOPTION_SEL/ep_datahold_9" BEL
+        "okOPTION_SEL/ep_datahold_10" BEL "okOPTION_SEL/ep_datahold_11" BEL
+        "okOPTION_SEL/ep_datahold_12" BEL "okOPTION_SEL/ep_datahold_13" BEL
+        "okOPTION_SEL/ep_datahold_14" BEL "okOPTION_SEL/ep_datahold_15" BEL
+        "okOPTION_SEL/ep_datahold_16" BEL "okOPTION_SEL/ep_datahold_17" BEL
+        "okOPTION_SEL/ep_datahold_18" BEL "okOPTION_SEL/ep_datahold_19" BEL
+        "okOPTION_SEL/ep_datahold_20" BEL "okOPTION_SEL/ep_datahold_21" BEL
+        "okOPTION_SEL/ep_datahold_22" BEL "okOPTION_SEL/ep_datahold_23" BEL
+        "okOPTION_SEL/ep_datahold_24" BEL "okOPTION_SEL/ep_datahold_25" BEL
+        "okOPTION_SEL/ep_datahold_26" BEL "okOPTION_SEL/ep_datahold_27" BEL
+        "okOPTION_SEL/ep_datahold_28" BEL "okOPTION_SEL/ep_datahold_29" BEL
+        "okOPTION_SEL/ep_datahold_30" BEL "okOPTION_SEL/ep_datahold_31" BEL
+        "okOPTION_SEL/ep_dataout_0" BEL "okOPTION_SEL/ep_dataout_1" BEL
+        "okOPTION_SEL/ep_dataout_2" BEL "okOPTION_SEL/ep_dataout_3" BEL
+        "okOPTION_SEL/ep_dataout_4" BEL "okOPTION_SEL/ep_dataout_5" BEL
+        "okOPTION_SEL/ep_dataout_6" BEL "okOPTION_SEL/ep_dataout_7" BEL
+        "okOPTION_SEL/ep_dataout_8" BEL "okOPTION_SEL/ep_dataout_9" BEL
+        "okOPTION_SEL/ep_dataout_10" BEL "okOPTION_SEL/ep_dataout_11" BEL
+        "okOPTION_SEL/ep_dataout_12" BEL "okOPTION_SEL/ep_dataout_13" BEL
+        "okOPTION_SEL/ep_dataout_14" BEL "okOPTION_SEL/ep_dataout_15" BEL
+        "okOPTION_SEL/ep_dataout_16" BEL "okOPTION_SEL/ep_dataout_17" BEL
+        "okOPTION_SEL/ep_dataout_18" BEL "okOPTION_SEL/ep_dataout_19" BEL
+        "okOPTION_SEL/ep_dataout_20" BEL "okOPTION_SEL/ep_dataout_21" BEL
+        "okOPTION_SEL/ep_dataout_22" BEL "okOPTION_SEL/ep_dataout_23" BEL
+        "okOPTION_SEL/ep_dataout_24" BEL "okOPTION_SEL/ep_dataout_25" BEL
+        "okOPTION_SEL/ep_dataout_26" BEL "okOPTION_SEL/ep_dataout_27" BEL
+        "okOPTION_SEL/ep_dataout_28" BEL "okOPTION_SEL/ep_dataout_29" BEL
+        "okOPTION_SEL/ep_dataout_30" BEL "okOPTION_SEL/ep_dataout_31" BEL
+        "okPHASE_SEL/ep_datahold_0" BEL "okPHASE_SEL/ep_datahold_1" BEL
+        "okPHASE_SEL/ep_datahold_2" BEL "okPHASE_SEL/ep_datahold_3" BEL
+        "okPHASE_SEL/ep_datahold_4" BEL "okPHASE_SEL/ep_datahold_5" BEL
+        "okPHASE_SEL/ep_datahold_6" BEL "okPHASE_SEL/ep_datahold_7" BEL
+        "okPHASE_SEL/ep_datahold_8" BEL "okPHASE_SEL/ep_datahold_9" BEL
+        "okPHASE_SEL/ep_datahold_10" BEL "okPHASE_SEL/ep_datahold_11" BEL
+        "okPHASE_SEL/ep_datahold_12" BEL "okPHASE_SEL/ep_datahold_13" BEL
+        "okPHASE_SEL/ep_datahold_14" BEL "okPHASE_SEL/ep_datahold_15" BEL
+        "okPHASE_SEL/ep_datahold_16" BEL "okPHASE_SEL/ep_datahold_17" BEL
+        "okPHASE_SEL/ep_datahold_18" BEL "okPHASE_SEL/ep_datahold_19" BEL
+        "okPHASE_SEL/ep_datahold_20" BEL "okPHASE_SEL/ep_datahold_21" BEL
+        "okPHASE_SEL/ep_datahold_22" BEL "okPHASE_SEL/ep_datahold_23" BEL
+        "okPHASE_SEL/ep_datahold_24" BEL "okPHASE_SEL/ep_datahold_25" BEL
+        "okPHASE_SEL/ep_datahold_26" BEL "okPHASE_SEL/ep_datahold_27" BEL
+        "okPHASE_SEL/ep_datahold_28" BEL "okPHASE_SEL/ep_datahold_29" BEL
+        "okPHASE_SEL/ep_datahold_30" BEL "okPHASE_SEL/ep_datahold_31" BEL
+        "okPHASE_SEL/ep_dataout_0" BEL "okPHASE_SEL/ep_dataout_1" BEL
+        "okPHASE_SEL/ep_dataout_2" BEL "okPHASE_SEL/ep_dataout_3" BEL
+        "okPHASE_SEL/ep_dataout_4" BEL "okPHASE_SEL/ep_dataout_5" BEL
+        "okPHASE_SEL/ep_dataout_6" BEL "okPHASE_SEL/ep_dataout_7" BEL
+        "okPHASE_SEL/ep_dataout_8" BEL "okPHASE_SEL/ep_dataout_9" BEL
+        "okPHASE_SEL/ep_dataout_10" BEL "okPHASE_SEL/ep_dataout_11" BEL
+        "okPHASE_SEL/ep_dataout_12" BEL "okPHASE_SEL/ep_dataout_13" BEL
+        "okPHASE_SEL/ep_dataout_14" BEL "okPHASE_SEL/ep_dataout_15" BEL
+        "okPHASE_SEL/ep_dataout_16" BEL "okPHASE_SEL/ep_dataout_17" BEL
+        "okPHASE_SEL/ep_dataout_18" BEL "okPHASE_SEL/ep_dataout_19" BEL
+        "okPHASE_SEL/ep_dataout_20" BEL "okPHASE_SEL/ep_dataout_21" BEL
+        "okPHASE_SEL/ep_dataout_22" BEL "okPHASE_SEL/ep_dataout_23" BEL
+        "okPHASE_SEL/ep_dataout_24" BEL "okPHASE_SEL/ep_dataout_25" BEL
+        "okPHASE_SEL/ep_dataout_26" BEL "okPHASE_SEL/ep_dataout_27" BEL
+        "okPHASE_SEL/ep_dataout_28" BEL "okPHASE_SEL/ep_dataout_29" BEL
+        "okPHASE_SEL/ep_dataout_30" BEL "okPHASE_SEL/ep_dataout_31" BEL
+        "wire15/ep_datahold_0" BEL "wire15/ep_datahold_1" BEL
         "wire15/ep_datahold_2" BEL "wire15/ep_datahold_3" BEL
         "wire15/ep_datahold_4" BEL "wire15/ep_datahold_5" BEL
         "wire15/ep_datahold_6" BEL "wire15/ep_datahold_7" BEL
@@ -2672,55 +2743,52 @@ TIMEGRP hostIF_dcm0_clk0 = BEL "hostIF/regctrlout1" BEL "hostIF/regctrlout0"
         "hostIF/core0/core0/a0/pc0/upper_reg_banks_RAMD" BEL
         "hostIF/dcm0_bufg" PIN "SP6_INS_BUFIO2FB_DCM_ML_BUFIO2FB_3_pins<1>"
         PIN "hostIF/dcm0_pins<1>";
-PIN ROImager_inst/Mmult_n0100_pins<110> = BEL "ROImager_inst/Mmult_n0100"
+PIN ROImager_inst/Mmult_n0114_pins<110> = BEL "ROImager_inst/Mmult_n0114"
         PINNAME CLK;
 PIN ODDR2_CLKMPRE_IO_pins<2> = BEL "ODDR2_CLKMPRE_IO" PINNAME CK1;
-PIN ROImager_inst/Mmult_n01001_pins<110> = BEL "ROImager_inst/Mmult_n01001"
+PIN ROImager_inst/Mmult_n01141_pins<110> = BEL "ROImager_inst/Mmult_n01141"
         PINNAME CLK;
 TIMEGRP CLKMPRE_int = BEL "ROImager_inst/state_FSM_FFd1" BEL
-        "ROImager_inst/state_FSM_FFd2" BEL "ROImager_inst/state_FSM_FFd4" BEL
-        "ROImager_inst/state_FSM_FFd5" BEL "ROImager_inst/state_FSM_FFd3" BEL
+        "ROImager_inst/state_FSM_FFd2" BEL "ROImager_inst/state_FSM_FFd3" BEL
+        "ROImager_inst/state_FSM_FFd4" BEL "ROImager_inst/state_FSM_FFd5" BEL
         "ROImager_inst/state_FSM_FFd6" PIN
-        "ROImager_inst/Mmult_n0100_pins<110>" BEL "ROImager_inst/fsm_stat_i_6"
-        BEL "ROImager_inst/fsm_stat_i_3" BEL "ROImager_inst/fsm_stat_i_1" BEL
-        "ROImager_inst/OK_PIXRES_GLOB" BEL "ROImager_inst/FSMIND1_i" BEL
-        "ROImager_inst/OK_DRAIN_B" BEL "ROImager_inst/count_subsc_31" BEL
-        "ROImager_inst/count_subsc_30" BEL "ROImager_inst/count_subsc_29" BEL
-        "ROImager_inst/count_subsc_28" BEL "ROImager_inst/count_subsc_27" BEL
-        "ROImager_inst/count_subsc_26" BEL "ROImager_inst/count_subsc_25" BEL
-        "ROImager_inst/count_subsc_24" BEL "ROImager_inst/count_subsc_23" BEL
-        "ROImager_inst/count_subsc_22" BEL "ROImager_inst/count_subsc_21" BEL
-        "ROImager_inst/count_subsc_20" BEL "ROImager_inst/count_subsc_19" BEL
-        "ROImager_inst/count_subsc_18" BEL "ROImager_inst/count_subsc_17" BEL
-        "ROImager_inst/count_subsc_16" BEL "ROImager_inst/count_subsc_15" BEL
-        "ROImager_inst/count_subsc_14" BEL "ROImager_inst/count_subsc_13" BEL
-        "ROImager_inst/count_subsc_12" BEL "ROImager_inst/count_subsc_11" BEL
-        "ROImager_inst/count_subsc_10" BEL "ROImager_inst/count_subsc_9" BEL
-        "ROImager_inst/count_subsc_8" BEL "ROImager_inst/count_subsc_7" BEL
-        "ROImager_inst/count_subsc_6" BEL "ROImager_inst/count_subsc_5" BEL
-        "ROImager_inst/count_subsc_4" BEL "ROImager_inst/count_subsc_3" BEL
-        "ROImager_inst/count_subsc_2" BEL "ROImager_inst/count_subsc_1" BEL
-        "ROImager_inst/count_subsc_0" BEL "ROImager_inst/count_mpre_31" BEL
-        "ROImager_inst/count_mpre_30" BEL "ROImager_inst/count_mpre_29" BEL
-        "ROImager_inst/count_mpre_28" BEL "ROImager_inst/count_mpre_27" BEL
-        "ROImager_inst/count_mpre_26" BEL "ROImager_inst/count_mpre_25" BEL
-        "ROImager_inst/count_mpre_24" BEL "ROImager_inst/count_mpre_23" BEL
-        "ROImager_inst/count_mpre_22" BEL "ROImager_inst/count_mpre_21" BEL
-        "ROImager_inst/count_mpre_20" BEL "ROImager_inst/count_mpre_19" BEL
-        "ROImager_inst/count_mpre_18" BEL "ROImager_inst/count_mpre_17" BEL
-        "ROImager_inst/count_mpre_16" BEL "ROImager_inst/count_mpre_15" BEL
-        "ROImager_inst/count_mpre_14" BEL "ROImager_inst/count_mpre_13" BEL
-        "ROImager_inst/count_mpre_12" BEL "ROImager_inst/count_mpre_11" BEL
-        "ROImager_inst/count_mpre_10" BEL "ROImager_inst/count_mpre_9" BEL
+        "ROImager_inst/Mmult_n0114_pins<110>" BEL "ROImager_inst/OK_DRAIN_B"
+        BEL "ROImager_inst/OK_PIXRES_GLOB" BEL "ROImager_inst/count_subsc_31"
+        BEL "ROImager_inst/count_subsc_30" BEL "ROImager_inst/count_subsc_29"
+        BEL "ROImager_inst/count_subsc_28" BEL "ROImager_inst/count_subsc_27"
+        BEL "ROImager_inst/count_subsc_26" BEL "ROImager_inst/count_subsc_25"
+        BEL "ROImager_inst/count_subsc_24" BEL "ROImager_inst/count_subsc_23"
+        BEL "ROImager_inst/count_subsc_22" BEL "ROImager_inst/count_subsc_21"
+        BEL "ROImager_inst/count_subsc_20" BEL "ROImager_inst/count_subsc_19"
+        BEL "ROImager_inst/count_subsc_18" BEL "ROImager_inst/count_subsc_17"
+        BEL "ROImager_inst/count_subsc_16" BEL "ROImager_inst/count_subsc_15"
+        BEL "ROImager_inst/count_subsc_14" BEL "ROImager_inst/count_subsc_13"
+        BEL "ROImager_inst/count_subsc_12" BEL "ROImager_inst/count_subsc_11"
+        BEL "ROImager_inst/count_subsc_10" BEL "ROImager_inst/count_subsc_9"
+        BEL "ROImager_inst/count_subsc_8" BEL "ROImager_inst/count_subsc_7"
+        BEL "ROImager_inst/count_subsc_6" BEL "ROImager_inst/count_subsc_5"
+        BEL "ROImager_inst/count_subsc_4" BEL "ROImager_inst/count_subsc_3"
+        BEL "ROImager_inst/count_subsc_2" BEL "ROImager_inst/count_subsc_1"
+        BEL "ROImager_inst/count_subsc_0" BEL "ROImager_inst/count_mpre_31"
+        BEL "ROImager_inst/count_mpre_30" BEL "ROImager_inst/count_mpre_29"
+        BEL "ROImager_inst/count_mpre_28" BEL "ROImager_inst/count_mpre_27"
+        BEL "ROImager_inst/count_mpre_26" BEL "ROImager_inst/count_mpre_25"
+        BEL "ROImager_inst/count_mpre_24" BEL "ROImager_inst/count_mpre_23"
+        BEL "ROImager_inst/count_mpre_22" BEL "ROImager_inst/count_mpre_21"
+        BEL "ROImager_inst/count_mpre_20" BEL "ROImager_inst/count_mpre_19"
+        BEL "ROImager_inst/count_mpre_18" BEL "ROImager_inst/count_mpre_17"
+        BEL "ROImager_inst/count_mpre_16" BEL "ROImager_inst/count_mpre_15"
+        BEL "ROImager_inst/count_mpre_14" BEL "ROImager_inst/count_mpre_13"
+        BEL "ROImager_inst/count_mpre_12" BEL "ROImager_inst/count_mpre_11"
+        BEL "ROImager_inst/count_mpre_10" BEL "ROImager_inst/count_mpre_9" BEL
         "ROImager_inst/count_mpre_8" BEL "ROImager_inst/count_mpre_7" BEL
         "ROImager_inst/count_mpre_6" BEL "ROImager_inst/count_mpre_5" BEL
         "ROImager_inst/count_mpre_4" BEL "ROImager_inst/count_mpre_3" BEL
         "ROImager_inst/count_mpre_2" BEL "ROImager_inst/count_mpre_1" BEL
-        "ROImager_inst/count_mpre_0" BEL "ROImager_inst/FSMIND0ACK_i" BEL
-        "CLKMPRE_int_BUFG" BEL "ROImager_inst/STREAM" BEL
-        "ROImager_inst/fsm_stat_i_5" BEL "ROImager_inst/fsm_stat_i_4" BEL
-        "ROImager_inst/fsm_stat_i_2" PIN "ODDR2_CLKMPRE_IO_pins<2>" PIN
-        "ROImager_inst/Mmult_n01001_pins<110>";
+        "ROImager_inst/count_mpre_0" BEL "ROImager_inst/FSMIND1_i" BEL
+        "ROImager_inst/FSMIND0ACK_i" BEL "CLKMPRE_int_BUFG" BEL
+        "ROImager_inst/STREAM" PIN "ODDR2_CLKMPRE_IO_pins<2>" PIN
+        "ROImager_inst/Mmult_n01141_pins<110>";
 PIN
         FIFO_Patterns/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram_pins<26>
         = BEL
@@ -3016,13 +3084,13 @@ TS_okHostClk = PERIOD TIMEGRP "okHostClk" 9.92 ns HIGH 50%;
 TS_okSysClk = PERIOD TIMEGRP "okSysClk" 10 ns HIGH 50%;
 TS_hostIF_dcm0_clk0 = PERIOD TIMEGRP "hostIF_dcm0_clk0" TS_okHostClk PHASE
         -0.93 ns HIGH 50%;
+TS_CLK_HS = PERIOD TIMEGRP "CLK_HS" TS_okSysClk HIGH 50%;
 TS_CLK_HS180 = PERIOD TIMEGRP "CLK_HS180" TS_okSysClk PHASE 5 ns HIGH 50%;
 TS_sys_clkDV = PERIOD TIMEGRP "sys_clkDV" TS_okSysClk * 3 HIGH 50%;
-TS_CLK_HS = PERIOD TIMEGRP "CLK_HS" TS_okSysClk HIGH 50%;
-TS_CLKMPRE_int180 = PERIOD TIMEGRP "CLKMPRE_int180" TS_sys_clkDV / 0.166666667
-        PHASE 90 ns HIGH 50%;
 TS_CLKMPRE_int = PERIOD TIMEGRP "CLKMPRE_int" TS_sys_clkDV / 0.166666667 HIGH
         50%;
+TS_CLKMPRE_int180 = PERIOD TIMEGRP "CLKMPRE_int180" TS_sys_clkDV / 0.166666667
+        PHASE 90 ns HIGH 50%;
 TIMEGRP "okHostINOUT_grp" OFFSET = IN 2 ns VALID 4 ns BEFORE COMP "okUH<0>"
         "RISING";
 TIMEGRP "okHostINOUT_grp" OFFSET = OUT 8 ns AFTER COMP "okUH<0>" "RISING";

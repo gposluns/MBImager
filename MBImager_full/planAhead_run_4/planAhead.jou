@@ -1,0 +1,11 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Wed Jul 19 18:38:18 2017
+# Process ID: 4428
+# Log file: D:/Shichen_Lu/MBImager/MBImager/MBImager_full/planAhead_run_4/planAhead.log
+# Journal file: D:/Shichen_Lu/MBImager/MBImager/MBImager_full/planAhead_run_4/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source D:/Shichen_Lu/MBImager/MBImager/MBImager_full/pa.fromNetlist.tcl
+refresh_design

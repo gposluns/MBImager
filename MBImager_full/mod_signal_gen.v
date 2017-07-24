@@ -19,6 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module mod_signal_gen(
+	input [1:0]		OPTION_SEL,
 	input 			USER_CLOCK,			//clk input
 	input	[2:0] 	FREQ_SEL,			//OK board input for frequency selection of generated signals
 	input [4:0]		PHASE_SEL,			//OK board input for phase selection between CLK and CLKL
@@ -26,7 +27,9 @@ module mod_signal_gen(
 	input				DRAIN_B,				//drain_b reset input
 	output 			MBI_CLK_MOD,		//clk output to MB imager board
 	output 			MBI_CLKN_MOD,		//clkn output to MB imager board, 180deg phase shifted from clk
-	output 			MBI_CLKL_MOD		//clkl output to MB imager board, for light source
+	output 			MBI_CLKL_MOD,		//clkl output to MB imager board, for light source
+	output			MBI_CLK_MOD_2,		//FOR TESTING testmodimp
+	output			MBI_CLKN_MOD_2
 );
 	
 	wire				W_CLK_MOD;
@@ -51,18 +54,19 @@ module mod_signal_gen(
 
 	BUFG BUFG_freqmux(							//buffer for selected freqchng output
 		.O(W_SELECTED_FREQ),
-		.I(W_FREQ[FREQ_SEL])
+		.I(W_FREQ[0])
 	);
 
 //	assign W_CLK_MOD = W_FREQ[FREQ_SEL];
 	
 	counter_nonoverlap_clkgen nonoverlap_clkgen (	//generates clk, clkn, clkl using counters and operates phase and duty changes
+		.OPTION_SEL(OPTION_SEL),
 		.CLK_IN(W_SELECTED_FREQ),							//for higher frequencies, resolution of phase and duty change lowers
-		.FREQ_SEL(FREQ_SEL),									//100kHz-4MHz: 5-bit resolution ps, 4-bit resolution duty
-		.PHASE_SEL(PHASE_SEL),								//10MHz & 25MHz: 4-bit resolution ps, 3-bit resolution duty
-		.DUTY_SEL(1'b1110),									//50MHz: 3-bit resolution ps, 2-bit resolution duty
+		.FREQ_SEL(3'b000),									//100kHz-4MHz: 5-bit resolution ps, 4-bit resolution duty
+		.PHASE_SEL(5'b11111),								//10MHz & 25MHz: 4-bit resolution ps, 3-bit resolution duty
+		.DUTY_SEL(DUTY_SEL),									//50MHz: 3-bit resolution ps, 2-bit resolution duty
 		.FLAG_HIGH_FREQ(FLAG_HIGH_FREQ),
-		.DRAIN_B(1'b1),
+		.DRAIN_B(DRAIN_B),
 		.CLK_OUT_MOD(W_CLK_MOD),
 		.CLK_OUT_MODN(W_CLKN_MOD),
 		.CLK_OUT_MODL(W_CLKL_MOD)
@@ -108,6 +112,36 @@ module mod_signal_gen(
 		.Q(MBI_CLKL_MOD), // 1-bit DDR output data
 		.C0(~W_CLKL_MOD), // 1-bit clock input
 		.C1(W_CLKL_MOD), // 1-bit clock input
+		.CE(1'b1), // 1-bit clock enable input
+		.D0(1'b0), // 1-bit data input (associated with C0)
+		.D1(1'b1), // 1-bit data input (associated with C1)
+		.R(1'b0), // 1-bit reset input
+		.S(1'b0) // 1-bit set input
+	);
+	
+	ODDR2 #(	//FOR TESTING testmodimp
+		.DDR_ALIGNMENT("NONE"), // Sets output alignment to "NONE", "C0" or "C1"
+		.INIT(1'b0), // Sets initial state of the Q output to 1'b0 or 1'b1
+		.SRTYPE("SYNC") // Specifies "SYNC" or "ASYNC" set/reset
+		) ODDR2_CLK_MOD_buf_temp (
+		.Q(MBI_CLK_MOD_2), // 1-bit DDR output data
+		.C0(~W_CLK_MOD), // 1-bit clock input
+		.C1(W_CLK_MOD), // 1-bit clock input
+		.CE(1'b1), // 1-bit clock enable input
+		.D0(1'b0), // 1-bit data input (associated with C0)
+		.D1(1'b1), // 1-bit data input (associated with C1)
+		.R(1'b0), // 1-bit reset input
+		.S(1'b0) // 1-bit set input
+	);
+	
+	ODDR2 #(	//FOR TESTING testmodimp
+		.DDR_ALIGNMENT("NONE"), // Sets output alignment to "NONE", "C0" or "C1"
+		.INIT(1'b0), // Sets initial state of the Q output to 1'b0 or 1'b1
+		.SRTYPE("SYNC") // Specifies "SYNC" or "ASYNC" set/reset
+		) ODDR2_CLK_MODN_buf_temp (
+		.Q(MBI_CLKN_MOD_2), // 1-bit DDR output data
+		.C0(~W_CLKN_MOD), // 1-bit clock input
+		.C1(W_CLKN_MOD), // 1-bit clock input
 		.CE(1'b1), // 1-bit clock enable input
 		.D0(1'b0), // 1-bit data input (associated with C0)
 		.D1(1'b1), // 1-bit data input (associated with C1)

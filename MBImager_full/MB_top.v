@@ -41,6 +41,10 @@ module MB_top(
 	output [5:0] MBI_MUX_ADD,	// Imager signal
 	output MBI_PIXRES_GLOB,		// Imager signal
 	output MBI_CLKL_MOD,			// Light source signal testmodimp
+	output MBI_CLK_MOD_2,		//testmodimp
+	output MBI_CLKN_MOD_2,
+	output OK_DRAIN_B_2,
+	input  [1:0] OPTION_SEL,
 	output MBI_CLKN_MOD,		// Imager signal
 	output MBI_CLK_MOD,			// Imager signal
 	input	[2:0] 	FREQ_SEL,			//OK board input for frequency selection of generated signals
@@ -120,16 +124,28 @@ assign din[23:16] = DATA_IN_TO_DEVICE1[15:8];
 // assign din[15:8] = ADC_TESTDATA2;
 // assign din[23:16] = ADC_TESTDATA3;
 
-mod_signal_gen mod_signal_gen_inst (
+mod_signal_gen mod_signal_gen_inst ( 
+	//.OPTION_SEL(OPTION_SEL),
 	.USER_CLOCK(USER_CLOCK),
 	.FREQ_SEL(FREQ_SEL),
-	.PHASE_SEL(PHASE_SEL),
-	.DUTY_SEL(DUTY_SEL),
+	.PHASE_SEL(PHASE_SEL),//{PHASE_SEL[4:1],OPTION_SEL[0]}),
+	.DUTY_SEL(4'b0011/*{1'b0, OPTION_SEL[1:0], 1'b1}*/),
 	.DRAIN_B(OK_DRAIN_B),
 	.MBI_CLK_MOD(MBI_CLK_MOD),
 	.MBI_CLKN_MOD(MBI_CLKN_MOD),
-	.MBI_CLKL_MOD(MBI_CLKL_MOD)
+	.MBI_CLKL_MOD(MBI_CLKL_MOD), 
+	.MBI_CLK_MOD_2(MBI_CLK_MOD_2),
+	.MBI_CLKN_MOD_2(MBI_CLKN_MOD_2)
 );
+
+assign OK_DRAIN_B_2 = OK_DRAIN_B;
+
+//
+//assign MBI_CLK_MOD = OPTION_SEL[0];//testmodimp
+//assign MBI_CLKN_MOD = OPTION_SEL[1];
+//assign MBI_CLKL_MOD = 1;
+//assign MBI_CLK_MOD_2 = MBI_CLK_MOD;
+//assign MBI_CLKN_MOD_2 = MBI_CLKN_MOD;
 
 MB_SPI_top uBlaze_SPI (
     .EXT_RESET_N(EXT_RESET_N), 

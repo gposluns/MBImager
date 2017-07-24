@@ -37,6 +37,8 @@ module OK_imager(
 	output wire OK_DRAIN_B,
 	output wire OK_PIXRES_GLOB,
 	output	[31:0] PHASE_SEL, //testmodimp
+	output	[31:0] OPTION_SEL,
+	//output wire testsig,
 	input wire FSMIND0,				// If high, the Exposure FSM (on OK) is active
 	output wire FSMIND1,
 	output wire FSMIND0ACK,
@@ -113,18 +115,20 @@ wire [5:0] dout_test;
 // assign wireout = 32'h0000;
 
 // Circuit assignements
-assign led = fsm_stat;
+//assign led = fsm_stat;
+assign led [5:0] = ~PHASE_SEL[5:0];
+assign led [7:6] = ~OPTION_SEL[1:0];
 assign FSMstop = rst | flag_2frames;
 // assign FSMstop = rst;
-assign RstPat = FSMstop | FSMIND1;
-assign FPGA_rst_n = ~FSMstop;
+assign RstPat = (FSMstop | FSMIND1); //testmodimp
+assign FPGA_rst_n = ~FSMstop | OPTION_SEL[0];
 assign rst = wireout[0];
 assign trig6Aout[0] = full_2;
 assign trig6Aout[1] = flag_2frames;
 assign trig6Aout[31:2] = 30'b0;
 assign din_pipe[23:0]=dout_buf;
 assign din_pipe[31:24]=8'b0;
-assign Pat_in[9:0] = wirePatterns[9:0];
+assign Pat_in[9:0] = wirePatterns[9:0] ;
 assign PatGen_start[9:0] = wirePatterns[19:10];
 assign PatGen_stop[9:0] = wirePatterns[29:20];//wirePatterns[30:21];
 
@@ -204,7 +208,8 @@ fifo_patterns FIFO_Patterns (
 );
 
 ROImager_exp_PatSeperate ROImager_inst (
-    .RESET(FSMstop), 
+	 //.PHASE0(OPTION_SEL[0]), //testmodimp
+    .RESET(FSMstop),
     .OK_PIXRES_GLOB(OK_PIXRES_GLOB), 
     .CLKMPRE(CLKMPRE_int), 
     .CLKMPRE_EN(CLKMPRE_EN), 		// Connction to CLKMPRE_ODDR2!
@@ -386,6 +391,7 @@ okWireIn	wire13		(.okHE(okHE),								.ep_addr(8'h13),							.ep_dataout(wireMas
 okWireIn	wire14		(.okHE(okHE),								.ep_addr(8'h14),							.ep_dataout(wireMaskChngSubc) );
 okWireIn	wire15		(.okHE(okHE),								.ep_addr(8'h15),							.ep_dataout(wirePatterns) );
 okWireIn okPHASE_SEL (.okHE(okHE),								.ep_addr(8'h16),							.ep_dataout(PHASE_SEL)	); //testmodimp
+okWireIn okOPTION_SEL(.okHE(okHE),								.ep_addr(8'h17),							.ep_dataout(OPTION_SEL) );
 // comment the top okWireIn modules for simulations!
 okWireOut 	wire22		(.okHE(okHE),	.okEH(okEHx[0*65 +: 65]),	.ep_addr(8'h22),							.ep_datain(wireExp) );
 okWireOut 	wire23		(.okHE(okHE),	.okEH(okEHx[3*65 +: 65]),	.ep_addr(8'h23),							.ep_datain(wirePat) );

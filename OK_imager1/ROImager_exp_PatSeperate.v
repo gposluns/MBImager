@@ -10,6 +10,7 @@
 
 module ROImager_exp_PatSeperate
 (
+  PHASE0,			//testmodimp
   RESET,						  // Reset signal to restart the module
   OK_PIXRES_GLOB,				  // Global reset signal for the pixel array
   CLKMPRE,						  // CLK for pre-loading the masks in every row
@@ -40,6 +41,7 @@ parameter S_FSM1 = 8'b00010000;
 parameter S_FSM1_ACK = 8'b00100000;
 
 // -- Ports
+output reg								PHASE0; //testmodimp
 input									  RESET;
 input									  FSMIND0;
 output									  FSMIND1;
@@ -83,6 +85,7 @@ input		[31:0]						  Num_Pat;
    (* FSM_ENCODING="ONE-HOT", SAFE_IMPLEMENTATION="YES", SAFE_RECOVERY_STATE="<recovery_state_value>" *) reg [7:0] state = S_subc_first;
 	always@(posedge CLKMPRE) begin
 		if (RESET) begin
+			PHASE0 <= 1; //testmodimp
 			FSMIND1_i <= 0;
 			FSMIND0ACK_i <= 0;
 			OK_PIXRES_GLOB <= 1;
@@ -101,6 +104,7 @@ input		[31:0]						  Num_Pat;
 				OK_PIXRES_GLOB <= 1;
 				OK_DRAIN_B <= 0;
 				count_subsc <= 0;
+				PHASE0 <= 1; //testmodimp
 				if (count_mpre < C_NUM_ROWS) begin
 					STREAM <= 1;
 					count_mpre <= count_mpre + 1;
@@ -108,10 +112,13 @@ input		[31:0]						  Num_Pat;
 				end else if(count_mpre < C_NUM_ROWS + 2) begin
 					STREAM <= 0;
 					count_mpre <= count_mpre + 1;
+				end else if(count_mpre < C_NUM_ROWS + 10000) begin
+					PHASE0 <= 0;
+					count_mpre <= count_mpre + 1;
 				end else begin
+					PHASE0 <= 1; //testmodimp
 					CLKMPRE_EN = 0;
 					count_mpre <= 0;
-					count_subsc <= count_subsc + 1;
 					state <= S_subc_n;
 				end
             end

@@ -99,6 +99,8 @@ module freqchng_clkgen_highfreq
   assign CLK_OUT_1 = clkout1;
 
   assign CLK_OUT_2 = clkout2;
+  
+  assign CLK_OUT_3 = 0;
 	
 //	BUFG clkout1_buf
 //		(.O   (CLK_OUT_1),

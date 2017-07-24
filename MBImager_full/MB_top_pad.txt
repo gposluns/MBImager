@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Tue Jun 13 15:54:52 2017
+Mon Jul 24 13:57:37 2017
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -47,7 +47,7 @@ Pinout by Pin Number:
 |AA3       |SPI_FLASH_SS<6> |IOB      |IO_L65N_CSO_B_2              |OUTPUT   |LVCMOS33   |2             |24        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 |AA4       |                |IOBM     |IO_L63P_2                    |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |AA5       |                |         |GND                          |         |           |              |          |         |           |         |         |          |           |                |
-|AA6       |MBI_CLK_MOD     |IOB      |IO_L49P_D3_2                 |OUTPUT   |LVCMOS33   |2             |12        |SLOW     |           |         |         |LOCATED   |YES        |NONE            |
+|AA6       |MBI_CLK_MOD     |IOB      |IO_L49P_D3_2                 |OUTPUT   |LVCMOS33   |2             |2         |SLOW     |           |         |         |LOCATED   |YES        |NONE            |
 |AA7       |                |         |VCCO_2                       |         |           |2             |          |         |           |         |3.30     |          |           |                |
 |AA8       |                |IOBM     |IO_L45P_2                    |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |AA9       |                |         |GND                          |         |           |              |          |         |           |         |         |          |           |                |
@@ -61,8 +61,8 @@ Pinout by Pin Number:
 |AA17      |                |         |GND                          |         |           |              |          |         |           |         |         |          |           |                |
 |AA18      |FSMIND0ACK      |IOB      |IO_L14P_D11_2                |INPUT    |LVCMOS33   |2             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |AA19      |                |         |VCCO_2                       |         |           |2             |          |         |           |         |3.30     |          |           |                |
-|AA20      |FREQ_SEL<2>     |IOB      |IO_L3P_D0_DIN_MISO_MISO1_2   |INPUT    |LVCMOS25*  |2             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
-|AA21      |FREQ_SEL<1>     |IOB      |IO_L1N_M0_CMPMISO_2          |INPUT    |LVCMOS25*  |2             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|AA20      |                |IOBM     |IO_L3P_D0_DIN_MISO_MISO1_2   |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
+|AA21      |                |IOBS     |IO_L1N_M0_CMPMISO_2          |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |AA22      |                |         |SUSPEND                      |         |           |              |          |         |           |         |         |          |           |                |
 |AB1       |                |         |GND                          |         |           |              |          |         |           |         |         |          |           |                |
 |AB2       |                |         |PROGRAM_B_2                  |         |           |              |          |         |           |         |         |          |           |                |
@@ -81,7 +81,7 @@ Pinout by Pin Number:
 |AB15      |fifo_dout_valid |IOB      |IO_L21N_2                    |OUTPUT   |LVCMOS33   |2             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 |AB16      |                |IOBS     |IO_L19N_2                    |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |AB17      |FSMIND0         |IOB      |IO_L15N_2                    |OUTPUT   |LVCMOS33   |2             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
-|AB18      |DUTY_SEL<1>     |IOB      |IO_L14N_D12_2                |INPUT    |LVCMOS25*  |2             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|AB18      |                |IOBS     |IO_L14N_D12_2                |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |AB19      |MBI_PIXRES      |IOB      |IO_L13N_D10_2                |OUTPUT   |LVCMOS33   |2             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 |AB20      |SPI_FLASH_MISO  |IOB      |IO_L3N_MOSI_CSI_B_MISO0_2    |INPUT    |LVCMOS33   |2             |          |         |           |NONE     |         |LOCATED   |YES        |NONE            |
 |AB21      |                |         |DONE_2                       |         |           |              |          |         |           |         |         |          |           |                |
@@ -379,8 +379,8 @@ Pinout by Pin Number:
 |R5        |                |         |GND                          |         |           |              |          |         |           |         |         |          |           |                |
 |R6        |                |         |VCCAUX                       |         |           |              |          |         |           |         |2.5      |          |           |                |
 |R7        |ADC_DATA1<5>    |IOB      |IO_L1P_3                     |INPUT    |LVCMOS33   |3             |          |         |           |NONE     |         |LOCATED   |YES        |NONE            |
-|R8        |                |IOBS     |IO_L59N_2                    |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
-|R9        |EXT_RESET_N     |IOB      |IO_L59P_2                    |INPUT    |LVCMOS33   |2             |          |         |PULLUP     |NONE     |         |LOCATED   |NO         |NONE            |
+|R8        |OK_DRAIN_B_2    |IOB      |IO_L59N_2                    |OUTPUT   |LVCMOS33   |2             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
+|R9        |PHASE_SEL<3>    |IOB      |IO_L59P_2                    |INPUT    |LVCMOS33   |2             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |R10       |                |         |VCCAUX                       |         |           |              |          |         |           |         |2.5      |          |           |                |
 |R11       |                |         |NC                           |         |           |              |          |         |           |         |         |          |           |                |
 |R12       |                |         |VCCAUX                       |         |           |              |          |         |           |         |2.5      |          |           |                |
@@ -401,7 +401,7 @@ Pinout by Pin Number:
 |T5        |                |         |NC                           |         |           |              |          |         |           |         |         |          |           |                |
 |T6        |                |         |NC                           |         |           |              |          |         |           |         |         |          |           |                |
 |T7        |                |IOBM     |IO_L64P_D8_2                 |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
-|T8        |MBI_CLKL_MOD    |IOB      |IO_L57P_2                    |OUTPUT   |LVCMOS33   |2             |12        |SLOW     |           |         |         |LOCATED   |YES        |NONE            |
+|T8        |MBI_CLKL_MOD    |IOB      |IO_L57P_2                    |OUTPUT   |LVCMOS33   |2             |2         |SLOW     |           |         |         |LOCATED   |YES        |NONE            |
 |T9        |                |         |VCCO_2                       |         |           |2             |          |         |           |         |3.30     |          |           |                |
 |T10       |                |IOBM     |IO_L46P_2                    |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |T11       |                |         |NC                           |         |           |              |          |         |           |         |         |          |           |                |
@@ -429,7 +429,7 @@ Pinout by Pin Number:
 |U11       |                |         |VCCAUX                       |         |           |              |          |         |           |         |2.5      |          |           |                |
 |U12       |OK_DRAIN_B      |IOB      |IO_L29N_GCLK2_2              |INPUT    |LVCMOS33   |2             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |U13       |                |IOBS     |IO_L16N_VREF_2               |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
-|U14       |DUTY_SEL<2>     |IOB      |IO_L16P_2                    |INPUT    |LVCMOS25*  |2             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|U14       |                |IOBM     |IO_L16P_2                    |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |U15       |                |         |NC                           |         |           |              |          |         |           |         |         |          |           |                |
 |U16       |                |         |NC                           |         |           |              |          |         |           |         |         |          |           |                |
 |U17       |                |         |NC                           |         |           |              |          |         |           |         |         |          |           |                |
@@ -444,7 +444,7 @@ Pinout by Pin Number:
 |V4        |                |         |GND                          |         |           |              |          |         |           |         |         |          |           |                |
 |V5        |                |         |NC                           |         |           |              |          |         |           |         |         |          |           |                |
 |V6        |                |         |VCCAUX                       |         |           |              |          |         |           |         |2.5      |          |           |                |
-|V7        |PHASE_SEL<4>    |IOB      |IO_L58P_2                    |INPUT    |LVCMOS33   |2             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
+|V7        |MBI_CLK_MOD_2   |IOB      |IO_L58P_2                    |OUTPUT   |LVCMOS33   |2             |12        |SLOW     |           |         |         |LOCATED   |YES        |NONE            |
 |V8        |                |         |VCCO_2                       |         |           |2             |          |         |           |         |3.30     |          |           |                |
 |V9        |                |IOBS     |IO_L50N_2                    |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |V10       |                |         |GND                          |         |           |              |          |         |           |         |         |          |           |                |
@@ -465,9 +465,9 @@ Pinout by Pin Number:
 |W3        |ADC_DATA3<1>    |IOB      |IO_L33P_M3DQ12_3             |INPUT    |LVCMOS33   |3             |          |         |           |NONE     |         |LOCATED   |YES        |NONE            |
 |W4        |ADC_DATA3<7>    |IOB      |IO_L2P_3                     |INPUT    |LVCMOS33   |3             |          |         |           |NONE     |         |LOCATED   |YES        |NONE            |
 |W5        |                |         |VCCO_2                       |         |           |2             |          |         |           |         |3.30     |          |           |                |
-|W6        |                |IOBM     |IO_L60P_2                    |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
+|W6        |PHASE_SEL<4>    |IOB      |IO_L60P_2                    |INPUT    |LVCMOS33   |2             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |W7        |                |         |GND                          |         |           |              |          |         |           |         |         |          |           |                |
-|W8        |                |IOBS     |IO_L58N_2                    |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
+|W8        |MBI_CLKN_MOD_2  |IOB      |IO_L58N_2                    |OUTPUT   |LVCMOS33   |2             |12        |SLOW     |           |         |         |LOCATED   |YES        |NONE            |
 |W9        |MBI_PRECH_COL   |IOB      |IO_L48P_D7_2                 |OUTPUT   |LVCMOS33   |2             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 |W10       |MBI_PRECHN_AMP  |IOB      |IO_L44P_2                    |OUTPUT   |LVCMOS33   |2             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 |W11       |                |IOBS     |IO_L42N_2                    |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
@@ -476,7 +476,7 @@ Pinout by Pin Number:
 |W14       |EXT_RESET_N_Glob|IOB      |IO_L20P_2                    |INPUT    |LVCMOS33   |2             |          |         |PULLUP     |NONE     |         |LOCATED   |NO         |NONE            |
 |W15       |EXT_RESET_N_spi |IOB      |IO_L17N_2                    |INPUT    |LVCMOS33   |2             |          |         |PULLUP     |NONE     |         |LOCATED   |NO         |NONE            |
 |W16       |                |         |GND                          |         |           |              |          |         |           |         |         |          |           |                |
-|W17       |PHASE_SEL<3>    |IOB      |IO_L5P_2                     |INPUT    |LVCMOS33   |2             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
+|W17       |PHASE_SEL<2>    |IOB      |IO_L5P_2                     |INPUT    |LVCMOS33   |2             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |W18       |SPI_FLASH_MOSI  |IOB      |IO_L2N_CMPMOSI_2             |OUTPUT   |LVCMOS33   |2             |24        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 |W19       |                |         |GND                          |         |           |              |          |         |           |         |         |          |           |                |
 |W20       |                |IOBM     |IO_L51P_M1DQ12_1             |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
@@ -486,10 +486,10 @@ Pinout by Pin Number:
 |Y2        |ADC_DATA3<3>    |IOB      |IO_L32P_M3DQ14_3             |INPUT    |LVCMOS33   |3             |          |         |           |NONE     |         |LOCATED   |YES        |NONE            |
 |Y3        |ADC_DATA3<6>    |IOB      |IO_L2N_3                     |INPUT    |LVCMOS33   |3             |          |         |           |NONE     |         |LOCATED   |YES        |NONE            |
 |Y4        |                |IOBM     |IO_L65P_INIT_B_2             |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
-|Y5        |                |IOBM     |IO_L62P_D5_2                 |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
-|Y6        |                |IOBS     |IO_L60N_2                    |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
+|Y5        |OPTION_SEL<1>   |IOB      |IO_L62P_D5_2                 |INPUT    |LVCMOS33   |2             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
+|Y6        |OPTION_SEL<0>   |IOB      |IO_L60N_2                    |INPUT    |LVCMOS33   |2             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |Y7        |                |IOBM     |IO_L47P_2                    |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
-|Y8        |MBI_CLKN_MOD    |IOB      |IO_L48N_RDWR_B_VREF_2        |OUTPUT   |LVCMOS33   |2             |12        |SLOW     |           |         |         |LOCATED   |YES        |NONE            |
+|Y8        |MBI_CLKN_MOD    |IOB      |IO_L48N_RDWR_B_VREF_2        |OUTPUT   |LVCMOS33   |2             |2         |SLOW     |           |         |         |LOCATED   |YES        |NONE            |
 |Y9        |                |IOBM     |IO_L43P_2                    |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |Y10       |                |IOBS     |IO_L44N_2                    |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |Y11       |dout<3>         |IOB      |IO_L32P_GCLK29_2             |OUTPUT   |LVCMOS33   |2             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
@@ -497,11 +497,11 @@ Pinout by Pin Number:
 |Y13       |ADC_READ_ACLK   |IOB      |IO_L30P_GCLK1_D13_2          |OUTPUT   |LVCMOS33   |2             |12        |SLOW     |           |         |         |LOCATED   |YES        |NONE            |
 |Y14       |                |IOBS     |IO_L20N_2                    |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |Y15       |MBI_MUX_ADD<1>  |IOB      |IO_L21P_2                    |OUTPUT   |LVCMOS33   |2             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
-|Y16       |DUTY_SEL<3>     |IOB      |IO_L17P_2                    |INPUT    |LVCMOS25*  |2             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|Y16       |                |IOBM     |IO_L17P_2                    |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |Y17       |FSMIND1         |IOB      |IO_L15P_2                    |INPUT    |LVCMOS33   |2             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
-|Y18       |PHASE_SEL<2>    |IOB      |IO_L5N_2                     |INPUT    |LVCMOS33   |2             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
-|Y19       |DUTY_SEL<0>     |IOB      |IO_L13P_M1_2                 |INPUT    |LVCMOS25*  |2             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
-|Y20       |FREQ_SEL<0>     |IOB      |IO_L1P_CCLK_2                |INPUT    |LVCMOS25*  |2             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|Y18       |EXT_RESET_N     |IOB      |IO_L5N_2                     |INPUT    |LVCMOS33   |2             |          |         |PULLUP     |NONE     |         |LOCATED   |NO         |NONE            |
+|Y19       |                |IOBM     |IO_L13P_M1_2                 |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
+|Y20       |                |IOBM     |IO_L1P_CCLK_2                |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |Y21       |                |IOBM     |IO_L52P_M1DQ14_1             |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
 |Y22       |                |IOBS     |IO_L52N_M1DQ15_1             |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

@@ -135,8 +135,8 @@ module freqchng_clkgen
    (.CLKFBOUT              (clkfbout),
     .CLKOUT0               (clkout0),
     .CLKOUT1               (clkout1),
-    .CLKOUT2               (clkout2),
-    .CLKOUT3               (clkout3),
+    //.CLKOUT2               (clkout2), testmodimp
+    //.CLKOUT3               (clkout3),
     .CLKOUT4               (clkout4),
     .CLKOUT5               (clkout5),
     // Status and control signals
@@ -179,8 +179,8 @@ module freqchng_clkgen
 
 	assign CLK_OUT_0 = clkout0;
 	assign CLK_OUT_1 = clkout1;
-	assign CLK_OUT_2 = clkout2;
-	assign CLK_OUT_3 = clkout3;
+//	assign CLK_OUT_2 = clkout2;
+//	assign CLK_OUT_3 = clkout3;
 	assign CLK_OUT_4 = clkout4;
 	assign CLK_OUT_5 = clkout5;
 	
