@@ -33,11 +33,6 @@ module MB_SPI_tb
   wire SPI_FLASH_SCLK;
   wire [9:0] SPI_FLASH_SS;
   reg USER_CLOCK;
-  wire [31:0] hdl_control_0_OUT3_pin;
-  reg [31:0] hdl_receive_0_IN4_pin;
-  reg [112:0] okHE;
-  wire [64:0] oktriggerouts_0_okEH_pin;
-  wire [64:0] okwireouts_0_okEH_pin;
 
   MB_SPI
     dut (
@@ -46,12 +41,7 @@ module MB_SPI_tb
       .SPI_FLASH_SS ( SPI_FLASH_SS ),
       .SPI_FLASH_MOSI ( SPI_FLASH_MOSI ),
       .SPI_FLASH_SCLK ( SPI_FLASH_SCLK ),
-      .SPI_FLASH_MISO ( SPI_FLASH_MISO ),
-      .okHE ( okHE ),
-      .hdl_control_0_OUT3_pin ( hdl_control_0_OUT3_pin ),
-      .hdl_receive_0_IN4_pin ( hdl_receive_0_IN4_pin ),
-      .oktriggerouts_0_okEH_pin ( oktriggerouts_0_okEH_pin ),
-      .okwireouts_0_okEH_pin ( okwireouts_0_okEH_pin )
+      .SPI_FLASH_MISO ( SPI_FLASH_MISO )
     );
 
   // START USER CODE (Do not remove this line)
