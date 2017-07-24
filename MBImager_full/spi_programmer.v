@@ -32,29 +32,29 @@ module spi_programmer(
 
 	reg [16*NUM_COMMANDS - 1:0] commands;
 	reg [10*NUM_COMMANDS - 1:0] targets;
-	reg programming;
 	reg trigger_i;
+	reg load_next;
 	reg [31:0] countdown;
 	reg [NUM_COMMANDS - 1:0] CPOLs;
 	reg [NUM_COMMANDS - 1:0] CPHAs;
 	
 	initial countdown = 1000;
 	initial trigger_i = 0;
-	initial programming = 0;
+	initial load_next = 0;
 	
 	initial CPOLs = 0;
 	initial CPHAs = 0;
 	
-	initial commands[0*16 +: 16] = 16'h2600;
+	initial commands[0*16 +: 16] = 16'b0110010000000000;
 	initial targets [0*10 +: 10] = 10'b10;
 	
-	initial commands[1*16 +: 16] = 16'b1101110001000000;
+	initial commands[1*16 +: 16] = 16'b0011101100000001;
 	initial targets [1*10 +: 10] = 10'b10;
 	
-	initial commands[2*16 +: 16] = 16'b0111100001000000;
+	initial commands[2*16 +: 16] = 16'b0111100000000010;
 	initial targets [2*10 +: 10] = 10'b10;
 	
-	initial commands[3*16 +: 16] = 16'b0100010011000000;
+	initial commands[3*16 +: 16] = 16'b0100010000000011;
 	initial targets [3*10 +: 10] = 10'b10;
 	
 	initial commands[4*16 +: 16] = 16'b0000000000011111;
@@ -199,23 +199,23 @@ module spi_programmer(
 	
 	always @(posedge clock) begin
 		if (countdown > 0) countdown <= countdown - 1;
-		else if (~programming) begin
-			programming <= 1;
-			trigger_i <= 1;
-		end else if (programming & ready) begin
-			commands <= {16'h0, commands[16*NUM_COMMANDS - 1: 16]};
-			targets <= {10'h0, targets[10*NUM_COMMANDS - 1: 10]};
+		else if (ready) begin
 			CPOLs <= {1'b0, CPOLs[NUM_COMMANDS - 1:1]};
 			CPHAs <= {1'b0, CPHAs[NUM_COMMANDS - 1:1]};
 			trigger_i <= 1;
+			load_next <= 1;
 			countdown <= 10;
+		end else if (load_next == 1) begin
+			commands <= {16'h0, commands[16*NUM_COMMANDS - 1: 16]};
+			targets <= {10'h0, targets[10*NUM_COMMANDS - 1: 10]};
+			load_next <= 0;
 		end else begin
 			trigger_i <= 0;
 		end
 	end
 	
-	assign command = commands [31:0];
-	assign ss = targets [15:0];
+	assign command = {commands[8], commands[9], commands[10], commands[11], commands[12], commands[13], commands[14], commands[15], commands[0], commands[1], commands[2], commands[3], commands[4], commands[5], commands[6], commands[7]};
+	assign ss = targets [9:0];
 	assign trigger = trigger_i;
 	assign CPOL = CPOLs[0];
 	assign CPHA = CPHAs[0];

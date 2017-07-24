@@ -66,6 +66,10 @@ private:
     int meandark1;
     int meandark2;
     bool videoRec;
+    int exposure;
+    int subc;
+    int maskchngs;
+    int masks;
 
 protected:
     void closeEvent(QCloseEvent* close);

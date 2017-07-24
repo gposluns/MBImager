@@ -135,10 +135,10 @@ void MainWindow::on_DispImage_toggled(bool checked)
     }
     else{
 
-        int exposure = ui->expBox->value();
-        int masks = ui->maskBox->value();
-        int maskchngs = ui->maskChngBox->value();
-        int subc = ui->subcBox->value();
+        exposure = ui->expBox->value();
+        masks = ui->maskBox->value();
+        maskchngs = ui->maskChngBox->value();
+        subc = ui->subcBox->value();
         double percent = 0;
 
         if (subc*maskchngs > masks) maskchngs = masks/subc;
@@ -264,7 +264,7 @@ void MainWindow::updateFrame(){
     }
     //qDebug() << "non-empty queue";
 
-    QDir dir(QString("MBImagerGUI/Images exp%1 masks%2 chngs%3 subc%4").arg(ui->expBox->value()).arg(ui->maskBox->value()).arg(ui->maskChngBox->value()).arg(ui->subcBox->value()));
+    QDir dir(QString("MBImagerGUI/Images exp%1 masks%2 chngs%3 subc%4").arg(exposure).arg(masks).arg(maskchngs).arg(subc));
     if (imagesToSave > 0 && !dir.exists()){
        // qDebug() << "making directory" << dir.absolutePath();
         dir.mkpath(dir.path());
