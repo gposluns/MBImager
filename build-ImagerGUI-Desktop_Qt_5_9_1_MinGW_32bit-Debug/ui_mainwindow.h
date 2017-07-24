@@ -59,7 +59,6 @@ public:
     QSpinBox *numImageBox;
     QSpinBox *yBox;
     QSpinBox *xBox;
-    QGroupBox *groupBox_2;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -160,11 +159,11 @@ public:
         Reset->setGeometry(QRect(300, 510, 181, 51));
         ApplyImg = new QPushButton(centralwidget);
         ApplyImg->setObjectName(QStringLiteral("ApplyImg"));
-        ApplyImg->setGeometry(QRect(750, 420, 181, 51));
+        ApplyImg->setGeometry(QRect(750, 400, 181, 51));
         ApplyImg->setCheckable(true);
         EqualizeImg = new QPushButton(centralwidget);
         EqualizeImg->setObjectName(QStringLiteral("EqualizeImg"));
-        EqualizeImg->setGeometry(QRect(960, 420, 181, 51));
+        EqualizeImg->setGeometry(QRect(960, 400, 181, 51));
         EqualizeImg->setCheckable(true);
         expBox = new QSpinBox(centralwidget);
         expBox->setObjectName(QStringLiteral("expBox"));
@@ -197,9 +196,6 @@ public:
         xBox->setObjectName(QStringLiteral("xBox"));
         xBox->setGeometry(QRect(290, 400, 42, 22));
         xBox->setMaximum(184);
-        groupBox_2 = new QGroupBox(centralwidget);
-        groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-        groupBox_2->setGeometry(QRect(740, 400, 411, 81));
         MainWindow->setCentralWidget(centralwidget);
         QWidget::setTabOrder(BitLoad, PattLoad);
         QWidget::setTabOrder(PattLoad, DispType);
@@ -244,7 +240,6 @@ public:
         Reset->setText(QApplication::translate("MainWindow", "Reset View", Q_NULLPTR));
         ApplyImg->setText(QApplication::translate("MainWindow", "Apply Image Correction", Q_NULLPTR));
         EqualizeImg->setText(QApplication::translate("MainWindow", "Equalize Image", Q_NULLPTR));
-        groupBox_2->setTitle(QApplication::translate("MainWindow", "Image Correction (Not currently functional)", Q_NULLPTR));
     } // retranslateUi
 
 };

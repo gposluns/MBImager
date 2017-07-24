@@ -91,6 +91,7 @@ private slots:
     void on_RecVideo_toggled(bool checked);
     void on_Reset_clicked();
     void on_DispType_currentIndexChanged(int index);
+    void on_SaveImages_toggled(bool checked);
 };
 
 #endif // MAINWINDOW_H

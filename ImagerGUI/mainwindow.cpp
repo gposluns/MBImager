@@ -336,7 +336,9 @@ void MainWindow::updateFrame(){
             cv::Mat mat1(temp1.copy(62, 0, 120, 160).height(), temp1.copy(62, 0, 120, 160).width(), CV_8UC1, temp1.copy(62, 0, 120, 160).scanLine(0));
             video1->write(mat1);
         }
-
+    if (imagesToSave ==0){
+        ui->SaveImages->setEnabled(true);
+    }
     }
 
 
@@ -360,6 +362,7 @@ void MainWindow::on_Zoom_valueChanged(int value)
 void MainWindow::on_SaveImages_clicked()
 {
     imagesToSave = ui->numImageBox->value();
+    ui->SaveImages->setEnabled(false);
 }
 
 void MainWindow::on_RecVideo_toggled(bool checked)
@@ -412,3 +415,4 @@ void MainWindow::on_DispType_currentIndexChanged(int index)
 {
     ui->RecVideo->setChecked(false);
 }
+
