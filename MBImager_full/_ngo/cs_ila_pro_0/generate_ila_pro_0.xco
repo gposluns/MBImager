@@ -96,17 +96,23 @@ CSET exclude_from_data_storage_3=false
 CSET trigger_port_width_5=1
 CSET exclude_from_data_storage_2=false
 <<<<<<< HEAD
+<<<<<<< HEAD
 CSET trigger_port_width_4=8
 CSET exclude_from_data_storage_1=false
 CSET sample_data_depth=4096
 CSET trigger_port_width_3=8
 CSET trigger_port_width_2=8
 =======
+=======
+>>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 CSET trigger_port_width_4=1
 CSET exclude_from_data_storage_1=false
 CSET sample_data_depth=8192
 CSET trigger_port_width_3=1
 CSET trigger_port_width_2=6
+<<<<<<< HEAD
+>>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
+=======
 >>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 CSET counter_width_9=Disabled
 CSET trigger_port_width_1=1

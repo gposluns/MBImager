@@ -519,11 +519,15 @@ ROImager_exp_PatSeperate ROImager_inst (
     .FSMIND0ACK(FSMIND0ACK), 
     .FSMIND1ACK(FSMIND1ACK),
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 .MIN_FRAME_TIME(MIN_FRAME_TIME),
 	 
 	 .CLK_HS(CLK_HS),						  // Fast clock for projector trigger
     .TRIGGER_PROJ(trigger_proj),				  // Output to projector trigger  
     .PROJ_DELAY(proj_delay)
+=======
+	 .MIN_FRAME_TIME(MIN_FRAME_TIME)
+>>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 =======
 	 .MIN_FRAME_TIME(MIN_FRAME_TIME)
 >>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
@@ -780,6 +784,9 @@ okWireIn wire19   (.okHE(okHE),								.ep_addr(8'h19),							.ep_dataout(proj_d
 =======
 okWireIn okPHASE_SEL (.okHE(okHE),								.ep_addr(8'h16),							.ep_dataout(PHASE_SEL)	); //testmodimp
 okWireIn framewire   (.okHE(okHE),								.ep_addr(8'h18),							.ep_dataout(MIN_FRAME_TIME));
+<<<<<<< HEAD
+>>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
+=======
 >>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 // comment the top okWireIn modules for simulations!
 okWireOut 	wire22		(.okHE(okHE),	.okEH(okEHx[0*65 +: 65]),	.ep_addr(8'h22),							.ep_datain(wireExp) );

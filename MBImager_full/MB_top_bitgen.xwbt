@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=D:\MBImager\MBImager_full\MB_top.ncd
-OUTFILE=D:\MBImager\MBImager_full\MB_top.bit
-FAMILY=Spartan6
-PART=xc6slx25t-3fgg484
-WORKINGDIR=D:\MBImager\MBImager_full
-LICENSE=ISE
-USER_INFO=174208431_1777515441_210640978_209

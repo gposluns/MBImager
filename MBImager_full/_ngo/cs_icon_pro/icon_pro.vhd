@@ -9,7 +9,11 @@
 --  \   \         Application: XILINX CORE Generator
 --  /   /         Filename   : icon_pro.vhd
 <<<<<<< HEAD
+<<<<<<< HEAD
 -- /___/   /\     Timestamp  : Thu Jun 29 15:48:10 Eastern Daylight Time 2017
+=======
+-- /___/   /\     Timestamp  : Tue Jul 18 14:22:35 Eastern Daylight Time 2017
+>>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 =======
 -- /___/   /\     Timestamp  : Tue Jul 18 14:22:35 Eastern Daylight Time 2017
 >>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e

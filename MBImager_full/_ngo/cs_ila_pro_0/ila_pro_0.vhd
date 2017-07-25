@@ -9,7 +9,11 @@
 --  \   \         Application: XILINX CORE Generator
 --  /   /         Filename   : ila_pro_0.vhd
 <<<<<<< HEAD
+<<<<<<< HEAD
 -- /___/   /\     Timestamp  : Thu Jun 29 15:50:45 Eastern Daylight Time 2017
+=======
+-- /___/   /\     Timestamp  : Tue Jul 18 14:41:19 Eastern Daylight Time 2017
+>>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 =======
 -- /___/   /\     Timestamp  : Tue Jul 18 14:41:19 Eastern Daylight Time 2017
 >>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
@@ -28,9 +32,15 @@ ENTITY ila_pro_0 IS
     CLK: in std_logic;
     TRIG0: in std_logic_vector(0 to 0);
 <<<<<<< HEAD
+<<<<<<< HEAD
     TRIG1: in std_logic_vector(7 downto 0);
     TRIG2: in std_logic_vector(7 downto 0);
     TRIG3: in std_logic_vector(7 downto 0));
+=======
+    TRIG1: in std_logic_vector(5 downto 0);
+    TRIG2: in std_logic_vector(0 to 0);
+    TRIG3: in std_logic_vector(0 to 0));
+>>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 =======
     TRIG1: in std_logic_vector(5 downto 0);
     TRIG2: in std_logic_vector(0 to 0);

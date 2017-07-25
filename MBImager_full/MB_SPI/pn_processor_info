@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 D:/MBImager/MBImager_full/MB_SPI/MB_SPI.xmp|microblaze_0 (simulation),bootloop
 D:/MBImager/MBImager_full/MB_SPI/MB_SPI.xmp|microblaze_0 (implementation),bootloop
+=======
+C:/Users/MBImager/Documents/MBImager_ams/repo/MBImager/MBImager_full/MB_SPI/MB_SPI.xmp|microblaze_0 (simulation),C:/Users/MBImager/Documents/MBImager_ams/repo/MBImager/MBImager_full/Workspace_new/Board_config/Debug/Board_config.elf
+C:/Users/MBImager/Documents/MBImager_ams/repo/MBImager/MBImager_full/MB_SPI/MB_SPI.xmp|microblaze_0 (implementation),C:/Users/MBImager/Documents/MBImager_ams/repo/MBImager/MBImager_full/Workspace_new/Board_config/Debug/Board_config.elf
+>>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e

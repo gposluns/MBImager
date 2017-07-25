@@ -46,8 +46,11 @@ parameter S_FSM1 = 8'b00010000;
 parameter S_FSM1_ACK = 8'b00100000; 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 // -- Ports
 >>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 input									  RESET;
@@ -132,6 +135,9 @@ input [31:0]			PROJ_DELAY;
 		end else begin
 			fst_cntr <= C_NUM_ROWS*18 - PROJ_DELAY;
 			TRIGGER_PROJ_i <= 0;
+<<<<<<< HEAD
+>>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
+=======
 >>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 		end
   end

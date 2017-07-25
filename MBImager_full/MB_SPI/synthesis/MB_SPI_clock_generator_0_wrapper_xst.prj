@@ -1,6 +1,0 @@
-vhdl clock_generator_v4_03_a D:\ISE\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\clock_generator_v4_03_a/hdl/vhdl/dcm_module.vhd
-vhdl clock_generator_v4_03_a D:\ISE\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\clock_generator_v4_03_a/hdl/vhdl/pll_module.vhd
-vhdl clock_generator_v4_03_a D:\ISE\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\clock_generator_v4_03_a/hdl/vhdl/mmcm_module.vhd
-vhdl clock_generator_v4_03_a D:\ISE\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\clock_generator_v4_03_a/hdl/vhdl/plle2_module.vhd
-VHDL clock_generator_0_v4_03_a D:\MBImager\MBImager_full\MB_SPI\hdl\elaborate\clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd
-vhdl work ../hdl/MB_SPI_clock_generator_0_wrapper.vhd
