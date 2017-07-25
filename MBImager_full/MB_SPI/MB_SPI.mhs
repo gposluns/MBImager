@@ -43,7 +43,7 @@ BEGIN lmb_bram_if_cntlr
  PARAMETER INSTANCE = microblaze_0_i_bram_ctrl
  PARAMETER HW_VER = 3.10.c
  PARAMETER C_BASEADDR = 0x00000000
- PARAMETER C_HIGHADDR = 0x00007FFF
+ PARAMETER C_HIGHADDR = 0x00007fff
  BUS_INTERFACE SLMB = microblaze_0_ilmb
  BUS_INTERFACE BRAM_PORT = microblaze_0_i_bram_ctrl_2_microblaze_0_bram_block
 END
@@ -59,7 +59,7 @@ BEGIN lmb_bram_if_cntlr
  PARAMETER INSTANCE = microblaze_0_d_bram_ctrl
  PARAMETER HW_VER = 3.10.c
  PARAMETER C_BASEADDR = 0x00000000
- PARAMETER C_HIGHADDR = 0x00007FFF
+ PARAMETER C_HIGHADDR = 0x00007fff
  BUS_INTERFACE SLMB = microblaze_0_dlmb
  BUS_INTERFACE BRAM_PORT = microblaze_0_d_bram_ctrl_2_microblaze_0_bram_block
 END
@@ -92,6 +92,7 @@ BEGIN microblaze
  BUS_INTERFACE DEBUG = microblaze_0_debug
  BUS_INTERFACE DLMB = microblaze_0_dlmb
  BUS_INTERFACE ILMB = microblaze_0_ilmb
+ BUS_INTERFACE INTERRUPT = axi_intc_0_INTERRUPT
  PORT MB_RESET = proc_sys_reset_0_MB_Reset
  PORT CLK = clk_100_0000MHz
 END
@@ -146,5 +147,17 @@ BEGIN axi_spi
  PORT MOSI_O = Generic_SPI_MOSI_O
  PORT SCK_O = Generic_SPI_SCK_O
  PORT MISO_I = Generic_SPI_MISO_I
+ PORT IP2INTC_Irpt = Generic_SPI_IP2INTC_Irpt
+END
+
+BEGIN axi_intc
+ PARAMETER INSTANCE = axi_intc_0
+ PARAMETER HW_VER = 1.04.a
+ PARAMETER C_BASEADDR = 0x41200000
+ PARAMETER C_HIGHADDR = 0x4120ffff
+ BUS_INTERFACE S_AXI = axi4lite_0
+ BUS_INTERFACE INTERRUPT = axi_intc_0_INTERRUPT
+ PORT S_AXI_ACLK = clk_100_0000MHz
+ PORT Intr = Generic_SPI_IP2INTC_Irpt
 END
 

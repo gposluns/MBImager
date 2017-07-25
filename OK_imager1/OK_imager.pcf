@@ -1,5 +1,9 @@
 //! **************************************************************************
+<<<<<<< HEAD
 // Written by: Map P.20131013 on Fri Jul 21 17:27:32 2017
+=======
+// Written by: Map P.20131013 on Mon Jun 26 17:51:17 2017
+>>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -28,7 +32,14 @@ COMP "mcb3_dram_a<7>" LOCATE = SITE "H6" LEVEL 1;
 COMP "mcb3_dram_a<8>" LOCATE = SITE "E3" LEVEL 1;
 COMP "mcb3_dram_a<9>" LOCATE = SITE "E1" LEVEL 1;
 COMP "okAA" LOCATE = SITE "W11" LEVEL 1;
+<<<<<<< HEAD
 COMP "mcb3_dram_ck_n" LOCATE = SITE "H3" LEVEL 1;
+=======
+COMP "PHASE_SEL<0>" LOCATE = SITE "C9" LEVEL 1;
+COMP "PHASE_SEL<1>" LOCATE = SITE "A10" LEVEL 1;
+COMP "PHASE_SEL<3>" LOCATE = SITE "B12" LEVEL 1;
+COMP "PHASE_SEL<4>" LOCATE = SITE "C10" LEVEL 1;
+>>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 COMP "MSTREAM<10>" LOCATE = SITE "A16" LEVEL 1;
 COMP "mcb3_dram_we_n" LOCATE = SITE "F2" LEVEL 1;
 COMP "mcb3_dram_udqs" LOCATE = SITE "T2" LEVEL 1;

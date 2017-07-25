@@ -6,4 +6,5 @@ Command Line: elfcheck -hw ../../MB_SPI_hw_platform/system.xml -pe microblaze_0
 Board_config.elf 
 
 ELF file	: Board_config.elf
-elfcheck passed.
+ERROR:EDK:756 - Cannot read XML file ../../MB_SPI_hw_platform/system.xml
+Error: Creating Hardware Debug Object from ../../MB_SPI_hw_platform/system.xml

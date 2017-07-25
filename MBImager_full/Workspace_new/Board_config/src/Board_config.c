@@ -132,9 +132,9 @@ int main(void)
 		}
 
 		InputWord = 0b10001111;
-		Status = SpiPotADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord);
+		//Status = SpiPotADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord);
 		if (Status != XST_SUCCESS) {
-			print("SpiPotADCRead Failed");
+			print("//SpiPotADCRead Failed");
 			return XST_FAILURE;
 		}
 
@@ -147,9 +147,9 @@ int main(void)
 		}
 
 		InputWord = 0b11001111;
-		Status = SpiPotADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord);
+		//Status = SpiPotADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord);
 		if (Status != XST_SUCCESS) {
-			print("SpiPotADCRead Failed");
+			print("//SpiPotADCRead Failed");
 			return XST_FAILURE;
 		}
 
@@ -162,9 +162,9 @@ int main(void)
 		}
 
 		InputWord = 0b10011111;
-		Status = SpiPotADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord);
+		//Status = SpiPotADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord);
 		if (Status != XST_SUCCESS) {
-			print("SpiPotADCRead Failed");
+			print("//SpiPotADCRead Failed");
 			return XST_FAILURE;
 		}
 
@@ -177,9 +177,9 @@ int main(void)
 		}
 
 		InputWord = 0b11011111;
-		Status = SpiPotADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord);
+		//Status = SpiPotADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord);
 		if (Status != XST_SUCCESS) {
-			print("SpiPotADCRead Failed");
+			print("//SpiPotADCRead Failed");
 			return XST_FAILURE;
 		}
 
@@ -192,139 +192,139 @@ int main(void)
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 	InputWord = 0b00000000;
 	Data = 0b00100010;				// Master mode selection; Unlock registers
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 //	InputWord = 0b00000001;
 //	Data = 0b01010000;				// Software reset - FSM
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-//	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+//	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 	InputWord = 0b00000010;
 	Data = 0b11000100;				// Pixel rate clk and SH mode (not CDS)
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 	InputWord = 0b00000011;
 	Data = 0b00000010;				// SF disable -- default word
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 	InputWord = 0b00000100;
 	Data = 0b01000010;				// Use buffered res divider; auto CLPIN disabled; CLPIN gating disabled; VCLP 0.95VA
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 	InputWord = 0b00000101;
 	Data = 0b11000000;				// CMOS output; Enable output;
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 //	InputWord = 0b00000110;
 //	Data = 0b00000001;				// Up-count test pattern at the output;
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-//	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+//	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 	InputWord = 0b00000110;
 	Data = 0b00000000;				// ADC outputs;
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 	InputWord = 0b00001000;			// R CLAMP start adjust to SAMPLE start = 10
 	Data = 0b00001010;
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 	InputWord = 0b00001010;			// G CLAMP start adjust to SAMPLE start = 10
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 	InputWord = 0b00001100;			// B CLAMP start adjust to SAMPLE start = 10
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 	InputWord = 0b00001001;			// R CLAMP stop adjust to SAMPLE stop = 38
 	Data = 0b00100110;
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 	InputWord = 0b00001011;			// G CLAMP stop adjust to SAMPLE stop = 38
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 	InputWord = 0b00001101;			// B CLAMP stop adjust to SAMPLE stop = 38
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 	InputWord = 0b00001110;			// R SAMPLE start adjust to CLAMP start = 10
 	Data = 0b00001010;
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 	InputWord = 0b00010000;			// G SAMPLE start adjust to CLAMP start = 10
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 	InputWord = 0b00010010;			// B SAMPLE start adjust to CLAMP start = 10
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 	InputWord = 0b00001111;			// R SAMPLE stop adjust to CLAMP stop = 38
 	Data = 0b00100110;
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 	InputWord = 0b00010001;			// G SAMPLE stop adjust to CLAMP stop = 38
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 	InputWord = 0b00010011;			// B SAMPLE stop adjust to CLAMP stop = 38
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 //// Change to Page 2
 //	InputWord = 0b00011111;
@@ -332,63 +332,63 @@ int main(void)
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-//	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+//	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 //
 //	InputWord = 0b00000000;
 //	Data = 0b00000100;				// No DDAC correction
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-//	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+//	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 //
 //	InputWord = 0b00000110;
 //	Data = 0b00000010;				// Start of black pix clamping
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-//	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+//	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 //
 //	InputWord = 0b00000111;
 //	Data = 0b00000011;				// End of black loop pixel
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-//	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+//	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 //
 //	InputWord = 0b00001000;
 //	Data = 0b00000110;				// Start of black loop pixel
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-//	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+//	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 //
 //	InputWord = 0b00001010;
 //	Data = 0b00001001;				// Start of Active pixels (LSB)
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-//	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+//	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 //
 //	InputWord = 0b00001011;
 //	Data = 0b11111111;				// End of Active pixels (MSB)
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-//	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+//	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 //
 //	InputWord = 0b00001101;
 //	Data = 0b00000000;				// Length of the line time in pixel periods (MSB)
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-//	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+//	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 //
 //	InputWord = 0b00001110;
 //	Data = 0b00001100;				// Length of the line time in pixel periods (MSB)
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-//	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+//	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 //
 //
 //// Change to Page 3
@@ -397,21 +397,21 @@ int main(void)
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-//	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+//	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 //
 //	InputWord = 0b00000000;
 //	Data = 0b00001001;
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-//	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+//	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 //
 //	InputWord = 0b00000001;
 //	Data = 0b00000000;
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-//	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+//	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 //
 //
 //// Change to Page 4
@@ -420,14 +420,14 @@ int main(void)
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-//	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+//	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 //
 //	InputWord = 0b00000000;
 //	Data = 0b00001001;				// Sets random outputs at the SH interval! They are not connected anywhere
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-//	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+//	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 //
 //// Change to Page 8
 //	InputWord = 0b00011111;
@@ -435,14 +435,14 @@ int main(void)
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-//	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+//	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 //
 //	InputWord = 0b00001000;
 //	Data = 0b10000000;				// LVDS TXCLK Disable; CMOS CLKOUT Disable; LVDS drive adjust - low
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 //	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-//	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+//	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 // Change to Page 0 and start the state machines
 	InputWord = 0b00011111;
@@ -450,14 +450,14 @@ int main(void)
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 	InputWord = 0b00000000;
 	Data = 0b00100011;
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);
-	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
+	//SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 	print("---Exiting main---\n\r");
 

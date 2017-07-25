@@ -252,10 +252,17 @@ ARCHITECTURE simulation_arch OF fifo_6to24_synth IS
     GENERIC MAP ( 
               AXI_CHANNEL         => "Native",
               C_APPLICATION_TYPE  => 0,
+<<<<<<< HEAD
 	      C_DOUT_WIDTH        => 32,
 	      C_DIN_WIDTH         => 8,
 	      C_WR_PNTR_WIDTH     => 9,
     	      C_RD_PNTR_WIDTH     => 7,
+=======
+	      C_DOUT_WIDTH        => 24,
+	      C_DIN_WIDTH         => 6,
+	      C_WR_PNTR_WIDTH     => 10,
+    	      C_RD_PNTR_WIDTH     => 8,
+>>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
  	      C_CH_TYPE           => 0,
               FREEZEON_ERROR      => FREEZEON_ERROR,
 	      TB_SEED             => TB_SEED, 

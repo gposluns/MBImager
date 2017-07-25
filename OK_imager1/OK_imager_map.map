@@ -10,7 +10,11 @@ Target Device  : xc6slx45
 Target Package : fgg484
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
+<<<<<<< HEAD
 Mapped Date    : Fri Jul 21 17:25:50 2017
+=======
+Mapped Date    : Mon Jun 26 17:50:00 2017
+>>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 
 Mapping design into LUTs...
 Running directed packing...
@@ -197,6 +201,7 @@ INFO:Timing:2761 - N/A entries in the Constraints List may indicate that the
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
 Running timing-driven placement...
+<<<<<<< HEAD
 Total REAL time at the beginning of Placer: 21 secs 
 Total CPU  time at the beginning of Placer: 17 secs 
 
@@ -208,10 +213,94 @@ Phase 2.7  Design Feasibility Check (Checksum:d36bea0e) REAL time: 23 secs
 
 Phase 3.31  Local Placement Optimization
 Phase 3.31  Local Placement Optimization (Checksum:35068d4) REAL time: 23 secs 
+=======
+Total REAL time at the beginning of Placer: 15 secs 
+Total CPU  time at the beginning of Placer: 12 secs 
+
+Phase 1.1  Initial Placement Analysis
+Phase 1.1  Initial Placement Analysis (Checksum:4d1d50f1) REAL time: 17 secs 
+
+Phase 2.7  Design Feasibility Check
+WARNING:Place:837 - Partially locked IO Bus is found. 
+    Following components of the bus are not locked: 
+   	 Comp: PHASE_SEL<31>
+   	 Comp: PHASE_SEL<30>
+   	 Comp: PHASE_SEL<29>
+   	 Comp: PHASE_SEL<28>
+   	 Comp: PHASE_SEL<27>
+   	 Comp: PHASE_SEL<26>
+   	 Comp: PHASE_SEL<25>
+   	 Comp: PHASE_SEL<24>
+   	 Comp: PHASE_SEL<23>
+   	 Comp: PHASE_SEL<22>
+   	 Comp: PHASE_SEL<21>
+   	 Comp: PHASE_SEL<20>
+   	 Comp: PHASE_SEL<19>
+   	 Comp: PHASE_SEL<18>
+   	 Comp: PHASE_SEL<17>
+   	 Comp: PHASE_SEL<16>
+   	 Comp: PHASE_SEL<15>
+   	 Comp: PHASE_SEL<14>
+   	 Comp: PHASE_SEL<13>
+   	 Comp: PHASE_SEL<12>
+   	 Comp: PHASE_SEL<11>
+   	 Comp: PHASE_SEL<10>
+   	 Comp: PHASE_SEL<9>
+   	 Comp: PHASE_SEL<8>
+   	 Comp: PHASE_SEL<7>
+   	 Comp: PHASE_SEL<6>
+   	 Comp: PHASE_SEL<5>
+   	 Comp: PHASE_SEL<2>
+
+WARNING:Place:838 - An IO Bus with more than one IO standard is found.
+   Components associated with this bus are as follows: 
+   	 Comp: PHASE_SEL<0>   IOSTANDARD = LVCMOS33
+   	 Comp: PHASE_SEL<1>   IOSTANDARD = LVCMOS33
+   	 Comp: PHASE_SEL<2>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<3>   IOSTANDARD = LVCMOS33
+   	 Comp: PHASE_SEL<4>   IOSTANDARD = LVCMOS33
+   	 Comp: PHASE_SEL<5>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<6>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<7>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<8>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<9>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<10>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<11>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<12>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<13>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<14>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<15>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<16>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<17>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<18>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<19>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<20>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<21>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<22>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<23>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<24>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<25>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<26>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<27>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<28>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<29>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<30>   IOSTANDARD = LVCMOS25
+   	 Comp: PHASE_SEL<31>   IOSTANDARD = LVCMOS25
+
+
+INFO:Place:834 - Only a subset of IOs are locked. Out of 111 IOs, 83 are locked
+   and 28 are not locked. If you would like to print the names of these IOs,
+   please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
+Phase 2.7  Design Feasibility Check (Checksum:4d1d50f1) REAL time: 17 secs 
+
+Phase 3.31  Local Placement Optimization
+Phase 3.31  Local Placement Optimization (Checksum:4f7e2151) REAL time: 17 secs 
+>>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 
 Phase 4.2  Initial Placement for Architecture Specific Features
 
 Phase 4.2  Initial Placement for Architecture Specific Features
+<<<<<<< HEAD
 (Checksum:6e3481a) REAL time: 49 secs 
 
 Phase 5.36  Local Placement Optimization
@@ -247,6 +336,44 @@ Phase 13.34  Placement Validation (Checksum:a04e5b36) REAL time: 1 mins 35 secs
 
 Total REAL time to Placer completion: 1 mins 40 secs 
 Total CPU  time to Placer completion: 1 mins 36 secs 
+=======
+(Checksum:dbfecf3a) REAL time: 33 secs 
+
+Phase 5.36  Local Placement Optimization
+Phase 5.36  Local Placement Optimization (Checksum:dbfecf3a) REAL time: 33 secs 
+
+Phase 6.30  Global Clock Region Assignment
+Phase 6.30  Global Clock Region Assignment (Checksum:dbfecf3a) REAL time: 33 secs 
+
+Phase 7.3  Local Placement Optimization
+...
+Phase 7.3  Local Placement Optimization (Checksum:c53292f7) REAL time: 33 secs 
+
+Phase 8.5  Local Placement Optimization
+Phase 8.5  Local Placement Optimization (Checksum:e9ad3006) REAL time: 33 secs 
+
+Phase 9.8  Global Placement
+...........................................................................................
+...........................................................................................................................................................................................................
+.............................................................................................................................................................................................
+...............................................................................
+Phase 9.8  Global Placement (Checksum:1b19629e) REAL time: 1 mins 
+
+Phase 10.5  Local Placement Optimization
+Phase 10.5  Local Placement Optimization (Checksum:1b19629e) REAL time: 1 mins 
+
+Phase 11.18  Placement Optimization
+Phase 11.18  Placement Optimization (Checksum:9f790e0) REAL time: 1 mins 12 secs 
+
+Phase 12.5  Local Placement Optimization
+Phase 12.5  Local Placement Optimization (Checksum:9f790e0) REAL time: 1 mins 12 secs 
+
+Phase 13.34  Placement Validation
+Phase 13.34  Placement Validation (Checksum:d18f3267) REAL time: 1 mins 12 secs 
+
+Total REAL time to Placer completion: 1 mins 16 secs 
+Total CPU  time to Placer completion: 1 mins 12 secs 
+>>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 Running post-placement packing...
 Writing output files...
 WARNING:PhysDesignRules:372 - Gated clock. Clock net icon_control0<13> is
@@ -279,11 +406,19 @@ Slice Logic Utilization:
     Number used as Latches:                      1
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
+<<<<<<< HEAD
   Number of Slice LUTs:                      3,434 out of  27,288   12%
     Number used as logic:                    3,242 out of  27,288   11%
       Number using O6 output only:           2,053
       Number using O5 output only:             428
       Number using O5 and O6:                  761
+=======
+  Number of Slice LUTs:                      3,359 out of  27,288   12%
+    Number used as logic:                    3,283 out of  27,288   12%
+      Number using O6 output only:           2,282
+      Number using O5 output only:             221
+      Number using O5 and O6:                  780
+>>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
       Number used as ROM:                        0
     Number used as Memory:                     117 out of   6,408    1%
       Number used as Dual Port RAM:             20
@@ -294,6 +429,7 @@ Slice Logic Utilization:
         Number using O6 output only:            16
         Number using O5 output only:             0
         Number using O5 and O6:                  8
+<<<<<<< HEAD
       Number used as Shift Register:            73
         Number using O6 output only:            71
         Number using O5 output only:             1
@@ -311,6 +447,25 @@ Slice Logic Distribution:
     Number with an unused LUT:                 951 out of   4,385   21%
     Number of fully used LUT-FF pairs:       1,616 out of   4,385   36%
     Number of unique control sets:             203
+=======
+      Number used as Shift Register:             1
+        Number using O6 output only:             1
+        Number using O5 output only:             0
+        Number using O5 and O6:                  0
+    Number used exclusively as route-thrus:     31
+      Number with same-slice register load:     20
+      Number with same-slice carry load:        11
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                 1,348 out of   6,822   19%
+  Number of MUXCYs used:                     1,492 out of  13,644   10%
+  Number of LUT Flip Flop pairs used:        3,995
+    Number with an unused Flip Flop:         2,384 out of   3,995   59%
+    Number with an unused LUT:                 636 out of   3,995   15%
+    Number of fully used LUT-FF pairs:         975 out of   3,995   24%
+    Number of unique control sets:              86
+>>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
     Number of slice register sites lost
       to control set restrictions:             808 out of  54,576    1%
 
@@ -366,9 +521,15 @@ Specific Feature Utilization:
   Number of RPM macros:           10
 Average Fanout of Non-Clock Nets:                3.63
 
+<<<<<<< HEAD
 Peak Memory Usage:  631 MB
 Total REAL time to MAP completion:  1 mins 43 secs 
 Total CPU time to MAP completion:   1 mins 40 secs 
+=======
+Peak Memory Usage:  611 MB
+Total REAL time to MAP completion:  1 mins 18 secs 
+Total CPU time to MAP completion:   1 mins 15 secs 
+>>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 
 Mapping completed.
 See MAP report file "OK_imager_map.mrp" for details.

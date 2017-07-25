@@ -45,7 +45,11 @@ parameter S_subc_last = 8'b00001000;
 parameter S_FSM1 = 8'b00010000;
 parameter S_FSM1_ACK = 8'b00100000; 
 
+<<<<<<< HEAD
 
+=======
+// -- Ports
+>>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 input									  RESET;
 input									  FSMIND0;
 output									  FSMIND1;
@@ -76,7 +80,7 @@ input [31:0]			PROJ_DELAY;
   integer			count_mpre;
   integer			count_subsc;
   reg [8:1]			fsm_stat_i;
-  reg [31:0] 	fst_cntr;
+  integer 	fst_cntr;
     reg [31:0]		timer;
 	 reg TRIGGER_PROJ_i;
 
@@ -99,6 +103,7 @@ input [31:0]			PROJ_DELAY;
   end
   
   always@(posedge CLK_HS) begin
+<<<<<<< HEAD
 		if (RESET) begin
 			fst_cntr <= C_NUM_ROWS*18 - PROJ_DELAY;
 			TRIGGER_PROJ_i <= 0;
@@ -117,6 +122,17 @@ input [31:0]			PROJ_DELAY;
 				TRIGGER_PROJ_i <= 0;
 			end
 			
+=======
+		if (STREAM == 1 && fst_cntr > 0) begin
+			fst_cntr <= fst_cntr - 1;
+			TRIGGER_PROJ_i <= 0;
+		end else if (STREAM == 1 && fst_cntr == 0) begin
+			fst_cntr <= 0;
+			TRIGGER_PROJ_i <= 1;
+		end else begin
+			fst_cntr <= C_NUM_ROWS*18 - PROJ_DELAY;
+			TRIGGER_PROJ_i <= 0;
+>>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 		end
   end
 

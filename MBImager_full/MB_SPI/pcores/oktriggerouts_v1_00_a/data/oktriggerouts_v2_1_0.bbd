@@ -1,0 +1,9 @@
+##############################################################################
+## Filename:          C:\Users\MBImager\Documents\MBImager_ams\ISE_projects\MotherBoard\MBImager_full\MB_SPI\pcores/oktriggerouts_v1_00_a/data/oktriggerouts_v2_1_0.bbd
+## Description:       Black Box Definition
+## Date:              Fri Jun 16 13:38:16 2017 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+Files
+################################################################################
+okTriggerOut.ngc

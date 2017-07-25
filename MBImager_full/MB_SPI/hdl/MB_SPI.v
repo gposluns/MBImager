@@ -22,29 +22,30 @@ module MB_SPI
 
   wire Ext_BRK;
   wire Ext_NM_BRK;
+  wire [0:0] Generic_SPI_IP2INTC_Irpt;
   wire Generic_SPI_MISO_I;
   wire Generic_SPI_MOSI_O;
   wire Generic_SPI_SCK_O;
   wire [9:0] Generic_SPI_SS_O;
   wire RESET;
-  wire [63:0] axi4lite_0_M_ARADDR;
-  wire [1:0] axi4lite_0_M_ARESETN;
-  wire [1:0] axi4lite_0_M_ARREADY;
-  wire [1:0] axi4lite_0_M_ARVALID;
-  wire [63:0] axi4lite_0_M_AWADDR;
-  wire [1:0] axi4lite_0_M_AWREADY;
-  wire [1:0] axi4lite_0_M_AWVALID;
-  wire [1:0] axi4lite_0_M_BREADY;
-  wire [3:0] axi4lite_0_M_BRESP;
-  wire [1:0] axi4lite_0_M_BVALID;
-  wire [63:0] axi4lite_0_M_RDATA;
-  wire [1:0] axi4lite_0_M_RREADY;
-  wire [3:0] axi4lite_0_M_RRESP;
-  wire [1:0] axi4lite_0_M_RVALID;
-  wire [63:0] axi4lite_0_M_WDATA;
-  wire [1:0] axi4lite_0_M_WREADY;
-  wire [7:0] axi4lite_0_M_WSTRB;
-  wire [1:0] axi4lite_0_M_WVALID;
+  wire [95:0] axi4lite_0_M_ARADDR;
+  wire [2:0] axi4lite_0_M_ARESETN;
+  wire [2:0] axi4lite_0_M_ARREADY;
+  wire [2:0] axi4lite_0_M_ARVALID;
+  wire [95:0] axi4lite_0_M_AWADDR;
+  wire [2:0] axi4lite_0_M_AWREADY;
+  wire [2:0] axi4lite_0_M_AWVALID;
+  wire [2:0] axi4lite_0_M_BREADY;
+  wire [5:0] axi4lite_0_M_BRESP;
+  wire [2:0] axi4lite_0_M_BVALID;
+  wire [95:0] axi4lite_0_M_RDATA;
+  wire [2:0] axi4lite_0_M_RREADY;
+  wire [5:0] axi4lite_0_M_RRESP;
+  wire [2:0] axi4lite_0_M_RVALID;
+  wire [95:0] axi4lite_0_M_WDATA;
+  wire [2:0] axi4lite_0_M_WREADY;
+  wire [11:0] axi4lite_0_M_WSTRB;
+  wire [2:0] axi4lite_0_M_WVALID;
   wire [31:0] axi4lite_0_S_ARADDR;
   wire [1:0] axi4lite_0_S_ARBURST;
   wire [3:0] axi4lite_0_S_ARCACHE;
@@ -82,6 +83,9 @@ module MB_SPI
   wire [0:0] axi4lite_0_S_WREADY;
   wire [3:0] axi4lite_0_S_WSTRB;
   wire [0:0] axi4lite_0_S_WVALID;
+  wire axi_intc_0_INTERRUPT_Interrupt;
+  wire [1:0] axi_intc_0_INTERRUPT_Interrupt_Ack;
+  wire [0:31] axi_intc_0_INTERRUPT_Interrupt_Address;
   wire [0:0] clk_100_0000MHz;
   wire [0:31] microblaze_0_d_bram_ctrl_2_microblaze_0_bram_block_BRAM_Addr;
   wire microblaze_0_d_bram_ctrl_2_microblaze_0_bram_block_BRAM_Clk;
@@ -151,15 +155,15 @@ module MB_SPI
   wire net_ExternalPort_0;
   wire net_gnd0;
   wire [0:0] net_gnd1;
-  wire [1:0] net_gnd2;
-  wire [0:2] net_gnd3;
+  wire [0:1] net_gnd2;
+  wire [2:0] net_gnd3;
   wire [0:3] net_gnd4;
   wire [9:0] net_gnd10;
   wire [0:15] net_gnd16;
   wire [0:31] net_gnd32;
   wire [0:4095] net_gnd4096;
   wire net_vcc0;
-  wire [1:0] pgassign1;
+  wire [2:0] pgassign1;
   wire [0:0] proc_sys_reset_0_BUS_STRUCT_RESET;
   wire proc_sys_reset_0_Dcm_locked;
   wire [0:0] proc_sys_reset_0_Interconnect_aresetn;
@@ -174,14 +178,15 @@ module MB_SPI
   assign SPI_FLASH_MOSI = Generic_SPI_MOSI_O;
   assign SPI_FLASH_SCLK = Generic_SPI_SCK_O;
   assign Generic_SPI_MISO_I = SPI_FLASH_MISO;
+  assign pgassign1[2:2] = clk_100_0000MHz[0:0];
   assign pgassign1[1:1] = clk_100_0000MHz[0:0];
   assign pgassign1[0:0] = clk_100_0000MHz[0:0];
   assign net_gnd0 = 1'b0;
   assign net_gnd1[0:0] = 1'b0;
   assign net_gnd10[9:0] = 10'b0000000000;
   assign net_gnd16[0:15] = 16'b0000000000000000;
-  assign net_gnd2[1:0] = 2'b00;
-  assign net_gnd3[0:2] = 3'b000;
+  assign net_gnd2[0:1] = 2'b00;
+  assign net_gnd3[2:0] = 3'b000;
   assign net_gnd32[0:31] = 32'b00000000000000000000000000000000;
   assign net_gnd4[0:3] = 4'b0000;
   assign net_gnd4096[0:4095] = 4096'h0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
@@ -309,7 +314,7 @@ module MB_SPI
       .SPLB_CTRL_PLB_RNW ( net_gnd0 ),
       .SPLB_CTRL_PLB_BE ( net_gnd4 ),
       .SPLB_CTRL_PLB_size ( net_gnd4 ),
-      .SPLB_CTRL_PLB_type ( net_gnd3 ),
+      .SPLB_CTRL_PLB_type ( net_gnd3[2:0] ),
       .SPLB_CTRL_PLB_wrDBus ( net_gnd32 ),
       .SPLB_CTRL_Sl_addrAck (  ),
       .SPLB_CTRL_Sl_SSize (  ),
@@ -329,15 +334,15 @@ module MB_SPI
       .SPLB_CTRL_PLB_wrPrim ( net_gnd0 ),
       .SPLB_CTRL_PLB_abort ( net_gnd0 ),
       .SPLB_CTRL_PLB_busLock ( net_gnd0 ),
-      .SPLB_CTRL_PLB_MSize ( net_gnd2[1:0] ),
+      .SPLB_CTRL_PLB_MSize ( net_gnd2 ),
       .SPLB_CTRL_PLB_lockErr ( net_gnd0 ),
       .SPLB_CTRL_PLB_wrBurst ( net_gnd0 ),
       .SPLB_CTRL_PLB_rdBurst ( net_gnd0 ),
       .SPLB_CTRL_PLB_wrPendReq ( net_gnd0 ),
       .SPLB_CTRL_PLB_rdPendReq ( net_gnd0 ),
-      .SPLB_CTRL_PLB_wrPendPri ( net_gnd2[1:0] ),
-      .SPLB_CTRL_PLB_rdPendPri ( net_gnd2[1:0] ),
-      .SPLB_CTRL_PLB_reqPri ( net_gnd2[1:0] ),
+      .SPLB_CTRL_PLB_wrPendPri ( net_gnd2 ),
+      .SPLB_CTRL_PLB_rdPendPri ( net_gnd2 ),
+      .SPLB_CTRL_PLB_reqPri ( net_gnd2 ),
       .SPLB_CTRL_PLB_TAttribute ( net_gnd16 ),
       .SPLB_CTRL_Sl_wrBTerm (  ),
       .SPLB_CTRL_Sl_rdWdAddr (  ),
@@ -459,7 +464,7 @@ module MB_SPI
       .SPLB_CTRL_PLB_RNW ( net_gnd0 ),
       .SPLB_CTRL_PLB_BE ( net_gnd4 ),
       .SPLB_CTRL_PLB_size ( net_gnd4 ),
-      .SPLB_CTRL_PLB_type ( net_gnd3 ),
+      .SPLB_CTRL_PLB_type ( net_gnd3[2:0] ),
       .SPLB_CTRL_PLB_wrDBus ( net_gnd32 ),
       .SPLB_CTRL_Sl_addrAck (  ),
       .SPLB_CTRL_Sl_SSize (  ),
@@ -479,15 +484,15 @@ module MB_SPI
       .SPLB_CTRL_PLB_wrPrim ( net_gnd0 ),
       .SPLB_CTRL_PLB_abort ( net_gnd0 ),
       .SPLB_CTRL_PLB_busLock ( net_gnd0 ),
-      .SPLB_CTRL_PLB_MSize ( net_gnd2[1:0] ),
+      .SPLB_CTRL_PLB_MSize ( net_gnd2 ),
       .SPLB_CTRL_PLB_lockErr ( net_gnd0 ),
       .SPLB_CTRL_PLB_wrBurst ( net_gnd0 ),
       .SPLB_CTRL_PLB_rdBurst ( net_gnd0 ),
       .SPLB_CTRL_PLB_wrPendReq ( net_gnd0 ),
       .SPLB_CTRL_PLB_rdPendReq ( net_gnd0 ),
-      .SPLB_CTRL_PLB_wrPendPri ( net_gnd2[1:0] ),
-      .SPLB_CTRL_PLB_rdPendPri ( net_gnd2[1:0] ),
-      .SPLB_CTRL_PLB_reqPri ( net_gnd2[1:0] ),
+      .SPLB_CTRL_PLB_wrPendPri ( net_gnd2 ),
+      .SPLB_CTRL_PLB_rdPendPri ( net_gnd2 ),
+      .SPLB_CTRL_PLB_reqPri ( net_gnd2 ),
       .SPLB_CTRL_PLB_TAttribute ( net_gnd16 ),
       .SPLB_CTRL_Sl_wrBTerm (  ),
       .SPLB_CTRL_Sl_rdWdAddr (  ),
@@ -539,15 +544,15 @@ module MB_SPI
       .CLK ( clk_100_0000MHz[0] ),
       .RESET ( microblaze_0_dlmb_LMB_Rst ),
       .MB_RESET ( proc_sys_reset_0_MB_Reset ),
-      .INTERRUPT ( net_gnd0 ),
-      .INTERRUPT_ADDRESS ( net_gnd32 ),
-      .INTERRUPT_ACK (  ),
+      .INTERRUPT ( axi_intc_0_INTERRUPT_Interrupt ),
+      .INTERRUPT_ADDRESS ( axi_intc_0_INTERRUPT_Interrupt_Address ),
+      .INTERRUPT_ACK ( axi_intc_0_INTERRUPT_Interrupt_Ack[1:0] ),
       .EXT_BRK ( Ext_BRK ),
       .EXT_NM_BRK ( Ext_NM_BRK ),
       .DBG_STOP ( net_gnd0 ),
       .MB_Halted (  ),
       .MB_Error (  ),
-      .WAKEUP ( net_gnd2[1:0] ),
+      .WAKEUP ( net_gnd2 ),
       .SLEEP (  ),
       .DBG_WAKEUP (  ),
       .LOCKSTEP_MASTER_OUT (  ),
@@ -589,7 +594,7 @@ module MB_SPI
       .IPLB_MRdDBus ( net_gnd32 ),
       .IPLB_MRdWdAddr ( net_gnd4 ),
       .IPLB_MRearbitrate ( net_gnd0 ),
-      .IPLB_MSSize ( net_gnd2[1:0] ),
+      .IPLB_MSSize ( net_gnd2 ),
       .IPLB_MTimeout ( net_gnd0 ),
       .DATA_READ ( microblaze_0_dlmb_LMB_ReadDBus ),
       .DREADY ( microblaze_0_dlmb_LMB_Ready ),
@@ -630,7 +635,7 @@ module MB_SPI
       .DPLB_MRdDBus ( net_gnd32 ),
       .DPLB_MRdWdAddr ( net_gnd4 ),
       .DPLB_MRearbitrate ( net_gnd0 ),
-      .DPLB_MSSize ( net_gnd2[1:0] ),
+      .DPLB_MSSize ( net_gnd2 ),
       .DPLB_MTimeout ( net_gnd0 ),
       .M_AXI_IP_AWID (  ),
       .M_AXI_IP_AWADDR (  ),
@@ -649,7 +654,7 @@ module MB_SPI
       .M_AXI_IP_WVALID (  ),
       .M_AXI_IP_WREADY ( net_gnd0 ),
       .M_AXI_IP_BID ( net_gnd1[0:0] ),
-      .M_AXI_IP_BRESP ( net_gnd2 ),
+      .M_AXI_IP_BRESP ( net_gnd2[0:1] ),
       .M_AXI_IP_BVALID ( net_gnd0 ),
       .M_AXI_IP_BREADY (  ),
       .M_AXI_IP_ARID (  ),
@@ -665,7 +670,7 @@ module MB_SPI
       .M_AXI_IP_ARREADY ( net_gnd0 ),
       .M_AXI_IP_RID ( net_gnd1[0:0] ),
       .M_AXI_IP_RDATA ( net_gnd32[0:31] ),
-      .M_AXI_IP_RRESP ( net_gnd2 ),
+      .M_AXI_IP_RRESP ( net_gnd2[0:1] ),
       .M_AXI_IP_RLAST ( net_gnd0 ),
       .M_AXI_IP_RVALID ( net_gnd0 ),
       .M_AXI_IP_RREADY (  ),
@@ -728,7 +733,7 @@ module MB_SPI
       .M_AXI_IC_WREADY ( net_gnd0 ),
       .M_AXI_IC_WUSER (  ),
       .M_AXI_IC_BID ( net_gnd1[0:0] ),
-      .M_AXI_IC_BRESP ( net_gnd2 ),
+      .M_AXI_IC_BRESP ( net_gnd2[0:1] ),
       .M_AXI_IC_BVALID ( net_gnd0 ),
       .M_AXI_IC_BREADY (  ),
       .M_AXI_IC_BUSER ( net_gnd1[0:0] ),
@@ -750,7 +755,7 @@ module MB_SPI
       .M_AXI_IC_ARBAR (  ),
       .M_AXI_IC_RID ( net_gnd1[0:0] ),
       .M_AXI_IC_RDATA ( net_gnd32[0:31] ),
-      .M_AXI_IC_RRESP ( net_gnd2 ),
+      .M_AXI_IC_RRESP ( net_gnd2[0:1] ),
       .M_AXI_IC_RLAST ( net_gnd0 ),
       .M_AXI_IC_RVALID ( net_gnd0 ),
       .M_AXI_IC_RREADY (  ),
@@ -759,7 +764,7 @@ module MB_SPI
       .M_AXI_IC_ACVALID ( net_gnd0 ),
       .M_AXI_IC_ACADDR ( net_gnd32[0:31] ),
       .M_AXI_IC_ACSNOOP ( net_gnd4[0:3] ),
-      .M_AXI_IC_ACPROT ( net_gnd3[0:2] ),
+      .M_AXI_IC_ACPROT ( net_gnd3 ),
       .M_AXI_IC_ACREADY (  ),
       .M_AXI_IC_CRREADY ( net_gnd0 ),
       .M_AXI_IC_CRVALID (  ),
@@ -790,7 +795,7 @@ module MB_SPI
       .M_AXI_DC_WREADY ( net_gnd0 ),
       .M_AXI_DC_WUSER (  ),
       .M_AXI_DC_BID ( net_gnd1[0:0] ),
-      .M_AXI_DC_BRESP ( net_gnd2 ),
+      .M_AXI_DC_BRESP ( net_gnd2[0:1] ),
       .M_AXI_DC_BVALID ( net_gnd0 ),
       .M_AXI_DC_BREADY (  ),
       .M_AXI_DC_BUSER ( net_gnd1[0:0] ),
@@ -812,7 +817,7 @@ module MB_SPI
       .M_AXI_DC_ARBAR (  ),
       .M_AXI_DC_RID ( net_gnd1[0:0] ),
       .M_AXI_DC_RDATA ( net_gnd32[0:31] ),
-      .M_AXI_DC_RRESP ( net_gnd2 ),
+      .M_AXI_DC_RRESP ( net_gnd2[0:1] ),
       .M_AXI_DC_RLAST ( net_gnd0 ),
       .M_AXI_DC_RVALID ( net_gnd0 ),
       .M_AXI_DC_RREADY (  ),
@@ -821,7 +826,7 @@ module MB_SPI
       .M_AXI_DC_ACVALID ( net_gnd0 ),
       .M_AXI_DC_ACADDR ( net_gnd32[0:31] ),
       .M_AXI_DC_ACSNOOP ( net_gnd4[0:3] ),
-      .M_AXI_DC_ACPROT ( net_gnd3[0:2] ),
+      .M_AXI_DC_ACPROT ( net_gnd3 ),
       .M_AXI_DC_ACREADY (  ),
       .M_AXI_DC_CRREADY ( net_gnd0 ),
       .M_AXI_DC_CRVALID (  ),
@@ -1212,23 +1217,23 @@ module MB_SPI
       .PLB_SAValid ( net_gnd0 ),
       .PLB_rdPrim ( net_gnd0 ),
       .PLB_wrPrim ( net_gnd0 ),
-      .PLB_masterID ( net_gnd3 ),
+      .PLB_masterID ( net_gnd3[2:0] ),
       .PLB_abort ( net_gnd0 ),
       .PLB_busLock ( net_gnd0 ),
       .PLB_RNW ( net_gnd0 ),
       .PLB_BE ( net_gnd4 ),
-      .PLB_MSize ( net_gnd2[1:0] ),
+      .PLB_MSize ( net_gnd2 ),
       .PLB_size ( net_gnd4 ),
-      .PLB_type ( net_gnd3 ),
+      .PLB_type ( net_gnd3[2:0] ),
       .PLB_lockErr ( net_gnd0 ),
       .PLB_wrDBus ( net_gnd32 ),
       .PLB_wrBurst ( net_gnd0 ),
       .PLB_rdBurst ( net_gnd0 ),
       .PLB_wrPendReq ( net_gnd0 ),
       .PLB_rdPendReq ( net_gnd0 ),
-      .PLB_wrPendPri ( net_gnd2[1:0] ),
-      .PLB_rdPendPri ( net_gnd2[1:0] ),
-      .PLB_reqPri ( net_gnd2[1:0] ),
+      .PLB_wrPendPri ( net_gnd2 ),
+      .PLB_rdPendPri ( net_gnd2 ),
+      .PLB_reqPri ( net_gnd2 ),
       .PLB_TAttribute ( net_gnd16 ),
       .Sl_addrAck (  ),
       .Sl_SSize (  ),
@@ -1631,9 +1636,9 @@ module MB_SPI
       .M_AXI_WUSER (  ),
       .M_AXI_WVALID ( axi4lite_0_M_WVALID ),
       .M_AXI_WREADY ( axi4lite_0_M_WREADY ),
-      .M_AXI_BID ( net_gnd2 ),
+      .M_AXI_BID ( net_gnd3 ),
       .M_AXI_BRESP ( axi4lite_0_M_BRESP ),
-      .M_AXI_BUSER ( net_gnd2 ),
+      .M_AXI_BUSER ( net_gnd3 ),
       .M_AXI_BVALID ( axi4lite_0_M_BVALID ),
       .M_AXI_BREADY ( axi4lite_0_M_BREADY ),
       .M_AXI_ARID (  ),
@@ -1649,11 +1654,11 @@ module MB_SPI
       .M_AXI_ARUSER (  ),
       .M_AXI_ARVALID ( axi4lite_0_M_ARVALID ),
       .M_AXI_ARREADY ( axi4lite_0_M_ARREADY ),
-      .M_AXI_RID ( net_gnd2 ),
+      .M_AXI_RID ( net_gnd3 ),
       .M_AXI_RDATA ( axi4lite_0_M_RDATA ),
       .M_AXI_RRESP ( axi4lite_0_M_RRESP ),
-      .M_AXI_RLAST ( net_gnd2 ),
-      .M_AXI_RUSER ( net_gnd2 ),
+      .M_AXI_RLAST ( net_gnd3 ),
+      .M_AXI_RUSER ( net_gnd3 ),
       .M_AXI_RVALID ( axi4lite_0_M_RVALID ),
       .M_AXI_RREADY ( axi4lite_0_M_RREADY ),
       .S_AXI_CTRL_AWADDR ( net_gnd32[0:31] ),
@@ -1802,7 +1807,39 @@ module MB_SPI
       .SS_I ( net_gnd10 ),
       .SS_O ( Generic_SPI_SS_O ),
       .SS_T (  ),
-      .IP2INTC_Irpt (  )
+      .IP2INTC_Irpt ( Generic_SPI_IP2INTC_Irpt[0] )
+    );
+
+  (* BOX_TYPE = "user_black_box" *)
+  MB_SPI_axi_intc_0_wrapper
+    axi_intc_0 (
+      .S_AXI_ACLK ( clk_100_0000MHz[0] ),
+      .S_AXI_ARESETN ( axi4lite_0_M_ARESETN[2] ),
+      .S_AXI_AWADDR ( axi4lite_0_M_AWADDR[72:64] ),
+      .S_AXI_AWVALID ( axi4lite_0_M_AWVALID[2] ),
+      .S_AXI_AWREADY ( axi4lite_0_M_AWREADY[2] ),
+      .S_AXI_WDATA ( axi4lite_0_M_WDATA[95:64] ),
+      .S_AXI_WSTRB ( axi4lite_0_M_WSTRB[11:8] ),
+      .S_AXI_WVALID ( axi4lite_0_M_WVALID[2] ),
+      .S_AXI_WREADY ( axi4lite_0_M_WREADY[2] ),
+      .S_AXI_BRESP ( axi4lite_0_M_BRESP[5:4] ),
+      .S_AXI_BVALID ( axi4lite_0_M_BVALID[2] ),
+      .S_AXI_BREADY ( axi4lite_0_M_BREADY[2] ),
+      .S_AXI_ARADDR ( axi4lite_0_M_ARADDR[72:64] ),
+      .S_AXI_ARVALID ( axi4lite_0_M_ARVALID[2] ),
+      .S_AXI_ARREADY ( axi4lite_0_M_ARREADY[2] ),
+      .S_AXI_RDATA ( axi4lite_0_M_RDATA[95:64] ),
+      .S_AXI_RRESP ( axi4lite_0_M_RRESP[5:4] ),
+      .S_AXI_RVALID ( axi4lite_0_M_RVALID[2] ),
+      .S_AXI_RREADY ( axi4lite_0_M_RREADY[2] ),
+      .Intr ( Generic_SPI_IP2INTC_Irpt[0:0] ),
+      .Irq ( axi_intc_0_INTERRUPT_Interrupt ),
+      .Interrupt_address ( axi_intc_0_INTERRUPT_Interrupt_Address[0:31] ),
+      .Processor_ack ( axi_intc_0_INTERRUPT_Interrupt_Ack ),
+      .Processor_clk ( net_gnd0 ),
+      .Processor_rst ( net_gnd0 ),
+      .Interrupt_address_in ( net_gnd32[0:31] ),
+      .Processor_ack_out (  )
     );
 
 endmodule
@@ -4714,7 +4751,7 @@ module MB_SPI_axi4lite_0_wrapper
   input INTERCONNECT_ACLK;
   input INTERCONNECT_ARESETN;
   output [0:0] S_AXI_ARESET_OUT_N;
-  output [1:0] M_AXI_ARESET_OUT_N;
+  output [2:0] M_AXI_ARESET_OUT_N;
   output IRQ;
   input [0:0] S_AXI_ACLK;
   input [0:0] S_AXI_AWID;
@@ -4760,52 +4797,52 @@ module MB_SPI_axi4lite_0_wrapper
   output [0:0] S_AXI_RUSER;
   output [0:0] S_AXI_RVALID;
   input [0:0] S_AXI_RREADY;
-  input [1:0] M_AXI_ACLK;
-  output [1:0] M_AXI_AWID;
-  output [63:0] M_AXI_AWADDR;
-  output [15:0] M_AXI_AWLEN;
-  output [5:0] M_AXI_AWSIZE;
-  output [3:0] M_AXI_AWBURST;
-  output [3:0] M_AXI_AWLOCK;
-  output [7:0] M_AXI_AWCACHE;
-  output [5:0] M_AXI_AWPROT;
-  output [7:0] M_AXI_AWREGION;
-  output [7:0] M_AXI_AWQOS;
-  output [1:0] M_AXI_AWUSER;
-  output [1:0] M_AXI_AWVALID;
-  input [1:0] M_AXI_AWREADY;
-  output [1:0] M_AXI_WID;
-  output [63:0] M_AXI_WDATA;
-  output [7:0] M_AXI_WSTRB;
-  output [1:0] M_AXI_WLAST;
-  output [1:0] M_AXI_WUSER;
-  output [1:0] M_AXI_WVALID;
-  input [1:0] M_AXI_WREADY;
-  input [1:0] M_AXI_BID;
-  input [3:0] M_AXI_BRESP;
-  input [1:0] M_AXI_BUSER;
-  input [1:0] M_AXI_BVALID;
-  output [1:0] M_AXI_BREADY;
-  output [1:0] M_AXI_ARID;
-  output [63:0] M_AXI_ARADDR;
-  output [15:0] M_AXI_ARLEN;
-  output [5:0] M_AXI_ARSIZE;
-  output [3:0] M_AXI_ARBURST;
-  output [3:0] M_AXI_ARLOCK;
-  output [7:0] M_AXI_ARCACHE;
-  output [5:0] M_AXI_ARPROT;
-  output [7:0] M_AXI_ARREGION;
-  output [7:0] M_AXI_ARQOS;
-  output [1:0] M_AXI_ARUSER;
-  output [1:0] M_AXI_ARVALID;
-  input [1:0] M_AXI_ARREADY;
-  input [1:0] M_AXI_RID;
-  input [63:0] M_AXI_RDATA;
-  input [3:0] M_AXI_RRESP;
-  input [1:0] M_AXI_RLAST;
-  input [1:0] M_AXI_RUSER;
-  input [1:0] M_AXI_RVALID;
-  output [1:0] M_AXI_RREADY;
+  input [2:0] M_AXI_ACLK;
+  output [2:0] M_AXI_AWID;
+  output [95:0] M_AXI_AWADDR;
+  output [23:0] M_AXI_AWLEN;
+  output [8:0] M_AXI_AWSIZE;
+  output [5:0] M_AXI_AWBURST;
+  output [5:0] M_AXI_AWLOCK;
+  output [11:0] M_AXI_AWCACHE;
+  output [8:0] M_AXI_AWPROT;
+  output [11:0] M_AXI_AWREGION;
+  output [11:0] M_AXI_AWQOS;
+  output [2:0] M_AXI_AWUSER;
+  output [2:0] M_AXI_AWVALID;
+  input [2:0] M_AXI_AWREADY;
+  output [2:0] M_AXI_WID;
+  output [95:0] M_AXI_WDATA;
+  output [11:0] M_AXI_WSTRB;
+  output [2:0] M_AXI_WLAST;
+  output [2:0] M_AXI_WUSER;
+  output [2:0] M_AXI_WVALID;
+  input [2:0] M_AXI_WREADY;
+  input [2:0] M_AXI_BID;
+  input [5:0] M_AXI_BRESP;
+  input [2:0] M_AXI_BUSER;
+  input [2:0] M_AXI_BVALID;
+  output [2:0] M_AXI_BREADY;
+  output [2:0] M_AXI_ARID;
+  output [95:0] M_AXI_ARADDR;
+  output [23:0] M_AXI_ARLEN;
+  output [8:0] M_AXI_ARSIZE;
+  output [5:0] M_AXI_ARBURST;
+  output [5:0] M_AXI_ARLOCK;
+  output [11:0] M_AXI_ARCACHE;
+  output [8:0] M_AXI_ARPROT;
+  output [11:0] M_AXI_ARREGION;
+  output [11:0] M_AXI_ARQOS;
+  output [2:0] M_AXI_ARUSER;
+  output [2:0] M_AXI_ARVALID;
+  input [2:0] M_AXI_ARREADY;
+  input [2:0] M_AXI_RID;
+  input [95:0] M_AXI_RDATA;
+  input [5:0] M_AXI_RRESP;
+  input [2:0] M_AXI_RLAST;
+  input [2:0] M_AXI_RUSER;
+  input [2:0] M_AXI_RVALID;
+  output [2:0] M_AXI_RREADY;
   input [31:0] S_AXI_CTRL_AWADDR;
   input S_AXI_CTRL_AWVALID;
   output S_AXI_CTRL_AWREADY;
@@ -4986,5 +5023,64 @@ module MB_SPI_generic_spi_wrapper
   output [9:0] SS_O;
   output SS_T;
   output IP2INTC_Irpt;
+endmodule
+
+module MB_SPI_axi_intc_0_wrapper
+  (
+    S_AXI_ACLK,
+    S_AXI_ARESETN,
+    S_AXI_AWADDR,
+    S_AXI_AWVALID,
+    S_AXI_AWREADY,
+    S_AXI_WDATA,
+    S_AXI_WSTRB,
+    S_AXI_WVALID,
+    S_AXI_WREADY,
+    S_AXI_BRESP,
+    S_AXI_BVALID,
+    S_AXI_BREADY,
+    S_AXI_ARADDR,
+    S_AXI_ARVALID,
+    S_AXI_ARREADY,
+    S_AXI_RDATA,
+    S_AXI_RRESP,
+    S_AXI_RVALID,
+    S_AXI_RREADY,
+    Intr,
+    Irq,
+    Interrupt_address,
+    Processor_ack,
+    Processor_clk,
+    Processor_rst,
+    Interrupt_address_in,
+    Processor_ack_out
+  );
+  input S_AXI_ACLK;
+  input S_AXI_ARESETN;
+  input [8:0] S_AXI_AWADDR;
+  input S_AXI_AWVALID;
+  output S_AXI_AWREADY;
+  input [31:0] S_AXI_WDATA;
+  input [3:0] S_AXI_WSTRB;
+  input S_AXI_WVALID;
+  output S_AXI_WREADY;
+  output [1:0] S_AXI_BRESP;
+  output S_AXI_BVALID;
+  input S_AXI_BREADY;
+  input [8:0] S_AXI_ARADDR;
+  input S_AXI_ARVALID;
+  output S_AXI_ARREADY;
+  output [31:0] S_AXI_RDATA;
+  output [1:0] S_AXI_RRESP;
+  output S_AXI_RVALID;
+  input S_AXI_RREADY;
+  input [0:0] Intr;
+  output Irq;
+  output [31:0] Interrupt_address;
+  input [1:0] Processor_ack;
+  input Processor_clk;
+  input Processor_rst;
+  input [31:0] Interrupt_address_in;
+  output [1:0] Processor_ack_out;
 endmodule
 
