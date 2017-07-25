@@ -520,27 +520,7 @@
    </widget>
   </widget>
  </widget>
- <tabstops>
-  <tabstop>BitLoad</tabstop>
-  <tabstop>PattLoad</tabstop>
-  <tabstop>DispType</tabstop>
-  <tabstop>DispImage</tabstop>
-  <tabstop>Exposure</tabstop>
-  <tabstop>Masks</tabstop>
-  <tabstop>MaskChanges</tabstop>
-  <tabstop>SubChange</tabstop>
-  <tabstop>NumImages</tabstop>
-  <tabstop>SaveImages</tabstop>
-  <tabstop>RecVideo</tabstop>
-  <tabstop>Xbox</tabstop>
-  <tabstop>Ybox</tabstop>
-  <tabstop>Reset</tabstop>
-  <tabstop>ApplyImg</tabstop>
-  <tabstop>EqualizeImg</tabstop>
-  <tabstop>XSlider</tabstop>
-  <tabstop>Zoom</tabstop>
-  <tabstop>YSlider</tabstop>
- </tabstops>
+
  <resources/>
  <connections/>
 </ui>

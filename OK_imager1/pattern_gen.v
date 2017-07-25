@@ -19,19 +19,19 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module pattern_gen(
-	input rst,
-	input clk,
-	input [9:0] Pat_in,
-	input [9:0] PatGen_start,
-	input [9:0] PatGen_stop,
-	input [31:0] Num_Pat,			// Number of patterns applied to the imager.
-	input [31:0] CntSubc,
+	input wire rst,
+	input wire clk,
+	input wire[9:0] Pat_in,
+	input wire [9:0] PatGen_start,
+	input wire [9:0] PatGen_stop,
+	input wire[31:0] Num_Pat,			// Number of patterns applied to the imager.
+	input wire[31:0] CntSubc,
 	// input FSMIND0,					// If high, the Exposure FSM (on OK) is active
-	input FIFO_empty,
-	input [31:0] Mask_change_subc,	// Pattern change after Mask_change_subc subscenes
-	input [31:0] Mask_change_no,	// Number of Pattern chages
+	input wire FIFO_empty,
+	input wire [31:0] Mask_change_subc,	// Pattern change after Mask_change_subc subscenes
+	input wire [31:0] Mask_change_no,	// Number of Pattern chages
 	output reg FIFO_wr,
-	output [9:0] Pat_out
+	output wire [9:0] Pat_out
 	);
 	
 // -- Parameters
@@ -86,7 +86,7 @@ module pattern_gen(
 				end
 				end
             S_subc_pats : begin
-				if (FIFO_empty && ~FIFO_wr) begin
+				if (FIFO_empty && (~FIFO_wr)) begin
 					FIFO_wr <= 1;
 					cntPat <= cntPat + 1;
 				end else if (FIFO_wr && cntPat < C_NUM_ROWS*18) begin

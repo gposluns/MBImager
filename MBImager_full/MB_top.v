@@ -49,7 +49,7 @@ module MB_top(
 	output ISPI_DATA,			// Imager SPI signal
 	output ISPI_REGCLK,			// Imager SPI signal
 	output ISPI_UPLOAD,			// Imager SPI signal
-	output [5:0] dout,			// FIFO data sent to OpalKelly
+	output [7:0] dout,	//changed from 5:0		// FIFO data sent to OpalKelly
 	output fifo_dout_valid,		// FIFO data valid sent to OK
 	output fifo_clk,			// FIFO clk sent to OK
 	output FSMIND0,				// If high, the Exposure FSM (on OK) is active
@@ -72,7 +72,7 @@ wire [15:0] DATA_IN_TO_DEVICE2;
 wire [15:0] DATA_IN_TO_DEVICE3;
 wire ADC_CLK;
 wire CLKFIFO;
-wire [23:0] din;
+wire [31:0] din; //changed from 23:0
 wire EXT_RESET;
 wire MBI_DDR_DATA_VALID;
 wire [1:0] STATUS_0;
@@ -106,9 +106,16 @@ assign SPI_FLASH_SS[6] = ~spi_cs[6];	/* CS_TEMP_MOTHER */
 assign SPI_FLASH_SS[7] = spi_cs[7];		/* ~CS_ADC1 */
 assign SPI_FLASH_SS[8] = spi_cs[8];		/* ~CS_ADC2 */
 assign SPI_FLASH_SS[9] = spi_cs[9];		/* ~CS_ADC3 */
+
 assign din[7:0] = DATA_IN_TO_DEVICE3[15:8];
 assign din[15:8] = DATA_IN_TO_DEVICE2[15:8];
 assign din[23:16] = DATA_IN_TO_DEVICE1[15:8];
+assign din[31:24] = 8'h00; //changed from none
+//assign din[7:0] = 8'hff;//DATA_IN_TO_DEVICE3[15:8];
+//assign din[15:8] = 8'hff;//DATA_IN_TO_DEVICE2[15:8];
+//assign din[23:16] = 8'h00;//DATA_IN_TO_DEVICE1[15:8];
+//assign din[31:24] = 8'h00; //changed from none
+
 // assign din[7:0] = DATA_IN_TO_DEVICE1[7:0];
 // assign din[15:8] = DATA_IN_TO_DEVICE2[7:0];
 // assign din[23:16] = DATA_IN_TO_DEVICE3[7:0];

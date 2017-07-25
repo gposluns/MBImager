@@ -103,6 +103,7 @@ def grab(queue1,queue2):
     N_mux = 46
     col = N_adc*N_adcCh*N_mux
     datain128 = bytearray(262144)
+    datain2 = bytearray(176640)
     datain1 = bytearray(88320)
     
     im = np.zeros((row ,col), np.uint8)
@@ -119,11 +120,11 @@ def grab(queue1,queue2):
     try:
         exposure = abs(int(form.Exposure.text()))
     except:
-        exposure = 1
+        exposure = 50000
     try:
         masks= abs(int(form.Masks.text()))
     except:
-        masks = 600
+        masks = 1
     try:
         maskchanges = abs(int(form.MaskChanges.text()))
     except:
@@ -164,6 +165,8 @@ def grab(queue1,queue2):
     #dev.SetWireInValue(NUM_MASKS_WIRE,1024-2)
     dev.SetWireInValue(MASK_CHANGES_WIRE,maskchanges)
     dev.SetWireInValue(SUBS_PER_WIRE,subchange)
+    dev.SetWireInValue(0x19,185)
+    dev.SetWireInValue(0x18, 0)
     
     dev.SetWireInValue(PATT_IN_WIRE, 0xfff003ff) #patgen_stop,patgen_start,patgen_in
     time.sleep(0.1)
@@ -179,6 +182,11 @@ def grab(queue1,queue2):
         dev.UpdateTriggerOuts()
         # If the FIFO is full, read everything and display one frame only
         if dev.IsTriggered(0x6A, 0x01) == True:
+            print "fifo full"
+            if dev.IsTriggered(0x6A, 0x02) == True:
+                print "also 2 frames"
+            if dev.IsTriggered(0x6A, 0x04) == True:
+                print "also 1 frame"
             dev.ReadFromPipeOut(0xA0, datain128)
             for i in range(row):
                 for j in range(N_adc):
@@ -191,9 +199,26 @@ def grab(queue1,queue2):
 #                im2[i] = im[i][139:507:2]
             im1[:,:] = im[:row,138:506:2]
             im2[:,:] = im[:row,139:507:2]
-             
-        # If one frame is ready in FIFO
+        #if 2 frames are in fifo, read both and display 1
         elif dev.IsTriggered(0x6A, 0x02) == True:
+            print "2 frames"
+            if dev.IsTriggered(0x6A, 0x04) == True:
+                print "also 1 frame"
+            dev.ReadFromPipeOut(0xA0, datain2)
+            for i in range(row):
+                for j in range(N_adc):
+                    for k in range(N_adcCh):
+                        for l in range(N_mux):
+                            im[row-1-i][col-1-(j*N_adcCh*N_mux+(2-k)*N_mux+45-l)] = datain1[i*col+l*N_adc*N_adcCh+k*N_adc+j]
+            #im = im/255
+#            for i in range(row):
+#                im1[i] = im[i][138:506:2]
+#                im2[i] = im[i][139:507:2]
+            im1[:,:] = im[:row,138:506:2]
+            im2[:,:] = im[:row,139:507:2]     
+        # If one frame is ready in FIFO
+        elif dev.IsTriggered(0x6A, 0x04) == True:
+            print "1 frame"
             dev.ReadFromPipeOut(0xA0, datain1)
             for i in range(row):
                 for j in range(N_adc):
@@ -208,8 +233,10 @@ def grab(queue1,queue2):
             im2[:,:] = im[:row,139:507:2]
         else:
             stuck +=1
-            if stuck >10:
+            print "no frame"
+            if stuck >150:
                 # assert reset signal to initialize the FIFO.
+                print "reset system when stuck"
                 dev.SetWireInValue(0x10, 0xff, 0x01)
                 dev.UpdateWireIns()
                 # deactivate reset signal and activate counter.
@@ -354,20 +381,25 @@ class MyWindowClass(QtWidgets.QMainWindow, Ui_MainWindow):
             pattfile, _ = QtWidgets.QFileDialog.getOpenFileName(self, 'Open file', os.getcwd(),"*bmp")
             if pattfile != '':
                 file = open(str(pattfile),"rb")
-                image= bytearray(file.read())
+                raw_image= bytearray(file.read())
                 
                 num_channel = 16
                 channel_width = 18
                 #get start index of the pixel array
-                pix_start_pos = struct.unpack_from('<L', image, 10)[0]
+                pix_start_pos = struct.unpack_from('<L', raw_image, 10)[0]
                 
                 #get the width
-                pat_width = struct.unpack_from('<L', image, 18)[0]
+                pat_width = struct.unpack_from('<L', raw_image, 18)[0]
                 
                 #get the height
-                pat_height = struct.unpack_from('<L', image, 22)[0]
+                pat_height = struct.unpack_from('<L', raw_image, 22)[0]
                 
-                image = image[pix_start_pos: pix_start_pos+pat_width*pat_height]    
+                
+                image = bytearray()
+                #flip back the image
+                for i in range(pat_height-1,-1,-1):
+                    image.extend(raw_image[pix_start_pos+i*pat_width/8:pix_start_pos+(i+1)*pat_width/8])   
+
                 image = [bytearray_to_bitarray(image,i) for i in range(pat_width*pat_height)]
                 pattern = bytearray()
                 for y in range(pat_height):
@@ -379,6 +411,7 @@ class MyWindowClass(QtWidgets.QMainWindow, Ui_MainWindow):
                             #print one_byte, 
                             if ((i+1)%8 == 0):
                                 #print bin(one_byte^ 0xff),
+                                #pattern.append(one_byte)
                                 pattern.append(one_byte ^ 0xff) #make 0 = white, 1 = black
                                 one_byte = 0
                 file.close()
@@ -620,6 +653,9 @@ class MyWindowClass(QtWidgets.QMainWindow, Ui_MainWindow):
                 errorBox.addButton(QtWidgets.QPushButton('OK'), QtWidgets.QMessageBox.YesRole)
                 errorBox.exec_()
             else:
+                error= dev.ConfigureFPGA(str(bitfile))
+                print error
+                
                 self.RecVideo.setEnabled(True)
                 self.SaveImages.setEnabled(True)
                 running = True

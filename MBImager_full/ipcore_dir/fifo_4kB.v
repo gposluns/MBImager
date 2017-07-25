@@ -54,10 +54,10 @@ module fifo_4kB(
 input rst;
 input wr_clk;
 input rd_clk;
-input [23 : 0] din;
+input [31 : 0] din;
 input wr_en;
 input rd_en;
-output [5 : 0] dout;
+output [7 : 0] dout;
 output full;
 output empty;
 output almost_empty;
@@ -94,7 +94,7 @@ output prog_full;
     .C_COUNT_TYPE(0),
     .C_DATA_COUNT_WIDTH(13),
     .C_DEFAULT_VALUE("BlankString"),
-    .C_DIN_WIDTH(24),
+    .C_DIN_WIDTH(32),
     .C_DIN_WIDTH_AXIS(1),
     .C_DIN_WIDTH_RACH(32),
     .C_DIN_WIDTH_RDCH(64),
@@ -102,7 +102,7 @@ output prog_full;
     .C_DIN_WIDTH_WDCH(64),
     .C_DIN_WIDTH_WRCH(2),
     .C_DOUT_RST_VAL("0"),
-    .C_DOUT_WIDTH(6),
+    .C_DOUT_WIDTH(8),
     .C_ENABLE_RLOCS(0),
     .C_ENABLE_RST_SYNC(1),
     .C_ERROR_INJECTION_TYPE(0),
@@ -191,14 +191,14 @@ output prog_full;
     .C_PROG_EMPTY_TYPE_WACH(0),
     .C_PROG_EMPTY_TYPE_WDCH(0),
     .C_PROG_EMPTY_TYPE_WRCH(0),
-    .C_PROG_FULL_THRESH_ASSERT_VAL(138),
+    .C_PROG_FULL_THRESH_ASSERT_VAL(8189),
     .C_PROG_FULL_THRESH_ASSERT_VAL_AXIS(1023),
     .C_PROG_FULL_THRESH_ASSERT_VAL_RACH(1023),
     .C_PROG_FULL_THRESH_ASSERT_VAL_RDCH(1023),
     .C_PROG_FULL_THRESH_ASSERT_VAL_WACH(1023),
     .C_PROG_FULL_THRESH_ASSERT_VAL_WDCH(1023),
     .C_PROG_FULL_THRESH_ASSERT_VAL_WRCH(1023),
-    .C_PROG_FULL_THRESH_NEGATE_VAL(137),
+    .C_PROG_FULL_THRESH_NEGATE_VAL(8188),
     .C_PROG_FULL_TYPE(1),
     .C_PROG_FULL_TYPE_AXIS(0),
     .C_PROG_FULL_TYPE_RACH(0),
