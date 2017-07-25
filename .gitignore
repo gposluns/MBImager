@@ -29,3 +29,8 @@
 !*.pdf
 !*.ucf
 !*.xco
+!*.dll
+!*.lib
+!*.pro
+!*.cpp
+!.gitignore
