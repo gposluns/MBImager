@@ -35,4 +35,4 @@
 !*.cpp
 !.gitignore
 !mb_top.bit
-!.prj
+!*.prj
