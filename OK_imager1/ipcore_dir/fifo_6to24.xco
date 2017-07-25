@@ -1,15 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-<<<<<<< HEAD
-<<<<<<< HEAD
 # Date: Fri Jun 16 18:39:54 2017
-=======
-# Date: Tue Jun 27 19:42:08 2017
->>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
-=======
-# Date: Tue Jun 27 19:42:08 2017
->>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 #
 ##############################################################
 #
@@ -142,18 +134,8 @@ CSET inject_sbit_error_rdch=false
 CSET inject_sbit_error_wach=false
 CSET inject_sbit_error_wdch=false
 CSET inject_sbit_error_wrch=false
-<<<<<<< HEAD
-<<<<<<< HEAD
 CSET input_data_width=8
 CSET input_depth=512
-=======
-CSET input_data_width=6
-CSET input_depth=1024
->>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
-=======
-CSET input_data_width=6
-CSET input_depth=1024
->>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 CSET input_depth_axis=1024
 CSET input_depth_rach=16
 CSET input_depth_rdch=1024
@@ -161,18 +143,8 @@ CSET input_depth_wach=16
 CSET input_depth_wdch=1024
 CSET input_depth_wrch=16
 CSET interface_type=Native
-<<<<<<< HEAD
-<<<<<<< HEAD
 CSET output_data_width=32
 CSET output_depth=128
-=======
-CSET output_data_width=24
-CSET output_depth=256
->>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
-=======
-CSET output_data_width=24
-CSET output_depth=256
->>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 CSET overflow_flag=false
 CSET overflow_flag_axi=false
 CSET overflow_sense=Active_High
@@ -238,12 +210,4 @@ CSET wuser_width=1
 MISC pkg_timestamp=2012-11-19T12:39:56Z
 # END Extra information
 GENERATE
-<<<<<<< HEAD
-<<<<<<< HEAD
 # CRC: 8ba8146f
-=======
-# CRC: 5d1c4b7b
->>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
-=======
-# CRC: 5d1c4b7b
->>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e

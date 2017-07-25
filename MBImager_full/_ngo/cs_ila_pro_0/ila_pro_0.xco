@@ -1,15 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-<<<<<<< HEAD
-<<<<<<< HEAD
 # Date: Thu Jun 29 19:48:24 2017
-=======
-# Date: Tue Jul 18 18:39:36 2017
->>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
-=======
-# Date: Tue Jul 18 18:39:36 2017
->>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 #
 ##############################################################
 #
@@ -122,15 +114,7 @@ CSET match_units_8=1
 CSET match_units_9=1
 CSET max_sequence_levels=16
 CSET number_of_trigger_ports=4
-<<<<<<< HEAD
-<<<<<<< HEAD
 CSET sample_data_depth=4096
-=======
-CSET sample_data_depth=8192
->>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
-=======
-CSET sample_data_depth=8192
->>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 CSET sample_on=Rising
 CSET trigger_port_width_1=1
 CSET trigger_port_width_10=1
@@ -140,21 +124,9 @@ CSET trigger_port_width_13=1
 CSET trigger_port_width_14=1
 CSET trigger_port_width_15=1
 CSET trigger_port_width_16=1
-<<<<<<< HEAD
-<<<<<<< HEAD
 CSET trigger_port_width_2=8
 CSET trigger_port_width_3=8
 CSET trigger_port_width_4=8
-=======
-CSET trigger_port_width_2=6
-CSET trigger_port_width_3=1
-CSET trigger_port_width_4=1
->>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
-=======
-CSET trigger_port_width_2=6
-CSET trigger_port_width_3=1
-CSET trigger_port_width_4=1
->>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
 CSET trigger_port_width_5=1
 CSET trigger_port_width_6=1
 CSET trigger_port_width_7=1
@@ -166,12 +138,4 @@ CSET use_rpms=true
 MISC pkg_timestamp=2013-10-13T14:13:15Z
 # END Extra information
 GENERATE
-<<<<<<< HEAD
-<<<<<<< HEAD
 # CRC: ad5176cf
-=======
-# CRC: b52a1f4f
->>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
-=======
-# CRC: b52a1f4f
->>>>>>> 3f94c1d234a0c5cd46b217c968cfda02049b768e
