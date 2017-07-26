@@ -131,7 +131,7 @@ wire PatFIFO_wr;
 wire PatFIFO_empty;
 wire CLKMPRE_EN;
 wire [31:0] CntSubc;
-wire [31:0] MIN_FRAME_TIME;
+//wire [31:0] MIN_FRAME_TIME;
 
 wire im_data_val_test;
 reg [7:0] ADC_TESTDATA1;
@@ -223,6 +223,7 @@ wire		c3_p1_rd_empty;
 wire [6:0]	c3_p1_rd_count;
 wire		c3_p1_rd_overflow;
 wire		c3_p1_rd_error;
+wire [31:0] MIN_FRAME_TIME;
 //wire trigger_proj;
 wire [31:0] proj_delay;
 	 
@@ -255,7 +256,7 @@ assign led = fsm_stat;
 //assign led[7] = fifo_full_checker;
 
 
-assign FSMstop = rst | flag_2frames; //| pattern_stored;
+assign FSMstop = rst;// | flag_2frames; //| pattern_stored;
 // assign FSMstop = rst;
 assign RstPat = FSMstop | FSMIND1;
 assign FPGA_rst_n = ~FSMstop;
@@ -429,7 +430,7 @@ mem_if u_mem_if (
 // assign switched_data = {im_data[7],im_data[3],im_data[5:4],im_data[6],im_data[2:0]};
  
 fifo_6to24 fifo_databuf (
-  .rst(rst | flag_2frames), // input rst
+  .rst(rst), // input rst
   .wr_clk(im_data_clk), // input wr_clk
   .rd_clk(okClk), // input rd_clk
   .din(im_data), // input [5 : 0] din
@@ -448,7 +449,7 @@ fifo_usbout fifo256kB_out (
   .rst(rst), // input rst
 //  .din(dout), // input [23 : 0] din
   .din(temp_data), // input [23 : 0] din
-  .wr_en(d_buf_valid & ~flag_2frames), // input wr_en
+  .wr_en(d_buf_valid), // input wr_en
   .rd_en(rd_en), // input rd_en
   .dout(dout_buf), // output [23 : 0] dout
   .full(full_2), // output full
