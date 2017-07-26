@@ -3,7 +3,7 @@
 
 okWorker::okWorker(QObject *parent) : QObject(parent)
 {
-    //qDebug() <<'okWorker Crash';
+
     if (false == okFrontPanelDLL_LoadLib(nullptr)){
         emit okLoadFailed();
     }
@@ -93,6 +93,7 @@ void okWorker::showImages(int exp, int numMasks, int maskChngs, int subcPer, QSt
     ok.SetWireInValue(SUBS_PER_WIRE, subcPer);
    // qDebug() << 9;
     ok.SetWireInValue(PATT_IN_WIRE, 0xfff003ff);
+    ok.SetWireInValue(0x18, 1000000);
    // qDebug() << 10;
    // qDebug() << exp << numMasks << maskChngs << subcPer;
    // qDebug() << 11;
@@ -119,6 +120,7 @@ void okWorker::showImages(int exp, int numMasks, int maskChngs, int subcPer, QSt
         //qDebug() << "loop started";
 
         if (ok.IsTriggered(0x6a, 0x01)){
+
             ok.ReadFromPipeOut(0xa0, 262144, datainFull);
             ok.UpdateTriggerOuts();
             stuck = 0;
@@ -129,6 +131,9 @@ void okWorker::showImages(int exp, int numMasks, int maskChngs, int subcPer, QSt
                 //qDebug() << "also 2";
               //  fails++;
             //}
+
+
+
         }
         else if (ok.IsTriggered(0x6a, 0x02)){
             ok.ReadFromPipeOut(0xa0, 2*frame_length, datainFull);

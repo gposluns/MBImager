@@ -9,7 +9,6 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    qDebug() << "mainWindow Crash";
     try{
     ui->setupUi(this);
     worker = new okWorker();
@@ -336,9 +335,10 @@ void MainWindow::updateFrame(){
             cv::Mat mat1(temp1.copy(62, 0, 120, 160).height(), temp1.copy(62, 0, 120, 160).width(), CV_8UC1, temp1.copy(62, 0, 120, 160).scanLine(0));
             video1->write(mat1);
         }
+
+    }
     if (imagesToSave ==0){
         ui->SaveImages->setEnabled(true);
-    }
     }
 
 

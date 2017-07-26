@@ -2,7 +2,6 @@
 
 ImageDisplay::ImageDisplay(QWidget *parent) : QWidget(parent)
 {
-    //qDebug() <<'imgdisp Crash';
     image = nullptr;
 }
 
