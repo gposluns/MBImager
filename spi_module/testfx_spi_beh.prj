@@ -1,0 +1,4 @@
+verilog work "spi_programmer.v"
+verilog work "spi_master.v"
+verilog work "testfx_spi.v"
+verilog work "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

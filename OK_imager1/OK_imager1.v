@@ -223,7 +223,6 @@ wire		c3_p1_rd_empty;
 wire [6:0]	c3_p1_rd_count;
 wire		c3_p1_rd_overflow;
 wire		c3_p1_rd_error;
-wire [31:0] MIN_FRAME_TIME;
 //wire trigger_proj;
 wire [31:0] proj_delay;
 	 

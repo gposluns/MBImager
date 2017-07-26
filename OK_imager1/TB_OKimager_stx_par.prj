@@ -1,0 +1,2 @@
+verilog isim_temp "netgen/par/OK_imager_timesim.v"
+verilog isim_temp "TB_OKimager.v"

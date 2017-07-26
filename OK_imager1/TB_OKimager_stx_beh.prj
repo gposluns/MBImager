@@ -1,0 +1,7 @@
+verilog isim_temp "ROImager_exp_PatSeperate.v"
+verilog isim_temp "pattern_gen.v"
+verilog isim_temp "okLibrary.v"
+verilog isim_temp "OK_imager1.v"
+verilog isim_temp "../../MotherBoard/MBImager_full/ROImager.v"
+verilog isim_temp "TB_OKimager.v"
+verilog isim_temp "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
