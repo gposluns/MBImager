@@ -83,10 +83,12 @@ module spi_master_4byte(
 			if (SPI_CLK_i == 0) begin
 				SPI_CLK_i <= 1;
 				if (running) begin
-					shift_in <= {shift_in[C - 2:0], MISO};
 					if (counter == 0) begin
 						running <= 0;
 						clk_div <= CLK_RATIO*SS_SPACE;
+						shift_in <= shift_in;
+					end else begin
+						shift_in <= {shift_in[C - 2:0], MISO};
 					end
 				end
 			end else begin

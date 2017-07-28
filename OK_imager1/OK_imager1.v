@@ -433,7 +433,7 @@ fifo_6to24 fifo_databuf (
   .rst(rst), // input rst
   .wr_clk(im_data_clk), // input wr_clk
   .rd_clk(okClk), // input rd_clk
-  .din(im_data), // input [5 : 0] din
+  .din(im_data), // input [7 : 0] din changed from 5:0
   .wr_en(im_data_val), // input wr_en
   .rd_en(1'b1), // input rd_en
   .dout(dout), // output [23 : 0] dout

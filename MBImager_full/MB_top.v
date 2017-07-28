@@ -136,6 +136,7 @@ wire [15:0] command;
 wire [9:0] target;
 wire spi_trigger;
 wire spi_done;
+wire [15:0] response;
 	 
 spi_master_4byte #(.N(10), .C(16), .CLK_RATIO(16), .SS_SPACE(10)) spi_master(
 	.MISO(SPI_FLASH_MISO),
@@ -148,7 +149,8 @@ spi_master_4byte #(.N(10), .C(16), .CLK_RATIO(16), .SS_SPACE(10)) spi_master(
 	.target(target),
 	.CPOL(1'b0),
 	.CPHA(1'b0),
-	.valid(spi_done)
+	.valid(spi_done),
+	.dout(response)
 );
 
 spi_programmer programmer(
@@ -156,7 +158,8 @@ spi_programmer programmer(
 	.ready(spi_done),
 	.ss(target),
 	.clock(USER_CLOCK),
-	.trigger(spi_trigger)
+	.trigger(spi_trigger),
+	.response(response)
 );
 
 ROImager imager_time (
@@ -225,10 +228,10 @@ fifo_4kB fifo_inst_4kB (
   .rst(EXT_RESET), // input rst
   .wr_clk(ADC_CLK), // input wr_clk
   .rd_clk(CLKFIFO), // input rd_clk
-  .din(din), // input [23 : 0] din
+  .din(din), // input [31 : 0] din changed from [23:0]
   .wr_en(MBI_DDR_DATA_VALID), // input wr_en
   .rd_en(1'b1), // input rd_en
-  .dout(dout), // output [5 : 0] dout
+  .dout(dout), // output [7 : 0] dout changed from [5 : 0]
   .full(full), // output full
   .empty(empty), // output empty
   .almost_empty(almost_empty), // output almost_empty

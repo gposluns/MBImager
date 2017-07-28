@@ -25,12 +25,14 @@ module spi_programmer(
     input clock,
 	 output trigger,
 	 output CPOL,
-	 output CPHA
+	 output CPHA,
+	 input [15:0] response
     );
 
-	parameter NUM_COMMANDS = 64;
+	parameter NUM_COMMANDS = 65;
 
 	reg [16*NUM_COMMANDS - 1:0] commands;
+	reg [16*NUM_COMMANDS - 1:0] responses;
 	reg [10*NUM_COMMANDS - 1:0] targets;
 	reg trigger_i;
 	reg load_next;
@@ -38,6 +40,7 @@ module spi_programmer(
 	reg [NUM_COMMANDS - 1:0] CPOLs;
 	reg [NUM_COMMANDS - 1:0] CPHAs;
 	
+	initial responses = 0;
 	initial countdown = 1000;
 	initial trigger_i = 0;
 	initial load_next = 0;
@@ -196,6 +199,8 @@ module spi_programmer(
 	initial targets [62*10 +: 10] = 10'b0100000000;
 	initial commands[63*16 +: 16] = 16'b0010001100000000;
 	initial targets [63*10 +: 10] = 10'b1000000000;
+	initial commands[64*16 +: 16] = 16'b0000000010000000;
+	initial targets [64*10 +: 10] = 10'b1000000000;
 	
 	always @(posedge clock) begin
 		if (countdown > 0) countdown <= countdown - 1;
@@ -208,6 +213,7 @@ module spi_programmer(
 		end else if (load_next == 1) begin
 			commands <= {16'h0, commands[16*NUM_COMMANDS - 1: 16]};
 			targets <= {10'h0, targets[10*NUM_COMMANDS - 1: 10]};
+			responses <= {responses[16*NUM_COMMANDS - 17: 0], 16'h0};
 			load_next <= 0;
 		end else begin
 			trigger_i <= 0;
