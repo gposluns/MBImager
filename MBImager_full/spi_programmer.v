@@ -25,14 +25,12 @@ module spi_programmer(
     input clock,
 	 output trigger,
 	 output CPOL,
-	 output CPHA,
-	 input [15:0] response
+	 output CPHA
     );
 
-	parameter NUM_COMMANDS = 65;
+	parameter NUM_COMMANDS = 67;
 
 	reg [16*NUM_COMMANDS - 1:0] commands;
-	reg [16*NUM_COMMANDS - 1:0] responses;
 	reg [10*NUM_COMMANDS - 1:0] targets;
 	reg trigger_i;
 	reg load_next;
@@ -40,7 +38,6 @@ module spi_programmer(
 	reg [NUM_COMMANDS - 1:0] CPOLs;
 	reg [NUM_COMMANDS - 1:0] CPHAs;
 	
-	initial responses = 0;
 	initial countdown = 1000;
 	initial trigger_i = 0;
 	initial load_next = 0;
@@ -116,11 +113,11 @@ module spi_programmer(
 	initial commands[27*16 +: 16] = 16'b0000101000001000;
 	initial targets [27*10 +: 10] = 10'b1000000000;
 	
-	initial commands[28*16 +: 16] = 16'b0000101000001000;
+	initial commands[28*16 +: 16] = 16'b0000101000001010;
 	initial targets [28*10 +: 10] = 10'b0010000000;	
-	initial commands[29*16 +: 16] = 16'b0000101000001000;
+	initial commands[29*16 +: 16] = 16'b0000101000001010;
 	initial targets [29*10 +: 10] = 10'b0100000000;
-	initial commands[30*16 +: 16] = 16'b0000101000001000;
+	initial commands[30*16 +: 16] = 16'b0000101000001010;
 	initial targets [30*10 +: 10] = 10'b1000000000;
 	
 	initial commands[31*16 +: 16] = 16'b0000101000001100;
@@ -144,63 +141,68 @@ module spi_programmer(
 	initial commands[39*16 +: 16] = 16'b0010011000001011;
 	initial targets [39*10 +: 10] = 10'b1000000000;
 	
-	initial commands[40*16 +: 16] = 16'b0000101000001110;
+	initial commands[40*16 +: 16] = 16'b0010011000001101;
 	initial targets [40*10 +: 10] = 10'b0010000000;	
-	initial commands[41*16 +: 16] = 16'b0000101000001110;
+	initial commands[41*16 +: 16] = 16'b0010011000001101;
 	initial targets [41*10 +: 10] = 10'b0100000000;
-	initial commands[42*16 +: 16] = 16'b0000101000001110;
+	initial commands[42*16 +: 16] = 16'b0010011000001101;
 	initial targets [42*10 +: 10] = 10'b1000000000;
 	
-	initial commands[43*16 +: 16] = 16'b0000101000010000;
+	initial commands[43*16 +: 16] = 16'b0000101000001110;
 	initial targets [43*10 +: 10] = 10'b0010000000;	
-	initial commands[44*16 +: 16] = 16'b0000101000010000;
+	initial commands[44*16 +: 16] = 16'b0000101000001110;
 	initial targets [44*10 +: 10] = 10'b0100000000;
-	initial commands[45*16 +: 16] = 16'b0000101000010000;
+	initial commands[45*16 +: 16] = 16'b0000101000001110;
 	initial targets [45*10 +: 10] = 10'b1000000000;
 	
-	initial commands[46*16 +: 16] = 16'b0000101000010010;
+	initial commands[46*16 +: 16] = 16'b0000101000010000;
 	initial targets [46*10 +: 10] = 10'b0010000000;	
-	initial commands[47*16 +: 16] = 16'b0000101000010010;
+	initial commands[47*16 +: 16] = 16'b0000101000010000;
 	initial targets [47*10 +: 10] = 10'b0100000000;
-	initial commands[48*16 +: 16] = 16'b0000101000010010;
+	initial commands[48*16 +: 16] = 16'b0000101000010000;
 	initial targets [48*10 +: 10] = 10'b1000000000;
 	
-	initial commands[49*16 +: 16] = 16'b0010011000001111;
+	initial commands[49*16 +: 16] = 16'b0000101000010010;
 	initial targets [49*10 +: 10] = 10'b0010000000;	
-	initial commands[50*16 +: 16] = 16'b0010011000001111;
+	initial commands[50*16 +: 16] = 16'b0000101000010010;
 	initial targets [50*10 +: 10] = 10'b0100000000;
-	initial commands[51*16 +: 16] = 16'b0010011000001111;
+	initial commands[51*16 +: 16] = 16'b0000101000010010;
 	initial targets [51*10 +: 10] = 10'b1000000000;
-	
-	initial commands[52*16 +: 16] = 16'b0010011000010001;
+
+	initial commands[52*16 +: 16] = 16'b0010011000001111;
 	initial targets [52*10 +: 10] = 10'b0010000000;	
-	initial commands[53*16 +: 16] = 16'b0010011000010001;
+	initial commands[53*16 +: 16] = 16'b0010011000001111;
 	initial targets [53*10 +: 10] = 10'b0100000000;
-	initial commands[54*16 +: 16] = 16'b0010011000010001;
+	initial commands[54*16 +: 16] = 16'b0010011000001111;
 	initial targets [54*10 +: 10] = 10'b1000000000;
 	
-	initial commands[55*16 +: 16] = 16'b0010011000010011;
+	initial commands[55*16 +: 16] = 16'b0010011000010001;
 	initial targets [55*10 +: 10] = 10'b0010000000;	
-	initial commands[56*16 +: 16] = 16'b0010011000010011;
+	initial commands[56*16 +: 16] = 16'b0010011000010001;
 	initial targets [56*10 +: 10] = 10'b0100000000;
-	initial commands[57*16 +: 16] = 16'b0010011000010011;
+	initial commands[57*16 +: 16] = 16'b0010011000010001;
 	initial targets [57*10 +: 10] = 10'b1000000000;
 	
-	initial commands[58*16 +: 16] = 16'b0000000000011111;
+	initial commands[58*16 +: 16] = 16'b0010011000010011;
 	initial targets [58*10 +: 10] = 10'b0010000000;	
-	initial commands[59*16 +: 16] = 16'b0000000000011111;
+	initial commands[59*16 +: 16] = 16'b0010011000010011;
 	initial targets [59*10 +: 10] = 10'b0100000000;
-	initial commands[60*16 +: 16] = 16'b0000000000011111;
+	initial commands[60*16 +: 16] = 16'b0010011000010011;
 	initial targets [60*10 +: 10] = 10'b1000000000;
 	
-	initial commands[61*16 +: 16] = 16'b0010001100000000;
+	initial commands[61*16 +: 16] = 16'b0000000000011111;
 	initial targets [61*10 +: 10] = 10'b0010000000;	
-	initial commands[62*16 +: 16] = 16'b0010001100000000;
+	initial commands[62*16 +: 16] = 16'b0000000000011111;
 	initial targets [62*10 +: 10] = 10'b0100000000;
-	initial commands[63*16 +: 16] = 16'b0010001100000000;
+	initial commands[63*16 +: 16] = 16'b0000000000011111;
 	initial targets [63*10 +: 10] = 10'b1000000000;
-	initial commands[64*16 +: 16] = 16'b0000000010000000;
-	initial targets [64*10 +: 10] = 10'b1000000000;
+	
+	initial commands[64*16 +: 16] = 16'b0010001100000000;
+	initial targets [64*10 +: 10] = 10'b0010000000;	
+	initial commands[65*16 +: 16] = 16'b0010001100000000;
+	initial targets [65*10 +: 10] = 10'b0100000000;
+	initial commands[66*16 +: 16] = 16'b0010001100000000;
+	initial targets [66*10 +: 10] = 10'b1000000000;
 	
 	always @(posedge clock) begin
 		if (countdown > 0) countdown <= countdown - 1;
@@ -213,7 +215,6 @@ module spi_programmer(
 		end else if (load_next == 1) begin
 			commands <= {16'h0, commands[16*NUM_COMMANDS - 1: 16]};
 			targets <= {10'h0, targets[10*NUM_COMMANDS - 1: 10]};
-			responses <= {responses[16*NUM_COMMANDS - 17: 0], 16'h0};
 			load_next <= 0;
 		end else begin
 			trigger_i <= 0;

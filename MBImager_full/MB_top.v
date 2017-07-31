@@ -136,7 +136,6 @@ wire [15:0] command;
 wire [9:0] target;
 wire spi_trigger;
 wire spi_done;
-wire [15:0] response;
 	 
 spi_master_4byte #(.N(10), .C(16), .CLK_RATIO(16), .SS_SPACE(10)) spi_master(
 	.MISO(SPI_FLASH_MISO),
@@ -149,8 +148,7 @@ spi_master_4byte #(.N(10), .C(16), .CLK_RATIO(16), .SS_SPACE(10)) spi_master(
 	.target(target),
 	.CPOL(1'b0),
 	.CPHA(1'b0),
-	.valid(spi_done),
-	.dout(response)
+	.valid(spi_done)
 );
 
 spi_programmer programmer(
@@ -158,8 +156,7 @@ spi_programmer programmer(
 	.ready(spi_done),
 	.ss(target),
 	.clock(USER_CLOCK),
-	.trigger(spi_trigger),
-	.response(response)
+	.trigger(spi_trigger)
 );
 
 ROImager imager_time (
