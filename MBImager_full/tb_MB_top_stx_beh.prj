@@ -1,8 +1,0 @@
-verilog isim_temp "TI_ADC_RO.v"
-verilog isim_temp "ROImager.v"
-verilog isim_temp "MB_SPI/MB_SPI_top.v"
-verilog isim_temp "Imager_SPI.v"
-verilog isim_temp "../../OKelly/OK_imager1/ROImager_exp.v"
-verilog isim_temp "MB_top.v"
-verilog isim_temp "tb_MB_top.v"
-verilog isim_temp "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
