@@ -262,11 +262,15 @@ void MainWindow::updateFrame(){
         return;
     }
     //qDebug() << "non-empty queue";
-
+    QDir GUIdir(QString("MBImagerGUI"));
     QDir dir(QString("MBImagerGUI/Images exp%1 masks%2 chngs%3 subc%4").arg(exposure).arg(masks).arg(maskchngs).arg(subc));
     if (imagesToSave > 0 && !dir.exists()){
        // qDebug() << "making directory" << dir.absolutePath();
-        dir.mkpath(dir.path());
+        GUIdir.mkpath(QString("\Images exp%1 masks%2 chngs%3 subc%4").arg(exposure).arg(masks).arg(maskchngs).arg(subc));
+    }
+    QDir calibDir(QString("MBImagerGUI/CalibImages"));
+    if (!calibDir.exists()){
+       GUIdir.mkpath(QString("CalibImages"));
     }
     QDateTime date = QDateTime::currentDateTime();
 
@@ -416,3 +420,8 @@ void MainWindow::on_DispType_currentIndexChanged(int index)
     ui->RecVideo->setChecked(false);
 }
 
+
+void MainWindow::on_SaveImages_toggled(bool checked)
+{
+
+}
