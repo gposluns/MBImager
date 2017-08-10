@@ -218,6 +218,7 @@ module spi_programmer(
 			load_next <= 0;
 		end else begin
 			trigger_i <= 0;
+			countdown <= 100000;
 		end
 	end
 	

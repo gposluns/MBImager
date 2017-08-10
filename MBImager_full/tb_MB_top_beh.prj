@@ -1,9 +1,3 @@
---  Simulation Model Generator
---  Xilinx EDK 14.7 EDK_P.20131013
---  Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
---
---  File     MB_SPI.prj (Thu Aug 03 11:33:13 2017)
---
 vhdl proc_sys_reset_v3_00_a "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/upcnt_n.vhd"
 vhdl proc_sys_reset_v3_00_a "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/lpf.vhd"
 vhdl proc_sys_reset_v3_00_a "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/sequence.vhd"
@@ -282,3 +276,13 @@ verilog work "MB_SPI.v"
 verilog work "MB_SPI_tb.v"
 verilog work "C:/Xilinx/14.7/ISE_DS/ISE/verilog/src/glbl.v" -i "C:/Xilinx/14.7/ISE_DS/ISE/verilog/src/"
 nosort
+verilog work "TI_ADC_RO.v"
+verilog work "spi_programmer.v"
+verilog work "spi_master.v"
+verilog work "ROImager.v"
+verilog work "ipcore_dir/fifo_4kB.v"
+verilog work "Imager_SPI.v"
+verilog work "../OK_imager1/ROImager_exp.v"
+verilog work "MB_top.v"
+verilog work "tb_MB_top.v"
+verilog work "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
