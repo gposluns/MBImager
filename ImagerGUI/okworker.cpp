@@ -12,6 +12,10 @@ okWorker::okWorker(QObject *parent) : QObject(parent)
 }
 
 void okWorker::loadPattern(QString path){
+    if (!ok.IsFrontPanelEnabled()){
+        qDebug() << "FPGA not configured";
+        return;
+    }
 
     QFile file(path);
     file.open(QIODevice::ReadOnly);
@@ -78,7 +82,7 @@ void okWorker::showImages(int exp, int numMasks, int maskChngs, int subcPer, QSt
     //qDebug() << 3.5;
     ok.ConfigureFPGA (bitFileName.toStdString());
    // qDebug() << 4;
-
+    ok.SetWireInValue(0x10, 0xff, 0x01);
    // qDebug() << 5;
     ok.SetWireInValue(EXP_WIRE, exp);
    // qDebug() << 6;
@@ -93,16 +97,14 @@ void okWorker::showImages(int exp, int numMasks, int maskChngs, int subcPer, QSt
    // qDebug() << 10;
    // qDebug() << exp << numMasks << maskChngs << subcPer;
    // qDebug() << 11;
-    ok.SetWireInValue(0x10, 0xff, 0x01);
     ok.UpdateWireIns();
-    QThread::msleep(10);
-    ok.SetWireInValue(0x10, 0x00, 0x01);
+    QThread::msleep(100);
+    ok.SetWireInValue(0x10,0x00,0x01);
     ok.UpdateWireIns();
     if (patternSet){
         ok.ActivateTriggerIn(0x53, 0);
         ok.WriteToPipeIn(0x80, patternLength, pattern);
     }
-    ok.ConfigureFPGA (bitFileName.toStdString());
    // qDebug() << 12;
     unsigned char datainFull[262144];
     unsigned char im[im_row][im_col];
@@ -113,7 +115,6 @@ void okWorker::showImages(int exp, int numMasks, int maskChngs, int subcPer, QSt
     while (running){
         QThread::msleep (1);
         ok.UpdateTriggerOuts();
-        QThread::msleep (1);
         //main camera loop
        // qDebug() << "running ok loop, time=" << clock() << "clks/sec=" << CLOCKS_PER_SEC;
         //qDebug() << "loop started";
@@ -130,15 +131,6 @@ void okWorker::showImages(int exp, int numMasks, int maskChngs, int subcPer, QSt
                 //qDebug() << "also 2";
               //  fails++;
             //}
-
-            ok.SetWireInValue(0x10, 0xff, 0x01);
-            ok.UpdateWireIns();
-            QThread::msleep(10);
-            ok.SetWireInValue(0x10, 0x00, 0x01);
-            ok.UpdateWireIns();
-            //QThread::msleep(10);
-            //qDebug()<<"fifo full";
-            continue;
 
 
 

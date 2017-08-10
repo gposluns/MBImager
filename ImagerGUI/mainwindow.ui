@@ -282,9 +282,9 @@
    <widget class="QPushButton" name="SaveImages">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>160</x>
       <y>440</y>
-      <width>101</width>
+      <width>111</width>
       <height>51</height>
      </rect>
     </property>
@@ -396,17 +396,14 @@ Images</string>
    <widget class="QSpinBox" name="expBox">
     <property name="geometry">
      <rect>
-      <x>211</x>
+      <x>221</x>
       <y>241</y>
-      <width>61</width>
+      <width>51</width>
       <height>31</height>
      </rect>
     </property>
     <property name="maximum">
-     <number>1000000</number>
-    </property>
-    <property name="singleStep">
-     <number>1000</number>
+     <number>100000</number>
     </property>
     <property name="value">
      <number>1</number>
@@ -415,9 +412,9 @@ Images</string>
    <widget class="QSpinBox" name="maskBox">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>220</x>
       <y>290</y>
-      <width>61</width>
+      <width>51</width>
       <height>31</height>
      </rect>
     </property>
@@ -431,9 +428,9 @@ Images</string>
    <widget class="QSpinBox" name="maskChngBox">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>220</x>
       <y>340</y>
-      <width>61</width>
+      <width>51</width>
       <height>31</height>
      </rect>
     </property>
@@ -444,9 +441,9 @@ Images</string>
    <widget class="QSpinBox" name="subcBox">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>220</x>
       <y>390</y>
-      <width>61</width>
+      <width>51</width>
       <height>31</height>
      </rect>
     </property>
@@ -459,7 +456,7 @@ Images</string>
      <rect>
       <x>100</x>
       <y>450</y>
-      <width>51</width>
+      <width>41</width>
       <height>31</height>
      </rect>
     </property>
@@ -494,19 +491,6 @@ Images</string>
     </property>
     <property name="maximum">
      <number>184</number>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="calib">
-    <property name="geometry">
-     <rect>
-      <x>510</x>
-      <y>510</y>
-      <width>181</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Save Calibration Images</string>
     </property>
    </widget>
   </widget>

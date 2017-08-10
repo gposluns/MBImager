@@ -16,8 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     videoRec = false;
     //worker->moveToThread(okThread);
     //okThread->start();
-    calibCounter = -1;
-    pattName = QString("");
+
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(updateFrame()));
     timer->start(1);
@@ -264,16 +263,10 @@ void MainWindow::updateFrame(){
     }
     //qDebug() << "non-empty queue";
 
-
-    QDir GUIdir(QString("MBImagerGUI"));
     QDir dir(QString("MBImagerGUI/Images exp%1 masks%2 chngs%3 subc%4").arg(exposure).arg(masks).arg(maskchngs).arg(subc));
     if (imagesToSave > 0 && !dir.exists()){
        // qDebug() << "making directory" << dir.absolutePath();
-        GUIdir.mkpath(QString("\Images exp%1 masks%2 chngs%3 subc%4").arg(exposure).arg(masks).arg(maskchngs).arg(subc));
-    }
-    QDir calibDir(QString("MBImagerGUI/CalibImages"));
-    if (!calibDir.exists()){
-        GUIdir.mkpath(QString("CalibImages"));
+        dir.mkpath(dir.path());
     }
     QDateTime date = QDateTime::currentDateTime();
 
@@ -296,18 +289,6 @@ void MainWindow::updateFrame(){
     if (ui->DispType->currentText()=="ALL"){
         im1 = temp1.scaled(184*2*sqrt(ui->ImgWidget1->zoom), 160*2*sqrt(ui->ImgWidget1->zoom));
         im2 = temp2.scaled(184*2*sqrt(ui->ImgWidget2->zoom), 160*2*sqrt(ui->ImgWidget2->zoom));
-        if (calibCounter >0){
-            calibCounter--;
-        }
-        else if (calibCounter == 0){
-            QString path = calibDir.path() + "/bucket1_" + pattName + ".png";
-            temp1.save(path);
-            path = calibDir.path() + "/bucket2_" + pattName + ".png";
-            temp2.save(path);
-            calibCounter--;
-        }
-
-
         if (imagesToSave > 0){
             imagesToSave--;
             QString path = dir.path() + "/bucket1 " + date.toString("yyyy-M-d-h-m-s-z") + ".png";
@@ -382,7 +363,6 @@ void MainWindow::on_SaveImages_clicked()
 {
     imagesToSave = ui->numImageBox->value();
     ui->SaveImages->setEnabled(false);
-
 }
 
 void MainWindow::on_RecVideo_toggled(bool checked)
@@ -436,29 +416,3 @@ void MainWindow::on_DispType_currentIndexChanged(int index)
     ui->RecVideo->setChecked(false);
 }
 
-
-
-void MainWindow::on_calib_clicked()
-{
-    QString dir = QFileDialog::getExistingDirectory(this, tr("Open Directory"),"/home", QFileDialog::ShowDirsOnly );
-    pattDir = new QDirIterator(dir);
-    if (pattDir->hasNext()){
-        QString currpatt = pattDir->next();
-        while(!currpatt.endsWith(".bmp")){
-            currpatt = pattDir->next();
-        }
-        pattName = pattDir->fileName();
-        emit pattLoadClicked(currpatt);
-        ui->DispImage->toggle();
-        calibCounter = 20;
-        qDebug() <<"hellooooo";
-    }
-
-
-
-}
-
-void MainWindow::on_SaveImages_toggled(bool checked)
-{
-
-}
