@@ -131,6 +131,14 @@ void okWorker::showImages(int exp, int numMasks, int maskChngs, int subcPer, QSt
                 //qDebug() << "also 2";
               //  fails++;
             //}
+            ok.SetWireInValue(0x10, 0xff, 0x01);
+            ok.UpdateWireIns();
+            QThread::msleep(10);
+            ok.SetWireInValue(0x10, 0x00, 0x01);
+            ok.UpdateWireIns();
+            //QThread::msleep(10);
+            //qDebug()<<"fifo full";
+            continue;
 
 
 
