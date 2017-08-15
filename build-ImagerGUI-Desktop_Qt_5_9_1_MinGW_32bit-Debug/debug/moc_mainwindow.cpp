@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../ImagerGUI 2017-08-10/mainwindow.h"
+#include "../../ImagerGUI/mainwindow.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[31];
-    char stringdata0[433];
+    QByteArrayData data[30];
+    char stringdata0[416];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -60,8 +60,7 @@ QT_MOC_LITERAL(25, 319, 19), // "on_RecVideo_toggled"
 QT_MOC_LITERAL(26, 339, 16), // "on_Reset_clicked"
 QT_MOC_LITERAL(27, 356, 31), // "on_DispType_currentIndexChanged"
 QT_MOC_LITERAL(28, 388, 5), // "index"
-QT_MOC_LITERAL(29, 394, 21), // "on_SaveImages_toggled"
-QT_MOC_LITERAL(30, 416, 16) // "on_calib_clicked"
+QT_MOC_LITERAL(29, 394, 21) // "on_SaveImages_toggled"
 
     },
     "MainWindow\0closing\0\0display\0exposure\0"
@@ -74,7 +73,7 @@ QT_MOC_LITERAL(30, 416, 16) // "on_calib_clicked"
     "on_Zoom_valueChanged\0on_SaveImages_clicked\0"
     "on_RecVideo_toggled\0on_Reset_clicked\0"
     "on_DispType_currentIndexChanged\0index\0"
-    "on_SaveImages_toggled\0on_calib_clicked"
+    "on_SaveImages_toggled"
 };
 #undef QT_MOC_LITERAL
 
@@ -84,7 +83,7 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      19,   14, // methods
+      18,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -92,27 +91,26 @@ static const uint qt_meta_data_MainWindow[] = {
        4,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  109,    2, 0x06 /* Public */,
-       3,    5,  110,    2, 0x06 /* Public */,
-       9,    0,  121,    2, 0x06 /* Public */,
-      10,    1,  122,    2, 0x06 /* Public */,
+       1,    0,  104,    2, 0x06 /* Public */,
+       3,    5,  105,    2, 0x06 /* Public */,
+       9,    0,  116,    2, 0x06 /* Public */,
+      10,    1,  117,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      12,    0,  125,    2, 0x08 /* Private */,
-      13,    0,  126,    2, 0x08 /* Private */,
-      14,    1,  127,    2, 0x08 /* Private */,
-      16,    1,  130,    2, 0x08 /* Private */,
-      18,    1,  133,    2, 0x08 /* Private */,
-      19,    1,  136,    2, 0x08 /* Private */,
-      21,    1,  139,    2, 0x08 /* Private */,
-      22,    0,  142,    2, 0x08 /* Private */,
-      23,    1,  143,    2, 0x08 /* Private */,
-      24,    0,  146,    2, 0x08 /* Private */,
-      25,    1,  147,    2, 0x08 /* Private */,
-      26,    0,  150,    2, 0x08 /* Private */,
-      27,    1,  151,    2, 0x08 /* Private */,
-      29,    1,  154,    2, 0x08 /* Private */,
-      30,    0,  157,    2, 0x08 /* Private */,
+      12,    0,  120,    2, 0x08 /* Private */,
+      13,    0,  121,    2, 0x08 /* Private */,
+      14,    1,  122,    2, 0x08 /* Private */,
+      16,    1,  125,    2, 0x08 /* Private */,
+      18,    1,  128,    2, 0x08 /* Private */,
+      19,    1,  131,    2, 0x08 /* Private */,
+      21,    1,  134,    2, 0x08 /* Private */,
+      22,    0,  137,    2, 0x08 /* Private */,
+      23,    1,  138,    2, 0x08 /* Private */,
+      24,    0,  141,    2, 0x08 /* Private */,
+      25,    1,  142,    2, 0x08 /* Private */,
+      26,    0,  145,    2, 0x08 /* Private */,
+      27,    1,  146,    2, 0x08 /* Private */,
+      29,    1,  149,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -135,7 +133,6 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,   28,
     QMetaType::Void, QMetaType::Bool,   15,
-    QMetaType::Void,
 
        0        // eod
 };
@@ -164,7 +161,6 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 15: _t->on_Reset_clicked(); break;
         case 16: _t->on_DispType_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 17: _t->on_SaveImages_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 18: _t->on_calib_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -226,13 +222,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 19)
+        if (_id < 18)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 19;
+        _id -= 18;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 19)
+        if (_id < 18)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 19;
+        _id -= 18;
     }
     return _id;
 }

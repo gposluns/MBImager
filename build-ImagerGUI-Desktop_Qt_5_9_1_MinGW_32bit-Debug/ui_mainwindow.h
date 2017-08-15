@@ -59,7 +59,6 @@ public:
     QSpinBox *numImageBox;
     QSpinBox *yBox;
     QSpinBox *xBox;
-    QPushButton *calib;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -141,7 +140,7 @@ public:
         maskschangeslabel_2->setFont(font);
         SaveImages = new QPushButton(centralwidget);
         SaveImages->setObjectName(QStringLiteral("SaveImages"));
-        SaveImages->setGeometry(QRect(170, 440, 101, 51));
+        SaveImages->setGeometry(QRect(160, 440, 111, 51));
         SaveImages->setFont(font);
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName(QStringLiteral("label_3"));
@@ -168,26 +167,25 @@ public:
         EqualizeImg->setCheckable(true);
         expBox = new QSpinBox(centralwidget);
         expBox->setObjectName(QStringLiteral("expBox"));
-        expBox->setGeometry(QRect(211, 241, 61, 31));
-        expBox->setMaximum(1000000);
-        expBox->setSingleStep(1000);
+        expBox->setGeometry(QRect(221, 241, 51, 31));
+        expBox->setMaximum(100000);
         expBox->setValue(1);
         maskBox = new QSpinBox(centralwidget);
         maskBox->setObjectName(QStringLiteral("maskBox"));
-        maskBox->setGeometry(QRect(210, 290, 61, 31));
+        maskBox->setGeometry(QRect(220, 290, 51, 31));
         maskBox->setMaximum(10000);
         maskBox->setValue(600);
         maskChngBox = new QSpinBox(centralwidget);
         maskChngBox->setObjectName(QStringLiteral("maskChngBox"));
-        maskChngBox->setGeometry(QRect(210, 340, 61, 31));
+        maskChngBox->setGeometry(QRect(220, 340, 51, 31));
         maskChngBox->setMaximum(10000);
         subcBox = new QSpinBox(centralwidget);
         subcBox->setObjectName(QStringLiteral("subcBox"));
-        subcBox->setGeometry(QRect(210, 390, 61, 31));
+        subcBox->setGeometry(QRect(220, 390, 51, 31));
         subcBox->setMaximum(10000);
         numImageBox = new QSpinBox(centralwidget);
         numImageBox->setObjectName(QStringLiteral("numImageBox"));
-        numImageBox->setGeometry(QRect(100, 450, 51, 31));
+        numImageBox->setGeometry(QRect(100, 450, 41, 31));
         numImageBox->setMaximum(1000);
         numImageBox->setValue(1);
         yBox = new QSpinBox(centralwidget);
@@ -198,9 +196,6 @@ public:
         xBox->setObjectName(QStringLiteral("xBox"));
         xBox->setGeometry(QRect(290, 400, 42, 22));
         xBox->setMaximum(184);
-        calib = new QPushButton(centralwidget);
-        calib->setObjectName(QStringLiteral("calib"));
-        calib->setGeometry(QRect(510, 510, 181, 51));
         MainWindow->setCentralWidget(centralwidget);
         QWidget::setTabOrder(BitLoad, PattLoad);
         QWidget::setTabOrder(PattLoad, DispType);
@@ -245,7 +240,6 @@ public:
         Reset->setText(QApplication::translate("MainWindow", "Reset View", Q_NULLPTR));
         ApplyImg->setText(QApplication::translate("MainWindow", "Apply Image Correction", Q_NULLPTR));
         EqualizeImg->setText(QApplication::translate("MainWindow", "Equalize Image", Q_NULLPTR));
-        calib->setText(QApplication::translate("MainWindow", "Save Calibration Images", Q_NULLPTR));
     } // retranslateUi
 
 };
