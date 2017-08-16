@@ -66,7 +66,8 @@ module OK_imager(
 	output wire mcb3_dram_ck_n,
 //	output wire c3_calib_done,
 	
-	output wire trigger_proj
+	output wire trigger_proj,
+	output wire exposure_trig
     );
 
 // -- Parameters
@@ -223,8 +224,8 @@ wire		c3_p1_rd_empty;
 wire [6:0]	c3_p1_rd_count;
 wire		c3_p1_rd_overflow;
 wire		c3_p1_rd_error;
-wire [31:0] MIN_FRAME_TIME;
 //wire trigger_proj;
+//wire exposure_trig;
 wire [31:0] proj_delay;
 	 
 // TB sims values
@@ -256,7 +257,7 @@ assign led = fsm_stat;
 //assign led[7] = fifo_full_checker;
 
 
-assign FSMstop = rst | flag_2frames; //| pattern_stored;
+assign FSMstop = rst;// | flag_2frames; //| pattern_stored;
 // assign FSMstop = rst;
 assign RstPat = FSMstop | FSMIND1;
 assign FPGA_rst_n = ~FSMstop;
@@ -430,7 +431,7 @@ mem_if u_mem_if (
 // assign switched_data = {im_data[7],im_data[3],im_data[5:4],im_data[6],im_data[2:0]};
  
 fifo_6to24 fifo_databuf (
-  .rst(rst | flag_2frames), // input rst
+  .rst(rst), // input rst
   .wr_clk(im_data_clk), // input wr_clk
   .rd_clk(okClk), // input rd_clk
   .din(im_data), // input [5 : 0] din
@@ -449,7 +450,7 @@ fifo_usbout fifo256kB_out (
   .rst(rst), // input rst
 //  .din(dout), // input [23 : 0] din
   .din(temp_data), // input [23 : 0] din
-  .wr_en(d_buf_valid & ~flag_2frames), // input wr_en
+  .wr_en(d_buf_valid), // input wr_en
   .rd_en(rd_en), // input rd_en
   .dout(dout_buf), // output [23 : 0] dout
   .full(full_2), // output full
@@ -522,7 +523,9 @@ ROImager_exp_PatSeperate ROImager_inst (
 	 
 	 .CLK_HS(CLK_HS),						  // Fast clock for projector trigger
     .TRIGGER_PROJ(trigger_proj),				  // Output to projector trigger  
-    .PROJ_DELAY(proj_delay)
+    .PROJ_DELAY(proj_delay),
+	 .exposure_trig(exposure_trig),
+	 .cam_start(trig55in[0])
 	
     );
 
@@ -725,8 +728,8 @@ ODDR2 #(
 	.C0(CLK_HS), // 1-bit clock input
 	.C1(CLK_HS180), // 1-bit clock input
 	.CE(1'b1), // 1-bit clock enable input
-	.D0(1'b1), // 1-bit data input (associated with C0)
-	.D1(1'b0), // 1-bit data input (associated with C1)
+	.D0(1'b0), // 1-bit data input (associated with C0)
+	.D1(1'b1), // 1-bit data input (associated with C1)
 	.R(1'b0), // 1-bit reset input
 	.S(1'b0) // 1-bit set input
 );
@@ -783,5 +786,8 @@ okTriggerIn trigIn53 	(.okHE(okHE),								.ep_addr(8'h53), 	.ep_clk(c3_clk0), 	
 okTriggerOut trigOut6A	(.okHE(okHE), 	.okEH(okEHx[1*65 +: 65]),	.ep_addr(8'h6a), 	.ep_clk(sys_clk), 		.ep_trigger(trig6Aout));
 okPipeOut	pipeA0		(.okHE(okHE),	.okEH(okEHx[2*65 +: 65]),	.ep_addr(8'hA0),	.ep_read(rd_en),		.ep_datain(din_pipe) );
 okPipeIn 	pipe80		(.okHE(okHE),	.okEH(okEHx[5*65 +: 65]),	.ep_addr(8'h80),	.ep_write(pipe80in_high),	.ep_dataout(pipe80in_data));
+
+wire [31:0] trig55in;
+okTriggerIn trigIn55 	(.okHE(okHE),								.ep_addr(8'h55), 	.ep_clk(CLKMPRE_int), 		.ep_trigger(trig55in));
 
 endmodule

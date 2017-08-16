@@ -165,8 +165,10 @@ def grab(queue1,queue2):
     #dev.SetWireInValue(NUM_MASKS_WIRE,1024-2)
     dev.SetWireInValue(MASK_CHANGES_WIRE,maskchanges)
     dev.SetWireInValue(SUBS_PER_WIRE,subchange)
-    dev.SetWireInValue(0x19,185)
+    dev.SetWireInValue(0x19,2840)
     dev.SetWireInValue(0x18, 0)
+    
+    #dev.ActivateTriggerIn(0x55,0x0)
     
     dev.SetWireInValue(PATT_IN_WIRE, 0xfff003ff) #patgen_stop,patgen_start,patgen_in
     time.sleep(0.1)

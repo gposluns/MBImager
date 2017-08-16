@@ -29,7 +29,9 @@ module ROImager_exp_PatSeperate
   
   CLK_HS,						  // Fast clock for projector trigger
   TRIGGER_PROJ,				  // Output to projector trigger  
-  PROJ_DELAY					  // Time between projector trigger and STREAM going low, in CLK_HS periods
+  PROJ_DELAY,					  // Time between projector trigger and STREAM going low, in CLK_HS periods
+	exposure_trig,
+	cam_start
 );
 
 // -- Parameters
@@ -44,6 +46,7 @@ parameter S_subc_exp = 8'b00000100;
 parameter S_subc_last = 8'b00001000;
 parameter S_FSM1 = 8'b00010000;
 parameter S_FSM1_ACK = 8'b00100000; 
+parameter S_idle = 8'b01000000;
 
 // -- Ports
 input									  RESET;
@@ -66,6 +69,8 @@ input [31:0] MIN_FRAME_TIME;
 input CLK_HS;
 output TRIGGER_PROJ;
 input [31:0]			PROJ_DELAY;
+output exposure_trig;
+input wire cam_start;
 
 //----------------------------------------------------------------------------
 // Implementation
@@ -79,6 +84,7 @@ input [31:0]			PROJ_DELAY;
   integer 	fst_cntr;
     reg [31:0]		timer;
 	 reg TRIGGER_PROJ_i;
+	 reg exposure_trig_i;
 
   
   initial
@@ -92,10 +98,11 @@ input [31:0]			PROJ_DELAY;
 		CLKMPRE_EN = 0;
 		STREAM <= 0;
 		fsm_stat_i <= 8'b11110000;
-		state <= S_subc_first;
+		state <= S_idle;//S_subc_first;
 		fst_cntr <= C_NUM_ROWS*18 - PROJ_DELAY;
 		timer <= MIN_FRAME_TIME;
 		TRIGGER_PROJ_i <= 0;
+		exposure_trig_i<= 0;
   end
   
   always@(posedge CLK_HS) begin
@@ -120,6 +127,7 @@ input [31:0]			PROJ_DELAY;
   end
 
 	assign TRIGGER_PROJ = TRIGGER_PROJ_i;
+	assign exposure_trig = exposure_trig_i;
 	
    (* FSM_ENCODING="ONE-HOT", SAFE_IMPLEMENTATION="YES", SAFE_RECOVERY_STATE="<recovery_state_value>" *) reg [7:0] state = S_subc_first;
 	always@(posedge CLKMPRE) begin
@@ -133,14 +141,21 @@ input [31:0]			PROJ_DELAY;
 			CLKMPRE_EN = 0;
 			STREAM <= 0;
 			fsm_stat_i <= 8'b10101010;
-			state <= S_subc_first;
+			state <= S_idle;//S_subc_first;
 			timer <= MIN_FRAME_TIME;
+			exposure_trig_i<= 0;
 		end 
 		else begin
 			if (timer == 0) timer <= 0;
 			else timer <= timer - 1;
 		
 			(* PARALLEL_CASE *) case (state)
+			
+				S_idle: begin
+					if (cam_start)
+						state <= S_subc_first;
+				end
+			
             S_subc_first : begin
 				fsm_stat_i <= 8'b11111110;
 				OK_PIXRES_GLOB <= 1;
@@ -166,7 +181,7 @@ input [31:0]			PROJ_DELAY;
 					STREAM <= 1;
 					count_mpre <= count_mpre + 1;
 					CLKMPRE_EN = 1;
-				end else if(count_mpre < C_NUM_ROWS + 268) begin
+				end else if(count_mpre < C_NUM_ROWS + 1506) begin //1667-160-1
 					STREAM <= 0;
 					count_mpre <= count_mpre + 1;
 				end else begin
@@ -177,6 +192,9 @@ input [31:0]			PROJ_DELAY;
 				end
             end
             S_subc_exp : begin
+				
+				exposure_trig_i <= 1;
+				
 				fsm_stat_i <= 8'b11111100;
 				OK_PIXRES_GLOB <= 0;
 				OK_DRAIN_B <= 1;
@@ -186,9 +204,13 @@ input [31:0]			PROJ_DELAY;
 				end else if (count_subsc < Num_Pat) begin
 					count_mpre <= 0;
 					state <= S_subc_n;
+					
+					exposure_trig_i<= 0;
 				end else begin
 					count_mpre <= 0;
 					state <= S_subc_last;
+					
+					exposure_trig_i<= 0;
 				end
             end
             S_subc_last : begin
