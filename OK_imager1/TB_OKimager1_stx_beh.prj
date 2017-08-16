@@ -1,0 +1,5 @@
+verilog isim_temp "okLibrary.v"
+verilog isim_temp "fifo_buf_timing.v"
+verilog isim_temp "OK_imager1.v"
+verilog isim_temp "TB_OKimager1.v"
+verilog isim_temp "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

@@ -3,7 +3,6 @@
 
 int main(int argc, char *argv[])
 {
-    //qDebug() <<"main Crash";
     try{
 
     QApplication a(argc, argv);

@@ -137,7 +137,7 @@ wire [9:0] target;
 wire spi_trigger;
 wire spi_done;
 	 
-spi_master_4byte #(.N(10), .C(16), .CLK_RATIO(16), .SS_SPACE(10)) spi_master(
+spi_master_4byte #(.N(10), .C(16), .CLK_RATIO(16)) spi_master(
 	.MISO(SPI_FLASH_MISO),
 	.MOSI(SPI_FLASH_MOSI),
 	.SPI_CLK(SPI_FLASH_SCLK),
@@ -225,10 +225,10 @@ fifo_4kB fifo_inst_4kB (
   .rst(EXT_RESET), // input rst
   .wr_clk(ADC_CLK), // input wr_clk
   .rd_clk(CLKFIFO), // input rd_clk
-  .din(din), // input [23 : 0] din
+  .din(din), // input [31 : 0] din changed from [23:0]
   .wr_en(MBI_DDR_DATA_VALID), // input wr_en
   .rd_en(1'b1), // input rd_en
-  .dout(dout), // output [5 : 0] dout
+  .dout(dout), // output [7 : 0] dout changed from [5 : 0]
   .full(full), // output full
   .empty(empty), // output empty
   .almost_empty(almost_empty), // output almost_empty

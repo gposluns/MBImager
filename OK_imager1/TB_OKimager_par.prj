@@ -1,0 +1,2 @@
+verilog work "netgen/par/OK_imager_timesim.v"
+verilog work "TB_OKimager.v"

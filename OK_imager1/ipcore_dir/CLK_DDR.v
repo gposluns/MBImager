@@ -71,15 +71,15 @@ module CLK_DDR
   // Clock out ports
   output        CLK_OUT1,
   // Status and control signals
-	input         RESET,
+  input         RESET,
   output        LOCKED
  );
 
   // Input buffering
   //------------------------------------
-/*   BUFG clkin1_buf//testing
+  IBUFG clkin1_buf
    (.O (clkin1),
-    .I (CLK_IN1)); */
+    .I (CLK_IN1));
 
 
   // Clocking primitive
@@ -131,14 +131,11 @@ module CLK_DDR
   BUFG clkf_buf
    (.O (clkfbout_buf),
     .I (clkfbout));
-assign CLK_OUT1 = clkout0; //testing
-/* wire clkout0; //testing
-wire clkin1; */
 
-	/* BUFG clkout1_buf
+  BUFG clkout1_buf
    (.O   (CLK_OUT1),
     .I   (clkout0));
- */
+
 
 
 

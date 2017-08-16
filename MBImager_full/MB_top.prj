@@ -1,3 +1,4 @@
+verilog work "MB_SPI/hdl/MB_SPI.v"
 verilog work "TI_ADC_RO.v"
 verilog work "spi_programmer.v"
 verilog work "spi_master.v"

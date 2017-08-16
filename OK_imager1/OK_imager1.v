@@ -132,7 +132,7 @@ wire PatFIFO_wr;
 wire PatFIFO_empty;
 wire CLKMPRE_EN;
 wire [31:0] CntSubc;
-wire [31:0] MIN_FRAME_TIME;
+//wire [31:0] MIN_FRAME_TIME;
 
 wire im_data_val_test;
 reg [7:0] ADC_TESTDATA1;
@@ -434,7 +434,7 @@ fifo_6to24 fifo_databuf (
   .rst(rst), // input rst
   .wr_clk(im_data_clk), // input wr_clk
   .rd_clk(okClk), // input rd_clk
-  .din(im_data), // input [5 : 0] din
+  .din(im_data), // input [7 : 0] din changed from 5:0
   .wr_en(im_data_val), // input wr_en
   .rd_en(1'b1), // input rd_en
   .dout(dout), // output [23 : 0] dout

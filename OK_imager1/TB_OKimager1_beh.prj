@@ -1,0 +1,7 @@
+verilog work "okLibrary.v"
+verilog work "ipcore_dir/fifo_usbout.v"
+verilog work "ipcore_dir/fifo_8to32.v"
+verilog work "fifo_buf_timing.v"
+verilog work "OK_imager1.v"
+verilog work "TB_OKimager1.v"
+verilog work "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

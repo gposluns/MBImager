@@ -27,6 +27,7 @@
 //#include <qwt_plot_histogram.h>
 #include <QByteArray>
 #include <QFile>
+#include <QDirIterator>
 
 #define COEFFS_PER_EXPOSURE 56880
 #define NUM_EXPOSURES 24
@@ -53,8 +54,11 @@ private:
     QTimer* timer;
     QImage im1;
     QImage im2;
+    QDirIterator *pattDir;
     std::thread *workerThread;
     int imagesToSave;
+    int calibCounter;
+    QString pattName;
     cv::VideoWriter *video1;
     //QwtPlotHistogram histogram;
     unsigned char darkimg1 [EXP_ROWS][EXP_COLS];
@@ -96,6 +100,7 @@ private slots:
     void on_Reset_clicked();
     void on_DispType_currentIndexChanged(int index);
     void on_SaveImages_toggled(bool checked);
+    void on_calib_clicked();
 };
 
 #endif // MAINWINDOW_H
