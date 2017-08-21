@@ -234,7 +234,7 @@ module reveal_tf;
 												 //           host interface checks for ready (0-255)
 	parameter PostReadyDelay = 5;     // REQUIRED: # of clocks after ready is asserted and
 												 //           check that the block transfer begins (0-255)
-	parameter pipeInSize = 176*16*4*3;      // REQUIRED: byte (must be even) length of default
+	parameter pipeInSize = 176*16*4*5;      // REQUIRED: byte (must be even) length of default
 												 //           PipeIn; Integer 0-2^32
 	parameter pipeOutSize = 128;     // REQUIRED: byte (must be even) length of default
 												 //           PipeOut; Integer 0-2^32
@@ -247,7 +247,7 @@ module reveal_tf;
 		for (k=0; k<pipeInSize; k=k+1) begin
 			if (k < 176*16*4)
 				pipeIn[k] = 8'h00;	
-			else if(k >= 176*16*4*2)
+			else if(k >= 176*16*4*4)
 				pipeIn[k] = 8'h00;
 			else
 				pipeIn[k] = k-176*16*4;
@@ -270,11 +270,10 @@ module reveal_tf;
 		FrontPanelReset();
 		$display("2 %d", $time);				// Start routine with FrontPanelReset;
 		SetWireInValue(8'h10, 32'hffff, 32'h000f);     // rst
-		$display("3 %d", $time);
-		SetWireInValue(8'h12, 32'd1, 32'hffffffff);     //wire num_pat
-		$display("4 %d", $time);
+		SetWireInValue(8'h12, 32'd3, 32'hffffffff);     //wire num_pat
 		SetWireInValue(8'h11, 32'd20, 32'hffffffff);  	//wireexp 
-		$display("5 %d", $time);
+		SetWireInValue(8'h19, 32'd20, 32'hffffffff);  	//proj trig
+		
 		//SetWireInValue(8'h15, 32'b00000000000000000000001010101010, 32'hffffffff);  	//pattern
 		SetWireInValue(8'h18, 32'h0, 32'hffffffff);
 		$display("6 %d", $time);
