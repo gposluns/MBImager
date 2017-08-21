@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module spi_master_4byte(
+module spi_master(
     MISO,
     MOSI,
     SPI_CLK,
@@ -26,17 +26,17 @@ module spi_master_4byte(
     CLK_IN,
     din,
     dout,
-    trigger,
-    target,
-	 valid,
+    trigger, //trigger to start transmission
+    target,		//slave to communicate with spi_ss = ~target
+	 valid, //done transmitting, dout is valid response
 	 CPOL,
 	 CPHA
     );
 	 
 	 parameter N = 1; //number of slave select bits
-	 parameter C = 32; //maximum transmission length in bits, up to 2^32
-	 parameter CLK_RATIO = 100;
-	 parameter SS_SPACE = 1;
+	 parameter C = 32; //maximum transmission length in bits
+	 parameter CLK_RATIO = 100; //ratio of CLK_IN to SPI_CLK
+	 parameter SS_SPACE = 1;	//number of clock cycle times to hold ss low before starting and after ending spi_clk and data transmission
 
 	 input MISO;
     output MOSI;

@@ -41,7 +41,7 @@ module testfx_spi;
 	wire valid;
 
 	// Instantiate the Unit Under Test (UUT)
-	spi_master_4byte # (.N(10), .C(16)) uut (
+	spi_master # (.N(10), .C(16)) uut (
 		.MISO(MISO), 
 		.MOSI(MOSI), 
 		.SPI_CLK(SPI_CLK), 
