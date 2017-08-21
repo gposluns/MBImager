@@ -181,7 +181,7 @@ input wire cam_start;
 					STREAM <= 1;
 					count_mpre <= count_mpre + 1;
 					CLKMPRE_EN = 1;
-				end else if(count_mpre < C_NUM_ROWS + 1506) begin //1667-160-1
+				end else if(count_mpre < C_NUM_ROWS + 2) begin //1667-160-1
 					STREAM <= 0;
 					count_mpre <= count_mpre + 1;
 				end else begin

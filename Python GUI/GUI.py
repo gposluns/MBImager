@@ -244,6 +244,7 @@ def grab(queue1,queue2):
                 # deactivate reset signal and activate counter.
                 dev.SetWireInValue(0x10, 0x00, 0x01)
                 dev.UpdateWireIns()
+                dev.ActivateTriggerIn(0x55,0x0)
                 time.sleep(0.01) #allow time for FIFO to reset
                 stuck = 0
                 

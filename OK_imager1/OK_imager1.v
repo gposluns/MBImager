@@ -72,7 +72,7 @@ module OK_imager(
 
 // -- Parameters
 parameter	C_CLKHS_D		= 3;	// Devide value for CLKHS to USER_CLOCK. value - D - (1-256)
-parameter	C_CLKHS_M		= 3;	// Multiply value for CLKHS to USER_CLOCK. value - M - (2-256)
+parameter	C_CLKHS_M		= 6;	// Multiply value for CLKHS to USER_CLOCK. value - M - (2-256)
 
 //ddr2 ports width
 localparam  C3_P0_MASK_SIZE          = 8;
@@ -132,7 +132,7 @@ wire PatFIFO_wr;
 wire PatFIFO_empty;
 wire CLKMPRE_EN;
 wire [31:0] CntSubc;
-//wire [31:0] MIN_FRAME_TIME;
+wire [31:0] MIN_FRAME_TIME;
 
 wire im_data_val_test;
 reg [7:0] ADC_TESTDATA1;
@@ -776,7 +776,7 @@ okWireIn	wire15		(.okHE(okHE),								.ep_addr(8'h15),							.ep_dataout(wirePat
 okWireIn framewire   (.okHE(okHE),								.ep_addr(8'h18),							.ep_dataout(MIN_FRAME_TIME) );
 okWireIn wire19   (.okHE(okHE),								.ep_addr(8'h19),							.ep_dataout(proj_delay) );
 //okWireIn okPHASE_SEL (.okHE(okHE),								.ep_addr(8'h16),							.ep_dataout(PHASE_SEL)	); //testmodimp
-okWireIn okPHASE_SEL (.okHE(okHE),								.ep_addr(8'h16),							.ep_dataout(PHASE_SEL)	); //testmodimp
+
 
 // comment the top okWireIn modules for simulations!
 okWireOut 	wire22		(.okHE(okHE),	.okEH(okEHx[0*65 +: 65]),	.ep_addr(8'h22),							.ep_datain(wireExp) );
