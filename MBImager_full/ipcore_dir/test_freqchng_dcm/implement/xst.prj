@@ -1,0 +1,2 @@
+verilog work ../../test_freqchng_dcm.v
+verilog work ../example_design/test_freqchng_dcm_exdes.v

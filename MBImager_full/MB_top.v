@@ -44,6 +44,8 @@ module MB_top(
 	output MBI_CLK_MOD_2,		//testmodimp
 	output MBI_CLKN_MOD_2,
 	output OK_DRAIN_B_2,
+	output MOD_SIG_AND,
+	input CLKMPRE,
 	input  [1:0] OPTION_SEL,
 	output MBI_CLKN_MOD,		// Imager signal
 	output MBI_CLK_MOD,			// Imager signal
@@ -128,19 +130,24 @@ mod_signal_gen mod_signal_gen_inst (
 	//.OPTION_SEL(OPTION_SEL),
 	.USER_CLOCK(USER_CLOCK),
 	.FREQ_SEL(FREQ_SEL),
-	.PHASE_SEL({PHASE_SEL[4:1],OPTION_SEL[1]}),
+	.PHASE_SEL(PHASE_SEL),
 	.DUTY_SEL(4'b0011/*{1'b0, OPTION_SEL[1:0], 1'b1}*/),
 	.DRAIN_B(OK_DRAIN_B),
 	.MBI_CLK_MOD(MBI_CLK_MOD),
 	.MBI_CLKN_MOD(MBI_CLKN_MOD),
 	.MBI_CLKL_MOD(MBI_CLKL_MOD), 
 	.MBI_CLK_MOD_2(MBI_CLK_MOD_2),
-	.MBI_CLKN_MOD_2(MBI_CLKN_MOD_2)
+	.MBI_CLKN_MOD_2(MBI_CLKN_MOD_2),
+	.MOD_SIG_AND(MOD_SIG_AND)
 );
 
 assign OK_DRAIN_B_2 = OK_DRAIN_B;
+//assign MBI_CLK_MOD = 1;
+//assign MBI_CLKN_MOD = 1;
+//assign MBI_CLK_MOD_2 = 1;
+//assign MBI_CLKN_MOD_2 = 1;
+//assign MBI_CLKL_MOD = 1;
 
-//
 //assign MBI_CLK_MOD = OPTION_SEL[0];//testmodimp
 //assign MBI_CLKN_MOD = OPTION_SEL[1];
 //assign MBI_CLKL_MOD = 1;
@@ -299,7 +306,7 @@ DCM_CLKGEN_1 (
 .CLKFX(ADC_CLK), // 1-bit output: Generated clock output
 .CLKFX180(ADC_CLK180), // 1-bit output: Generated clock output 180 degree out of phase from CLKFX.
 .CLKFXDV(CLKFXDV_1), // 1-bit output: Divided clock output
-.LOCKED(LOCKED_1), // 1-bit output: Locked output
+.LOCKED(LOCKED_DCM_CLKGEN_1), // 1-bit output: Locked output //testmodimp
 .PROGDONE(PROGDONE_1), // 1-bit output: Active high output to indicate the successful re-programming
 .STATUS(STATUS_1), // 2-bit output: DCM_CLKGEN status
 .CLKIN(USER_CLOCK), // 1-bit input: Input clock
@@ -354,7 +361,7 @@ DCM_SP_inst (
 .PSCLK(1'b0), // 1-bit input: Phase shift clock input
 .PSEN(1'b0), // 1-bit input: Phase shift enable
 .PSINCDEC(1'b0), // 1-bit input: Phase shift increment/decrement input
-.RST(1'b0) // 1-bit input: Active high reset input
+.RST(~LOCKED_DCM_CLKGEN_1) // 1-bit input: Active high reset input //testmodimp
 );
 // End of DCM_SP_inst instantiation
 

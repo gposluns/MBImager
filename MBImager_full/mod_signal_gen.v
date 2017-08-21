@@ -29,7 +29,8 @@ module mod_signal_gen(
 	output 			MBI_CLKN_MOD,		//clkn output to MB imager board, 180deg phase shifted from clk
 	output 			MBI_CLKL_MOD,		//clkl output to MB imager board, for light source
 	output			MBI_CLK_MOD_2,		//FOR TESTING testmodimp
-	output			MBI_CLKN_MOD_2
+	output			MBI_CLKN_MOD_2,
+	output			MOD_SIG_AND			//For controlling integer multiple drain_b
 );
 	
 	wire				W_CLK_MOD;
@@ -39,9 +40,11 @@ module mod_signal_gen(
 	wire				W_SELECTED_FREQ;
 	wire				FLAG_HIGH_FREQ;			//for clk and clkn generation, passes information about if highfreq module is used
 	
+	assign MOD_SIG_AND = W_CLK_MOD;
+	
 	freqchng_clkgen freqchng(					//PLL for frequency generation from USER_CLOCK
 		.CLK_IN(USER_CLOCK),						//to cover larger frequency range, there is a high and a low frequency version of this module
-		.RESET(1'b0),								//use module name "freqchng_clkgen" for lowfreq or "freqchng_clkgen_highfreq" for high freq
+		.RESET(PLL_RESET),								//use module name "freqchng_clkgen" for lowfreq or "freqchng_clkgen_highfreq" for high freq
 		.LOCKED(LOCKED),							//availiable frequences (refers to final output freq for signals):
 		.FLAG_HIGH_FREQ(FLAG_HIGH_FREQ),		//clk_out	|	freqchng_clkgen output	|	freqchng_clkgen_highfreq output
 		.CLK_OUT_0(W_FREQ[0]),					//		0		|			100kHz				|			10MHz
@@ -51,6 +54,13 @@ module mod_signal_gen(
 		.CLK_OUT_4(W_FREQ[4]),					//		4		|			2MHz					|			n/a
 		.CLK_OUT_5(W_FREQ[5])					//		5		|			4MHz					|			n/a
 	);
+
+//	test_freqchng_dcm freqchng(
+//		.CLK_IN1(USER_CLOCK),
+//		.RESET(1'b0),
+//		.LOCKED(LOCKED),
+//		.CLK_OUT1(W_FREQ[0])
+//	);
 
 	BUFG BUFG_freqmux(							//buffer for selected freqchng output
 		.O(W_SELECTED_FREQ),
@@ -69,14 +79,15 @@ module mod_signal_gen(
 		.DRAIN_B(DRAIN_B),
 		.CLK_OUT_MOD(W_CLK_MOD),
 		.CLK_OUT_MODN(W_CLKN_MOD),
-		.CLK_OUT_MODL(W_CLKL_MOD)
+		.CLK_OUT_MODL(W_CLKL_MOD),
+		.PLL_RESET(PLL_RESET)
 	);
 	
 	//ODDR2's for Spartan 6 pin output------------------------
 	
 	ODDR2 #(
 		.DDR_ALIGNMENT("NONE"), // Sets output alignment to "NONE", "C0" or "C1"
-		.INIT(1'b0), // Sets initial state of the Q output to 1'b0 or 1'b1
+		.INIT(1'b1), // Sets initial state of the Q output to 1'b0 or 1'b1
 		.SRTYPE("SYNC") // Specifies "SYNC" or "ASYNC" set/reset
 		) ODDR2_CLK_MOD_buf (
 		.Q(MBI_CLK_MOD), // 1-bit DDR output data
@@ -91,7 +102,7 @@ module mod_signal_gen(
 
 	ODDR2 #(
 		.DDR_ALIGNMENT("NONE"), // Sets output alignment to "NONE", "C0" or "C1"
-		.INIT(1'b0), // Sets initial state of the Q output to 1'b0 or 1'b1
+		.INIT(1'b1), // Sets initial state of the Q output to 1'b0 or 1'b1
 		.SRTYPE("SYNC") // Specifies "SYNC" or "ASYNC" set/reset
 		) ODDR2_CLKN_MOD_buf (
 		.Q(MBI_CLKN_MOD), // 1-bit DDR output data
@@ -106,7 +117,7 @@ module mod_signal_gen(
 	
 	ODDR2 #(
 		.DDR_ALIGNMENT("NONE"), // Sets output alignment to "NONE", "C0" or "C1"
-		.INIT(1'b0), // Sets initial state of the Q output to 1'b0 or 1'b1
+		.INIT(1'b1), // Sets initial state of the Q output to 1'b0 or 1'b1
 		.SRTYPE("SYNC") // Specifies "SYNC" or "ASYNC" set/reset
 		) ODDR2_CLKL_MOD_buf (
 		.Q(MBI_CLKL_MOD), // 1-bit DDR output data
@@ -121,7 +132,7 @@ module mod_signal_gen(
 	
 	ODDR2 #(	//FOR TESTING testmodimp
 		.DDR_ALIGNMENT("NONE"), // Sets output alignment to "NONE", "C0" or "C1"
-		.INIT(1'b0), // Sets initial state of the Q output to 1'b0 or 1'b1
+		.INIT(1'b1), // Sets initial state of the Q output to 1'b0 or 1'b1
 		.SRTYPE("SYNC") // Specifies "SYNC" or "ASYNC" set/reset
 		) ODDR2_CLK_MOD_buf_temp (
 		.Q(MBI_CLK_MOD_2), // 1-bit DDR output data
@@ -136,7 +147,7 @@ module mod_signal_gen(
 	
 	ODDR2 #(	//FOR TESTING testmodimp
 		.DDR_ALIGNMENT("NONE"), // Sets output alignment to "NONE", "C0" or "C1"
-		.INIT(1'b0), // Sets initial state of the Q output to 1'b0 or 1'b1
+		.INIT(1'b1), // Sets initial state of the Q output to 1'b0 or 1'b1
 		.SRTYPE("SYNC") // Specifies "SYNC" or "ASYNC" set/reset
 		) ODDR2_CLK_MODN_buf_temp (
 		.Q(MBI_CLKN_MOD_2), // 1-bit DDR output data

@@ -110,7 +110,7 @@ module freqchng_clkgen
     .DIVCLK_DIVIDE          (1),
     .CLKFBOUT_MULT          (4),
     .CLKFBOUT_PHASE         (0.000),
-    .CLKOUT0_DIVIDE         (125),
+    .CLKOUT0_DIVIDE         (25),
     .CLKOUT0_PHASE          (0.000),
     .CLKOUT0_DUTY_CYCLE     (0.500),
     .CLKOUT1_DIVIDE         (63),

@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module OK_imager(
+	module OK_imager(
 	input wire [4:0] okUH,
 	output wire[2:0] okHU,
 	inout wire[31:0] okUHU,
@@ -36,8 +36,10 @@ module OK_imager(
 	output wire [10:1] MSTREAM,
 	output wire OK_DRAIN_B,
 	output wire OK_PIXRES_GLOB,
-	output	[31:0] PHASE_SEL, //testmodimp
-	output	[31:0] OPTION_SEL,
+	//output	[31:0] PHASE_SEL, //testmodimp
+	//output	[31:0] OPTION_SEL,
+	//input			MOD_SIG_AND, //testintmult
+	//output CLKMPRE_EN_test, //testintmult
 	//output wire testsig,
 	input wire FSMIND0,				// If high, the Exposure FSM (on OK) is active
 	output wire FSMIND1,
@@ -115,13 +117,11 @@ wire [5:0] dout_test;
 // assign wireout = 32'h0000;
 
 // Circuit assignements
-//assign led = fsm_stat;
-assign led [5:0] = ~PHASE_SEL[5:0];
-assign led [7:6] = ~OPTION_SEL[1:0];
+assign led = fsm_stat;
 assign FSMstop = rst | flag_2frames;
 // assign FSMstop = rst;
 assign RstPat = (FSMstop | FSMIND1); //testmodimp
-assign FPGA_rst_n = ~FSMstop | OPTION_SEL[0];
+assign FPGA_rst_n = ~FSMstop;//& OPTION_SEL[0];
 assign rst = wireout[0];
 assign trig6Aout[0] = full_2;
 assign trig6Aout[1] = flag_2frames;
@@ -131,6 +131,8 @@ assign din_pipe[31:24]=8'b0;
 assign Pat_in[9:0] = wirePatterns[9:0] ;
 assign PatGen_start[9:0] = wirePatterns[19:10];
 assign PatGen_stop[9:0] = wirePatterns[29:20];//wirePatterns[30:21];
+
+//assign CLKMPRE_EN_test = CLKMPRE_EN; //testintmult
 
 
 /* // Generating test data instead of ADCs data
@@ -208,7 +210,6 @@ fifo_patterns FIFO_Patterns (
 );
 
 ROImager_exp_PatSeperate ROImager_inst (
-	 //.PHASE0(OPTION_SEL[0]), //testmodimp
     .RESET(FSMstop),
     .OK_PIXRES_GLOB(OK_PIXRES_GLOB), 
     .CLKMPRE(CLKMPRE_int), 
@@ -223,6 +224,7 @@ ROImager_exp_PatSeperate ROImager_inst (
     .FSMIND1(FSMIND1), 
     .FSMIND0ACK(FSMIND0ACK), 
     .FSMIND1ACK(FSMIND1ACK)
+	 //.MOD_SIG_AND(MOD_SIG_AND) //testmodimp
     );
 
 pattern_gen pat_gen (
@@ -330,7 +332,7 @@ DCM_SP_inst (
 	.PSCLK(1'b0),       // 1-bit input: Phase shift clock input
 	.PSEN(1'b0),         // 1-bit input: Phase shift enable
 	.PSINCDEC(1'b0), // 1-bit input: Phase shift increment/decrement input
-	.RST(1'b0)            // 1-bit input: Active high reset input
+	.RST(~LOCKED_HS)            // 1-bit input: Active high reset input //testmodimp
 );
 
 // End of DCM_SP_inst instantiation
@@ -364,7 +366,7 @@ ODDR2 #(
 	.CE(1'b1), // 1-bit clock enable input
 	.D0(1'b0), // 1-bit data input (associated with C0)
 	.D1(1'b1), // 1-bit data input (associated with C1)
-	.R(1'b0), // 1-bit reset input
+	.R(1'b0/*~CLKMPRE_EN testintmult*/), // 1-bit reset input
 	.S(1'b0) // 1-bit set input
 );
 // End of ODDR2_inst instantiatio
@@ -390,12 +392,13 @@ okWireIn	wire12		(.okHE(okHE),								.ep_addr(8'h12),							.ep_dataout(wirePat
 okWireIn	wire13		(.okHE(okHE),								.ep_addr(8'h13),							.ep_dataout(wireMaskChng) );
 okWireIn	wire14		(.okHE(okHE),								.ep_addr(8'h14),							.ep_dataout(wireMaskChngSubc) );
 okWireIn	wire15		(.okHE(okHE),								.ep_addr(8'h15),							.ep_dataout(wirePatterns) );
-okWireIn okPHASE_SEL (.okHE(okHE),								.ep_addr(8'h16),							.ep_dataout(PHASE_SEL)	); //testmodimp
-okWireIn okOPTION_SEL(.okHE(okHE),								.ep_addr(8'h17),							.ep_dataout(OPTION_SEL) );
+//okWireIn okPHASE_SEL (.okHE(okHE),								.ep_addr(8'h16),							.ep_dataout(PHASE_SEL)	); //testmodimp
+//okWireIn okOPTION_SEL(.okHE(okHE),								.ep_addr(8'h17),							.ep_dataout(OPTION_SEL) );
 // comment the top okWireIn modules for simulations!
 okWireOut 	wire22		(.okHE(okHE),	.okEH(okEHx[0*65 +: 65]),	.ep_addr(8'h22),							.ep_datain(wireExp) );
 okWireOut 	wire23		(.okHE(okHE),	.okEH(okEHx[3*65 +: 65]),	.ep_addr(8'h23),							.ep_datain(wirePat) );
 okWireOut 	wire24		(.okHE(okHE),	.okEH(okEHx[4*65 +: 65]),	.ep_addr(8'h24),							.ep_datain(wireMaskChng) );
+//okWireOut	wire25		(.okHE(okHE), 	.okEH(okEHx[5*65 +: 65]),	.ep_addr(8'h25),							.ep_datain(wireExpTime)	);
 okTriggerIn trigIn53 	(.okHE(okHE),								.ep_addr(8'h53), 	.ep_clk(CLKDV), 		.ep_trigger(trig53in));
 okTriggerOut trigOut6A	(.okHE(okHE), 	.okEH(okEHx[1*65 +: 65]),	.ep_addr(8'h6a), 	.ep_clk(sys_clk), 		.ep_trigger(trig6Aout));
 okPipeOut	pipeA0		(.okHE(okHE),	.okEH(okEHx[2*65 +: 65]),	.ep_addr(8'hA0),	.ep_read(rd_en),		.ep_datain(din_pipe) );

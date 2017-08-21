@@ -139,7 +139,7 @@ int main(void)
 		}
 
 	//	Vref#2 config
-		Status = SpiPotWrite(&SpiInstance, SPI_DEVICE_ID, 1, 115, 1);
+		Status = SpiPotWrite(&SpiInstance, SPI_DEVICE_ID, 1, 59, 1);
 	//	Status = SpiPotWrite(&SpiInstance, SPI_DEVICE_ID, 1, 125, 1);
 		if (Status != XST_SUCCESS) {
 			print("SpiPot1Write Failed");
@@ -154,7 +154,7 @@ int main(void)
 		}
 
 	//	Vref#3 config
-		Status = SpiPotWrite(&SpiInstance, SPI_DEVICE_ID, 2, 150, 1);
+		Status = SpiPotWrite(&SpiInstance, SPI_DEVICE_ID, 2, 120, 1);
 	//	Status = SpiPotWrite(&SpiInstance, SPI_DEVICE_ID, 2, 150, 1);
 		if (Status != XST_SUCCESS) {
 			print("SpiPot1Write Failed");
@@ -169,7 +169,7 @@ int main(void)
 		}
 
 	//	Vref#4 config
-		Status = SpiPotWrite(&SpiInstance, SPI_DEVICE_ID, 3, 125, 1);
+		Status = SpiPotWrite(&SpiInstance, SPI_DEVICE_ID, 3, 68, 1);
 	//	Status = SpiPotWrite(&SpiInstance, SPI_DEVICE_ID, 3, 175, 1);
 		if (Status != XST_SUCCESS) {
 			print("SpiPot1Write Failed");
@@ -223,7 +223,7 @@ int main(void)
 	SpiTIADCRead(&SpiInstance, SPI_DEVICE_ID, InputWord, READ_TI_ADC1_SS);
 
 	InputWord = 0b00000100;
-	Data = 0b01000011;				// Use buffered res divider; auto CLPIN disabled; CLPIN gating disabled; VCLP 0.95VA
+	Data = 0b01000010;				// Use buffered res divider; auto CLPIN disabled; CLPIN gating disabled; VCLP 0.95VA
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC1_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC2_SS);
 	SpiTIADCWrite(&SpiInstance, SPI_DEVICE_ID, InputWord, Data, READ_TI_ADC3_SS);

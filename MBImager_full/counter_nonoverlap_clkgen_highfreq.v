@@ -28,11 +28,12 @@ module counter_nonoverlap_clkgen(
 	input FLAG_HIGH_FREQ,
 	output CLK_OUT_MOD,	
 	output CLK_OUT_MODN,
-	output CLK_OUT_MODL
+	output CLK_OUT_MODL,
+	output PLL_RESET
 );
 
 	reg [16:0] count;
-	reg [16:0] count_l;
+	reg [16:0] count_1;
 	reg [4:0] count_32; //testmodimp
 	reg [3:0] count_16;
 	reg [2:0] count_8;
@@ -40,36 +41,55 @@ module counter_nonoverlap_clkgen(
 	reg [2:0] R_CLK_OUT_MODN;
 	reg [2:0] R_CLK_OUT_MODL;
 
-	always @ (posedge CLK_IN) begin
-		if (count == 17'hFFFFF) R_CLK_OUT_MODL[0] = 0;
-		if (count == 17'h0FFFF) R_CLK_OUT_MODL[0] = 1;
-		if (count == {PHASE_SEL,12'h000}) R_CLK_OUT_MOD[0] = 0;
-		if (count == {PHASE_SEL,12'h000} - 1'b1 - {DUTY_SEL,12'h000}) R_CLK_OUT_MOD[0] = 1;
-		if (count == {PHASE_SEL,12'h000} - 17'h10000) R_CLK_OUT_MODN[0] = 0;
-		if (count == {PHASE_SEL,12'h000} - 17'h10000 - 1'b1 - {DUTY_SEL,12'h000}) R_CLK_OUT_MODN[0] = 1;
-		if ((~DRAIN_B) && (count == {PHASE_SEL,12'h000} - 5'hFF - {DUTY_SEL,12'h000})) ;
-		else count = count - 1'b1;
+//	always @ (posedge CLK_IN or negedge DRAIN_B) begin
+//		if (~DRAIN_B) count <= 0;
+//		else begin
+//			if (count == 17'h0A00F) R_CLK_OUT_MOD[0] <= 0;
+//			if (count == 17'h0000F) R_CLK_OUT_MOD[0] <= 1;
+//			if (count == 17'h1A00F) R_CLK_OUT_MODN[0] <= 0;
+//			if (count == 17'h1000F) R_CLK_OUT_MODN[0] <= 1;
+//			if (count == {PHASE_SEL,12'h000})R_CLK_OUT_MODL[0] <= 1;
+//			if (count == {PHASE_SEL,12'h000} - 17'h10000) R_CLK_OUT_MODL[0] <= 0;
+//			count <= count - 1'b1;
+//		end
+//	end
+
+//	always @ (posedge CLK_IN or negedge DRAIN_B) begin
+//		if (~DRAIN_B) count <= 0;
+//		else begin
+//			if (count == 17'hFFFFF) R_CLK_OUT_MODL[0] <= 0;
+//			if (count == 17'h0FFFF) R_CLK_OUT_MODL[0] <= 1;
+//			if (count == {PHASE_SEL,12'h000}) R_CLK_OUT_MOD[0] <= 0;
+//			if (count == {PHASE_SEL,12'h000} - 1'b1 - {DUTY_SEL,12'h000}) R_CLK_OUT_MOD[0] <= 1;
+//			if (count == {PHASE_SEL,12'h000} - 17'h10000) R_CLK_OUT_MODN[0] <= 0;
+//			if (count == {PHASE_SEL,12'h000} - 17'h10000 - 1'b1 - {DUTY_SEL,12'h000}) R_CLK_OUT_MODN[0] <= 1;
+//			count <= count - 1'b1;
+//		end
+//	end
+	
+//	always @ (posedge CLK_IN) begin
+//		if (count == 16'b1111111111111111) R_CLK_OUT_MODL[0] = 0;
+//		if (count == 16'b0111111111111111) R_CLK_OUT_MODL[0] = 1;
+//		if (count == {PHASE_SEL,11'h000}) R_CLK_OUT_MOD[0] = 0;
+//		if (count == {PHASE_SEL,11'h000} - 1'b1 - {DUTY_SEL,11'h000}) R_CLK_OUT_MOD[0] = 1;
+//		if (count == {PHASE_SEL,11'h000} - 16'b1000000000000000) R_CLK_OUT_MODN[0] = 0;
+//		if (count == {PHASE_SEL,11'h000} - 16'b1000000000000000 - 1'b1 - {DUTY_SEL,11'h000}) R_CLK_OUT_MODN[0] = 1;
+//		if (~DRAIN_B) count = 16'hFFFF;
+//		else count = count - 1'b1;
+//	end
+	
+	always @ (posedge CLK_IN or negedge DRAIN_B) begin
+		if (~DRAIN_B) count_32 <= 0;
+		else begin
+			if (count_32 == 31) R_CLK_OUT_MODL[0] <= 0;
+			if (count_32 == 15) R_CLK_OUT_MODL[0] <= 1;
+			if (count_32 == PHASE_SEL) R_CLK_OUT_MOD[0] <= 0;
+			if (count_32 == PHASE_SEL - 1'b1 - DUTY_SEL) R_CLK_OUT_MOD[0] <= 1;
+			if (count_32 == PHASE_SEL - 5'b10000) R_CLK_OUT_MODN[0] <= 0;
+			if (count_32 == PHASE_SEL - 5'b10000 - 1'b1 - DUTY_SEL) R_CLK_OUT_MODN[0] <= 1;
+			count_32 <= count_32 - 1'b1;
+		end
 	end
-	
-//	always @ (posedge CLK_IN) begin
-//		if (count_l == 229375) R_CLK_OUT_MOD[0] = 1;
-//		if (count_l == 184687) R_CLK_OUT_MOD[0] = 0;
-//		if (count_l == 0) count_l = 229376;
-//		else count_l = count_l - 1'b1;
-//	end
-	
-//	always @ (posedge CLK_IN) begin
-//		if (count_32 == 31) R_CLK_OUT_MODL[0] = 0;
-//		if (count_32 == 15) R_CLK_OUT_MODL[0] = 1;
-//		if (count_32 == PHASE_SEL) R_CLK_OUT_MOD[0] = 0;
-//		if (count_32 == PHASE_SEL - 1'b1 - DUTY_SEL) R_CLK_OUT_MOD[0] = 1;
-//		if (count_32 == PHASE_SEL - 5'b10000) R_CLK_OUT_MODN[0] = 0;
-//		if (count_32 == PHASE_SEL - 5'b10000 - 1'b1 - DUTY_SEL) R_CLK_OUT_MODN[0] = 1;
-//		if ((~DRAIN_B) & (count_32 == PHASE_SEL + 1)) ;
-//		else count_32 = count_32 - 1'b1;
-////		if ((count_32 == 0) & (DRAIN_B)) count_32 = 31;
-////		else if (count_32 > 0) count_32 = count_32 - 1'b1;
-//	end
 	
 //	always @ (posedge CLK_IN) begin
 //		if (count_16 == 15) R_CLK_OUT_MODL[1] = 1;
@@ -93,8 +113,15 @@ module counter_nonoverlap_clkgen(
 //		else if(DRAIN_B) count_8 = count_8 - 1'b1;
 //	end
 	
-	assign CLK_OUT_MOD = (~DRAIN_B? 1:(~FLAG_HIGH_FREQ ? R_CLK_OUT_MOD[0] : (FREQ_SEL[1] ? R_CLK_OUT_MOD[2] : R_CLK_OUT_MOD[1])));
-	assign CLK_OUT_MODN = (~DRAIN_B? 1:(~FLAG_HIGH_FREQ ? R_CLK_OUT_MODN[0] : (FREQ_SEL[1] ? R_CLK_OUT_MODN[2] : R_CLK_OUT_MODN[1])));
-	assign CLK_OUT_MODL = ~DRAIN_B ? 0:(~FLAG_HIGH_FREQ ? R_CLK_OUT_MODL[0] : (FREQ_SEL[1] ? R_CLK_OUT_MODL[2] : R_CLK_OUT_MODL[1]));
+	assign PLL_RESET = ~DRAIN_B;
+
+//	assign CLK_OUT_MOD = (~DRAIN_B? 1:(~FLAG_HIGH_FREQ ? R_CLK_OUT_MOD[0] : (FREQ_SEL[1] ? R_CLK_OUT_MOD[2] : R_CLK_OUT_MOD[1])));
+//	assign CLK_OUT_MODN = (~DRAIN_B? 1:(~FLAG_HIGH_FREQ ? R_CLK_OUT_MODN[0] : (FREQ_SEL[1] ? R_CLK_OUT_MODN[2] : R_CLK_OUT_MODN[1])));
+//	assign CLK_OUT_MODL = ~DRAIN_B ? 0:(~FLAG_HIGH_FREQ ? R_CLK_OUT_MODL[0] : (FREQ_SEL[1] ? R_CLK_OUT_MODL[2] : R_CLK_OUT_MODL[1]));
+	
+	assign CLK_OUT_MOD = ~DRAIN_B? 1:R_CLK_OUT_MOD[0];
+	assign CLK_OUT_MODN = ~DRAIN_B? 1:R_CLK_OUT_MODN[0];
+	assign CLK_OUT_MODL = ~DRAIN_B? 0:R_CLK_OUT_MODL[0];
+	
 //testmodimp
 endmodule

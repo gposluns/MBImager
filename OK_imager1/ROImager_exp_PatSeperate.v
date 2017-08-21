@@ -10,7 +10,6 @@
 
 module ROImager_exp_PatSeperate
 (
-  PHASE0,			//testmodimp
   RESET,						  // Reset signal to restart the module
   OK_PIXRES_GLOB,				  // Global reset signal for the pixel array
   CLKMPRE,						  // CLK for pre-loading the masks in every row
@@ -24,7 +23,8 @@ module ROImager_exp_PatSeperate
   FSMIND0,						  // If high, the Exposure FSM (on OK) is active
   FSMIND1,						  // If high, the ADC FSM (on MOBO) is active
   FSMIND0ACK,					  // Acknowledge for FSMIND0
-  FSMIND1ACK					  // Acknowledge for FSMIND1
+  FSMIND1ACK,					  // Acknowledge for FSMIND1
+  //MOD_SIG_AND	//testmodimp
 );
 
 // -- Parameters
@@ -36,12 +36,13 @@ parameter C_NUM_ROWS					 = 160;			// Number of pixel rows in the sensor
 parameter S_subc_first = 8'b00000001;
 parameter S_subc_n = 8'b00000010;
 parameter S_subc_exp = 8'b00000100;
+parameter S_subc_sync = 8'b10000000;
 parameter S_subc_last = 8'b00001000;
 parameter S_FSM1 = 8'b00010000;
 parameter S_FSM1_ACK = 8'b00100000;
 
 // -- Ports
-output reg								PHASE0; //testmodimp
+//input										MOD_SIG_AND;
 input									  RESET;
 input									  FSMIND0;
 output									  FSMIND1;
@@ -85,7 +86,6 @@ input		[31:0]						  Num_Pat;
    (* FSM_ENCODING="ONE-HOT", SAFE_IMPLEMENTATION="YES", SAFE_RECOVERY_STATE="<recovery_state_value>" *) reg [7:0] state = S_subc_first;
 	always@(posedge CLKMPRE) begin
 		if (RESET) begin
-			PHASE0 <= 1; //testmodimp
 			FSMIND1_i <= 0;
 			FSMIND0ACK_i <= 0;
 			OK_PIXRES_GLOB <= 1;
@@ -104,7 +104,6 @@ input		[31:0]						  Num_Pat;
 				OK_PIXRES_GLOB <= 1;
 				OK_DRAIN_B <= 0;
 				count_subsc <= 0;
-				PHASE0 <= 1; //testmodimp
 				if (count_mpre < C_NUM_ROWS) begin
 					STREAM <= 1;
 					count_mpre <= count_mpre + 1;
@@ -112,11 +111,7 @@ input		[31:0]						  Num_Pat;
 				end else if(count_mpre < C_NUM_ROWS + 2) begin
 					STREAM <= 0;
 					count_mpre <= count_mpre + 1;
-				end else if(count_mpre < C_NUM_ROWS + 10000) begin
-					PHASE0 <= 0;
-					count_mpre <= count_mpre + 1;
 				end else begin
-					PHASE0 <= 1; //testmodimp
 					CLKMPRE_EN = 0;
 					count_mpre <= 0;
 					state <= S_subc_n;
@@ -132,12 +127,26 @@ input		[31:0]						  Num_Pat;
 					STREAM <= 0;
 					count_mpre <= count_mpre + 1;
 				end else begin
+//					if (OK_DRAIN_B) begin
+//						if (~MOD_SIG_AND) state <= S_subc_sync; //testmultint;
+//					end
+//					else begin
+						CLKMPRE_EN = 0;
+						count_mpre <= 0;
+						count_subsc <= count_subsc + 1;
+						state <= S_subc_exp;
+					//end
+				end
+				end
+				S_subc_sync : begin
+				//if (~MOD_SIG_AND) ;	
+            //else begin
 					CLKMPRE_EN = 0;
 					count_mpre <= 0;
 					count_subsc <= count_subsc + 1;
 					state <= S_subc_exp;
+				//end
 				end
-            end
             S_subc_exp : begin
 				fsm_stat_i <= 8'b11111100;
 				OK_PIXRES_GLOB <= 0;
@@ -161,6 +170,8 @@ input		[31:0]						  Num_Pat;
 				end else if(count_mpre < C_NUM_ROWS + 2) begin
 					STREAM <= 0;
 					count_mpre <= count_mpre + 1;
+//				end else if(~MOD_SIG_AND) begin //testmodimp
+//					STREAM <= 0;
 				end else begin
 					CLKMPRE_EN = 0;
 					count_mpre <= 0;
