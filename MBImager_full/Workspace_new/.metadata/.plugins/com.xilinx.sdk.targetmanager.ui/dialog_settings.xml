@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="D:\Shichen_Lu\MBImager\MBImager\MBImager_full\Workspace_new\Board_config\Debug\Board_config.elf" key="MB_SPI_hw_platform-microblaze_0-initElf"/>
+	<item value="bootloop" key="MB_SPI_hw_platform-microblaze_0-initElf"/>
 	<item value="D:\Shichen_Lu\MBImager\MBImager\MBImager_full\edkBmmFile_bd.bmm" key="MB_SPI_hw_platform-bmmFile"/>
 	<item value="D:\Shichen_Lu\MBImager\MBImager\MBImager_full\mb_top.bit" key="MB_SPI_hw_platform-bitFile"/>
 </section>

@@ -41,7 +41,7 @@
 </editorArea>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="Board_config.c" partName="Board_config.c" path="D:/Shichen_Lu/MBImager/MBImager/MBImager_full/Workspace_new/Board_config/src/Board_config.c" title="Board_config.c" tooltip="Board_config/src/Board_config.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Board_config/src/Board_config.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1115" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="testperiph.c" partName="testperiph.c" path="D:/Shichen_Lu/MBImager/MBImager/MBImager_full/Workspace_new/ADC_test/src/testperiph.c" title="testperiph.c" tooltip="ADC_test/src/testperiph.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ADC_test/src/testperiph.c"/>
@@ -219,9 +219,6 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Board_config_June30Bkup/src/Board_config.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Board_config_June30Bkup/src/Board_config.c"/>
 </editors>
-<item historyLabel="testperiph.c" index="1">
-<position info="not_deleted" x="5114" y="0"/>
-</item>
 <item historyLabel="Board_config.c" index="0">
 <position info="not_deleted" x="5429" y="0"/>
 </item>
@@ -366,8 +363,11 @@
 <item historyLabel="Board_config.c" index="12">
 <position info="not_deleted" x="8152" y="3"/>
 </item>
-<item active="true" historyLabel="Board_config.c" index="3">
+<item historyLabel="Board_config.c" index="3">
 <position info="not_deleted" x="5160" y="0"/>
+</item>
+<item active="true" historyLabel="Board_config.c" index="3">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
