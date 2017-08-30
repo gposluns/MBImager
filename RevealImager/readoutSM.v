@@ -57,7 +57,7 @@ module readoutSM(
 	
 	parameter Tpix = 10; //time to read 1 pixel, in CLK100MHz periods
 	parameter NCOL = 48; //number of columns
-	parameter NROW = 176; //number of rows
+	parameter NROW = 5;//176; //number of rows
 	parameter Tlat3 = 24;  //number of ADC_CLKOUT cycles before data from a read is output
 	
 	parameter SM_idle = 1;

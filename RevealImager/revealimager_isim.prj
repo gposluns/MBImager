@@ -27,5 +27,10 @@ verilog work "./exposure_fsm.v"
 verilog work "./load_pattern.v"
 verilog work "./mem_fsm.v"
 
+verilog work "./readoutSM.v"
+verilog work "./TI_ADC_RO.v"
+verilog work "./ipcore_dir/imageData_fifo.v"
+verilog work "./spi_master.v"
+
 verilog work "./reveal_tf.v"
 verilog  work  ./ipcore_dir/ddr2_memif/user_design/sim/ddr2_model_c3.v -d x1Gb -d sg3 -d x16 -i ./

@@ -59,10 +59,10 @@ module Reveal_top(
 	output wire STREAM,
 	output wire [18:1] mStream,
 	output wire OK_DRAIN_B,
-	input wire FSMIND0,				// If high, the Exposure FSM (on OK) is active
-	output wire FSMIND1,
-	output wire FSMIND0ACK,
-	input wire FSMIND1ACK,
+	//input wire FSMIND0,				// If high, the Exposure FSM (on OK) is active
+	//output wire FSMIND1,
+	//output wire FSMIND0ACK,
+	//input wire FSMIND1ACK,
 	output wire trigger_proj,
 	
 	//ddr2 output wires
@@ -89,7 +89,7 @@ module Reveal_top(
 	input wire MISO,
 	output wire MOSI,
 	output wire SPI_CLK,
-	output wire [] SPI_SS
+	output wire [9:0] SPI_SS
    );
 	
 	parameter	C_CLKHS_D		= 3;	// Devide value for CLKHS to USER_CLOCK. value - D - (1-256)
@@ -214,8 +214,13 @@ module Reveal_top(
 	wire [7:0] fsm_stat;
 	wire [31:0] CntSubc;
 	wire CLKMPRE_EN;
+	wire FSMIND1;
+	wire FSMIND0ACK;
 	
-	exposure_fsm exposurefsm_inst (
+	exposure_fsm #(
+		.CHIP_MODE("TOF")
+	)
+	exposurefsm_inst (
 		.RESET(FSMstop), 
 		.OK_PIXRES_GLOB(PIXRES_exp), 
 		.CLKMPRE(CLKMPRE_int), 
@@ -292,7 +297,10 @@ module Reveal_top(
 	end
 	assign fifo_mem_rst = RstPat && fifo_rst_cnt;
 	
-	load_pattern pat_gen (
+	load_pattern #(
+		.CHIP_MODE("TOF")
+	)
+	load_pat_inst (
 		.rst(fifo_mem_rst), //changed from rst_pat
 		.clk(CLK_HS), 
 		.pat_fifo_rd_en(pat_fifo_rd_en),
@@ -314,7 +322,10 @@ module Reveal_top(
 	wire pat_written;
 	wire pattern_stored;
 	
-	mem_fsm mem_controller(
+	mem_fsm  #(
+		.CHIP_MODE("CEP")
+	)
+	mem_controller(
 		.fsm_rst(FSMstop),
 			
 		.okClk(okClk),
@@ -577,6 +588,7 @@ module Reveal_top(
 	);
 	
 	wire ADC_DATA_VALID;
+	wire FSMIND1ACK;
 	
 	readoutSM readout (
     .ROWADD(ROWADD), 
@@ -644,8 +656,9 @@ module Reveal_top(
   .prog_full(twoframes),
   .prog_empty(oneframe_n)
 );
-
-assign FSMIND0 = ~twoframes & STDBY_i; 
+	
+	wire FSMIND0;
+assign FSMIND0 = /*~twoframes &*/ STDBY_i; 
 assign STDBY = STDBY_i;
 assign trig6Aout[0] = full;
 assign trig6Aout[1] = twoframes;
@@ -654,7 +667,7 @@ assign trig6Aout[2] = ~oneframe_n;
 	wire [31:0] spi_din;
 	wire [31:0] spi_dout;
 	wire [31:0] spi_target;
-
+	
 	spi_master #(
 	 .N(10),
 	 .C(32),
@@ -664,11 +677,11 @@ assign trig6Aout[2] = ~oneframe_n;
     .MOSI(MOSI), 
     .SPI_CLK(SPI_CLK), 
     .SPI_SS(SPI_SS), 
-    .CLK_IN(CLKHS), 
+    .CLK_IN(CLK_HS), 
     .din(spi_din), 
     .dout(spi_dout), 
     .trigger(trig53in[2]), 
-    .target(target[9:0]), 
+    .target(spi_target[9:0]), 
     .valid(trig6Aout[31]), 
     .CPOL(1'b0), 
     .CPHA(1'b0)
