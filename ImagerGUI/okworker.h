@@ -38,7 +38,7 @@ public:
     std::list<unsigned char*> queue2;
     int fails;
     std::mutex list_mutex;
-
+    void enableExposure();
 private:
     bool running;
     unsigned char* pattern;

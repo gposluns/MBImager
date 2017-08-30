@@ -2,9 +2,18 @@
 #include "ui_mainwindow.h"
 #include <exception>
 
-double dark [NUM_EXPOSURES][COEFFS_PER_EXPOSURE];
-double light [NUM_EXPOSURES][COEFFS_PER_EXPOSURE];
+double dark [NUM_EXPOSURES + 1][COEFFS_PER_EXPOSURE];
+double light [NUM_EXPOSURES + 1][COEFFS_PER_EXPOSURE];
 
+/*
+ * Constuctor, instantiates okWorker and UI, sets default values
+ *
+ * Also loads image correction values from files
+ * File format is a string of unpunctuated values consisting of an exposure value (multiple of 1490) and then a sequence of double coefficients
+ * The coefficients are loaded into the relevant array in order at the index of exposure/1490
+ *
+ * Also sets up timer to try and display a new frame a 1msec intervals
+ */
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -52,13 +61,15 @@ MainWindow::MainWindow(QWidget *parent) :
 
     QFile lightFile("whiteData.exp");
     //qDebug() << lightFile.exists() << lightFile.open(QIODevice::ReadOnly);
+    lightFile.open(QIODevice::ReadOnly);
     while(!lightFile.atEnd()){
        QByteArray exp = lightFile.read(4);
        char* exposure = exp.data();
        int expo = *(int*)exposure;
-       //qDebug() << expo << (int)exposure[3] << (int)exposure[2] << (int)exposure[1] << (int)exposure[0];
+      // qDebug() << expo << (int)exposure[3] << (int)exposure[2] << (int)exposure[1] << (int)exposure[0];
        QByteArray data = lightFile.read(COEFFS_PER_EXPOSURE * 8);
        char* coeffs = data.data();
+      // qDebug () << expo/1490;
        for (int i = 0; i < COEFFS_PER_EXPOSURE; i++){
            light [expo/1490][i] = *(double*)(coeffs + i*8);
        }
@@ -91,6 +102,10 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+/*
+ * Creates a file dialog to select bitfile to program OpalKelly board with, and stores to pass to showImages().  Also attempts to program board to verify
+ * That bitfile works
+ */
 void MainWindow::on_BitLoad_clicked()
 {
     bitFileName = QFileDialog::getOpenFileName(nullptr, "select bitfile", nullptr, "*.bit");
@@ -106,6 +121,9 @@ void MainWindow::on_BitLoad_clicked()
     }
 }
 
+/*
+ * Creates a file dialog to select pattern bitmap file, and calls okworker::loadpattern() to load it
+ */
 void MainWindow::on_PattLoad_clicked()
 {
     QString file = QFileDialog::getOpenFileName(nullptr, "select pattern file", nullptr, "*.bmp");
@@ -116,6 +134,13 @@ void MainWindow::on_PattLoad_clicked()
     emit pattLoadClicked(file);
 }
 
+/**
+ * @brief evalPoly Evaluates a polynomial, for use by image correction
+ * @param n degree of the polynomial
+ * @param x value to evaluate the polynomial at
+ * @param coeffs array of n + 1 coeffecients, in order of increasing power from x^0 to x^n
+ * @return
+ */
 double evalPoly (int n, double x, double* coeffs){
     double degacc = 1;
     double acc = 0;
@@ -126,6 +151,13 @@ double evalPoly (int n, double x, double* coeffs){
     return acc;
 }
 
+/**
+ * @brief MainWindow::on_DispImage_toggled
+ * If display is being stopped calls stop method of okworker to end image display
+ * Otherwise, calculates image correction values for current settings, starts okWorker::displayImages in a new thread, and enables exposure
+ *
+ * @param checked Whether the display image button has been activated or deactivated (it holds its state and toggles with each click)
+ */
 void MainWindow::on_DispImage_toggled(bool checked)
 {
     try{
@@ -163,6 +195,7 @@ void MainWindow::on_DispImage_toggled(bool checked)
                 darkimg1[i][j] = evalPoly(6, percent, &(dark[key][6 * (i*EXP_ROWS + j)]));
                 lightimg2[i][j] = evalPoly(6, percent, &(light[key][COEFFS_PER_EXPOSURE/2 + 6*(i*EXP_ROWS + j)]));
                 darkimg2[i][j] = evalPoly(6, percent, &(dark[key][COEFFS_PER_EXPOSURE/2 + 6*(i*EXP_ROWS + j)]));
+               // qDebug() << i << j << lightimg1[i][j] << darkimg1[i][j] << lightimg2[i][j] << darkimg2[i][j];
                 mean1 += lightimg1[i][j] - darkimg1[i][j];
                 mean2 += lightimg2[i][j] - darkimg2[i][j];
                 meandark1 += darkimg1[i][j];
@@ -177,6 +210,9 @@ void MainWindow::on_DispImage_toggled(bool checked)
 
         workerThread = new std::thread(&MainWindow::callShowImages, this);
 
+        QThread::msleep(1000);
+        worker->enableExposure();
+
 
        //emit display(ui->expBox->value(), ui->maskBox->value(), ui->maskChngBox->value(), ui->subcBox->value(), bitFileName);
     }
@@ -186,6 +222,7 @@ void MainWindow::on_DispImage_toggled(bool checked)
     }
 }
 
+//Calls okWorker::ShowImages, done like this because the threads were being annoying
 void MainWindow::callShowImages(){
     try{
     worker->showImages(ui->expBox->value(), ui->maskBox->value(), ui->maskChngBox->value(), ui->subcBox->value(), bitFileName);
@@ -244,6 +281,7 @@ void MainWindow::closeEvent(QCloseEvent* close){
     //okThread->quit();
 }
 
+//pops the first element from a list into a QImage, done in a separate method to make thread-safety more convenient
 void unload_list(std::list<unsigned char*> *list, QImage* image, okWorker *worker){
     std::lock_guard<std::mutex> lock (worker->list_mutex);
     QImage temp(list->front(), 184, im_row, QImage::Format_Grayscale8);
@@ -253,6 +291,16 @@ void unload_list(std::list<unsigned char*> *list, QImage* image, okWorker *worke
     list->pop_front();
 }
 
+/**
+ * @brief MainWindow::updateFrame
+ * Called 1000 times/sec, checks the threadsafe queues to see if there's a new frame available, if there is it
+ * unloads it and displays it.
+ *
+ * If it should be saving images, it saves the images.
+ * If it apply image correction is selected, it applies image correction.
+ * If it should be recording video, the new frame is added to the video being recorded.
+ * If calibration is being performed, updates calibration pattern on both camera and projector every 20 frames
+ */
 void MainWindow::updateFrame(){
     //qDebug() << "about to check queue";
    // while (worker->listLock){ QThread::usleep(1); qDebug() << "gui waiting on list lock";}
@@ -286,8 +334,16 @@ void MainWindow::updateFrame(){
     if (ui->ApplyImg->isChecked()){
         for (int i = 1; i < 80; i++){
             for (int j = 2; j < 62; j++){
-                temp1.setPixel(i, j, meandark1 + (temp1.pixel(i, j) - darkimg1[i - 1][j - 2])*mean1/(lightimg1[i - 1][j - 2] - darkimg1[i - 1][j - 2]));
-                temp2.setPixel(i, j, meandark2 + (temp2.pixel(i, j) - darkimg2[i - 1][j - 2])*mean2/(lightimg2[i - 1][j - 2] - darkimg2[i - 1][j - 2]));
+                if (lightimg1[i - 1][j - 2] == darkimg1[i - 1][j - 2]){
+                    //qDebug() << "div0 in correction 1" << i << j << lightimg1[i - 1][j - 2];
+                }
+                else if(lightimg2[i - 1][j - 2] == darkimg2[i - 1][j - 2]){
+                    //qDebug() << "div0 in correction 2" << i << j << lightimg2[i - 1][j - 2];
+                }
+                else {
+                  temp1.setPixel(i, j, meandark1 + (temp1.pixel(i, j) - darkimg1[i - 1][j - 2])*mean1/(lightimg1[i - 1][j - 2] - darkimg1[i - 1][j - 2]));
+                  temp2.setPixel(i, j, meandark2 + (temp2.pixel(i, j) - darkimg2[i - 1][j - 2])*mean2/(lightimg2[i - 1][j - 2] - darkimg2[i - 1][j - 2]));
+                }
             }
         }
     }
@@ -447,7 +503,11 @@ void MainWindow::on_DispType_currentIndexChanged(int index)
 }
 
 
-
+/**
+ * @brief MainWindow::on_calib_clicked
+ * Creates a file dialog to select a directory of calibration patterns
+ * Uploads the first pattern from that directory and sets the counter and toggles dispImage to record the rest
+ */
 void MainWindow::on_calib_clicked()
 {
     QString dir = QFileDialog::getExistingDirectory(this, tr("Open Directory"),"/home", QFileDialog::ShowDirsOnly );
@@ -468,6 +528,11 @@ void MainWindow::on_calib_clicked()
 }
 
 void MainWindow::on_SaveImages_toggled(bool checked)
+{
+
+}
+
+void MainWindow::on_ApplyImg_toggled(bool checked)
 {
 
 }

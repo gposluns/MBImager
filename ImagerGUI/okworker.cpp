@@ -1,6 +1,9 @@
 #include "okworker.h"
 #include "time.h"
 
+/*
+ * Constructor, loads okFrontPanelDLL
+ */
 okWorker::okWorker(QObject *parent) : QObject(parent)
 {
 
@@ -11,6 +14,12 @@ okWorker::okWorker(QObject *parent) : QObject(parent)
    // fails = 0;
 }
 
+/*
+ * loadPattern, reads a pattern from a bmp file and stores in pattern array (dynamically allocated, freed and reallocated when a new pattern is set)
+ * The reading is a bit complicated because the pattern channels don't line up with the bytes in the bmp file.
+ *
+ * Parameter: path : file path to the bitmap containing the pattern
+ */
 void okWorker::loadPattern(QString path){
 
     QFile file(path);
@@ -53,11 +62,20 @@ void okWorker::loadPattern(QString path){
     }*/
 
 
-
-    //whatever uploads the pattern
-
 }
 
+/*
+ * ShowImages: main loop to operate the camera
+ *
+ * Sets sensor parameters, uploads bitfile and pattern to board, then runs main camera loop
+ *
+ * Main loop consists of:  Check if a frame is available, if one is then read it and put into thread-safe queue for MainWindow
+ *                              otherwise, if it has been 1sec since last frame, reset the camera.  If the fifo is completely full, also reset the camera.
+ *
+ * Main loop runs until stop flag is set by stop() method
+ *
+ * Parameters are camera parameters from UI, and bitfile name to upload
+ */
 void okWorker::showImages(int exp, int numMasks, int maskChngs, int subcPer, QString bitFileName){
     //QThread::sleep(1);
     //qDebug() << 1;
@@ -70,14 +88,13 @@ void okWorker::showImages(int exp, int numMasks, int maskChngs, int subcPer, QSt
     //qDebug() << 3;
     //try{
     ok.OpenBySerial("");
-    ok.ConfigureFPGA (bitFileName.toStdString());
     //}
     //catch(std::exception& e){
         //qDebug() << e.what();
    // }
 
     //qDebug() << 3.5;
-
+    ok.ConfigureFPGA (bitFileName.toStdString());
    // qDebug() << 4;
 
    // qDebug() << 5;
@@ -94,18 +111,16 @@ void okWorker::showImages(int exp, int numMasks, int maskChngs, int subcPer, QSt
    // qDebug() << 10;
    // qDebug() << exp << numMasks << maskChngs << subcPer;
    // qDebug() << 11;
-    ok.UpdateWireIns();
-
     ok.SetWireInValue(0x10, 0xff, 0x01);
     ok.UpdateWireIns();
     QThread::msleep(10);
-    ok.SetWireInValue(0x10,0x00,0x01);
+    ok.SetWireInValue(0x10, 0x00, 0x01);
     ok.UpdateWireIns();
     if (patternSet){
         ok.ActivateTriggerIn(0x53, 0);
         ok.WriteToPipeIn(0x80, patternLength, pattern);
     }
-
+    ok.ConfigureFPGA (bitFileName.toStdString());
    // qDebug() << 12;
     unsigned char datainFull[262144];
     unsigned char im[im_row][im_col];
@@ -114,6 +129,7 @@ void okWorker::showImages(int exp, int numMasks, int maskChngs, int subcPer, QSt
 
     int stuck = 0;
     while (running){
+        //ok.ActivateTriggerIn(0x55, 0);
         QThread::msleep (1);
         ok.UpdateTriggerOuts();
         QThread::msleep (1);
@@ -133,6 +149,7 @@ void okWorker::showImages(int exp, int numMasks, int maskChngs, int subcPer, QSt
                 //qDebug() << "also 2";
               //  fails++;
             //}
+
             ok.SetWireInValue(0x10, 0xff, 0x01);
             ok.UpdateWireIns();
             QThread::msleep(10);
@@ -173,6 +190,7 @@ void okWorker::showImages(int exp, int numMasks, int maskChngs, int subcPer, QSt
                 ok.SetWireInValue(0x10, 0x00, 0x01);
                 ok.UpdateWireIns();
                 QThread::msleep(10);
+                enableExposure();
                 stuck = 0;
             }
             continue;
@@ -225,6 +243,23 @@ void okWorker::showImages(int exp, int numMasks, int maskChngs, int subcPer, QSt
     }
 }
 
+/*
+ * stops the main camera loop and resets the board
+ */
 void okWorker::stop(){
     running = false;
+    QThread::msleep(10);  //added this
+    ok.SetWireInValue(0x10, 0xff, 0x01);
+    ok.UpdateWireIns();
+    QThread::msleep(10);
+    ok.SetWireInValue(0x10, 0x00, 0x01);
+    ok.UpdateWireIns();
+
+}
+
+/*
+ *  Signals exposure FSM to run, important for projector synchronization
+ */
+void okWorker::enableExposure(){ //added this
+    ok.ActivateTriggerIn(0x55, 0);
 }
