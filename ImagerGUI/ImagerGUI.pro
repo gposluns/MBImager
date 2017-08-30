@@ -41,6 +41,7 @@ FORMS += \
 #include (C:\qwt-6.1.3\features\qwt.prf)
 
 #CONFIG += qwt
+CONFIG += static
 
 
 unix|win32: LIBS += -L$$PWD/./ -lokFrontPanel
