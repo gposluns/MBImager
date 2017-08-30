@@ -69,7 +69,7 @@ integer i;
 integer byte_index;
 
   // --implementation added here
-
+	wire clk_in_inv;
 	// Create the clock logic
 	assign clk_in_inv = ~CLK_IN;
 

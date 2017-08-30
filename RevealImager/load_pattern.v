@@ -38,15 +38,19 @@ module load_pattern(
 	);
 	
 // -- Parameters
-	parameter S_init = 5'b00001;
-	parameter S_subc_first = 5'b00010;	// state of the pattern generation of the first scence (unexposed)
-	parameter S_subc_pats = 5'b00100;	// state of the exposed pattern generations
-	parameter S_subc_last = 5'b01000;	// state of the pattern generation of the last scene (unexposed)
+	integer state;
+	localparam 	S_init 				= 1,
+					S_RESET_ALL0 		= 2,	
+					S_subc_pats 		= 3,	
+					S_subc_last 		= 4,
+					S_RESET_ALL1 		= 5;
+	
+	
 	parameter C_NUM_ROWS = 176;			// Number of pixel rows in the sensor
 	parameter C_MASK_DES_L = 16;
 	parameter Pat_all1 = 10'b1111111111;
 	parameter Pat_Blank = 10'b0;
-
+	parameter CHIP_MODE = "CEI";
 //----------------------------------------------------------------------------
 // Implementation
 //----------------------------------------------------------------------------
@@ -61,7 +65,7 @@ module load_pattern(
 	end
 
 
-   (* FSM_ENCODING="ONE-HOT", SAFE_IMPLEMENTATION="YES", SAFE_RECOVERY_STATE="S_subc_first" *) reg [4:0] state = S_init;
+   //(* FSM_ENCODING="ONE-HOT", SAFE_IMPLEMENTATION="YES", SAFE_RECOVERY_STATE="S_subc_first" *) reg [4:0] state = S_init;
 
    always@(negedge clk)
       if (rst) begin
@@ -75,22 +79,45 @@ module load_pattern(
 			pat_fifo_rd_en <= 0;
 			FIFO_wr <= 0;
 			
-         (* PARALLEL_CASE *) case (state)
+         case (state)
             
 				S_init : begin
 //					state <= S_subc_first;
 					cntPat <= 0;
 					if (camfifo_empty && (!camfifo_full))
-						state <= S_subc_first;
+						state <= S_RESET_ALL0;
             end
 				
-            S_subc_first : begin
+				
+				//no pattern upload is needed
+				//upload is done by the last pattern in previous frame
+            S_RESET_ALL0: begin
 				
 					if(cntPat < C_NUM_ROWS*C_MASK_DES_L) begin
-						FIFO_wr <= 1;
+						FIFO_wr <= 0;
 						cntPat <= cntPat + 1;
-						pat_fifo_rd_en <= 1;
-						Pat_i <= pat_in;
+					end 
+					
+					else begin
+						cntPat <= 0;
+						state <= S_RESET_ALL1;
+					end
+				end
+				
+				
+				//not needed for TOF
+				S_RESET_ALL1: begin
+					
+					if(cntPat < C_NUM_ROWS*C_MASK_DES_L) begin
+						if (CHIP_MODE == "CEI") begin
+							FIFO_wr <= 1;
+							Pat_i <= 18'hfffff;
+						end
+						else if (CHIP_MODE == "TOF") begin
+							FIFO_wr <= 0;
+						end
+						
+						cntPat <= cntPat + 1;
 					end 
 					
 					else begin
@@ -98,6 +125,7 @@ module load_pattern(
 						state <= S_subc_pats;
 					end
 				end
+				
 				
             S_subc_pats : begin
 					
@@ -120,12 +148,12 @@ module load_pattern(
 						cntPat <= 0;
             end
 				
+				//applying all 0 mask
             S_subc_last : begin
 					if (cntPat < C_NUM_ROWS*C_MASK_DES_L) begin
 						FIFO_wr <= 1;
 						cntPat <= cntPat + 1;
-						pat_fifo_rd_en <= 1;
-						Pat_i <= pat_in;
+						Pat_i <= 18'd0;
 					end else begin
 						cntPat <= 0;
 						state <= S_init;

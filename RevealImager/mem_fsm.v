@@ -98,7 +98,7 @@ module mem_fsm(
 	assign c3_p0_wr_mask = 8'h00;
 	//num pat + start + last
 	//one pat is 2 bytes (16 channels) * 18*160
-	assign num_pat_bytes = (Num_Pat + 2'd2) *4 *16*176;
+	assign num_pat_bytes = (Num_Pat) *4 *16*176;
 	
 	integer state;
 	localparam 	s_idle 	= 0,
