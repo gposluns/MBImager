@@ -102,6 +102,7 @@ private slots:
     void on_SaveImages_toggled(bool checked);
     void on_calib_clicked();
     void on_ApplyImg_toggled(bool checked);
+    void on_pushButton_clicked();
 };
 
 #endif // MAINWINDOW_H

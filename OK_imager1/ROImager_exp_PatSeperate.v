@@ -98,7 +98,7 @@ input wire cam_start;
 		CLKMPRE_EN = 0;
 		STREAM <= 0;
 		fsm_stat_i <= 8'b11110000;
-		state <= S_idle;//S_subc_first;
+		state <= S_subc_first;
 		fst_cntr <= C_NUM_ROWS*18 - PROJ_DELAY;
 		timer <= MIN_FRAME_TIME;
 		TRIGGER_PROJ_i <= 0;
@@ -141,7 +141,7 @@ input wire cam_start;
 			CLKMPRE_EN = 0;
 			STREAM <= 0;
 			fsm_stat_i <= 8'b10101010;
-			state <= S_idle;//S_subc_first;
+			state <= S_subc_first;
 			timer <= MIN_FRAME_TIME;
 			exposure_trig_i<= 0;
 		end 

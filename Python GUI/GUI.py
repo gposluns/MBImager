@@ -180,6 +180,7 @@ def grab(queue1,queue2):
         dev.WriteToPipeIn(0x80, pattern)
         print 'done'
     stuck = 0
+    dev.ActivateTriggerIn(0x55,0x0)
     while(running):
         dev.UpdateTriggerOuts()
         # If the FIFO is full, read everything and display one frame only
@@ -247,6 +248,7 @@ def grab(queue1,queue2):
                 dev.ActivateTriggerIn(0x55,0x0)
                 time.sleep(0.01) #allow time for FIFO to reset
                 stuck = 0
+                dev.ActivateTriggerIn(0x55,0x0)
                 
         if queue1.qsize() < 15:
             queue1.put(im1)
