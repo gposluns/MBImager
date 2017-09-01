@@ -98,7 +98,7 @@ void okWorker::showImages(int exp, int numMasks, int maskChngs, int subcPer, QSt
    // qDebug() << 4;
 
    // qDebug() << 5;
-    ok.SetWireInValue(EXP_WIRE, exp, 0xffffffff);
+    ok.SetWireInValue(EXP_WIRE, exp);
    // qDebug() << 6;
     ok.SetWireInValue(NUM_MASKS_WIRE, numMasks);
    // qDebug() << 7;
@@ -107,7 +107,7 @@ void okWorker::showImages(int exp, int numMasks, int maskChngs, int subcPer, QSt
     ok.SetWireInValue(SUBS_PER_WIRE, subcPer);
    // qDebug() << 9;
     ok.SetWireInValue(PATT_IN_WIRE, 0xfff003ff);
-    ok.SetWireInValue(0x18, 0);
+    ok.SetWireInValue(0x18, 1000000);
    // qDebug() << 10;
    // qDebug() << exp << numMasks << maskChngs << subcPer;
    // qDebug() << 11;
@@ -120,24 +120,22 @@ void okWorker::showImages(int exp, int numMasks, int maskChngs, int subcPer, QSt
         ok.ActivateTriggerIn(0x53, 0);
         ok.WriteToPipeIn(0x80, patternLength, pattern);
     }
-    //ok.ConfigureFPGA (bitFileName.toStdString());
+    ok.ConfigureFPGA (bitFileName.toStdString());
    // qDebug() << 12;
     unsigned char datainFull[262144];
     unsigned char im[im_row][im_col];
     unsigned char *im1;
     unsigned char *im2;
+
     int stuck = 0;
-    ok.UpdateWireIns();
     while (running){
         //ok.ActivateTriggerIn(0x55, 0);
         QThread::msleep (1);
-        ok.UpdateWireOuts();
-        //qDebug() << "exp:" << exp << ok.GetWireOutValue(0x22) << "numpat:" << numMasks << ok.GetWireOutValue(0x23);
         ok.UpdateTriggerOuts();
-        //QThread::msleep (1);
+        QThread::msleep (1);
         //main camera loop
        // qDebug() << "running ok loop, time=" << clock() << "clks/sec=" << CLOCKS_PER_SEC;
-       // qDebug() << "loop started";
+        //qDebug() << "loop started";
 
         if (ok.IsTriggered(0x6a, 0x01)){
 
@@ -157,8 +155,6 @@ void okWorker::showImages(int exp, int numMasks, int maskChngs, int subcPer, QSt
             QThread::msleep(10);
             ok.SetWireInValue(0x10, 0x00, 0x01);
             ok.UpdateWireIns();
-            /*QThread::msleep(10);
-            enableExposure();*/
             //QThread::msleep(10);
             //qDebug()<<"fifo full";
             continue;
@@ -193,8 +189,8 @@ void okWorker::showImages(int exp, int numMasks, int maskChngs, int subcPer, QSt
                 QThread::msleep(10);
                 ok.SetWireInValue(0x10, 0x00, 0x01);
                 ok.UpdateWireIns();
-                //QThread::msleep(10);
-                //enableExposure();
+                QThread::msleep(10);
+                enableExposure();
                 stuck = 0;
             }
             continue;

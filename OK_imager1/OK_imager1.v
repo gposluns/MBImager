@@ -728,8 +728,8 @@ ODDR2 #(
 	.C0(CLK_HS), // 1-bit clock input
 	.C1(CLK_HS180), // 1-bit clock input
 	.CE(1'b1), // 1-bit clock enable input
-	.D0(1'b1), // 1-bit data input (associated with C0)
-	.D1(1'b0), // 1-bit data input (associated with C1)
+	.D0(1'b0), // 1-bit data input (associated with C0)
+	.D1(1'b1), // 1-bit data input (associated with C1)
 	.R(1'b0), // 1-bit reset input
 	.S(1'b0) // 1-bit set input
 );

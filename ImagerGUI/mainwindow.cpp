@@ -69,10 +69,9 @@ MainWindow::MainWindow(QWidget *parent) :
       // qDebug() << expo << (int)exposure[3] << (int)exposure[2] << (int)exposure[1] << (int)exposure[0];
        QByteArray data = lightFile.read(COEFFS_PER_EXPOSURE * 8);
        char* coeffs = data.data();
-       //qDebug () << expo/1490;
+      // qDebug () << expo/1490;
        for (int i = 0; i < COEFFS_PER_EXPOSURE; i++){
            light [expo/1490][i] = *(double*)(coeffs + i*8);
-           //qDebug() << light [expo/1490][i];
        }
     }
     lightFile.close();
@@ -139,19 +138,16 @@ void MainWindow::on_PattLoad_clicked()
  * @brief evalPoly Evaluates a polynomial, for use by image correction
  * @param n degree of the polynomial
  * @param x value to evaluate the polynomial at
- * @param coeffs array of n + 1 coeffecients, in order of decreasing power from x^n to x^0
+ * @param coeffs array of n + 1 coeffecients, in order of increasing power from x^0 to x^n
  * @return
  */
 double evalPoly (int n, double x, double* coeffs){
     double degacc = 1;
     double acc = 0;
-    //qDebug() << x;
-    for (int i = 1; i <= n; i++){
-        acc += degacc*coeffs[n - i];
+    for (int i = 0; i < n; i++){
+        acc += degacc*coeffs[n];
         degacc *= x;
-        //qDebug() << coeffs[i];
     }
-    //qDebug() << acc;
     return acc;
 }
 
@@ -195,26 +191,18 @@ void MainWindow::on_DispImage_toggled(bool checked)
 
         for (int i = 0; i < EXP_ROWS; i++){
             for (int j = 0; j < EXP_COLS; j++){
-                lightimg1[i][j] = evalPoly(6, percent, &(light[key][6 * (i*EXP_COLS + j)]));
-                darkimg1[i][j] = evalPoly(6, percent, &(dark[key][6 * (i*EXP_COLS + j)]));
-                lightimg2[i][j] = evalPoly(6, percent, &(light[key][COEFFS_PER_EXPOSURE/2 + 6*(i*EXP_COLS + j)]));
-                darkimg2[i][j] = evalPoly(6, percent, &(dark[key][COEFFS_PER_EXPOSURE/2 + 6*(i*EXP_COLS + j)]));
-                /*if (lightimg1[i][j] == darkimg1[i][j]){
-                    qDebug() << i << j << lightimg1[i][j] << 1;
-                }
-                if (lightimg2[i][j] == darkimg2[i][j]){
-                    qDebug() << i << j << lightimg2[i][j] << 2;
-                }*/
-                //qDebug() << evalPoly(6, percent, &(dark[key][6 * (i*EXP_COLS + j)]));
-                qDebug() << i << j << lightimg1[i][j] << darkimg1[i][j] << lightimg2[i][j] << darkimg2[i][j];
+                lightimg1[i][j] = evalPoly(6, percent, &(light[key][6 * (i*EXP_ROWS + j)]));
+                darkimg1[i][j] = evalPoly(6, percent, &(dark[key][6 * (i*EXP_ROWS + j)]));
+                lightimg2[i][j] = evalPoly(6, percent, &(light[key][COEFFS_PER_EXPOSURE/2 + 6*(i*EXP_ROWS + j)]));
+                darkimg2[i][j] = evalPoly(6, percent, &(dark[key][COEFFS_PER_EXPOSURE/2 + 6*(i*EXP_ROWS + j)]));
+               // qDebug() << i << j << lightimg1[i][j] << darkimg1[i][j] << lightimg2[i][j] << darkimg2[i][j];
                 mean1 += lightimg1[i][j] - darkimg1[i][j];
                 mean2 += lightimg2[i][j] - darkimg2[i][j];
-                //qDebug() << lightimg1[i][j] - darkimg1[i][j] << lightimg2[i][j] - darkimg2[i][j];
                 meandark1 += darkimg1[i][j];
                 meandark2 += darkimg2[i][j];
             }
         }
-        //qDebug() << mean1 << mean2;
+
         mean1 /= 79 * 60;
         mean2 /= 79 * 60;
         meandark1 /= 79 * 60;
@@ -342,7 +330,6 @@ void MainWindow::updateFrame(){
     unload_list(&(worker->queue1), &temp1, worker);
     unload_list(&(worker->queue2), &temp2, worker);
     //qDebug() << "postqueue" << temp1.bits()[184*160 - 1];
-    //qDebug() << temp1.format();
 
     if (ui->ApplyImg->isChecked()){
         for (int i = 1; i < 80; i++){
@@ -354,15 +341,8 @@ void MainWindow::updateFrame(){
                     //qDebug() << "div0 in correction 2" << i << j << lightimg2[i - 1][j - 2];
                 }
                 else {
-                    //qDebug() << "correcting" << i << j;
-                  //qDebug() << meandark1 + (temp1.pixel(j, i) - darkimg1[i - 1][j - 2])*mean1/(lightimg1[i - 1][j - 2] - darkimg1[i - 1][j - 2]) << meandark1 << mean1 << temp1.pixel(j, i) << lightimg1[i - 1][j - 2] << darkimg1[i - 1][j - 2];
-                  int val1 = meandark1 + (qGray(temp1.pixel(j, i)) - darkimg1[i - 1][j - 2])*mean1/(lightimg1[i - 1][j - 2] - darkimg1[i - 1][j - 2]);
-                  int val2 = meandark2 + (qGray(temp2.pixel(j, i)) - darkimg2[i - 1][j - 2])*mean2/(lightimg2[i - 1][j - 2] - darkimg2[i - 1][j - 2]);
-                  //qDebug() << val1 << val2;
-                  if (val1 >= 0 && val1 <= 255)
-                    temp1.setPixel(j, i, QColor(val1, val1, val1).rgb());
-                  if (val2 >= 0 && val2 <= 255)
-                    temp2.setPixel(j, i, QColor(val2, val2, val2).rgb());
+                  temp1.setPixel(i, j, meandark1 + (temp1.pixel(i, j) - darkimg1[i - 1][j - 2])*mean1/(lightimg1[i - 1][j - 2] - darkimg1[i - 1][j - 2]));
+                  temp2.setPixel(i, j, meandark2 + (temp2.pixel(i, j) - darkimg2[i - 1][j - 2])*mean2/(lightimg2[i - 1][j - 2] - darkimg2[i - 1][j - 2]));
                 }
             }
         }
@@ -556,5 +536,3 @@ void MainWindow::on_ApplyImg_toggled(bool checked)
 {
 
 }
-
-void MainWindow::on_pushButton_clicked(){}
